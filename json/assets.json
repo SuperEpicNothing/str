@@ -27,7 +27,7 @@
 			"url": null	
 		},
 		{
-			"type": "Scroll",
+			"type": "Book",
 			"name": "003",
 			"fullname": "Lorem ipsum",
 			"autor": "Lorem",
@@ -35,5 +35,25 @@
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
 			"url": "docs/historia pieniądza.pdf"	
 		}		
+	],
+	"items": [
+		{
+			"type": "Generic Item",
+			"name": "001",
+			"fullname": "Loreminator",
+			"autor": "Lorem",
+			"img": null,
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"url": null	
+		},
+		{
+			"type": "Generic Item",
+			"name": "LearnLink",
+			"fullname": "Learn Link",
+			"autor": "Lorem",
+			"img": null,
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"url": null	
+		}			
 	]
 }

@@ -134,26 +134,17 @@ $pliki[5] = "tech.html";
 							<div class="box">
 							<div class="row">
 									<div class="col-xs-6">
-										<button class="btn btn-default">Scrolls</button>
+										<button class="btn btn-default" onclick="changeTab(0)">Scrolls</button>
 									</div>
 									<div class="col-xs-6">
-										<button class="btn btn-default">Items</button>
+										<button class="btn btn-default" onclick="changeTab(1)">Items</button>
 									</div>
 							</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-12">
-									<ul id="GUIItemsItems" hidden="true">
-									  <li>items - rbhrv</li>
-									  <li>items - rbhrv</li>
-									  <li>items - rbhrv</li>
-									</ul>
-						 
-									<ul id="GUIItemsScrolls">
-									  <li>scroll - rbhrjb</li>
-									  <li>scroll - rbhrjb</li>
-									  <li>scroll - rbhrjb</li>
-									</ul>
+									<ul id="GUIItemsItems" hidden></ul>
+									<ul id="GUIItemsScrolls" hidden></ul>
 								</div>
 							</div>
 						</div>

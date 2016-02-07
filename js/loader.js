@@ -56,7 +56,7 @@ function deleteCookie(name) {
 var scrollValue = {top:0,left:0};
 
 var mouse ={}
-var Assets ={img:[],books:[]};
+var Assets ={img:[],books:[],items:[]};
 var player;
 function loader(first){
 	console.log(first)
@@ -89,24 +89,36 @@ function loadPlayer()
 			lvl:0,
 			chapters: [0,1]
 			},
-		books:["001","002","003","001","002","003","001","002","003"],
-		items:["LearnLink"],
+		books:[],
+		items:[],
 		achievements:["newbie"]
-		}
-	
-	//LOAD
+		};
+		
+	//library trip
+	for(var book in Assets.books)
+	{
+		player.books.push(book);
+	}
+	//raid nearby village
+	for(var item in Assets.items)
+	{
+		player.items.push(item);
+	}
+	//LOAD 
+	/*
 	if(document.cookie.indexOf("player") >= 0){
 		player=getCookie("player");
 	}
-	else{
+	else{*/
 		setCookie("player",player);
-	}
-	savePlayer()
+	//}
+	savePlayer();
 }
 function savePlayer()
 {
-	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)})
+	player.books.sort(function(a, b){console.log(player.books);return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	setCookie("player",player);
+	repolulateItemMenu()
 }
 function loadAssets(){
 	var xmlhttp0 = new XMLHttpRequest();
@@ -125,6 +137,11 @@ function loadAssets(){
 		var books = arr.scrolls;
 		for(var i=0;i<books.length;i++){
 		Assets.books[books[i].name]=books[i];
+		}
+		
+		var items = arr.items;
+		for(var i=0;i<items.length;i++){
+		Assets.items[items[i].name]=items[i];
 		}
 		loader(1)
     }
