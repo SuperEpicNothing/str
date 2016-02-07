@@ -1,0 +1,151 @@
+{
+	"meta":
+		{
+		"bg": "todo",
+		"current":0
+		},
+	"scenes": [
+	{
+		"_comment": "numersceny-0",
+		"events":[
+			{"type":"hideoptions"},
+			{"type":"dialog","name":"Stephen Hawking","align":true,"scrollspeed":0,"acknowledged":true,
+			"text":"Witaj! Chcesz poklikać? :)"
+			},
+
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 1, "text": "Jasne!"},
+			{"target": 2, "text": "Mam pewien problem z Pańską teorią..."},
+			{"target": 3, "text": "Nad czym Pan ostatnio pracuje?"}
+		]	   
+	},
+	{
+		"_comment": "numersceny-1",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"No to świetnie. Co Cię interesuje?"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 4, "text": "Czytam właśnie Pańską teorię na temat 'kwantowej fluktuacji z próżni'..."},
+			{"target": 3, "text": "Może mi Pan coś opowie o swoich ostatnich pracach?"}
+			
+		]	   
+	},
+   {
+	   	"_comment": "numersceny-2",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Hm. A którą teorią? :) Wiesz, stworzyłem ich w życiu całkiem sporo... Jak się nie gra w piłkę nożną, to zostaje sporo czasu na tworzenie teorii. ;)"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 4, "text": "Chodzi o kwestię powstania Wszechświata z próżni."}
+		]	   
+	},
+   {
+	   	"_comment": "numersceny-3",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Cóż, prawdę mówiąc, w ostatnich latach mnóstwo podróżuję, udzielam wielu wywiadów... coraz mam mniej czasu na pracę. Ale jest parę kwestii, które nie dają mi spokoju."
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 2, "text": "Wie Pan co, może wróćmy jednak do kwestii, z którą tu przychodzę. Mam problem z Pańską teorią..."},
+			{"target": 5, "text": "O! A można wiedzieć, jakie to kwestie?"}
+		]	   
+	},
+   {
+	   	"_comment": "numersceny-4",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Aaa, no tak. Cóż, wiele osób nie rozumie jej teorii. Jakie ja głupoty czasami czytam na jej temat w prasie, ech... Słuchaj, mam propozycję. Przejdźmy może wspólnie przez mój tekst na ten temat, i jeżeli będziesz mieć jakieś pytania, ja na nie odpowiem. OK?"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 6, "text": "OK."}
+		]	   
+	},	
+   {
+	   	"_comment": "numersceny-5",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Jedną z nich jest na przykład problem inteligencji komputerów i uzyskania przez nie świadomości. Nurtują mnie też różne kwestie z zakresu fizyki teoretycznej, związane na przykład z czarnymi dziurami..."
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 7, "text": "Świadomość komputerów?"},
+			{"target": 8, "text": "Czarne dziury?"},
+			{"target": 2, "text": "Hm, może wróćmy jednak do problemu, z którym tu przychodzę... Mam pewien problem z Pańską teorią..."}
+		]	   
+	},	
+   {
+	   	"_comment": "numersceny-6",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"No to zaczynamy. Będę czytał fragmenty z mojej książki pt. 'BLABLA'"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 666, "text": "XXX"},
+			{"target": 777, "text": "YYY"},
+			{"target": 888, "text": "ZZZ"}
+		]	   
+	},
+   {
+	   	"_comment": "numersceny-7",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Tak, sytuacja jest taka, że... Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - ja wrzucę Ci parę linków do poczytania na temat problemu uzyskania świadomości przez komputery, ale na razie bierzemy się do roboty, OK? W jakiej sprawie przychodzisz?"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 9, "text": "OK. Ale zanim zaczniemy, czy mogę jeszcze dostać linki w sprawie tych nowych badań nad czarnymi dziurami, hm? :)"},
+			{"target": 2, "text": "No dobra... Więc sytuacja jest taka, że mam problem ze zrozumieniem Pańskiej teorii."}
+		]	   
+	},	
+   {
+	   	"_comment": "numersceny-8",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Cóż, problem polega na tym, że... Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - ja wrzucę Ci parę linków do poczytania na temat nowych badań nad czarnymi dziurami, ale na razie bierzemy się do roboty, OK? W jakiej sprawie przychodzisz?"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 9, "text": "OK. Ale zanim zaczniemy, czy mogę jeszcze dostać linki w sprawie uzyskania świadomości przez komputery, hm? :)"},
+			{"target": 2, "text": "No dobra... Więc sytuacja jest taka, że mam problem ze zrozumieniem Pańskiej teorii."}
+		]	   
+	},
+	{
+	   	"_comment": "numersceny-9",
+		"events":[
+			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
+			"text":"Nie ma sprawy. :) Na panelu swojej postaci znajdziesz obydwa zestawy linków. A teraz - z jaką sprawą przychodzisz?"
+			},
+			{"type":"pause","time":100},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 2, "text": "Mam pewien problem ze zrozumieniem Pańskiej teorii."}
+		]	   
+	}		
+	]
+}

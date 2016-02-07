@@ -1,0 +1,55 @@
+{
+	"meta":
+		{
+		"bg": "todo",
+		"current":0
+		},
+	"scenes": [
+	{
+		"_comment": "numersceny-0",
+		"events":[
+			{"type":"hideoptions"},
+			{"type":"dialog","name":"Arystoteles","align":true,"scrollspeed":20,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			},
+			{"type":"pause","time":500},
+			{"type":"dialog","name":"Player","align":false,"scrollspeed":20,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			},
+			{"type":"showoptions"},
+			{"type":"pause","time":10},
+			{"type":"dialog","name":"","align":false,"scrollspeed":0,"acknowledged":true,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			}
+		],
+		"options":[
+			{"target": 0, "text": "blah blah blag again?"},
+			{"target": 1, "text": "blah blah"},
+			{"target": 2, "text": "blah blah blah blah... blah"}
+		]	   
+	},
+	{
+		"_comment": "numersceny-1",
+		"events":[
+			{"type":"dialog","name":"Arystoteles","align":true,"text":"1"},
+			{"type":"pause","time":1000},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 0, "text": "blah blah blag again?"}
+		]	   
+	},
+   {
+	   	"_comment": "numersceny-2",
+		"events":[
+			{"type":"dialog","name":"Arystoteles","align":true,"text":"2"
+			},
+			{"type":"pause","time":1000},
+			{"type":"showoptions"}
+		],
+		"options":[
+			{"target": 0, "text": "blah blah blag again?"}
+		]	   
+	}
+	]
+}
