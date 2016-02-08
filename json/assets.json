@@ -13,7 +13,7 @@
 			"name": "001",
 			"fullname": "Lorem ipsum et dolor sit amet",
 			"autor": "Lorem",
-			"img": null,
+			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
 		},
@@ -22,7 +22,7 @@
 			"name": "002",
 			"fullname": "dolor sit amet",
 			"autor": "Lorem",
-			"img": null,
+			"img": "images/gui/untitled.png",
 			"desc": "Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
 			"url": null	
 		},
@@ -31,7 +31,7 @@
 			"name": "003",
 			"fullname": "Lorem ipsum",
 			"autor": "Lorem",
-			"img": null,
+			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
 			"url": "docs/historia pieniądza.pdf"	
 		}		
@@ -42,7 +42,7 @@
 			"name": "001",
 			"fullname": "Loreminator",
 			"autor": "Lorem",
-			"img": null,
+			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
 		},
@@ -51,7 +51,7 @@
 			"name": "LearnLink",
 			"fullname": "Learn Link",
 			"autor": "Lorem",
-			"img": null,
+			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
 		}			

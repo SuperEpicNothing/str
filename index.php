@@ -154,7 +154,7 @@ $pliki[5] = "tech.html";
 								<div class="row row-eq-height">
 									<div class="col-xs-8">
 										<div class="stats">
-											<ul id="GUIItemsScrollData" >
+											<ul id="GUIItemsData" >
 											  <li>Name:<br> - Scroll - Lorem ipsum et dolor sit amet</li>
 											  <li>Type:<br> - Scroll</li>
 											  <li>Autor:<br> - Lorem</li>
@@ -164,8 +164,8 @@ $pliki[5] = "tech.html";
 									</div>
 									
 									<div class="col-xs-4">
-										<div class="box">
-										<img src="images/gui/untitled.png" alt="" width="100%" border="0" ></img>
+										<div class="box imagebox">
+										<img id="GUIItemsImage" src="images/gui/untitled.png" alt="" width="100%" border="0" ></img>
 										</div>
 									</div>
 								</div>
@@ -175,13 +175,13 @@ $pliki[5] = "tech.html";
 									<div class="col-xs-12 ">
 									<span>Description: <br></span>
 									<div class="GUIItemsDesc">
-										<span id="GUIItemsScrollDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in.</span> 
+										<span id="GUIItemsDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in.</span> 
 									</div></div>
 								</div>
 								<div class="row">
 									<div class="col-xs-9"></div>
 									<div class="col-xs-3">
-										<button id="GUIItemsScrollButton" hidden class="btn btn-default" onclick="window.open('docs/historia pieniądza.pdf', '_blank');">Learn more</button>
+										<button id="GUIItemsButton" hidden class="btn btn-default" onclick="window.open('docs/historia pieniądza.pdf', '_blank');">Learn more</button>
 									</div>
 								</div>
 							</div>

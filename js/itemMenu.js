@@ -10,16 +10,7 @@ function loadItemMenu(){
 	changeTab(0)
 }	
 
-function makeid(length)
-{
-    var text = "";
-    var possible = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < length; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-}
 function changeTab(t)
 {
 	itemManuTab=t
@@ -47,35 +38,57 @@ function changeTab(t)
 	//renderItemMenu()
 function setItemPreview(type,name)
 {
-	var itempreview=document.getElementById('GUIItemsScrollData');
-	var itemdesc=document.getElementById('GUIItemsScrollDescription');
+
+	if(Assets.books[name]==undefined && Assets.items[name]==undefined)
+		return;
+	
+	var itempreview=document.getElementById('GUIItemsData');
+	var itemdesc=document.getElementById('GUIItemsDescription');
+	
+	while(	itempreview.firstChild != undefined)
+			itempreview.removeChild(itempreview.firstChild);
+		
+	var item =  undefined;
 	if(type.toLowerCase()=="book"&&Assets.books[name]!=undefined)
 	{
-		while(	itempreview.firstChild != undefined)
-			itempreview.removeChild(itempreview.firstChild);
-
-		var book = Assets.books[name];
-		var item = document.createElement("LI");
-		var button = document.getElementById("GUIItemsScrollButton")
-		item.innerHTML = "Name:<br>-"+book.fullname;
-		itempreview.appendChild(item);
-		
-		item = document.createElement("LI");
-		item.innerHTML = "Type:<br>-"+book.type;
-		itempreview.appendChild(item);
-		
-		item = document.createElement("LI");
-		item.innerHTML = "Autor:<br>-"+book.autor;
-		itempreview.appendChild(item);
-		
-		itemdesc.innerHTML = book.desc;
-		button.style.visibility = (book.url==null)?"hidden":"visible";
-		var opener = function(book) {
-		return function(){ window.open(book.url)};
+		item = Assets.books[name];
 	}
-		button.onclick=opener(book);
+	else
+	{
+		item = Assets.items[name];
+	}
+		 
+		
+		var li = document.createElement("LI");
+		li.innerHTML = "Name:<br>-"+item.fullname;
+		itempreview.appendChild(li);
+		
+		li = document.createElement("LI");
+		li.innerHTML = "Type:<br>-"+item.type;
+		itempreview.appendChild(li);
+		
+		li = document.createElement("LI");
+		li.innerHTML = "Autor:<br>-"+item.autor;
+		itempreview.appendChild(li);
+		
+		itemdesc.innerHTML = item.desc;
+		
+		if(type.toLowerCase()=="book"){
+		var button = document.getElementById("GUIItemsButton")
+		button.style.visibility = (item.url==null)?"hidden":"visible";
+		
+		var opener = function(item) {
+		return function(){ window.open(item.url)};
+		}
+		
+		button.onclick=opener(item);
+		}
+		//image
+		document.getElementById("GUIItemsImage").src=item.img;
+		
 		return
-	}
+	
+	
 	console.log(type)
 	console.log(name)
 }
@@ -109,7 +122,6 @@ function repolulateItemMenu()
 	setItemPreview("book",player.books[0])
 	
 	//create item pile
-	for(var x=0;x<9;x++)
 	for(var i =0 ;i<player.items.length;i++)
 	{
 	var li = document.createElement("LI");
