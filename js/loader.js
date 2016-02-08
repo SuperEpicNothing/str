@@ -36,6 +36,16 @@ CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, li
     }
 }
 
+function makeID(length)
+{
+    var text = "";
+    var possible = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < length; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
 
 
 function setCookie(name, value) {
@@ -117,6 +127,8 @@ function loadPlayer()
 function savePlayer()
 {
 	player.books.sort(function(a, b){console.log(player.books);return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
+	player.items.sort(function(a, b){console.log(player.items);if(Assets.items[a].type.localeCompare(Assets.items[b].type)==0){ return Assets.items[a].fullname.localeCompare(Assets.items[b].fullname)} else {return Assets.items[a].type.localeCompare(Assets.items[b].type)}});
+
 	setCookie("player",player);
 	repolulateItemMenu()
 }
@@ -142,6 +154,21 @@ function loadAssets(){
 		var items = arr.items;
 		for(var i=0;i<items.length;i++){
 		Assets.items[items[i].name]=items[i];
+		}
+		for(var i=0;i<18;i++){
+		var item ={type: "Generic Item",
+			name: "001",
+			fullname: "Loreminator",
+			autor: "Lorem",
+			img: null,
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"url": null};	
+		item.type=makeID(1);
+		item.name="000"+i;
+		item.fullname=makeID(item.fullname.length);
+		item.autor=makeID(item.autor.length);
+		item.desc=makeID(item.desc.length);
+		Assets.items[item.name]=item;
 		}
 		loader(1)
     }
