@@ -6,20 +6,16 @@
 		},
 	"scenes": [
 	{
-		"_comment": "numersceny-0",
 		"events":[
-			{"type":"hideoptions"},
-			{"type":"dialog","name":"Arystoteles","align":true,"scrollspeed":20,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			{"type":"dialog","name":"Arystoteles","time":3000,"timepadding":1000,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 			},
-			{"type":"pause","time":500},
-			{"type":"dialog","name":"Player","align":false,"scrollspeed":20,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			{"type":"dialog","name":"[playerName]","time":5000,"timepadding":3000,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
 			},
-			{"type":"showoptions"},
 			{"type":"pause","time":10},
-			{"type":"dialog","name":"","align":false,"scrollspeed":0,"acknowledged":true,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			{"type":"question","name":"XYZ","time":100,
+			"text":"XYZ "
 			}
 		],
 		"options":[
@@ -29,23 +25,22 @@
 		]	   
 	},
 	{
-		"_comment": "numersceny-1",
 		"events":[
-			{"type":"dialog","name":"Arystoteles","align":true,"text":"1"},
-			{"type":"pause","time":1000},
-			{"type":"showoptions"}
+			{"type":"dialog","name":"Arystoteles","time":3000,"timepadding":2000,"color":"red",
+			"text":"1"
+			},
+			{"type":"change","time":0,"target":0,"req":{"type":"skill","skill":4,"amt":3}},
+			{"type":"change","time":0,"target":2}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"}
 		]	   
 	},
    {
-	   	"_comment": "numersceny-2",
 		"events":[
-			{"type":"dialog","name":"Arystoteles","align":true,"text":"2"
-			},
-			{"type":"pause","time":1000},
-			{"type":"showoptions"}
+		{"type":"question","name":"Arystoteles","time":1000,"timepadding":1000,
+			"text":"2"
+			}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"}
