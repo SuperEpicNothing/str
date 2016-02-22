@@ -36,8 +36,7 @@ CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, li
     }
 }
 
-function makeID(length)
-{
+function makeID(length){
     var text = "";
     var possible = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -47,12 +46,11 @@ function makeID(length)
     return text;
 }
 
-
+//Cookie Helper
+{
 function setCookie(name, value) {
-	console.log(name)
   var cookie = [name, '=', JSON.stringify(value), '; domain=', window.location.host.toString(), '; path=/'].join('');
   document.cookie = cookie;
-  console.log(cookie)
 }
 function getCookie(name) {
  var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
@@ -62,7 +60,7 @@ function getCookie(name) {
 function deleteCookie(name) {
   document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
-
+}
 var scrollValue = {top:0,left:0};
 
 var mouse ={}
@@ -74,7 +72,7 @@ function loader(first){
 	if(first==1 ){
 	loadPlayer();
 	loadItemMenu();
-	loadCanvas();
+	//loadCanvas();
 	return
 	}
 	window.addEventListener("scroll", function(event) {
@@ -84,8 +82,7 @@ function loader(first){
 	console.log(document.cookie);
 	loadAssets();
 }
-function loadPlayer()
-{
+function loadPlayer(){
 	//create DEFAULT
 	player = {
 		name: "IAmError",
@@ -94,6 +91,7 @@ function loadPlayer()
 		appearance:[],
 		classType:"Vampire",
 		//Temp: S P E C I A L 1-10
+		statNames:"SPECIAL",
 		stats:[2,6,3,7,9,8,3],
 		progress:{
 			lvl:0,
@@ -114,6 +112,7 @@ function loadPlayer()
 	{
 		player.items.push(item);
 	}
+	
 	//LOAD 
 	/*
 	if(document.cookie.indexOf("player") >= 0){
@@ -121,13 +120,20 @@ function loadPlayer()
 	}
 	else{*/
 		setCookie("player",player);
-	//}
+	/*}*/
+	
 	savePlayer();
+	
 }
-function savePlayer()
-{
-	player.books.sort(function(a, b){console.log(player.books);return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
-	player.items.sort(function(a, b){console.log(player.items);if(Assets.items[a].type.localeCompare(Assets.items[b].type)==0){ return Assets.items[a].fullname.localeCompare(Assets.items[b].fullname)} else {return Assets.items[a].type.localeCompare(Assets.items[b].type)}});
+function savePlayer(){
+	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
+	player.items.sort(function(a, b)
+	{
+		if(Assets.items[a].type.localeCompare(Assets.items[b].type)==0)
+			{ return Assets.items[a].fullname.localeCompare(Assets.items[b].fullname)}
+		else 
+			{return Assets.items[a].type.localeCompare(Assets.items[b].type)}
+	});
 
 	setCookie("player",player);
 	repolulateItemMenu()
@@ -176,18 +182,95 @@ function loadAssets(){
 	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
 	xmlhttp0.send();
 }
-
+// logic helper
+{
+function addMouseListener(elem){
+	elem.addEventListener("mousemove",  function(e) {
+		mouseChange(e,"mousemove")
+	},false);
+	elem.addEventListener("mousedown",  function(e) {
+		mouseChange(e,"mousedown")
+	},false);
+	
+	elem.addEventListener("mouseup",  function(e) {
+		mouseChange(e,"mouseup")
+	},false);
+	
+	elem.addEventListener("mouseout",  function(e) {
+		mouseChange(e,"mouseout")
+	},false);
+	
+	elem.addEventListener("mouseover",  function(e) {
+		mouseChange(e,"mouseover")
+	},false);
+}
 function mouseChange(event,evtname){
 	mouse.target=(event.target);
+	mouse.isOver= evtname=="mouseover"? true: evtname=="mouseout"? false :mouse.isOver;
 	mouse.x=(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
 	mouse.y=(event.pageY - event.target.documentOffsetTop - scrollValue.top);
 	mouse.buttons=(event.buttons);
 	mouse.detail=(event.detail);
 	mouse.event=evtname;
-	//window.requestAnimationFrame(renderItemMenu);
 }
-
-
+function checkReq(req){
+	var result = {prefix:"",enabled:true};
+			
+	if(req != undefined)
+		switch(req.type)
+		{
+			case "skill":
+					result.enabled = player.stats[req.skill]>=req.amt;
+					result.prefix = "[ "+(player.statNames.charAt(req.skill))+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
+			break;
+			
+			case "hp":
+					result.enabled = boss.heroHp>=req.amt;
+					result.prefix = "[ HP : "+ boss.heroHp+"/"+req.amt+" ] ";
+			break;
+				
+			case "item":
+					result.enabled = player.items.indexOf(req.item>-1);
+					result.prefix = "[ "+Assets.items[req.item].fullname+" ] ";
+			break;
+		}
+	
+	return result;
+}
+function handleText(text,index){
+	var start = text.indexOf('[',index)
+	
+	var end = text.indexOf(']',start)
+	if(start<0 || end<0)
+		return text;
+	var value ="";
+	var stuff = text.substring(start+1,end).split(" ")
+	switch(stuff[0])
+	{
+		case "playerName":
+		{
+			value=player.name;
+		}break;
+		case "playerGender":
+		{
+			value=player.gender?"male":"female";
+		}break;
+		case "playerAge":
+		{
+			value=player.age;
+		}break;
+		case "playerSkill":
+		{
+			value=player.stats[parseInt(stuff[1])];
+			if(!value){value="playerSkill"}
+		}break;
+		default:
+		value="["+text.substring(start+1,end)+"]";
+		break;
+	}
+	
+	return  handleText(text.substring(0,start)+value+text.substring(end+1,text.length),start+value.length);
+}
 
 function inBounds(x,y,w,h){
 	if(mouse.x>x&& mouse.x<x+w && mouse.y>y && mouse.y<y+h)
@@ -196,72 +279,49 @@ function inBounds(x,y,w,h){
 	else 
 	return false;
 }
-
+}
 // graphic helper
-function drawButtonBG(ctx, x, y, width,height){
+{
+
+function drawDialog(speaker,text,time,progress){
+
+	var charspeed = (time/text.length);
+	context.drawImage(Assets.img["textbar"],0,elem.height-255);
+
+	context.fillStyle= renderData.color == undefined ?"white":renderData.color;
+	context.font = "16px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign="left"; 
+	context.wrapText(text.substring(0,progress/charspeed),10,elem.height-225,elem.width-20,16)
+	context.fillStyle= "white";
+	context.wrapText(speaker,10,elem.height-247,elem.width-20,16)
+
+	context.fill();
+}
+
+function drawButtonBG(x, y, width,height,enabled,f,id){
 
 	var type =0
-	if(inBounds(x,y,width,height))
-	{
+	if(!enabled || renderData.progress<renderData.time+id*150)
+	{type=52;}
+	else if(inBounds(x,y,width,height)){
 		type=104;
-		if(mouse.buttons==1)
-			type=52;
+		if(mouse.buttons==1){
+		f(id)
+	
+		type=52;
+		}
 	}
 	
-	ctx.drawImage(Assets.img["button"],0,type,10,52,x,y,10,height);
+	context.drawImage(Assets.img["GUIbutton"],0,type,10,52,x,y,10,height);
 	
 	for(var i =0;i<(width-20)/80-1;i++)
-	ctx.drawImage(Assets.img["button"],10,type,80,52,x+10+i*80,y,80,height);
+	context.drawImage(Assets.img["GUIbutton"],10,type,80,52,x+10+i*80,y,80,height);
 	
-	ctx.drawImage(Assets.img["button"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
+	context.drawImage(Assets.img["GUIbutton"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
 
-	ctx.drawImage(Assets.img["button"],90,type,10,52,x+width-10,y,10,height);
+	context.drawImage(Assets.img["GUIbutton"],90,type,10,52,x+width-10,y,10,height);
 }
 
-function drawScroll(ctx, x, y, width,height,scroll){
-	var rng = new Math.seedrandom(scroll.text);
-	
-	drawButtonBG(ctx, x, y, width,height)
-	ctx.fillStyle = "6f6f6a";
-	ctx.font = Math.round(height-10)+"px Arial";
-	ctx.textBaseline = "top";
-	ctx.wrapText(scroll.text.toLowerCase()+" : "+Math.floor(rng()*10),x+55,y+5,width-60,Math.round(height-10));
-	ctx.fill();
-	
 }
 
-
-function renderItemMenu(){
-	var ctx = item_context;
-	ctx.fillStyle="#222222"
-	ctx.fillRect(0,0,ctx.canvas.width ,ctx.canvas.height );
-	ctx.fill();
-	renderScrolls(ctx)
-}
-
-function renderScrolls(ctx){
-	//title card
-	ctx.fillStyle="#666666"
-	ctx.fillRect(0,0,ctx.canvas.width ,60 );
-	ctx.fill();
-	
-	ctx.font = 50+"px Aclonica";
-	ctx.fillStyle = "#fff";
-	ctx.textBaseline = "top";
-	ctx.wrapText("Scrolls:", 15,10, ctx.canvas.width,40);
-	
-	
-	for(var i=0;i<player.books.length;i++)
-	{
-		drawScroll(ctx,0,60+i*55,ctx.canvas.width-50,55,player.books[i]);
-	}
-	
-	//scroll
-	ctx.fillStyle="#333333"
-	ctx.fillRect(ctx.canvas.width-50,60,50,ctx.canvas.height/2-60 );
-	ctx.fill();
-	
-	ctx.fillStyle="#444444"
-	ctx.fillRect(ctx.canvas.width-50,60,50,60 );
-	ctx.fill();
-}

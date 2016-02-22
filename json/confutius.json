@@ -1,0 +1,64 @@
+{
+	"meta":{
+	"bossmaxhp":9,
+	"heromaxhp":4
+	},
+	"scenes": [
+	{
+		"events":[
+			{"type":"showBoss","time":2300},
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},
+			{"type":"pause","time":500},
+			{"type":"dialog","time":2000,"timepadding":1000,"color":"red",
+			"text":"..."
+			},
+			{"type":"change","time":0,"target":3}
+		],
+		"options":[
+			{"target": 0, "text": "..."}
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"You win [playerName], i guess [playerAge] Years was enough time to learn this."
+			},
+			{"type":"hideBoss","time":2300}
+		],
+		"options":[
+			{"target": 0, "text": "?"}
+
+		]	  		
+	},
+		{
+		"events":[
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"I Confutius win. You shall never escape this prison with mere [playerSkill 0] Strength"
+			},
+			{"type":"pause","time":500},
+			{"type":"hideBoss","time":2300}
+		],
+		"options":[
+			{"target": 0, "text": "?"}
+
+		]			   
+	},
+		{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"change","time":0,"target":1,"req":{"type":"skill","skill":0,"amt":5}},
+			{"type":"question","time":2000,"arm":"sword","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 3, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 3, "text": "???","consequence":{"herohp":-1}},
+			{"target": 0, "text": "..."}
+	
+
+		]	   
+	}
+	]
+}

@@ -1,10 +1,49 @@
 {
 
 	"img" : [
-		{"name" : "button",
-		"src":"images/gui/buttons.png"},
+		
 		{"name" : "scroll",
-		"src":"images/gui/paper.png"}
+		"src":"images/gui/paper.png"},
+		{"name" : "textbar",
+		"src":"images/gui/textbar.png"},
+		{"name" : "magicbolt",
+		"src":"images/magicbolt.png"},
+		{"name" : "book",
+		"src":"images/I_Book.png"},
+		{"name" : "sword",
+		"src":"images/BASword.png"},
+		
+		{"name" : "GUIbutton",
+		"src":"images/gui/buttons.png"},
+		{"name" : "GUIback",
+		"src":"images/gui/back.png"},
+		{"name" : "GUIhpBar",
+		"src":"images/gui/HPBar/foreground.png"},
+		
+		{"name" : "confu",
+		"src":"images/mage-1-85x94_0.png"},
+		
+		{"name" : "forest",
+		"src":"images/layers/parallax-forest.png"},
+		{"name" : "arystotle",
+		"src":"images/layers/arystoteles.png"},
+		
+		
+		{"name" : "planets-parallax",
+		"src":"images/layers/parallax-space-far-planets.png"},
+		{"name" : "stars-parallax",
+		"src":"images/layers/parallax-space-stars.png"},
+		{"name" : "background-parallax",
+		"src":"images/layers/parallax-space-backgound.png"},
+		
+		{"name" : "planet0",
+		"src":"images/layers/parallax-space-big-planet0.png"},
+		{"name" : "planet1",
+		"src":"images/layers/parallax-space-big-planet1.png"},
+		{"name" : "planet2",
+		"src":"images/layers/parallax-space-big-planet2.png"},
+		{"name" : "planet3",
+		"src":"images/layers/parallax-space-big-planet3.png"}
 	],
 	
 	"scrolls": [
