@@ -49,14 +49,21 @@ function makeID(length){
 //Cookie Helper
 {
 function setCookie(name, value) {
-  var cookie = [name, '=', JSON.stringify(value), '; domain=', window.location.host.toString(), '; path=/'].join('');
-  document.cookie = cookie;
+	var d = new Date();
+	d.setTime(d.getTime() + (31*24*60*60*1000));
+	var cookie = [name, '=', JSON.stringify(value),';expires='+d.toUTCString(), '; domain=', window.location.host.toString(), '; path=/'].join('');
+	document.cookie = cookie;
 }
 function getCookie(name) {
+    function escape(s) { return s.replace(/([.*+?\^${}()|\[\]\/\\])/g, '\\$1'); };
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+    return match ? JSON.parse(match[1]) : null;
+}
+/*function getCookie(name) {
  var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
  result && (result = JSON.parse(result[1]));
  return result;
-}
+}*/
 function deleteCookie(name) {
   document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
@@ -64,17 +71,16 @@ function deleteCookie(name) {
 var scrollValue = {top:0,left:0};
 
 var mouse ={}
-var Assets ={img:[],books:[],items:[]};
+var Assets ={loaded:false,img:[],books:[],items:[]};
 var player;
-function loader(first){
-	console.log(first)
+function loader(){
 
-	if(first==1 ){
+	if(Assets.loaded){
 	loadPlayer();
 	loadItemMenu();
-	//loadCanvas();
 	return
 	}
+	
 	window.addEventListener("scroll", function(event) {
     scrollValue.top = this.scrollY;
     scrollValue.left =this.scrollX;
@@ -83,7 +89,15 @@ function loader(first){
 	loadAssets();
 }
 function loadPlayer(){
-	//create DEFAULT
+
+	
+	//LOAD 
+	if(document.cookie.indexOf("player") >= 0){
+		player=getCookie("player");
+		console.log("readCookie")
+	}
+	else{
+			//create DEFAULT
 	player = {
 		name: "IAmError",
 		gender:true,
@@ -99,33 +113,58 @@ function loadPlayer(){
 			},
 		books:[],
 		items:[],
+		seen:[],
+		notificationsBooks:0,
+		notificationsItems:0,
 		achievements:["newbie"]
 		};
 		
-	//library trip
-	for(var book in Assets.books)
-	{
-		player.books.push(book);
-	}
-	//raid nearby village
-	for(var item in Assets.items)
-	{
-		player.items.push(item);
-	}
-	
-	//LOAD 
-	/*
-	if(document.cookie.indexOf("player") >= 0){
-		player=getCookie("player");
-	}
-	else{*/
+		//library trip
+		for(var book in Assets.books)
+		{
+			player.books.push(book);
+			player.notificationsBooks++
+		}
+		/*//raid nearby village
+		for(var item in Assets.items)
+		{
+			player.items.push(item);
+		}
+		*/
+		console.log("setCookie")
 		setCookie("player",player);
-	/*}*/
-	
+	}
 	savePlayer();
 	
 }
+function removeNotification(type,name){
+
+		player.seen.push(type+name);
+		
+		if(type.toLowerCase()=="book")
+		player.notificationsBooks--
+		else
+		player.notificationsItems--
+	
+		savePlayer();
+}
+function addBook(name){
+
+	if(player.books.indexOf(name)<0){
+		player.books.push(name);
+		player.notificationsBooks++
+		savePlayer();
+	}
+}
+function addItem(name){
+	if(player.items.indexOf(name)<0){
+		player.items.push(name);
+		player.notificationsItems++
+		savePlayer();
+	}
+}
 function savePlayer(){
+	console.log("when am i called")
 	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	player.items.sort(function(a, b)
 	{
@@ -154,29 +193,16 @@ function loadAssets(){
 		
 		var books = arr.scrolls;
 		for(var i=0;i<books.length;i++){
-		Assets.books[books[i].name]=books[i];
+			Assets.books[books[i].name]=books[i];
 		}
 		
 		var items = arr.items;
 		for(var i=0;i<items.length;i++){
-		Assets.items[items[i].name]=items[i];
+			Assets.items[items[i].name]=items[i];
 		}
-		for(var i=0;i<18;i++){
-		var item ={type: "Generic Item",
-			name: "001",
-			fullname: "Loreminator",
-			autor: "Lorem",
-			img: null,
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			"url": null};	
-		item.type=makeID(1);
-		item.name="000"+i;
-		item.fullname=makeID(item.fullname.length);
-		item.autor=makeID(item.autor.length);
-		item.desc=makeID(item.desc.length);
-		Assets.items[item.name]=item;
-		}
-		loader(1)
+
+		Assets.loaded=true
+		loader()
     }
 	};
 	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
@@ -259,11 +285,16 @@ function handleText(text,index){
 		{
 			value=player.age;
 		}break;
+		case "playerLvl":
+		{
+			value=player.progress.lvl;
+		}break;
 		case "playerSkill":
 		{
 			value=player.stats[parseInt(stuff[1])];
 			if(!value){value="playerSkill"}
 		}break;
+
 		default:
 		value="["+text.substring(start+1,end)+"]";
 		break;
@@ -292,11 +323,48 @@ function drawDialog(speaker,text,time,progress){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-	context.wrapText(text.substring(0,progress/charspeed),10,elem.height-225,elem.width-20,16)
+	context.wrapText(text.substring(0,progress/charspeed)+(text.length>progress/charspeed?"|":" "),10,elem.height-225,elem.width-20,16)
 	context.fillStyle= "white";
 	context.wrapText(speaker,10,elem.height-247,elem.width-20,16)
 
 	context.fill();
+	
+	drawButtonskip(elem.width-85, elem.height-179,(progress-EntTime<renderData.time-200)?0:1,renderData.type!="question")
+}
+function skip(mode)
+{
+	if(mode==0)
+		EntTime-=renderData.time
+	
+	if(mode==1){
+		EntTime-=renderData.timepadding
+		renderData.override=false
+	}
+	
+	mouse.event=""
+}
+function drawButtonskip(x, y,mode,enabled){
+
+	
+	var type =0
+	if(!enabled)
+	{type=20;}
+	else if(inBounds(x,y,80,20)){
+		type=40;
+		if(mouse.event =="mouseup")
+		skip(mode)
+	
+		if(mouse.buttons>0)
+		type=20;
+		
+	}
+	
+	context.drawImage( Assets.img["GUIbuttonskip"],
+		80*mode,type,
+		80,20,
+		x,y,
+		80,20);
+	
 }
 
 function drawButtonBG(x, y, width,height,enabled,f,id){
@@ -306,11 +374,13 @@ function drawButtonBG(x, y, width,height,enabled,f,id){
 	{type=52;}
 	else if(inBounds(x,y,width,height)){
 		type=104;
-		if(mouse.buttons==1){
+		if(mouse.event =="mouseup"){
 		f(id)
-	
-		type=52;
+		mouse.event="";
 		}
+		
+		if(mouse.buttons>0)
+		type=52;
 	}
 	
 	context.drawImage(Assets.img["GUIbutton"],0,type,10,52,x,y,10,height);

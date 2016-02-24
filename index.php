@@ -114,9 +114,9 @@ $pliki[5] = "tech.html";
 		  ?>
            </ul>
 		   <ul class="nav navbar-nav pull-right">
-		    <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 10px 10px;"><img src="p.svg" height=30 style="margin: 0px 0px;padding: 0px 0px;"> </img> </a></li>
-            <li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" ><span class="glyphicon glyphicon-book"></span></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#itemModal"><span class="glyphicon glyphicon-cog"></span></a></li>
+		    <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 10px 10px;height:50px;width:50px"><img src="p.svg" height=30 style="margin: 0px 0px;padding: 0px 0px;"> </img> </a></li>
+            <li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 10px 10px;height:50px;width:50px"><span class="glyphicon glyphicon-cog"></span></a></li>
            </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -134,10 +134,10 @@ $pliki[5] = "tech.html";
 							<div class="box">
 							<div class="row">
 									<div class="col-xs-6">
-										<button class="btn btn-default" onclick="changeTab(0)">Scrolls</button>
+										<button id='GUIItemsScrollsButton' class="btn btn-default" onclick="changeTab(0)">Scrolls</button>
 									</div>
 									<div class="col-xs-6">
-										<button class="btn btn-default" onclick="changeTab(1)">Items</button>
+										<button id='GUIItemsItemsButton' class="btn btn-default" onclick="changeTab(1)">Items</button>
 									</div>
 							</div>
 							</div>

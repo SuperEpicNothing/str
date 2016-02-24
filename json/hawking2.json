@@ -1,12 +1,11 @@
 {
 	"meta":
 		{
-		"bg": "todo",
+		"bg": "forest",
 		"current":0
 		},
 	"scenes": [
 	{
-		"_comment": "numersceny-0",
 		"events":[
 			{"type":"hideoptions"},
 			{"type":"dialog","name":"Stephen Hawking","align":true,"scrollspeed":0,"acknowledged":true,
@@ -22,7 +21,6 @@
 		]	   
 	},
 	{
-		"_comment": "numersceny-1",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"No to świetnie. Co Cię interesuje?"
@@ -37,7 +35,6 @@
 		]	   
 	},
    {
-	   	"_comment": "numersceny-2",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Hm. A którą teorią? :) Wiesz, stworzyłem ich w życiu całkiem sporo... Jak się nie gra w piłkę nożną, to zostaje sporo czasu na tworzenie teorii. ;)"
@@ -50,7 +47,6 @@
 		]	   
 	},
    {
-	   	"_comment": "numersceny-3",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Cóż, prawdę mówiąc, w ostatnich latach mnóstwo podróżuję, udzielam wielu wywiadów... coraz mam mniej czasu na pracę. Ale jest parę kwestii, które nie dają mi spokoju."
@@ -64,7 +60,6 @@
 		]	   
 	},
    {
-	   	"_comment": "numersceny-4",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Aaa, no tak. Cóż, wiele osób nie rozumie jej teorii. Jakie ja głupoty czasami czytam na jej temat w prasie, ech... Słuchaj, mam propozycję. Przejdźmy może wspólnie przez mój tekst na ten temat, i jeżeli będziesz mieć jakieś pytania, ja na nie odpowiem. OK?"
@@ -77,7 +72,6 @@
 		]	   
 	},	
    {
-	   	"_comment": "numersceny-5",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Jedną z nich jest na przykład problem inteligencji komputerów i uzyskania przez nie świadomości. Nurtują mnie też różne kwestie z zakresu fizyki teoretycznej, związane na przykład z czarnymi dziurami..."
@@ -92,7 +86,6 @@
 		]	   
 	},	
    {
-	   	"_comment": "numersceny-6",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"No to zaczynamy. Będę czytał fragmenty z mojej książki pt. 'BLABLA'"
@@ -107,7 +100,6 @@
 		]	   
 	},
    {
-	   	"_comment": "numersceny-7",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Tak, sytuacja jest taka, że... Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - ja wrzucę Ci parę linków do poczytania na temat problemu uzyskania świadomości przez komputery, ale na razie bierzemy się do roboty, OK? W jakiej sprawie przychodzisz?"
@@ -121,7 +113,6 @@
 		]	   
 	},	
    {
-	   	"_comment": "numersceny-8",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Cóż, problem polega na tym, że... Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - ja wrzucę Ci parę linków do poczytania na temat nowych badań nad czarnymi dziurami, ale na razie bierzemy się do roboty, OK? W jakiej sprawie przychodzisz?"
@@ -135,7 +126,6 @@
 		]	   
 	},
 	{
-	   	"_comment": "numersceny-9",
 		"events":[
 			{"type":"dialog","name":"Stephen Hawking","align":true,"acknowledged":true,
 			"text":"Nie ma sprawy. :) Na panelu swojej postaci znajdziesz obydwa zestawy linków. A teraz - z jaką sprawą przychodzisz?"

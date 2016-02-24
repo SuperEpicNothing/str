@@ -20,7 +20,7 @@ function loadWindow(file,id){
 	}
 	
 	addMouseListener(elem)
-	
+	renderWindow(0)
 	window.requestAnimationFrame(renderWindow);
 }
 function clear(){
@@ -35,7 +35,6 @@ var currentEvt=0;
 var EntTime=null;
 var renderData = {type:"none",progress:0,time:0,override:false}
 function processEvent(progress){
-	console.log(currentEvt)
 	if(!EntTime){EntTime=progress}
 		
 	if(change>=0)
@@ -73,9 +72,17 @@ function processEvent(progress){
 			renderData.progress=progress-EntTime;
 			renderData.text=handleText(evt.text)
 			renderData.time=evt.time-evt.timepadding
+			renderData.timepadding=evt.timepadding
 			renderData.color=evt.color
+			renderData.override=progress-EntTime<evt.time+evt.timepadding
 		break;
-		
+		case "give":
+			renderData.type="give"
+			renderData.item=evt.item
+			renderData.progress=progress-EntTime;
+			renderData.time=evt.time
+			addItem(renderData.item);
+		break;
 		case "question":
 			renderData.type="question"
 			renderData.name=handleText(evt.name);
@@ -89,14 +96,15 @@ function processEvent(progress){
 	
 }
 
-var start = null
+var startWin = null
 function renderWindow(timestamp){
-	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp;}
-	if(!start) {start = timestamp; window.requestAnimationFrame(renderWindow); return}
-	var progress = Math.round(timestamp - start);
+	if(!Assets.loaded){window.requestAnimationFrame(renderWindow);return}
+	if (!startWin && mouse.isOver && mouse.target==elem){ startWin = timestamp;}
+	//if(!startWin) {window.requestAnimationFrame(renderWindow); return}
+	var progress = Math.round(timestamp - startWin);
 	clear();
+	if(startWin)
 	processEvent(progress);
-	
 	//draw BG
 	context.drawImage(Assets.img[BG],		
 		0,0,		
@@ -104,9 +112,29 @@ function renderWindow(timestamp){
 	//draw personalbar
 	context.drawImage(Assets.img["arystotle"],(elem.width-Assets.img["arystotle"].width)/2,10);
 	
-	if(renderData.type=="dialog"||renderData.type=="question")
+	if(renderData.type=="dialog"||renderData.type=="question"){
 	drawDialog(renderData.name,renderData.text,renderData.time,renderData.progress)
 
+	}
+	
+	
+	
+	if(renderData.type=="give"){
+		if(renderData.progress<1000)
+		context.drawImage(Assets.img["GUIclosedchest"],elem.width-68-20,renderData.progress/1000*68-68);
+		else if(renderData.progress<3000){
+		context.drawImage(Assets.img["GUIopenchest"],elem.width-68-20,0);
+
+		var scale = Math.sin((renderData.progress-1000)/750)
+		context.drawImage(Assets.img[Assets.items[renderData.item].icon],
+		elem.width/2-34*scale + ((renderData.progress-1000)/2000*(elem.width/2-68)), 34-34*scale+(elem.height-150)-((renderData.progress-1000)/2000*elem.height-150),
+		68*scale,68*scale);
+		}
+		else if(renderData.progress<4500)
+		context.drawImage(Assets.img["GUIclosedchest"],elem.width-68-20,-((renderData.progress-3000)/1500*68));
+
+	}
+	
 	
 	//drawGUIBack
 	context.drawImage(Assets.img["GUIback"],0,elem.height-150);
@@ -124,7 +152,7 @@ function renderWindow(timestamp){
 			req.enabled ? script.scenes[currentscene].options[i].color.active : script.scenes[currentscene].options[i].color.inactive 
 			: req.enabled?"white":"gray";
 		}	
-		drawButtonBG(30,elem.height-140+35*i,640,30,req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question",choice,i)
+		drawButtonBG(30,elem.height-140+35*i,640,30,req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question" &&i<script.scenes[currentscene].options.length,choice,i)
 		
 		if(renderData.progress>=renderData.time+i*150 && renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined)
 		{
@@ -136,6 +164,8 @@ function renderWindow(timestamp){
 	
 	window.requestAnimationFrame(renderWindow);
 }
+
+
 function choice(id){
 	change=script.scenes[currentscene].options[id].target
 }

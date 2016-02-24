@@ -43,7 +43,7 @@ var change;
 
 function renderConfu(timestamp){
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp; audio.play();}
-	if(!start) {window.requestAnimationFrame(renderConfu); return}
+	if(!start || !Assets.loaded) {window.requestAnimationFrame(renderConfu); return}
 	
 	var progress = Math.round(timestamp - start);
 	clear();
@@ -91,14 +91,14 @@ function renderConfu(timestamp){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="center"; 
-	context.fillText("Confutest",elem.width/2,30)
+	context.fillText("Confutest lv.999",elem.width/2,30)
 	
 	drawHPBar((elem.width-(2*28+boss.heroHpMax*67-4))/2,elem.height-180,boss.heroHp,boss.heroHpMax,progress);
 	context.fillStyle="white"
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="center"; 
-	context.fillText(player.name,elem.width/2,elem.height-170)
+	context.fillText(handleText("[playerName] lv.[playerLvl]"),elem.width/2,elem.height-170)
 	context.fill();
 	
 	if(renderData.type=="showBoss")
@@ -187,8 +187,10 @@ function processEvent(progress){
 			renderData.type="dialog"
 			renderData.progress=progress-EntTime;
 			renderData.time=evt.time-evt.timepadding
+			renderData.timepadding=evt.timepadding
 			renderData.text=handleText(evt.text)
 			renderData.color=evt.color
+			renderData.override=progress-EntTime<evt.time+evt.timepadding
 		break;
 		
 		case "question":
