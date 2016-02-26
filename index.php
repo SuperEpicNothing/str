@@ -114,9 +114,9 @@ $pliki[5] = "tech.html";
 		  ?>
            </ul>
 		   <ul class="nav navbar-nav pull-right">
-		    <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 10px 10px;height:50px;width:50px"><img src="p.svg" height=30 style="margin: 0px 0px;padding: 0px 0px;"> </img> </a></li>
+		    <li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=30 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
             <li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 10px 10px;height:50px;width:50px"><span class="glyphicon glyphicon-cog"></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#itemModal"><span class="glyphicon glyphicon-cog"></span></a></li>
            </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -125,11 +125,27 @@ $pliki[5] = "tech.html";
 
 	<?php readfile("strony/itemModal.html");?>			
 	<div class="container">
+	<div class="row">
+			<div id="guiPlayer" class="panel-collapse collapse">
+				<div class="panel-body">
+				<div class="row row-eq-height ">
+						<div class="col-xs-12 ">
+							<div class="box ">
+								<canvas id="guiPlayerMain" width=1120 height=500 ></canvas>
+								<script src="js/playerGui.js"></script>
+							</div>
+						</div
+				</div>
+				</div>
+				
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div id="guiItems" class="panel-collapse collapse">
 				<div class="panel-body">
-				<div class="row row-eq-height">
-					<div class="col-xs-4">
+				<div class="row row-eq-height ">
+					<div class="col-xs-4 ">
 						<div class="box list">
 							<div class="box">
 							<div class="row">
@@ -149,7 +165,7 @@ $pliki[5] = "tech.html";
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-8">
+					<div class="col-xs-8 ">
 							<div class="box">
 								<div class="row row-eq-height">
 									<div class="col-xs-8">

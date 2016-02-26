@@ -25,7 +25,13 @@
 		"src":"images/gui/I_Chest02.png"},
 		{"name" : "GUIclosedchest",
 		"src":"images/gui/I_Chest01.png"},
+		{"name" : "GUIxpbar",
+		"src":"images/gui/xpbar.png"},
+		{"name" : "GUIachievments",
+		"src":"images/gui/Achievments.png"},
 		
+		{"name" : "players",
+		"src":"images/avatars.png"},
 		{"name" : "confu",
 		"src":"images/mage-1-85x94_0.png"},
 		
@@ -113,6 +119,122 @@
 			"icon":"ItemSword",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
+		}			
+	],
+	"achievments": [
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
+		},
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
+		},
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
+		},
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
+		},
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
+		},
+		{
+			"level": 0,
+			"fullname": "Newbie",
+			"icon":"book",
+			"desc": "You started the game"
+		},
+		{
+			"level": 1,
+			"fullname": "Loreminator",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		},
+		{
+			"level": 2,
+			"fullname": "Lorem",
+			"icon":"ItemSword",
+			"desc": "Lorem ipsum dolor "
 		}			
 	]
 }

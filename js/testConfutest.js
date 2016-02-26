@@ -17,6 +17,10 @@ function loadConfu(file,id){
 
 	elem = document.getElementById(id),
     context = elem.getContext('2d');
+	context.mozImageSmoothingEnabled = false;
+	context.webkitImageSmoothingEnabled = false;
+	context.msImageSmoothingEnabled = false;
+	context.imageSmoothingEnabled = false;
 	if(elem == undefined)
 	{
 		console.log("no canvas")

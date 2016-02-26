@@ -53,7 +53,7 @@ body {
 	border-style: solid;
 	border-width: 0px;
 }
-#guiItems
+#guiItems,#guiPlayer
 {
 	font-family: Aclonica;
   border-color: #8c8c8c;
@@ -64,7 +64,11 @@ body {
   margin: 0px 0px;
   max-height: 100vh;
 }
-#guiItems .box 
+#guiPlayer .hbox,#guiItems .hbox
+{
+  height: 40vh;
+}
+#guiItems .box, #guiPlayer .box
 {
   font-size:20px;
   border-color: #8c8c8c;

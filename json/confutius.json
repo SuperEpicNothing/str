@@ -48,7 +48,6 @@
 		{
 		"events":[
 			{"type":"pause","time":500},
-			{"type":"change","time":0,"target":1,"req":{"type":"skill","skill":0,"amt":5}},
 			{"type":"question","time":2000,"arm":"sword","text":"What's in the book [playerName]?"}
 		],
 		"options":[

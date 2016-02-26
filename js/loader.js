@@ -71,7 +71,7 @@ function deleteCookie(name) {
 var scrollValue = {top:0,left:0};
 
 var mouse ={}
-var Assets ={loaded:false,img:[],books:[],items:[]};
+var Assets ={loaded:false,img:[],books:[],items:[],achievments:[]};
 var player;
 function loader(){
 
@@ -80,11 +80,7 @@ function loader(){
 	loadItemMenu();
 	return
 	}
-	
-	window.addEventListener("scroll", function(event) {
-    scrollValue.top = this.scrollY;
-    scrollValue.left =this.scrollX;
-	}, false);
+	window.requestAnimationFrame(animateNotifcations);
 	console.log(document.cookie);
 	loadAssets();
 }
@@ -102,13 +98,17 @@ function loadPlayer(){
 		name: "IAmError",
 		gender:true,
 		age:666,
-		appearance:[],
+		appearance:1,
 		classType:"Vampire",
 		//Temp: S P E C I A L 1-10
+		statFullNames:["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck"],
+		statColors:["red","green","blue","cyan","orange","violet","purple"],
 		statNames:"SPECIAL",
-		stats:[2,6,3,7,9,8,3],
+		stats:[1,2,3,6,8,9,10],
 		progress:{
 			lvl:0,
+			xp:0.5,
+			skillp:3,
 			chapters: [0,1]
 			},
 		books:[],
@@ -116,7 +116,7 @@ function loadPlayer(){
 		seen:[],
 		notificationsBooks:0,
 		notificationsItems:0,
-		achievements:["newbie"]
+		achievements:[0,1,2]
 		};
 		
 		//library trip
@@ -137,6 +137,38 @@ function loadPlayer(){
 	savePlayer();
 	
 }
+function animateNotifcations(time){
+	document.getElementById("guiSkillPNew" ).style.backgroundColor='rgba(147,180,38,'+(0.6+0.4*Math.sin(time/(250)))+')';
+	document.getElementById("guiSkillPNew" ).style.color='rgba(255,255,255,'+(0.6+0.4*Math.sin(time/250))+')';
+	document.getElementById("guiSkillPNew" ).innerHTML=player.progress.skillp;
+	document.getElementById("guiSkillPNew" ).style.visibility = player.progress.skillp<=0?"hidden":"visible";
+
+	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
+	
+	document.getElementById("guiPlayerVisage" ).style.clip="rect(0px, "+24*(player.appearance+1)+"px, 32px, "+24*player.appearance+"px)";
+	document.getElementById("guiPlayerVisage" ).style.left=(-24*player.appearance+15)+"px";
+
+	var newItems=document.getElementById('guiItemsNew');
+	newItems.style.backgroundColor='rgba(197,180,38,'+(0.6+0.4*Math.sin(time/250))+')';
+	newItems.style.color='rgba(255,255,255,'+(0.6+0.4*Math.sin(time/250))+')';
+	newItems.innerHTML=(player.notificationsBooks+player.notificationsItems)
+	newItems.style.visibility = (player.notificationsBooks+player.notificationsItems)<=0?"hidden":"visible";
+	window.requestAnimationFrame(animateNotifcations);
+}
+function skillpoints(n){
+	player.progress.skillp+=n;
+	savePlayer()
+}
+function playerxp(n){
+	player.progress.xp+=xp;
+	if(player.progress.xp>=1){
+		player.progress.xp--;
+		player.progress.skillp++;
+		playerxp(0);
+	}
+	savePlayer();
+}
+
 function removeNotification(type,name){
 
 		player.seen.push(type+name);
@@ -164,7 +196,6 @@ function addItem(name){
 	}
 }
 function savePlayer(){
-	console.log("when am i called")
 	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	player.items.sort(function(a, b)
 	{
@@ -173,7 +204,6 @@ function savePlayer(){
 		else 
 			{return Assets.items[a].type.localeCompare(Assets.items[b].type)}
 	});
-
 	setCookie("player",player);
 	repolulateItemMenu()
 }
@@ -200,6 +230,10 @@ function loadAssets(){
 		for(var i=0;i<items.length;i++){
 			Assets.items[items[i].name]=items[i];
 		}
+		var achievments = arr.achievments;
+		for(var i=0;i<achievments.length;i++){
+			Assets.achievments[i]=achievments[i];
+		}
 
 		Assets.loaded=true
 		loader()
@@ -210,34 +244,47 @@ function loadAssets(){
 }
 // logic helper
 {
-function addMouseListener(elem){
+function addMouseListener(elem,f){
 	elem.addEventListener("mousemove",  function(e) {
 		mouseChange(e,"mousemove")
+		if(f)
+		f();
 	},false);
 	elem.addEventListener("mousedown",  function(e) {
 		mouseChange(e,"mousedown")
+		if(f)
+	f();
 	},false);
 	
 	elem.addEventListener("mouseup",  function(e) {
 		mouseChange(e,"mouseup")
+		if(f)
+		f();
 	},false);
 	
 	elem.addEventListener("mouseout",  function(e) {
 		mouseChange(e,"mouseout")
+		if(f)
+		f();
 	},false);
 	
 	elem.addEventListener("mouseover",  function(e) {
 		mouseChange(e,"mouseover")
+		if(f)
+		f();
 	},false);
+	console.log(f)
+	
 }
 function mouseChange(event,evtname){
 	mouse.target=(event.target);
 	mouse.isOver= evtname=="mouseover"? true: evtname=="mouseout"? false :mouse.isOver;
-	mouse.x=(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
-	mouse.y=(event.pageY - event.target.documentOffsetTop - scrollValue.top);
+	mouse.x=event.offsetX//(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
+	mouse.y=event.offsetY//(event.pageY - event.target.documentOffsetTop - scrollValue.top);
 	mouse.buttons=(event.buttons);
-	mouse.detail=(event.detail);
+	//mouse.detail=(event.detail);
 	mouse.event=evtname;
+	
 }
 function checkReq(req){
 	var result = {prefix:"",enabled:true};
@@ -279,7 +326,7 @@ function handleText(text,index){
 		}break;
 		case "playerGender":
 		{
-			value=player.gender?"male":"female";
+			value=player.gender?"♂":"♀";
 		}break;
 		case "playerAge":
 		{
@@ -351,7 +398,7 @@ function drawButtonskip(x, y,mode,enabled){
 	{type=20;}
 	else if(inBounds(x,y,80,20)){
 		type=40;
-		if(mouse.event =="mouseup")
+		if(mouse.event =="mouseup" && mouse.target==elem)
 		skip(mode)
 	
 		if(mouse.buttons>0)
@@ -374,7 +421,7 @@ function drawButtonBG(x, y, width,height,enabled,f,id){
 	{type=52;}
 	else if(inBounds(x,y,width,height)){
 		type=104;
-		if(mouse.event =="mouseup"){
+		if(mouse.event =="mouseup" && mouse.target==elem){
 		f(id)
 		mouse.event="";
 		}
