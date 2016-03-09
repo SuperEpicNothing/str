@@ -1,14 +1,28 @@
 	<div id="itemModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
-
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<div class="modal-content box">
+		  <div class="modal-header box">
+			Ustawienia <button type="button" class="close" data-dismiss="modal"><img height=30px src="images/gui/cross.png"></img></button>
 		  </div>
-		  <div class="modal-body" style="margin:0px 0px;;padding: 0px 0px;height:700px">
+		  <div class="modal-body box" style="margin:0px 0px;;padding: 10px 30px;">
+		   <form>
+			<label  id="volumeL" for="volume">Głośność:</label>
+				<input type="range" id="volume" onchange="optionUpdate()" value="80" min="0" max="100"></input>
+			<label id="speedL" for="speed">Prędkość tekstu:</label>
+				<input type="range" id="speed" onchange="optionUpdate()" value="1" step="0.1" min="0.1" max="2"></input>
+			<label id="waitL" for="wait">Prędkość czekania:</label>
+				<input type="range" id="wait" onchange="optionUpdate()" value="1" step="0.1" min="0.1" max="3"></input>
+			<label id="teachL" for="teach">Tryb nauczyciela:</label>
+				<input type="CHECKBOX" id="teach" onchange="optionUpdate()"></input>
+		</form> 
+		  </div>
+		   <div class="modal-footer box">
+				<button type="button" class="btn btn-default pull-left" onclick="optionDelete()">Usuń Dane</button>
+				<button type="button" class="btn btn-default" onclick="optionSave()">Zapisz</button>
 		  </div>
 		</div>
 
 	  </div>
 	</div>
+<script src="js/options.js" onload="optionOpen()"></script>
 <script src="js/itemMenu.js"></script>

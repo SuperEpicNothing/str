@@ -78,6 +78,7 @@ function loader(){
 	if(Assets.loaded){
 	loadPlayer();
 	loadItemMenu();
+	updateChapters();
 	return
 	}
 	window.requestAnimationFrame(animateNotifcations);
@@ -195,6 +196,15 @@ function addItem(name){
 		savePlayer();
 	}
 }
+function unlockChapter(id){
+	console.log(id)
+	if(player.progress.chapters.indexOf(id)<0){
+			console.log(id)
+		player.progress.chapters.push(id);
+		updateChapters()
+		savePlayer();
+	}
+}
 function savePlayer(){
 	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	player.items.sort(function(a, b)
@@ -206,6 +216,19 @@ function savePlayer(){
 	});
 	setCookie("player",player);
 	repolulateItemMenu()
+}
+function updateChapters(){
+	for(var i =0;i<4;i++){
+		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
+		document.getElementById("pageButton"+i).className = "disabledLink";
+		document.getElementById("pageButton"+i).style.color = "#353526";
+		console.log(document.getElementById("pageButton"+i))
+		}
+		else{
+		document.getElementById("pageButton"+i).className = "hvr-underline-from-center enabledLink";
+		document.getElementById("pageButton"+i).style.color = "#e7f8f8";
+		}
+	}
 }
 function loadAssets(){
 	var xmlhttp0 = new XMLHttpRequest();

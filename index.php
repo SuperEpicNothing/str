@@ -53,15 +53,17 @@ $pliki[5] = "tech.html";
 
 	<link rel="stylesheet" href="css/equal-height-columns.css">
 
-	<!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
-	
+
 	<!-- Niebieskie Menu -->
     <link href="css/menubar-blue.css" rel="stylesheet">
 	<!-- Hover-->
 	<link href="css/hover.css" rel="stylesheet" media="all">
 	<!-- equal height-->
 	<link href="css/equal-height-columns.css" rel="stylesheet" media="all">
+	
+	<!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+	
 	<style>
 	 #sidebar ul {
       position: fixed;
@@ -109,14 +111,14 @@ $pliki[5] = "tech.html";
           <ul class="nav navbar-nav">
 		  <?php for($i=0 ;$i<count($strony); $i++)
 		  {
-			  echo " <li><a class='hvr-underline-from-center' href='?p=".$i."'>".$strony[$i]."</a></li>\n\t\t";
+			  echo " <li><a  id='pageButton".$i."' class='hvr-underline-from-center' href='?p=".$i."'>".$strony[$i]."</a></li>\n\t\t";
 		  }
 		  ?>
            </ul>
 		   <ul class="nav navbar-nav pull-right">
 		    <li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=30 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
             <li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#itemModal"><span class="glyphicon glyphicon-cog"></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()" onmouseout="this.firstChild.src='images/gui/gear1.png'" onmouseover="this.firstChild.src='images/gui/gear2.png'"><img src="images/gui/gear1.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
            </ul>
         </div><!--/.nav-collapse -->
       </div>

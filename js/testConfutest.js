@@ -48,10 +48,10 @@ var change;
 function renderConfu(timestamp){
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp; audio.play();}
 	if(!start || !Assets.loaded) {window.requestAnimationFrame(renderConfu); return}
-	
 	var progress = Math.round(timestamp - start);
 	clear();
-	
+		audio.volume = option.volume / 100;
+	console.log(audio.volume)
 	processEvent(progress);
 	drawBackground(progress);
 	drawConfutest(progress);
@@ -158,8 +158,12 @@ function processEvent(progress){
 	return;
 	
 	var evt =battlescript.scenes[currentscene].events[currentEvt]
-
-	if(progress-EntTime>evt.time && !renderData.override || !checkReq(currentEvt.req))
+	var isOver = progress-EntTime>evt.time
+	if(evt.type =="dialog")
+	{
+		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
+	}
+	if(isOver && !renderData.override || !checkReq(currentEvt.req))
 	{
 	currentEvt++
 	EntTime=null
@@ -190,17 +194,17 @@ function processEvent(progress){
 		case "dialog":
 			renderData.type="dialog"
 			renderData.progress=progress-EntTime;
-			renderData.time=evt.time-evt.timepadding
-			renderData.timepadding=evt.timepadding
+			renderData.time=(evt.time-evt.timepadding)*option.speed
+			renderData.timepadding=evt.timepadding*option.wait
 			renderData.text=handleText(evt.text)
 			renderData.color=evt.color
-			renderData.override=progress-EntTime<evt.time+evt.timepadding
+			renderData.override=progress-EntTime<(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
 		break;
 		
 		case "question":
 			renderData.type="question"
 			renderData.progress=progress-EntTime;
-			renderData.time=evt.time
+			renderData.time=evt.time*option.speed
 			renderData.arm=evt.arm
 			renderData.text=handleText(evt.text)
 			renderData.color=evt.color
@@ -382,7 +386,7 @@ function drawConfutest(progress){
 			case "book":
 				if(renderData.progress<=1000){
 				
-				context.setTransform(renderData.progress/1000, 0, 0, renderData.progress/1000, (elem.width-(img.width/2))+70+Math.cos(progress/270)*9+34,150-Math.sin(progress/300)*8+34-(100/1000*renderData.progress));
+				context.setTransform(renderData.progress/1000, 0, 0, renderData.progress/1000, (elem.width-(Assets.img["confu"].width/2))+70+Math.cos(progress/270)*9+34,150-Math.sin(progress/300)*8+34-(100/1000*renderData.progress));
 				context.rotate(2*Math.PI*progress/3000);
 				context.drawImage(Assets.img["magicbolt"],
 					-34,-34,
@@ -391,7 +395,7 @@ function drawConfutest(progress){
 				}
 				else if(renderData.progress<=1500){
 				
-				context.setTransform(1, 0, 0, 1, (elem.width-(img.width/2))+70+34,84);
+				context.setTransform(1, 0, 0, 1, (elem.width-(Assets.img["confu"].width/2))+70+34,84);
 				context.rotate(2*Math.PI*progress /2000);
 				context.drawImage(Assets.img["magicbolt"], 
 					-34,-34,
@@ -400,7 +404,7 @@ function drawConfutest(progress){
 				}
 				else{
 				
-				context.setTransform(1, 0, 0, 1, (elem.width-(img.width/2))+70+34-(104/700*(renderData.progress-1500)),84+(((elem.height-170-84))/700)*(renderData.progress-1500));
+				context.setTransform(1, 0, 0, 1, (elem.width-(Assets.img["confu"].width/2))+70+34-(104/700*(renderData.progress-1500)),84+(((elem.height-170-84))/700)*(renderData.progress-1500));
 				context.rotate(2*Math.PI*progress/1500);
 				context.drawImage(Assets.img["magicbolt"],
 					-34,-34,

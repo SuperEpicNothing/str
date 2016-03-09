@@ -57,8 +57,12 @@ function processEvent(progress){
 	return;
 	
 	var evt =script.scenes[currentscene].events[currentEvt]
-
-	if(progress-EntTime>evt.time && !renderData.override || !checkReq(currentEvt.req))
+	var isOver = progress-EntTime>evt.time
+	if(evt.type =="dialog")
+	{
+		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
+	}
+	if(isOver && !renderData.override || !checkReq(currentEvt.req))
 	{
 	currentEvt++
 	EntTime=null
@@ -75,10 +79,10 @@ function processEvent(progress){
 			renderData.name=handleText(evt.name);
 			renderData.progress=progress-EntTime;
 			renderData.text=handleText(evt.text)
-			renderData.time=evt.time-evt.timepadding
-			renderData.timepadding=evt.timepadding
+			renderData.time=(evt.time-evt.timepadding)*option.speed
+			renderData.timepadding=evt.timepadding*option.wait
 			renderData.color=evt.color
-			renderData.override=progress-EntTime<evt.time+evt.timepadding
+			renderData.override=progress-EntTime<(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
 		break;
 		case "give":
 			renderData.type="give"
@@ -92,7 +96,7 @@ function processEvent(progress){
 			renderData.name=handleText(evt.name);
 			renderData.progress=progress-EntTime;
 			renderData.text=handleText(evt.text)
-			renderData.time=evt.time
+			renderData.time=evt.time*option.speed
 			renderData.color=evt.color
 			renderData.override=true
 		break;
