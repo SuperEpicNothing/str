@@ -38,7 +38,7 @@ CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, li
 
 function makeID(length){
     var text = "";
-    var possible = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var possible = "?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for( var i=0; i < length; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -68,10 +68,12 @@ function deleteCookie(name) {
   document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
 }
-var scrollValue = {top:0,left:0};
+//var scrollValue = {top:0,left:0};
 
 var mouse ={}
 var Assets ={loaded:false,img:[],books:[],items:[],achievments:[]};
+var option={volume:80,speed:0,wait:1,teach:false}
+
 var player;
 function loader(){
 

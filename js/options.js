@@ -1,4 +1,3 @@
-var option={volume:80,speed:0,wait:1,teach:false}
 function optionOpen(){
 	console.log("open");
 	option=getCookie("options")?getCookie("options"):{volume:80,speed:0,teach:false};
@@ -32,5 +31,5 @@ function optionDelete(){
 	deleteCookie("options");
 	option={volume:80,speed:0,teach:false};
 	$("#itemModal").modal("hide");
-	updateChapters()
+	location.reload(); 
 }
