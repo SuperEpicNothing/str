@@ -1,6 +1,12 @@
 ==L
 - DO LIKE ANYTHING
 ==S
--
+- Extend possible dialog space
+- update php loading
+- options text speed,skip-ability
+- debug skip button
+- fullscreen skip
+- handle text gendered
+
 
 ===GENERAL:
