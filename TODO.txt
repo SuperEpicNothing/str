@@ -2,7 +2,7 @@
 - DO LIKE ANYTHING
 ==S
 - Extend possible dialog space
-- update php loading
+- update php loading:DONE - awaiting thoughts
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip

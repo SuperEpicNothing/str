@@ -103,7 +103,7 @@ function drawAchievments()
 		c1.textBaseline = "top";
 		c1.textAlign="center"; 	
 		c1.fillStyle=unlocked?"#ffffbf":"#999999";
-		c1.fillText( unlocked?Assets.achievments[ach].fullname:makeID(Assets.achievments[ach].fullname.length), elem1.width-466+(66*(i%7)+32),70+(66*Math.floor(i/7))+50)
+		c1.fillText( unlocked?Assets.achievments[ach].fullname:"??????????????????????????????????????????".substring(0,Assets.achievments[ach].fullname.length), elem1.width-466+(66*(i%7)+32),70+(66*Math.floor(i/7))+50)
 		
 		/*if(unlocked &&inBounds(elem1.width-466+(66*(i%7)),70+(66*Math.floor(i/7)),64,64))
 		{

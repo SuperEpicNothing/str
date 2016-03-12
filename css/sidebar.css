@@ -1,0 +1,30 @@
+#sidebar {
+		background-color: rgba(0,182,242,0.6);
+		border: 1px solid rgba(0,143,191,0.6);
+		border-width: 2px;
+		border-radius: 4px;
+		padding: 5px 5px;
+		position: fixed;
+		top: 65px;
+		right: 15px;
+		width: 200px;
+}
+#sidebar hr {
+		border-color:rgba(0,0,0,0.3);
+}
+#sidebar a {
+		background-color:rgba(255,255,255,0.8);
+		border-width: 0px;
+}
+
+#sidebar a:hover {
+		background-color:rgba(238,238,238,0.8);
+		border-width: 0px;
+
+
+}
+#sidebar a.active {
+		background-color:rgba(170,215,255,0.8);
+		border-width: 0px;
+
+}

@@ -3,37 +3,14 @@
 $page = $_GET['p']; // przypisanie zmiennych 
 if($page == "")
 	$page=0;
+
+$subpage = $_GET['pp']; // przypisanie zmiennych 
+if($subpage == "")
+	$subpage=0;
 // nazwa strony
 $strony = file("strony.txt");
-//id
-$id[0] = "#c1";
-$id[1] = "#c2";
-$id[2] = "#c5";
-$id[3] = "#c3";
-$id[4] = "#c4";
+$submenu = file("strony/".$page."/menu.txt");
 
-//insideID
-$iname[0] = "Czemu \"Genetyczny\"?";
-$iname[1] = "Czemu \"Ewolucyjny\"?";
-$iname[2] = "Inicjacja";
-$iname[3] = "Ocena i sprawdzian";
-$iname[4] = "Wybór Rodziców";
-$iname[5] = "Rozmnażanie i Mutacja";
-
-//childcount
-$ccount[0] = 2;
-$ccount[1] = 4;
-$ccount[2] = 0;
-$ccount[3] = 0;
-$ccount[4] = 0;
-
-//nazwa pliku
-$pliki[0] = "home.html";
-$pliki[1] = "teoria1.html";
-$pliki[2] = "teoria2.html";
-$pliki[3] = "demo1.html";
-$pliki[4] = "zast.html";
-$pliki[5] = "tech.html";
 
 
 ?>
@@ -64,12 +41,9 @@ $pliki[5] = "tech.html";
 	<!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
 	
-	<style>
-	 #sidebar ul {
-      position: fixed;
-	  
-  }
-	</style>
+	<!-- Custom styles for this template -->
+    <link href="css/sidebar.css" rel="stylesheet">
+
 	
 	    <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -111,7 +85,7 @@ $pliki[5] = "tech.html";
           <ul class="nav navbar-nav">
 		  <?php for($i=0 ;$i<count($strony); $i++)
 		  {
-			  echo " <li><a  id='pageButton".$i."' class='hvr-underline-from-center' href='?p=".$i."'>".$strony[$i]."</a></li>\n\t\t";
+			  echo " <li><a  id='pageButton".$i."' class='hvr-underline-from-center' href='?p=".$i."&pp=0'>".$strony[$i]."</a></li>\n\t\t";
 		  }
 		  ?>
            </ul>
@@ -208,11 +182,21 @@ $pliki[5] = "tech.html";
 			</div>
 		</div>
 		<div class="row">
-		  <nav class="col-xs-3" id="sidebar">
-			<?php readfile("strony/menu/".$page.".html");?>
+		  <nav id="sidebar">
+		  <ul class="nav nav-pills nav-stacked">
+
+		  		  <?php for($i=0 ;$i<count($submenu); $i++)
+		  {
+			  echo " <li><a  id='submenuLink".$page."-".$i."' class=".($i==$subpage && $subpage!="test" ?"'active disabledLink'":"'enabledLink'")." href='?p=".$page."&pp=".$i."'>".$submenu[$i]."</a></li>\n\t\t";
+		  }
+		  ?>
+		  <li><hr></hr><li>
+		  	<li><a <?php echo "href='?p=".$page."&pp=test' class=".($subpage=="test" ?"'active'":"''") ?> >KONFU?</a></li>
+		  </ul>
+		  
 		  </nav>
-		  <div class="col-xs-9">
-			<?php readfile("strony/".$page.".html");?>
+		  <div class="col-xs-10">
+			<?php readfile("strony/".$page."/".($subpage=="test"?"endboss":$subpage).".html");?>
 		  </div>
 		</div>
 	</div>
