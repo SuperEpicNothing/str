@@ -3,12 +3,12 @@
 
 ==S
 - Extend possible dialog space
-- update php loading:DONE - awaiting thoughts
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip
 - handle text gendered
-- ¿eby siê da³o ³adowaæ odmienne twarze/t³a do okienek dialogowych - zajrza³em do "window2.0.js" i tam jest rêcznie wpisany "arystotle" :)
+- customizable images for faces in dialogue areas
+- automatic drop-down menu for NEW achievements
 
 ===GENERAL:
 
