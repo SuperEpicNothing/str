@@ -126,13 +126,11 @@
 		"COMMENT":"9",
 		"events":[
 			
-			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
 			"text":"Nikt tego nie wie."
 			}
 		],
-		"options":[
-			{"target": 9, "text": ""}
-		]	   
+		"options":[]	   
 	}
 	]
 }
