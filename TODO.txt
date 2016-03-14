@@ -1,5 +1,6 @@
 ==L
-- DO LIKE ANYTHING
+- coœ zrobi³em...
+
 ==S
 - Extend possible dialog space
 - update php loading:DONE - awaiting thoughts
@@ -7,6 +8,6 @@
 - debug skip button
 - fullscreen skip
 - handle text gendered
-
+- ¿eby siê da³o ³adowaæ odmienne twarze/t³a do okienek dialogowych - zajrza³em do "window2.0.js" i tam jest rêcznie wpisany "arystotle" :)
 
 ===GENERAL:
