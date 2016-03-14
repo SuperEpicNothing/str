@@ -11,3 +11,24 @@
 - ¿eby siê da³o ³adowaæ odmienne twarze/t³a do okienek dialogowych - zajrza³em do "window2.0.js" i tam jest rêcznie wpisany "arystotle" :)
 
 ===GENERAL:
+
+
+
+statystyki:
+•	SZCZÊŒCIE
+•	S£UCH
+•	SPRYT
+•	DOMYŒLNOŒÆ
+•	MIÊŒNIE
+•	SI£A
+•	SZYBKOŒÆ
+•	AKTYWNOŒÆ
+•	UROK OSOBISTY
+•	
+•	WYTRZYMA£OŒÆ
+•	INTELIGENCJA
+•	ENERGIA
+•	SPOSTRZEGAWCZOŒÆ
+•	ZRÊCZNOŒÆ
+•	ATRAKCYJNOŒÆ
+•	KRZEPA
