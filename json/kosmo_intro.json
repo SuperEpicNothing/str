@@ -79,7 +79,7 @@
 			}
 		],
 		"options":[
-			{"target": 6, "text": "A skąd wzięła się nasza planeta?"}
+			{"target": 6, "text": "Skąd wzięła się nasza planeta?"}
 		]	   
 	},
 	
@@ -126,12 +126,12 @@
 		"COMMENT":"9",
 		"events":[
 			
-			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
 			"text":"Nikt tego nie wie."
 			}
 		],
 		"options":[
-			
+			{"target": 9, "text": ""}
 		]	   
 	}
 	]
