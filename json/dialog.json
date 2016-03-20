@@ -10,11 +10,11 @@
 		"events":[
 			
 			{"type":"dialog","name":"Arystoteles","time":3000,"timepadding":1000,
-			"text":"A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż"
+			"text":"A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż [playerGender] [playerGender {male|female}]"
 			},
 			{"type":"give","time":4600,"item":"001"},
 			{"type":"dialog","name":"[playerName]","time":5000,"timepadding":3000,
-			"text":"Lorem ipsum dolor sit amet, Czy kiedykolwiek się [playerGender <zastanawiałeś>|<zastanawiałaś>]. . Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
+			"text":"Lorem ipsum dolor sit amet, Czy kiedykolwiek się [playerGender {zastanawiałeś|zastanawiałaś}]. . Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
 			},
 			{"type":"pause","time":10},
 			{"type":"question","name":"XYZ","time":100,

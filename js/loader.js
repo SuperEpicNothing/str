@@ -351,7 +351,15 @@ function handleText(text,index){
 		}break;
 		case "playerGender":
 		{
+			if(stuff.length <=1)
 			value=player.gender?"♂":"♀";
+			else
+			{
+				var ts =  text.indexOf('{',start+1+"playerGender ".length);
+				var te =  text.indexOf('}',ts);
+				var t = text.substring(ts+1,te);
+				value = t.split("|")[player.gender?0:1];
+			}
 		}break;
 		case "playerAge":
 		{

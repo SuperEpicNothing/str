@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <?php
 $page = $_GET['p']; // przypisanie zmiennych 
 if($page == "")

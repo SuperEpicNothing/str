@@ -1,34 +1,34 @@
-==L
-- coœ zrobi³em...
+ï»¿==L
+- coÅ› zrobiÅ‚em...
 
 ==S
 - Extend possible dialog space
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip
-- handle text gendered
++ handle text gendered : to be presented  [playerGender {male option|female option}] 
 - customizable images for faces in dialogue areas
 - automatic drop-down menu for NEW achievements
 
 ===GENERAL:
-
+-stosowaÄ‡ enkodowanie UTF-8
 
 
 statystyki:
-•	SZCZÊŒCIE
-•	S£UCH
-•	SPRYT
-•	DOMYŒLNOŒÆ
-•	MIÊŒNIE
-•	SI£A
-•	SZYBKOŒÆ
-•	AKTYWNOŒÆ
-•	UROK OSOBISTY
-•	
-•	WYTRZYMA£OŒÆ
-•	INTELIGENCJA
-•	ENERGIA
-•	SPOSTRZEGAWCZOŒÆ
-•	ZRÊCZNOŒÆ
-•	ATRAKCYJNOŒÆ
-•	KRZEPA
+â–²	SZCZÄ™CIE
+â–²	SÅ‚UCH
+â–²	SPRYT
+â–²	DOMYÅ›LNOÅ›Ä‡
+â–²	MIÊŒNIE
+â–²	SIÅ‚A
+â–²	SZYBKOÅ›Ä‡
+â–²	AKTYWNOÅ›Ä‡
+â–²	UROK OSOBISTY
+â–²	
+â–²	WYTRZYMAÅ‚OÅ›Ä‡
+â–²	INTELIGENCJA
+â–²	ENERGIA
+â–²	SPOSTRZEGAWCZOÅ›Ä‡
+â–²	ZRÄ™CZNOÅ›Ä‡
+â–²	ATRAKCYJNOÅ›Ä‡
+â–²	KRZEPA
