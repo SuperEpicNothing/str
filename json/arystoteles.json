@@ -1,0 +1,309 @@
+{
+	"meta":
+		{
+		"bg": "forest",
+		"current":0
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Cześć, Arystotelesie!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam pewien problem ze zrozumieniem Twoich słów, Arystotelesie!"},
+			{"target": 19, "text": "Nic z tego nie rozumiem…"},
+			{"target": 2, "text": "Czym się ostatnio zajmujesz?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, mam wiele wolnego czasu, ale i tak jestem stale zajęty. Właśnie zakładam z przyjaciółmi Liceum..."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Przecież ja chodzę do liceum!"},
+			{"target": 4, "text": "Jakie „Liceum”? Ogólnokształcące?"},
+			{"target": 19, "text": "Czym się ostatnio zajmujesz?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ooo, to bardzo dobrze! Większość ludzi żyje jak niewolnicy, a Ty masz szansę osiągnąć wolność."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "A jaki to ma związek?! Dopiero w szkole czuję się zniewolony..."},
+			{"target": 6, "text": "Słusznie prawisz, Arystotelesie!"},
+			{"target": 19, "text": "Hm, a może wróćmy do moich problemów..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Czy moje Liceum jest „ogólnokształcące”? Hm, chyba tak. Mamy zajęcia z atletyki, biegamy, mocujemy się, rzucamy oszczepem. Właśnie parę dni temu wybudowaliśmy świetne sale do gorących kąpieli…"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "To nie brzmi, jakbyście się tu czegoś uczyli..."},
+			{"target": 8, "text": "Co za życie!..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Więc nic nie rozumiesz!... Im więcej wiesz, tym więcej możesz! Gdybyś nie [wiedział/wiedziała], że istnieje zawód lekarza, programisty albo astronoma, nie [mógłbyś/mogłabyś] nawet CHCIEĆ podążać w tym kierunku. Gdybyś nie [wiedział/wiedziała] ZUPEŁNIE NIC, nie [mógłbyś/mogłabyś] podejmować żadnych w ogóle wyborów."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Hm, brzmi rozsądnie."},
+			{"target": 13, "text": "Nie wydaje mi się, żeby to było takie proste..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście, że słusznie prawię. Ale dosyć o mnie – w czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam taki problem ze zrozumieniem Twoich słów..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ależ uczymy się! Po zajęciach atletycznych dyskutujemy o muzyce, filozofii, mądrości. Ale zdrowe ciało to podstawa! Ty jakoś blado wyglądasz..."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie? "},
+			{"target": 10, "text": "Takiś mądry! To może zamiast rozmawiać z Tobą i uczyć się filozofii, przejdę się na spacer?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, nie zawsze jest łatwo. Zobacz, jakie mam siniaki po wczorajszym pankrationie…"
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Pankra-co?"},
+			{"target": 7, "text": "Ale uczycie się też tu czegokolwiek?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"SIŁOWANIE NA RĘKĘ"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Wygrałem, wygrałem!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"O, widzisz! I teraz przemawia przez Ciebie mądrość. W moim Liceum zawsze dyskutujemy, przechadzając się - dlatego mówią na nas „perypatetycy”! Głowa natleniona, to i przychodzą do głowy mądre myśli!"
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Musimy wprowadzić taki zwyczaj w Polsce!"},
+			{"target": 19, "text": "Cóż, na razie wróćmy może do mojego problemu z Twoim tekstem, spacer urządzę sobie później..."},
+			{"target": 18, "text": "Pery-co?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Polecam! A pogodą się nie przejmuj. Gdy pada deszcz, spacerujemy pod specjalnymi zadaszeniami, na które mówimy portyki."
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Wróćmy może do tego, z czym przychodzę... Mam pewien problem z tym, o czym mówisz."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście, że rozsądnie. Wiedza wyzwala! No dobrze, ale z czym do mnie przychodzisz?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam taki problem z Twoimi słowami, Arystotelesie..."}
+		]	
+	},
+	
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Zróbmy tak. Nie mamy teraz czasu na dłuższą debatę, więc, jeżeli faktycznie interesuje Cię związek pomiędzy wiedzą a działaniem ludzkim, dostaniesz teraz ode mnie coś do poczytania na później."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "O, dzięki! Zajrzę na pewno."},
+			{"target": 15, "text": "Hm, może innym razem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Pankration – to takie nasze zapasy. Nie wolno atakować oczu ani gryźć, ale oprócz tego dozwolone są wszelkie uderzenia, rzuty, przytrzymania… tak spędzamy tu przedpołudnia."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "Hm... to ja może jednak pozostanę przy polskiej szkole."},
+			{"target": 17, "text": "Fajnie!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"A teraz – w czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam problem ze zrozumieniem Twoich słów."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Bardzo słusznie. Każdemu, co jego. O czym to jednak mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Tak, tak. Mam pewien problem z Twoim tekstem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Też tak uważam! Trochę siniaków nikomu jeszcze nie zaszkodziło, a wypadki śmiertelne przy pankrationie są względnie rzadkie. Ale, ale – o czym to mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Tak, tak. Mam pewien problem z Twoim tekstem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Perypatetycy. Czyli po grecku >>ci, którzy spacerują<< albo wręcz >>łażą<<. Moi koledzy po fachu trochę się z nas śmieją, że tak wiecznie dyskutujemy w trakcie spacerów. Oni oczywiście wylegują się jak spasione foki... Ale, ale – o czym to mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Właśnie... mam pewien problem z Twoim tekstem."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"A z czym konkretnie masz problem?"
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Jest ten fragment o przesłankach i nieskończonym dowodzie..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Powstał w pierwszych ułamkach sekund Wielkiego Wybuchu, z wcześniejszych cząstek elementarnych zwanych kwarkami."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Skąd wzięły się te kwarki?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Powstał w pierwszych ułamkach sekund Wielkiego Wybuchu, z wcześniejszych cząstek elementarnych zwanych kwarkami."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Skąd wzięły się te kwarki?"}
+		]	   
+	}
+	]
+}
