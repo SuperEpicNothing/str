@@ -23,7 +23,7 @@ $submenu = file("strony/".$page."/menu.txt");
     <meta name="author" content="Krzysztof Stasiowski">
     <link rel="icon" href="favicon.ico">
 
-    <title>Algorytmy Genetyczne</title>
+    <title>Nauka i Wiara</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
