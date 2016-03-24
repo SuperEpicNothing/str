@@ -114,7 +114,7 @@
 			}
 		],
 		"options":[
-			{"target": 9, "text": "Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie? "},
+			{"target": 9, "text": "[SIŁA: 4] Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie?"},
 			{"target": 10, "text": "Takiś mądry! To może zamiast rozmawiać z Tobą i uczyć się filozofii, przejdę się na spacer?"}
 		]	   
 	},
@@ -782,7 +782,7 @@
 			}
 		],
 		"options":[
-			{"target": 56, "text": "Wiesz co, chyba [gender chciałbym] jeszcze raz przejść na spokojnie przez cały ten tekst. Może być?"},
+			{"target": 56, "text": "Wiesz co, chyba [playerGender (chciałbym|chciałabym)] jeszcze raz przejść na spokojnie przez cały ten tekst. Może być?"},
 			{"target": 57, "text": "Zanim pójdziemy dalej, czy mógłbyś podsumować krótko, na czym stoimy?"},
 			{"target": 61, "text": "Pewnie, że jasne! Idziemy dalej!"}
 		]	   
