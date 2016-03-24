@@ -7,15 +7,39 @@ function loadConfu(file,id){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "json/"+file+"?t="+ (new Date().getTime()), false);
 	xhttp.send();
+	elem = document.getElementById(id);
+	if (xhttp.readyState == 4 && xhttp.status == 200)
+	{
+		try{
 	battlescript = JSON.parse(xhttp.responseText);
-	
+		}catch(e)
+		{
+			battlescript = {
+			meta:{bg:"blackboard",current:0,actor:"planet0"},
+			scenes:[
+			{
+				events:[
+				{	type:"question",
+					time:1000,timepadding:0,
+					text:"You Dun guffed.File is broken."
+				}],
+				options:[{target:0,text:"HTTP STATUS: "+xhttp.status+"HTTP readystate"+xhttp.readyState},
+				{target:0,text:"Error: "+e,height:3}]
+			}
+			]
+			}
+		}
+	}
+	else
+	{
+		elem.parentNode.innerHTML=xhttp.responseText
+	}
 	boss.health=battlescript.meta.bossmaxhp
 	boss.healthMax=battlescript.meta.bossmaxhp
 	boss.heroHp=battlescript.meta.heromaxhp
 	boss.heroHpMax=battlescript.meta.heromaxhp
 
 
-	elem = document.getElementById(id),
     context = elem.getContext('2d');
 	context.mozImageSmoothingEnabled = false;
 	context.webkitImageSmoothingEnabled = false;

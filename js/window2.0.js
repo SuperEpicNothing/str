@@ -31,25 +31,6 @@ function loadWindow(file,id){
 			}
 		}
 	}
-	else
-	{
-		var wnd = window.open("about:blank", "", "_blank");
-		wnd.document.write(xhttp.responseText);
-		script = {
-			meta:{bg:"blackboard",current:0,actor:"planet0"},
-			scenes:[
-			{
-				events:[
-				{	type:"question",
-					name:"I AM XHHTP ERROR",time:1000,timepadding:0,
-					text:"You Dun guffed.File is lost?"
-				}],
-				options:[{target:0,text:"HTTP STATUS: "+xhttp.status+" HTTP readystate"+xhttp.readyState},
-				{target:0,text:"HTTP response:"+xhttp.status==404?"File Not Found":xhttp.status>=500?"Server Error":"I Dunno",height:3}]
-			}
-			]
-			}
-	}
 	
 	BG=script.meta.bg
 	Actor=script.meta.actor;
