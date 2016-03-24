@@ -1,6 +1,6 @@
 ﻿==L
 - coś zrobiłem...
-
+- przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
 + Extend possible dialog space
 - options text speed,skip-ability

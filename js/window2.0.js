@@ -7,12 +7,53 @@ function loadWindow(file,id){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "json/"+file+"?t="+ (new Date().getTime()), false);
 	xhttp.send();
-	script = JSON.parse(xhttp.responseText);
+		elem = document.getElementById(id);
+
+	if (xhttp.readyState == 4 && xhttp.status == 200)
+	{
+		try{
+			script = JSON.parse(xhttp.responseText);
+		}catch(e)
+		{
+			script = {
+			meta:{bg:"blackboard",current:0,actor:"planet0"},
+			scenes:[
+			{
+				events:[
+				{	type:"question",
+					name:"I AM JSON ERROR",time:1000,timepadding:0,
+					text:"You Dun guffed.File is broken."
+				}],
+				options:[{target:0,text:"HTTP STATUS: "+xhttp.status+"HTTP readystate"+xhttp.readyState},
+				{target:0,text:"Error: "+e,height:3}]
+			}
+			]
+			}
+		}
+	}
+	else
+	{
+		var wnd = window.open("about:blank", "", "_blank");
+		wnd.document.write(xhttp.responseText);
+		script = {
+			meta:{bg:"blackboard",current:0,actor:"planet0"},
+			scenes:[
+			{
+				events:[
+				{	type:"question",
+					name:"I AM XHHTP ERROR",time:1000,timepadding:0,
+					text:"You Dun guffed.File is lost?"
+				}],
+				options:[{target:0,text:"HTTP STATUS: "+xhttp.status+" HTTP readystate"+xhttp.readyState},
+				{target:0,text:"HTTP response:"+xhttp.status==404?"File Not Found":xhttp.status>=500?"Server Error":"I Dunno",height:3}]
+			}
+			]
+			}
+	}
 	
 	BG=script.meta.bg
 	Actor=script.meta.actor;
 	currentscene=script.meta.current;
-	elem = document.getElementById(id),
     context = elem.getContext('2d');
 	context.mozImageSmoothingEnabled = false;
 	context.webkitImageSmoothingEnabled = false;

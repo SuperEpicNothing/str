@@ -7,7 +7,7 @@
 		},
 	"scenes": [
 	{
-		"events":[
+		"events"[
 			{"type":"hideoptions"},
 			{"type":"dialog","name":"Stephen Hawking","align":true,"scrollspeed":0,"acknowledged":true,
 			"text":"Witaj! Chcesz poklikać? :)"

@@ -260,7 +260,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Perypatetycy. Czyli po grecku >>ci, którzy spacerują<< albo wręcz >>łażą<<. Moi koledzy po fachu trochę się z nas śmieją, że tak wiecznie dyskutujemy w trakcie spacerów. Oni oczywiście wylegują się jak spasione foki... Ale, ale – o czym to mówiliśmy?"
+			"text":"Perypatetycy. Czyli po grecku [']ci, którzy spacerują['] albo wręcz [']łażą[']. Moi koledzy po fachu trochę się z nas śmieją, że tak wiecznie dyskutujemy w trakcie spacerów. Oni oczywiście wylegują się jak spasione foki... Ale, ale – o czym to mówiliśmy?"
 			}
 		],
 		"options":[
@@ -299,11 +299,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Niektórzy sądzą, że wobec konieczności znajomości pierwszych przesłanek wiedza jest niemożliwa, zdaniem innych wiedza jest możliwa, gdyż każda przesłanka ma dowód.<<"
+			"text":"[']Niektórzy sądzą, że wobec konieczności znajomości pierwszych przesłanek wiedza jest niemożliwa, zdaniem innych wiedza jest możliwa, gdyż każda przesłanka ma dowód.[']"
 			}
 		],
 		"options":[
-			{"target": 22, "text": "Nie rozumiem, o czym tu w ogóle mowa... co to za >>przesłanki<<?..."},
+			{"target": 22, "text": "Nie rozumiem, o czym tu w ogóle mowa... co to za [']przesłanki[']?..."},
 			{"target": 26, "text": "Tutaj wszystko jasne, idziemy dalej."}
 		]	   
 	},
@@ -313,7 +313,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Zacznijmy od początku. Mówię tu o sytuacji, w której chcemy dowieść jakiejś prawdy, uzasadnić pewne twierdzenie. Nazwijmy to zdanie >>Z<<, np. >>Gwiazdy wydają się być malutkie<<. OK?"
+			"text":"Zacznijmy od początku. Mówię tu o sytuacji, w której chcemy dowieść jakiejś prawdy, uzasadnić pewne twierdzenie. Nazwijmy to zdanie [']Z['], np. [']Gwiazdy wydają się być malutkie[']. OK?"
 			}
 		],
 		"options":[
@@ -326,7 +326,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"No więc wyjaśnienie zdania >>Z<< może być tylko przez jakąś wcześniejszą rację, którą nazwiemy sobie >>Y<<, np.: >>Gwiazdy są bardzo daleko<<. OK?"
+			"text":"No więc wyjaśnienie zdania [']Z['] może być tylko przez jakąś wcześniejszą rację, którą nazwiemy sobie [']Y['], np.: [']Gwiazdy są bardzo daleko[']. OK?"
 			}
 		],
 		"options":[
@@ -366,7 +366,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Żaden z tych poglądów ani nie jest prawdziwy, ani konieczny.<<"
+			"text":"[']Żaden z tych poglądów ani nie jest prawdziwy, ani konieczny.[']"
 			}
 		],
 		"options":[
@@ -381,7 +381,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Ja po prostu uważam, że wymyśliłem rozwiązanie tego problemu - ale tak naprawdę będzie wiadomo, o co chodzi, kiedy przejdziemy sobie spokojnie przez dwa stanowiska, o które mi chodzi. Idźmy może dalej, a zaraz się przekonasz, na czym polega moje >>rozwiązanie<<."
+			"text":"Ja po prostu uważam, że wymyśliłem rozwiązanie tego problemu - ale tak naprawdę będzie wiadomo, o co chodzi, kiedy przejdziemy sobie spokojnie przez dwa stanowiska, o które mi chodzi. Idźmy może dalej, a zaraz się przekonasz, na czym polega moje [']rozwiązanie[']."
 			}
 		],
 		"options":[
@@ -395,7 +395,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Zwolennicy pierwszego poglądu przyjmując, że nie ma innego sposobu poznania, jak tylko przez dowód, utrzymują, iż to prowadzi do nieskończonego regresu...<<"
+			"text":"[']Zwolennicy pierwszego poglądu przyjmując, że nie ma innego sposobu poznania, jak tylko przez dowód, utrzymują, iż to prowadzi do nieskończonego regresu...[']"
 			}
 		],
 		"options":[
@@ -411,7 +411,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"W tym miejscu >>dowód<< oznacza po prostu wyjaśnienie zdania >>Z<< przez jakieś inne zdanie >>Y<< - zdanie o takim samym charakterze, jak zdanie >>Z<<. A więc jedno zdanie o przyrodzie poprzez inne zdanie o przyrodzie."
+			"text":"W tym miejscu [']dowód['] oznacza po prostu wyjaśnienie zdania [']Z['] przez jakieś inne zdanie [']Y['] - zdanie o takim samym charakterze, jak zdanie [']Z[']. A więc jedno zdanie o przyrodzie poprzez inne zdanie o przyrodzie."
 			}
 		],
 		"options":[
@@ -426,7 +426,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Dowód matematyczny to szczególnego typu rozumowanie - o matematyce. Ale struktura jest ta sama. Jedno zdanie wywodzimy z innego, >>wcześniejszego<<."
+			"text":"Dowód matematyczny to szczególnego typu rozumowanie - o matematyce. Ale struktura jest ta sama. Jedno zdanie wywodzimy z innego, [']wcześniejszego[']."
 			}
 		],
 		"options":[
@@ -444,7 +444,7 @@
 			}
 		],
 		"options":[
-			{"target": 32, "text": "OK, to rozumiem, ale co znaczy słowo >>regres<<?"},
+			{"target": 32, "text": "OK, to rozumiem, ale co znaczy słowo [']regres[']?"},
 			{"target": 33, "text": "Dobrze, idźmy może dalej."} 
 			
 		]	   
@@ -455,7 +455,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Regres, czyli >>cofanie się<<. Nieskończone cofanie się."
+			"text":"Regres, czyli [']cofanie się[']. Nieskończone cofanie się."
 			}
 		],
 		"options":[
@@ -469,12 +469,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>[prowadzi do nieskończonego regresu] na tej podstawie, że skoro pierwszych przesłanek nie poprzedzają bardziej pierwotne, to pochodnych nie można poznać za pomocą tych pierwszych (w tym punkcie mają rację, bo nie można przebiec nieskończonego ciągu przesłanek).<<"
+			"text":"['][prowadzi do nieskończonego regresu] na tej podstawie, że skoro pierwszych przesłanek nie poprzedzają bardziej pierwotne, to pochodnych nie można poznać za pomocą tych pierwszych (w tym punkcie mają rację, bo nie można przebiec nieskończonego ciągu przesłanek).[']"
 			}
 		],
 		"options":[
-			{"target": 34, "text": "Czym są te przesłanki >>pierwsze<<, >>pierwotne<< i >>pochodne<<?"},
-			{"target": 38, "text": "No dobrze, tylko dlaczego >>nie można<<, przecież taki ciąg przesłanek, nawet nieskończony, jest całkowicie logiczny!"},
+			{"target": 34, "text": "Czym są te przesłanki [']pierwsze['], [']pierwotne['] i [']pochodne[']?"},
+			{"target": 38, "text": "No dobrze, tylko dlaczego [']nie można['], przecież taki ciąg przesłanek, nawet nieskończony, jest całkowicie logiczny!"},
 			{"target": 47, "text": "OK, możemy iść dalej."}
 			
 		]	   
@@ -486,7 +486,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Może rzeczywiście troszkę tu namieszałem. Chodziło mi po prostu o to, że przy danym rozumowaniu: >>Z, ponieważ Y<< - czyli takim, gdzie zdanie Z (późniejsze, czyli >>pochodne<<) tłumaczymy poprzez zdanie Y (wcześniejsze, czyli >>pierwsze<<, tak naprawdę zdanie Y nie stanowi wyjaśnienia..."
+			"text":"Może rzeczywiście troszkę tu namieszałem. Chodziło mi po prostu o to, że przy danym rozumowaniu: [']Z, ponieważ Y['] - czyli takim, gdzie zdanie Z (późniejsze, czyli [']pochodne[']) tłumaczymy poprzez zdanie Y (wcześniejsze, czyli [']pierwsze['], tak naprawdę zdanie Y nie stanowi wyjaśnienia..."
 			}
 		],
 		"options":[
@@ -500,12 +500,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"...ponieważ to zdanie Y nie jest >>bardziej pierwotne<<, to znaczy, że jest tego samego typu zdaniem, co zdanie Z - takim, które domaga się wyjaśnienia. Tłumaczymy zdanie, które domaga się wyjaśnienia, przez zdanie, które też domaga się wyjaśnienia!"
+			"text":"...ponieważ to zdanie Y nie jest [']bardziej pierwotne['], to znaczy, że jest tego samego typu zdaniem, co zdanie Z - takim, które domaga się wyjaśnienia. Tłumaczymy zdanie, które domaga się wyjaśnienia, przez zdanie, które też domaga się wyjaśnienia!"
 			}
 		],
 		"options":[
 			{"target": 36, "text": "No momencik, ale tak chyba musi być, prawda?"},
-			{"target": 37, "text": "A czym byłoby takie zdanie >>bardziej pierwotne<<?"},
+			{"target": 37, "text": "A czym byłoby takie zdanie [']bardziej pierwotne[']?"},
 			{"target": 33, "text": "Hm, wróćmy może do fragmentu, który czytamy."}
 		]	   
 	},
@@ -515,11 +515,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Niekoniecznie. Jeżeli tłumaczymy >>niejasne<<, domagające się wyjaśnienia zdanie Z przez inne >>niejasne<< zdanie Y - tak. Ale mogłoby być przecież jakieś zdanie >>bardziej pierwotne<<."
+			"text":"Niekoniecznie. Jeżeli tłumaczymy [']niejasne['], domagające się wyjaśnienia zdanie Z przez inne [']niejasne['] zdanie Y - tak. Ale mogłoby być przecież jakieś zdanie [']bardziej pierwotne[']."
 			}
 		],
 		"options":[
-			{"target": 37, "text": "A czym byłoby takie zdanie >>bardziej pierwotne<<?"}
+			{"target": 37, "text": "A czym byłoby takie zdanie [']bardziej pierwotne[']?"}
 			
 		]	   
 	},
@@ -630,7 +630,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Sądził, że umysł ludzki, analizując złożony problem, dzieli go sobie na coraz to mniejsze cząstki - elementarne >>problemiki<<, zaś zrozumienie całego problemu polega na przejściu umysłem kolejno przez wszystkie te małe >>problemiki<<."
+			"text":"Sądził, że umysł ludzki, analizując złożony problem, dzieli go sobie na coraz to mniejsze cząstki - elementarne [']problemiki['], zaś zrozumienie całego problemu polega na przejściu umysłem kolejno przez wszystkie te małe [']problemiki[']."
 			}
 		],
 		"options":[
@@ -669,11 +669,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Jeżeli z drugiej strony - twierdzą - ten ciąg się kończy i istnieją początkowe przesłanki, to i tak są niepoznawalne, ponieważ nie ma dla nich dowodu, który według nich jest jedyną formą poznania.<<"
+			"text":"[']Jeżeli z drugiej strony - twierdzą - ten ciąg się kończy i istnieją początkowe przesłanki, to i tak są niepoznawalne, ponieważ nie ma dla nich dowodu, który według nich jest jedyną formą poznania.[']"
 			}
 		],
 		"options":[
-			{"target": 48, "text": "Dlaczego właściwie >>pierwsze przesłanki<< miałyby być niepoznawalne?"},
+			{"target": 48, "text": "Dlaczego właściwie [']pierwsze przesłanki['] miałyby być niepoznawalne?"},
 			{"target": 48, "text": "Dlaczego właściwie dowód miałby być jedyną formą poznania?"},
 			{"target": 51, "text": "OK, idźmy dalej."}
 		]	   
@@ -684,7 +684,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Pamiętaj, że poruszamy się teraz >>wewnątrz<< stanowiska, w ramach którego jedynym sposobem uzasadnienia czegoś jest dowód. W ramach tego stanowiska coś pozostaje nieznane, jeśli nie zostaje wyjaśnione przez >>wcześniejszą<< przesłankę."
+			"text":"Pamiętaj, że poruszamy się teraz [']wewnątrz['] stanowiska, w ramach którego jedynym sposobem uzasadnienia czegoś jest dowód. W ramach tego stanowiska coś pozostaje nieznane, jeśli nie zostaje wyjaśnione przez [']wcześniejszą['] przesłankę."
 			}
 		],
 		"options":[
@@ -698,7 +698,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Oczywiście! [Ale niecierpliwa ta młodzież...] Pamiętaj, że to standardowe postępowanie w filozofii - wchodzimy w jakieś stanowisko, przyjmujemy je >>na próbę<< i sprawdzamy, do czego nas doprowadzi."
+			"text":"Oczywiście! [Ale niecierpliwa ta młodzież...] Pamiętaj, że to standardowe postępowanie w filozofii - wchodzimy w jakieś stanowisko, przyjmujemy je [']na próbę['] i sprawdzamy, do czego nas doprowadzi."
 			}
 		],
 		"options":[
@@ -711,7 +711,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Tak więc chodziło mi tylko o to, że JEŻELI przyjmiemy, że jedyną formą rozumowania jest odwołanie się do >>wcześniejszej<< przesłanki, TO WTEDY pewnego typu >>pierwsza przesłanka<< to absurd. W ramach takiego stanowiska nie ma pierwszych przesłanek."
+			"text":"Tak więc chodziło mi tylko o to, że JEŻELI przyjmiemy, że jedyną formą rozumowania jest odwołanie się do [']wcześniejszej['] przesłanki, TO WTEDY pewnego typu [']pierwsza przesłanka['] to absurd. W ramach takiego stanowiska nie ma pierwszych przesłanek."
 			}
 		],
 		"options":[
@@ -724,11 +724,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Skoro więc nie można poznać pierwszych przesłanek, to również nie można poznać w ogóle ani prawomocnie tych, które z nich wynikają; można je uznać za prawdziwe, o ile się przyjmie, że i pierwsze przesłanki są takie.<<"
+			"text":"[']Skoro więc nie można poznać pierwszych przesłanek, to również nie można poznać w ogóle ani prawomocnie tych, które z nich wynikają; można je uznać za prawdziwe, o ile się przyjmie, że i pierwsze przesłanki są takie.[']"
 			}
 		],
 		"options":[
-			{"target": 52, "text": "A co tutaj znaczą >>pierwsze przesłanki<<?"},
+			{"target": 52, "text": "A co tutaj znaczą [']pierwsze przesłanki[']?"},
 			{"target": 55, "text": "OK, wszystko jasne."}
 		]	   
 	},
@@ -738,7 +738,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"To jest ta sama sytuacja, co przed chwilą. Jeżeli chcemy uniknąć nieskończonego regresu, musimy przyjąć, że któraś z przesłanek jest pierwsza. Jeżeli zaś trzymamy się naszego rozumienia tego, czym jest >>dowód<<, wpadamy w kłopoty."
+			"text":"To jest ta sama sytuacja, co przed chwilą. Jeżeli chcemy uniknąć nieskończonego regresu, musimy przyjąć, że któraś z przesłanek jest pierwsza. Jeżeli zaś trzymamy się naszego rozumienia tego, czym jest [']dowód['], wpadamy w kłopoty."
 			}
 		],
 		"options":[
@@ -752,7 +752,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Ano takie kłopoty, że JEŻELI unamy, że dowodzenie następuje poprzez odesłanie nas do czegoś >>wcześniejszego<<, to cokolwiek określimy sobie jako >>pierwszą przesłankę<<, będzie bez dowodu!"
+			"text":"Ano takie kłopoty, że JEŻELI unamy, że dowodzenie następuje poprzez odesłanie nas do czegoś [']wcześniejszego['], to cokolwiek określimy sobie jako [']pierwszą przesłankę['], będzie bez dowodu!"
 			}
 		],
 		"options":[
@@ -807,12 +807,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Jasne. Cały wcześniejszy fragment miał na celu wykazanie jednej tylko rzeczy: jeżeli przyjmiemy, że >>dowodzenie<< albo też >>wyjaśnianie<< polega na odwołaniu kogoś do jakieś innej >>wcześniejszej<< racji, to z konieczności uzyskujemy strukturę, która jest niepełna, niedokończona, a więc ostatecznie nie stanowi wyjaśnienia."
+			"text":"Jasne. Cały wcześniejszy fragment miał na celu wykazanie jednej tylko rzeczy: jeżeli przyjmiemy, że [']dowodzenie['] albo też [']wyjaśnianie['] polega na odwołaniu kogoś do jakieś innej [']wcześniejszej['] racji, to z konieczności uzyskujemy strukturę, która jest niepełna, niedokończona, a więc ostatecznie nie stanowi wyjaśnienia."
 			}
 		],
 		"options":[
 			{"target": 56, "text": "Wiesz co, chyba chciałbym jeszcze raz przejść z Tobą przez ten tekst..."},
-			{"target": 58, "text": "OK, ale co właściwie znaczy słowo >>wcześniejszy<<?"},			
+			{"target": 58, "text": "OK, ale co właściwie znaczy słowo [']wcześniejszy[']?"},			
 			{"target": 61, "text": "Pewnie, że jasne! Idziemy dalej!"}
 			
 		]	   
@@ -823,7 +823,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Dobre pytanie. W matematyce będzie to zawsze coś, co jest zakładane przez dane zdanie. Jeśli na przykład mówię, że >>każdy trójkąt ma sumę kątów równą 180 stopniom, to >>wcześniejsze<< są wszelkie zdania wyjaśniające, czym jest trójkąt, czym jest kąt albo czym są stopnie."
+			"text":"Dobre pytanie. W matematyce będzie to zawsze coś, co jest zakładane przez dane zdanie. Jeśli na przykład mówię, że [']każdy trójkąt ma sumę kątów równą 180 stopniom, to [']wcześniejsze['] są wszelkie zdania wyjaśniające, czym jest trójkąt, czym jest kąt albo czym są stopnie."
 			}
 		],
 		"options":[
@@ -842,7 +842,7 @@
 			}
 		],
 		"options":[
-			{"target": 60, "text": "Stąd bierze się >>Pierwsza Przyczyna<< i >>Pierwszy Poruszyciel>>?"},
+			{"target": 60, "text": "Stąd bierze się [']Pierwsza Przyczyna['] i [']Pierwszy Poruszyciel[']?"},
 			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."}			
 			
 		]	   
@@ -883,12 +883,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>My natomiast twierdzimy, że nie wszelka wiedza jest demonstratywna, gdyż znajomość przesłanek bezpośrednich jest niezależna od dowodu, a konieczność tego jest oczywista; skoro bowiem musimy znać pierwsze przesłanki, na których opiera się dowód, i skoro cofanie musi się zatrzymać na przesłankach bezpośrednich, to muszą być one niedowodliwe.<<"
+			"text":"[']My natomiast twierdzimy, że nie wszelka wiedza jest demonstratywna, gdyż znajomość przesłanek bezpośrednich jest niezależna od dowodu, a konieczność tego jest oczywista; skoro bowiem musimy znać pierwsze przesłanki, na których opiera się dowód, i skoro cofanie musi się zatrzymać na przesłankach bezpośrednich, to muszą być one niedowodliwe.[']"
 			}
 		],
 		"options":[
-			{"target": 63, "text": ">>Demonstratywna<<?"},	
-			{"target": 69, "text": ">>Przesłanki bezpośrednie<<?"},
+			{"target": 63, "text": "[']Demonstratywna[']?"},	
+			{"target": 69, "text": "[']Przesłanki bezpośrednie[']?"},
 			{"target": 71, "text": "OK, idziemy dalej."}
 			
 		]	   
@@ -900,11 +900,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Wiedza >>demonstratywna<<, czyli taka, która opiera się na dowodzie w sensie, o którym mówiliśmy przed chwilą - daną tezę wykazujemy (czyli [']demonstrujemy[']), odwołując kogoś do zdania >>wcześniejszego<<."
+			"text":"Wiedza [']demonstratywna['], czyli taka, która opiera się na dowodzie w sensie, o którym mówiliśmy przed chwilą - daną tezę wykazujemy (czyli [']demonstrujemy[']), odwołując kogoś do zdania [']wcześniejszego[']."
 			}
 		],
 		"options":[
-			{"target": 64, "text": "Dziwne to słowo: >>demonstratywna<<..."},	
+			{"target": 64, "text": "Dziwne to słowo: [']demonstratywna[']..."},	
 			{"target": 62, "text": "OK, jasne."}
 			
 		]	   
@@ -915,7 +915,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Dr Lamża podpowiada mi na ucho, że nawet w Twoich czasach na końcach dowodów matematycznych pisze się >>Q.E.D.<<. Wiesz, co to?"
+			"text":"Dr Lamża podpowiada mi na ucho, że nawet w Twoich czasach na końcach dowodów matematycznych pisze się [']Q.E.D.[']. Wiesz, co to?"
 			}
 		],
 		"options":[
@@ -981,7 +981,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>QUOD ERAT DEMONSTRANDUM<<, czyli >>Co było do zademonstrowania<<, czyli >>do wykazania<<. Tak więc >>demonstrowanie<< to nic innego, jak wykazanie, dowiedzenie czegoś."
+			"text":"[']QUOD ERAT DEMONSTRANDUM['], czyli [']Co było do zademonstrowania['], czyli [']do wykazania[']. Tak więc [']demonstrowanie['] to nic innego, jak wykazanie, dowiedzenie czegoś."
 			}
 		],
 		"options":[
@@ -996,7 +996,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Tutaj przez >>przesłanki bezpośrednie<< rozumiem takie, które nie są >>pośrednikami<<, czyli nie prowadzą nas do innych, jeszcze wcześniejszych przesłanek - takie, na których kończy się dowodzenie."
+			"text":"Tutaj przez [']przesłanki bezpośrednie['] rozumiem takie, które nie są [']pośrednikami['], czyli nie prowadzą nas do innych, jeszcze wcześniejszych przesłanek - takie, na których kończy się dowodzenie."
 			}
 		],
 		"options":[
@@ -1026,12 +1026,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"No i ostatnie zdanie mojego tekstu: >>Taki zatem jest nasz pogląd, a w dodatku twierdzimy, że nie tylko istnieje wiedza naukowa, ale także jakiś jej początek, dzięki któremu możemy poznać twierdzenia końcowe.<<"
+			"text":"No i ostatnie zdanie mojego tekstu: [']Taki zatem jest nasz pogląd, a w dodatku twierdzimy, że nie tylko istnieje wiedza naukowa, ale także jakiś jej początek, dzięki któremu możemy poznać twierdzenia końcowe.[']"
 			}
 		],
 		"options":[
-			{"target": 72, "text": "A jak rozumiesz tutaj termin >>wiedza naukowa<<?"},
-			{"target": 74, "text": "Jaki >>początek<<?"},
+			{"target": 72, "text": "A jak rozumiesz tutaj termin [']wiedza naukowa[']?"},
+			{"target": 74, "text": "Jaki [']początek[']?"},
 			{"target": 78, "text": "Więc co z tego wszystkiego wynika?"}			
 			
 		]	   
@@ -1042,11 +1042,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Jako wszelkiego typu sądy na temat świata, których uzasadnieniem są inne sądy na temat świata - według wciąż tego samego schematu: >>Z, ponieważ Y<<, >>Y, ponieważ W<<..."
+			"text":"Jako wszelkiego typu sądy na temat świata, których uzasadnieniem są inne sądy na temat świata - według wciąż tego samego schematu: [']Z, ponieważ Y['], [']Y, ponieważ W[']..."
 			}
 		],
 		"options":[
-			{"target": 73, "text": "A co, jeżeli ktoś rozumie pojęcie >>nauki<< troszkę inaczej?"},
+			{"target": 73, "text": "A co, jeżeli ktoś rozumie pojęcie [']nauki['] troszkę inaczej?"},
 			{"target": 71, "text": "OK, wróćmy do tekstu."}			
 			
 		]	   
@@ -1089,7 +1089,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Jak to >>jak to<<? [gender: Spałaś] w czasie naszej rozmowy? Przecież jasno wykazałem, że tłumaczenie >>naukowe<< zawsze odsyła do innego tłumaczenia >>naukowego<<, a tego typu nieskończony regres nie stanowi w istocie wyjaśnienia!"
+			"text":"Jak to [']jak to[']? [gender: Spałaś] w czasie naszej rozmowy? Przecież jasno wykazałem, że tłumaczenie [']naukowe['] zawsze odsyła do innego tłumaczenia [']naukowego['], a tego typu nieskończony regres nie stanowi w istocie wyjaśnienia!"
 			}
 		],
 		"options":[
@@ -1141,7 +1141,7 @@
 			}
 		],
 		"options":[
-			{"target": 79, "text": "Co to znaczy >>radykalnie inny<<?"},
+			{"target": 79, "text": "Co to znaczy [']radykalnie inny[']?"},
 			{"target": 86, "text": "A nie mogę po prostu zgodzić się na nieskończony regres?"},
 			{"target": 96, "text": "A co, jeżeli po prostu pozostawimy sobie niedomknięte wyjaśnienie?"},
 			{"target": 102, "text": "OK, chyba już rozumiem, o co chodzi."}
@@ -1171,7 +1171,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Aksjomat to zdanie, którego nie dowodzimy, tylko >>zakładamy<<, że jest prawdziwe. Różni się tym od wszystkich innych zdań w matematyce."
+			"text":"Aksjomat to zdanie, którego nie dowodzimy, tylko [']zakładamy['], że jest prawdziwe. Różni się tym od wszystkich innych zdań w matematyce."
 			}
 		],
 		"options":[
@@ -1187,7 +1187,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Aksjomaty nie są ani prawdziwe, ani fałszywe. Są przez nas >>zakładane<<. To może brzmieć dziwnie, ale taka właśnie jest matematyka. Zakładamy coś, tak jakby na próbę, i sprawdzamy, jakie będą tego konsekwencje."
+			"text":"Aksjomaty nie są ani prawdziwe, ani fałszywe. Są przez nas [']zakładane[']. To może brzmieć dziwnie, ale taka właśnie jest matematyka. Zakładamy coś, tak jakby na próbę, i sprawdzamy, jakie będą tego konsekwencje."
 			}
 		],
 		"options":[
@@ -1217,7 +1217,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Pierwszy Poruszyciel<< to po prostu nazwa na coś, co porusza, ale samo nie jest poruszane. Nie interesuje mnie, czym to jest konkretnie. Chodzi o samą cechę. Dzięki temu przerywa nieskończony łańcuch poruszania i bycia poruszanym."
+			"text":"[']Pierwszy Poruszyciel['] to po prostu nazwa na coś, co porusza, ale samo nie jest poruszane. Nie interesuje mnie, czym to jest konkretnie. Chodzi o samą cechę. Dzięki temu przerywa nieskończony łańcuch poruszania i bycia poruszanym."
 			}
 		],
 		"options":[
@@ -1233,7 +1233,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Pierwsza Przyczyna<< to po prostu nazwa na coś, co wywołuje skutki - czyli jest przyczyną czegoś innego - ale samo nie ma przyczyny. Innymi mówiąc, nie jest niczego skutkiem. Po prostu jest i sprawia, że zdarzają się inne rzeczy."
+			"text":"[']Pierwsza Przyczyna['] to po prostu nazwa na coś, co wywołuje skutki - czyli jest przyczyną czegoś innego - ale samo nie ma przyczyny. Innymi mówiąc, nie jest niczego skutkiem. Po prostu jest i sprawia, że zdarzają się inne rzeczy."
 			}
 		],
 		"options":[
@@ -1337,7 +1337,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Nieskończoność w matematyce nie jest właściwie liczbą. Nie można powiedzieć, że istnieje >>nieskończoność<< pewnych obiektów - tak, jak mówimy, że istnieje tych obiektów pięć albo tysiąc. >>Nieskończoność<< to tylko nazwa na pewnego typu operację."
+			"text":"Nieskończoność w matematyce nie jest właściwie liczbą. Nie można powiedzieć, że istnieje [']nieskończoność['] pewnych obiektów - tak, jak mówimy, że istnieje tych obiektów pięć albo tysiąc. [']Nieskończoność['] to tylko nazwa na pewnego typu operację."
 			}
 		],
 		"options":[
@@ -1350,7 +1350,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Gdy mówimy, że ta cząstka istnieje, bo wcześniej istniała inna cząstka, a wcześniej jeszcze inna cząstka, >>i tak w nieskończoność<<, to nie podajemy liczby cząstek. Mówimy tylko tyle, że nigdy nie natrafimy na pierwszą cząstkę."
+			"text":"Gdy mówimy, że ta cząstka istnieje, bo wcześniej istniała inna cząstka, a wcześniej jeszcze inna cząstka, [']i tak w nieskończoność['], to nie podajemy liczby cząstek. Mówimy tylko tyle, że nigdy nie natrafimy na pierwszą cząstkę."
 			}
 		],
 		"options":[
@@ -1363,7 +1363,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Oznacza to, że opisywany przez nas świat nie posiada ostatecznie wyjaśnienia - jeżeli słowem >>wyjaśnienie<< określamy coś, co może objąć umysłem człowiek."
+			"text":"Oznacza to, że opisywany przez nas świat nie posiada ostatecznie wyjaśnienia - jeżeli słowem [']wyjaśnienie['] określamy coś, co może objąć umysłem człowiek."
 			}
 		],
 		"options":[
@@ -1404,7 +1404,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"I to jest bardzo rozsądne podejście! Przecież nie musimy od razu wiedzieć wszystkiego. Nawet teraz możemy się jednak przecież zastanawiać, dla >>jakiego typu<< wyjaśnienia pozostawiamy sobie otwarte miejsce, prawda?"
+			"text":"I to jest bardzo rozsądne podejście! Przecież nie musimy od razu wiedzieć wszystkiego. Nawet teraz możemy się jednak przecież zastanawiać, dla [']jakiego typu['] wyjaśnienia pozostawiamy sobie otwarte miejsce, prawda?"
 			}
 		],
 		"options":[
@@ -1420,11 +1420,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":">>Radykalnie inne<<."
+			"text":"[']Radykalnie inne[']."
 			}
 		],
 		"options":[
-			{"target": 79, "text": "Co to znaczy >>radykalnie inny<<?"}
+			{"target": 79, "text": "Co to znaczy [']radykalnie inny[']?"}
 
 			
 		]	   
@@ -1449,11 +1449,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Cóż, jakkolwiek boli mnie serce, gdy to mówię, wiem, że w przyszłości, długo po mojej śmierci, będzie się mówiło o różnych logikach... zauważ jednak, że w codziennym rozumowaniu, w nauce, w filozofii, we wszelkim racjonalnym dyskursie, zawsze stosowana będzie >>zwykła<< logika."
+			"text":"Cóż, jakkolwiek boli mnie serce, gdy to mówię, wiem, że w przyszłości, długo po mojej śmierci, będzie się mówiło o różnych logikach... zauważ jednak, że w codziennym rozumowaniu, w nauce, w filozofii, we wszelkim racjonalnym dyskursie, zawsze stosowana będzie [']zwykła['] logika."
 			}
 		],
 		"options":[
-			{"target": 100, "text": ">>Logika arystotelejska<<?"},
+			{"target": 100, "text": "[']Logika arystotelejska[']?"},
 			{"target": 101, "text": "A co, jeśli i to ulegnie kiedyś zmianie?"}
 		]	   
 	},

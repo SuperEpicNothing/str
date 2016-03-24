@@ -187,7 +187,7 @@ $submenu = file("strony/".$page."/menu.txt");
 
 		  		  <?php for($i=0 ;$i<count($submenu); $i++)
 		  {
-			  echo " <li><a  id='submenuLink".$page."-".$i."' class=".($i==$subpage && $subpage!="test" ?"'active disabledLink'":"'enabledLink'")." href='?p=".$page."&pp=".$i."'>".$submenu[$i]."</a></li>\n\t\t";
+			  echo " <li><a  id='submenuLink".$page."-".$i."' class=".($i==$subpage && $subpage!="test" ?"'active disabledSubmenuLink'":"'enabledSubmenuLink'")." href='?p=".$page."&pp=".$i."'>".$submenu[$i]."</a></li>\n\t\t";
 		  }
 		  ?>
 		  <li><hr></hr><li>
