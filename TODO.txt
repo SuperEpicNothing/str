@@ -11,9 +11,29 @@
 - automatic drop-down menu for NEW achievements
 - cytaty silniej wyróżnione graficznie, np. jasnoszarym tłem
 - przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
-
+- add scrollgive
 ===GENERAL:
 -stosować enkodowanie UTF-8
+
+===KOD;
+[playerGender {zastanawiałeś|zastanawiałaś}] - gendered
+[playerName]
+[playerAge]
+[playerLvl]
+[playerSkill id]
+['] "
+
+{"type":"give","time":4600,"item":"001"} - give item 
+req:
+"req":{"type":"skill","skill":4,"amt":3}
+"req":{"type":"item","item":"ID"}
+"req":{"type":"hp","amt":"a"} hp gracza > a tylko Confutest
+
+
+===LATER DOWN THE PIPELINE:
+handleText in HTML
+
+
 
 
 statystyki:
