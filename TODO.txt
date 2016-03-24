@@ -14,7 +14,7 @@
 - add scrollgive
 ===GENERAL:
 -stosować enkodowanie UTF-8
-
+-wpisuj kody  
 ===KOD;
 [playerGender {zastanawiałeś|zastanawiałaś}] - gendered
 [playerName]
