@@ -104,10 +104,10 @@ function loadPlayer(){
 		appearance:1,
 		classType:"Vampire",
 		//Temp: S P E C I A L 1-10
-		statFullNames:["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck"],
-		statColors:["red","green","blue","cyan","orange","violet","purple"],
-		statNames:"SPECIAL",
-		stats:[1,2,3,6,8,9,10],
+		statFullNames:["Przeznaczenie","Inteligencja","Siła Woli","Zręczność","Mądrość","Ogłada"],
+		statColors:["#8bca17","#9dffff","#7373ff","#a3d900","#6c00d9","#ffd24c"],
+		statNames:"PISZMO",
+		stats:[1,2,3,6,8,4],
 		progress:{
 			lvl:0,
 			xp:0.5,
@@ -267,6 +267,7 @@ function loadAssets(){
 	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
 	xmlhttp0.send();
 }
+function unlockAchievment(name){}
 // logic helper
 {
 function addMouseListener(elem,f){

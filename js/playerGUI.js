@@ -143,80 +143,97 @@ function drawAchievments()
 	}
 }
 function drawStat(x,y,stat){
+	var maxskill = 9
 	var h = (300-10)/player.stats.length - player.stats.length
-	var w = (300-40)/10
-	y+=stat*(h+4);
-	
-	c1.fillStyle=player.statColors[stat];
-	c1.fillRect(x-w,y,w,h);
-	c1.fill();
-	c1.strokeStyle=player.statColors[stat];
-	c1.lineWidth=2;
-	c1.strokeRect(x-w,y,w,h);
-	c1.stroke();
-	c1.strokeStyle="rgba(0,0,0,0.2)";
-	c1.lineWidth=2;
-	c1.strokeRect(x-w,y,w,h);
-	c1.stroke();
+	var w = (300-40)/maxskill
 	c1.font = (30)+"px Aclonica"
 	c1.textBaseline = "top";
-	c1.textAlign="left"; 
-	c1.fillStyle="rgba(0,0,0,0.2)";	
-	c1.fillText(player.statNames.charAt(stat),x-w+3,y+10)
-	c1.fill();
-	c1.fillStyle="rgba(0,0,0,0.2)";	
-	c1.fillRect(x-w,y,w,h);
+	c1.textAlign="center"; 
+	var ws = (c1.measureText(player.statNames.charAt(4)).width)+2
+	y+=stat*(h+4);
+	
+	//Name
+	c1.fillStyle=player.statColors[stat];
+	c1.fillRect(x-ws+1,y+1,ws-2,h-2);
 	c1.fill();
 	
+	c1.strokeStyle=player.statColors[stat];
+	c1.lineWidth=2;
+	c1.strokeRect(x-ws+1,y+1,ws-2,h-2);
+	c1.stroke();
+	
+	c1.strokeStyle="rgba(0,0,0,0.2)";
+	c1.lineWidth=2;
+	c1.strokeRect(x-ws+1,y+1,ws-2,h-2);
+	c1.stroke();
+	
+	c1.fillStyle="rgba(0,0,0,0.2)";	
+	c1.fillText(player.statNames.charAt(stat),x-(ws)/2+1,y+10)
+	c1.fill();
+	c1.fillStyle="rgba(0,0,0,0.2)";	
+	c1.fillRect(x-ws+1,y+1,ws-2,h-2);
+	c1.fill();
+	
+	//stat count
 	for(var i=0;i<player.stats[stat];i++){
-	c1.fillStyle=player.statColors[stat];
-	c1.fillRect(x+w*i,y,w,h);
-	c1.fill();
-	c1.strokeStyle=player.statColors[stat];
-	c1.lineWidth=2;
-	c1.strokeRect(x+w*i,y,w,h);
-	c1.stroke();
-	c1.strokeStyle="rgba(0,0,0,0.2)";
-	c1.lineWidth=2;
-	c1.strokeRect(x+w*i,y,w,h);
-	c1.stroke();
-	}
-	if(player.stats[stat]<10 && player.progress.skillp>0)
-	{
-	var i = player.stats[stat]
-	c1.fillStyle=player.statColors[stat];
-	c1.fillRect(x+w*i,y,w,h);
-	c1.fill();
-	c1.strokeStyle=player.statColors[stat];
-	c1.lineWidth=2;
-	c1.strokeRect(x+w*i,y,w,h);
-	c1.stroke();
-	c1.strokeStyle="rgba(0,0,0,0.2)";
-	c1.lineWidth=2;
-	c1.strokeRect(x+w*i,y,w,h);
-	c1.stroke();
-	c1.font = (40)+"px Aclonica"
-	c1.textBaseline = "top";
-	c1.textAlign="left"; 
-	c1.fillStyle="#ffffbf";	
-	c1.fillText("+",x+w*i+3,y+2)
-	c1.fill();
-	
-	if(!inBounds(x+w*i,y,w,h)){
-	c1.fillStyle="rgba(0,0,0,0.2)";	
-	c1.fillRect(x+w*i,y,w,h);
-	c1.fill();
-	}
-	else if(mouse.event =="mouseup")
-	{
-	player.stats[stat]++
-	mouse.buttons = 0;
-	mouse.event="";
-	skillpoints(-1)
-	}
+		c1.fillStyle=player.statColors[stat];
+		c1.fillRect(x+i*w+1,y+1,w-2,h-2);
+		c1.fill();
+		c1.strokeStyle=player.statColors[stat];
+		c1.lineWidth=2;
+		c1.strokeRect(x+i*w+1,y+1,w-2,h-2);
+		c1.stroke();
+		c1.strokeStyle="rgba(0,0,0,0.2)";
+		c1.lineWidth=2;
+		c1.strokeRect(x+i*w+1,y+1,w-2,h-2);
+		c1.stroke();
 	}
 	
-	if(inBounds(x-w,y,w*11,h))
+	
+	if(player.stats[stat]<maxskill && player.progress.skillp>0)
+	{
+		//border+body
+		var i = player.stats[stat]
+		c1.fillStyle=player.statColors[stat];
+		c1.fillRect(x+i*w+1,y+1,w-2,h-2);
+		c1.fill();
+		c1.strokeStyle=player.statColors[stat];
+		c1.lineWidth=2;
+		c1.strokeRect(x+i*w+1,y+1,w-2,h-2);
+		c1.stroke();
+		c1.strokeStyle="rgba(0,0,0,0.2)";
+		
+		//borders
+		c1.lineWidth=2;
+		c1.strokeRect(x+i*w+1,y+1,w-2,h-2);
+		c1.stroke();
+		
+		
+		c1.fillStyle="#ffffbf";	
+		//+
+		c1.fillRect(x+i*w+1+5,y+1+h/2-4,w-10,8);
+		c1.fillRect(x+i*w+1+w/2-4,y+1+h/2-(w-10)/2,8,w-10);
+		//c1.strokeRect(x+i*w+1,y+1,w-2,h-2);
+		c1.fill();
+	
+		if(!inBounds(x+w*i,y,w,h)){
+			//darken
+			c1.fillStyle="rgba(0,0,0,0.2)";	
+			c1.fillRect(x+i*w+1,y+1,w-2,h-2);
+			c1.fill();
+		}
+		else if(mouse.event =="mouseup")
+		{
+			//updateskill
+			player.stats[stat]++
+			mouse.buttons = 0;
+			mouse.event="";
+			skillpoints(-1)
+		}
+	}
+	//showText
+	
+	if(inBounds(x-ws,y,w*9+ws,h))
 	{
 	c1.font = (30)+"px Aclonica"
 	c1.textBaseline = "top";
@@ -229,7 +246,6 @@ function drawStat(x,y,stat){
 	c1.fillRect(Math.min(mouse.x,elem1.width-l),mouse.y-40,l,40);
 	c1.fill();
 	c1.fillStyle="#ffffbf";
-	c1.fillText( player.statFullNames[stat],Math.min(mouse.x+5,elem1.width-l+5),mouse.y-35)
-	
+	c1.fillText( player.statFullNames[stat],Math.min(mouse.x+5,elem1.width-l+5),mouse.y-35)	
 	}
 }
