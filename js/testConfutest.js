@@ -51,7 +51,7 @@ function renderConfu(timestamp){
 	var progress = Math.round(timestamp - start);
 	clear();
 		audio.volume = option.volume / 100;
-	console.log(audio.volume)
+	//console.log(audio.volume)
 	processEvent(progress);
 	drawBackground(progress);
 	drawConfutest(progress);
@@ -69,7 +69,7 @@ function renderConfu(timestamp){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-		
+	/*	
 	for(var i=0;i<4;i++)
 	{
 		if(battlescript.scenes[currentscene].options[i]!= undefined){
@@ -86,7 +86,39 @@ function renderConfu(timestamp){
 			context.fillText( req.prefix + (req.enabled? (handleText(battlescript.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*i+9)
 		}		
 	}
-	context.fill();
+	context.fill();*/
+	
+	var x = 0;
+	for(var i=0;i<battlescript.scenes[currentscene].options.length;i++)
+	{
+		
+		if(battlescript.scenes[currentscene].options[i]!= undefined){
+		var req =  checkReq(battlescript.scenes[currentscene].options[i].req);	
+		
+		var color = battlescript.scenes[currentscene].options[i].color &&renderData.type=="question"? 
+			req.enabled ? battlescript.scenes[currentscene].options[i].color.active : battlescript.scenes[currentscene].options[i].color.inactive 
+			: req.enabled?"white":"gray";
+			
+		var height = battlescript.scenes[currentscene].options[i].height
+		height=height?height:1;
+		height=x+height>4?4-x:height;
+		
+		}	
+		
+		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question",select,i)
+		
+		if(renderData.progress>=renderData.time+x*150 && renderData.type=="question" && battlescript.scenes[currentscene].options[i]!= undefined)
+		{
+			context.fillStyle=color
+			context.wrapText( req.prefix + (req.enabled? (handleText(battlescript.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*x+9,630,16)
+		}	
+		x+=height;		
+	}
+	for(;x<4;x++)
+	{				
+		drawButtonBG(30,elem.height-140+35*x,640,30,false)				
+	}
+	
 	
 	//todo: wrap name into this function
 	drawHPBar((elem.width-(2*28+boss.healthMax*67-4))/2,20,boss.health,boss.healthMax,progress);
@@ -165,6 +197,7 @@ function processEvent(progress){
 	}
 	if(isOver && !renderData.override || !checkReq(currentEvt.req))
 	{
+			console.log(evt)
 	currentEvt++
 	EntTime=null
 	renderData = {type:"none",progress:0,time:0,override:false}
@@ -211,7 +244,6 @@ function processEvent(progress){
 			renderData.override=true
 		break;
 	}
-	
 }
 
 function drawHPBar(x,y,current,max,progress){

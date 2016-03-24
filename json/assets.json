@@ -37,10 +37,16 @@
 		
 		{"name" : "forest",
 		"src":"images/layers/parallax-forest.png"},
+		
+		{"name" : "blackboard",
+		"src":"images/layers/parallax-blackboard.png"},
+		
+		
 		{"name" : "arystotle",
 		"src":"images/layers/arystoteles.png"},
-		
-		
+		{"name" : "tom",
+		"src":"images/layers/tom.png"},
+	
 		{"name" : "planets-parallax",
 		"src":"images/layers/parallax-space-far-planets.png"},
 		{"name" : "stars-parallax",

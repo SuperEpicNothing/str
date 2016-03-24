@@ -1,5 +1,5 @@
 
-var BG
+var BG,Actor
 var script
 var context
 var elem
@@ -10,6 +10,7 @@ function loadWindow(file,id){
 	script = JSON.parse(xhttp.responseText);
 	
 	BG=script.meta.bg
+	Actor=script.meta.actor;
 	currentscene=script.meta.current;
 	elem = document.getElementById(id),
     context = elem.getContext('2d');
@@ -100,6 +101,13 @@ function processEvent(progress){
 			renderData.color=evt.color
 			renderData.override=true
 		break;
+		
+		case "changeActor":
+			renderData.type="changeActor"
+			renderData.progress=progress-EntTime;
+			renderData.time=evt.time
+			Actor=evt.actor
+		break;
 	}
 	
 }
@@ -118,7 +126,7 @@ function renderWindow(timestamp){
 		0,0,		
 		elem.width,Assets.img[BG].height/Assets.img[BG].width*elem.width);
 	//draw personalbar
-	context.drawImage(Assets.img["arystotle"],(elem.width-Assets.img["arystotle"].width)/2,10);
+	context.drawImage(Assets.img[Actor],(elem.width-Assets.img[Actor].width)/2,10);
 	
 	if(renderData.type=="dialog"||renderData.type=="question"){
 	drawDialog(renderData.name,renderData.text,renderData.time,renderData.progress)
@@ -151,22 +159,36 @@ function renderWindow(timestamp){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-		
-	for(var i=0;i<4;i++)
+	
+	var x = 0;
+	for(var i=0;i<script.scenes[currentscene].options.length;i++)
 	{
+		
 		if(script.scenes[currentscene].options[i]!= undefined){
-		var req =  checkReq(script.scenes[currentscene].options[i].req);		
+		var req =  checkReq(script.scenes[currentscene].options[i].req);	
+		
 		var color = script.scenes[currentscene].options[i].color &&renderData.type=="question"? 
 			req.enabled ? script.scenes[currentscene].options[i].color.active : script.scenes[currentscene].options[i].color.inactive 
 			: req.enabled?"white":"gray";
-		}	
-		drawButtonBG(30,elem.height-140+35*i,640,30,req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question" &&i<script.scenes[currentscene].options.length,choice,i)
+			
+		var height = script.scenes[currentscene].options[i].height
+		height=height?height:1;
+		height=x+height>4?4-x:height;
 		
-		if(renderData.progress>=renderData.time+i*150 && renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined)
+		}	
+		
+		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),req.enabled && renderData.progress>=renderData.time+x*150 && renderData.type=="question" &&i<script.scenes[currentscene].options.length,choice,i)
+		
+		if(renderData.progress>=renderData.time+x*150 && renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined)
 		{
 			context.fillStyle=color
-			context.fillText( req.prefix + (req.enabled? (handleText(script.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*i+9)
-		}		
+			context.wrapText( req.prefix + (req.enabled? (handleText(script.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*x+9,630,16)
+		}	
+		x+=height;		
+	}
+	for(;x<4;x++)
+	{				
+		drawButtonBG(30,elem.height-140+35*x,640,30,false)				
 	}
 	context.fill();
 	

@@ -2,12 +2,12 @@
 - coś zrobiłem...
 
 ==S
-- Extend possible dialog space
++ Extend possible dialog space
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip
 + handle text gendered : to be presented  [playerGender {male option|female option}] 
-- customizable images for faces in dialogue areas
++ customizable images for faces in dialogue areas
 - automatic drop-down menu for NEW achievements
 
 ===GENERAL:
