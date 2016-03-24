@@ -1,15 +1,16 @@
 {
 	"meta":
 		{
-		"bg": "forest",
-		"current":0
+		"bg": "blackboard",
+		"current":0,
+		"actor":"tom"
 		},
 	"scenes": [
 	{
 		"COMMENT":"0",
 		"events":[
 			
-			{"type":"dialog","name":"Arystoteles","time":3000,"timepadding":1000,
+			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000,
 			"text":"A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż [playerGender] [playerGender {male|female}]"
 			},
 			{"type":"give","time":4600,"item":"001"},
@@ -17,19 +18,19 @@
 			"text":"Lorem ipsum dolor sit amet, Czy kiedykolwiek się [playerGender {zastanawiałeś|zastanawiałaś}]. . Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
 			},
 			{"type":"pause","time":10},
-			{"type":"question","name":"XYZ","time":100,
+			{"type":"question","name":"XYZXYZXYZXYZXYZXYZ","time":100,
 			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
 			}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"},
-			{"target": 1, "text": "blah blah"},
-			{"target": 2, "text": "blah blah blah blah... blah"}
+			{"target": 1, "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis diam tellus, a tristique neque pharetra sed. Etiam vel quam placerat, ullamcorper odio eget. Proin id molestie sem. Donec ac tellus quis.", "height":2},
+			{"target": 2, "text": "blah blah blah blah... blah", "height":3}
 		]	   
 	},
 	{
 		"events":[
-			{"type":"dialog","name":"Arystoteles","time":3000,"timepadding":2000,"color":"red",
+			{"type":"dialog","name":"THE X","time":3000,"timepadding":2000,"color":"red",
 			"text":"1"
 			},
 			{"type":"change","time":0,"target":0,"req":{"type":"skill","skill":4,"amt":3}},

@@ -1,13 +1,13 @@
 ﻿==L
 - coś zrobiłem...
-
+- przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
-- Extend possible dialog space
++ Extend possible dialog space
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip
 + handle text gendered : to be presented  [playerGender {male option|female option}] 
-- customizable images for faces in dialogue areas
++ customizable images for faces in dialogue areas
 - automatic drop-down menu for NEW achievements
 - cytaty silniej wyróżnione graficznie, np. jasnoszarym tłem
 - przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać

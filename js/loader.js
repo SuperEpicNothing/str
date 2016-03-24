@@ -104,10 +104,10 @@ function loadPlayer(){
 		appearance:1,
 		classType:"Vampire",
 		//Temp: S P E C I A L 1-10
-		statFullNames:["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck"],
-		statColors:["red","green","blue","cyan","orange","violet","purple"],
-		statNames:"SPECIAL",
-		stats:[1,2,3,6,8,9,10],
+		statFullNames:["Przeznaczenie","Inteligencja","Siła Woli","Zręczność","Mądrość","Ogłada"],
+		statColors:["#8bca17","#9dffff","#7373ff","#a3d900","#6c00d9","#ffd24c"],
+		statNames:"PISZMO",
+		stats:[1,2,3,6,8,4],
 		progress:{
 			lvl:0,
 			xp:0.5,
@@ -267,6 +267,7 @@ function loadAssets(){
 	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
 	xmlhttp0.send();
 }
+function unlockAchievment(name){}
 // logic helper
 {
 function addMouseListener(elem,f){
@@ -336,6 +337,7 @@ function checkReq(req){
 	return result;
 }
 function handleText(text,index){
+	
 	var start = text.indexOf('[',index)
 	
 	var end = text.indexOf(']',start)
@@ -374,6 +376,10 @@ function handleText(text,index){
 			value=player.stats[parseInt(stuff[1])];
 			if(!value){value="playerSkill"}
 		}break;
+		case "'":
+		{
+			value='"';
+		}break;
 
 		default:
 		value="["+text.substring(start+1,end)+"]";
@@ -395,17 +401,35 @@ function inBounds(x,y,w,h){
 {
 
 function drawDialog(speaker,text,time,progress){
-
-	var charspeed = (time/text.length);
-	context.drawImage(Assets.img["textbar"],0,elem.height-255);
-
 	context.fillStyle= renderData.color == undefined ?"white":renderData.color;
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-	context.wrapText(text.substring(0,progress/charspeed)+(text.length>progress/charspeed?"|":" "),10,elem.height-225,elem.width-20,16)
+    var metrics = context.measureText(text);
+	var charspeed = (time/text.length);
+	var linecount = Math.round(metrics.width/(elem.width-20))+1;
+	linecount= linecount<=2? 3 : linecount;
+	
+	//context.drawImage(Assets.img["textbar"],0,elem.height-255);
+
+	context.drawImage(Assets.img["textbar"],0,70, 700,10, 0,elem.height-184, 700,10);
+
+	for(var i=0;i<linecount;i++)
+	context.drawImage(Assets.img["textbar"],0,54, 700,16, 0,elem.height-200-16*i, 700,16);
+	
+	
+	context.drawImage(Assets.img["textbar"],0,25, 700,5, 0,elem.height-184-16*linecount-5, 700,5);
+	context.drawImage(Assets.img["textbar"],0,4, 10,20, 0,elem.height-184-16*linecount-28, 10,20);
+	
+	metrics = context.measureText(speaker);
+	for(var i=0;i<metrics.width/4;i++)
+	context.drawImage(Assets.img["textbar"],10,4, 1,20, 10+i*4,elem.height-184-16*linecount-28, 4,20);
+	
+	context.drawImage(Assets.img["textbar"],113,4, 4,20, 10+i*4,elem.height-184-16*linecount-28, 4,20);
+
+	context.wrapText(text.substring(0,progress/charspeed)+(text.length>progress/charspeed?"|":" "),10,elem.height-184-16*linecount,elem.width-20,16)
 	context.fillStyle= "white";
-	context.wrapText(speaker,10,elem.height-247,elem.width-20,16)
+	context.wrapText(speaker,10,elem.height-184-16*linecount-24,elem.width-20,16)
 
 	context.fill();
 	
@@ -463,14 +487,30 @@ function drawButtonBG(x, y, width,height,enabled,f,id){
 		type=52;
 	}
 	
-	context.drawImage(Assets.img["GUIbutton"],0,type,10,52,x,y,10,height);
-	
-	for(var i =0;i<(width-20)/80-1;i++)
-	context.drawImage(Assets.img["GUIbutton"],10,type,80,52,x+10+i*80,y,80,height);
-	
-	context.drawImage(Assets.img["GUIbutton"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
+	context.drawImage(Assets.img["GUIbutton"],0,type    ,10,5   ,x,y				 ,10,5);
+	context.drawImage(Assets.img["GUIbutton"],0,type+5  ,10,42  ,x,y+5  ,10,height-10);
+	context.drawImage(Assets.img["GUIbutton"],0,type+47 ,10,5   ,x,y+height-5 ,10,5);
 
-	context.drawImage(Assets.img["GUIbutton"],90,type,10,52,x+width-10,y,10,height);
+	
+	for(var i =0;i<(width-20)/80-1;i++){
+		
+	//context.drawImage(Assets.img["GUIbutton"],10,type,80,52,x+10+i*80,y,80,height);
+	
+	context.drawImage(Assets.img["GUIbutton"],10,type    ,80,5   ,x+10+i*80,y				 ,80,5);
+	context.drawImage(Assets.img["GUIbutton"],10,type+5  ,80,42  ,x+10+i*80,y+5  ,80,height-10);
+	context.drawImage(Assets.img["GUIbutton"],10,type+47 ,80,5   ,x+10+i*80,y+height-5 ,80,5);
+	
+	}
+	
+	context.drawImage(Assets.img["GUIbutton"],10,type    ,(width-20)%80,5   ,x+10+(Math.round(((width-20)/80)-1)*80),y					 ,(width-20)%80	,5);
+	context.drawImage(Assets.img["GUIbutton"],10,type+5  ,(width-20)%80,42  ,x+10+(Math.round(((width-20)/80)-1)*80),y+5  	,(width-20)%80	,height-10);
+	context.drawImage(Assets.img["GUIbutton"],10,type+47 ,(width-20)%80,5   ,x+10+(Math.round(((width-20)/80)-1)*80),y+height-5 	,(width-20)%80	,5);
+	
+	//context.drawImage(Assets.img["GUIbutton"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
+	
+	context.drawImage(Assets.img["GUIbutton"],90,type    ,10,5   ,x+width-10,y				 	,10,5);
+	context.drawImage(Assets.img["GUIbutton"],90,type+5  ,10,42  ,x+width-10,y+5  	,10,height-10);
+	context.drawImage(Assets.img["GUIbutton"],90,type+47 ,10,5   ,x+width-10,y+height-5 	,10,5);
 }
 
 }

@@ -2,7 +2,8 @@
 	"meta":
 		{
 		"bg": "forest",
-		"current":0
+		"current":0,
+		"actor":"arystotle"
 		},
 	"scenes": [
 	{
@@ -14,7 +15,7 @@
 			}
 		],
 		"options":[
-			{"target": 1, "text": "Skąd wziął się ten komputer?"}
+			{"target": 1, "text": "Skąd wziął się ten komputer?", "height":4}
 		]	   
 	},
 
@@ -27,7 +28,7 @@
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Ale skąd wziął się w sklepie?"}
+			{"target": 2, "text": "Ale skąd wziął się w sklepie?", "height":3}
 		]	   
 	},
 	
@@ -40,7 +41,7 @@
 			}
 		],
 		"options":[
-			{"target": 3, "text": "A skąd wzięły się elementy, z których go złożono?"}
+			{"target": 3, "text": "A skąd wzięły się elementy, z których go złożono?", "height":2}
 		]	   
 	},
 	
@@ -53,7 +54,7 @@
 			}
 		],
 		"options":[
-			{"target": 4, "text": "Skąd wziął się materiał na procesor?"}
+			{"target": 4, "text": "Skąd wziął się materiał na procesor?", "height":3}
 		]	   
 	},
 	
@@ -66,7 +67,7 @@
 			}
 		],
 		"options":[
-			{"target": 5, "text": "A skąd wziął się ten piasek i te rudy metali?"}
+			{"target": 5, "text": "A skąd wziął się ten piasek i te rudy metali?", "height":0}
 		]	   
 	},
 	
@@ -92,7 +93,7 @@
 			}
 		],
 		"options":[
-			{"target": 7, "text": "Hm. A skąd wziął się ten pył?"}
+			{"target": 7, "text": "Hm. A skąd wziął się ten pył?","height":2}
 		]	   
 	},
 	
@@ -105,7 +106,7 @@
 			}
 		],
 		"options":[
-			{"target": 8, "text": "To skąd wziął się ten wodór?"}
+			{"target": 8, "text": "To skąd wziął się ten wodór?", "height":4}
 		]	   
 	},
 	
@@ -118,7 +119,7 @@
 			}
 		],
 		"options":[
-			{"target": 9, "text": "Skąd wzięły się te kwarki?"}
+			{"target": 9, "text": "Skąd wzięły się te kwarki?", "height":2}
 		]	   
 	},
 	

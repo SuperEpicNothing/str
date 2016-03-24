@@ -2,11 +2,12 @@
 	"meta":
 		{
 		"bg": "forest",
-		"current":0
+		"current":0,
+		"actor":"arystotle"
 		},
 	"scenes": [
 	{
-		"events":[
+		"events"[
 			{"type":"hideoptions"},
 			{"type":"dialog","name":"Stephen Hawking","align":true,"scrollspeed":0,"acknowledged":true,
 			"text":"Witaj! Chcesz poklikać? :)"
