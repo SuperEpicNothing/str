@@ -336,6 +336,7 @@ function checkReq(req){
 	return result;
 }
 function handleText(text,index){
+	
 	var start = text.indexOf('[',index)
 	
 	var end = text.indexOf(']',start)
@@ -373,6 +374,10 @@ function handleText(text,index){
 		{
 			value=player.stats[parseInt(stuff[1])];
 			if(!value){value="playerSkill"}
+		}break;
+		case "'":
+		{
+			value='"';
 		}break;
 
 		default:

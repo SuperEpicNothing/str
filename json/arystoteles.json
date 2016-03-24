@@ -2,7 +2,8 @@
 	"meta":
 		{
 		"bg": "forest",
-		"current":0
+		"current":0,
+		"actor":"arystotle"
 		},
 	"scenes": [
 	{
@@ -399,7 +400,7 @@
 		],
 		"options":[
 			{"target": 29, "text": "Co to znaczy, że nie ma innego sposobu poznania, jak tylko przez dowód?"},
-			{"target": 31, "text": "Co to jest ten 'nieskończony regres'?"},
+			{"target": 31, "text": "Co to jest ten [']nieskończony regres[']?"},
 			{"target": 33, "text": "OK..."}
 			
 		]	   
@@ -546,7 +547,7 @@
 			}
 		],
 		"options":[
-			{"target": 39, "text": "Matematycy posługują się obiektami nieskończonymi bez problemu..."}
+			{"target": 39, "text": "Matematycy posługują się obiektami nieskończonymi bez problemu..."},
 			{"target": 33, "text": "OK, rozumiem. Wróćmy do czytania tekstu."}
 			
 		]	   
@@ -620,7 +621,7 @@
 		],
 		"options":[
 			{"target": 33, "text": "Dziękuję, poczytam sobie. Wróćmy może do naszego fragmentu."},
-			{"target": 44, "text": "Ale tak w skrócie - co sądził Kartezjusz?"},
+			{"target": 44, "text": "Ale tak w skrócie - co sądził Kartezjusz?"}
 		]	   
 	},
 	
@@ -727,7 +728,7 @@
 			}
 		],
 		"options":[
-			{"target": 52, "text": "A co tutaj znaczą >>pierwsze przesłanki<<?"}
+			{"target": 52, "text": "A co tutaj znaczą >>pierwsze przesłanki<<?"},
 			{"target": 55, "text": "OK, wszystko jasne."}
 		]	   
 	},
@@ -822,12 +823,12 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Dobre pytanie. W matematyce będzie to zawsze coś, co jest zakładane przez dane zdanie. Jeśli na przykład mówię, że >>każdy trójkąt ma sumę kątów równą 180 stopniom", to >>wcześniejsze<< są wszelkie zdania wyjaśniające, czym jest trójkąt, czym jest kąt albo czym są stopnie."
+			"text":"Dobre pytanie. W matematyce będzie to zawsze coś, co jest zakładane przez dane zdanie. Jeśli na przykład mówię, że >>każdy trójkąt ma sumę kątów równą 180 stopniom, to >>wcześniejsze<< są wszelkie zdania wyjaśniające, czym jest trójkąt, czym jest kąt albo czym są stopnie."
 			}
 		],
 		"options":[
 			{"target": 59, "text": "A nie w matematyce?"},
-			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."},			
+			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."}			
 			
 		]	   
 	},
@@ -842,7 +843,7 @@
 		],
 		"options":[
 			{"target": 60, "text": "Stąd bierze się >>Pierwsza Przyczyna<< i >>Pierwszy Poruszyciel>>?"},
-			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."},			
+			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."}			
 			
 		]	   
 	},
@@ -857,7 +858,7 @@
 		],
 		"options":[
 			{"target": 56, "text": "Wiesz co, chyba chciałbym jeszcze raz przejść z Tobą przez ten tekst..."},
-			{"target": 61, "text": "Jasne!"},			
+			{"target": 61, "text": "Jasne!"}		
 			
 		]	   
 	},
@@ -899,7 +900,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Wiedza >>demonstratywna<<, czyli taka, która opiera się na dowodzie w sensie, o którym mówiliśmy przed chwilą - daną tezę wykazujemy (czyli "demonstrujemy"), odwołując kogoś do zdania >>wcześniejszego<<."
+			"text":"Wiedza >>demonstratywna<<, czyli taka, która opiera się na dowodzie w sensie, o którym mówiliśmy przed chwilą - daną tezę wykazujemy (czyli [']demonstrujemy[']), odwołując kogoś do zdania >>wcześniejszego<<."
 			}
 		],
 		"options":[
@@ -1000,7 +1001,7 @@
 		],
 		"options":[
 			{"target": 70, "text": "A co by mogło być taką przesłanką?"},
-			{"target": 62, "text": "OK, wróćmy do tekstu."},
+			{"target": 62, "text": "OK, wróćmy do tekstu."}
 			
 			
 		]	   
