@@ -9,6 +9,8 @@
 + handle text gendered : to be presented  [playerGender {male option|female option}] 
 - customizable images for faces in dialogue areas
 - automatic drop-down menu for NEW achievements
+- cytaty silniej wyróżnione graficznie, np. jasnoszarym tłem
+- przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
 
 ===GENERAL:
 -stosować enkodowanie UTF-8
