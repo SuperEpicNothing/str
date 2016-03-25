@@ -7,11 +7,11 @@
 - fullscreen skip
 + automatic drop-down menu for NEW achievements
 - przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
-- give skroll
-- rozdawanie PDków
-- inne moszliwości porównania skilli
++ give skroll
++ rozdawanie PDków
++ inne moszliwości porównania skilli
 + aodawanie osiągnięć
-- ulepsz grafiki osiągnięć
++ ulepsz grafiki osiągnięć
 ===GENERAL:
 -stosować enkodowanie UTF-8
 -wpisuj kody 7 
@@ -26,11 +26,11 @@
 [playerSkill id]
 ['] "
 
-{"type":"give","time":4600,"item":"001"} - give item 
+{"type":"give","time":4600,"item":"001","book"":"ID","xp":2} - give item andor book andor xp 
 {"type":"unlockAch","time":"4200","ach":id}, - unlock Achievment
 
 req:
-"req":{"type":"skill","skill":4,"amt":3}
+"req":{"type":"skill","skill":4,"amt":3,"mode":"<"} optional-mode{"<",">"}
 "req":{"type":"item","item":"ID"}
 "req":{"type":"hp","amt":"a"} hp gracza > a tylko Confutest
 

@@ -219,9 +219,8 @@ function processEvent(progress){
 	{
 		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
 	}
-	if(isOver && !renderData.override || !checkReq(currentEvt.req))
+	if(isOver && !renderData.override || !checkReq(evt.req).enabled)
 	{
-			console.log(evt)
 	currentEvt++
 	EntTime=null
 	renderData = {type:"none",progress:0,time:0,override:false}

@@ -85,7 +85,7 @@ function processEvent(progress){
 	{
 		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding
 	}
-	if(isOver && !renderData.override || !checkReq(currentEvt.req))
+	if((isOver && !renderData.override) || !checkReq(evt.req).enabled)
 	{
 	currentEvt++
 	EntTime=null
@@ -110,9 +110,21 @@ function processEvent(progress){
 		case "give":
 			renderData.type="give"
 			renderData.item=evt.item
+			renderData.book=evt.book
+			renderData.xp=evt.xp
+
 			renderData.progress=progress-EntTime;
 			renderData.time=evt.time
+			
+			if(renderData.item)
 			addItem(renderData.item);
+		
+			if(renderData.book)
+			addBook(renderData.book);
+		
+			if(renderData.xp)
+			playerxp(renderData.xp);
+
 		break;
 		case "question":
 			renderData.type="question"
@@ -174,9 +186,17 @@ function renderWindow(timestamp){
 		context.drawImage(Assets.img["GUIopenchest"],elem.width-68-20,0);
 
 		var scale = Math.sin((renderData.progress-1000)/750)
+		if(Assets.items[renderData.item]){
 		context.drawImage(Assets.img[Assets.items[renderData.item].icon],
 		elem.width/2-34*scale + ((renderData.progress-1000)/2000*(elem.width/2-68)), 34-34*scale+(elem.height-150)-((renderData.progress-1000)/2000*elem.height-150),
 		68*scale,68*scale);
+		}else if(Assets.books[renderData.book]){
+			var rng = new Math.seedrandom(Assets.books[renderData.book].name+Assets.books[renderData.book].fullname);
+			var Ibook = new Image();
+			Ibook.src="images/gui/icons/books/W_Book0"+Math.floor(1+rng()*7)+".png";
+		context.drawImage(Ibook,
+		elem.width/2-34*scale + ((renderData.progress-1000)/2000*(elem.width/2-68)), 34-34*scale+(elem.height-150)-((renderData.progress-1000)/2000*elem.height-150),
+		68*scale,68*scale);}
 		}
 		else if(renderData.progress<4500)
 		context.drawImage(Assets.img["GUIclosedchest"],elem.width-68-20,-((renderData.progress-3000)/1500*68));

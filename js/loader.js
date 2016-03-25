@@ -165,6 +165,7 @@ function skillpoints(n){
 function playerxp(n){
 	player.progress.xp+=xp;
 	if(player.progress.xp>=1){
+		player.lvl++;
 		player.progress.xp--;
 		player.progress.skillp++;
 		playerxp(0);
@@ -344,13 +345,23 @@ function mouseChange(event,evtname){
 }
 function checkReq(req){
 	var result = {prefix:"",enabled:true};
-			
+	
 	if(req != undefined)
 		switch(req.type)
 		{
-			case "skill":
-					result.enabled = player.stats[req.skill]>=req.amt;
-					result.prefix = "[ "+(player.statNames.charAt(req.skill))+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
+			case "skill":		
+						switch(req.mode)
+						{
+							default:
+							case ">":
+							result.enabled = player.stats[req.skill]>=req.amt;
+							result.prefix = "[ "+(player.statNames.charAt(req.skill))+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
+							break;
+							
+							case "<":
+							result.enabled = player.stats[req.skill]<=req.amt;
+							break;
+						}
 			break;
 			
 			case "hp":
@@ -363,7 +374,6 @@ function checkReq(req){
 					result.prefix = "[ "+Assets.items[req.item].fullname+" ] ";
 			break;
 		}
-	
 	return result;
 }
 function handleText(text,index){
