@@ -58,7 +58,7 @@ function gpmsc(){
 	
 	
 	c1.drawImage(Assets.img["players"],
-	24*player.appearance, 0,
+	24*(player.appearance+(player.gender?0:3)), 0,
 	24,32,
 	80,140,250,320);
 	c1.drawImage(Assets.img["GUIxpbar"],340,75,300,40)

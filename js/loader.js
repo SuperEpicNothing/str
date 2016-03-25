@@ -99,7 +99,7 @@ function loadPlayer(){
 			//create DEFAULT
 	player = {
 		name: "IAmError",
-		gender:true,
+		gender:false,
 		age:666,
 		appearance:1,
 		classType:"Vampire",
@@ -148,8 +148,13 @@ function animateNotifcations(time){
 
 	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
 	
-	document.getElementById("guiPlayerVisage" ).style.clip="rect(0px, "+24*(player.appearance+1)+"px, 32px, "+24*player.appearance+"px)";
-	document.getElementById("guiPlayerVisage" ).style.left=(-24*player.appearance+15)+"px";
+	player.appearance=Math.abs(Math.round(time/10000*3))%3;
+	player.gender=Math.abs(Math.round(time/30000*2))%2;
+
+	
+	document.getElementById("guiPlayerVisage" ).style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
+	console.log(document.getElementById("guiPlayerVisage" ).style.clip)
+	document.getElementById("guiPlayerVisage" ).style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
 
 	var newItems=document.getElementById('guiItemsNew');
 	newItems.style.backgroundColor='rgba(197,180,38,'+(0.6+0.4*Math.sin(time/250))+')';
