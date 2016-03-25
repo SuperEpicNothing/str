@@ -36,10 +36,10 @@ function loadWindow(file,id){
 	Actor=script.meta.actor;
 	currentscene=script.meta.current;
     context = elem.getContext('2d');
-	context.mozImageSmoothingEnabled = false;
-	context.webkitImageSmoothingEnabled = false;
-	context.msImageSmoothingEnabled = false;
-	context.imageSmoothingEnabled = false;
+	context.mozImageSmoothingEnabled = true;
+	context.webkitImageSmoothingEnabled = true;
+	context.msImageSmoothingEnabled = true;
+	context.imageSmoothingEnabled = true;
 	if(elem == undefined)
 	{
 		console.log("no canvas")
@@ -130,6 +130,15 @@ function processEvent(progress){
 			renderData.time=evt.time
 			Actor=evt.actor
 		break;
+		
+		case "unlockAch":
+			renderData.type="unlockAch"
+			renderData.progress=progress-EntTime;
+			renderData.time=4200;
+			renderData.ach= evt.ach;
+			if(player.achievements.indexOf(evt.ach)>=0 && renderData.progress==0)
+				EntTime-=(4200-(progress-EntTime))
+		break;
 	}
 	
 }
@@ -150,12 +159,13 @@ function renderWindow(timestamp){
 	//draw personalbar
 	context.drawImage(Assets.img[Actor],(elem.width-Assets.img[Actor].width)/2,10);
 	
+
 	if(renderData.type=="dialog"||renderData.type=="question"){
 	drawDialog(renderData.name,renderData.text,renderData.time,renderData.progress)
 
 	}
 	
-	
+
 	
 	if(renderData.type=="give"){
 		if(renderData.progress<1000)
@@ -181,7 +191,7 @@ function renderWindow(timestamp){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-	
+
 	var x = 0;
 	for(var i=0;i<script.scenes[currentscene].options.length;i++)
 	{
@@ -210,11 +220,16 @@ function renderWindow(timestamp){
 	}
 	for(;x<4;x++)
 	{				
-		drawButtonBG(30,elem.height-140+35*x,640,30,false)				
+		drawButtonBG(30,elem.height-140+35*x,640,30,false)
+
 	}
 	context.fill();
 	
+	if(renderData.type=="unlockAch")
+	unlockAchievment(renderData.ach);
+	
 	window.requestAnimationFrame(renderWindow);
+	
 }
 
 

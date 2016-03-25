@@ -2,7 +2,8 @@
 	"meta":
 		{
 		"bg": "forest",
-		"current":0
+		"current":0,
+		"actor":"arystotle"
 		},
 	"scenes": [
 	{

@@ -2,21 +2,24 @@
 - coś zrobiłem...
 - przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
-+ Extend possible dialog space
 - options text speed,skip-ability
 - debug skip button
 - fullscreen skip
-+ handle text gendered : to be presented  [playerGender {male option|female option}] 
-+ customizable images for faces in dialogue areas
-- automatic drop-down menu for NEW achievements
-- cytaty silniej wyróżnione graficznie, np. jasnoszarym tłem
++ automatic drop-down menu for NEW achievements
 - przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
-- add scrollgive
+- give skroll
+- rozdawanie PDków
+- inne moszliwości porównania skilli
++ aodawanie osiągnięć
+- ulepsz grafiki osiągnięć
 ===GENERAL:
 -stosować enkodowanie UTF-8
--wpisuj kody  
+-wpisuj kody 7 
+-ile PD na lvl na skillpointa
+- nazwy statów
 ===KOD;
-[playerGender {zastanawiałeś|zastanawiałaś}] - gendered
+[playerGender] 
+[playerGender {male|female}] - gendered
 [playerName]
 [playerAge]
 [playerLvl]
@@ -24,6 +27,8 @@
 ['] "
 
 {"type":"give","time":4600,"item":"001"} - give item 
+{"type":"unlockAch","time":"4200","ach":id}, - unlock Achievment
+
 req:
 "req":{"type":"skill","skill":4,"amt":3}
 "req":{"type":"item","item":"ID"}

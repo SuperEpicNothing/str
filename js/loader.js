@@ -267,7 +267,37 @@ function loadAssets(){
 	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
 	xmlhttp0.send();
 }
-function unlockAchievment(name){}
+function unlockAchievment(ach)
+{
+	var time = renderData.progress%4000
+
+	if(time>1000 && time<=2000)
+		time=1000;
+	else if(time>2000)
+		time=time-1000;
+
+	var offset= Math.sin(time/2000*Math.PI)*40-38;
+	//AchievmentNotify
+	context.drawImage(Assets.img["GUIachievmentNotify"],0,offset);
+	
+	context.font = "14px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign="left"; 
+	context.fillStyle="white";
+	context.fillText("Osiągnięcie Odblokowane!",elem.width-256+38,5+offset);
+	
+	context.font = "10px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign="left"; 
+	context.fillStyle="#d9d9d9";
+	context.fillText(Assets.achievments[ach].fullname,elem.width-256+38,22+offset);
+	context.drawImage(Assets.img["GUIachievments"],32*Assets.achievments[ach].level,0,32,32,elem.width-256+1,3+offset,32,32);
+	if(Assets.achievments[ach].icon)
+	context.drawImage(Assets.img[Assets.achievments[ach].icon],elem.width-256+8,10+offset,18,18);
+	if(player.achievements.indexOf(ach)<0)
+		player.achievements.push(ach);
+	savePlayer();
+}
 // logic helper
 {
 function addMouseListener(elem,f){

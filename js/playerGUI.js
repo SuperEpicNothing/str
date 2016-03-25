@@ -96,9 +96,10 @@ function drawAchievments()
 		 32,32,
 		 elem1.width-466+(66*(i%7)),70+(66*Math.floor(i/7)),64,64);
 		
+
 		if(unlocked)
-		c1.drawImage(Assets.img[ Assets.achievments[ach].icon],elem1.width-466+(66*(i%7))+10,70+(66*Math.floor(i/7))+10,44,44);
-		
+		c1.drawImage(Assets.img[ Assets.achievments[ach].icon],elem1.width-466+(66*(i%7))+14,70+(66*Math.floor(i/7))+14,36,36);
+
 		c1.font = (9)+"px Aclonica"
 		c1.textBaseline = "top";
 		c1.textAlign="center"; 	

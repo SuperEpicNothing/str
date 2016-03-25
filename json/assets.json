@@ -29,6 +29,8 @@
 		"src":"images/gui/xpbar.png"},
 		{"name" : "GUIachievments",
 		"src":"images/gui/Achievments.png"},
+		{"name" : "GUIachievmentNotify",
+		"src":"images/gui/AchievmentBar.png"},
 		
 		{"name" : "players",
 		"src":"images/avatars.png"},
