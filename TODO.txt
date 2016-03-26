@@ -2,9 +2,9 @@
 - coś zrobiłem...
 - przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
-- options text speed,skip-ability
-- dodać nowe opcje do konfutest
-- debug unvisible click bug 
++ options text speed,skip-ability
++ dodać nowe opcje do konfutest
++ debug invisible click bug 
 + debug skip button
 + fullscreen skip
 + automatic drop-down menu for NEW achievements
@@ -19,6 +19,8 @@
 -wpisuj kody 7 
 -ile PD na lvl na skillpointa
 - nazwy statów
+- end credits scene
+
 ===KOD;
 [playerGender] 
 [playerGender {male|female}] - gendered
@@ -39,7 +41,7 @@ req:
 
 ===LATER DOWN THE PIPELINE:
 handleText in HTML
-
+więcej animacj zadweania pytań przez konfuzjusza
 
 
 

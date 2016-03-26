@@ -21,8 +21,7 @@ $submenu = file("strony/".$page."/menu.txt");
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="Krzysztof Stasiowski">
-    <link rel="icon" href="favicon.ico">
-
+	<link id="icon" rel="icon" type="image/x-icon" />
     <title>Nauka i Wiara</title>
 
     <!-- Bootstrap core CSS -->
@@ -68,6 +67,8 @@ $submenu = file("strony/".$page."/menu.txt");
 
 	
   <body data-spy="scroll" data-target="#sidebar" data-offset="50">
+  								<canvas id="favicon" width=32 height=32 hidden></canvas>
+
 <div class="loadAclonica"> </div>
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -89,7 +90,7 @@ $submenu = file("strony/".$page."/menu.txt");
 		  }
 		  ?>
            </ul>
-		   <ul class="nav navbar-nav pull-right">
+		   <ul class="nav navbar-nav navbreaker pull-right">
 		    <li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
             <li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
             <li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>

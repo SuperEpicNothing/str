@@ -1,7 +1,12 @@
 {
 	"meta":{
 	"bossmaxhp":9,
-	"heromaxhp":4
+	"heromaxhp":4,
+	"music":[
+	"heroism.ogg",
+	"Battle in the winter.mp3",
+	"Thrust Sequence.mp3",
+	"Blackmoor Colossus Loop.wav"]
 	},
 	"scenes": [
 	{

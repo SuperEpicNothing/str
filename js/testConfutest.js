@@ -15,7 +15,7 @@ function loadConfu(file,id){
 		}catch(e)
 		{
 			battlescript = {
-			meta:{bg:"blackboard",current:0,actor:"planet0"},
+			meta:{bg:"blackboard",current:0,actor:"planet0", music:[]},
 			scenes:[
 			{
 				events:[
@@ -50,10 +50,11 @@ function loadConfu(file,id){
 		console.log("no canvas")
 	return;
 	}
-	
-	audio = new Audio('heroism.ogg');
-	audio.volume = 0.2;
+	console.log(battlescript.meta.music)
+	//console.log(battlescript.meta.music[ Math.round(battlescript.meta.music.length*Math.random())])
+	audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
 	audio.loop = true;	
+	
 	addMouseListener(elem)
 	
 	window.requestAnimationFrame(renderConfu);
@@ -67,21 +68,26 @@ function clear(){
 
 var audio
 var start = null;
-var change;
+var change,changeEvt;
 
 function renderConfu(timestamp){
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp; audio.play();}
 	if(!start || !Assets.loaded) {window.requestAnimationFrame(renderConfu); return}
 	var progress = Math.round(timestamp - start);
 	clear();
-		audio.volume = option.volume / 100;
+	
+	audio.volume = option.volume / 100;
+	if(mouse.target==elem && mouse.isOver)
+		audio.play()
+	else
+		audio.pause();
 	//console.log(audio.volume)
 	processEvent(progress);
 	drawBackground(progress);
 	drawConfutest(progress);
 	
 	if(renderData.type=="dialog"||renderData.type=="question")
-		drawDialog("Confutius",renderData.text,renderData.time,renderData.progress)
+		drawDialog("Confutius",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
 
 	//drawGUIBAck
 	context.drawImage(Assets.img["GUIback"],0,elem.height-150);
@@ -90,10 +96,10 @@ function renderConfu(timestamp){
 		
 	
 	//drawButtons
-	context.font = "16px Aclonica"
+	/*context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
-	/*	
+		
 	for(var i=0;i<4;i++)
 	{
 		if(battlescript.scenes[currentscene].options[i]!= undefined){
@@ -111,7 +117,11 @@ function renderConfu(timestamp){
 		}		
 	}
 	context.fill();*/
-	
+	//drawButtons
+	context.font = "16px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign="left"; 
+
 	var x = 0;
 	for(var i=0;i<battlescript.scenes[currentscene].options.length;i++)
 	{
@@ -129,9 +139,13 @@ function renderConfu(timestamp){
 		
 		}	
 		
-		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question",select,i)
+		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),
 		
-		if(renderData.progress>=renderData.time+x*150 && renderData.type=="question" && battlescript.scenes[currentscene].options[i]!= undefined)
+		req.enabled && (renderData.progress>=renderData.time+x*150+600 || (renderData.skipmode>0 && renderData.progress-renderData.skipTime>200+x*150+600))
+		&& renderData.type=="question" && battlescript.scenes[currentscene].options[i]!= undefined
+		,select,i)
+		
+		if((renderData.progress>=renderData.time+x*150 || (renderData.skipmode>0 && renderData.progress-renderData.skipTime>200+x*150)) && renderData.type=="question" && battlescript.scenes[currentscene].options[i]!= undefined)
 		{
 			context.fillStyle=color
 			context.wrapText( req.prefix + (req.enabled? (handleText(battlescript.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*x+9,630,16)
@@ -140,8 +154,11 @@ function renderConfu(timestamp){
 	}
 	for(;x<4;x++)
 	{				
-		drawButtonBG(30,elem.height-140+35*x,640,30,false)				
+		drawButtonBG(30,elem.height-140+35*x,640,30,false)
+
 	}
+	context.fill();
+
 	
 	
 	//todo: wrap name into this function
@@ -182,13 +199,15 @@ function renderConfu(timestamp){
 		audio.muted=true;
 		}
 	}
-	
+	if(renderData.type=="unlockAch")
+	unlockAchievment(renderData.ach);
+
 	window.requestAnimationFrame(renderConfu);
 	
 }
 var currentEvt=0;
 var EntTime=null;
-var renderData = {type:"none",progress:0,time:0,override:false}
+var renderData = {type:"none",progress:0,time:0,skipmode:0,override:false}
 function processEvent(progress){
 
 	if(!EntTime){EntTime=progress}
@@ -196,36 +215,58 @@ function processEvent(progress){
 	if(boss.health<=0 && currentscene!=1)
 	change= 1;
 	if( boss.heroHp<=0 && currentscene!=2)
-	change= 2;
+	change= 2;	
 	
-	if(change>=0)
-	{
 
-		currentscene= change>=0? change :currentscene;
-		if(change>=0){change=-1}
-		
-		EntTime=null
-		currentEvt= 0
-		renderData = {type:"none",progress:0,time:0,override:false}
-		return;
-	}
-	
+	//anti break
 	if(currentEvt>=battlescript.scenes[currentscene].events.length)
 	return;
 	
 	var evt =battlescript.scenes[currentscene].events[currentEvt]
-	var isOver = progress-EntTime>evt.time
+	var isOver = progress-EntTime>evt.time && !(change>=0) 
+	
 	if(evt.type =="dialog")
 	{
-		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
+		isOver = progress-EntTime>(evt.time-evt.timepadding)/option.speed + evt.timepadding*option.wait && option.autoskip
 	}
-	if(isOver && !renderData.override || !checkReq(evt.req).enabled)
+		
+	//skip to next
+	if((isOver && !renderData.override || (renderData.skipmode==2 && (evt.type =="dialog")) ) || !checkReq(evt.req).enabled)
 	{
-	currentEvt++
-	EntTime=null
-	renderData = {type:"none",progress:0,time:0,override:false}
-	return;
+		if(renderData.skipmode==2){renderData.skipmode=0}
+	change = currentscene
+	changeEvt=currentEvt+1;
+
 	}
+	//backskip
+	if(renderData.skipmode==-1)
+	{
+		change=0;
+		boss.health=battlescript.meta.bossmaxhp
+		boss.healthMax=battlescript.meta.bossmaxhp
+		boss.heroHp=battlescript.meta.heromaxhp
+		boss.heroHpMax=battlescript.meta.heromaxhp
+		audio.loop=false;
+		audio.currentTime=audio.duration
+		audio.pause();
+		audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
+		audio.loop = true;	
+		audio.play();
+	}
+	
+	//general change
+	if(change>=0)
+	{
+		currentscene= change>=0? change :currentscene;
+		if(change>=0){change=-1}
+		
+		EntTime=null
+		currentEvt= changeEvt>=0? changeEvt: 0;
+		if(changeEvt>=0){changeEvt=-1}
+		renderData = {type:"none",progress:0,skipmode:0,time:0,override:false}
+		return;
+	}
+	
 	switch(evt.type)
 	{
 		case "showBoss":
@@ -243,18 +284,26 @@ function processEvent(progress){
 		
 		case "change":
 			change=evt.target;
+			changeEvt=0;
 		break;
 		case "pause":
+		break;
+		
+		case "audio":
+			renderData.type="audio";
+			renderData.command=evt.command;
 		break;
 		
 		case "dialog":
 			renderData.type="dialog"
 			renderData.progress=progress-EntTime;
-			renderData.time=(evt.time-evt.timepadding)*option.speed
+			renderData.time=(evt.time-evt.timepadding)/option.speed
 			renderData.timepadding=evt.timepadding*option.wait
 			renderData.text=handleText(evt.text)
 			renderData.color=evt.color
-			renderData.override=progress-EntTime<(evt.time-evt.timepadding)*option.speed+evt.timepadding*option.wait
+			renderData.override=progress-EntTime<(evt.time-evt.timepadding)/option.speed+evt.timepadding*option.wait
+			if(renderData.progress>=renderData.time)
+				renderData.skipmode=1;
 		break;
 		
 		case "question":
@@ -265,6 +314,17 @@ function processEvent(progress){
 			renderData.text=handleText(evt.text)
 			renderData.color=evt.color
 			renderData.override=true
+			if(renderData.progress>=renderData.time)
+				renderData.skipmode=1;
+		break;
+		
+		case "unlockAch":
+			renderData.type="unlockAch"
+			renderData.progress=progress-EntTime;
+			renderData.time=4200;
+			renderData.ach= evt.ach;
+			if(player.achievements.indexOf(evt.ach)>=0 && renderData.progress==0)
+				EntTime-=(4200-(progress-EntTime))
 		break;
 	}
 }

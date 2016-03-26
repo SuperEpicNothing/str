@@ -3,7 +3,8 @@
 		{
 		"bg": "blackboard",
 		"current":0,
-		"actor":"tom"
+		"actor":"tom",
+		"music":["breves_dies_hominis.ogg"]
 		},
 	"scenes": [
 	{
@@ -16,7 +17,7 @@
 			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000, "req":{"type":"skill","skill":0,"amt":3,"mode":">"}, 
 			"text":">0:3"
 			},
-			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000, "req":{"type":"skill","skill":3,"amt":3,"mode":"<"} ,
+			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000, "req":{"type":"skill","skill":3,"amt":3,"mode":"<"},
 			"text":"<3:3"
 			},
 			{"type":"give","time":4600,"item":"001"},

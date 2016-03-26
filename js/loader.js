@@ -73,7 +73,6 @@ function deleteCookie(name) {
 var mouse ={}
 var Assets ={loaded:false,img:[],books:[],items:[],achievments:[]};
 var option={volume:80,speed:0,wait:1,teach:false}
-
 var player;
 function loader(){
 
@@ -81,8 +80,29 @@ function loader(){
 	loadPlayer();
 	loadItemMenu();
 	updateChapters();
+	
+	  // Create canvas to convert the image to base64
+    var favicon = document.getElementById("favicon" )
+        favicon.width = 32;
+        favicon.height = 32;
+    
+    var fctx = favicon.getContext('2d');
+	    
+    // draw the image on the canvas (the user can't see it).
+    fctx.drawImage(Assets.img["players"],	
+	24*(player.appearance+(player.gender?0:3)), 0,
+	24,32,
+	4,0,24,32);
+    fctx.restore();
+      
+    // set the link's attribute to replace the icon
+    document.querySelector('#icon').setAttribute('href', favicon.toDataURL());
+	
+	
 	return
 	}
+	 
+	
 	window.requestAnimationFrame(animateNotifcations);
 	console.log(document.cookie);
 	loadAssets();
@@ -151,9 +171,12 @@ function animateNotifcations(time){
 	player.appearance=Math.abs(Math.round(time/10000*3))%3;
 	player.gender=Math.abs(Math.round(time/30000*2))%2;
 
-	
-	document.getElementById("guiPlayerVisage" ).style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
-	document.getElementById("guiPlayerVisage" ).style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
+	var img = document.getElementById("guiPlayerVisage" )
+
+	img.style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
+	img.style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
+
+ 
 
 	var newItems=document.getElementById('guiItemsNew');
 	newItems.style.backgroundColor='rgba(197,180,38,'+(0.6+0.4*Math.sin(time/250))+')';
@@ -454,7 +477,7 @@ function drawDialog(speaker,text,time,progress,mode){
 	var charspeed = (time/text.length);
 	var linecount = Math.round(metrics.width/(elem.width-20))+1;
 	linecount= linecount<=2? 3 : linecount;
-	if(mode==1){
+	if(mode>=1){
 		charspeed=0;
 		progress=text.length;
 	}
@@ -508,14 +531,15 @@ function drawButtonskip(x, y,mode,enabled){
 	if(!enabled)
 	{type=20;}
 
-	else if(inBounds(x,y,80,20)||inBounds(0,0,elem.width, elem.height-180)){
+	else if(inBounds(90,y,elem.width-90,25)||inBounds(0,0,elem.width, elem.height-180)){
 		type=40;
 		if(mouse.event =="mouseup" && mouse.target==elem && enabled)
 		skip(mode)
 		if(mouse.buttons>0)
 		type=20;
 	}
-	
+	if(mode==2)
+		mode=1
 	context.drawImage( Assets.img["GUIbuttonskip"],
 		80*mode,type,
 		80,20,
@@ -527,11 +551,16 @@ function skip(mode)
 {
 	if(mode == -1)
 		renderData.skipmode=-1;
-	if(mode == 0)
+	if(mode == 0){
 		renderData.skipmode=1;
-	//if(mode == 1)
-	//	renderData.skipmode=0;
-		
+		renderData.skipTime=renderData.progress;
+	}
+	if(mode == 1){
+		renderData.skipmode=2;
+		console.log(renderData)
+	}
+	
+	mouse.event="";
 }
 
 function drawButtonBG(x, y, width,height,enabled,f,id){
