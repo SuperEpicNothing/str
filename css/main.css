@@ -199,7 +199,10 @@ h6{font-size:0.9em;}
 #c1 a,#c2 a,#c3 a,#c4 a,#c5 a{color: inherit;filter: brightness(90%);}
 .pad{padding-top:10px;padding-bottom:10px;}
 
-
+.break
+{
+height: calc(100vh - 550px);;
+}
 
 .dropdown.divider {
 	border-top-color: #B6B6B6;

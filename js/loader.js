@@ -153,7 +153,6 @@ function animateNotifcations(time){
 
 	
 	document.getElementById("guiPlayerVisage" ).style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
-	console.log(document.getElementById("guiPlayerVisage" ).style.clip)
 	document.getElementById("guiPlayerVisage" ).style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
 
 	var newItems=document.getElementById('guiItemsNew');
@@ -445,18 +444,20 @@ function inBounds(x,y,w,h){
 // graphic helper
 {
 
-function drawDialog(speaker,text,time,progress){
+function drawDialog(speaker,text,time,progress,mode){
 	context.fillStyle= renderData.color == undefined ?"white":renderData.color;
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="left"; 
+	
     var metrics = context.measureText(text);
 	var charspeed = (time/text.length);
 	var linecount = Math.round(metrics.width/(elem.width-20))+1;
 	linecount= linecount<=2? 3 : linecount;
-	
-	//context.drawImage(Assets.img["textbar"],0,elem.height-255);
-
+	if(mode==1){
+		charspeed=0;
+		progress=text.length;
+	}
 	context.drawImage(Assets.img["textbar"],0,70, 700,10, 0,elem.height-184, 700,10);
 
 	for(var i=0;i<linecount;i++)
@@ -477,35 +478,42 @@ function drawDialog(speaker,text,time,progress){
 	context.wrapText(speaker,10,elem.height-184-16*linecount-24,elem.width-20,16)
 
 	context.fill();
-	
-	drawButtonskip(elem.width-85, elem.height-179,(progress-EntTime<renderData.time-200)?0:1,renderData.type!="question")
-}
-function skip(mode)
-{
-	if(mode==0)
-		EntTime-=renderData.time
-	
-	if(mode==1){
-		EntTime-=renderData.timepadding
-		renderData.override=false
-	}
-	
-	mouse.event=""
-}
-function drawButtonskip(x, y,mode,enabled){
+	drawButtonskip(elem.width-85, elem.height-175,mode,!(renderData.type=="question"&&mode==1));
+	drawButtonback(5, elem.height-175);
 
-	
+}
+function drawButtonback(x, y){
 	var type =0
-	if(!enabled)
-	{type=20;}
-	else if(inBounds(x,y,80,20)){
+
+
+	if(inBounds(x,y,80,20)){
 		type=40;
 		if(mouse.event =="mouseup" && mouse.target==elem)
-		skip(mode)
+		skip(-1)
 	
 		if(mouse.buttons>0)
 		type=20;
 		
+	}
+	
+	context.drawImage( Assets.img["GUIbuttonskip"],
+		160,type,
+		80,20,
+		x,y,
+		80,20);
+}
+function drawButtonskip(x, y,mode,enabled){
+
+	var type =0
+	if(!enabled)
+	{type=20;}
+
+	else if(inBounds(x,y,80,20)||inBounds(0,0,elem.width, elem.height-180)){
+		type=40;
+		if(mouse.event =="mouseup" && mouse.target==elem && enabled)
+		skip(mode)
+		if(mouse.buttons>0)
+		type=20;
 	}
 	
 	context.drawImage( Assets.img["GUIbuttonskip"],
@@ -515,15 +523,25 @@ function drawButtonskip(x, y,mode,enabled){
 		80,20);
 	
 }
+function skip(mode)
+{
+	if(mode == -1)
+		renderData.skipmode=-1;
+	if(mode == 0)
+		renderData.skipmode=1;
+	//if(mode == 1)
+	//	renderData.skipmode=0;
+		
+}
 
 function drawButtonBG(x, y, width,height,enabled,f,id){
 
 	var type =0
-	if(!enabled || renderData.progress<renderData.time+id*150)
+	if(!enabled)
 	{type=52;}
 	else if(inBounds(x,y,width,height)){
 		type=104;
-		if(mouse.event =="mouseup" && mouse.target==elem){
+		if(mouse.event =="mouseup" && mouse.target==elem&&enabled){
 		f(id)
 		mouse.event="";
 		}

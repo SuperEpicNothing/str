@@ -3,10 +3,12 @@
 - przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
 - options text speed,skip-ability
-- debug skip button
-- fullscreen skip
+- dodać nowe opcje do konfutest
+- debug unvisible click bug 
++ debug skip button
++ fullscreen skip
 + automatic drop-down menu for NEW achievements
-- przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
++ przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
 + give skroll
 + rozdawanie PDków
 + inne moszliwości porównania skilli

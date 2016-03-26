@@ -60,10 +60,39 @@ var currentscene;
 var change = -1;
 var currentEvt=0;
 var EntTime=null;
-var renderData = {type:"none",progress:0,time:0,override:false}
+var renderData = {type:"none",progress:0,skipmode:0,time:0,override:false}
 function processEvent(progress){
+	//start
 	if(!EntTime){EntTime=progress}
 		
+
+
+	//anti break
+	if(currentEvt>=script.scenes[currentscene].events.length)
+	return;
+	
+	var evt =script.scenes[currentscene].events[currentEvt]
+	var isOver = progress-EntTime>evt.time
+	
+	if(evt.type =="dialog")
+	{
+		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding
+	}
+		
+	//skip to next
+	if((isOver && !renderData.override && !(renderData.skipmode==2 && (evt.type =="dialog")) ) || !checkReq(evt.req).enabled)
+	{
+	
+	change = currentEvt+1;
+
+	}
+	//backskip
+	if(renderData.skipmode==-1)
+	{
+		change=script.meta.current;
+	}
+	
+	//general change
 	if(change>=0)
 	{
 
@@ -72,26 +101,10 @@ function processEvent(progress){
 		
 		EntTime=null
 		currentEvt= 0
-		renderData = {type:"none",progress:0,time:0,override:false}
+		renderData = {type:"none",progress:0,skipmode:0,time:0,override:false}
 		return;
 	}
 	
-	if(currentEvt>=script.scenes[currentscene].events.length)
-	return;
-	
-	var evt =script.scenes[currentscene].events[currentEvt]
-	var isOver = progress-EntTime>evt.time
-	if(evt.type =="dialog")
-	{
-		isOver = progress-EntTime>(evt.time-evt.timepadding)*option.speed+evt.timepadding
-	}
-	if((isOver && !renderData.override) || !checkReq(evt.req).enabled)
-	{
-	currentEvt++
-	EntTime=null
-	renderData = {type:"none",progress:0,time:0,override:false}
-	return;
-	}
 	switch(evt.type)
 	{			
 		case "change":
@@ -106,6 +119,8 @@ function processEvent(progress){
 			renderData.timepadding=evt.timepadding
 			renderData.color=evt.color
 			renderData.override=progress-EntTime<(evt.time-evt.timepadding)*option.speed+evt.timepadding
+			if(renderData.progress>=renderData.time)
+				renderData.skipmode=1;
 		break;
 		case "give":
 			renderData.type="give"
@@ -134,6 +149,8 @@ function processEvent(progress){
 			renderData.time=evt.time
 			renderData.color=evt.color
 			renderData.override=true
+			if(renderData.progress>=renderData.time)
+				renderData.skipmode=1;
 		break;
 		
 		case "changeActor":
@@ -173,7 +190,7 @@ function renderWindow(timestamp){
 	
 
 	if(renderData.type=="dialog"||renderData.type=="question"){
-	drawDialog(renderData.name,renderData.text,renderData.time,renderData.progress)
+	drawDialog(renderData.name,renderData.text,renderData.time,renderData.progress,renderData.skipmode)
 
 	}
 	
@@ -185,7 +202,7 @@ function renderWindow(timestamp){
 		else if(renderData.progress<3000){
 		context.drawImage(Assets.img["GUIopenchest"],elem.width-68-20,0);
 
-		var scale = Math.sin((renderData.progress-1000)/750)
+		var scale = Math.abs(Math.sin((renderData.progress-1000-300)/2000*Math.PI))
 		if(Assets.items[renderData.item]){
 		context.drawImage(Assets.img[Assets.items[renderData.item].icon],
 		elem.width/2-34*scale + ((renderData.progress-1000)/2000*(elem.width/2-68)), 34-34*scale+(elem.height-150)-((renderData.progress-1000)/2000*elem.height-150),
@@ -229,9 +246,13 @@ function renderWindow(timestamp){
 		
 		}	
 		
-		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),req.enabled && renderData.progress>=renderData.time+x*150 && renderData.type=="question" &&i<script.scenes[currentscene].options.length,choice,i)
+		drawButtonBG(30,elem.height-140+35*x,640,30*height+5*(height-1),
 		
-		if(renderData.progress>=renderData.time+x*150 && renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined)
+		req.enabled && (renderData.progress>=renderData.time+x*150 || renderData.skipmode>0)
+		&& renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined
+		,choice,i)
+		
+		if((renderData.progress>=renderData.time+x*150 || renderData.skipmode>0) && renderData.type=="question" && script.scenes[currentscene].options[i]!= undefined)
 		{
 			context.fillStyle=color
 			context.wrapText( req.prefix + (req.enabled? (handleText(script.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*x+9,630,16)
