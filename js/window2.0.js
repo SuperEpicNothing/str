@@ -195,7 +195,7 @@ function processEvent(progress){
 var audio
 var startWin = null
 function renderWindow(timestamp){
-	if(!Assets.loaded){window.requestAnimationFrame(renderWindow);return}
+	if(!Assets.loaded ||!script){window.requestAnimationFrame(renderWindow);return}
 	if (!startWin && mouse.isOver && mouse.target==elem){ startWin = timestamp;}
 	
 	audio.volume = option.volume / 100;

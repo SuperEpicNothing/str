@@ -98,12 +98,11 @@ function loader(){
     // set the link's attribute to replace the icon
     document.querySelector('#icon').setAttribute('href', favicon.toDataURL());
 	
-	
+	window.requestAnimationFrame(animateNotifcations);
 	return
 	}
 	 
 	
-	window.requestAnimationFrame(animateNotifcations);
 	console.log(document.cookie);
 	loadAssets();
 }
@@ -292,7 +291,7 @@ function loadAssets(){
 		loader()
     }
 	};
-	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
+	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), true);
 	xmlhttp0.send();
 }
 function unlockAchievment(ach)
@@ -362,13 +361,21 @@ function addMouseListener(elem,f){
 }
 function mouseChange(event,evtname){
 	mouse.target=(event.target);
+	if(evtname=="mouseup" || evtname=="mousedown")
+	{
+	mouse.targetup=mouse.target;
+	mouse.up= evtname=="mouseup"
+	}
+	if(mouse.targetup!=mouse.target)
+		mouse.up=false;
 	mouse.isOver= evtname=="mouseover"? true: evtname=="mouseout"? false :mouse.isOver;
 	mouse.x=event.offsetX//(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
 	mouse.y=event.offsetY//(event.pageY - event.target.documentOffsetTop - scrollValue.top);
 	mouse.buttons=(event.buttons);
 	//mouse.detail=(event.detail);
 	mouse.event=evtname;
-	
+	console.log(mouse.event)
+
 }
 function checkReq(req){
 	var result = {prefix:"",enabled:true};
@@ -511,7 +518,7 @@ function drawButtonback(x, y){
 
 	if(inBounds(x,y,80,20)){
 		type=40;
-		if(mouse.event =="mouseup" && mouse.target==elem)
+		if(mouse.up && mouse.target==elem)
 		skip(-1)
 	
 		if(mouse.buttons>0)
@@ -533,7 +540,7 @@ function drawButtonskip(x, y,mode,enabled){
 
 	else if(inBounds(90,y,elem.width-90,25)||inBounds(0,0,elem.width, elem.height-180)){
 		type=40;
-		if(mouse.event =="mouseup" && mouse.target==elem && enabled)
+		if(mouse.up && mouse.target==elem && enabled)
 		skip(mode)
 		if(mouse.buttons>0)
 		type=20;
@@ -559,8 +566,7 @@ function skip(mode)
 		renderData.skipmode=2;
 		console.log(renderData)
 	}
-	
-	mouse.event="";
+	mouse.up=false;
 }
 
 function drawButtonBG(x, y, width,height,enabled,f,id){
@@ -570,9 +576,9 @@ function drawButtonBG(x, y, width,height,enabled,f,id){
 	{type=52;}
 	else if(inBounds(x,y,width,height)){
 		type=104;
-		if(mouse.event =="mouseup" && mouse.target==elem&&enabled){
+		if(mouse.up && mouse.target==elem&&enabled){
 		f(id)
-		mouse.event="";
+		mouse.up=false;
 		}
 		
 		if(mouse.buttons>0)

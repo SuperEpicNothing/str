@@ -5,9 +5,11 @@ var battlescript
 var currentscene=0;
 function loadConfu(file,id){
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "json/"+file+"?t="+ (new Date().getTime()), false);
+	xhttp.open("GET", "json/"+file+"?t="+ (new Date().getTime()), true);
 	xhttp.send();
 	elem = document.getElementById(id);
+	xhttp.onreadystatechange = function() {
+		
 	if (xhttp.readyState == 4 && xhttp.status == 200)
 	{
 		try{
@@ -29,15 +31,22 @@ function loadConfu(file,id){
 			]
 			}
 		}
+				
+		boss.health=battlescript.meta.bossmaxhp
+		boss.healthMax=battlescript.meta.bossmaxhp
+		boss.heroHp=battlescript.meta.heromaxhp
+		boss.heroHpMax=battlescript.meta.heromaxhp
+	
+		audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
+		audio.loop = true;
 	}
-	else
+	else if(xhttp.readyState == 4)
 	{
 		elem.parentNode.innerHTML=xhttp.responseText
 	}
-	boss.health=battlescript.meta.bossmaxhp
-	boss.healthMax=battlescript.meta.bossmaxhp
-	boss.heroHp=battlescript.meta.heromaxhp
-	boss.heroHpMax=battlescript.meta.heromaxhp
+
+	}
+	
 
 
     context = elem.getContext('2d');
@@ -50,10 +59,7 @@ function loadConfu(file,id){
 		console.log("no canvas")
 	return;
 	}
-	console.log(battlescript.meta.music)
-	//console.log(battlescript.meta.music[ Math.round(battlescript.meta.music.length*Math.random())])
-	audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
-	audio.loop = true;	
+
 	
 	addMouseListener(elem)
 	
@@ -72,7 +78,7 @@ var change,changeEvt;
 
 function renderConfu(timestamp){
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp; audio.play();}
-	if(!start || !Assets.loaded) {window.requestAnimationFrame(renderConfu); return}
+	if(!start || !Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
 	var progress = Math.round(timestamp - start);
 	clear();
 	
