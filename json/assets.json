@@ -65,7 +65,9 @@
 		"src":"images/layers/parallax-space-big-planet3.png"},
 		
 		{"name" : "ItemSword",
-		"src":"images/gui/icons/items/W_Sword01.png"}
+		"src":"images/gui/icons/items/W_Sword01.png"},
+		{"name" : "orbbot",
+		"src":"images/orb.png"}
 	],
 	
 	"scrolls": [

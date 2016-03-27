@@ -68,7 +68,7 @@
 	{
 		"events":[
 			{"type":"pause","time":500},
-			{"type":"question","time":2000,"arm":"book","text":"What's in the book [playerName]?"}
+			{"type":"question","time":2000,"arm":"robot","text":"What's in the book [playerName]?"}
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},

@@ -85,8 +85,6 @@ function renderConfu(timestamp){
 	processEvent(progress);
 	drawBackground(progress);
 	
-	if(!renderData.particles)
-		renderData.particles=[]			
 	drawConfutest(progress);
 	
 	for(var i =0;i<renderData.particles.length;i++)
@@ -109,13 +107,13 @@ function renderConfu(timestamp){
 						case "magicsmoke":
 						
 						
-						context.fillStyle="rgba("+Math.round(63+143*(1-lifestage))+","+Math.round(206*(1-lifestage))+",206,"+(1-lifestage)+")";
+						context.fillStyle="rgba("+Math.round(63+143*(1-lifestage))+","+Math.round(206*(1-lifestage))+",206,"+0.5*(1-lifestage)+")";
 						
 						//context.beginPath();
 						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
 						//context.closePath();;
 
-						context.fillRect(particle.x-particle.size/2-5,particle.y-particle.size/2-5,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+						context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
 						//context.fill();
 						//context.beginPath();
 
@@ -124,6 +122,92 @@ function renderConfu(timestamp){
 						particle.movX=particle.movX+0.05*(1-2*Math.random());
 						particle.movY=particle.movY-0.3*Math.random();
 						
+						break;
+						case "healthsmoke":
+						context.fillStyle="rgba("+Math.round(100+105*(particle.lifepercent)+(Math.sin(progress/(2000*particle.lifepercent)*2*Math.PI)*40))+",0,"+Math.round(70*particle.lifepercent)+","+
+						0.7*(1-lifestage)+")";
+						context.fillRect(particle.x-(particle.size*lifestage/2)-5,particle.y-(particle.size*lifestage/2)-5,10+(particle.size)*lifestage,10+(particle.size)*lifestage);
+
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						particle.movX=particle.movX+0.1*(1-2*Math.random());
+						particle.movY=particle.movY+0.1*(1-2*Math.random());
+						break;
+						case "orbbotbolt":
+				
+						particle.x=particle.ox+particle.movX*lifestage;
+						particle.y=particle.oy+particle.movY*lifestage;	
+						{
+							for(var p =0;p<3;p++){
+							var smk = {
+								type:"magicsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:300*Math.random(),
+								life:0,
+								size:10*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(smk);
+							}
+							}
+						break
+						case "orbbot":
+						var frame = Math.round(lifestage*8*particle.end/700)%8
+						context.drawImage(Assets.img["orbbot"],
+							0, frame*17,
+							17,17,		
+							particle.x-8,particle.y-8,		
+							17*4/3,17*4/3);
+						var arc= 2*Math.PI*lifestage*particle.end/1000*particle.speed/(particle.radious/50);
+						particle.x=Math.sin(arc)*particle.radious*2+particle.cx;
+						particle.y=Math.cos(arc)*particle.radious/3+particle.cy;
+
+
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						
+						if(frame==7-particle.id && Math.random()<=0.2)
+						{
+							var smk = {
+								type:"orbbotbolt",
+								x:particle.x,						
+								y:particle.y,
+								ox:particle.x,						
+								oy:particle.y,
+								start:renderData.progress,
+								end:400,
+								life:0,
+								size:4*Math.random(),
+								movX:-(particle.x-elem.width/2),
+								movY:-(particle.y-elem.height+180)};
+								
+							renderData.particles.push(smk);
+							
+						}
+						
+						if(lifestage>0.9||lifestage<0.05)
+						{
+							for(var p =0;p<5;p++){
+							var smk = {
+								type:"magicsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:4*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(smk);
+							}
+						}
+						particle.movX=particle.movX+0.1*(1-2*Math.random());
+						particle.movY=particle.movY+0.1*(1-2*Math.random());
+						//particle.end+=61;
 						break;
 					}
 				
@@ -141,28 +225,6 @@ function renderConfu(timestamp){
 
 		
 	
-	//drawButtons
-	/*context.font = "16px Aclonica"
-	context.textBaseline = "top";
-	context.textAlign="left"; 
-		
-	for(var i=0;i<4;i++)
-	{
-		if(battlescript.scenes[currentscene].options[i]!= undefined){
-		var req =  checkReq(battlescript.scenes[currentscene].options[i].req);		
-		var color = battlescript.scenes[currentscene].options[i].color &&renderData.type=="question"? 
-			req.enabled ? battlescript.scenes[currentscene].options[i].color.active : battlescript.scenes[currentscene].options[i].color.inactive 
-			: req.enabled?"white":"gray";
-		}	
-		drawButtonBG(30,elem.height-140+35*i,640,30,req.enabled && renderData.progress>=renderData.time+i*150 && renderData.type=="question",select,i)
-		
-		if(renderData.progress>=renderData.time+i*150 && renderData.type=="question" && battlescript.scenes[currentscene].options[i]!= undefined)
-		{
-			context.fillStyle=color
-			context.fillText( req.prefix + (req.enabled? (handleText(battlescript.scenes[currentscene].options[i].text)):"???"),35,elem.height-140+35*i+9)
-		}		
-	}
-	context.fill();*/
 	//drawButtons
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
@@ -253,7 +315,7 @@ function renderConfu(timestamp){
 }
 var currentEvt=0;
 var EntTime=null;
-var renderData = {type:"none",progress:0,time:0,skipmode:0,override:false}
+var renderData = {type:"none",progress:0,time:0,skipmode:0,particles:[],override:false}
 function processEvent(progress){
 
 	if(!EntTime){EntTime=progress}
@@ -309,7 +371,13 @@ function processEvent(progress){
 		EntTime=null
 		currentEvt= changeEvt>=0? changeEvt: 0;
 		if(changeEvt>=0){changeEvt=-1}
-		renderData = {type:"none",progress:0,skipmode:0,time:0,override:false}
+		var oldparticles = renderData.particles;
+		renderData = {type:"none",progress:0,time:0,skipmode:0,particles:[],override:false}
+		for(var i=0;i<oldparticles.length;i++)
+			if(oldparticles[i] && oldparticles[i].end>0){
+				oldparticles[i].start=-oldparticles[i].life;
+				renderData.particles.push(oldparticles[i]);
+			}
 		return;
 	}
 	
@@ -376,7 +444,7 @@ function processEvent(progress){
 }
 
 function drawHPBar(x,y,current,max,progress){
-	context.fillStyle="rgb("+Math.round(205+(current/max)+(Math.sin(progress/2000*2*Math.PI)*40))+",0,"+Math.round(70*(current/max))+")"
+	context.fillStyle="rgb("+Math.round(100+105*(current/max)+(Math.sin(progress/(2000*(current/max))*2*Math.PI)*40))+",0,"+Math.round(70*(current/max))+")"
 	context.fillRect(x+29,y+8,current*67,16)	
 	context.fill()
 	
@@ -657,7 +725,7 @@ function drawConfutest(progress){
 					
 					for(var p=0;p<5;p++)
 					{
-							var arc = (Math.PI*20*i/180)*(renderData.progress-4000)/1000;
+							var arc = (Math.PI*20*i/180);
 							var dist = (elem.height-150-30-15*Math.sin(renderData.progress/250));
 							
 							var parX=	 elem.width/2 + Math.sin(arc)*dist;
@@ -902,6 +970,32 @@ function drawConfutest(progress){
 
 				
 			break;
+			case "robot":
+				if(!renderData.released)
+				{
+					for(var p =0;p<6;p++){
+					var particle = {
+						type:"orbbot",
+						x:confX+(85*4/3),						
+						y:confY+(94*4/3),
+						cx:0,
+						cy:0,
+						radious: 50+40*Math.random(),
+						speed: 0.5*Math.random()+0.1*p,
+						start:renderData.progress,
+						end:6000,
+						life:0,
+						id:p,
+						movX:(1-2*Math.random()),
+						movY:(1-2*Math.random())}
+					particle.cx=particle.x;					
+					particle.cy=particle.y;
+					renderData.particles.push(particle);
+					}
+					
+					renderData.released=true;
+				}
+			break;
 		}
 
 	}
@@ -910,9 +1004,59 @@ function select(id){
 		if(battlescript.scenes[currentscene].options[id].consequence != undefined)
 		{
 			if(battlescript.scenes[currentscene].options[id].consequence.bosshp)
-			boss.health += battlescript.scenes[currentscene].options[id].consequence.bosshp
+			{
+
+				boss.health += battlescript.scenes[currentscene].options[id].consequence.bosshp
+				
+				for(var i=0;i<100;i++)
+				{
+							var parY = 20+Assets.img["GUIhpBar"].height/2 +Assets.img["GUIhpBar"].height/2*(1-2*Math.random())
+							var parX=	30+(boss.health-1
+							-(battlescript.scenes[currentscene].options[id].consequence.bosshp>0?0:battlescript.scenes[currentscene].options[id].consequence.bosshp)
+							)*67+33+(elem.width-(2*28+boss.healthMax*67-4))/2+33*(1-2*Math.random())
+							var particle = {
+								type:"healthsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:1000,
+								life:0,
+								lifepercent:(boss.health/boss.healthMax)+0.1*(1-2*Math.random()),
+								size:2*Math.random(),
+								movX:0.1*(1-2*Math.random()),
+								movY:0.1*(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+				}
+			}
 			if(battlescript.scenes[currentscene].options[id].consequence.herohp)
-			boss.heroHp += battlescript.scenes[currentscene].options[id].consequence.herohp
+			{
+				boss.heroHp += battlescript.scenes[currentscene].options[id].consequence.herohp
+				if(boss.heroHp>boss.heroHpMax){
+					battlescript.scenes[currentscene].options[id].consequence.herohp-=boss.heroHp-boss.heroHpMax
+					boss.heroHp=boss.heroHpMax
+				}
+				for(var i=0;i<100;i++)
+				{
+							var parY = elem.height-180+Assets.img["GUIhpBar"].height/2 +Assets.img["GUIhpBar"].height/2*(1-2*Math.random())
+							var parX=	30+(boss.heroHp-1
+							-(battlescript.scenes[currentscene].options[id].consequence.herohp>0?0:battlescript.scenes[currentscene].options[id].consequence.herohp)
+							)*67+33+(elem.width-(2*28+boss.heroHpMax*67-4))/2+33*(1-2*Math.random())
+							var particle = {
+								type:"healthsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:1000,
+								life:0,
+								lifepercent:(boss.heroHp/boss.heroHpMax)+0.1*(1-2*Math.random()),
+								size:2*Math.random(),
+								movX:0.1*(1-2*Math.random()),
+								movY:0.1*(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+				}
+			}
 			mouse.buttons = 0;
 		}
 	change=battlescript.scenes[currentscene].options[id].target
