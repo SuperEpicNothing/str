@@ -38,6 +38,13 @@ req:
 "req":{"type":"item","item":"ID"}
 "req":{"type":"hp","amt":"a"} hp gracza > a tylko Confutest
 
+// question animations:
+"sword" - 6200
+"robot" - 6000
+"laser" - 2500
+"book" - 2000
+{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie}
+
 
 ===LATER DOWN THE PIPELINE:
 handleText in HTML
