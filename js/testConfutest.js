@@ -84,10 +84,56 @@ function renderConfu(timestamp){
 	//console.log(audio.volume)
 	processEvent(progress);
 	drawBackground(progress);
+	
+	if(!renderData.particles)
+		renderData.particles=[]			
 	drawConfutest(progress);
 	
+	for(var i =0;i<renderData.particles.length;i++)
+		{
+					var particle = renderData.particles[i];
+					
+					if(particle.end<0 || !particle){
+					continue;
+					}
+					if(particle.life>particle.end){
+						particle.end=-1
+						renderData.particles[i]=particle;
+							
+						renderData.particles.splice( i, 1)
+						continue;
+					}
+					var lifestage= particle.life/particle.end;
+					
+					switch(particle.type){
+						case "magicsmoke":
+						
+						
+						context.fillStyle="rgba("+Math.round(63+143*(1-lifestage))+","+Math.round(206*(1-lifestage))+",206,"+(1-lifestage)+")";
+						
+						//context.beginPath();
+						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
+						//context.closePath();;
+
+						context.fillRect(particle.x-particle.size/2-5,particle.y-particle.size/2-5,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+						//context.fill();
+						//context.beginPath();
+
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						particle.movX=particle.movX+0.05*(1-2*Math.random());
+						particle.movY=particle.movY-0.3*Math.random();
+						
+						break;
+					}
+				
+					particle.life=renderData.progress-particle.start;
+					renderData.particles[i]=particle;
+		}
+	
+	
 	if(renderData.type=="dialog"||renderData.type=="question")
-		drawDialog("Confutius",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
+		drawDialog("Konfuzjusz",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
 
 	//drawGUIBAck
 	context.drawImage(Assets.img["GUIback"],0,elem.height-150);
@@ -168,7 +214,7 @@ function renderConfu(timestamp){
 	context.font = "16px Aclonica"
 	context.textBaseline = "top";
 	context.textAlign="center"; 
-	context.fillText("Confutest lv.999",elem.width/2,30)
+	context.fillText("Konfuzjusz lv.999",elem.width/2,30)
 	
 	drawHPBar((elem.width-(2*28+boss.heroHpMax*67-4))/2,elem.height-180,boss.heroHp,boss.heroHpMax,progress);
 	context.fillStyle="white"
@@ -330,7 +376,7 @@ function processEvent(progress){
 }
 
 function drawHPBar(x,y,current,max,progress){
-	context.fillStyle="rgb("+Math.round(205+(Math.sin(progress/2000)*40))+",0,0)"
+	context.fillStyle="rgb("+Math.round(205+(current/max)+(Math.sin(progress/2000*2*Math.PI)*40))+",0,"+Math.round(70*(current/max))+")"
 	context.fillRect(x+29,y+8,current*67,16)	
 	context.fill()
 	
@@ -388,19 +434,32 @@ function drawBackground(progress){
 function drawConfutest(progress){
 	var frame = Math.floor(progress/90);
 	var i = Math.abs(Math.round(Math.sin(frame/16)*9))
-	
+
     context.drawImage(Assets.img["confu"],
 		(frame%4)*Assets.img["confu"].width/4, (Math.floor(frame/4)%2)*Assets.img["confu"].height/2,
 		Assets.img["confu"].width/4,Assets.img["confu"].height/2,		
 		(elem.width-(Assets.img["confu"].width/3))/2+Math.cos(progress/290)*4,50+Math.sin(progress/500)*15,		
 		Assets.img["confu"].width/3,Assets.img["confu"].height/3*2);
 	
-	
+	context.mozImageSmoothingEnabled = false;
+	context.webkitImageSmoothingEnabled = false;
+	context.msImageSmoothingEnabled = false;
+	context.imageSmoothingEnabled = false;
 		context.drawImage(Assets.img["book"],
 		(elem.width-(Assets.img["confu"].width/2))+70+Math.cos(progress/270)*9,150-Math.sin(progress/300)*8,
 		68,68);
+	context.mozImageSmoothingEnabled = true;
+	context.webkitImageSmoothingEnabled = true;
+	context.msImageSmoothingEnabled = true;
+	context.imageSmoothingEnabled = true;
+	
 	if(renderData.type=="question")
 	{
+		
+		
+		var confX=(elem.width-(Assets.img["confu"].width/3))/2+Math.cos(progress/290)*4;
+		var confY=50+Math.sin(progress/500)*15;
+				
 		switch(renderData.arm){
 			case "sword":
 				if(renderData.progress<=1000){
@@ -411,6 +470,25 @@ function drawConfutest(progress){
 						-43,-43,
 					86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<5;i++)
+						{
+							var parY = 105+75*(renderData.progress/1000)+15*Math.sin(renderData.progress/250) +3*(1-2*Math.random())
+							var parX=	elem.width/2-100*(renderData.progress/1000)+(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else if(renderData.progress<=1500){
 				
@@ -419,7 +497,27 @@ function drawConfutest(progress){
 					context.drawImage(Assets.img["sword"],
 						-43,-43,
 					86,86);
+					
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<5;i++)
+					{
+							var parY = 180+15*Math.sin(renderData.progress/250) +3*(1-2*Math.random())
+							var parX=	elem.width/2-100+(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else if(renderData.progress<=2500){
 				
@@ -430,6 +528,25 @@ function drawConfutest(progress){
 						-43,-43,
 					86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<5;i++)
+					{
+							var parY = 180+15*Math.sin(renderData.progress/250) +3*(1-2*Math.random())
+							var parX=	elem.width/2-100+(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else if(renderData.progress<=3500){
 				
@@ -440,6 +557,25 @@ function drawConfutest(progress){
 						-43,-43,
 					86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<5;i++)
+					{
+							var parY = 180 -150*(renderData.progress-2500)/1000+15*Math.sin(renderData.progress/250) 
+							var parX=	 elem.width/2-100+100*(renderData.progress-2500)/1000;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else if(renderData.progress<=4000){
 				
@@ -450,6 +586,25 @@ function drawConfutest(progress){
 						-43,-43,
 					86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<5;i++)
+					{
+							var parX=	 elem.width/2;
+							var parY = 30+15*Math.sin(renderData.progress/250) 
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else if(renderData.progress<=5000){
 				
@@ -463,6 +618,27 @@ function drawConfutest(progress){
 					context.drawImage(Assets.img["sword"],
 						-43,-43,
 					86,86);
+					for(var p=0;p<5;p++)
+					{
+							var arc = (Math.PI*20*i/180)*(renderData.progress-4000)/1000;
+							var dist = (elem.height-150-30-15*Math.sin(renderData.progress/250));
+							
+							var parX=	 elem.width/2 + Math.sin(arc)*dist;
+							var parY = elem.height-150 -  Math.cos(arc)*dist ;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 					}
 					context.setTransform(1, 0, 0, 1, 0, 0);
 				}
@@ -478,6 +654,28 @@ function drawConfutest(progress){
 					context.drawImage(Assets.img["sword"],
 						-43,-43,
 					86,86);
+					
+					for(var p=0;p<5;p++)
+					{
+							var arc = (Math.PI*20*i/180)*(renderData.progress-4000)/1000;
+							var dist = (elem.height-150-30-15*Math.sin(renderData.progress/250));
+							
+							var parX=	 elem.width/2 + Math.sin(arc)*dist;
+							var parY = elem.height-150 -  Math.cos(arc)*dist ;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:300*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 					}
 					context.setTransform(1, 0, 0, 1, 0, 0);
 				}
@@ -493,39 +691,216 @@ function drawConfutest(progress){
 					context.drawImage(Assets.img["sword"],
 						-43,-43,
 					86,86);
+					if(renderData.progress<=6000)
+					{
+						for(var p=0;p<5;p++)
+						{
+							var arc = (Math.PI*20*i/180)*(renderData.progress-4000)/1000;
+							var dist = (elem.height-150-30)-(elem.height-150-30)*(renderData.progress-5500)/500;
+							
+							var parX=	 elem.width/2 + Math.sin(arc)*dist;
+							var parY = elem.height-150 -  Math.cos(arc)*dist ;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:300*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+						}
+					}
+					
 					}
 					context.setTransform(1, 0, 0, 1, 0, 0);
+					if(renderData.progress>6000 && renderData.progress<6200)
+					{
+						for(var i=0;i<20;i++)
+						{
+							var parY = elem.height-180+3*(1-2*Math.random())
+							var parX=	elem.width/2+(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:900*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+						}
+					}
 				}
 			break;
 			
 			case "book":
-				if(renderData.progress<=1000){
-				
-				context.setTransform(renderData.progress/1000, 0, 0, renderData.progress/1000, (elem.width-(Assets.img["confu"].width/2))+70+Math.cos(progress/270)*9+34,150-Math.sin(progress/300)*8+34-(100/1000*renderData.progress));
-				context.rotate(2*Math.PI*progress/3000);
-				context.drawImage(Assets.img["magicbolt"],
-					-34,-34,
-				68,68);
-				context.setTransform(1, 0, 0, 1, 0, 0);
+				if(renderData.progress<=1000){			
+					for(var p=0;p<5+10*renderData.progress/1000;p++)
+					{
+							
+							var parX=	confX+230+Math.cos(progress/270)*9+(1-2*Math.random())*5;
+							var parY = 150-Math.sin(progress/300)*8+34-(100/1000*renderData.progress)+(1-2*Math.random())*5;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random()+200*renderData.progress/1000,
+								life:0,
+								size:15*Math.random()+10*renderData.progress/1000,
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
-				else if(renderData.progress<=1500){
 				
-				context.setTransform(1, 0, 0, 1, (elem.width-(Assets.img["confu"].width/2))+70+34,84);
-				context.rotate(2*Math.PI*progress /2000);
-				context.drawImage(Assets.img["magicbolt"], 
-					-34,-34,
-				68,68);
-				context.setTransform(1, 0, 0, 1, 0, 0);
+				else if(renderData.progress<=1500){
+					var scale = (renderData.progress-1000)/500
+					
+					for(var p=0;p<5 + 10*scale;p++)
+					{
+							var parX=	confX+230+(1-2*Math.random())*5*scale;
+							var parY = 50-Math.sin(progress/300)*8+34+(1-2*Math.random())*5*scale;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:200*Math.random()+400*scale,
+								life:0,
+								size:15*Math.random()+10*scale,
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
 				}
 				else{
-				
-				context.setTransform(1, 0, 0, 1, (elem.width-(Assets.img["confu"].width/2))+70+34-(104/700*(renderData.progress-1500)),84+(((elem.height-170-84))/700)*(renderData.progress-1500));
-				context.rotate(2*Math.PI*progress/1500);
-				context.drawImage(Assets.img["magicbolt"],
-					-34,-34,
-				68,68);
-				context.setTransform(1, 0, 0, 1, 0, 0);
+				if(renderData.progress-1500<1000)
+				for(var p=0;p<15;p++)
+				{
+							var parX=	confX+230+(1-2*Math.random())*5;
+							var parY = 50-Math.sin(progress/300)*8+34+(1-2*Math.random())*5;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:200*Math.random()+400,
+								life:0,
+								size:15*Math.random()+10,
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
 				}
+				//context.setTransform(1, 0, 0, 1, (elem.width-(Assets.img["confu"].width/2))+70+34-(104/700*(renderData.progress-1500)),84+(((elem.height-170-84))/700)*(renderData.progress-1500));
+				if(renderData.progress-1500<1800)
+				for(var i=0;i<3;i++)
+				{
+					var timeoffset = -500*i
+					timeoffset= renderData.progress-1500+timeoffset<0? -renderData.progress+1500: timeoffset
+					for(var p=0;p<10;p++)
+					{
+							var parX=	-10*i+confX+230-(104/700*(renderData.progress-1500+timeoffset)) + (1-2*Math.random())*5;
+							var parY = 84+(((elem.height-170-84))/700)*(renderData.progress-1500+timeoffset) +(1-2*Math.random())*5;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:200*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+				}
+				
+				
+				if(renderData.progress-1500>700 && renderData.progress-1500<800 ||
+				renderData.progress-1500>1200 && renderData.progress-1500<1300 ||
+				renderData.progress-1500>1700 && renderData.progress-1500<1800)
+					{
+						for(var i=0;i<20;i++)
+						{
+							var parY = elem.height-180+3*(1-2*Math.random())
+							var parX=	elem.width/2+(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:900*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+						}
+					}
+				}
+			break;
+			
+			case "laser":								
+				
+				context.fillStyle="rgba(255,0,0,1)";
+				if(renderData.progress<=1000){
+					var fill = renderData.progress/1000;
+					context.fillStyle="rgba(255,0,0,"+fill+")";
+					context.fillRect(confX+82*4/3+(4-(4*fill)),confY+40*4/3+(4/3-4/3*fill),6*4/3*fill,2*4/3*fill);
+					
+				}else if(renderData.progress<=2500)
+				{		
+					var fill = (renderData.progress-1000)/1500;			
+					context.fillRect(confX+82*4/3,confY+40*4/3,6*4/3,2*4/3);
+					
+					context.setTransform(1, 0, 0, 1, confX+82*4/3+4,confY+40*4/3+4/3);
+					context.rotate((Math.PI*fill));
+					context.fillRect(0,-4/3,600,2*4/3);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+						var parY = elem.height-180+3*(1-2*Math.random())
+						var dist = parY-(confY+40*4/3);
+			
+						var xoffset = Math.sin(Math.PI/2-Math.PI*fill)*dist;
+						var parX=confX+82*4/3+xoffset+(1-2*Math.random())
+					for(var p=0;p<3;p++)	
+					if(parX>=((elem.width-(2*28+boss.heroHpMax*67-4))/2) && parX<=((elem.width+(2*28+boss.heroHpMax*67-4))/2)){	
+					var particle = {
+						type:"magicsmoke",
+						x:parX,
+						
+						y:parY,
+						start:renderData.progress,
+						end:1200*Math.random(),
+						life:0,
+						size:20,
+						movX:(1-2*Math.random()),
+						movY:(1-2*Math.random())}
+					renderData.particles.push(particle);}
+
+				}
+
+				
 			break;
 		}
 
