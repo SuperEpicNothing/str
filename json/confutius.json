@@ -11,7 +11,6 @@
 	"scenes": [
 	{
 		"events":[
-			{"type":"change","time":0,"target":4},
 			{"type":"showBoss","time":2300},
 			{"type":"dialog","time":3000,"timepadding":1000,
 			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},
@@ -60,7 +59,7 @@
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
 			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 0, "text": "..."}
+			{"target": 6, "text": "..."}
 	
 
 		]	   
@@ -74,7 +73,7 @@
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
 			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 0, "text": "..."}
+			{"target": 6, "text": "..."}
 	
 
 		]	   
@@ -88,7 +87,21 @@
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
 			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 0, "text": "..."}
+			{"target": 6, "text": "..."}
+	
+
+		]	   
+	},
+		{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"question","time":2000,"arm":"book","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 5, "text": "???","consequence":{"herohp":-1}},
+			{"target": 6, "text": "..."}
 	
 
 		]	   
