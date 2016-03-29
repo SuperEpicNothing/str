@@ -352,7 +352,7 @@
 		],
 		"options":[
 			{"target": 25, "text": "Mam pytanie do pewnego określonego fragmentu..."},
-			{"target": nr, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
+			{"target": 999, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
 		]	   
 	},
 
@@ -366,9 +366,9 @@
 		],
 		"options":[
 			{"target": 26, "text": "O tym, że niepewne są dane zmysłowe i cielesne."},
-			{"target": nr, "text": "O tym, by nie ufać nawet matematyce, i o Złym Demonie."},
-			{"target": nr, "text": "O tym, że muszę z konieczności istnieć ja sam."},
-			{"target": nr, "text": "Chyba już wszystko rozumiem, możemy iść dalej."}
+			{"target": 999, "text": "O tym, by nie ufać nawet matematyce, i o Złym Demonie."},
+			{"target": 999, "text": "O tym, że muszę z konieczności istnieć ja sam."},
+			{"target": 999, "text": "Chyba już wszystko rozumiem, możemy iść dalej."}
 		]	   
 	},
 
@@ -383,7 +383,7 @@
 		"options":[
 			{"target": 27, "text": "Ja osobiście uważam, że najpewniejsze rzeczy pochodzą z rozumu, a nie ze zmysłów.", "height":2},
 			{"target": 28, "text": "Myślę, że temu, co mówią zmysły, nie da się jednak zaprzeczyć..."},
-			{"target": nr, "text": "Co to są te [']czarne wapory żółci[']?!"}
+			{"target": 999, "text": "Co to są te [']czarne wapory żółci[']?!"}
 		]	   
 	},
 	
@@ -396,7 +396,7 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": "I to właśnie wydaje mi się być podejrzane..."}
+			{"target": 999, "text": "I to właśnie wydaje mi się być podejrzane..."}
 		]	   
 	},
 
@@ -411,7 +411,7 @@
 		],
 		"options":[
 			{"target": 29, "text": "Nie, nie przekonuje mnie. Przecież wiem, kiedyś śnię, a kiedy nie śnię!", "height":2},
-			{"target": nr, "text": "[TEST: MŁOT BEZPOŚREDNIEJ WIEDZY] Nie w tym rzecz. Interpretacja danych zmysłowych może być niepewna, ale sama ich treść - nie!", "height":2}
+			{"target": 999, "text": "[TEST: MŁOT BEZPOŚREDNIEJ WIEDZY] Nie w tym rzecz. Interpretacja danych zmysłowych może być niepewna, ale sama ich treść - nie!", "height":2}
 		]	   
 	},
 	
@@ -424,8 +424,8 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": "Hm, chyba nie do końca..."},
-			{"target": nr, "text": "Tak"}
+			{"target": 999, "text": "Hm, chyba nie do końca..."},
+			{"target": 999, "text": "Tak"}
 		]	   
 	},
 
@@ -439,9 +439,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -454,9 +454,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -470,9 +470,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -485,9 +485,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -501,9 +501,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -516,9 +516,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -532,9 +532,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -547,9 +547,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -563,9 +563,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -578,9 +578,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -594,9 +594,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -609,9 +609,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -625,9 +625,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -640,9 +640,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -656,9 +656,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -671,9 +671,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -687,9 +687,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 	
@@ -702,9 +702,9 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
 	},
 
@@ -718,10 +718,11 @@
 			}
 		],
 		"options":[
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "},
-			{"target": nr, "text": " "}
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "},
+			{"target": 999, "text": " "}
 		]	   
-	},
+	}
+	
 	]
 }
