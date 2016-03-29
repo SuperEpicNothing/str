@@ -39,15 +39,27 @@
 		
 		{"name" : "forest",
 		"src":"images/layers/parallax-forest.png"},
-		
+		{"name" : "canaletto",
+		"src":"images/layers/parallax-canaletto.png"},
+		{"name" : "cambridge",
+		"src":"images/layers/cambridge.png"},
 		{"name" : "blackboard",
 		"src":"images/layers/parallax-blackboard.png"},
 		
-		{"name" : "arystotle",
+		{"name" : "arystoteles",
 		"src":"images/layers/arystoteles.png"},
+		{"name" : "kartezjusz",
+		"src":"images/layers/kartezjusz.png"},
+		{"name" : "russell",
+		"src":"images/layers/russell3.png"},
+		{"name" : "james",
+		"src":"images/layers/james.png"},
+		{"name" : "popper",
+		"src":"images/layers/popper.png"},
 		{"name" : "tom",
 		"src":"images/layers/tom.png"},
 	
+
 		{"name" : "planets-parallax",
 		"src":"images/layers/parallax-space-far-planets.png"},
 		{"name" : "stars-parallax",

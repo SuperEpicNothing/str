@@ -1,0 +1,37 @@
+{
+	"meta":
+		{
+		"bg":"cambridge",
+		"current":0,
+		"actor":"popper"
+		},
+	"scenes": [
+	{
+		"events":[
+			
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Dzień dobry!"},
+			{"target": 1, "text": "Witaj, Profesorze!"}
+		]	   
+	},
+
+	{
+		"events":[
+			
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam pewien problem ze zrozumieniem Twoich słów, Arystotelesie!"},
+			{"target": 19, "text": "Nic z tego nie rozumiem…"},
+			{"target": 2, "text": "Czym się ostatnio zajmujesz?"}
+		]	   
+	}
+	
+	]
+}
