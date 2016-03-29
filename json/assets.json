@@ -43,6 +43,8 @@
 		"src":"images/layers/parallax-canaletto.png"},
 		{"name" : "cambridge",
 		"src":"images/layers/cambridge.png"},
+		{"name" : "kronor",
+		"src":"images/layers/kronor.png"},
 		{"name" : "blackboard",
 		"src":"images/layers/parallax-blackboard.png"},
 		
