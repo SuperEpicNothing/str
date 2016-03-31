@@ -12,9 +12,11 @@
 
 
 - co to jest type "change"?
-
-
-
+- make skip invisible when not in use
+- handleText in HTML
+- move restart button to top corner
+- mute button top corner
+- handle image smoothing better
 + options text speed,skip-ability
 + dodać nowe opcje do konfutest
 + debug invisible click bug 
@@ -45,6 +47,7 @@
 
 {"type":"give","time":4600,"item":"001","book"":"ID","xp":2} - give item andor book andor xp 
 {"type":"unlockAch","time":"4200","ach":id}, - unlock Achievment
+{"type":"change","time":"0","target":id}, - jump to scene id
 
 req:
 "req":{"type":"skill","skill":4,"amt":3,"mode":"<"} optional-mode{"<",">"}
@@ -62,7 +65,8 @@ req:
 ===LATER DOWN THE PIPELINE:
 handleText in HTML
 więcej animacj zadweania pytań przez konfuzjusza
-
+confutius sprawdza ile razy pregrałeś i zminia mowę
+acheivment for no losses
 
 
 statystyki:
