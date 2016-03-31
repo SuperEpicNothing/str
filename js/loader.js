@@ -404,7 +404,7 @@ function checkReq(req){
 			break;
 				
 			case "item":
-					result.enabled = player.items.indexOf(req.item)>-1;
+					result.enabled = player.items.indexOf(req.item>-1);
 					result.prefix = "[ "+Assets.items[req.item].fullname+" ] ";
 			break;
 		}
