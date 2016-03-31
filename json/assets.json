@@ -124,15 +124,49 @@
 	],
 	"items": [
 		{
-			"type": "Generic Item",
-			"name": "001",
-			"fullname": "Loreminator",
-			"autor": "Lorem",
+			"type": "Argument",
+			"name": "demon",
+			"fullname": "Demon Kartezjusza",
+			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
 			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'O złośliwym demonie' w rozdziale 'Skąd wiesz?').",
 			"url": null	
 		},
+
+		{
+			"type": "Argument",
+			"name": "russell",
+			"fullname": "Fundament Russella",
+			"autor": "Bertrand Russell",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemSword",
+			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'O wiedzy bezpośredniej' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+
+		{
+			"type": "Argument",
+			"name": "popper",
+			"fullname": "Falsyfikator Poppera",
+			"autor": "Karl Popper",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemSword",
+			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'O solidnej nauce' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "james",
+			"fullname": "Doświadczenie Jamesa",
+			"autor": "William James",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemSword",
+			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'O doświadczeniu religijnym' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+
 		{
 			"type": "Generic Item",
 			"name": "LearnLink",

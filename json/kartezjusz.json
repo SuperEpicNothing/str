@@ -352,7 +352,7 @@
 		],
 		"options":[
 			{"target": 25, "text": "Mam pytanie do pewnego określonego fragmentu..."},
-			{"target": 999, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
+			{"target": 32, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
 		]	   
 	},
 
@@ -431,48 +431,44 @@
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"30",
 		"events":[
-			
+			{"type":"give","time":4600,"item":"demon"},
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Skoro wszystko już jasne, weź, proszę, ode mnie ten Argument i niech Ci on dzielnie służy. Bywaj!"
 			}
+
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 31, "text": "Dziękuję, Kartezjuszu! Bywaj."}
+
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"31",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"..."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 31, "text": "..."}
 		]	   
 	},
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"32",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Jakie więc masz wąptliwości?"
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 30, "text": "Żadnych. Chyba rozumiem już wszystko."}
 		]	   
 	},
 	

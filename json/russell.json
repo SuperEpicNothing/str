@@ -7,6 +7,7 @@
 		},
 	"scenes": [
 	{
+		"COMMENT":"0",
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
@@ -20,18 +21,100 @@
 	},
 
 	{
+		"COMMENT":"1",
 		"events":[
 			
-			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
 			"text":"W czym mogę pomóc?"
 			}
 		],
 		"options":[
-			{"target": 19, "text": "Mam pewien problem ze zrozumieniem Twoich słów, Arystotelesie!"},
-			{"target": 19, "text": "Nic z tego nie rozumiem…"},
-			{"target": 2, "text": "Czym się ostatnio zajmujesz?"}
+			{"target": 3, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
+			{"target": 2, "text": "Co nowego w Cambridge?"}
+		]	   
+	},
+	
+{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"A pięknie, pięknie..."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Chciałbym porozmawiać o Pańskim tekście, Profesorze!"},
+			{"target": 2, "text": "Co nowego w Cambridge?"}
+		]	   
+	},
+	
+{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Którym tekście, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 4, "text": "[']Problemy filozofii['], fragment o wiedzy bezpośredniej"}
+
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Ach tak, oczywiście. Który fragment budzi Twoje wątpliwości?"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
+			{"target": 5, "text": "Sam tekst rozumiem, chciałbym porozmawiać ogólniej."}
+		]	   
+	},	
+
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Słucham więc."
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
+			{"target": 6, "text": "Myślę, że już wszystko jest dla mnie jasne. Dziękuję za pomoc!"}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			{"type":"give","time":4600,"item":"russell"},
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Dziękuję za rozmowę. Przyjmij ten Argument i niech Ci służy! Bywaj!"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Dziękuję, Profesorze! Powodzenia w pracy!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"..."
+			}
+		],
+		"options":[
+			{"target": 7, "text": "..."}
 		]	   
 	}
-	
 	]
 }

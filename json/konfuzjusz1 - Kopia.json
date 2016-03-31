@@ -1,0 +1,104 @@
+{
+	"meta":{
+	"bossmaxhp":9,
+	"heromaxhp":5,
+	"music":[
+	"heroism.ogg",
+	"Battle in the winter.mp3",
+	"Thrust Sequence.mp3",
+	"Blackmoor Colossus Loop.wav"]
+	},
+	"scenes": [
+	{
+		"comment":"0",
+		"events":[
+			{"type":"showBoss","time":2300},
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"MuaHuahua! huahuahua! huahuahuahuahua! [diaboliczny śmiech]"}
+		],
+		"options":[
+			{"target": 1, "text": "Nie przeszkadzam?"}
+
+		]	   
+	},
+
+	{
+		"comment":"1",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"Witaj, [playerName]! Cieszę się, że dotarłeś aż tutaj..."
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Kim jesteś?"},
+			{"target": 5, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}]!", "height":2}
+		]	  		
+	},
+
+	{
+		"comment":"2",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"[']Jam częścią tej siły, która wiecznie zła pragnąc, wiecznie czyni dobro['], ciekawski Wędrowcze!"
+			},
+		],
+		"options":[
+			{"target": 3, "text": "???","consequence":{"herohp":-1}},
+			{"target": 4, "text": "[Test Wiedza] Czy to z Bułhakowa?", "color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":9},"consequence":{"bosshp":-1}}
+		]	  		
+	},
+
+
+	{
+		"comment":"3",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"Zrozumiesz to kiedyś w przyszłości, być może. Czy jesteś gotów zmierzyć się z moimi podstępami?"
+			},
+		],
+		"options":[
+			{"target": 6, "text": "Próbuj, Konfuzjuszu, nie lękam się!"}
+		]	  		
+	},
+	
+	{
+		"comment":"4",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz zerka z niedowierzaniem] Widzę, że trafiłem na niebagatelnego przeciwnika. Ciekawe, czy będziesz tak [playerGender {mężny|mężna}, gdy zastawię na Ciebie sidła mego podstępu..."
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Próbuj swych sił, Konfuzjuszu, nie boję się!"}
+		]	  		
+	},
+		
+	{
+		"comment":"5",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"Ha! [playerGender {Filozof|Filozofka}]! Paradne! Na nic Twe przechwałki, zaraz Cię pogonię moim sprytem i podstępem!"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Kim jesteś?"},
+			{"target": 3, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}!", "height":2}
+		]	  		
+	},
+	
+	{
+		"comment":"6",
+		"events":[
+			{"type":"dialog","time":1000,"timepadding":0,
+			"text":"Słuchaj więc uważnie, Wędrowcze."
+			}
+		],
+		"options":[
+			{"target": 666, "text": "OPCJA 1"},
+			{"target": 777, "text": "OPCJA 2"}
+		]	  		
+	}
+	
+	
+	]
+}

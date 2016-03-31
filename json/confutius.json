@@ -102,9 +102,8 @@
 			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
 			{"target": 6, "text": "..."}
-	
-
 		]	   
 	}
+	
 	]
 }
