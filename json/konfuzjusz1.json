@@ -120,7 +120,7 @@
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Kim jesteś?"},
+			{"target": 2, "text": "Kim jesteś? Bla bla!!!"},
 			{"target": 3, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}!", "height":2}
 		]	  		
 	}
