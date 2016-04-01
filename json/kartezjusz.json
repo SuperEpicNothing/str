@@ -319,7 +319,7 @@
 	{
 		"COMMENT":"22",
 		"events":[
-			
+			{"type":"give","time":4600,"book":"kartez"},
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":"[Kartezjusz spogląda stojący w rogu zegar mechaniczny] Wiesz, Wędrowcze, nasz czas niedługo dobiegnie końca. Przyjmij ode mnie ten oto zwój, znajdziesz tam odpowiedzi na nurtujące Cię pytania..."
 			}
@@ -352,7 +352,7 @@
 		],
 		"options":[
 			{"target": 25, "text": "Mam pytanie do pewnego określonego fragmentu..."},
-			{"target": 32, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
+			{"target": 48, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
 		]	   
 	},
 
@@ -361,14 +361,14 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"O czym chcesz porozmawiać?"
+			"text":"O którym fragmencie porozmawiać?"
 			}
 		],
 		"options":[
 			{"target": 26, "text": "O tym, że niepewne są dane zmysłowe i cielesne."},
-			{"target": 999, "text": "O tym, by nie ufać nawet matematyce, i o Złym Demonie."},
-			{"target": 999, "text": "O tym, że muszę z konieczności istnieć ja sam."},
-			{"target": 999, "text": "Chyba już wszystko rozumiem, możemy iść dalej."}
+			{"target": 38, "text": "O tym, by nie ufać nawet matematyce, i o Złym Demonie."},
+			{"target": 42, "text": "O tym, że muszę z konieczności istnieć ja sam."},
+			{"target": 48, "text": "Chyba już wszystko rozumiem, możemy iść dalej."}
 		]	   
 	},
 
@@ -383,7 +383,7 @@
 		"options":[
 			{"target": 27, "text": "Ja osobiście uważam, że najpewniejsze rzeczy pochodzą z rozumu, a nie ze zmysłów.", "height":2},
 			{"target": 28, "text": "Myślę, że temu, co mówią zmysły, nie da się jednak zaprzeczyć..."},
-			{"target": 999, "text": "Co to są te [']czarne wapory żółci[']?!"}
+			{"target": 37, "text": "Co to są te [']czarne wapory żółci[']?!"}
 		]	   
 	},
 	
@@ -396,7 +396,7 @@
 			}
 		],
 		"options":[
-			{"target": 999, "text": "I to właśnie wydaje mi się być podejrzane..."}
+			{"target": 28, "text": "I to właśnie wydaje mi się być podejrzane..."}
 		]	   
 	},
 
@@ -410,8 +410,7 @@
 			}
 		],
 		"options":[
-			{"target": 29, "text": "Nie, nie przekonuje mnie. Przecież wiem, kiedyś śnię, a kiedy nie śnię!", "height":2},
-			{"target": 999, "text": "[TEST: MŁOT BEZPOŚREDNIEJ WIEDZY] Nie w tym rzecz. Interpretacja danych zmysłowych może być niepewna, ale sama ich treść - nie!", "height":2}
+			{"target": 29, "text": "Nie, nie przekonuje mnie. Przecież wiem, kiedyś śnię, a kiedy nie śnię!", "height":2}
 		]	   
 	},
 	
@@ -420,12 +419,12 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"Oj, nie wydaje mi się. Ufam tu nie tylko sobie, ale i wielu ludziom, z którymi na ten temat rozmawiałem. Sen to zresztą najmniejszy problem. Zauważ, że osoby mające zaćmiony umysł i zaznające halucynacji nie zdają sobie sprawy z tego, że to, co widzą, nie istnieje. Czy możesz mieć absolutną pewność, że jesteś zdrów na umyśle?"
+			"text":"Oj, nie wydaje mi się, abyś to [playerGender {wiedział|wiedziała}]. Zresztą, sen to zresztą najmniejszy problem. Zauważ, że osoby mające zaćmiony umysł, doznające halucynacji nie zdają sobie sprawy z tego, że to, co widzą, nie istnieje. Czy możesz mieć absolutną pewność, że jesteś zdrów na umyśle?"
 			}
 		],
 		"options":[
-			{"target": 999, "text": "Hm, chyba nie do końca..."},
-			{"target": 999, "text": "Tak"}
+			{"target": 31, "text": "Hm, chyba nie mogę być pewien do końca..."},
+			{"target": 33, "text": "Wydaje mi się, że tak..."}
 		]	   
 	},
 
@@ -434,13 +433,13 @@
 		"COMMENT":"30",
 		"events":[
 			{"type":"give","time":4600,"item":"demon"},
-			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			{"type":"dialog","name":"Kartezjusz","time":5000,"timepadding":0,
 			"text":"Skoro wszystko już jasne, weź, proszę, ode mnie ten Argument i niech Ci on dzielnie służy. Bywaj!"
 			}
 
 		],
 		"options":[
-			{"target": 31, "text": "Dziękuję, Kartezjuszu! Bywaj."}
+			{}
 
 		]	   
 	},
@@ -450,11 +449,11 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"..."
+			"text":"Otóż to. Ba, to właśnie osoby, które są najsilniej pomieszane, z największą pewnością twierdzą zawsze, że są zdrowe na umyśle! Sam chyba rozumiesz, dlaczego nie wolno ufać rozumowi, jeżeli szukamy źródła rzeczy NAPRAWDĘ niepodważalnych."
 			}
 		],
 		"options":[
-			{"target": 31, "text": "..."}
+			{"target": 25, "text": "No tak... wróćmy może do innych fragmentów."}
 		]	   
 	},
 
@@ -464,7 +463,7 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"Jakie więc masz wąptliwości?"
+			"text":"Jakie więc masz wąptliwości? NIEUŻYWANY!!!"
 			}
 		],
 		"options":[
@@ -473,251 +472,269 @@
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"33",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Widzisz, ale to właśnie osoby, które są najsilniej pomieszane, z największą pewnością twierdzą zawsze, że są zdrowe na umyśle!"
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 34, "text": "Twierdzisz więc, że jestem szaleńcem?!"},
+			{"target": 25, "text": "Chyba już rozumiem, możemy wrócić do innych fragmentów."}
 		]	   
 	},
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"34",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Oj, nie. Tego przecież nie wiem. Twierdzę tylko, że [playerGender {mógłbyś|mogłabyś}] być szaleńcem, a to wielka różnica. Tej możliwości nie sposób zaprzeczyć!..."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 35, "text": "[TEST UPARTOŚĆ?] A nie ma na to jakichś testów psychologicznych?"},
+			{"target": 25, "text": "Chyba mnie przekonałeś, Kartezjuszu. Wróćmy do Twojego tekstu."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"35",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Uparty jesteś, Wędrowcze, ale to dobrze. Pamiętaj, że mówimy o możliwości czysto logicznej. Nie zastanawiamy się, jak bardzo jest to prawdopodobne. Jeśli istnieje jakikolwiek scenariusz, choćby najbardziej nieprawdopodobny, który nie jest wewnętrznie sprzeczny, to znaczy, że coś jest możliwe."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 36, "text": "..."}
 		]	   
 	},
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"36",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Mówisz, że są testy psychologiczne. Niech i tak będzie. Jeśli natomiast istnieje choćby cień szansy, że Twoje szaleństwo nie zostanie wykryte przez ten test, że ktoś wkradnie się do gabinetu i sfałszuje wyniki, że psycholog pomyli się... choćby minimalna szansa - to musimy uznać, że możliwym jest, abyś był szaleńcem. Jasne?"
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 25, "text": "Cóż, skoro chwytamy się naprawdę WSZYSTKICH możliwości... Ech, wróćmy może do Twojego tekstu.", "height":2}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"37",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Jak dobrze wiesz, Wędrowcze, w organizmie człowieka krążą rozmaite humory: krew, żółć, flegma... wapory żółci to po prostu opary tegoż humoru, uderzające do głowy, powodujące szaleństwo."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 25, "text": "Hm, w moich czasach nieco inaczej tłumaczy się szaleństwo, ale wróćmy może do Twojego tekstu, Kartezjuszu...", "height":2}
 		]	   
 	},
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"38",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"To, że nie możemy ostatecznie ufać nawet matematyce, jest związane z możliwością istnienia Złośliwego Demona. Skoro mógłby istnieć taki Demon, to mogłoby być również tak, że zawsze, kiedy wydaje mi się, że coś obliczam, ów Demon podpowiada mi złe rozwiązanie i sprawia, że wydaje mi się, że mam rację..."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 39, "text": "Nie wydaje mi się, aby mógł istnieć taki Demon."},
+			{"target": 41, "text": "Ale czym jest ów Demon?"},
+			{"target": 25, "text": "Chyba rozumiem, możemy wrócić do Twojego tekstu."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"39",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Musisz znowuż, Wędrowcze, pamiętać, że mówimy tutaj o czystej możliwości, nieistotne, jak mało prawdopodobnej. Jeśli uznasz, że przynajmniej minimalnie >>możliwe<< jest, aby istniał Bóg, to musisz też zgodzić się, że mogłaby istnieć istota podobna do Boga pod względem mocy, ale złośliwie podpowiadająca nam nieprawdy."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
-	},
-
-	
-	{
-		"COMMENT":"",
-		"events":[
-			
-			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
-			}
-		],
-		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
-	},
-	
-	{
-		"COMMENT":"",
-		"events":[
-			
-			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
-			}
-		],
-		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 40, "text": "Ale czy wszechmoc nie idzie w parze z wszechdobrocią?"},
+			{"target": 41, "text": "No ale czym właściwie miałby być ów Demon?"}
 		]	   
 	},
 
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"40",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Dobrze rozumujesz, Wędrowcze, jednak dla naszych potrzeb w zupełności wystarczy, aby >>mogła<< nie iść w parze. Mnie też wydaje się, że istota o boskiej mocy powinna również posiadać boską mądrość i dobroć... ale dla potrzeb mojego doświadczenia myślowego wystarczy uznać, że >>mogłoby<< tak nie być."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 25, "text": "Skoro już czepiam się każdej możliwości... OK, wróćmy może do Twojego tekstu...", "height":2},
+			{"target": 41, "text": "A czym konkretnie miałby być ten Demon?"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"41",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"To nie ma znaczenia, czym konkretnie byłby ów Demon. Jeśli chcesz, nadaj mu imię. Dla mnie jest on tylko czystą logiczną ewentualnością, którą przywołuję dla celów argumentu filozoficznego. Nic więcej."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
-	},
-
-	
-	{
-		"COMMENT":"",
-		"events":[
-			
-			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
-			}
-		],
-		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
+			{"target": 25, "text": "OK, wróćmy może do Twojego tekstu."}
 		]	   
 	},
 	
+	
 	{
-		"COMMENT":"",
+		"COMMENT":"42",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Oczywiście, że muszę istnieć ja sam!"
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
+			{"target": 43, "text": "Ale ja czy Ty, Kartezjuszu? Kto tak naprawdę istnieje?"},
+			{"target": 46, "text": "A czy Złośliwy Demon nie mógłby również tego fałszywie podpowiadać?", "height":2}
+		]	
+	},
+	
+	{
+		"COMMENT":"43",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"To nie ma znaczenia. Ważne, że istnieje jakieś [']Ja[']. Każda osoba rozważająca mój argument musi uznać, że istnieje ona sama."
+			}
+		],
+		"options":[
+			{"target": 44, "text": "Czyli nikt inny nie istnieje?!"},
+			{"target": 25, "text": "Aha, rozumiem, wróćmy może do Twojego tekstu"}
+		]	
 	},
 
-	
 	{
-		"COMMENT":"",
+		"COMMENT":"44",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Oj, teraz wychodzisz za daleko, Wędrowcze. Nic nie pisałem o kimś innym - że istnieje lub że nie istnieje. Napisałem tylko, że z całą pewnością istnieję tylko ja sam."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
+			{"target": 45, "text": "Czyli istnienie innych ludzi niż ja sam jest wątpliwe?"},
+			{"target": 25, "text": "OK, chyba pojąłem. Wróćmy może do Twojego tekstu"}
+		]	
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"45",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Oczywiście. Dokładnie tak samo niepewne, jak istnienie tego stołu lub tego krzesła."
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
+			{"target": 25, "text": "Hm, być może wrócimy do tego jeszcze, ale na razie wróćmy do Twojego tekstu...", "height":2}
+		]	
+	},
+	
+	{
+		"COMMENT":"46",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A >>komu<< by to podpowiadał?"
+			}
+		],
+		"options":[
+			{"target": 47, "text": "Komukolwiek!"},
+			{"target": 25, "text": "No tak. Racja! Wróćmy więc do Twojego tekstu."}
+		]	
+	},
+	
+	{
+		"COMMENT":"47",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A więc ten ktoś z konieczności istnieje, skoro Demon Zwodniczy coś mu podpowiada. I tyle!"
+			}
+		],
+		"options":[
+			{"target": 25, "text": "No cóż, racja. Wróćmy może do Twojego tekstu..."}
+		]	
 	},
 
-	
 	{
-		"COMMENT":"",
+		"COMMENT":"48",
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":" "
+			"text":"Czy masz jeszcze jakieś inne wątpliwości?"
 			}
 		],
 		"options":[
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "},
-			{"target": 999, "text": " "}
-		]	   
+			{"target": 49, "text": "Czy Ty naprawdę uważasz, że istniejesz tylko Ty?"},
+			{"target": 25, "text": "Hm, chyba [playerGender {chciałbym|chciałabym}] jeszcze raz porozmawiać o tekście..."},
+			{"target": 30, "text": "Nie, wszystko wydaje mi się jasne."}
+		]	
+	},
+
+	{
+		"COMMENT":"49",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oj, nie! Ja tylko twierdzę, że nie ma nic pewniejszego niż to, że istnieję Ja. To wcale nie oznacza, że z konieczności nie istnieją inni, albo stoły, albo krzesła!"
+			}
+		],
+		"options":[
+			{"target": 50, "text": "Ale ich istnienie jest wątpliwe?..."},
+			{"target": 48, "text": "No tak, rozumiem."}
+		]	
+	},
+	
+	{
+		"COMMENT":"50",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Tak, jest po prostu wątpliwe. A ja szukam rzeczy pewnych, aby na nich budować."
+			}
+		],
+		"options":[
+			{"target": 51, "text": "Ale jak można żyć, wątpiąc we wszystko z wyjątkiem siebie!"},
+			{"target": 48, "text": "No tak, rozumiem."}
+		]	
+	},
+	
+	{
+		"COMMENT":"51",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Mnie osobiście żyje się wspaniale, ponieważ wiem, że mój światopogląd oparty jest na niepowątpiewalnej prawdzie! Ale tak na co dzień nie przejmuję się tym przecież nadmiernie - czy zmieni cokolwiek w smaku mojego obiadu to, że będę powątpiewał w istnienie tego obiadu? W praktyce wszyscy >>zakładamy<<, że świat istnieje - po prostu dla prostoty."
+			}
+		],
+		"options":[
+			{"target": 48, "text": "To mnie trochę uspokoiło..."}
+		]	
 	}
 	
 	]

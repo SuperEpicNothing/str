@@ -11,8 +11,8 @@
 	- przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
 
 
-- co to jest type "change"?
-
+- animacja otrzymywania odznaki?
+- w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
 
 
 + options text speed,skip-ability

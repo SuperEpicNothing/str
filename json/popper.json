@@ -29,21 +29,183 @@
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Dawaj miecz, starcze, bo cię obwarczę!"}
+			{"target": 12, "text": "Chciałbym porozmawiać o Pańskim tekście..."},
+			{"target": 2, "text": "Co Pan robi w Nowej Zelandii?"}
 		]	   
 	},
 
 	{
 		"comment":"2",
 		"events":[
-			{"type":"give","time":4600,"item":"popper"},
 			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
-			"text":"Brutal!"
+			"text":"Zostałem tu zaproszony parę miesięcy temu, czyli w połowie 1937 roku, na Uniwersytet Canterbury, abym uczył tu filozofii."
 			}
 		],
 		"options":[
-			{"target": 3, "text": "Life is brutal, dziadu! Pal gumę, ja idę na spotkanie z Konfuzjuszem."}
+			{"target": 3, "text": "I jak Panu mija pobyt?"},
+			{"target": 7, "text": "I czym się Pan tu zajmuje?"},
+			{"target": 12, "text": "Bardzo ciekawe. Ale może porozmawiajmy już o Pańskiej książce, dobrze?", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"3",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A całkiem nieźle, dziękuję. Tylko Hennie trochę tęskni za Austrią."
+			}
+		],
+		"options":[
+			{"target": 4, "text": "Hennie?"}
+		]	   
+	},
+	
+	{
+		"comment":"4",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Nie znacie się? Hennie to moja żona. Nazywa się tak naprawdę Józefina, ale wołam na nią Hennie, ponieważ jej nazwisko panieńskie to Henninger."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "[TEST EMPATIA] Hm, może byłoby jej przyjemniej, gdyby mogła porozmawiać z rodakami?", "height":2},
+			{"target": 7, "text": "No tak, a czym się Pan ostatnio zajmuje?"},
+			{"target": 12, "text": "Bardzo ciekawe, ale wróćmy może do Pańskiego tekstu..."}
+		]	   
+	},
+	
+	{
+		"comment":"5",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hm, ciekawy pomysł, Wędrowcze. Tylko jak znaleźć Niemców i Austriaków w Nowej Zelandii?!"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "[TEST WIEDZA] Hm, wielu Niemców przyjechało tu pod koniec XIX wieku w czasie nowozelandzkiej gorączki złota...", "height":2},
+			{"target": 12, "text": "Niestety nie wiem. Ale może porozmawiamy już o Pańskiej książce?", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"6",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":3},
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hmhm... Stare kopalnie złota są na północy Wyspy Południowej, zaledwie kilkadziesiąt kilometrów stąd. Być może mieszkają tam jeszcze potomkowie tych Niemców. Przejadę się tam i popytam. Wielkie dzięki, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Cieszę się, że mogłem pomóc. A czym się Pan ostatnio zajmuje?", "height":2},
+			{"target": 12, "text": "Nie ma sprawy. Porozmawiajmy może o Pańskiej książce...", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"7",
+		"events":[
+
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Zacząłem ostatnio pracować nad książką, którą nazwę chyba [']Społeczeństwo otwarte i jego wrogowie[']."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Brzmi tajemniczo. A o czym ta książka?"},
+			{"target": 8, "text": "O czym będzie ta książka?"}
+		]	   
+	},
+
+	{
+		"comment":"8",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Widzisz, Wędrowcze, trochę martwi mnie obecna sytuacja na świecie: Hitler, Mussolini, Stalin... myślę, że jedynym wyjściem jest przyjęcie idei społeczeństwa otwartego."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "A czym jest [']społeczeństwo otwarte[']?"}
+		]	   
+	},
+
+	{
+		"comment":"9",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Zaczynam dopiero opracowywać tę ideę. Ale już teraz mogę powiedzieć, że kluczowe dla rozwoju kraju, narodu, społeczeństwa jest, aby wszyscy obywatele mieli wiedzę na temat postępowania rządu i rozumieli, jakie są skutki decyzji politycznych..."
+			}
+		],
+		"options":[
+			{"target": 10, "text": "..."}
+		]	   
+	},
+
+	{
+		"comment":"10",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Obywatele muszą być więc wolni, każdy musi mieć równe prawa i - co istotne - uznawać i rozumieć prawa innych osób. Wszystko opiera się na byciu krytycznym - nie można iść do przodu, dopóki się nie podda istniejących praw i polityk krytyce. A do tego trzeba je rozumieć..."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Hm, interesujące. Ale wróćmy może do tekstu, o którym chciałem porozmawiać...", "height":2},
+			{"target": 11, "text": "Bardzo ciekawe! [playerGender {Mógłbym|Mogłabym}] dowiedzieć się jeszcze więcej?", "height":2}
+		]	   
+	},
+
+	{
+		"comment":"11",
+		"events":[
+			{"type":"give","time":4600,"book":"popper"},
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hm... wydaje mi się, że nie mamy teraz czasu, żeby szczegółowo o tym porozmawiać. Ponadto tak naprawdę nie mam tego wszystkiego jeszcze opracowanego. Pozwól, że zostawię Ci zwój z moimi notatkami, dobrze?"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "O, świetny pomysł! Poczytam. A teraz faktycznie weźmy się może do roboty...", "height":2}
+		]	   
+	},
+
+	{
+		"comment":"12",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A o czym konkretnie [playerGender {chciałbyś|chciałabyś}] porozmawiać?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "O [']Logice odkrycia naukowego[']."}
+		]	   
+	},
+	
+
+	{
+		"comment":"13",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Ach, tak. Czy masz problem ze zrozumieniem jakiegoś konkretnego fragmentu czy też chcesz ogólnie porozmawiać na temat indukcji, falsyfikacji i tym podobnych?"
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Przejdźmy może do poszczególnych fragmentów."},
+			{"target": 666, "text": "Porozmawiajmy ogólnie o tych pojęciach."}
+		]	   
+	},
+	
+	{
+		"comment":"14",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"O którym fragmencie chcesz porozmawiać?"
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Przejdźmy może do poszczególnych fragmentów."},
+			{"target": 777, "text": "Przejdźmy może do poszczególnych fragmentów."},
+			{"target": 888, "text": "Przejdźmy może do poszczególnych fragmentów."},
+			{"target": 13, "text": "Myślę, że rozumiem już cały tekst."}
 		]	   
 	}
+	
+	
 	]
 }
