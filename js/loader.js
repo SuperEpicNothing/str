@@ -250,12 +250,12 @@ function updateChapters(){
 	for(var i =0;i<4;i++){
 		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
 		document.getElementById("pageButton"+i).className = "disabledLink";
-		document.getElementById("pageButton"+i).style.color = "#353526";
+		//~ document.getElementById("pageButton"+i).style.color = "#353526";	//przeniesione do CSS
 		console.log(document.getElementById("pageButton"+i))
 		}
 		else{
 		document.getElementById("pageButton"+i).className = "hvr-underline-from-center enabledLink";
-		document.getElementById("pageButton"+i).style.color = "#e7f8f8";
+		//~ document.getElementById("pageButton"+i).style.color = "#e7f8f8";	//przeniesione do CSS
 		}
 	}
 }

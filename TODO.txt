@@ -3,6 +3,7 @@
 - przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
 
+- hover nad zamkniętymi rozdziałami
 
 - widok inwentarza
 	- trochę niższy, proponuję tak o 1/3;
@@ -11,12 +12,19 @@
 	- przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
 
 
+<<<<<<< HEAD
+- animacja otrzymywania odznaki?
+- w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
+
+
+=======
 - co to jest type "change"?
 - make skip invisible when not in use
 - handleText in HTML
 - move restart button to top corner
 - mute button top corner
 - handle image smoothing better
+>>>>>>> master
 + options text speed,skip-ability
 + dodać nowe opcje do konfutest
 + debug invisible click bug 

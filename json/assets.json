@@ -45,11 +45,19 @@
 		"src":"images/layers/cambridge.png"},
 		{"name" : "kronor",
 		"src":"images/layers/kronor.png"},
+		{"name" : "prison",
+		"src":"images/layers/prison.png"},
+		{"name" : "krakow",
+		"src":"images/layers/krakow.png"},
+		{"name" : "monastyr",
+		"src":"images/layers/monastyr.png"},
+		{"name" : "santorini",
+		"src":"images/layers/santorini.png"},
 		{"name" : "blackboard",
 		"src":"images/layers/parallax-blackboard.png"},
 		
 		{"name" : "arystoteles",
-		"src":"images/layers/arystoteles.png"},
+		"src":"images/layers/arystoteles2.png"},
 		{"name" : "kartezjusz",
 		"src":"images/layers/kartezjusz.png"},
 		{"name" : "russell",
@@ -58,8 +66,10 @@
 		"src":"images/layers/james.png"},
 		{"name" : "popper",
 		"src":"images/layers/popper.png"},
-		{"name" : "tom",
-		"src":"images/layers/tom.png"},
+		{"name" : "lamza",
+		"src":"images/layers/lamza.png"},
+		{"name" : "tomasz",
+		"src":"images/layers/tomasz.png"},
 	
 
 		{"name" : "planets-parallax",
@@ -88,10 +98,10 @@
 		{
 			"type": "Scroll",
 			"name": "intro",
-			"fullname": "Lorem ipsum et dolor sit amet",
-			"autor": "Lorem",
+			"fullname": "Wprowadzenie do podręcznika",
+			"autor": "Łukasz Lamża",
 			"img": "images/gui/untitled.png",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"desc": "Ten dokument zwięźle opisuje strukturę tego podręcznika i sposób korzystania z niego.",
 			"url": null	
 		},
 		{
@@ -120,7 +130,26 @@
 			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
 			"url": "docs/historia pieniądza.pdf"	
+		},
+		{
+			"type": "Book",
+			"name": "popper",
+			"fullname": "O 'Społeczeństwie otwartym' Poppera",
+			"autor": "Karl Popper",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten krótki tekst wyjaśnia, czym jest 'społeczeństwo otwarte' według Karla Poppera.",
+			"url": "docs/historia pieniądza.pdf"	
+		},
+		{
+			"type": "Book",
+			"name": "kartez",
+			"fullname": "O duszy, ciele i szyszynce",
+			"autor": "Lorem",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten krótki tekst wyjaśnia, jak Kartezjusz widział powiązanie duszy z ciałem i jaką rolę odgrywa tu tajemniczy kulisty organ zwany szyszynką...",
+			"url": "docs/historia pieniądza.pdf"	
 		}		
+		
 	],
 	"items": [
 		{
@@ -180,118 +209,41 @@
 	],
 	"achievments": [
 		{
-			"level": 0,
-			"fullname": "Newbie",
-			"icon":"book",
-			"desc": "You started the game"
-		},
-		{
+			"comment":"0",
 			"level": 1,
-			"fullname": "Loreminator",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		},
-		{
-			"level": 2,
-			"fullname": "Lorem",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
-		},
-		{
-			"level": 0,
-			"fullname": "Newbie",
+			"fullname": "TEST0",
 			"icon":"book",
-			"desc": "You started the game"
+			"desc": "testowa0"
 		},
 		{
+			"comment":"1",
 			"level": 1,
-			"fullname": "Loreminator",
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		},
-		{
-			"level": 2,
-			"fullname": "Lorem",
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
-		},
-		{
-			"level": 0,
-			"fullname": "Newbie",
-			"icon":"book",
-			"desc": "You started the game"
-		},
-		{
-			"level": 1,
-			"fullname": "Loreminator",
+			"fullname": "TEST1",
 			"hidden":true,
 			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+			"desc": "testowa1"
 		},
 		{
+			"comment":"2",
 			"level": 2,
-			"fullname": "Lorem",
+			"fullname": "TEST2",
 			"hidden":true,
 			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
+			"desc": "testowa2"
 		},
 		{
+			"comment":"3",
 			"level": 0,
-			"fullname": "Newbie",
+			"fullname": "Hennie!",
 			"icon":"book",
-			"desc": "You started the game"
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		},
 		{
+			"comment":"4",
 			"level": 1,
 			"fullname": "Loreminator",
 			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		},
-		{
-			"level": 2,
-			"fullname": "Lorem",
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
-		},
-		{
-			"level": 0,
-			"fullname": "Newbie",
-			"icon":"book",
-			"desc": "You started the game"
-		},
-		{
-			"level": 1,
-			"fullname": "Loreminator",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		},
-		{
-			"level": 2,
-			"fullname": "Lorem",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
-		},
-		{
-			"level": 0,
-			"fullname": "Newbie",
-			"icon":"book",
-			"desc": "You started the game"
-		},
-		{
-			"level": 1,
-			"fullname": "Loreminator",
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-		},
-		{
-			"level": 2,
-			"fullname": "Lorem",
-			"icon":"ItemSword",
-			"desc": "Lorem ipsum dolor "
-		}			
+			"desc": "444Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		}		
 	]
 }

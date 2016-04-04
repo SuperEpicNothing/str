@@ -1,7 +1,7 @@
 {
 	"meta":
 		{
-		"bg":"cambridge",
+		"bg":"prison",
 		"current":0,
 		"actor":"russell"
 		},
@@ -29,78 +29,79 @@
 			}
 		],
 		"options":[
-			{"target": 3, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
-			{"target": 2, "text": "Co nowego w Cambridge?"}
+			{"target": 12, "text": "[playerGender {Chciałbym|Chciałabym}] porozmawiać o Pańskim tekście, Profesorze!"},
+			{"target": 2, "text": "Za co Pan siedzi?"}
 		]	   
 	},
-	
-{
+
+
+	{
 		"COMMENT":"2",
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"A pięknie, pięknie..."
+			"text":"Cóż, lata są ciężkie. Dopiero co skończyła się Wielka Wojna [I wojna światowa], a osoby takie, jak ja, nie są mile widziane przez brytyjskie władze..."
 			}
 		],
 		"options":[
-			{"target": 3, "text": "Chciałbym porozmawiać o Pańskim tekście, Profesorze!"},
-			{"target": 2, "text": "Co nowego w Cambridge?"}
+			{"target": 3, "text": "[']Takie['], czyli jakie?"},
+			{"target": 3, "text": "Ale wciąż Pan nie wyjaśnił, za co Pan siedzi, Profesorze!"}
 		]	   
 	},
-	
-{
+
+	{
 		"COMMENT":"3",
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"Którym tekście, Wędrowcze?"
+			"text":"Zorganizowałem publiczny odczyt na temat tego, że Stany Zjednoczone nie powinny dołączać się do wojny po stronie Zjednoczonego Królestwa."
 			}
 		],
 		"options":[
-			{"target": 4, "text": "[']Problemy filozofii['], fragment o wiedzy bezpośredniej"}
-
+			{"target": 4, "text": "I to aż tak duży problem dla władz? Wykład?"},
+			{"target": 5, "text": "A dlaczego właściwie miałyby się nie przyłączać? Pomoc jest potrzebna!", "height":2}
 		]	   
 	},
-	
-	{
+
+		{
 		"COMMENT":"4",
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"Ach tak, oczywiście. Który fragment budzi Twoje wątpliwości?"
+			"text":"Oj, tak. To duży problem. Wykład wygłosiłem na Uniwersytecie w Cambridge. Cieszymy się dużym szacunkiem w kraju, tego typu odczyty potrafią mieć wielki oddźwięk. Już następnego dnia wszyscy dżentelmeni w Londynie nie mówili o niczym innym..."
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
-			{"target": 5, "text": "Sam tekst rozumiem, chciałbym porozmawiać ogólniej."}
+			{"target": 6, "text": "To wciąż nie wyjaśnia, dlaczego należy zamykać w więzieniach wykładowców!...", "height":2},
+			{"target": 5, "text": "A dlaczego właściwie sądzi Pan, że nie powinna nadejść pomoc militarna ze Stanów Zjednoczonych?", "height":2}
 		]	   
-	},	
-
+	},
+	
 	{
 		"COMMENT":"5",
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"Słucham więc."
+			"text":"Jestem pacyfistą. Każdy kolejny żołnierz skierowany na front przyczynia się do zniszczeń, śmierci i upadku cywilizacji."
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Chciałbym porozmawiać o Pańskich tekście, Profesorze!"},
-			{"target": 6, "text": "Myślę, że już wszystko jest dla mnie jasne. Dziękuję za pomoc!"}
+			{"target": 7, "text": "Ale pomoc militarna może sprawić, że wojna skończy się szybciej i zgninie mniej osób!", "height":2},
+			{"target": 6, "text": "Tak jest! Brawo! Jak można zamykać człowieka w więzeniu za mówienie prawdy!", "height":2}
 		]	   
 	},
-
 	
 	{
 		"COMMENT":"6",
 		"events":[
-			{"type":"give","time":4600,"item":"russell"},
+			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"Dziękuję za rozmowę. Przyjmij ten Argument i niech Ci służy! Bywaj!"
+			"text":"Rząd uważa, że moje wypowiedzi działają demoralizująco na obywateli, a ja sam działam na niekorzyść mojego kraju."
 			}
 		],
 		"options":[
-			{"target": 7, "text": "Dziękuję, Profesorze! Powodzenia w pracy!"}
+			{"target": 8, "text": "[TEST WIEDZA] Czy nie na tych samych podstawach skazano na śmierć Sokratesa?", "height":2},
+			{"target": 9, "text": "Szkoda tylko, że skończyło się to więzieniem!..."}
 		]	   
 	},
 	
@@ -109,12 +110,558 @@
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"..."
+			"text":"Sądzisz więc tak samo, jak ludzie, którzy skazali mnie na więzienie. Ja sądzę, że to fikcja - więcej wojsk po jednej ze stron spodowuje tylko jeszcze silniejszą mobilizację po drugiej stronie. Drogą do pokoju jest tylko zaprzestanie walki!"
 			}
 		],
 		"options":[
-			{"target": 7, "text": "..."}
+			{"target": 9, "text": "Hm, chyba masz rację, Profesorze... wielka szkoda, że siedzisz w więzieniu!", "height":2},
+			{"target": 12, "text": "Nie zgadzam się, ale chyba się nie dogadamy. Może porozmawiamy o Pańkiej książce?", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"[Russell uśmiecha się] Rzeczywiście, tak zostało to przedstawione w [']Obronie Sokratesa['] Platona. Miło mi spotkać wykształconego człowieka, Wędrowcze. W czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 11, "text": "A może ja mógłbym w czymś pomóc, że tak powiem... może udałoby się zorganizować...", "height":2},
+			{"target": 12, "text": "Chciałbym porozmawiać o jednym z Pańskich tekstów, Profesorze", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Powiem szczerze, że więzienie jest nawet przyjemne. Nie mam żadnych spotkań, nie muszę podejmować żadnych decyzji, nikt mi nie przeszkadza. Mogę całymi dniami czytać i pisać."
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Hm, [playerGender {miałem|miałam}] zaproponować pomoc w ucieczce, ale w takim razie chyba się wstrzymam...", "height":2},
+			{"target": 12, "text": "Cóż, wróćmy może więc do pracy? [playerGender {Chciałbym|chciałabym}] porozmawiać o jednym z Pańskich tekstów.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"To świetnie! Grunt to dobre rozumienie tekstu, o którym się dyskutuje!"
+			}
+		],
+		"options":[
+			{"target": 28, "text": "..."}
+			
+		]	   
+	},
+	
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"[Russell uśmiecha się szeroko] Ucieczka? Oj, nie... sprzeciw musi następować pokojowo. Zresztą, wcale mi tu nie jest źle. Ale nic to, z czym do nie przychodzisz, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "[playerGender {Chciałbym|chciałabym}] porozmawiać o jednym z Pańskich tekstów."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"A który tekst masz na myśli?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "[']Problemy filozofii['], fragment o wiedzy bezpośredniej, znajomości prawd i tak dalej...", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Tak, to trzeba przeanalizować na spokojne... W czym mogę pomóc, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Czym właściwie różni się wiedza bezpośrednia od [']niebezpośredniej[']?"},
+			{"target": 22, "text": "W jakim sensie [']halucynacja jest wolna od błędu[']?"},
+			{"target": 24, "text": "W jakim sensie [']To, czego doznajemy, musi być czymś[']?"},
+			{"target": 10, "text": "Chyba już wystarczająco rozumiem Pańskie słowa."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Bezpośrednio wiemy wszystko to, co nam się [']przydarza['] i po prostu to zauważamy, bez żadnej aktywności umysłowej z naszej strony - najprościej pomyśleć o doświadczeniach zmysłowych."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Hm. Jakiś przykład?"},
+			{"target": 16, "text": "Ale czy jakiś złośliwy Demon nie mógłby nas oszukiwać w sprawie tych doświadczeń?", "req":{"type":"item","item":"demon"}, "height":2},
+			{"target": 20, "text": "Ale przecież mój aparat zmysłowy może być uszkodzony, prawda?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Na przykład plama barwna określonego koloru, którą widzisz w tej chwili w określonym kierunku."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "Ale czy jakiś złośliwy Demon nie mógłby nas oszukiwać w sprawie tej plamy barwnej?", "req":{"type":"item","item":"demon"}, "height":2},
+			{"target": 20, "text": "Ale przecież mój aparat wzrokowy może być uszkodzony, prawda?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Cóż, przeanalizujmy to bliżej. Co właściwie miałby robić ów Demon?"
+			}
+		],
+		"options":[
+			{"target": 17, "text": "Umieszczać w moim umyśle wrażenie, że widzę plamę koloru czerwonego."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"No dobrze, ale tak czy inaczej w Twojej świadomości faktycznie istnieje plama koloru czerwonego, prawda?"
+			}
+		],
+		"options":[
+			{"target": 18, "text": "Ale [']fałszywa['], ponieważ tam nie ma nic czerwonego!"},
+			{"target": 13, "text": "Aa, chyba rozumiem. Możemy wrócić do analizy tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"To nie ma znaczenia! Istotne jest tylko to, że z całą pewnością >>wydaje<< Ci się, że widzisz kolor czerwony. Innymi słowy, samo >>wrażenie<< jest niepodważalne. To, czy w danym miejscu faktycznie jest coś czerwonego, to już kwestia późniejszej interpretacji."
+			}
+		],
+		"options":[
+			{"target": 19, "text": "I to jest ten poziom, który określa Pan jako [']wiedzę przez opis[']?"},
+			{"target": 13, "text": "OK, chyba rozumiem... wróćmy może do czytania książki."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Tak jest."
+			}
+		],
+		"options":[
+			{"target": 13, "text": "OK, możemy wrócić do czytania Pańskiej książki."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Oczywiście, że może być uszkodzony! Przypuśćmy, że faktycznie od czasu do czasu Twój uszkodzony nerw wzrokowy [']mówi['] Ci, że w pewnym miejscu znajduje się plamka koloru czerwonego. I co wtedy?"
+			}
+		],
+		"options":[
+			{"target": 21, "text": "Wtedy moje doświadczenie bezpośrednie wprowadza mnie w błąd!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Nie. W błąd wprowadza Cię wyłącznie ta część Twojego umysłu, która dokonuje interpretacji. Jeśli powiesz, że w danym miejscu znajduje się coś czerwonego, będziesz w błędzie. Jeżeli natomiast tylko stwierdzisz, że w danym kierunku dostrzegasz plamkę koloru czerwonego, będziesz mieć rację!"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Czyli [']coś czerwonego['] to już wiedza przez opis?"},
+			{"target": 13, "text": "OK, chyba rozumiem... wróćmy może do wspólnego czytania książki."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"22",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Wyobraź sobie, że w tej chwili widzisz, jak przez okno przelatuje wielki różowy słoń. Wyobraź też sobie, że widzisz go z pełną klarownością, tak wyraźnie, jak widzisz drzewa, niebo i własne ciało."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Nooo... słucham dalej?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"No więc zauważ, że nie można rozsądnie zaprzeczyć temu, że [']widzisz coś['], prawda?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "No właśnie nie za bardzo [']coś['] - skoro tam nic nie ma!"},
+			{"target": 25, "text": "Chyba rozumiem... czyli na pewno >>widzę<<, ale nie mogę mieć pewności, czy jest tam [']coś określonego['], tak?", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Może źle się wyraziłem. Nie jest pewne, że widzisz [']coś['] w sensie, że istnieje pewne [']coś['], zewnętrzne wobec Ciebie, na co patrzysz. Zgoda. Jest natomiast pewne, że faktycznie [']widzisz['], czyli że w Twoim polu widzenia pojawia się jakaś plama barwna..."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Czyli same [']czyste['] dane zmysłowe są tą [']prawdą['], nawet w przypadku halucynacji?", "height":2},
+			{"target": 13, "text": "OK, chyba rozumiem... wróćmy może do książki."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"25",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Otóż to. Jeżeli ograniczysz się do mówienia o tym, co dzieje się w Twojej głowie, a nie będziesz [playerGender {próbował|próbowała}] mówić o świecie zewnętrznym, na pewno nie zbłądzisz."
+			}
+		],
+		"options":[
+			{"target": 26, "text": "Ale sam ten świat zewnętrzny jest niepewny?"},
+			{"target": 13, "text": "OK, chyba rozumiem... możemy wrócić do książki."}
+		]	   
+	},
+
+	{
+		"COMMENT":"26",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Oczywiście, że niepewny. Ale w praktyce możemy być prawie pewni jego istnienia. To nie jest też tak, że mamy do czynienia z zupełną pewnością albo zupełną niepewnością. Są różne stopnie pewności..."
+			}
+		],
+		"options":[
+			{"target": 27, "text": "To brzmi ciekawie - jakie są te stopnie pewności?"},
+			{"target": 13, "text": "Hm, zostawmy to może i wróćmy do czytania Pańskiej książki..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"27",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Wiesz co, zróbmy może tak, że na razie rozwiejemy wszelkie wątpliwości odnośnie mojego tekstu, a potem będziesz [playerGender {mógł|mogła}] zapytać o tego typu bardziej zaawansowane rzeczy, dobrze?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "Skoro tak Pan twierdzi, Profesorze... to wróćmy do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"28",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Czy masz jeszcze jakieś pytania natury ogólnej?"
+			}
+		],
+		"options":[
+			{"target": 29, "text": "Zastanawia mnie, czy wszystko musi być 100% pewne albo 100% niepewne."},
+			{"target": 34, "text": "To jak pewna jest na przykład nauka?"},
+			{"target": 44, "text": "Chyba rozumiem już wszystko, co [playerGender {chciałem|chciałam}] zrozumieć."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"To bardzo trudny problem. Sądzę, że w praktyce mamy do czynienia ze stopniami pewności. Weź pod uwagę pamięć. Czy pamiętasz moment, w którym zacząłeś rozmowę ze mną?"
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Oczywiście, przecież to było chwilkę temu!"}
+			
+		]	   
+	},
+	
+	
+	{
+		"COMMENT":"30",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"No dobrze. A pamiętasz, co [playerGender {jadłeś|jadłaś} na śniadanie dokładnie 18 dni temu?"
+			}
+		],
+		"options":[
+			{"target": 31, "text": "Nie jadam śniadań!"},
+			{"target": 32, "text": "Na pewno nie od razu... jeżeli w ogóle sobie to potrafię przypomnieć!", "height":2}
+			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"31",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"[Russell uśmiecha się] Masz poczucie humoru. To dobrze. Tak czy inaczej rozumiesz chyba na czym polega stopniowanie pewności odnośnie naszej wiedzy. To samo dotyczy również innych rzeczy, na przykład matematyki albo naszej wiedzy o świecie."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Ale czy istnieje jakiś sposób na, czy ja wiem, precyzyjne wyznaczenie tego poziomu pewności?", "height":2},
+			{"target": 28, "text": "Chyba rozumiem, możemy wrócić do dyskusji"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"32",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Rozumiesz więc, na czym polega stopniowanie pewności odnośnie naszej wiedzy. To samo dotyczy również innych rzeczy, na przykład matematyki albo naszej wiedzy o świecie."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Ale czy istnieje jakiś sposób na, czy ja wiem, precyzyjne wyznaczenie tego poziomu pewności?", "height":2},
+			{"target": 28, "text": "Chyba rozumiem, możemy wrócić do dyskusji."}
+			
+		]	   
+	},
+	
+
+	{
+		"COMMENT":"33",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Niektórzy moi koledzy-filozofowie twierdzą, że potrafią precyzyjnie wyznaczać poziom pewności. Ja jestem trochę ostrożniejszy. To nie matematyka... natomiast dr Lamża szepcze mi tu na ucho, że w dalszej części swojej Wędrówki dowiesz się nieco więcej na temat poziomów pewności w nauce."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "Cóż, poczekam więc. My na razie wróćmy może do dyskusji.", "height":2}
+			
+		]	   
+	},
+	
+	
+	{
+		"COMMENT":"34",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Cóż, nauka o przyrodzie opiera się na wiedzy bezpośredniej, ale buduje na niej, posługując się metodami, które są zawodne. Powiedziałbym chyba tak, że nauka daje nam wyłącznie tymczasowe odpowiedzi, jednak sama jej metoda jest racjonalna... myślę, że nie mamy innego wyjścia niż jej zaufać."
+			}
+		],
+		"options":[
+			{"target": 35, "text": "Ale jak możemy ufać czemuś, co może być omylne?"},
+			{"target": 38, "text": "Czy to samo dotyczy nauk matematycznych?"},
+			{"target": 28, "text": "Aha, dziękuję. Wróćmy może do innych kwestii"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"35",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Myślę, że nie za bardzo mamy inne wyjście, Wędrowcze. Sfera tego, co absolutnie niepodważalne, jest na tyle wąska, że nie dałoby się w jej ramach wieść normalnego życia."
+			}
+		],
+		"options":[
+			{"target": 36, "text": "Ale to przecież jakiś zgniły kompromis!"},
+			{"target": 28, "text": "Chyba rozumiem. Wróćmy może do innych kwestii"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"36",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Dlaczego od razu [']zgniły[']? Nie bądź zachłanny, Wędrowcze, żądając wiedzy absolutnej! My, ludzie, musimy pogodzić się z metodą postępowania krok po kroczku, do życia w niepewności. Cóż nam pozostaje innego? Chyba tylko jakiegoś rodzaju totalitaryzm."
+			}
+		],
+		"options":[
+			{"target": 37, "text": "Jaki [']totalitaryzm[']?"},
+			{"target": 28, "text": "Chyba rozumiem. Wróćmy może do naszej dyskusji."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"37",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"W tym przypadku totalitaryzm intelektualny. Żądasz absolutnej pewności? Dostaniesz ją tylko za cenę rezygnacji z krytycznego myślenia. Ktoś mógłby spisać [']absolutne podstawy wiedzy o świecie['] i mógłbyś nawet je głosić, ale solidna analiza zawsze by pokazała, że są one niepewne. Tylko matematyka może być absolutnie pewna w takim sensie."
+			}
+		],
+		"options":[
+			{"target": 38, "text": "Matematyka?"},
+			{"target": 28, "text": "Chyba rozumiem, wróćmy do rozmowy o książce."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"38",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Matematyka to ciekawy przypadek. Ledwie parę lat temu skończyłem pisać z moim drogim Przyjacielem, Alfredem Whiteheadem, wielkie, grubaśne dzieło zatytułowane [']Principia Mathematica[']. Dokonaliśmy w nim wyprowadzenia reguł matematyki z czystej logiki. Wiesz, co to oznacza?"
+			}
+		],
+		"options":[
+			{"target": 39, "text": "Mnóstwo, mnóstwo pracy?..."},
+			{"target": 40, "text": "Co to oznacza?"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"39",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"[Russell uśmiecha się] Masz rację, Wędrowcze. Szczerze mówiąc, planowaliśmy początkowo z Alfredem napisać cztery tomy tego dzieła, ale po napisaniu trzech byliśmy tak wykończeni, że zrezygnowaliśmy!... a trwało to niemal trzy lata!"
+			}
+		],
+		"options":[
+			{"target": 40, "text": "I na co ten wysiłek?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"40",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Cóż, nasza praca pokazuje, że potencjalnie całą matematykę da się wyprowadzić z kilku prostych zasad logiki, takich jak taka: [']Cokolwiek wynika ze zdania prawdziwego, jest prawdą[']. Nie trzeba żadnych dodatkowych treści."
+			}
+		],
+		"options":[
+			{"target": 41, "text": "Hm... zadam ponownie to pytanie: i co to oznacza?"},
+			{"target": 43, "text": "Ale czy to zdanie nie jest oczywiste?!"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"41",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Oznacza to wiele rzeczy, ale w konkteście naszej rozmowy najistotniejsze jest to, że jeżeli tylko uznasz elementarne prawa logiki za pewne, to równie pewne będą dla Ciebie również prawa matematyki."
+			}
+		],
+		"options":[
+			{"target": 42, "text": "Czyli, krótko mówiąc, matematyce można ufać?"},
+			{"target": 28, "text": "No tak... wróćmy może do naszej rozmowy o książce."}
+			
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"42",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Przynajmniej tak bardzo, jak logice."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "No tak... wróćmy może do rozmowy o książce."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"43",
+		"events":[
+			
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Otóż to! Niektórzy powiedzą nawet, że nie można sobie wyobrazić w ogóle jakiejkolwiek istoty myślącej, która by nie uznawała takich praw logiki..."
+			}
+		],
+		"options":[
+			{"target": 41, "text": "Hm... zadam ponownie to pytanie: a więc..?"},
+			{"target": 28, "text": "No tak... wróćmy może do rozmowy o książce."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"44",
+		"events":[
+			{"type":"give","time":4600,"item":"russell"},
+			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
+			"text":"Bardzo się cieszę! Dziękuję za rozmowę - możesz teraz śmiało przyjąć ode mnie ten oto Argument. Niech Ci służy, Wędrowcze."
+			}
+		],
+		"options":[
+			{"target": 45, "text": "Dziękuję, Profesorze! Bywaj!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"45",
+		"events":[
+			{"type":"dialog","name":"Bertrand Russell","time":5000,"timepadding":0,
+			"text":"Bywaj!"
+			}
+		],
+		"options":[
 		]	   
 	}
+	
 	]
 }
