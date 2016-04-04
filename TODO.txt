@@ -3,6 +3,7 @@
 - przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
 ==S
 
+- hover nad zamkniętymi rozdziałami
 
 - widok inwentarza
 	- trochę niższy, proponuję tak o 1/3;

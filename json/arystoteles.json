@@ -1,7 +1,7 @@
 {
 	"meta":
 		{
-		"bg": "forest",
+		"bg": "santorini",
 		"current":0,
 		"actor":"arystoteles"
 		},
@@ -783,7 +783,7 @@
 			}
 		],
 		"options":[
-			{"target": 56, "text": "Wiesz co, chyba [playerGender (chciałbym|chciałabym)] jeszcze raz przejść na spokojnie przez cały ten tekst. Może być?"},
+			{"target": 56, "text": "Wiesz co, chyba [playerGender {chciałbym|chciałabym}] jeszcze raz przejść na spokojnie przez cały ten tekst. Może być?"},
 			{"target": 57, "text": "Zanim pójdziemy dalej, czy mógłbyś podsumować krótko, na czym stoimy?"},
 			{"target": 61, "text": "Pewnie, że jasne! Idziemy dalej!"}
 		]	   
@@ -1088,11 +1088,11 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Jak to >>jak to<<? [gender: Spałaś] w czasie naszej rozmowy? Przecież jasno wykazałem, że tłumaczenie >>naukowe<< zawsze odsyła do innego tłumaczenia >>naukowego<<, a tego typu nieskończony regres nie stanowi w istocie wyjaśnienia!"
+			"text":"Jak to >>jak to<<? [playerGender {Spałeś|Spałaś}] w czasie naszej rozmowy? Przecież jasno wykazałem, że tłumaczenie >>naukowe<< zawsze odsyła do innego tłumaczenia >>naukowego<<, a tego typu nieskończony regres nie stanowi w istocie wyjaśnienia!"
 			}
 		],
 		"options":[
-			{"target": 76, "text": "Chyba nie jestem do końca [gender: przekonana]..."},
+			{"target": 76, "text": "Chyba nie jestem do końca [playerGender {przekonany|przekonana}]..."},
 			{"target": 71, "text": "OK, wróćmy do tekstu."}			
 			
 		]	   
