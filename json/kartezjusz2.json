@@ -1,0 +1,24 @@
+{
+	"meta":
+		{
+		"bg":"kronor",
+		"current":0,
+		"actor":"kartezjusz"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Witaj ponownie, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Dzień dobry, Kartezjuszu!"}
+		]	   
+	}	
+	
+	]
+}

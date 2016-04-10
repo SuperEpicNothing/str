@@ -1,0 +1,598 @@
+{
+	"meta":
+		{
+		"bg":"uni",
+		"current":0,
+		"actor":"hawking"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Dzień dobry!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Mam pewien problem z Pańską teorią..."},
+			{"target": 2, "text": "Nad czym Pan ostatnio pracuje?"}
+		]	   
+	},
+		
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Cóż, prawdę mówiąc, w ostatnich latach mnóstwo podróżuję, udzielam wielu wywiadów... coraz mam mniej czasu na pracę. Ale jest parę kwestii, które nie dają mi spokoju."
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Wie Pan co, może wróćmy jednak do kwestii, z którą tu przychodzę. Mam problem z Pańską teorią...", "height":2},
+			{"target": 3, "text": "O! A można wiedzieć, jakie to kwestie?"}
+		]	     
+	},
+
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Jedną z nich jest na przykład problem inteligencji komputerów i uzyskania przez nie świadomości. Nurtują mnie też różne kwestie z zakresu fizyki teoretycznej, związane na przykład z czarnymi dziurami..."
+			}
+		],
+				"options":[
+			{"target": 4, "text": "Świadomość komputerów?"},
+			{"target": 5, "text": "Czarne dziury?"},
+			{"target": 6, "text": "Hm, może wróćmy jednak do problemu, z którym tu przychodzę... Mam pewien problem z Pańską teorią...", "height":2}
+		]	
+	},
+
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci krótki zwój do poczytania na temat problemu uzyskania świadomości przez komputery, ale na razie bierzemy się do roboty, OK?"
+			}
+		],
+			"options":[
+			{"target": 6, "text": "Cóż, skoro trzeba... wróćmy więc do Pańskiego tekstu..."}
+		]	
+	},
+	
+
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci teraz do poczytania zwój na temat nowych badań nad czarnymi dziurami, ale na razie bierzemy się do roboty, OK?"
+			}
+		],
+			"options":[
+			{"target": 6, "text": "Cóż, skoro trzeba... bierzmy się więc do roboty."}
+		]	
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Z czym mogę pomóc?"
+			}
+		],
+			"options":[
+			{"target": 7, "text": "Nie rozumiem, jak czas może zniknąć!"},
+			{"target": 35, "text": "Chodzi o owe [']efekty kwantowe['], które miałyby prowadzić do zniknięcia czasu.", "height":2}
+		]	
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Żeby tak naprawdę pojąć, jakim sposobem czas może [']zniknąć['], trzeba [']oduczyć się['] myślenia o czasie tak, jak to robimy zwykle."
+			}
+		],
+			"options":[
+			{"target": 8, "text": "Czyli jak?"}
+		]	
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Jako o zjawisku psychologicznym."
+			}
+		],
+			"options":[
+			{"target": 9, "text": "Co to właściwie znaczy?"},
+			{"target": 10, "text": "OK, to jak [playerGender {powinienem|powinnam}] myśleć o czasie?"}
+		]	
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Mam na myśli czas w takim sensie, w jakim normalnie używamy tego pojęcia, kiedy mówimy o upływie czasu, o tym, że nie mamy na coś czasu; o przeszłości, przyszłości, odliczaniu czasu w sekundach i minutach..."
+			}
+		],
+			"options":[
+			{"target": 10, "text": "A da się w ogóle inaczej?!"},
+			{"target": 10, "text": "OK, a jaka jest alternatywa?"}
+		]	
+	},
+
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Cóż, w fizyce czas jest po prostu jednym z parametrów liczbowych, którym się posługujemy do opisu świata. W kosmologii czas jest jednym z czterech wymiarów pewnego obiektu geometrycznego. I tyle."
+			}
+		],
+			"options":[
+			{"target": 12, "text": "Ale taki [']czas fizyka['] wciąż jest czasem, prawda?"},
+			{"target": 20, "text": "Czyli taki czas łatwiej jest [']zniknąć[']?"},
+			{"target": 11, "text": "[']Pewnego obiektu[']... chodzi o czasoprzestrzeń?"}
+			
+		]	
+	},
+
+
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Oczywiście."
+			}
+		],
+			"options":[
+			{"target": 20, "text": "OK, a więc w jaki sposób mógłby zniknąć jeden z wymiarów czasoprzestrzeni?", "height":2},
+			{"target": 12, "text": "A jakie właściwie są związki takiego czasu z normalnym czasem, jaki znamy z życia codziennego?", "height":2}
+			
+		]	
+	},
+
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Cóż, obydwa te [']czasy['] mają wiele cech wspólnych: na przykład dla każdego obserwatora występują czasy wcześniejsze i późniejsze. Występuje też wyraźna różnica między przeszłością i przyszłością."
+			}
+		],
+			"options":[
+			{"target": 20, "text": "OK, wróćmy może do znikania czasu w fizyce..."},
+			{"target": 13, "text": "Czym właściwie różni się przeszłość od przyszłości?"}
+			
+		]	
+	},
+
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Na gruncie życia codziennego to chyba jest jasne?"
+			}
+		],
+			"options":[
+			{"target": 16, "text": "Jasne. Ale co z gruntem fizyki?"},
+			{"target": 14, "text": "Szczerze mówiąc, nie bardzo."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Och, tutaj nie ma co kombinować, wystarczy skupić się na rzeczach najbardziej oczywistych. Na przykład na tym, że wiemy, co zaszło w przeszłości, a nie wiemy, co będzie w przyszłości."
+			}
+		],
+			"options":[
+			{"target": 16, "text": "No tak. Co natomiast z przeszłością i przyszłością w fizyce?"},
+			{"target": 15, "text": "No tak, ale to się zmienia z każdą chwilą!"}
+			
+		]	
+	},
+	
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Oczywiście. Nie mówię o jakiejś [']obiektywnie['] wyróżnionej grupie zdarzeń, które są [']przeszłe['], i tych, które są [']przyszłe[']. Zawsze to ustalamy w odniesieniu do jakiegoś [']teraz['] jakiegoś konkretnego człowieka."
+			}
+		],
+			"options":[
+			{"target": 16, "text": "OK, wróćmy może do fizyki."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"W fizyce mamy w zasadzie to samo. Dla każdego określonego człowieka - tylko tutaj mówimy zwykle: [']obserwatora['] - można jednoznacznie wyróżnić jego przeszłość i przyszłość. Można też ponumerować kolejne czasy takiego obserwatora i w ten sposób definiuje się jego [']czas własny[']."
+			}
+		],
+			"options":[
+			{"target": 17, "text": "Ale to działa zawsze tylko dla jednego obserwatora?"},
+			{"target": 20, "text": "OK, wróćmy może do znikania czasu w fizyce."},
+			{"target": 6, "text": "Chyba już wystarczy mi rozmów o czasie..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Tak, zawsze tylko dla jednego obserwatora. Dwóch obserwatorów może mieć zupełnie różne zrozumienie tego, co jest przeszłością, a co jest przyszłością."
+			}
+		],
+			"options":[
+			{"target": 18, "text": "Uff... zawsze mnie od tego boli głowa..."},
+			{"target": 20, "text": "Hm, wróćmy może do znikania czasu w fizyce."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"[Hawking uśmiecha się] To nie jest takie trudne... Najprościej jest to wszystko wyobrazić sobie na rysunkach, tak zwanych diagramach czasoprzestrzennych."
+			}
+		],
+			"options":[
+			{"target": 19, "text": "A [playerGender {mógłbym|mogłabym}] prosić o wyjaśnienie tego?"},
+			{"target": 20, "text": "Hm, może wróćmy na razie do znikania czasu w fizyce."},
+			{"target": 6, "text": "Chyba wystarczy mi na razie rozmów o czasie..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"give","time":4600,"book":"hawking"},
+			
+			{	
+			"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Wiesz, co... prawdę mówiąc, nawet z użyciem rysunków to zajmuje sporo czasu. Zróbmy może tak, że przekażę Ci zwój, w którym znajduje się trochę wskazówek na ten temat, a na razie wrócimy do głównego tematu, OK?"
+			}
+		],
+			"options":[
+			{"target": 20, "text": "No dobrze, to może wróćmy do znikania czasu w fizyce."},
+			{"target": 6, "text": "OK, porozmawiajmy może o czymś innym..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Zacznijmy od najprostszego przypadku. Wyobraźmy sobie, że zamiast o 4-wymiarowym Wszechświecie, mówimy o 2-wymiarowej powierzchni kuli - czymś takim, jak powierzchnia Ziemi, po której chodzimy."
+			}
+		],
+			"options":[
+			{"target": 21, "text": "Ale kula i Ziemia są przecież 3-wymiarowe!"},
+			{"target": 24, "text": "OK... idźmy dalej..."},
+			{"target": 35, "text": "Hm, mnie szczególnie zaciekawiły te efekty kwantowe..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Ziemia i kula - tak. Ale >>powierzchnia<< Ziemi i >>powierzchnia<< kuli - nie."
+			}
+		],
+			"options":[
+			{"target": 22, "text": "Czy ja wiem... nawet powierzchnia kuli [']potrzebuje['] przecież trzech wymiarów.", "height":2},
+			{"target": 24, "text": "No OK. Idźmy dalej."}
+			
+		]	
+	},
+	
+	
+	{
+		"COMMENT":"22",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"To nie ma znaczenia. Istotne jest tylko to, ile ma wymiarów sama w sobie. A to najłatwiej jest sprawdzić, wymieniając wszystkie [']stopnie swobody['], czyli to, [']na ile sposobów['] można się poruszać. Wszelkie możliwe kierunki poruszania się po powierzchni Ziemi można uprościć do dwóch parametrów - długości i szerokości geograficznej. I to oznacza, że ma ona dwa wymiary."
+			}
+		],
+			"options":[
+			{"target": 23, "text": "Ale możemy przecież podskoczyć!"},
+			{"target": 24, "text": "No dobrze. Idźmy dalej."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"23",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Kto może, ten może. [Hawking uśmiecha się] A tak serio, to w momencie podskoczenia opuszczasz powierzchnię Ziemi. A my od początku mówiliśmy, że poruszamy się tylko po powierzchni Ziemi. Tutaj mamy więc tylko dwa ogólne kierunki, z których [']składamy['] poszczególne szczegółowe kierunki."
+			}
+		],
+			"options":[
+
+			{"target": 24, "text": "No OK, idźmy dalej."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"24",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"No dobrze, mamy więc naszą 2-wymiarową powierzchnię. I teraz wyobraźmy sobie, że jeden z tych [']wymiarów['] nazwiemy wymiarem czasowym. Niech to będzie wymiar [']północ-południe['], gdzie kierunek [']północ['] określimy jako [']przeszłość['], a kierunek [']południe['] jako [']przyszłość[']."
+			}
+		],
+			"options":[
+
+			{"target": 27, "text": "OK, co w związku z tym?"},
+			{"target": 25, "text": "Przyznam się, że nie do końca rozumiem."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"25",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"To tylko taka umowa. Wyobraźmy sobie, że np. na szerokości geograficznej Polski jest rok 1500 n.e., na szerokości Morza Śródziemnego jest rok 2000 n.e., na równiku odległa przyszłość itd. Tak więc prawidłowy [']upływ czasu['] wyglądałby tak, że każdy musiałby z każdą sekundą zrobić jeden krok na południe, a podróż na północ byłaby niemożliwa."
+			}
+		],
+			"options":[
+
+			{"target": 26, "text": "A podróż na boki?"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"26",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Dowolna, byleby jednocześnie zawsze troszkę przesuwać się na południe. Gdybyś [playerGender {przemieścił|przemieściła}] się w tej chwili sto kilometrów na zachód, bez żadnego odchylenia na południe, oznaczałoby to natychmiastowe (w jednej chwili, czyli bez żadnego upływu czasu) pokonanie tej odległości."
+			}
+		],
+			"options":[
+
+			{"target": 27, "text": "Hm, no OK, idźmy może dalej..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"27",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"No więc miejsca coraz bardziej na północ oznaczają coraz wcześniejsze momenty historii. Pojawia się więc pytanie, czy można nieskończenie długo iść na północ? (Pomijam tu kwestie istnienia lądów, mórz, gór, klimatów itp. Wyobraźmy sobie płaską Ziemię pokrytą w całości miłą, trawiastą równiną.)"
+			}
+		],
+			"options":[
+
+			{"target": 28, "text": "Oczywiście, że można! Co mnie zatrzyma?"},
+			{"target": 29, "text": "No, nie można. W pewnym momencie dojdę na Biegun Północny..."}
+			
+		]	
+	},
+	
+	
+	{
+		"COMMENT":"28",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Fizycznie nic Cię nie zatrzyma, ale jeżeli wyruszysz w tej chwili prosto na północ, to w pewnym momencie zauważysz, że poruszasz się na południe."
+			}
+		],
+			"options":[
+
+			{"target": 29, "text": "No tak, będzie to Biegun Północny..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Otóż to. Na Biegunie Północnym nie da się iść na północ. Nie ma punktu bardziej północnego od Bieguna Północnego. Odpowiada to temu punktowi struktury Wszechświata, w którym nie ma już wcześniejszych czasów. Nie da się cofnąć w czasie. Nie ma żadnego wcześniej."
+			}
+		],
+			"options":[
+
+			{"target": 30, "text": "A co, jeżeli podskoczę na Biegunie Północnym?"},
+			{"target": 32, "text": "I co z tego wynika?"},
+			{"target": 33, "text": "Ale czas przecież nie zniknął!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"30",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Podskakując, opuszczasz naszą powierzchnię. A na początku przyjęliśmy, że 2-wymiarowa powierzchnia Ziemi modeluje nam 4-wymiarowy Wszechświat..."
+			}
+		],
+			"options":[
+
+			{"target": 31, "text": "Ale tak czy inaczej >>mogę<< opuścić nasz Wszechświat!"},
+			{"target": 32, "text": "OK, ale co z tego wynika?"},
+			{"target": 33, "text": "OK, ale czas przecież nie zniknął!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"31",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Nawet zakładając, że to możliwe, to wciąż nie oznacza przemieszczenia się do jakiegoś [']wcześniej[']. Opuszczasz Wszechświat, a więc także i wymiar czasowy. A nam chodziło wyłącznie o koniec wymiaru czasowego."
+			}
+		],
+			"options":[
+
+			{"target": 32, "text": "No dobrze, ale co z tego wynika?"},
+			{"target": 33, "text": "No dobrze, ale czas przecież nie zniknął!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"32",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"To z tego wynika, że nawet w takim prostym, obrazowym modelu, można pokazać, że mówienie o czymś [']przed['] Wielkim Wybuchem, a więc czymś [']przed['] Wszechświatem, a więc o [']przyczynie['] Wszechświata, jest pozbawione sensu."
+			}
+		],
+			"options":[
+
+			{"target": 34, "text": "Hm. A nie można mówić o przyczynie, która nie jest wcześniejsza?"},
+			{"target": 33, "text": "Ale czas przecież nie zniknął!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"33",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Formalnie oczywiście nie [']zniknął[']. Jeżeli już, to zniknęła połowa czasu - ta, którą określamy jako [']przeszłość[']. Mówiąc nieco ściślej, po prostu pokazaliśmy punkt Wszechświata, który nie ma przeszłości."
+			}
+		],
+			"options":[
+
+			{"target": 34, "text": "Hm. A nie można mówić o przyczynie, która nie jest wcześniejsza?"},
+			{"target": 36, "text": "W tekście jest jeszcze mowa o jakichś efektach kwantowych..."},
+			{"target": 6, "text": "Ufff.... chyba na razie wystarczy mi rozmów o czasie..."}
+			
+		]	
+	},
+	
+	
+	{
+		"COMMENT":"34",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"W fizyce - nie. Jest to kwestia nie tylko zdrowego rozsądku, ale też i ścisłego języka, którym się posługujemy w fizyce i kosmologiii. Oddziaływanie przyczynowe >>musi<< pochodzić z przeszłości."
+			}
+		],
+			"options":[
+
+			{"target": 36, "text": "No OK. Ale w tekście była jeszcze mowa o jakichś efektach kwantowych...", "height":2},
+			{"target": 6, "text": "Hm... chyba na razie wystarczy mi rozmów o czasie..."}
+			
+		]	
+	},
+	
+	
+	{
+		"COMMENT":"35",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Hm, to jest troszkę trudna kwestia. Czy nie [playerGender {chciałbyś|chciałabyś}] najpierw posłuchać o analogii 4-wymiarowego Wszechświata do 2-wymiarowej powierzchni kuli - jest to fajna, prosta ilustracja pokazująca kwestię [']końca czasu[']..."
+			}
+		],
+			"options":[
+
+			{"target": 20, "text": "Dobrze, wróćmy może do tego przykładu."},
+			{"target": 36, "text": "Nie, to już rozumiem, przejdźmy może do efektów kwantowych."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"36",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Cóż, efekty kwantowe... Zacznijmy może od tego, że KWAAAAAAAAAAAAAAAAAAAAAAAANTY SOM SUPER."
+			}
+		],
+			"options":[
+
+			{"target": 36, "text": "Pitolisz, ziom."},
+			{"target": 36, "text": "NO SOM."}
+			
+		]	
+	}
+	
+]
+}
+	
+

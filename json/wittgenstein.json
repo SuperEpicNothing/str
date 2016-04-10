@@ -1,0 +1,42 @@
+{
+	"meta":
+		{
+		"bg":"norwegia",
+		"current":0,
+		"actor":"witt"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Dzień dobry, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 2, "text": "Dzień dobry, Panie Profesorze!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Mam pewien problem z Pańską teorią..."},
+			{"target": 2, "text": "Nad czym Pan ostatnio pracuje?"},
+			{"target": 3, "text": "Co Pan robi w Norwegii?"}
+			
+		]	   
+	}
+	
+]
+}
+	
+

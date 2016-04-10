@@ -197,7 +197,7 @@ $submenu = file("strony/".$page."/menu.txt");
 				} ?>
 		   
 				<li><hr></li>
-				<li><a <?php echo "href='?p=".$page."&pp=test' class=".($subpage=="test" ?"'active'":"''") ?> >KONFU?</a></li>
+				<li><a <?php echo "href='?p=".$page."&pp=test' class=".($subpage=="test" ?"'active'":"''") ?> >Starcie z Konfuzjuszem</a></li>
 			</ul>
 		</nav>
 		<div class="col-xs-10">
