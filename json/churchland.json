@@ -10,13 +10,13 @@
 		"COMMENT":"0",
 		"events":[
 			
-			{"type":"question","name":"Patricia Churchland","time":1000,"timepadding":0,
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
 			"text":"Witaj, Wędrowcze!"
 			}
 		],
 		"options":[
 			{"target": 1, "text": "Witaj!"},
-			{"target": 1, "text": "Dzień dobry, Pani Profesor!"}
+			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
 		]	   
 	}
 	
