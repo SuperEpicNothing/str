@@ -12,37 +12,39 @@
 	- przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
 
 
-<<<<<<< HEAD
 - animacja otrzymywania odznaki?
 - w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
-
-
-=======
-- co to jest type "change"?
 - make skip invisible when not in use
 - handleText in HTML
 - move restart button to top corner
 - mute button top corner
 - handle image smoothing better
->>>>>>> master
-+ options text speed,skip-ability
-+ dodać nowe opcje do konfutest
-+ debug invisible click bug 
-+ debug skip button
-+ fullscreen skip
-+ automatic drop-down menu for NEW achievements
-+ przycisk "rozpocznij rozmowę od początku" gdzieś na oknie dialogowym, żeby nie trzeba było przeładowywać strony, jeżeli się chce ponownie z kimś porozmawiać
-+ give skroll
-+ rozdawanie PDków
-+ inne moszliwości porównania skilli
-+ aodawanie osiągnięć
-+ ulepsz grafiki osiągnięć
+
 ===GENERAL:
 -stosować enkodowanie UTF-8
 -wpisuj kody 7 
 -ile PD na lvl na skillpointa
 - nazwy statów
 - end credits scene
+
+
+===LATER DOWN THE PIPELINE:
+handleText in HTML
+więcej animacj zadweania pytań przez konfuzjusza
+confutius sprawdza ile razy pregrałeś i zminia mowę
+acheivment for no losses
+we hurt confu(abimations)
+
+statystyki:
+
+
+▲	WIEDZA
+▲	INTELIGENCJA
+▲	Elokwencja/Empatia
+▲	Szczęście
+▲	Zręczność
+▲	Altruizm/Asertywność
+▲	KRZEPA
 
 ===KOD;
 [playerGender] 
@@ -67,33 +69,6 @@ req:
 "robot" - 6000
 "laser" - 2500
 "book" - 2000
+"book" - 2000
 {"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie}
 
-
-===LATER DOWN THE PIPELINE:
-handleText in HTML
-więcej animacj zadweania pytań przez konfuzjusza
-confutius sprawdza ile razy pregrałeś i zminia mowę
-acheivment for no losses
-
-
-statystyki:
-▲	SZCZęCIE
-▲	SłUCH
-▲	SPRYT
-▲	DOMYśLNOść
-▲	MIʌNIE
-▲	SIłA
-▲	SZYBKOść
-▲	AKTYWNOść
-▲	UROK OSOBISTY
-▲	
-
-
-▲	WIEDZA
-▲	INTELIGENCJA
-▲	ENERGIA
-▲	SPOSTRZEGAWCZOść
-▲	ZRęCZNOść
-▲	ATRAKCYJNOść
-▲	KRZEPA
