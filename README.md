@@ -26,7 +26,7 @@
   - [ ] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
   - [ ] make skip invisible when not in use
-  - [ ] handleText in HTML
+  - [x] handleText in HTML
   - [ ] move restart button to top corner
   - [ ] mute button top corner
   - [ ] handle image smoothing better

@@ -74,13 +74,16 @@ var mouse ={}
 var Assets ={loaded:false,img:[],books:[],items:[],achievments:[]};
 var option={volume:80,speed:0,wait:1,teach:false}
 var player;
+
+
 function loader(){
 
 	if(Assets.loaded){
 	loadPlayer();
 	loadItemMenu();
 	updateChapters();
-	
+	updateHTMLText();
+
 	  // Create canvas to convert the image to base64
     var favicon = document.getElementById("favicon" )
         favicon.width = 32;
@@ -259,6 +262,13 @@ function updateChapters(){
 		}
 	}
 }
+function updateHTMLText(){
+	var textNodes = document.getElementsByClassName("texthandler")
+	for(var i=0;i<textNodes.length;i++)
+	{
+		textNodes[i].innerHTML=handleText(textNodes[i].innerHTML);
+	}
+}
 function loadAssets(){
 	var xmlhttp0 = new XMLHttpRequest();
 	xmlhttp0.onreadystatechange = function() {
@@ -412,9 +422,9 @@ function checkReq(req){
 }
 function handleText(text,index){
 	
-	var start = text.indexOf('[',index)
+	var end = text.indexOf(']',index)
+	var start = text.lastIndexOf('[',end)
 	
-	var end = text.indexOf(']',start)
 	if(start<0 || end<0)
 		return text;
 	var value ="";
