@@ -3,7 +3,7 @@
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - [x] list syntax required (any unordered or ordered list supported)
 - [x] this is a complete item
-- [ ] todo mk II?
+- [ ] :sparkles: todo mk II :sparkles: ?
 - [ ] [**nauczmy sie tego**](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
 - GENERAL:
   - stosować enkodowanie UTF-8
@@ -16,7 +16,7 @@
   - [ ] confutius sprawdza ile razy pregrałeś i zminia mowę
   - [ ] acheivment for no losses
   - [ ] we hurt confu(abimations)
-- ==S:
+- ==S: @Shinigami072 
   - [ ] hover nad zamkniętymi rozdziałami
   - [ ] widok inwentarza
     - [ ] trochę niższy, proponuję tak o 1/3
@@ -30,9 +30,8 @@
   - [ ] move restart button to top corner
   - [ ] mute button top corner
   - [ ] handle image smoothing better
-- ==L:
+- ==L: @lukaszlamza
   - coś zrobiłem...
-
 # Tags: 
  * [playerGender] [playerGender {male|female}] - gendered 
  * [playerName] - imie gracza
