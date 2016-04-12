@@ -45,10 +45,10 @@ Tag|corobi
 
 Event|corobi
 ---|---
-'{"type":"give","time":4600,"item":IDI,"book"":IDB,"xp":xpamt},' | daj graczowi Item `IDI`, książkę `IDB`, `xpamt` Doświadczenia
-'{"type":"unlockAch","time":"4200","ach":ID},' | odblokuj osiągnięcie `ID`
-'{"type":"change","time":"0","target":ID},'| przeskocz do sceny `ID`
-'{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie},'| zadaje pytanie z animacją (pats=rz tabela poniżej)
+`{"type":"give","time":4600,"item":IDI,"book"":IDB,"xp":xpamt},` | daj graczowi Item `IDI`, książkę `IDB`, `xpamt` Doświadczenia
+`{"type":"unlockAch","time":"4200","ach":ID},` | odblokuj osiągnięcie `ID`
+`{"type":"change","time":"0","target":ID},`| przeskocz do sceny `ID`
+`{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie},`| zadaje pytanie z animacją (patrz tabela poniżej)
 
 arm|czas (w ms)
 ---|---
@@ -59,9 +59,9 @@ arm|czas (w ms)
 
 REQ|corobi
 ---|---
-'"req":{"type":"skill","skill":x,"amt":a,"mode":m}'| sprwadza czy zdolność `x` `m` od `a` optional-mode{"<",">"}
-'"req":{"type":"item","item":ID}'| sprawdza czy gracz ma przedmiot `ID`
-'"req":{"type":"hp","amt":a}'| hp gracza > a tylko Confutest
+`"req":{"type":"skill","skill":x,"amt":a,"mode":m}`| sprwadza czy zdolność `x` `m` od `a` optional-mode{"<",">"}
+`"req":{"type":"item","item":ID}`| sprawdza czy gracz ma przedmiot `ID`
+`"req":{"type":"hp","amt":a}`| hp gracza > a tylko Confutest
 
 
 
