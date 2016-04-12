@@ -11,7 +11,7 @@
   - [ ] nazwy statów
   - [ ] end credits scene
 - LATER DOWN THE PIPELINE:
-  - [ ] handleText in HTML
+  - [x] handleText in HTML
   - [ ] więcej animacj zadweania pytań przez konfuzjusza
   - [ ] confutius sprawdza ile razy pregrałeś i zminia mowę
   - [ ] acheivment for no losses
