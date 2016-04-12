@@ -32,30 +32,39 @@
   - [ ] handle image smoothing better
 - ==L: @lukaszlamza
   - coś zrobiłem...
-# Tags: 
- * [playerGender] [playerGender {male|female}] - gendered 
- * [playerName] - imie gracza
- * [playerAge] - wiek gracza
- * [playerLvl] - level gracza
- * [playerSkill id] -  skill level
- * ['] "
 
-# Event:
-* {"type":"give","time":4600,"item":"001","book"":"ID","xp":2} - give item andor book andor xp 
-* {"type":"unlockAch","time":"4200","ach":id}, - unlock Achievment
-* {"type":"change","time":"0","target":id}, - jump to scene id
+Tag|corobi
+---|---
+`[playerGender]` | wyswietla symbol płci gracza
+`[playerGender {male|female}]` | zmaina tekstu w zalożności od płci gracza 
+`[playerName]` | Imię gracza
+`[playerAge]` | Wiek gracza
+`[playerLvl]` | level gracza
+`[playerSkill id]`| poziom zdolności `id` gracza 
+`[']`| `"`
 
-# REQ:
-* "req":{"type":"skill","skill":4,"amt":3,"mode":"<"} optional-mode{"<",">"}
-* "req":{"type":"item","item":"ID"}
-* "req":{"type":"hp","amt":"a"} hp gracza > a tylko Confutest
+Event|corobi
+---|---
+'{"type":"give","time":4600,"item":IDI,"book"":IDB,"xp":xpamt},' | daj graczowi Item `IDI`, książkę `IDB`, `xpamt` Doświadczenia
+'{"type":"unlockAch","time":"4200","ach":ID},' | odblokuj osiągnięcie `ID`
+'{"type":"change","time":"0","target":ID},'| przeskocz do sceny `ID`
+'{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie},'| zadaje pytanie z animacją (pats=rz tabela poniżej)
 
-# Question animations:
-* "sword" - 6200
-* "robot" - 6000
-* "laser" - 2500
-* "book" - 2000
-* {"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie}
+arm|czas (w ms)
+---|---
+`"sword"`|`6200`
+`"robot"`|`6000`
+`"laser"`|`2500`
+`"book"`|`2000`
+
+REQ|corobi
+---|---
+'"req":{"type":"skill","skill":x,"amt":a,"mode":m}'| sprwadza czy zdolność `x` `m` od `a` optional-mode{"<",">"}
+'"req":{"type":"item","item":ID}'| sprawdza czy gracz ma przedmiot `ID`
+'"req":{"type":"hp","amt":a}'| hp gracza > a tylko Confutest
+
+
+
 
 
 
