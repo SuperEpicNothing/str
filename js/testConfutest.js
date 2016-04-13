@@ -313,8 +313,7 @@ function renderConfu(timestamp){
 		audio.muted=true;
 		}
 	}
-	if(renderData.type=="unlockAch")
-	unlockAchievment(renderData.ach);
+	notif.draw(context,timestamp)
 
 	window.requestAnimationFrame(renderConfu);
 	
@@ -445,6 +444,8 @@ function processEvent(progress){
 			renderData.ach= evt.ach;
 			if(player.achievements.indexOf(evt.ach)>=0 && renderData.progress==0)
 				EntTime-=(4200-(progress-EntTime))
+			else
+			unlockAchievment(evt.ach);
 		break;
 	}
 }

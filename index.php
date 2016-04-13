@@ -53,7 +53,8 @@ $submenu = file("strony/".$page."/menu.txt");
    	<script src="js/seedrandom.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/loader.js"></script>
-<script src="js/window.js"></script>
+	<script src="js/graphics/notifications.js"></script>
+	<script src="js/window.js"></script>
 
 	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script type="text/javascript">

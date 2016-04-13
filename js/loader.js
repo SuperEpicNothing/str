@@ -83,7 +83,11 @@ function loader(){
 	loadItemMenu();
 	updateChapters();
 	updateHTMLText();
-
+	var pl = btoa(encodeURIComponent(JSON.stringify(player)).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+	return String.fromCharCode('0x' + p1);}))
+	console.log(player)
+	console.log(pl)
+	console.log(atob(pl))
 	  // Create canvas to convert the image to base64
     var favicon = document.getElementById("favicon" )
         favicon.width = 32;
@@ -198,6 +202,7 @@ function playerxp(n){
 		player.progress.xp--;
 		player.progress.skillp++;
 		playerxp(0);
+		return;
 	}
 	savePlayer();
 }
@@ -218,13 +223,15 @@ function addBook(name){
 	if(player.books.indexOf(name)<0){
 		player.books.push(name);
 		player.notificationsBooks++
+		notif.addNotif("book",name);
 		savePlayer();
 	}
 }
 function addItem(name){
 	if(player.items.indexOf(name)<0){
 		player.items.push(name);
-		player.notificationsItems++
+		player.notificationsItems++;
+		notif.addNotif("item",name);
 		savePlayer();
 	}
 }
@@ -233,6 +240,7 @@ function unlockChapter(id){
 	if(player.progress.chapters.indexOf(id)<0){
 			console.log(id)
 		player.progress.chapters.push(id);
+		notif.addNotif("chapter",id);
 		updateChapters()
 		savePlayer();
 	}
@@ -306,34 +314,11 @@ function loadAssets(){
 }
 function unlockAchievment(ach)
 {
-	var time = renderData.progress%4000
-
-	if(time>1000 && time<=2000)
-		time=1000;
-	else if(time>2000)
-		time=time-1000;
-
-	var offset= Math.sin(time/2000*Math.PI)*40-38;
-	//AchievmentNotify
-	context.drawImage(Assets.img["GUIachievmentNotify"],0,offset);
-	
-	context.font = "14px Aclonica"
-	context.textBaseline = "top";
-	context.textAlign="left"; 
-	context.fillStyle="white";
-	context.fillText("Osiągnięcie Odblokowane!",elem.width-256+38,5+offset);
-	
-	context.font = "10px Aclonica"
-	context.textBaseline = "top";
-	context.textAlign="left"; 
-	context.fillStyle="#d9d9d9";
-	context.fillText(Assets.achievments[ach].fullname,elem.width-256+38,22+offset);
-	context.drawImage(Assets.img["GUIachievments"],32*Assets.achievments[ach].level,0,32,32,elem.width-256+1,3+offset,32,32);
-	if(Assets.achievments[ach].icon)
-	context.drawImage(Assets.img[Assets.achievments[ach].icon],elem.width-256+8,10+offset,18,18);
-	if(player.achievements.indexOf(ach)<0)
+	if(player.achievements.indexOf(ach)<0){
 		player.achievements.push(ach);
-	savePlayer();
+		notif.addNotif("achievment",ach);	
+		savePlayer();
+	}
 }
 // logic helper
 {
