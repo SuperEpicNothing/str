@@ -11,6 +11,7 @@
 	"scenes": [
 	{
 		"events":[
+			{"type":"unlockAch","time":10,"ach":4},
 			{"type":"showBoss","time":2300},
 			{"type":"dialog","time":3000,"timepadding":1000,
 			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},

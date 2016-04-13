@@ -23,7 +23,7 @@
     - [ ] czcionka opisu (prawy panel) mniejsza
 	  - [ ] więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
 	  - [ ] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
-  - [ ] animacja otrzymywania odznaki?
+  - [x] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
   - [ ] make skip invisible when not in use
   - [x] handleText in HTML
