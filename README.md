@@ -8,7 +8,7 @@
 - GENERAL:
   - stosować enkodowanie UTF-8
   - [ ] ile PD na lvl na skillpointa
-  - [ ] nazwy statów
+  - [x] nazwy statów - WIEDZA SYstem
   - [ ] end credits scene
 - LATER DOWN THE PIPELINE:
   - [x] handleText in HTML
