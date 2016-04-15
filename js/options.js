@@ -1,6 +1,6 @@
 function optionOpen(){
 	console.log("open");
-	option=getCookie("options")?getCookie("options"):{volume:80,speed:0,teach:false};
+	option=getCookie("options")?getCookie("options"):{volume:80,mute:false,speed:1,teach:false,mute:false};
 	document.getElementById("volume").value=option.volume;
 	document.getElementById("speed").value=option.speed;
 	document.getElementById("wait").value=option.wait;
@@ -20,6 +20,7 @@ function optionUpdate()
 function optionSave(){
 	console.log("save");
 	option.volume=document.getElementById("volume").value;
+	option.mute=(option.volume==0);
 	option.speed=document.getElementById("speed").value;
 	option.autoskip=document.getElementById("autoskip").checked;
 	option.wait=option.autoskip? document.getElementById("wait").value :1;
@@ -35,7 +36,7 @@ function optionDelete(){
 	player=null;
 	deleteCookie("player");
 	deleteCookie("options");
-	option={volume:80,speed:0,teach:false,autoskip:true};
+	option={volume:80,speed:1,teach:false,autoskip:true,mute:false};
 	$("#itemModal").modal("hide");
 	location.reload(); 
 }

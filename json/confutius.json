@@ -58,7 +58,7 @@
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
 			{"target": 6, "text": "..."}
 	
@@ -72,7 +72,7 @@
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
 			{"target": 6, "text": "..."}
 	
@@ -86,7 +86,7 @@
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
 			{"target": 6, "text": "..."}
 	
@@ -100,7 +100,7 @@
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"001"},"consequence":{"herohp":1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
 			{"target": 5, "text": "???","consequence":{"herohp":-1}},
 			{"target": 6, "text": "..."}
 		]	   

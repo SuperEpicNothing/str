@@ -369,7 +369,6 @@ function mouseChange(event,evtname){
 	mouse.buttons=(event.buttons);
 	//mouse.detail=(event.detail);
 	mouse.event=evtname;
-	console.log(mouse.event)
 
 }
 function checkReq(req){
@@ -504,36 +503,16 @@ function drawDialog(speaker,text,time,progress,mode){
 
 	context.fill();
 	drawButtonskip(elem.width-85, elem.height-175,mode,!(renderData.type=="question"&&mode==1));
-	drawButtonback(5, elem.height-175);
 
 }
-function drawButtonback(x, y){
-	var type =0
 
-
-	if(inBounds(x,y,80,20)){
-		type=40;
-		if(mouse.up && mouse.target==elem)
-		skip(-1)
-	
-		if(mouse.buttons>0)
-		type=20;
-		
-	}
-	
-	context.drawImage( Assets.img["GUIbuttonskip"],
-		160,type,
-		80,20,
-		x,y,
-		80,20);
-}
 function drawButtonskip(x, y,mode,enabled){
 
 	var type =0
 	if(!enabled)
-	{type=20;}
+		return
 
-	else if(inBounds(90,y,elem.width-90,25)||inBounds(0,0,elem.width, elem.height-180)){
+	else if(inBounds(0,40,elem.width, elem.height-40)){
 		type=40;
 		if(mouse.up && mouse.target==elem && enabled)
 		skip(mode)
@@ -551,6 +530,8 @@ function drawButtonskip(x, y,mode,enabled){
 }
 function skip(mode)
 {
+		mouse.up=false;
+
 	if(mode == -1)
 		renderData.skipmode=-1;
 	if(mode == 0){
@@ -561,7 +542,6 @@ function skip(mode)
 		renderData.skipmode=2;
 		console.log(renderData)
 	}
-	mouse.up=false;
 }
 
 function drawButtonBG(x, y, width,height,enabled,f,id){

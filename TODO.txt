@@ -38,13 +38,12 @@ we hurt confu(abimations)
 statystyki:
 
 
-▲	+WIEDZA
-▲	+INTELIGENCJA
-▲	Elokwencja/+Empatia
-▲	Szczęście/+Siła
-▲	Zręczność
-▲	Altruizm/Asertywność
-▲	+KRZEPA
+WIEDZA
+INTELIGENCJA
+Empatia
+Dowcip
+Zręczność
+Asertywność
 
 ===KOD;
 [playerGender] 
