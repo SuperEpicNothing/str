@@ -274,6 +274,7 @@ function renderWindow(timestamp){
 	}
 	context.fill();
 	notif.draw(context,timestamp)
+	buttons.drawMenubar(context,timestamp)
 
 	window.requestAnimationFrame(renderWindow);
 	

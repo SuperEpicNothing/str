@@ -309,11 +309,14 @@ function renderConfu(timestamp){
 		{
 		audio.loop=false;
 		audio.currentTime=audio.duration
-		audio.pause()
+		audio.pause();
 		audio.muted=true;
 		}
 	}
-	notif.draw(context,timestamp)
+	
+	notif.draw(context,timestamp);
+	buttons.drawMenubar(context,timestamp);
+
 
 	window.requestAnimationFrame(renderConfu);
 	

@@ -15,6 +15,8 @@
 		
 		{"name" : "GUIbutton",
 		"src":"images/gui/buttons.png"},
+		{"name" : "GUIbuttonmenu",
+		"src":"images/gui/menu.png"},
 		{"name" : "GUIbuttonskip",
 		"src":"images/gui/skipbutton.png"},
 		{"name" : "GUIback",
