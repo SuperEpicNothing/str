@@ -31,6 +31,7 @@
   - [ ] Audiohandling
   - [x] mute button top corner
   - [ ] handle image smoothing better
+  - [ ] make skills make sense - clean player code
 - ==L: @lukaszlamza
   - coś zrobiłem...
 
