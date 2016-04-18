@@ -52,9 +52,15 @@ $submenu = file("strony/".$page."/menu.txt");
 -->
    	<script src="js/seedrandom.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
 	<script src="js/loader.js"></script>
+	
 	<script src="js/graphics/notifications.js"></script>
 	<script src="js/graphics/buttons.js"></script>
+	<script src="js/graphics/canvasUtils.js"></script>
+	<script src="js/graphics/audio.js"></script>
+
+
 	<!--<script src="js/window.js"></script>-->
 
 	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -62,7 +68,7 @@ $submenu = file("strony/".$page."/menu.txt");
     window.cookieconsent_options = {"message":"Ta strona korzysta z plików cookies, [przeczytaj informacje o wymaganiach EU]",
 	"dismiss":"OK",
 	"learnMore":"Więcej informacji",
-	"link":null,
+	"link":"todo",
 	"theme":"dark-bottom"};
 </script>
 
@@ -89,7 +95,7 @@ $submenu = file("strony/".$page."/menu.txt");
 					<div class="visible-sm-inline-block">NiW</div>
 				</a>
 			</div>
-			
+
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
   				    <?php for($i=0 ;$i<count($strony); $i++) {
@@ -97,9 +103,9 @@ $submenu = file("strony/".$page."/menu.txt");
 				    } ?>
                 </ul>
 				<ul class="nav navbar-nav navbreaker pull-right">
-					<li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
-					<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
-					<li><a href="#" data-toggle="modal" data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
+						<li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
+						<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
+						<li><a href="#" data-toggle="modal"  data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -206,6 +212,5 @@ $submenu = file("strony/".$page."/menu.txt");
 			<?php readfile("strony/".$page."/".($subpage=="test"?"endboss":$subpage).".html");?>
 		</div>
 	</div>
-
   </body>
 </html>

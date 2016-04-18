@@ -33,6 +33,8 @@
 		"src":"images/gui/Achievments.png"},
 		{"name" : "GUIachievmentNotify",
 		"src":"images/gui/AchievmentBar.png"},
+		{"name" : "GUIplayer",
+		"src":"images/gui/playerGUI.png"},
 		
 		{"name" : "players",
 		"src":"images/avatars.png"},

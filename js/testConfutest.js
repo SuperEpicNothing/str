@@ -37,8 +37,7 @@ function loadConfu(file,id){
 		boss.heroHp=battlescript.meta.heromaxhp
 		boss.heroHpMax=battlescript.meta.heromaxhp
 	
-		audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
-		audio.loop = true;
+		audio.setTrack(battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
 	}
 	else if(xhttp.readyState == 4)
 	{
@@ -50,10 +49,7 @@ function loadConfu(file,id){
 
 
     context = elem.getContext('2d');
-	context.mozImageSmoothingEnabled = true;
-	context.webkitImageSmoothingEnabled = true;
-	context.msImageSmoothingEnabled = true;
-	context.imageSmoothingEnabled = true;
+
 	if(elem == undefined)
 	{
 		console.log("no canvas")
@@ -72,22 +68,17 @@ function clear(){
 	context.fill();
 }
 
-var audio
 var start = null;
 var change,changeEvt;
 
 function renderConfu(timestamp){
-	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp; audio.play();}
+	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp;}
 	if(!start || !Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
 	var progress = Math.round(timestamp - start);
 	clear();
 	
-	audio.volume = option.volume / 100;
-	if(mouse.target==elem && mouse.isOver)
-		audio.play()
-	else
-		audio.pause();
-	//console.log(audio.volume)
+	audio.play(mouse.target==elem && mouse.isOver)
+
 	processEvent(progress);
 	drawBackground(progress);
 	
@@ -307,10 +298,7 @@ function renderConfu(timestamp){
 		
 		if(renderData.progress/renderData.time>0.9)
 		{
-		audio.loop=false;
-		audio.currentTime=audio.duration
-		audio.pause();
-		audio.muted=true;
+		audio.play(false);
 		}
 	}
 	
@@ -362,12 +350,9 @@ function processEvent(progress){
 		boss.healthMax=battlescript.meta.bossmaxhp
 		boss.heroHp=battlescript.meta.heromaxhp
 		boss.heroHpMax=battlescript.meta.heromaxhp
-		audio.loop=false;
-		audio.currentTime=audio.duration
-		audio.pause();
-		audio = new Audio('music/'+battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
-		audio.loop = true;	
-		audio.play();
+
+		audio.setTrack(battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
+
 	}
 	
 	//general change
@@ -519,17 +504,12 @@ function drawConfutest(progress){
 		(elem.width-(Assets.img["confu"].width/3))/2+Math.cos(progress/290)*4,50+Math.sin(progress/500)*15,		
 		Assets.img["confu"].width/3,Assets.img["confu"].height/3*2);
 	
-	context.mozImageSmoothingEnabled = false;
-	context.webkitImageSmoothingEnabled = false;
-	context.msImageSmoothingEnabled = false;
-	context.imageSmoothingEnabled = false;
+	cUtils.imageSmoothing(context,false);
+
 		context.drawImage(Assets.img["book"],
 		(elem.width-(Assets.img["confu"].width/2))+70+Math.cos(progress/270)*9,150-Math.sin(progress/300)*8,
 		68,68);
-	context.mozImageSmoothingEnabled = true;
-	context.webkitImageSmoothingEnabled = true;
-	context.msImageSmoothingEnabled = true;
-	context.imageSmoothingEnabled = true;
+
 	
 	if(renderData.type=="question")
 	{

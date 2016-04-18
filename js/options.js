@@ -29,7 +29,8 @@ function optionSave(){
 
 	setCookie("options",option);
 	$("#itemModal").modal("hide");
-	updateChapters()
+	updateChapters();
+	audio.update();
 }
 function optionDelete(){
 	console.log("delete");

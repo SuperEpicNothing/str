@@ -36,10 +36,7 @@ function loadWindow(file,id){
 	Actor=script.meta.actor;
 	currentscene=script.meta.current;
     context = elem.getContext('2d');
-	context.mozImageSmoothingEnabled = true;
-	context.webkitImageSmoothingEnabled = true;
-	context.msImageSmoothingEnabled = true;
-	context.imageSmoothingEnabled = true;
+	cUtils.imageSmoothing(context,true);
 	if(elem == undefined)
 	{
 		console.log("no canvas")
@@ -50,8 +47,7 @@ function loadWindow(file,id){
 		music = script.meta.music[ Math.round((script.meta.music.length-1)*Math.random())] 
 		if(!music)
 			music="Harp.mp3";
-		audio = new Audio('music/'+music);
-		audio.loop = true;	
+		audio.setTrack(music);
 		
 	addMouseListener(elem)
 	renderWindow(0)
@@ -100,17 +96,14 @@ function processEvent(progress){
 	if(renderData.skipmode==-1)
 	{
 		change=script.meta.current;
-		audio.loop=false;
-		audio.currentTime=audio.duration
-		audio.pause();
+		
 		var music
 		if(script.meta.music)
 		music = script.meta.music[ Math.round((script.meta.music.length-1)*Math.random())] 
 		
 		if(!music)
 			music="Harp.mp3";
-		audio = new Audio('music/'+music);		audio.loop = true;	
-		audio.play();
+		audio.setTrack(music);
 	}
 	
 	//general change
@@ -195,17 +188,13 @@ function processEvent(progress){
 	}
 	
 }
-var audio
 var startWin = null
 function renderWindow(timestamp){
 	if(!Assets.loaded ||!script){window.requestAnimationFrame(renderWindow);return}
 	if (!startWin && mouse.isOver && mouse.target==elem){ startWin = timestamp;}
 	
-	audio.volume = option.volume / 100;
-	if(mouse.target==elem && mouse.isOver)
-		audio.play()
-	else
-		audio.pause();
+	audio.play(mouse.target==elem && mouse.isOver);
+
 	
 	//if(!startWin) {window.requestAnimationFrame(renderWindow); return}
 	var progress = Math.round(timestamp - startWin);

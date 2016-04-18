@@ -3,13 +3,13 @@ var buttons = {};
 buttons.mute = function(b){
 	
 	var i = 1;
-	if(mouse.buttons>0){
-		i = 2;
-		
-	}
+	if(mouse.buttons>0)
+		i = 2;		
+	
 	if(mouse.up){
 		option.mute=!option.mute;
 		mouse.up=false;
+		audio.update();
 	}
 	buttons.btn[b].type = option.mute? 2:1;
 	return i;
@@ -18,6 +18,12 @@ buttons.skip = function(b){
 	var i = 1;
 	if(mouse.buttons>0)
 		i = 2;
+	
+	if(mouse.up){
+		renderData.skipmode=-1;
+		mouse.up=false;
+
+	}
 	return i;
 }
 

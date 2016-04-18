@@ -1,32 +1,34 @@
 ﻿var notif = {};
-notif.noftifications = [{type:"xp",isOver:false,amt:2.1,startamt:0,posttime:null},{type:"item",isOver:false,id:"demon",posttime:null},{type:"book",isOver:false,id:"intro",posttime:null},{type:"achievment",isOver:false,ach:0,posttime:null}];
 notif.draw = function(ctx,time){
-	if(!notif.noftifications[0])
+	if(!player.noftifications)
+		player.noftifications = [{type:"xp",isOver:false,amt:2.1,startamt:0,posttime:null},{type:"item",isOver:false,id:"demon",posttime:null},{type:"book",isOver:false,id:"intro",posttime:null},{type:"achievment",isOver:false,ach:0,posttime:null}];
+
+	if(!player.noftifications[0])
 		return;
-	if(!notif.noftifications[0].posttime)
+	if(!player.noftifications[0].posttime)
 	{
-		notif.noftifications[0].posttime=time;
+		player.noftifications[0].posttime=time;
 	}
-	var progress = time-notif.noftifications[0].posttime
-	switch(notif.noftifications[0].type)
+	var progress = time-player.noftifications[0].posttime
+	switch(player.noftifications[0].type)
 	{
 		case "achievment":
-			notif.achievment(ctx,progress,notif.noftifications[0].ach);
+			notif.achievment(ctx,progress,player.noftifications[0].ach);
 		break;
 		case "item":
-			notif.item(ctx,progress,notif.noftifications[0].id);
+			notif.item(ctx,progress,player.noftifications[0].id);
 		break;
 		case "book":
-			notif.book(ctx,progress,notif.noftifications[0].id);
+			notif.book(ctx,progress,player.noftifications[0].id);
 		break;
 		case "xp":
-			notif.xp(ctx,progress,notif.noftifications[0].amt,notif.noftifications[0].startamt);
+			notif.xp(ctx,progress,player.noftifications[0].amt,player.noftifications[0].startamt);
 		break;
 	}
 	
-	if(notif.noftifications[0].isOver)
+	if(player.noftifications[0].isOver)
 	{
-		notif.noftifications.splice(0,1);
+		player.noftifications.splice(0,1);
 	}
 };
 notif.swing = function(progress,mode,time){
@@ -41,19 +43,21 @@ notif.swing = function(progress,mode,time){
 	return offset;
 }
 notif.addNotif = function(type,data){
+	if(!player.noftifications)
+		player.noftifications =[];
 	switch(type)
 	{
 		case "achievment":
-			notif.noftifications.push({type:"achievment",isOver:false,ach:data,posttime:null});
+			player.noftifications.push({type:"achievment",isOver:false,ach:data,posttime:null});
 		break;
 		case "item":
-			notif.noftifications.push({type:"item",isOver:false,id:data,posttime:null});
+			player.noftifications.push({type:"item",isOver:false,id:data,posttime:null});
 		break;
 		case "book":
-			notif.noftifications.push({type:"book",isOver:false,id:data,posttime:null});
+			player.noftifications.push({type:"book",isOver:false,id:data,posttime:null});
 		break;
 		case "xp":
-			notif.noftifications.push({type:"xp",isOver:false,amt:data,startamt:player.progress.xp,posttime:null});
+			player.noftifications.push({type:"xp",isOver:false,amt:data,startamt:player.progress.xp,posttime:null});
 		break;
 	}
 }
@@ -74,7 +78,7 @@ notif.xp = function(ctx,progress,xp,startamt){
 	
 				
 	if(progress>5000)
-		notif.noftifications[0].isOver=true;
+		player.noftifications[0].isOver=true;
 	var offset = notif.swing(progress,mode,3000);
 	notif.unwrapBand(ctx,progress-1000,width,offset,25,250,mode)	
 	ctx.drawImage(Assets.img["players"],
@@ -110,7 +114,7 @@ notif.item = function(ctx,progress,item){
 	var width = ctx.canvas.width
 	var mode = progress<=2000&&progress>1000?1:progress>2000?-1:0;
 	if(progress>4000)
-		notif.noftifications[0].isOver=true;
+		player.noftifications[0].isOver=true;
 	
 	var offset = notif.swing(progress);
 	notif.unwrapBand(ctx,progress-1000,width,offset,50,250,mode)	
@@ -141,7 +145,7 @@ notif.book = function(ctx,progress,book){
 			Ibook.src="images/gui/icons/books/W_Book0"+Math.floor(1+rng()*7)+".png";
 			
 	if(progress>4000)
-		notif.noftifications[0].isOver=true;
+		player.noftifications[0].isOver=true;
 	var offset = notif.swing(progress);
 	notif.unwrapBand(ctx,progress-1000,width,offset,50,250,mode)	
 	ctx.drawImage(Assets.img[mode==1?"GUIopenchest":"GUIclosedchest"],width-50,offset-4,50,50);
@@ -165,7 +169,7 @@ notif.achievment = function(ctx,progress,ach){
 	var width = ctx.canvas.width
 	var offset = notif.swing(progress);
 	if(progress>4000)
-		notif.noftifications[0].isOver=true;
+		player.noftifications[0].isOver=true;
 	
 	//AchievmentNotify
 	ctx.drawImage(Assets.img["GUIachievmentNotify"],0,offset);

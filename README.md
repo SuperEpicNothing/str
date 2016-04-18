@@ -21,17 +21,18 @@
   - [ ] widok inwentarza
     - [ ] trochę niższy, proponuję tak o 1/3
     - [ ] czcionka opisu (prawy panel) mniejsza
-	  - [ ] więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
-	  - [ ] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
+	- [ ] więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
+	- [ ] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
   - [x] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
   - [x] make skip invisible when not in use
   - [x] handleText in HTML
   - [x] move restart button to top corner
-  - [ ] Audiohandling
+  - [x] Audiohandling
   - [x] mute button top corner
-  - [ ] handle image smoothing better
-  - [ ] make skills make sense - clean player code
+  - [X] handle image smoothing better
+  - [x] make skills make sense - clean player code
+  - [ ] fix broken inventory 
 - ==L: @lukaszlamza
   - coś zrobiłem...
 
