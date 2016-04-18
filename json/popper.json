@@ -657,7 +657,7 @@
 			}
 		],
 		"options":[
-			{"target": 48, "text": "Poznanie rzeczywistości to chyba trudne zadanie..."},
+			{"target": 49, "text": "Poznanie rzeczywistości to chyba trudne zadanie..."},
 			{"target": 33, "text": "Wróćmy może do naszej rozmowy."}
 			
 		]	   
@@ -680,7 +680,7 @@
 		{
 		"COMMENT":"50",
 		"events":[
-			{"type":"give","time":4600,"item":"popper"},
+			{"type":"give","time":4600,"item":"popper"}, 
 			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
 			"text":"Bardzo się cieszę! Miło było rozmawiać. A teraz przyjmij ode mnie ten oto Argument. Niech Ci służy, Wędrowcze."
 			}

@@ -124,21 +124,21 @@
 		},
 		{
 			"type": "Scroll",
-			"name": "001",
-			"fullname": "Lorem ipsum et dolor sit amet",
-			"autor": "Lorem",
+			"name": "kolektor1",
+			"fullname": "Big Dish - materiały zaawansowane",
+			"autor": "Frank Jackson",
 			"img": "images/gui/untitled.png",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			"url": null	
+			"desc": "Ten link prowadzi do strony poświęconej badaniom nad kolektorem Big Dish.",
+			"url": "http://stg.anu.edu.au/research/cst/receiver-usasec.php"
 		},
 		{
 			"type": "Scroll",
-			"name": "002",
-			"fullname": "dolor sit amet",
-			"autor": "Lorem",
+			"name": "kolektor0",
+			"fullname": "Big Dish - materiały podstawowe",
+			"autor": "Frank Jackson",
 			"img": "images/gui/untitled.png",
-			"desc": "Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
-			"url": null	
+			"desc": "Ten link prowadzi do strony na Wikipedii wyjaśniającej, czym są kolektory słoneczne.",
+			"url": "https://pl.wikipedia.org/wiki/Kolektor_s%C5%82oneczny"
 		},
 		
 		{

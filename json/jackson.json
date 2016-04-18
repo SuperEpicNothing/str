@@ -11,14 +11,531 @@
 		"events":[
 			
 			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
-			"text":"Witaj, Wędrowcze!"
+			"text":"Dzień dobry, Wędrowcze!"
 			}
 		],
 		"options":[
-			{"target": 1, "text": "Witaj!"},
 			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
 		]	   
-	}
+	},
+	
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "[playerGender {Chciałbym|Chciałabym}] porozmawiać o Pańskim artykule."},
+			{"target": 10, "text": "Interesują mnie qualia..."},
+			{"target": 2, "text": "A cóż to za przedziwna konstrukcja za Panem?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"To [']Big Dish[']. Eksperymentalny paraboliczny kolektor skupiający."
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Aaaahaaa.... to może wróćmy do moich problemów."},
+			{"target": 3, "text": "[Test WIEDZA] Oczywiście. A jaka ciecz pełni funkcję absorbera?"},
+			{"target": 4, "text": "Yyy... a co to takiego?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"3",
+		"events":[
+			{"type":"give","time":4600,"book":"kolektor1"},
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"[Jackson uśmiecha się] Widzę, że trafiłem na [playerGender {prawdziwego miłośnika|prawdziwą miłośniczkę}] wiedzy. Zwykła woda, Wędrowcze. Zwykła woda. Nie jestem w tych sprawach ekspertem, ale przyjmij ode mnie ten oto zwój. Może on zaspokoi Twoją ciekawość."
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Dziękuję. Wróćmy może do kwestii filozoficznych..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"4",
+		"events":[
+			{"type":"give","time":4600,"book":"kolektor0"},
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Kolektor skupiający to urządzenie, które skupia promienie słoneczne na małej powierzchni, zwykle po to, żeby podgrzać wodę. Odpowiedni do tego celu jest kształt paraboliczny. A całe przedsięwzięcie ma charakter eksperymentalny. Masz, zajrzyj do tego zwoju, jeśli interesuje Cię ta kwestia."
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Dziękuję! Wróćmy może do kwestii filozoficznych."}
+		]	   
+	},
+
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"W czym problem?"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Wciąż nie rozumiem, co to właściwie są te [']qualia[']?"},
+			{"target": 16, "text": "Czy istnienie qualiów dowodzi istnienia duszy?"},
+			{"target": 12, "text": "Dlaczego qualia nie mogą być fizyczne?"},
+			{"target": 24, "text": "Może jednak poczytajmy już Pański artykuł..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Problem polega na tym, że qualiów nie za bardzo da się precyzyjnie zdefiniować. Czy [playerGender {słyszałeś|słyszałaś}] już o argumencie z odwróconych kolorów?"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Nie."},
+			{"target": 8, "text": "Tak."}
+		]	   
+	},
+
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Więc wróć do mnie, kiedy już poczytasz coś na ten temat. Dr Lamża szepcze mi na ucho, że materiały na ten temat znajdują się [']nade mną['], cokolwiek by to miało znaczyć..."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "OK, [playerGender {przeczytałem|przeczytałam}] już..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"No więc dwie osoby o odwróconych kolorach różnią się właśnie swoimi qualiami."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Ale czym [']quale['] czerwoności różni się po prostu od koloru czerwonego?", "height":2},
+			{"target": 12, "text": "Ale dlaczego qualia nie mogą być fizyczne?"},
+			{"target": 9, "text": "Czyli czym?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Quale można też określić jako [']treść mojej świadomości['] w danej sytuacji. Przykład z odwróconymi kolorami ma pokazać, że jest to coś niezależnego od długości fali światła. Ta sama długość fali wywołuje inne qualia."
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Ale czy tak naprawdę mogłoby być?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Mnie też! Qualia to chyba jeden z najbardziej tajemniczych problemów współczesnej filozofii!"
+			}
+		],
+		"options":[
+			{"target": 5, "text": "[...]"}
+		]	   
+	},
+
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Tego nie wiadomo. To tylko doświadczenie myślowe. Ja osobiście uważam, że jest ono trochę mylące... znacznie bardziej wolę argumenty, które są trochę bardziej precyzyjne."
+			}
+		],
+		"options":[
+			{"target": 24, "text": "To może porozmawiajmy o Pańskim artykule..."},
+			{"target": 5, "text": "Hm, mam jeszcze inne pytania odnośnie qualiów"}
+		]	   
+	},
+
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Ale co to znaczy [']fizyczne[']? Składające się z materii/energii i tym podobnych? Mające masę, prędkość, ładunek elektryczny, energię?"
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Coś takiego. Tak."},
+			{"target": 13, "text": "Jakiekolwiek, byleby było opisywane przez fizykę."}
+		]	   
+	},
+
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"No więc fizyka opisuje świat składający się z przedmiotów fizycznych, zbudowanych ostatecznie z różnego typu cząstek, pól i tym podobnych. Mnie interesuje, co fizyka jest w stanie wyjaśnić >>dzisiaj<<, więc przyszłe hipotetyczne obiekty opisywane przez fizykę niespecjalnie mnie interesują."
+			}
+		],
+		"options":[
+			{"target": 14, "text": "OK..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"No więc pojawia się pytanie, czy to, co przeżywasz, patrząc na czerwony obiekt, można opisać, odwołując się do neuronów, związków chemicznych, sygnałów elektrycznych, atomów i tym podobnych?"
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Oczywiście! Dlaczego nie?"},
+			{"target": 16, "text": "Chyba rozumiem. Ale czego to dowodzi: istnienia niematerialnej duszy?", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"A czy przekonuje Cię mój argument z Fredem-który-widzi-dwa-kolory-czerwone?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "Rzeczywiście, porozmawiajmy chwilę o Pańskim tekście."},
+			{"target": 5, "text": "Momencik, wróćmy jeszcze do samych qualiów."}
+		]	   
+	},
+
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Oj, niekoniecznie! Ja nic nie mówię o duszy. Ja tylko próbuję pokazać, że jeżeli będziemy chcieli sprowadzić całą >>wiedzę<< do wiedzy o świecie fizycznym, to czegoś nie uchwycimy. Nasza wiedza będzie niepełna."
+			}
+		],
+		"options":[
+			{"target": 17, "text": "A to nie to samo, co powiedzieć, że istnieje niematerialna dusza?", "height":2},
+			{"target": 23, "text": "A są jakieś inne odpowiedzi niż dusza?"},
+			{"target": 5, "text": "Hm, wróćmy może jeszcze do rozmowy o qualiach."}
+		]	   
+	},
+
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Widzisz, my, filozofowie, musimy być bardzo ostrożni. Nawet jeżeli przyjąć, że musi istnieć coś [']innego['] niż tkanka nerwowa, materia, atomy i tym podobne, to nie wiadomo jeszcze, co by to miało być. A tak naprawdę to mój argument dotyczy tylko >>wiedzy<<, a nie metafizyki, czyli wiedzy o strukturze rzeczywistości."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "No OK, ale co innego niż dusza by to mogło być?"},
+			{"target": 18, "text": "Jeżeli wiedza o materii nie wystarcza, to chyba automatycznie znaczy, że istnieje coś więcej niż materia?", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Albo że nasze rozumienie tego, czym jest materia, jest niezupełne. Czasem wystarczy delikatnie pogrzebać przy naszych podstawowych terminach..."
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Na przykład jak?"},
+			{"target": 5, "text": "OK, wróćmy może do kwestii qualiów..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Wiesz, to już w zasadzie nie jest temat, którym ja się zajmuję na co dzień, ale niektórzy filozofowie uważają, że pojęcie [']materii['], która nie przeżywa - czyli takiej, która nie ma doświadczeń - takiej, która nie ma [']świata subiektywnego['] - można poszerzyć. W takim przypadku sama [']materia['] miałaby jakąś prostą formę [']życia psychicznego[']..."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Przecież to wariactwo! Czyli kamienie i atomy myślą?"},
+			{"target": 20, "text": "A po co w ogóle wikłać się w takie teorie?"},
+			{"target": 21, "text": "To ciekawe, proszę powiedzieć coś więcej..."},
+			{"target": 22, "text": "[TEST INTELIGENCJA] I to jest ten właśnie [']panpsychizm[']?"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Cóż, ja też, prawdę mówiąc, nie jestem zwolennikiem tego typu teorii. Chciałem Ci tylko pokazać, w jaki sposób można [']podłubać['] przy pojęciu [']materii['] albo [']fizyczności['], żeby ujrzeć w innym świetle problem relacji umysł-ciało. Zresztą, dr Lamża podpowiada mi na ucho, że na następnej lekcji dowiesz się na ten temat więcej..."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Skoro Pan tak mówi... wróćmy może do rozmowy o qualiach.", "height":2},
+			{"target": 1, "text": "No OK. To może wróćmy do paru innych spraw."}
+		]	   
+	},
+
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Z grubsza chodzi o to, aby zjawiska psychiczne nie musiały [']pojawiać się['] tajemniczo w historii Wszechświata w toku ewolucji materii, ale aby zawsze były obecne w takiej czy innej formie. Ale, prawdę mówiąc, to nie jest główny obszar moich zainteresowań... Dr Lamża szepcze mi zresztą na ucho, że będzie o tym mowa na następnej lekcji... więc może wróćmy do kwestii qualiów?"
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Skoro tak ma być..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"22",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Tak jest."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Ale to jakieś wariactwo... Czyli kamienie i atomy myślą?!"},
+			{"target": 20, "text": "Ale po co w ogóle wikłać się w panpsychizm?"},
+			{"target": 21, "text": "Brzmi ciekawie, proszę powiedzieć coś więcej..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Cóż, katalog odpowiedzi na pytanie o to, co jest [']oprócz materii['], jest spory... Mamy tutaj mnóstwo nazw, i jeszcze więcej teorii. Dusza, [']psyche['], [']anima['], rozum, [']nous[']... głowa boli. Wolę nie wchodzić w szczegóły..."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "No dobrze, wróćmy może do samych qualiów..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"No tak, mój artykuł. Co Cię interesuje, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	},
+
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "},
+			{"target": 666, "text": " "}
+		]	   
+	}	
 	
 	]
 }
