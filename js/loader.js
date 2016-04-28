@@ -117,7 +117,7 @@ function loadPlayer(){
 			skillp:3,
 			chapters: [0,1]
 			},
-		books:["intro"],
+		books:[],
 		items:[],
 		seen:[],
 		notificationsBooks:0,
@@ -125,18 +125,19 @@ function loadPlayer(){
 		achievements:[]
 		};
 		
-		/*//library trip
+		//library trip
 		for(var book in Assets.books)
 		{
 			player.books.push(book);
 			player.notificationsBooks++
-		}*/
-		/*//raid nearby village
+		}
+		//raid nearby village
 		for(var item in Assets.items)
 		{
 			player.items.push(item);
+			player.notificationsItems++
 		}
-		*/
+		
 	}
 	savePlayer();
 	
@@ -356,7 +357,7 @@ function checkReq(req){
 							default:
 							case ">":
 							result.enabled = player.stats[req.skill]>=req.amt;
-							result.prefix = "[ "+(skills.names.charAt(req.skill))+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
+							result.prefix = "[ Test "+(skills.fullNames[req.skill])+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
 							break;
 							
 							case "<":

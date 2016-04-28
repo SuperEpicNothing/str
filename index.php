@@ -39,7 +39,8 @@ $submenu = file("strony/".$page."/menu.txt");
 	
 	<!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
-	
+	<link href="css/guiItems.css" rel="stylesheet">
+
 	<!-- Custom styles for this template -->
     <link href="css/sidebar.css" rel="stylesheet">
 
@@ -113,6 +114,8 @@ $submenu = file("strony/".$page."/menu.txt");
 	
 	<?php readfile("strony/itemModal.html");?>			
 	<div class="container">
+	
+	<!-- GUI PLAYER	-->
 	<div class="row">
 		<div id="guiPlayer" class="panel-collapse collapse">
 			<div class="panel-body">
@@ -127,66 +130,43 @@ $submenu = file("strony/".$page."/menu.txt");
 		    </div>		
 	    </div>
 	</div>
+	<!-- GUI ITEMS	-->
 	<div class="row">
 		<div id="guiItems" class="panel-collapse collapse">
 			<div class="panel-body">
-				<div class="row row-eq-height ">
-					<div class="col-xs-4 ">
-						<div class="box list">
-							<div class="box">
-								<div class="row">
-									<div class="col-xs-6">
-										<button id='GUIItemsScrollsButton' class="btn btn-default" onclick="changeTab(0)">Scrolls</button>
-									</div>
-									<div class="col-xs-6">
-										<button id='GUIItemsItemsButton' class="btn btn-default" onclick="changeTab(1)">Items</button>
-									</div>
+				<div class="row">
+					<div class="vert">
+						<div class="col-xs-4 list">
+							<div class="box list">
+								<div class="navbut">
+									<button id='GUIItemsScrollsButton' class="btn btn-default" onclick="changeTab(0)">Zwoje</button>
+									<button id='GUIItemsItemsButton' class="btn btn-default" onclick="changeTab(1)">Przedmioty</button>
 								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<ul id="GUIItemsItems" hidden></ul>
-										<ul id="GUIItemsScrolls" hidden></ul>
+									<ul id="GUIItemsItems" hidden></ul>
+									<ul id="GUIItemsScrolls" hidden></ul>
+							</div>
+						</div>
+						<div class="col-xs-8 ">
+							<div class="stats">
+								<div class="box">
+									<ul id="GUIItemsData" >
+											<li>Nazwa:<br> - Scroll - Lorem ipsum et dolor sit amet</li>
+											<li>Autor:<br> - Lorem</li>											
+									</ul>
+									<div class="imagebox">
+												<canvas id="GUIItemsImage" alt="" width="100px" height="100px" border="0" ></canvas>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-xs-8 ">
-						<div class="box">
-							<div class="row row-eq-height">
-								<div class="col-xs-8">
-									<div class="stats">
-										<ul id="GUIItemsData" >
-										  <li>Name:<br> - Scroll - Lorem ipsum et dolor sit amet</li>
-										  <li>Type:<br> - Scroll</li>
-										  <li>Autor:<br> - Lorem</li>
-										  <li>Stats:<br><ul><li></li><li></li><li></li><li></li></ul></li>
-										</ul>
-									</div>
-								</div>								
-								<div class="col-xs-4">
-									<div class="box imagebox">
-										<img id="GUIItemsImage" src="images/gui/untitled.png" alt="" width="100%" border="0" ></img>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="box">
-							<div class="row">
-								<div class="col-xs-12 ">
-									<span>Description: <br></span>
-									<div class="GUIItemsDesc">
+							<div class="GUIItemsDesc">
+									<div class="box">
+										<span>Opis: <br></span>
 										<span id="GUIItemsDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in.</span> 
+										<button id="GUIItemsButton" class="btn btn-default" onclick="window.open('docs/historia pieniądza.pdf', '_blank');">Więcej</button>
+										<script src="js/itemMenu.js"></script>
 									</div>
-								</div>
 							</div>
-							<div class="row">
-								<div class="col-xs-9"></div>
-								<div class="col-xs-3">
-									<button id="GUIItemsButton" hidden class="btn btn-default" onclick="window.open('docs/historia pieniądza.pdf', '_blank');">Learn more</button>
-								</div>
-							</div>
-						</div>
+						</div>						
 					</div>
 				</div>
 			</div>

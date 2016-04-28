@@ -1,0 +1,91 @@
+﻿#guiItems,#guiPlayer{
+	padding: 0px 0px;
+	margin: 0px 0px;
+	max-height: 100vh;
+
+}
+#guiItems,#guiPlayer,.modal-dialog{
+	font-family: Aclonica;
+	border-color: #8c8c8c;
+	color:#ffffbf;
+	/*border-radius: 4px;*/
+	background-color:#1a1a1a;
+}
+.modal-header .close{
+	font-family: Aclonica;
+	color:#ffffbf;
+}
+
+#guiItems .vert{
+	height: 22em;
+	padding: 5px 5px;
+}
+#guiPlayer .hbox,#guiItems .hbox{
+	height: 40vh;
+}
+#guiItems .box, #guiPlayer .box,.modal-dialog  .box{
+	font-size:20px;
+	border-color: #8c8c8c;
+	border-radius: 4px;
+	border-style: solid;
+	background-color:#262626;
+	padding: 5px 5px;
+}
+#guiItems .list ul{
+	height: 80%;
+	overflow-x:hidden;
+	overflow-y:auto;
+	list-style:none;
+    padding-left:0;
+}
+#guiItems .item{
+	margin-bottom:1px;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	display: block-inline;
+	height:48px;
+	line-height:12px;
+	text-align: left;
+	border-color: #8c8c8c;
+	font-size:12px;
+	border-radius: 4px;
+	border-style: solid;
+	background-color:#262626;
+	position: relative;
+}
+#guiItems .item span,#guiItems .item img{
+	margin: 0px 0px;
+	display: block-inline;
+	vertical-align: middle;
+}
+#guiItems .item:hover{
+	border-color: #dfdfd0;
+	border-radius: 4px;
+	border-style: solid;
+	background-color:#8a8a7b;
+}
+
+#guiItems .stats{
+	font-size:20px;
+} 
+
+#guiItems .btn{
+	width:100%;
+	border-color: #333333;
+	background-color:#777777;
+	color:#ffffff;
+} 
+#guiItems .btn:hover{
+	border-color: #dfdfd0;
+	background-color:#8a8a7b;
+	color:#ffffbf;
+} 
+#guiItems .nav-pills li{width: 45%;}
+
+#guiItems .GUIItemsDesc{	
+	height: 60%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}

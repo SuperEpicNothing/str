@@ -110,6 +110,11 @@
 		
 		{"name" : "ItemSword",
 		"src":"images/gui/icons/items/W_Sword01.png"},
+		{"name" : "ItemRock",
+		"src":"images/gui/icons/items/I_Rock01.png"},
+		{"name" : "ItemAxe",
+		"src":"images/gui/icons/items/W_Axe013.png"},
+		
 		{"name" : "orbbot",
 		"src":"images/orb.png"}
 	],
@@ -221,7 +226,7 @@
 			"fullname": "Doświadczenie Jamesa",
 			"autor": "William James",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemSword",
+			"icon":"ItemAxe",
 			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'O doświadczeniu religijnym' w rozdziale 'Skąd wiesz?'.",
 			"url": null	
 		},
@@ -232,7 +237,7 @@
 			"fullname": "Learn Link",
 			"autor": "Lorem",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemSword",
+			"icon":"ItemRock",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
 		}			

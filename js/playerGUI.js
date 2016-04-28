@@ -2,7 +2,8 @@ var elem1 = document.getElementById("guiPlayerMain");
 	setTimeout(addMouseListener,2000,elem1,gpmsc);
 	setTimeout(gpmsc,1000);
 function gpmsc(){
-	
+	if(!Assets.loaded)
+		return;
 	c1 = elem1.getContext('2d');
 
 	c1.clearRect(0, 0, elem1.width, elem1.height);

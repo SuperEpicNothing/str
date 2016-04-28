@@ -16,13 +16,14 @@
   - [ ] confutius sprawdza ile razy pregrałeś i zminia mowę
   - [ ] acheivment for no losses
   - [ ] we hurt confu(abimations)
+  - [ ] make everything scalable
 - ==S: @Shinigami072 
   - [ ] hover nad zamkniętymi rozdziałami
-  - [ ] widok inwentarza
-    - [ ] trochę niższy, proponuję tak o 1/3
-    - [ ] czcionka opisu (prawy panel) mniejsza
-	- [ ] więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
-	- [ ] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
+  - [x] widok inwentarza
+    - [x] trochę niższy, proponuję tak o 1/3
+    - [x] czcionka opisu (prawy panel) mniejsza
+	- [x] więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
+	- [x] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
   - [x] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
   - [x] make skip invisible when not in use
@@ -32,7 +33,7 @@
   - [x] mute button top corner
   - [X] handle image smoothing better
   - [x] make skills make sense - clean player code
-  - [ ] fix broken inventory 
+  - [x] fix broken inventory 
 - ==L: @lukaszlamza
   - coś zrobiłem...
 
