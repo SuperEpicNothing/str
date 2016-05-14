@@ -17,6 +17,7 @@
   - [ ] acheivment for no losses
   - [ ] we hurt confu(abimations)
   - [ ] make everything scalable
+  - [ ] option change name
 - ==S: @Shinigami072 
   - [ ] hover nad zamkniętymi rozdziałami
   - [x] widok inwentarza
@@ -26,6 +27,9 @@
 	- [x] przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
   - [x] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
+  - [ ] character creation:
+	- [ ] Name, Visage, Gender, teacherMode
+	- [ ] DEBUG : village pillager, liblarian, completionist
   - [x] make skip invisible when not in use
   - [x] handleText in HTML
   - [x] move restart button to top corner

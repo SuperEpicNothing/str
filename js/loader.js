@@ -59,9 +59,15 @@ var skills = {
 
 
 function loader(){
+	
 
+	
 	if(Assets.loaded){
 	loadPlayer();
+	if(player==undefined){
+		Assets.loaded=false;
+		return;
+	}
 	loadItemMenu();
 	updateChapters();
 	updateHTMLText();
@@ -97,14 +103,15 @@ function loader(){
 }
 function loadPlayer(){
 
-	
 	//LOAD 
 	if(document.cookie.indexOf("player") >= 0){
+		console.log("playerLoad")
 		player=getCookie("player");
-	}
-	else{
+		savePlayer();
+
+	}else{
 			//create DEFAULT
-	player = {
+	/*player = {
 		name: "IAmError",
 		gender:false,
 		age:666,
@@ -137,9 +144,54 @@ function loadPlayer(){
 			player.items.push(item);
 			player.notificationsItems++
 		}
+		*/
+		console.log(document.cookie.indexOf("player"));
+			var url = (document.location+"");
+	if(!url.contains("noplayer=0")){
+		var begin=url.split("?")[0];
 		
+		begin+="?"+url.split("?")[1].slice(0,8);
+		if(document.cookie.indexOf("player") < 0)
+			begin+="&noplayer=0";
+		document.location=begin;
 	}
-	savePlayer();
+	}
+}
+function createPlayer()
+{
+	var data = document.getElementById("playercreation").elements;
+	console.log(data.namedItem("name").value);
+	console.log(data.namedItem("gender").checked);
+	console.log(data.namedItem("apperance").value);
+	console.log(data.namedItem("teachmode").checked);
+	
+	player = {
+		name: data.namedItem("name").value,
+		gender:  data.namedItem("gender").checked,
+		age:666,
+		appearance: parseInt(data.namedItem("apperance").value),
+		stats:[2,2,2,2,2,2],
+		noftifications:[],
+		progress:{
+			lvl:0,
+			xp:0.5,
+			skillp:3,
+			chapters: [0,1]
+			},
+		books:[],
+		items:[],
+		seen:[],
+		notificationsBooks:1,
+		notificationsItems:0,
+		achievements:[]
+		};
+	option.teach=data.namedItem("teachmode").checked;
+	setCookie("options",option);
+	setCookie("player",player);
+	
+	var url = (document.location+"");
+	var begin=url.split("?")[0];
+	document.location=begin+"?p=0&pp=0";
 	
 }
 function animateNotifcations(time){
@@ -150,11 +202,7 @@ function animateNotifcations(time){
 
 	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
 	
-	player.appearance=Math.abs(Math.round(time/10000*3))%3;
-	player.gender=Math.abs(Math.round(time/30000*2))%2;
-
 	var img = document.getElementById("guiPlayerVisage" )
-
 	img.style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
 	img.style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
 
@@ -222,6 +270,7 @@ function unlockChapter(id){
 	}
 }
 function savePlayer(){
+	console.log(savePlayer.caller)
 	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	player.items.sort(function(a, b)
 	{

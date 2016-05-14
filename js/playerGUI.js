@@ -1,6 +1,10 @@
-var elem1 = document.getElementById("guiPlayerMain");
-	setTimeout(addMouseListener,2000,elem1,gpmsc);
-	setTimeout(gpmsc,1000);
+var elem1;
+setTimeout(initplgui,1000);
+function initplgui(){
+elem1 = document.getElementById("guiPlayerMain");
+setTimeout(addMouseListener,2000,elem1,gpmsc);
+setTimeout(gpmsc,1000);
+}
 function gpmsc(){
 	if(!Assets.loaded)
 		return;
@@ -8,48 +12,51 @@ function gpmsc(){
 
 	c1.clearRect(0, 0, elem1.width, elem1.height);
 	cUtils.imageSmoothing(c1,false);
-	c1.drawImage(Assets.img["GUIplayer"],0,0,572,367,75,70,572,367);
+	c1.drawImage(Assets.img["GUIplayer"],0,0,896,367,75,70,896,367);
 	cUtils.imageSmoothing(c1,true);
 
 	
 	
-	c1.font = (20)+"px Aclonica"
+	c1.font = "20px Aclonica"
 	c1.textBaseline = "top";
 	c1.textAlign="center"; 	
 	c1.fillStyle="#ffffbf";
 	c1.fillText( handleText("[playerGender] [playerName] lv.[playerLvl]"),205,85);
 		
-	c1.fillStyle="#00ffaa";
-	c1.fillRect(370,81,(240)*player.progress.xp,28);
-	c1.fill();
-	
+
+
 	
 	cUtils.imageSmoothing(c1,false);
 	c1.drawImage(Assets.img["players"],
 	24*(player.appearance+(player.gender?0:3)), 0,
 	24,32,
 	80+10,75+77,219,291);
-	c1.drawImage(Assets.img["GUIxpbar"],340,75,300,40);
+	c1.drawImage(Assets.img["GUIplayer"],922,0,203*player.progress.xp,16,390,122,203*player.progress.xp,16);
 	cUtils.imageSmoothing(c1,true);
-	c1.font = (14)+"px Aclonica"
+	c1.font = "20px Aclonica"
 	c1.textBaseline = "top";
 	c1.textAlign="center"; 	
 	c1.fillStyle="#ffffbf";
-	c1.fillText( handleText("Doświadczenie"),370+(240)*0.5,91);
+	c1.fillText( handleText("Zdolności?"),370+(240)*0.5,85);
+	
+	c1.font = "12px Aclonica";
+	c1.fillText( handleText("Doświadczenie"),370+(240)*0.5,110);
 	if(player.progress.skillp>0)
 	{
-		c1.fillText("+"+player.progress.skillp+" Punktów do rozdania",370+(240)*0.5,115);
+		c1.fillText("+"+player.progress.skillp+" Punktów do rozdania",370+(240)*0.5,140);
 	}	
-	c1.font = (20)+"px Aclonica";
-	c1.fillText( "Osiągnięcia",elem1.width-230,45);
+	
+	c1.font = "20px Aclonica";
+	
+	c1.fillText( "Osiągnięcia",370+324+(240)*0.5,85);
 	drawAchievments();
+	
 	for(var i=0;i<player.stats.length;i++)
 	{
 		drawStat(375,145,i);
 	}
 }
-function drawAchievments()
-{
+function drawAchievments(){
 	var l = Assets.achievments.length
 	var i=0;
 	for(var ach=0;ach<l;ach++)
@@ -63,18 +70,18 @@ function drawAchievments()
 		c1.drawImage(Assets.img["GUIachievments"],
 		 32*r,unlocked?0:33,
 		 32,32,
-		 elem1.width-466+(66*(i%7)),70+(66*Math.floor(i/7)),64,64);
+		 elem1.width-436+(66*(i%4)),130+(66*Math.floor(i/4)),64,64);
 		cUtils.imageSmoothing(c1,true);
 
 
 		if(unlocked)
-		c1.drawImage(Assets.img[ Assets.achievments[ach].icon],elem1.width-466+(66*(i%7))+14,70+(66*Math.floor(i/7))+14,36,36);
+		c1.drawImage(Assets.img[ Assets.achievments[ach].icon],elem1.width-436+(66*(i%4))+14,130+(66*Math.floor(i/4))+14,36,36);
 
 		c1.font = (9)+"px Aclonica"
 		c1.textBaseline = "top";
 		c1.textAlign="center"; 	
 		c1.fillStyle=unlocked?"#ffffbf":"#999999";
-		c1.fillText( unlocked?Assets.achievments[ach].fullname:"??????????????????????????????????????????".substring(0,Assets.achievments[ach].fullname.length), elem1.width-466+(66*(i%7)+32),70+(66*Math.floor(i/7))+50)
+		c1.fillText( unlocked?Assets.achievments[ach].fullname:"??????????????????????????????????????????".substring(0,Assets.achievments[ach].fullname.length), elem1.width-436+(66*(i%4)+32),130+(66*Math.floor(i/4))+50)
 		
 		/*if(unlocked &&inBounds(elem1.width-466+(66*(i%7)),70+(66*Math.floor(i/7)),64,64))
 		{
@@ -95,7 +102,7 @@ function drawAchievments()
 		if(hidden && !unlocked)
 			continue;
 		i--;
-		if(unlocked &&inBounds(elem1.width-466+(66*(i%7)),70+(66*Math.floor(i/7)),64,64))
+		if(unlocked &&inBounds(elem1.width-436+(66*(i%4)),130+(66*Math.floor(i/4)),64,64))
 		{	
 			c1.lineWidth=2;
 			c1.strokeRect(mouse.x-105,mouse.y+20,210,10+4*12);
@@ -123,7 +130,7 @@ function drawStat(x,y,stat){
 	//stat count
 	for(var i=0;i<player.stats[stat];i++){		
 		c1.drawImage(Assets.img["GUIplayer"],
-			572,h*stat,
+			896,h*stat,
 			w,h,			
 			x+i*w+1,y+9,w,h);
 	}
@@ -134,13 +141,13 @@ function drawStat(x,y,stat){
 		//border+body
 		var i = player.stats[stat]
 		c1.drawImage(Assets.img["GUIplayer"],
-			572,h*6,
+			896,h*6,
 			w,h,			
 		x+i*w+1,y+9,w,h);
 	
 		if(!inBounds(x+i*w+1,y+9,w,h)){
 			c1.drawImage(Assets.img["GUIplayer"],
-			572,h*7,
+			896,h*7,
 			w,h,			
 			x+i*w+1,y+9,w,h);
 		}

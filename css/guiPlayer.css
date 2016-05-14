@@ -1,0 +1,12 @@
+﻿#guiPlayer{
+	padding: 0px 0px;
+	margin: 0px 0px;
+	max-height: 100vh;
+	font-family: Aclonica;
+	border-color: #8c8c8c;
+	color:#ffffbf;
+	position: absolute;
+	z-index:999;
+	/*border-radius: 4px;*/
+	background-color:#1a1a1a;
+}

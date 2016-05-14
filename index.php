@@ -40,6 +40,8 @@ $submenu = file("strony/".$page."/menu.txt");
 	<!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
 	<link href="css/guiItems.css" rel="stylesheet">
+	<link href="css/guiPlayer.css" rel="stylesheet">
+
 
 	<!-- Custom styles for this template -->
     <link href="css/sidebar.css" rel="stylesheet">
@@ -55,12 +57,17 @@ $submenu = file("strony/".$page."/menu.txt");
 	<script src="js/bootstrap.min.js"></script>
 	
 	<script src="js/loader.js"></script>
-	
-	<script src="js/graphics/notifications.js"></script>
-	<script src="js/graphics/buttons.js"></script>
-	<script src="js/graphics/canvasUtils.js"></script>
-	<script src="js/graphics/audio.js"></script>
-
+	<?php
+	if($_GET['noplayer']==null)
+			echo
+		'<script src="js/graphics/notifications.js"></script>
+		<script src="js/graphics/buttons.js"></script>
+		<script src="js/graphics/canvasUtils.js"></script>
+		<script src="js/playerGUI.js"></script>
+		<script src="js/graphics/audio.js"></script>
+		<script src="js/itemMenu.js">
+		'
+	?>
 
 	<!--<script src="js/window.js"></script>-->
 
@@ -104,9 +111,14 @@ $submenu = file("strony/".$page."/menu.txt");
 				    } ?>
                 </ul>
 				<ul class="nav navbar-nav navbreaker pull-right">
-						<li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter='grayscale(100%)'" onmouseover="this.firstChild.style.filter='grayscale(0%)'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
-						<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src='images/gui/I_Chest01.png'" onmouseover="this.firstChild.src='images/gui/I_Chest02.png'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
-						<li><a href="#" data-toggle="modal"  data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
+				<?php
+				if($_GET['noplayer']==null)
+				echo '
+						<li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter=\'grayscale(100%)\'" onmouseover="this.firstChild.style.filter=\'grayscale(0%)\'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
+						<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src=\'images/gui/I_Chest01.png\'" onmouseover="this.firstChild.src=\'images/gui/I_Chest02.png\'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
+				'
+				?>
+					<li><a href="#" data-toggle="modal"  data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -123,7 +135,7 @@ $submenu = file("strony/".$page."/menu.txt");
 					<div class="col-xs-12 ">
 						<div class="box ">
 							<canvas id="guiPlayerMain" width=1120 height=500 ></canvas>
-							<script src="js/playerGui.js"></script>
+							
 						</div>
 					</div>
 			    </div>
@@ -162,8 +174,8 @@ $submenu = file("strony/".$page."/menu.txt");
 									<div class="box">
 										<span>Opis: <br></span>
 										<span id="GUIItemsDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in.</span> 
-										<button id="GUIItemsButton" class="btn btn-default" onclick="window.open('docs/historia pieniądza.pdf', '_blank');">Więcej</button>
-										<script src="js/itemMenu.js"></script>
+										<button id="GUIItemsButton" class="btn btn-default" onclick="window.open('', '_blank');">Więcej</button>
+										</script>
 									</div>
 							</div>
 						</div>						
@@ -189,7 +201,12 @@ $submenu = file("strony/".$page."/menu.txt");
 			</ul>
 		</nav>
 		<div class="col-xs-10">
-			<?php readfile("strony/".$page."/".($subpage=="test"?"endboss":$subpage).".html");?>
+			<?php 
+				if($_GET['noplayer']!=null)
+				readfile("strony/playerCreation.html");
+				else
+				readfile("strony/".$page."/".($subpage=="test"?"endboss":$subpage).".html");
+			?>
 		</div>
 	</div>
   </body>
