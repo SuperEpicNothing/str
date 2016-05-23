@@ -68,7 +68,7 @@
 			}
 		],
 		"options":[
-			{"target": 5, "text": "[TEST EMPATIA] Hm, może byłoby jej przyjemniej, gdyby mogła porozmawiać z rodakami?", "height":2},
+			{"target": 5, "text": "Hm, może byłoby jej przyjemniej, gdyby mogła porozmawiać z rodakami?", "height":2, "req":{"type":"skill","skill":2,"amt":5,"mode":">"}},
 			{"target": 7, "text": "No tak, a czym się Pan ostatnio zajmuje?"},
 			{"target": 12, "text": "Bardzo ciekawe, ale wróćmy może do Pańskiego tekstu..."}
 		]	   
@@ -82,7 +82,7 @@
 			}
 		],
 		"options":[
-			{"target": 6, "text": "[TEST WIEDZA] Hm, wielu Niemców przyjechało tu pod koniec XIX wieku w czasie nowozelandzkiej gorączki złota...", "height":2},
+			{"target": 6, "text": "Hm, wielu Niemców przyjechało tu pod koniec XIX wieku w czasie nowozelandzkiej gorączki złota...", "height":2, "req":{"type":"skill","skill":0,"amt":8,"mode":">"}},
 			{"target": 12, "text": "Niestety nie wiem. Ale może porozmawiamy już o Pańskiej książce?", "height":2}
 		]	   
 	},
@@ -693,7 +693,7 @@
 	{
 		"COMMENT":"51",
 		"events":[
-			{"type":"dialog","name":"Karl Popper","time":5000,"timepadding":0,
+			{"type":"dialog","name":"Karl Popper","time":1000,"timepadding":0,
 			"text":"Bywaj!"
 			}
 		],

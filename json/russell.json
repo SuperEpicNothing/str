@@ -100,7 +100,7 @@
 			}
 		],
 		"options":[
-			{"target": 8, "text": "[TEST WIEDZA] Czy nie na tych samych podstawach skazano na śmierć Sokratesa?", "height":2},
+			{"target": 8, "text": "Czy nie na tych samych podstawach skazano na śmierć Sokratesa?", "height":2, "req":{"type":"skill","skill":0,"amt":5,"mode":">"}},
 			{"target": 9, "text": "Szkoda tylko, że skończyło się to więzieniem!..."}
 		]	   
 	},
@@ -128,7 +128,7 @@
 			}
 		],
 		"options":[
-			{"target": 11, "text": "A może ja mógłbym w czymś pomóc, że tak powiem... może udałoby się zorganizować...", "height":2},
+			{"target": 11, "text": "A może ja mógłbym w czymś pomóc, że tak powiem... może udałoby się zorganizować... jakąś ucieczkę...?", "height":2, "req":{"type":"skill","skill":4,"amt":7,"mode":">"},
 			{"target": 12, "text": "Chciałbym porozmawiać o jednym z Pańskich tekstów, Profesorze", "height":2}
 		]	   
 	},
@@ -167,7 +167,7 @@
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"[Russell uśmiecha się szeroko] Ucieczka? Oj, nie... sprzeciw musi następować pokojowo. Zresztą, wcale mi tu nie jest źle. Ale nic to, z czym do nie przychodzisz, Wędrowcze?"
+			"text":"[Russell uśmiecha się szeroko] Ucieczka? Oj, nie... sprzeciw musi następować pokojowo. Zresztą, wcale mi tu nie jest źle. Mam masę czasu na myślenie i pisanie. Ale nic to. Z czym do nie przychodzisz, Wędrowcze?"
 			}
 		],
 		"options":[
@@ -406,7 +406,7 @@
 			}
 		],
 		"options":[
-			{"target": 29, "text": "Zastanawia mnie, czy wszystko musi być 100% pewne albo 100% niepewne."},
+			{"target": 29, "text": "Zastanawia mnie, czy wszystko musi być 100% pewne albo 100% niepewne.", "height":2},
 			{"target": 34, "text": "To jak pewna jest na przykład nauka?"},
 			{"target": 44, "text": "Chyba rozumiem już wszystko, co [playerGender {chciałem|chciałam}] zrozumieć."}
 			
@@ -433,11 +433,11 @@
 		"events":[
 			
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
-			"text":"No dobrze. A pamiętasz, co [playerGender {jadłeś|jadłaś} na śniadanie dokładnie 18 dni temu?"
+			"text":"No dobrze. A pamiętasz, co [playerGender {jadłeś|jadłaś}] na śniadanie dokładnie 18 dni temu?"
 			}
 		],
 		"options":[
-			{"target": 31, "text": "Nie jadam śniadań!"},
+			{"target": 31, "text": "Nie jadam śniadań!", "req":{"type":"skill","skill":3,"amt":3,"mode":">"}},
 			{"target": 32, "text": "Na pewno nie od razu... jeżeli w ogóle sobie to potrafię przypomnieć!", "height":2}
 			
 		]	   
@@ -454,7 +454,7 @@
 		],
 		"options":[
 			{"target": 33, "text": "Ale czy istnieje jakiś sposób na, czy ja wiem, precyzyjne wyznaczenie tego poziomu pewności?", "height":2},
-			{"target": 28, "text": "Chyba rozumiem, możemy wrócić do dyskusji"}
+			{"target": 28, "text": "Chyba rozumiem, możemy wrócić do dyskusji."}
 			
 		]	   
 	},
@@ -560,7 +560,7 @@
 			}
 		],
 		"options":[
-			{"target": 39, "text": "Mnóstwo, mnóstwo pracy?..."},
+			{"target": 39, "text": "Mnóstwo, mnóstwo pracy?...", "req":{"type":"skill","skill":2,"amt":4,"mode":">"}},
 			{"target": 40, "text": "Co to oznacza?"}
 			
 		]	   
@@ -655,7 +655,7 @@
 	{
 		"COMMENT":"45",
 		"events":[
-			{"type":"dialog","name":"Bertrand Russell","time":5000,"timepadding":0,
+			{"type":"dialog","name":"Bertrand Russell","time": 1000,"timepadding":0,
 			"text":"Bywaj!"
 			}
 		],

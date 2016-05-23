@@ -44,7 +44,7 @@
 		],
 		"options":[
 			{"target": 1, "text": "Aaaahaaa.... to może wróćmy do moich problemów."},
-			{"target": 3, "text": "[Test WIEDZA] Oczywiście. A jaka ciecz pełni funkcję absorbera?"},
+			{"target": 3, "text": "Oczywiście. A jaka ciecz pełni funkcję absorbera?", "req":{"type":"skill","skill":0,"amt":7,"mode":">"}},
 			{"target": 4, "text": "Yyy... a co to takiego?"}
 		]	   
 	},
@@ -52,7 +52,7 @@
 	{
 		"COMMENT":"3",
 		"events":[
-			{"type":"give","time":4600,"book":"kolektor1"},
+			{"type":"give","time":100,"book":"kolektor1"},
 			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
 			"text":"[Jackson uśmiecha się] Widzę, że trafiłem na [playerGender {prawdziwego miłośnika|prawdziwą miłośniczkę}] wiedzy. Zwykła woda, Wędrowcze. Zwykła woda. Nie jestem w tych sprawach ekspertem, ale przyjmij ode mnie ten oto zwój. Może on zaspokoi Twoją ciekawość."
 			}
@@ -65,7 +65,7 @@
 	{
 		"COMMENT":"4",
 		"events":[
-			{"type":"give","time":4600,"book":"kolektor0"},
+			{"type":"give","time":100,"book":"kolektor0"},
 			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
 			"text":"Kolektor skupiający to urządzenie, które skupia promienie słoneczne na małej powierzchni, zwykle po to, żeby podgrzać wodę. Odpowiedni do tego celu jest kształt paraboliczny. A całe przedsięwzięcie ma charakter eksperymentalny. Masz, zajrzyj do tego zwoju, jeśli interesuje Cię ta kwestia."
 			}
