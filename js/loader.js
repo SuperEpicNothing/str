@@ -56,8 +56,29 @@ var skills = {
 	names:"WIEDZA"
 	}
 	
+var menu = [false,false];
+function openGUI(id)
+{
+	console.log(id)
+	console.log(menu)
+	
+	//$('#guiPlayer').collapse()
+	//$('#guiItems').collapse();
 
 
+	
+	$('#guiPlayer').collapse("hide");
+	$('#guiItems').collapse("hide");
+	
+	menu = [false,false]
+
+	menu[id]=true;
+	switch(id){
+		case 0:	$('#guiPlayer').collapse("show"); break;
+		case 1:	$('#guiItems').collapse("show"); break;
+	}
+	
+}
 function loader(){
 	
 
@@ -149,10 +170,8 @@ function loadPlayer(){
 			var url = (document.location+"");
 	if(!url.contains("noplayer=0")){
 		var begin=url.split("?")[0];
-		
-		begin+="?"+url.split("?")[1].slice(0,8);
 		if(document.cookie.indexOf("player") < 0)
-			begin+="&noplayer=0";
+			begin+="?noplayer=0";
 		document.location=begin;
 	}
 	}
@@ -285,12 +304,10 @@ function savePlayer(){
 function updateChapters(){
 	for(var i =0;i<4;i++){
 		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
-		document.getElementById("pageButton"+i).className = "disabledLink";
-		//~ document.getElementById("pageButton"+i).style.color = "#353526";	//przeniesione do CSS
+		document.getElementById("pageButton"+i).className = ""+document.getElementById("disabledhyperlink").className;
 		}
 		else{
-		document.getElementById("pageButton"+i).className = "hvr-underline-from-center enabledLink";
-		//~ document.getElementById("pageButton"+i).style.color = "#e7f8f8";	//przeniesione do CSS
+		document.getElementById("pageButton"+i).className = ""+document.getElementById("enabledhyperlink").className;
 		}
 	}
 }
@@ -379,6 +396,7 @@ function addMouseListener(elem,f){
 }
 function mouseChange(event,evtname){
 	mouse.target=(event.target);
+	var comstyle = window.getComputedStyle(event.target, null);
 	if(evtname=="mouseup" || evtname=="mousedown")
 	{
 	mouse.targetup=mouse.target;
@@ -387,8 +405,8 @@ function mouseChange(event,evtname){
 	if(mouse.targetup!=mouse.target)
 		mouse.up=false;
 	mouse.isOver= evtname=="mouseover"? true: evtname=="mouseout"? false :mouse.isOver;
-	mouse.x=event.offsetX;//(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
-	mouse.y=event.offsetY;//(event.pageY - event.target.documentOffsetTop - scrollValue.top);
+	mouse.x=event.target.width*event.offsetX/parseFloat(comstyle.width);//(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
+	mouse.y=event.target.height*event.offsetY/parseFloat(comstyle.height);//(event.pageY - event.target.documentOffsetTop - scrollValue.top);
 	mouse.buttons=(event.buttons);
 	//mouse.detail=(event.detail);
 	mouse.event=evtname;

@@ -28,8 +28,9 @@
   - [x] animacja otrzymywania odznaki?
   - [ ] w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
   - [ ] character creation:
-	- [ ] Name, Visage, Gender, teacherMode
+	- [x] Name, Visage, Gender, teacherMode
 	- [ ] DEBUG : village pillager, liblarian, completionist
+	- [ ] better looking 
   - [x] make skip invisible when not in use
   - [x] handleText in HTML
   - [x] move restart button to top corner

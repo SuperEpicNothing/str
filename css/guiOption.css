@@ -1,0 +1,19 @@
+﻿.modal-dialog{
+	font-family: Aclonica;
+	border-color: #8c8c8c;
+	color:#ffffbf;
+	/*border-radius: 4px;*/
+	background-color:#1a1a1a;
+}
+.modal-header .close{
+	font-family: Aclonica;
+	color:#ffffbf;
+}
+.modal-dialog  .box{
+	font-size:20px;
+	border-color: #8c8c8c;
+	border-radius: 4px;
+	border-style: solid;
+	background-color:#262626;
+	padding: 5px 5px;
+}

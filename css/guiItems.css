@@ -1,5 +1,10 @@
 ﻿#guiItems{
-	margin: 0px 0px;
+	margin: 0px 0px 0px -35%; 
+	position: absolute;
+	z-index:999;
+	top:50px;
+	left: 50%;
+	width: 70%;
 }
 #guiItems .col-xs-4, #guiItems .col-xs-8, #guiItems .col-xs-12{
     padding-left:2px;
