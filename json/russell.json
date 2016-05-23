@@ -128,7 +128,7 @@
 			}
 		],
 		"options":[
-			{"target": 11, "text": "A może ja mógłbym w czymś pomóc, że tak powiem... może udałoby się zorganizować... jakąś ucieczkę...?", "height":2, "req":{"type":"skill","skill":4,"amt":7,"mode":">"},
+			{"target": 11, "text": "A może ja mógłbym w czymś pomóc, że tak powiem... może udałoby się zorganizować... jakąś ucieczkę...?", "height":2, "req":{"type":"skill","skill":4,"amt":7,"mode":">"}},
 			{"target": 12, "text": "Chciałbym porozmawiać o jednym z Pańskich tekstów, Profesorze", "height":2}
 		]	   
 	},
