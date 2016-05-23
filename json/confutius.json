@@ -1,0 +1,110 @@
+{
+	"meta":{
+	"bossmaxhp":9,
+	"heromaxhp":5,
+	"music":[
+	"heroism.ogg",
+	"Battle in the winter.mp3",
+	"Thrust Sequence.mp3",
+	"Blackmoor Colossus Loop.wav"]
+	},
+	"scenes": [
+	{
+		"events":[
+			{"type":"unlockAch","time":10,"ach":4},
+			{"type":"showBoss","time":2300},
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},
+			{"type":"pause","time":500},
+			{"type":"dialog","time":2000,"timepadding":1000,"color":"red",
+			"text":"..."
+			},
+			{"type":"change","time":0,"target":3}
+		],
+		"options":[
+			{"target": 0, "text": "..."}
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"You win [playerName], i guess [playerAge] Years was enough time to learn this."
+			},
+			{"type":"hideBoss","time":2300}
+		],
+		"options":[
+			{"target": 0, "text": "?"}
+
+		]	  		
+	},
+		{
+		"events":[
+			{"type":"dialog","time":3000,"timepadding":1000,
+			"text":"I Confutius win. You shall never escape this prison with mere [playerSkill 0] Strength"
+			},
+			{"type":"pause","time":500},
+			{"type":"hideBoss","time":2300}
+		],
+		"options":[
+			{"target": 0, "text": "?"}
+
+		]			   
+	},
+		{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"question","time":2000,"arm":"sword","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
+			{"target": 5, "text": "???","consequence":{"herohp":-1}},
+			{"target": 6, "text": "..."}
+	
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"question","time":2000,"arm":"robot","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
+			{"target": 5, "text": "???","consequence":{"herohp":-1}},
+			{"target": 6, "text": "..."}
+	
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"question","time":2000,"arm":"laser","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
+			{"target": 5, "text": "???","consequence":{"herohp":-1}},
+			{"target": 6, "text": "..."}
+	
+
+		]	   
+	},
+		{
+		"events":[
+			{"type":"pause","time":500},
+			{"type":"question","time":2000,"arm":"book","text":"What's in the book [playerName]?"}
+		],
+		"options":[
+			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
+			{"target": 5, "text": "???","consequence":{"herohp":-1}},
+			{"target": 6, "text": "..."}
+		]	   
+	}
+	
+	]
+}

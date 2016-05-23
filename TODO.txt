@@ -1,0 +1,73 @@
+﻿==L
+- coś zrobiłem...
+- przypomnienie -plik Hawking2.json jest zakodowany w starej wersji
+==S
+
+- hover nad zamkniętymi rozdziałami
+
+- widok inwentarza
+	- trochę niższy, proponuję tak o 1/3;
+	- czcionka opisu (prawy panel) mniejsza;
+	- więcej przestrzeni na opis (Description, czyli dolna część prawego panelu), a mniej na "sztywne" dane (górna część prawego panelu, czyli Name, Type, Autor... + ilustracja)
+	- przetłumaczyć nazwy na polski (Zwoje?; Przedmioty; Nazwa; Typ; Autor; Opis)
+
+
+- animacja otrzymywania odznaki?
+- w menu: określenie "Prędkość" jest mylące, raczej "Czas wyświetlania" (na odwrót)
+- make skip invisible when not in use
+- handleText in HTML
+- move restart button to top corner
+- mute button top corner
+- handle image smoothing better
+
+===GENERAL:
+-stosować enkodowanie UTF-8
+-wpisuj kody 7 
+-ile PD na lvl na skillpointa
+- nazwy statów
+- end credits scene
+
+
+===LATER DOWN THE PIPELINE:
+handleText in HTML
+więcej animacj zadweania pytań przez konfuzjusza
+confutius sprawdza ile razy pregrałeś i zminia mowę
+acheivment for no losses
+we hurt confu(abimations)
+
+statystyki:
+
+
+WIEDZA
+INTELIGENCJA
+Empatia
+Dowcip
+Zręczność
+Asertywność
+
+===KOD;
+[playerGender] 
+[playerGender {male|female}] - gendered
+[playerName]
+[playerAge]
+[playerLvl]
+[playerSkill id]
+['] "
+
+{"type":"give","time":4600,"item":"001","book"":"ID","xp":2} - give item andor book andor xp 
+{"type":"unlockAch","time":"4200","ach":id}, - unlock Achievment
+{"type":"change","time":"0","target":id}, - jump to scene id
+
+req:
+"req":{"type":"skill","skill":4,"amt":3,"mode":"<"} optional-mode{"<",">"}
+"req":{"type":"item","item":"ID"}
+"req":{"type":"hp","amt":"a"} hp gracza > a tylko Confutest
+
+// question animations:
+"sword" - 6200
+"robot" - 6000
+"laser" - 2500
+"book" - 2000
+"book" - 2000
+{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie}
+

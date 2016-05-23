@@ -1,0 +1,1502 @@
+{
+	"meta":
+		{
+		"bg": "santorini",
+		"current":0,
+		"actor":"arystoteles"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Cześć, Arystotelesie!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam pewien problem ze zrozumieniem Twoich słów, Arystotelesie!"},
+			{"target": 19, "text": "Nic z tego nie rozumiem…"},
+			{"target": 2, "text": "Czym się ostatnio zajmujesz?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, mam wiele wolnego czasu, ale i tak jestem stale zajęty. Właśnie zakładam z przyjaciółmi Liceum..."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Przecież ja chodzę do liceum!"},
+			{"target": 4, "text": "Jakie „Liceum”? Ogólnokształcące?"},
+			{"target": 19, "text": "Czym się ostatnio zajmujesz?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ooo, to bardzo dobrze! Większość ludzi żyje jak niewolnicy, a Ty masz szansę osiągnąć wolność."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "A jaki to ma związek?! Dopiero w szkole czuję się zniewolony..."},
+			{"target": 6, "text": "Słusznie prawisz, Arystotelesie!"},
+			{"target": 19, "text": "Hm, a może wróćmy do moich problemów..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Czy moje Liceum jest „ogólnokształcące”? Hm, chyba tak. Mamy zajęcia z atletyki, biegamy, mocujemy się, rzucamy oszczepem. Właśnie parę dni temu wybudowaliśmy świetne sale do gorących kąpieli…"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "To nie brzmi, jakbyście się tu czegoś uczyli..."},
+			{"target": 8, "text": "Co za życie!..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Więc nic nie rozumiesz!... Im więcej wiesz, tym więcej możesz! Gdybyś nie [wiedział/wiedziała], że istnieje zawód lekarza, programisty albo astronoma, nie [mógłbyś/mogłabyś] nawet CHCIEĆ podążać w tym kierunku. Gdybyś nie [wiedział/wiedziała] ZUPEŁNIE NIC, nie [mógłbyś/mogłabyś] podejmować żadnych w ogóle wyborów."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Hm, brzmi rozsądnie."},
+			{"target": 13, "text": "Nie wydaje mi się, żeby to było takie proste..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście, że słusznie prawię. Ale dosyć o mnie – w czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam taki problem ze zrozumieniem Twoich słów..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ależ uczymy się! Po zajęciach atletycznych dyskutujemy o muzyce, filozofii, mądrości. Ale zdrowe ciało to podstawa! Ty jakoś blado wyglądasz..."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "[SIŁA: 4] Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie?"},
+			{"target": 10, "text": "Takiś mądry! To może zamiast rozmawiać z Tobą i uczyć się filozofii, przejdę się na spacer?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, nie zawsze jest łatwo. Zobacz, jakie mam siniaki po wczorajszym pankrationie…"
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Pankra-co?"},
+			{"target": 7, "text": "Ale uczycie się też tu czegokolwiek?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"SIŁOWANIE NA RĘKĘ"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Wygrałem, wygrałem!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"O, widzisz! I teraz przemawia przez Ciebie mądrość. W moim Liceum zawsze dyskutujemy, przechadzając się - dlatego mówią na nas „perypatetycy”! Głowa natleniona, to i przychodzą do głowy mądre myśli!"
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Musimy wprowadzić taki zwyczaj w Polsce!"},
+			{"target": 19, "text": "Cóż, na razie wróćmy może do mojego problemu z Twoim tekstem, spacer urządzę sobie później..."},
+			{"target": 18, "text": "Pery-co?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Polecam! A pogodą się nie przejmuj. Gdy pada deszcz, spacerujemy pod specjalnymi zadaszeniami, na które mówimy portyki."
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Wróćmy może do tego, z czym przychodzę... Mam pewien problem z tym, o czym mówisz."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście, że rozsądnie. Wiedza wyzwala! No dobrze, ale z czym do mnie przychodzisz?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam taki problem z Twoimi słowami, Arystotelesie..."}
+		]	
+	},
+	
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Zróbmy tak. Nie mamy teraz czasu na dłuższą debatę, więc, jeżeli faktycznie interesuje Cię związek pomiędzy wiedzą a działaniem ludzkim, dostaniesz teraz ode mnie coś do poczytania na później."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "O, dzięki! Zajrzę na pewno."},
+			{"target": 15, "text": "Hm, może innym razem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Pankration – to takie nasze zapasy. Nie wolno atakować oczu ani gryźć, ale oprócz tego dozwolone są wszelkie uderzenia, rzuty, przytrzymania… tak spędzamy tu przedpołudnia."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "Hm... to ja może jednak pozostanę przy polskiej szkole."},
+			{"target": 17, "text": "Fajnie!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"A teraz – w czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Mam problem ze zrozumieniem Twoich słów."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Bardzo słusznie. Każdemu, co jego. O czym to jednak mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Tak, tak. Mam pewien problem z Twoim tekstem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Też tak uważam! Trochę siniaków nikomu jeszcze nie zaszkodziło, a wypadki śmiertelne przy pankrationie są względnie rzadkie. Ale, ale – o czym to mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Tak, tak. Mam pewien problem z Twoim tekstem..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Perypatetycy. Czyli po grecku >>ci, którzy spacerują<< albo wręcz >>łażą<<. Moi koledzy po fachu trochę się z nas śmieją, że tak wiecznie dyskutujemy w trakcie spacerów. Oni oczywiście wylegują się jak spasione foki... Ale, ale – o czym to mówiliśmy?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Właśnie... mam pewien problem z Twoim tekstem."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"A z czym konkretnie masz problem?"
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Jest ten fragment o przesłankach i nieskończonym dowodzie..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Aaa, tak. Oczywiście. Mam propozycję - poczytajmy ten tekst wspólnie, dobrze?"
+			}
+		],
+		"options":[
+			{"target": 21, "text": "Jasne."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Niektórzy sądzą, że wobec konieczności znajomości pierwszych przesłanek wiedza jest niemożliwa, zdaniem innych wiedza jest możliwa, gdyż każda przesłanka ma dowód.<<"
+			}
+		],
+		"options":[
+			{"target": 22, "text": "Nie rozumiem, o czym tu w ogóle mowa... co to za >>przesłanki<<?..."},
+			{"target": 26, "text": "Tutaj wszystko jasne, idziemy dalej."}
+		]	   
+	},
+	
+		{
+		"COMMENT":"22",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Zacznijmy od początku. Mówię tu o sytuacji, w której chcemy dowieść jakiejś prawdy, uzasadnić pewne twierdzenie. Nazwijmy to zdanie >>Z<<, np. >>Gwiazdy wydają się być malutkie<<. OK?"
+			}
+		],
+		"options":[
+			{"target": 23, "text": "OK..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"No więc wyjaśnienie zdania >>Z<< może być tylko przez jakąś wcześniejszą rację, którą nazwiemy sobie >>Y<<, np.: >>Gwiazdy są bardzo daleko<<. OK?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "OK..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"No to idźmy dalej..."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Ale momencik, jeszcze nie wyjaśniłeś mi tych dwóch stanowisk!..."},
+			{"target": 26, "text": "OK..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"25",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Spokojnie, zaraz do tego dojdziemy. Chciałem tylko wyjaśnić, o czym z grubsza mowa - do tych dwóch stanowisk zaraz dojdziemy, OK?"
+			}
+		],
+		"options":[
+			{"target": 26, "text": "OK. Czytaj dalej."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"26",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Żaden z tych poglądów ani nie jest prawdziwy, ani konieczny.<<"
+			}
+		],
+		"options":[
+			{"target": 27, "text": "Tego to już zupełnie nie rozumiem."},
+			{"target": 28, "text": "OK. Idziemy dalej."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"27",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ja po prostu uważam, że wymyśliłem rozwiązanie tego problemu - ale tak naprawdę będzie wiadomo, o co chodzi, kiedy przejdziemy sobie spokojnie przez dwa stanowiska, o które mi chodzi. Idźmy może dalej, a zaraz się przekonasz, na czym polega moje >>rozwiązanie<<."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "Cóż, muszę Ci chyba zaufać..."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"28",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Zwolennicy pierwszego poglądu przyjmując, że nie ma innego sposobu poznania, jak tylko przez dowód, utrzymują, iż to prowadzi do nieskończonego regresu...<<"
+			}
+		],
+		"options":[
+			{"target": 29, "text": "Co to znaczy, że nie ma innego sposobu poznania, jak tylko przez dowód?"},
+			{"target": 31, "text": "Co to jest ten 'nieskończony regres'?"},
+			{"target": 33, "text": "OK..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"W tym miejscu >>dowód<< oznacza po prostu wyjaśnienie zdania >>Z<< przez jakieś inne zdanie >>Y<< - zdanie o takim samym charakterze, jak zdanie >>Z<<. A więc jedno zdanie o przyrodzie poprzez inne zdanie o przyrodzie."
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Czy to musi być dowód w sensie matematycznym?"},
+			{"target": 28, "text": "OK, rozumiem. Wróćmy może do naszego fragmentu."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"30",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Dowód matematyczny to szczególnego typu rozumowanie - o matematyce. Ale struktura jest ta sama. Jedno zdanie wywodzimy z innego, >>wcześniejszego<<."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "OK, rozumiem. Wróćmy może do fragmentu, o którym mówimy."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"31",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Spójrz: skoro zdanie Z cofa nas do zdania Y; zdanie Y cofa nas do zdania W, W do U, U do T... takie następstwo ciągnie się w nieskończność."
+			}
+		],
+		"options":[
+			{"target": 32, "text": "OK, to rozumiem, ale co znaczy słowo >>regres<<?"},
+			{"target": 33, "text": "Dobrze, idźmy może dalej."} 
+			
+		]	   
+	},
+	
+{
+		"COMMENT":"32",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Regres, czyli >>cofanie się<<. Nieskończone cofanie się."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Aha, no to idźmy dalej."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"33",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>[prowadzi do nieskończonego regresu] na tej podstawie, że skoro pierwszych przesłanek nie poprzedzają bardziej pierwotne, to pochodnych nie można poznać za pomocą tych pierwszych (w tym punkcie mają rację, bo nie można przebiec nieskończonego ciągu przesłanek).<<"
+			}
+		],
+		"options":[
+			{"target": 34, "text": "Czym są te przesłanki >>pierwsze<<, >>pierwotne<< i >>pochodne<<?"},
+			{"target": 38, "text": "No dobrze, tylko dlaczego >>nie można<<, przecież taki ciąg przesłanek, nawet nieskończony, jest całkowicie logiczny!"},
+			{"target": 47, "text": "OK, możemy iść dalej."}
+			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"34",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Może rzeczywiście troszkę tu namieszałem. Chodziło mi po prostu o to, że przy danym rozumowaniu: >>Z, ponieważ Y<< - czyli takim, gdzie zdanie Z (późniejsze, czyli >>pochodne<<) tłumaczymy poprzez zdanie Y (wcześniejsze, czyli >>pierwsze<<, tak naprawdę zdanie Y nie stanowi wyjaśnienia..."
+			}
+		],
+		"options":[
+			{"target": 35, "text": "...ponieważ?"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"35",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"...ponieważ to zdanie Y nie jest >>bardziej pierwotne<<, to znaczy, że jest tego samego typu zdaniem, co zdanie Z - takim, które domaga się wyjaśnienia. Tłumaczymy zdanie, które domaga się wyjaśnienia, przez zdanie, które też domaga się wyjaśnienia!"
+			}
+		],
+		"options":[
+			{"target": 36, "text": "No momencik, ale tak chyba musi być, prawda?"},
+			{"target": 37, "text": "A czym byłoby takie zdanie >>bardziej pierwotne<<?"},
+			{"target": 33, "text": "Hm, wróćmy może do fragmentu, który czytamy."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"36",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Niekoniecznie. Jeżeli tłumaczymy >>niejasne<<, domagające się wyjaśnienia zdanie Z przez inne >>niejasne<< zdanie Y - tak. Ale mogłoby być przecież jakieś zdanie >>bardziej pierwotne<<."
+			}
+		],
+		"options":[
+			{"target": 37, "text": "A czym byłoby takie zdanie >>bardziej pierwotne<<?"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"37",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"I to jest pytanie za sto punktów! Wyjaśnimy to sobie nieco później, wróćmy może na razie do czytania mojego tekstu, OK?"
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Skoro tak twierdzisz..."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"38",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Widzisz, cały problem polega na tym, że umysł ludzki nie jest w stanie objąć nieskończonego ciągu zdań."
+			}
+		],
+		"options":[
+			{"target": 39, "text": "Matematycy posługują się obiektami nieskończonymi bez problemu..."},
+			{"target": 33, "text": "OK, rozumiem. Wróćmy do czytania tekstu."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"39",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Hm. Zadajesz mi bardzo trudne pytania. Skorzystam w tym momencie z mocy podróżowania w czasie, której udzielił mi dr Lamża, jeśli pozwolisz."
+			}
+		],
+		"options":[
+			{"target": 40, "text": "Śmiało."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"40",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Mmmmm... [Arystoteles swobodnie przebiega umysłem czasoprzestrzeń.]"
+			}
+		],
+		"options":[
+			{"target": 41, "text": "[poczekaj chwilę]"},
+			{"target": 33, "text": "Nie mam czasu na te głupoty, wracamy do czytania tekstu."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"41",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Mmmmm... [Arystoteles wygląda, jakby zasnął.]"
+			}
+		],
+		"options":[
+			{"target": 41, "text": "[poczekaj jeszcze chwilę]"},
+			{"target": 42, "text": "[Szturcham delikatnie Arystotelesa w ramię.]"},
+			{"target": 33, "text": "Nie mam czasu na te głupoty, wracamy do czytania tekstu."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"42",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"TAK?! [Arystoteles budzi się.] O, dziękuję za cierpliwość. Wygląda na to, że my, Grecy, nie za dobrze radziliśmy sobie z matematycznym pojęciem nieskończoności. Ach, jakie wspaniałe są odkrycia matematycznie przyszłości!... Mój nauczyciel, Platon, chyba by osiwiał, gdyby ujrzał to, co ja ujrzałem..."
+			}
+		],
+		"options":[
+			{"target": 43, "text": "No dobrze, ale co z nieskończonym ciągiem rozumowań?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"43",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Wygląda na to, że - na szczęście - zasadniczo nie myliłem się. Zróbmy tak - podaruję Ci bardzo ciekawy zwój do poczytania, który napisał dwa tysiące lat po mojej śmierci wąsaty Francuz o imieniu Kartezjusz. Są tam bardzo ciekawe uwagi na temat tego, jak działa ludzki umysł..."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Dziękuję, poczytam sobie. Wróćmy może do naszego fragmentu."},
+			{"target": 44, "text": "Ale tak w skrócie - co sądził Kartezjusz?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"44",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Sądził, że umysł ludzki, analizując złożony problem, dzieli go sobie na coraz to mniejsze cząstki - elementarne >>problemiki<<, zaś zrozumienie całego problemu polega na przejściu umysłem kolejno przez wszystkie te małe >>problemiki<<."
+			}
+		],
+		"options":[
+			{"target": 45, "text": "Hm, a co, jeśli jest ich nieskończona ilość?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"45",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Podróżując w czasie, natrafiłem na bardzo ciekawe urządzenie - komputer. Wiesz, co się dzieje, kiedy komputer dostaje do przetworzenia nieskończoną liczbę poleceń?"
+			}
+		],
+		"options":[
+			{"target": 46, "text": "Zawiesza się..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"46",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Otóż to. Umysł nie może w skończonym czasie objąć nieskończonej liczby zdań. Nawet XX-wieczna matematyka nic tu nie zmienia. Można operować pojęciem nieskończoności, ale nie - nieskończonym ciągiem przesłanek i twierdzeń, a już na pewno - na temat przyrody."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Ufff... wróćmy może do naszego tekstu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"47",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Jeżeli z drugiej strony - twierdzą - ten ciąg się kończy i istnieją początkowe przesłanki, to i tak są niepoznawalne, ponieważ nie ma dla nich dowodu, który według nich jest jedyną formą poznania.<<"
+			}
+		],
+		"options":[
+			{"target": 48, "text": "Dlaczego właściwie >>pierwsze przesłanki<< miałyby być niepoznawalne?"},
+			{"target": 48, "text": "Dlaczego właściwie dowód miałby być jedyną formą poznania?"},
+			{"target": 51, "text": "OK, idźmy dalej."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"48",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Pamiętaj, że poruszamy się teraz >>wewnątrz<< stanowiska, w ramach którego jedynym sposobem uzasadnienia czegoś jest dowód. W ramach tego stanowiska coś pozostaje nieznane, jeśli nie zostaje wyjaśnione przez >>wcześniejszą<< przesłankę."
+			}
+		],
+		"options":[
+			{"target": 49, "text": "No to wyjdźmy poza to stanowisko!"},
+			{"target": 47, "text": "OK, wróćmy do cytatu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"49",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście! [Ale niecierpliwa ta młodzież...] Pamiętaj, że to standardowe postępowanie w filozofii - wchodzimy w jakieś stanowisko, przyjmujemy je >>na próbę<< i sprawdzamy, do czego nas doprowadzi."
+			}
+		],
+		"options":[
+			{"target": 50, "text": "No dobrze, dobrze..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"50",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Tak więc chodziło mi tylko o to, że JEŻELI przyjmiemy, że jedyną formą rozumowania jest odwołanie się do >>wcześniejszej<< przesłanki, TO WTEDY pewnego typu >>pierwsza przesłanka<< to absurd. W ramach takiego stanowiska nie ma pierwszych przesłanek."
+			}
+		],
+		"options":[
+			{"target": 47, "text": "OK, OK... Wróćmy do naszego cytatu."}
+		]	   
+	},
+
+	{
+		"COMMENT":"51",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Skoro więc nie można poznać pierwszych przesłanek, to również nie można poznać w ogóle ani prawomocnie tych, które z nich wynikają; można je uznać za prawdziwe, o ile się przyjmie, że i pierwsze przesłanki są takie.<<"
+			}
+		],
+		"options":[
+			{"target": 52, "text": "A co tutaj znaczą >>pierwsze przesłanki<<?"},
+			{"target": 55, "text": "OK, wszystko jasne."}
+		]	   
+	},
+
+	{
+		"COMMENT":"52",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"To jest ta sama sytuacja, co przed chwilą. Jeżeli chcemy uniknąć nieskończonego regresu, musimy przyjąć, że któraś z przesłanek jest pierwsza. Jeżeli zaś trzymamy się naszego rozumienia tego, czym jest >>dowód<<, wpadamy w kłopoty."
+			}
+		],
+		"options":[
+			{"target": 53, "text": "Jakie kłopoty?"},
+			{"target": 51, "text": "No tak, to już rozumiem. Wróćmy do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"53",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ano takie kłopoty, że JEŻELI unamy, że dowodzenie następuje poprzez odesłanie nas do czegoś >>wcześniejszego<<, to cokolwiek określimy sobie jako >>pierwszą przesłankę<<, będzie bez dowodu!"
+			}
+		],
+		"options":[
+			{"target": 54, "text": "No to zmieńmy nasz model dowodzenia!!"},
+			{"target": 51, "text": "OK, rozumiem, wróćmy do tekstu."}
+		]	   
+	},
+
+	{
+		"COMMENT":"54",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Do tego właśnie zmierzałem, o, niecierpliwy Wędrowcze w Czasie... Żeby jednak zmienić model, trzeba się na spokojne przekonać, że poprzedni jest niewystarczający."
+			}
+		],
+		"options":[
+			{"target": 51, "text": "Ech, dużo trzeba cierpliwości, żeby być filozofem... Wróćmy może do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"55",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Dotarliśmy w ten sposób do końca pierwszego tekstu. Czy wszystko jasne?"
+			}
+		],
+		"options":[
+			{"target": 56, "text": "Wiesz co, chyba [playerGender {chciałbym|chciałabym}] jeszcze raz przejść na spokojnie przez cały ten tekst. Może być?"},
+			{"target": 57, "text": "Zanim pójdziemy dalej, czy mógłbyś podsumować krótko, na czym stoimy?"},
+			{"target": 61, "text": "Pewnie, że jasne! Idziemy dalej!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"56",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście! Ja niektóre teksty czytam i po dziesięć razy!"
+			}
+		],
+		"options":[
+			{"target": 21, "text": "Pogratulować cierpliwości... bierzmy się do roboty!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"57",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Jasne. Cały wcześniejszy fragment miał na celu wykazanie jednej tylko rzeczy: jeżeli przyjmiemy, że >>dowodzenie<< albo też >>wyjaśnianie<< polega na odwołaniu kogoś do jakieś innej >>wcześniejszej<< racji, to z konieczności uzyskujemy strukturę, która jest niepełna, niedokończona, a więc ostatecznie nie stanowi wyjaśnienia."
+			}
+		],
+		"options":[
+			{"target": 56, "text": "Wiesz co, chyba chciałbym jeszcze raz przejść z Tobą przez ten tekst..."},
+			{"target": 58, "text": "OK, ale co właściwie znaczy słowo >>wcześniejszy<<?"},			
+			{"target": 61, "text": "Pewnie, że jasne! Idziemy dalej!"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"58",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Dobre pytanie. W matematyce będzie to zawsze coś, co jest zakładane przez dane zdanie. Jeśli na przykład mówię, że >>każdy trójkąt ma sumę kątów równą 180 stopniom<<, to >>wcześniejsze<< są wszelkie zdania wyjaśniające, czym jest trójkąt, czym jest kąt albo czym są stopnie."
+			}
+		],
+		"options":[
+			{"target": 59, "text": "A nie w matematyce?"},
+			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."}			
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"59",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Gdy opisujemy świat przyrody, mówimy po prostu o czymś wcześniejszym w czasie lub bardziej fundamentalnym, na przykład prawie przyrody. Przykładowo, jeżeli pytam, co spowodowało ruch kulki, pytam o źródło jego ruchu - coś, co ruszało się wcześniej i przekazało ten ruch kulce."
+			}
+		],
+		"options":[
+			{"target": 60, "text": "Stąd bierze się >>Pierwsza Przyczyna<< i >>Pierwszy Poruszyciel>>?"},
+			{"target": 61, "text": "OK, chyba jestem gotów iść dalej."}			
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"60",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oczywiście. Zaraz o tym porozmawiamy. To jak - idziemy dalej?"
+			}
+		],
+		"options":[
+			{"target": 56, "text": "Wiesz co, chyba chciałbym jeszcze raz przejść z Tobą przez ten tekst..."},
+			{"target": 61, "text": "Jasne!"}			
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"61",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"No to czytamy drugi fragment. Teraz pójdzie już szybciutko..."
+			}
+		],
+		"options":[
+			{"target": 62, "text": "Optymista z Ciebie, Arystotelesie..."}			
+			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"62",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>My natomiast twierdzimy, że nie wszelka wiedza jest demonstratywna, gdyż znajomość przesłanek bezpośrednich jest niezależna od dowodu, a konieczność tego jest oczywista; skoro bowiem musimy znać pierwsze przesłanki, na których opiera się dowód, i skoro cofanie musi się zatrzymać na przesłankach bezpośrednich, to muszą być one niedowodliwe.<<"
+			}
+		],
+		"options":[
+			{"target": 63, "text": ">>Demonstratywna<<?"},	
+			{"target": 69, "text": ">>Przesłanki bezpośrednie<<?"},
+			{"target": 71, "text": "OK, idziemy dalej."}
+			
+		]	   
+	},
+	
+
+	{
+		"COMMENT":"63",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Wiedza >>demonstratywna<<, czyli taka, która opiera się na dowodzie w sensie, o którym mówiliśmy przed chwilą - daną tezę wykazujemy (czyli >>demonstrujemy<<), odwołując kogoś do zdania >>wcześniejszego<<."
+			}
+		],
+		"options":[
+			{"target": 64, "text": "Dziwne to słowo: >>demonstratywna<<..."},	
+			{"target": 62, "text": "OK, jasne."}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"64",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Dr Lamża podpowiada mi na ucho, że nawet w Twoich czasach na końcach dowodów matematycznych pisze się >>Q.E.D.<<. Wiesz, co to?"
+			}
+		],
+		"options":[
+			{"target": 68, "text": "Nie wiem..."},	
+			{"target": 66, "text": "Wiem. Quid eres demotivatum."},
+			{"target": 66, "text": "Wiem. Quod elum demonstrativum."},
+			{"target": 65, "text": "Wiem. [inne]"}
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"65",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"..."
+			}
+		],
+		"options":[
+			{"target": 67, "text": "Wiem. Quod erat demonstrandum."},	
+			{"target": 66, "text": "Wiem. Quad erat demonstrativum."},
+			{"target": 66, "text": "Wiem. Quam eres demonstatia."},
+			{"target": 66, "text": "Wiem. Quid est demonstrativum."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"66",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ech, ech. Ta wiecznie ściemniająca młodzież..."
+			}
+		],
+		"options":[
+			{"target": 68, "text": "..."}	
+
+			
+		]	   
+	},
+
+
+	{
+		"COMMENT":"67",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Brawo!"
+			}
+		],
+		"options":[
+			{"target": 68, "text": "..."}	
+
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"68",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>QUOD ERAT DEMONSTRANDUM<<, czyli >>Co było do zademonstrowania<<, czyli >>do wykazania<<. Tak więc >>demonstrowanie<< to nic innego, jak wykazanie, dowiedzenie czegoś."
+			}
+		],
+		"options":[
+			{"target": 62, "text": "No tak... Wróćmy może do naszego tekstu."}
+			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"69",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Tutaj przez >>przesłanki bezpośrednie<< rozumiem takie, które nie są >>pośrednikami<<, czyli nie prowadzą nas do innych, jeszcze wcześniejszych przesłanek - takie, na których kończy się dowodzenie."
+			}
+		],
+		"options":[
+			{"target": 70, "text": "A co by mogło być taką przesłanką?"},
+			{"target": 62, "text": "OK, wróćmy do tekstu."}
+			
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"70",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Już za chwilkę o tym porozmawiamy, ale zostało nam już ostatnie zdanie tekstu. Przeczytajmy je razem i potem o tym podyskutujemy"
+			}
+		],
+		"options":[
+			{"target": 71, "text": "OK..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"71",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"No i ostatnie zdanie mojego tekstu: >>Taki zatem jest nasz pogląd, a w dodatku twierdzimy, że nie tylko istnieje wiedza naukowa, ale także jakiś jej początek, dzięki któremu możemy poznać twierdzenia końcowe.<<"
+			}
+		],
+		"options":[
+			{"target": 72, "text": "A jak rozumiesz tutaj termin >>wiedza naukowa<<?"},
+			{"target": 74, "text": "Jaki >>początek<<?"},
+			{"target": 78, "text": "Więc co z tego wszystkiego wynika?"}			
+			
+		]	   
+	},	
+	
+	{
+		"COMMENT":"72",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Jako wszelkiego typu sądy na temat świata, których uzasadnieniem są inne sądy na temat świata - według wciąż tego samego schematu: >>Z, ponieważ Y<<, >>Y, ponieważ W<<..."
+			}
+		],
+		"options":[
+			{"target": 73, "text": "A co, jeżeli ktoś rozumie pojęcie >>nauki<< troszkę inaczej?"},
+			{"target": 71, "text": "OK, wróćmy do tekstu."}			
+			
+		]	   
+	},	
+
+	
+	{
+		"COMMENT":"73",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Proszę bardzo. Ja tylko analizuję, co by było, GDYBY tak rozumieć naukę. Zwróć jednak uwagę na to, że moje rozumienie tego terminu jest mimo wszystko dosyć szerokie: coś, co należy do świata, tłumaczymy przez coś innego, co należy do świata."
+			}
+		],
+		"options":[
+			{"target": 74, "text": "To chyba oczywiste?..."},
+			{"target": 71, "text": "OK, wróćmy do tekstu."}			
+			
+		]	   
+	},	
+
+	
+	{
+		"COMMENT":"74",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"...a jednak okazuje się być niewystarczające."
+			}
+		],
+		"options":[
+			{"target": 75, "text": "Jak to niewystarczające?"},
+			{"target": 71, "text": "OK, wróćmy do tekstu."}			
+			
+		]	   
+	},	
+
+	{
+		"COMMENT":"75",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Jak to >>jak to<<? [playerGender {Spałeś|Spałaś}] w czasie naszej rozmowy? Przecież jasno wykazałem, że tłumaczenie >>naukowe<< zawsze odsyła do innego tłumaczenia >>naukowego<<, a tego typu nieskończony regres nie stanowi w istocie wyjaśnienia!"
+			}
+		],
+		"options":[
+			{"target": 76, "text": "Chyba nie jestem do końca [playerGender {przekonany|przekonana}]..."},
+			{"target": 71, "text": "OK, wróćmy do tekstu."}			
+			
+		]	   
+	},	
+
+
+	{
+		"COMMENT":"76",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Bardzo dobrze, nikt nie może nas zmusić siłą, abyśmy w coś tak naprawdę uwierzyli. Może chcesz przejść przez cały tekst jeszcze raz?"
+			}
+		],
+		"options":[
+			{"target": 56, "text": "To chyba nie jest zły pomysł..."},
+			{"target": 77, "text": "NIE! Ekhm, to znaczy: nie, nie trzeba, wróćmy może do tekstu..."}			
+			
+		]	   
+	},	
+
+
+	{
+		"COMMENT":"77",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Arystoteles przygląda się podejrzliwie]"
+			}
+		],
+		"options":[
+			{"target": 56, "text": "Ech, no dobrze... wróćmy do początku tekstu..."},
+			{"target": 71, "text": "[Uśmiecham się niewinnie] To jak, czytamy dalej?"}			
+			
+		]	   
+	},
+	
+
+	{
+		"COMMENT":"78",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oto wniosek z moich rozważań: jedynym sposobem na uzyskanie satysfakcjonującego intelektualnie ciągu wyjaśnień jest domknięcie go przy pomocy czegoś radykalnie innego niż wszystkie inne człony tego wyjaśnienia."
+			}
+		],
+		"options":[
+			{"target": 79, "text": "Co to znaczy >>radykalnie inny<<?"},
+			{"target": 86, "text": "A nie mogę po prostu zgodzić się na nieskończony regres?"},
+			{"target": 96, "text": "A co, jeżeli po prostu pozostawimy sobie niedomknięte wyjaśnienie?"},
+			{"target": 102, "text": "OK, chyba już rozumiem, o co chodzi."}
+			
+		]	   
+	},
+	
+
+	{
+		"COMMENT":"79",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Taki, który nie domaga się wcześniejszego członu. Tylko tyle. W matematyce czymś takim jest aksjomat. W fizyce - Pierwszy Poruszyciel. W metafizyce - Pierwsza Przyczyna."
+			}
+		],
+		"options":[
+			{"target": 80, "text": "Aksjomat?"},
+			{"target": 83, "text": "Pierwszy Poruszyciel?"},
+			{"target": 84, "text": "Pierwsza Przyczyna?"},
+			{"target": 78, "text": "Aha, OK. Wróćmy do naszych wniosków."}			
+		]	   
+	},
+	
+	{
+		"COMMENT":"80",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Aksjomat to zdanie, którego nie dowodzimy, tylko >>zakładamy<<, że jest prawdziwe. Różni się tym od wszystkich innych zdań w matematyce."
+			}
+		],
+		"options":[
+			{"target": 81, "text": "Ale co, jeżeli jest fałszywy?"},
+			{"target": 79, "text": "OK. A inne przykłady?"},
+			{"target": 78, "text": "Aha, OK. Wróćmy do naszych wniosków."}			
+		]	   
+	},
+	
+	{
+		"COMMENT":"81",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Aksjomaty nie są ani prawdziwe, ani fałszywe. Są przez nas >>zakładane<<. To może brzmieć dziwnie, ale taka właśnie jest matematyka. Zakładamy coś, tak jakby na próbę, i sprawdzamy, jakie będą tego konsekwencje."
+			}
+		],
+		"options":[
+			{"target": 82, "text": "Zawsze [gender czułam], że ta matematyka jest jakaś podejrzana!..."},
+			{"target": 79, "text": "OK. Wróćmy do innych przykładów..."},
+			{"target": 78, "text": "Aha. Wróćmy do naszych wniosków."}			
+		]	   
+	},	
+	
+	{
+		"COMMENT":"82",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Arystoteles uśmiecha się] Mój nauczyciel, Platon, na pewno by się z Tobą zgodził. Matematyka jest Wielką Tajemnicą, ot co."
+			}
+		],
+		"options":[
+			{"target": 79, "text": "Hm, wróćmy może do innych przykładów."},
+			{"target": 78, "text": "Wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},	
+
+	
+	{
+		"COMMENT":"83",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Pierwszy Poruszyciel<< to po prostu nazwa na coś, co porusza, ale samo nie jest poruszane. Nie interesuje mnie, czym to jest konkretnie. Chodzi o samą cechę. Dzięki temu przerywa nieskończony łańcuch poruszania i bycia poruszanym."
+			}
+		],
+		"options":[
+			{"target": 85, "text": "A to jest w ogóle możliwe?!"},
+			{"target": 79, "text": "Hm, wróćmy może do innych przykładów."},
+			{"target": 78, "text": "Wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},	
+
+	
+	{
+		"COMMENT":"84",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Pierwsza Przyczyna<< to po prostu nazwa na coś, co wywołuje skutki - czyli jest przyczyną czegoś innego - ale samo nie ma przyczyny. Innymi mówiąc, nie jest niczego skutkiem. Po prostu jest i sprawia, że zdarzają się inne rzeczy."
+			}
+		],
+		"options":[
+			{"target": 85, "text": "A to jest w ogóle możliwe?!"},
+			{"target": 79, "text": "Hm, wróćmy może do innych przykładów."},
+			{"target": 78, "text": "Wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"85",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Twoje zaskoczenie jest bardzo na miejscu. O to właśnie chodzi: jeżeli chcemy domknąć nasze wyjaśnienie - ale tak NAPRAWDĘ je domknąć - to obiekt domykający musi z konieczności posiadać naprawdę dziwne, nieintuicyjne cechy."
+			}
+		],
+		"options":[
+			{"target": 79, "text": "Hm, wróćmy może do innych przykładów."},
+			{"target": 78, "text": "Hm... wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},
+	
+	{
+		"COMMENT":"86",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, starałem się pokazać, że nieskończony ciąg wyjaśnień nie jest w istocie wyjaśnieniem... ale rozumiem, że mamy tu do czynienia z przypadkami granicznymi - każdy chyba musi wybrać sobie jakiś kompromis."
+			}
+		],
+		"options":[
+			{"target": 87, "text": "Ja chyba nie mam aż tak dużych problemów z nieskończonością..."},
+			{"target": 78, "text": "Hm... wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"87",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Nieskończoność to dziwne zwierzę. Czy umiesz sobie tak naprawdę wyobrazić nieskończony ciąg wyjaśnień i objąć go umysłem? Czy taki ciąg byłby dla Ciebie zrozumiały?"
+			}
+		],
+		"options":[
+			{"target": 88, "text": "Umiem."},
+			{"target": 89, "text": "Nie umiem."}			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"88",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Jesteś więc czymś więcej niż człowiekiem..."
+			}
+		],
+		"options":[
+			{"target": 95, "text": "Cóż, tak po prostu mam..."},
+			{"target": 89, "text": "Nieee, tak naprawdę to nie umiem sobie tego wyobrazić."}			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"89",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Nie jesteś [gender jedyna]. Myślę, że jest to w ogóle poza mocą ludzką, aby objąć umysłem nieskończoność - i że wyjaśnienie świata przyrody, odwołujące się do nieskończoności, nie jest tak naprawdę wyjaśnieniem, skoro nikt tej nieskończoności nie umie pojąć."
+			}
+		],
+		"options":[
+			{"target": 90, "text": "Ale matematycy posługują się pojęciem nieskończoności!"},
+			{"target": 78, "text": "Rozumiem. Wróćmy do naszych ogólnych wniosków."}			
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"90",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Operują symbolem nieskończoności. Ale nie przebiegają umysłem nieskończonego ciągu wyjaśnień. Pamiętaj, że jeśli mamy wytłumaczyć zjawisko przyrodnicze przez nieskończony ciąg wcześniejszych zjawisk, nie mówimy o matematycznej nieskończoności, lecz nieskończoności w świecie!"
+			}
+		],
+		"options":[
+			{"target": 91, "text": "A na czym właściwie polega różnica?"},
+			{"target": 78, "text": "Rozumiem. Wróćmy może do naszych ogólnych wniosków."}			
+		]	   
+	},
+	
+	{
+		"COMMENT":"91",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Nieskończoność w matematyce nie jest właściwie liczbą. Nie można powiedzieć, że istnieje >>nieskończoność<< pewnych obiektów - tak, jak mówimy, że istnieje tych obiektów pięć albo tysiąc. >>Nieskończoność<< to tylko nazwa na pewnego typu operację."
+			}
+		],
+		"options":[
+			{"target": 92, "text": "..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"92",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Gdy mówimy, że ta cząstka istnieje, bo wcześniej istniała inna cząstka, a wcześniej jeszcze inna cząstka, >>i tak w nieskończoność<<, to nie podajemy liczby cząstek. Mówimy tylko tyle, że nigdy nie natrafimy na pierwszą cząstkę."
+			}
+		],
+		"options":[
+			{"target": 93, "text": "I co to oznacza? W czym problem?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"93",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Oznacza to, że opisywany przez nas świat nie posiada ostatecznie wyjaśnienia - jeżeli słowem >>wyjaśnienie<< określamy coś, co może objąć umysłem człowiek."
+			}
+		],
+		"options":[
+			{"target": 94, "text": "Ech, chyba wciąż nie jestem do końca [gender przekonana]..."},
+			{"target": 78, "text": "Hm, chyba rozumiem. Wróćmy może do naszych ogólnych wniosków."}					
+		]	   
+	},
+
+
+	{
+		"COMMENT":"94",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Nie przejmuj się. Rozmawiamy przecież o rzeczach, które niemal z konieczności leżą na granicach możliwości ludzkiego umysłu. Spróbujmy zaatakować ten problem z innej strony..."
+			}
+		],
+		"options":[
+			{"target": 78, "text": "Dobrze, Arystotelesie. Prowadź."}					
+		]	   
+	},
+
+	{
+		"COMMENT":"95",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"A więc tym łatwiej będzie Ci poruszać się w zagadnieniach, o których tu mowa. Wróćmy może do naszych ogólnych wniosków, możę będę w stanie coś jeszcze wyjaśnić."
+			}
+		],
+		"options":[
+			{"target": 78, "text": "Dobrze, Arystotelesie. Prowadź."}			
+		]	   
+	},
+
+	{
+		"COMMENT":"96",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"I to jest bardzo rozsądne podejście! Przecież nie musimy od razu wiedzieć wszystkiego. Nawet teraz możemy się jednak przecież zastanawiać, dla >>jakiego typu<< wyjaśnienia pozostawiamy sobie otwarte miejsce, prawda?"
+			}
+		],
+		"options":[
+			{"target": 97, "text": "No więc jakiego typu będzie to wyjaśnienie?"},
+			{"target": 98, "text": "Nawet i to może jednak ulec zmianie!"},
+			{"target": 78, "text": "Rozumiem. Wróćmy może do naszych wniosków..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"97",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":">>Radykalnie inne<<."
+			}
+		],
+		"options":[
+			{"target": 79, "text": "Co to znaczy >>radykalnie inny<<?"}
+
+			
+		]	   
+	},
+
+	{
+		"COMMENT":"98",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ja osobiście uważam, że nie. Pewne elementarne prawidła rozumu nie ulegają zmianie. Jeśli czysta logika nakazuje nam coś przyjąć, nie powinniśmy się spodziewać, że rozwój myśli ludzkiej przyniesie tu odmianę."
+			}
+		],
+		"options":[
+			{"target": 99, "text": "Logika też się zmienia, Arystotelesie."},
+			{"target": 78, "text": "A co nam nakazuje czysta logika w tym przypadku?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"99",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cóż, jakkolwiek boli mnie serce, gdy to mówię, wiem, że w przyszłości, długo po mojej śmierci, będzie się mówiło o różnych logikach... zauważ jednak, że w codziennym rozumowaniu, w nauce, w filozofii, we wszelkim racjonalnym dyskursie, zawsze stosowana będzie >>zwykła<< logika."
+			}
+		],
+		"options":[
+			{"target": 100, "text": ">>Logika arystotelejska<<?"},
+			{"target": 101, "text": "A co, jeśli i to ulegnie kiedyś zmianie?"}
+		]	   
+	},
+
+
+	{
+		"COMMENT":"100",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Ach, przesada. [Arystoteles rumieni się] Logika była przede mną i pozostanie, gdy ja przeminę. Ale - tak - mówię o tych zasadach, które opisałem dla potomności. I wnioski z tej logiki są niepodważalne."
+			}
+		],
+		"options":[
+			{"target": 78, "text": "I jakie to wnioski?"}
+		]	   
+	},
+	
+
+	{
+		"COMMENT":"101",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Niezbadane są wyroki bogów. Zastanów się tylko, co stawiasz na szali. Z jednej strony masz swoje ulubione poglądy na temat Kosmosu. Z drugiej - logikę, fundament całej swojej myśli. Co jest dla Ciebie cenniejsze? Nie musisz mi teraz odpowiadać, wróćmy może do naszych wniosków."
+			}
+		],
+		"options":[
+			{"target": 78, "text": "Dobrze, Arystotelesie. Prowadź."}		
+		]	   
+	},
+
+
+	{
+		"COMMENT":"102",
+		"events":[
+			
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Cieszę się, Wędrowcze, że mogłem pomóc. Jeżeli będziesz jeszcze potrzebował pomocy, wiesz, gdzie mnie szukać. Powodzenia w dalszych zmaganiach, a na krętych ścieżkach Wielkich Dyskusji niech posłuży Ci ten oto Argument. Bywaj."
+			}
+		],
+		"options":[
+			{"target": 102, "text": "Dziękuję, Arystotelesie! Bywaj."}		
+		]	   
+	}
+	
+	]
+}

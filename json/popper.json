@@ -1,0 +1,705 @@
+{
+	"meta":
+		{
+		"bg":"cambridge",
+		"current":0,
+		"actor":"popper"
+		},
+	"scenes": [
+	{
+		"comment":"0",
+		"events":[
+			
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Dzień dobry!"},
+			{"target": 1, "text": "Witaj, Profesorze!"}
+		]	   
+	},
+
+	{
+		"comment":"1",
+		"events":[
+			
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Chciałbym porozmawiać o Pańskim tekście..."},
+			{"target": 2, "text": "Co Pan robi w Nowej Zelandii?"}
+		]	   
+	},
+
+	{
+		"comment":"2",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Zostałem tu zaproszony parę miesięcy temu, czyli w połowie 1937 roku, na Uniwersytet Canterbury, abym uczył tu filozofii."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "I jak Panu mija pobyt?"},
+			{"target": 7, "text": "I czym się Pan tu zajmuje?"},
+			{"target": 12, "text": "Bardzo ciekawe. Ale może porozmawiajmy już o Pańskiej książce, dobrze?", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"3",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A całkiem nieźle, dziękuję. Tylko Hennie trochę tęskni za Austrią."
+			}
+		],
+		"options":[
+			{"target": 4, "text": "Hennie?"}
+		]	   
+	},
+	
+	{
+		"comment":"4",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Nie znacie się? Hennie to moja żona. Nazywa się tak naprawdę Józefina, ale wołam na nią Hennie, ponieważ jej nazwisko panieńskie to Henninger."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Hm, może byłoby jej przyjemniej, gdyby mogła porozmawiać z rodakami?", "height":2, "req":{"type":"skill","skill":2,"amt":5,"mode":">"}},
+			{"target": 7, "text": "No tak, a czym się Pan ostatnio zajmuje?"},
+			{"target": 12, "text": "Bardzo ciekawe, ale wróćmy może do Pańskiego tekstu..."}
+		]	   
+	},
+	
+	{
+		"comment":"5",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hm, ciekawy pomysł, Wędrowcze. Tylko jak znaleźć Niemców i Austriaków w Nowej Zelandii?!"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Hm, wielu Niemców przyjechało tu pod koniec XIX wieku w czasie nowozelandzkiej gorączki złota...", "height":2, "req":{"type":"skill","skill":0,"amt":8,"mode":">"}},
+			{"target": 12, "text": "Niestety nie wiem. Ale może porozmawiamy już o Pańskiej książce?", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"6",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":3},
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hmhm... Stare kopalnie złota są na północy Wyspy Południowej, zaledwie kilkadziesiąt kilometrów stąd. Być może mieszkają tam jeszcze potomkowie tych Niemców. Przejadę się tam i popytam. Wielkie dzięki, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Cieszę się, że mogłem pomóc. A czym się Pan ostatnio zajmuje?", "height":2},
+			{"target": 12, "text": "Nie ma sprawy. Porozmawiajmy może o Pańskiej książce...", "height":2}
+		]	   
+	},
+	
+	{
+		"comment":"7",
+		"events":[
+
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Zacząłem ostatnio pracować nad książką, którą nazwę chyba [']Społeczeństwo otwarte i jego wrogowie[']."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Brzmi tajemniczo. A o czym ta książka?"},
+			{"target": 8, "text": "O czym będzie ta książka?"}
+		]	   
+	},
+
+	{
+		"comment":"8",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Widzisz, Wędrowcze, trochę martwi mnie obecna sytuacja na świecie: Hitler, Mussolini, Stalin... myślę, że jedynym wyjściem jest przyjęcie idei społeczeństwa otwartego."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "A czym jest [']społeczeństwo otwarte[']?"}
+		]	   
+	},
+
+	{
+		"comment":"9",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Zaczynam dopiero opracowywać tę ideę. Ale już teraz mogę powiedzieć, że kluczowe dla rozwoju kraju, narodu, społeczeństwa jest, aby wszyscy obywatele mieli wiedzę na temat postępowania rządu i rozumieli, jakie są skutki decyzji politycznych..."
+			}
+		],
+		"options":[
+			{"target": 10, "text": "..."}
+		]	   
+	},
+
+	{
+		"comment":"10",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Obywatele muszą być więc wolni, każdy musi mieć równe prawa i - co istotne - uznawać i rozumieć prawa innych osób. Wszystko opiera się na byciu krytycznym - nie można iść do przodu, dopóki się nie podda istniejących praw i polityk krytyce. A do tego trzeba je rozumieć..."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Hm, interesujące. Ale wróćmy może do tekstu, o którym chciałem porozmawiać...", "height":2},
+			{"target": 11, "text": "Bardzo ciekawe! [playerGender {Mógłbym|Mogłabym}] dowiedzieć się jeszcze więcej?", "height":2}
+		]	   
+	},
+
+	{
+		"comment":"11",
+		"events":[
+			{"type":"give","time":4600,"book":"popper"},
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Hm... wydaje mi się, że nie mamy teraz czasu, żeby szczegółowo o tym porozmawiać. Ponadto tak naprawdę nie mam tego wszystkiego jeszcze opracowanego. Pozwól, że zostawię Ci zwój z moimi notatkami, dobrze?"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "O, świetny pomysł! Poczytam. A teraz faktycznie weźmy się może do roboty...", "height":2}
+		]	   
+	},
+
+	{
+		"comment":"12",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A o czym konkretnie [playerGender {chciałbyś|chciałabyś}] porozmawiać?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "O [']Logice odkrycia naukowego[']."}
+		]	   
+	},
+	
+
+	{
+		"comment":"13",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Idźmy więc po kolei - najpierw się upewnimy, że tekst jest zrozumiały, a potem przejdziemy do kwestii ogólniejszych."
+			}
+		],
+		"options":[
+			{"target": 14, "text": "OK."}
+		]	   
+	},
+	
+	{
+		"comment":"14",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A więc z czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Czym właściwie jest indukcja?"},
+			{"target": 21, "text": "O co chodzi z tą falsyfikacją i weryfikacją?"},
+			{"target": 29, "text": "A więc jakie warunki musi spełnić teoria naukowa?"},
+			{"target": 33, "text": "Myślę, że rozumiem już cały tekst."}
+		]	   
+	},
+	
+	{
+		"comment":"15",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Indukcja to po prostu wnioskowanie (albo: rozumowanie) prowadzące od wielu zdań szczegółowych do zdań ogólnych. Czyli, na przykład, od wielu lat obserwacji pogody po stwierdzenie, że ciemne chmury przynoszą deszcz."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "I na czym polega problem z indukcją?"},
+			{"target": 14, "text": "Aha, rozumiem. Wróćmy może do innych fragmentów."}
+			
+		]	   
+	},
+
+	{
+		"comment":"16",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Pierwszy problem polega na tym, że nie da się tak naprawdę rygorystycznie, ściśle wywieść zdania ogólnego ze zdań szczegółowych. Zawsze tylko możemy sprawić, że to zdanie ogólne będzie bardziej prawdopodobne - ale przecież prawa przyrody nie mają być tylko [']bardzo prawdopodobne['] - powinny obowiązywać zawsze!"
+			}
+		],
+		"options":[
+			{"target": 17, "text": "Więc czy nie możemy po prostu uznać, że twierdzenia nauki nie jest pewne, a tylko prawdopodobne?", "height":2},
+			{"target": 18, "text": "A drugi problem?"},
+			{"target": 15, "text": "Aha. Wróćmy może do innych fragmentów."}
+		]	   
+	},
+	
+
+	{
+		"comment":"17",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Oczywiście. Nauka empiryczna, która jest stuprocentowo pewna, to przesąd! Natomiast ja osobiście uważam, że tak czy inaczej nauka nie jest tworzona metodą indukcji. W rzeczywistości nikt w ten sposób nie postępuje!"
+			}
+		],
+		"options":[
+			{"target": 18, "text": "Więc jak postępują naukowcy?"}
+		]	   
+	},
+	
+
+	{
+		"comment":"18",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"W rzeczywistości jest tak, że naukowcy raczej wymyślają [']na próbę['] zdania ogólne (prawa naukowe, regularności itd.), a nie generują je [']automatycznie['] metodą indukcji. I dopiero wtedy dokonują obserwacji, które miałyby potwierdzić lub obalić to przypuszczalne zdanie ogólne."
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Jak to [']wymyślają[']?! Nie ma tu żadnej metody?"},
+			{"target": 20, "text": "I po tym procesie sprawdzenia zdanie staje się już pewne?"}
+		]	   
+	},
+	
+
+	{
+		"comment":"19",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Nie ma to żadnego znaczenia, jak wysuwane są hipotezy naukowe. Jeżeli chodzi o mnie, równie dobrze można by je wróżyć z chmur albo wymyślać w wannie. Istotne jest tylko to, czy przetrwają rygory testowania."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "I po tym testowaniu są już pewne?"},
+			{"target": 14, "text": "Chyba rozumiem, wróćmy może do innych fragmentów."}
+		]	   
+	},
+	
+	{
+		"comment":"20",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Pewne może być tylko to, że dana teoria jest niesłuszna. To, że jest słuszna, znowu możemy tylko wiedzieć z pewnym prawdopodobieństwem."
+			}
+		],
+		"options":[
+			{"target": 21, "text": "Czy mógłby to Pan przestawić na jakimś przykładzie?"},
+			{"target": 14, "text": "Chyba rozumiem, wróćmy może do innych fragmentów."}
+		]	   
+	},
+	
+	{
+		"comment":"21",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Przykład będzie najlepszy. Przypuśćmy, że wymyślasz sobie następujące hipotetyczne prawo przyrody: [']Z ciemnej chmury zawsze spada deszcz.['] Przypuśćmy, że wychodzisz następnego dnia i obserwujesz niebo. Faktycznie pojawia się ciemna chmura i faktycznie spada deszcz. Czy [playerGender {dowiodłeś|dowiodłaś}] prawdziwości swojej hipotezy?"
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Nie, przecież to tylko jeden przypadek!"},
+			{"target": 22, "text": "Oczywiście - moja teoria się sprawdziła!"}
+		]	   
+	},
+	
+	{
+		"comment":"22",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Tylko pamiętaj, że Twoja teoria głosi, że [']Z ciemnej chmury ZAWSZE spada deszcz.['] To, że [playerGender {zaobserwowałeś|zaobserwowałaś}] deszcz spadający z ciemnej chmury nie wyklucza, że następnego dnia przyjdzie ciemna chmura, z której NIE spadnie deszcz..."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "No rzeczywiście..."}
+		]	   
+	},
+	
+	
+	{
+		"comment":"23",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Otóż to. A teraz wyobraź sobie sytuację odwrotną. Pierwszego dnia wychodzisz przed dom na obserwacje. Przychodzi ciemna chmura i NIE spada z niej deszcz. Czego to dowodzi?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "Niczego, przecież to tylko jedna obserwacja!"},
+			{"target": 25, "text": "Że moja teoria została sfalsyfikowana!"}
+		]	   
+	},
+	
+	
+	{
+		"comment":"24",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Wystarczy jedna. Pamiętaj, że teoria głosi, że z ciemnej chmury ZAWSZE spada deszcz. Wystarczy, aby raz nie spadł, a teoria okazała się być nieprawdziwa!..."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "OK. I to jest ta falsyfikacja?"}
+		]	   
+	},
+	
+	{
+		"comment":"25",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Tak jest. To jest właśnie falsyfikacja. I falsyfikacja jest absolutnie pewna, w przeciwieństwie do weryfikacji, która zawsze dostarcza nam tylko minimalnego dodatkowego poczucia pewności, ale nigdy nie wiedzie do stuprocentowej pewności."
+			}
+		],
+		"options":[
+			{"target": 26, "text": "Czyli pewni możemy być tylko błędu! Smutne trochę..."},
+			{"target": 14, "text": "Chyba rozumiem, wróćmy do innych tekstów."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"26",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Cóż, trzeba się cieszyć, że w ogóle możemy być czegokolwiek pewni! Ale zauważ też, że nasz poziom pewności odnośnie niektórych zdań jest NAPPRAWDĘ bliski całkowitej pewności. Teoria, że Ziemia kręci się wokół Słońca, albo że za choroby zakaźne odpowiadają mikroorganizmy, zostały już przetestowane miliony razy!"
+			}
+		],
+		"options":[
+			{"target": 27, "text": "To dlaczego po prostu nie powiedzieć, że jest to pewne na 100%?"},
+			{"target": 14, "text": "OK, wróćmy do innych tekstów."}
+		]	   
+	},
+	
+	{
+		"comment":"27",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Dla zasady. Nie wolno nadużywać słów typu [']zawsze['], [']nigdy['] albo [']na pewno[']. Trzeba je traktować poważnie, bo to bardzo mocne słowa. Albo coś jest pewne, albo nie."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "[']Nigdy nie mów nigdy[']..."},
+			{"target": 14, "text": "OK, rozumiem."}
+		]	   
+	},
+
+		
+	{
+		"comment":"28",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"[Popper uśmiecha się] Otóż to."
+			}
+		],
+		"options":[
+			{"target": 14, "text": "OK, wróćmy do tekstu."}
+		]	   
+	},
+	
+	
+	{
+		"comment":"29",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Jest kilka warunków. Musi być wewnętrznie spójna. Musi się zgadzać z innymi naukami (chociaż tutaj trzeba uważać, ponieważ nowe teorie, zwłaszcza wyjątkowo nowe, często obalają teorie poprzednie). Ale najważniejsza jest [']sprawdzalność przez doświadczenie[']. Dopóki teorii nie można sprawdzić empirycznie, nie jest teorią naukową."
+			}
+		],
+		"options":[
+			{"target": 30, "text": "A jak wygląda takie sprawdzanie naukowe?"}
+		]	   
+	},
+	
+	{
+		"comment":"30",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Cóż, opisałem to w książce, którą czytamy. [']Z teorii tej dedukuje się pewne zdania jednostkowe - które nazwać możemy >>przewidywaniami<<... ['] i tak dalej."
+			}
+		],
+		"options":[
+			{"target": 31, "text": "A [playerGender {mógłbym|mogłabym}] usłyszeć to na przykładzie?"},
+			{"target": 14, "text": "Aha, to ja już sobie doczytam..."}
+		]	   
+	},
+
+	{
+		"comment":"31",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Jasne. Jeśli moja teoria głosi, przykładowo, że z ciemnych chmur zawsze spadają deszcze, to mogę wydedukować z niej następujące zdanie: [']Jeżeli jutro nad Cambridge pojawi się ciemna chmura, to spadnie z niej deszcz.['] Jak widzisz, to po prostu szczegółowa [']wersja['] mojego prawa ogólnego."
+			}
+		],
+		"options":[
+			{"target": 32, "text": "I to jest ta osławiona weryfikacja?"},
+			{"target": 14, "text": "Chyba rozumiem, wróćmy do wspólnego czytania tekstu."}
+		]	   
+	},
+	
+	{
+		"comment":"32",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Weryfikacja albo falsyfikacja - zależy, co się wydarzy."
+			}
+		],
+		"options":[
+			{"target": 21, "text": "A na czym właściwie polega różnica?"},
+			{"target": 14, "text": "Chyba rozumiem, wróćmy do wspólnego czytania tekstu."}
+		]	   
+	},
+
+	{
+		"comment":"33",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Świetnie. Czy masz do mnie jeszcze jakieś pytania ogólne?"
+			}
+		],
+		"options":[
+			{"target": 34, "text": "Czy każdy rodzaj wiedzy wymaga falsyfikacji?"},
+			{"target": 40, "text": "Czy tylko nauka jest prawdziwą wiedzą?"},
+			{"target": 50, "text": "Chyba już nie mam żadnych pytań."}
+		]	   
+	},
+
+	{
+		"comment":"34",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Oczywiście, że nie! Cały czas mówiliśmy tylko o wiedzy z zakresu nauk empirycznych!"
+			}
+		],
+		"options":[
+			{"target": 35, "text": "A jakie są inne przykłady wiedzy?"},
+			{"target": 35, "text": "A czy to nie jest jedyna prawdziwa wiedza?"}
+		]	   
+	},
+	
+
+	{
+		"comment":"35",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"A co powiesz na przykład na wiedzę matematyczną? Czy dałoby się sfalsyfikować zdanie [']2+2=4[']?"
+			}
+		],
+		"options":[
+			{"target": 37, "text": "To proste! Wystarczy wziąć dwa jabłka i jeszcze dwa jabłka i sprawdzić, czy w sumie są to cztery jabłka!", "height":2},
+			{"target": 38, "text": "No chyba nie..."}
+		]	   
+	},
+	
+	{
+		"comment":"36",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"UNUSED"
+			}
+		],
+		"options":[
+			{"target": 37, "text": "1"},
+			{"target": 38, "text": "2"}
+		]	   
+	},
+	
+	
+	{
+		"comment":"37",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"[Popper uśmiecha się]Mogłoby się tak rzeczywiście wydawać. Jest z tym parę problemów. Choćby taki, że nie każdy dział matematyki da się w prosty sposób przełożyć na przedmioty świata fizycznego. Weźmy na przykład pod uwagę twierdzenia o obiektach pięciowymiarowych... A metoda sprawdzania musi być jedna dla całej matematyki!"
+			}
+		],
+		"options":[
+			{"target": 38, "text": "Więc jaka to metoda?"}
+		]	   
+	},
+	
+	{
+		"comment":"38",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Cóż, matematykę sprawdzamy za pomocą dwóch pierwszych kryteriów, które omówiłem w moim tekście: spójności [']wewnętrznej['] (czyli czy po prostu, formułując swoją nową teorię matematyczną, nie popełniłem jakiegoś głupiego błędu) i [']zewnętrznej['] - czyli czy to, co twierdzę, nie jest sprzeczne z czymś, co już kiedyś udowodniono."
+			}
+		],
+		"options":[
+			{"target": 39, "text": "Czyli matematyka nie musi mówić o rzeczach istniejących?"},
+			{"target": 40, "text": "A czy obok matematyki i nauk empirycznych istnieje jakakolwiek wiedza?"},
+			{"target": 33, "text": "OK, wróćmy do wcześniejszej rozmowy..."}
+			
+		]	   
+	},
+
+	{
+		"comment":"39",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Matematyka w ogóle nie ma związku z istnieniem w świecie, przez co obserwacje świata przyrody nie mają dla niej znaczenia. Dlatego właśnie nie jest falsyfikowalna!"
+			}
+		],
+		"options":[
+			{"target": 33, "text": "OK, wróćmy może do wcześniejszej rozmowy..."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"40",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Niektórzy moi koledzy-filozofowie twierdzą, że tylko matematyka i nauki przyrodnicze to prawdziwa wiedza. Ale im dłużej się nad tym zastanawiać, tym więcej rodzajów wiedzy pojawia się na horyzoncie... jest choćby tak zwana [']wiedza, jak['] (w przeciwieństwie do [']wiedzy, że[']."
+			}
+		],
+		"options":[
+			{"target": 41, "text": "A co to takiego?"}
+			
+		]	   
+	},
+	
+	{
+		"comment":"41",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Wszystkie rodzaje wiedzy, o których dotychczas [playerGender {czytałeś|czytałaś}], można określić jako [']wiedzę, że['] - gdzie po słowie [']że['] umieszcza się jakieś zdanie. Wiem, że mam na imię Karl. Wiem, że istnieje Słońce. Wiem, że dwa i dwa to cztery."
+			}
+		],
+		"options":[
+			{"target": 42, "text": "A czym jest [']wiedza, jak[']?"}
+			
+		]	   
+	},
+	
+		
+	{
+		"comment":"42",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"To umiejętność zrobienia czegoś. Wiem, jak jechać na rowerze. Wiem, jak obierać ziemniaki. Wiem, jak dojechać z Londynu do Cambridge."
+			}
+		],
+		"options":[
+			{"target": 43, "text": "To też wiedza?!"},
+			{"target": 33, "text": "A, już rozumiem. Wróćmy może do innych spraw..."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"43",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Tak się zwykle uznaje. Jeszcze inni filozofowie twierdzą, że zupełnie osobną kategorię stanowi [']samowiedza[']."
+			}
+		],
+		"options":[
+			{"target": 44, "text": "Czyli?"},
+			{"target": 45, "text": "Nie za dużo tych rodzajów wiedzy?!..."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"44",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Czyli znajomość swoich własnych stanów, poglądów, umiejętności i tak dalej. Wyróżnia się ją, ponieważ cechuje się ona szczególnym poziomem pewności."
+			}
+		],
+		"options":[
+			{"target": 47, "text": "Czy to jest to, co Bertrand Russell określał jako [']wiedzę bezpośrednią[']?", "req":{"type":"item","item":"russell"}},
+			{"target": 33, "text": "Aha, rozumiem... wróćmy może do innych zagadnień."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"45",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Świat jest skomplikowany, Wędrowcze! Naprawdę proste, klarowne systemy filozoficzne i światopoglądy powstają tylko wtedy, jeśli się niepasujące do nich fakty zamiata pod dywan... Pięknie to wykazał mój dobry przyjaciel i uczeń, Ludwig Wittgenstein."
+			}
+		],
+		"options":[
+			{"target": 46, "text": "A co takiego powiedział Wittgenstein?"},
+			{"target": 33, "text": "Hm... wróćmy może do innych zagadnień."}
+			
+		]	   
+	},
+	
+	
+	{
+		"comment":"46",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Cierpliwości!... Dr Lamża podpowiada mi, że przyjdzie i czas na Wittgensteina. W każdym razie bardzo elegancko pokazał, co się dzieje, jeśli się chce skonstruować system filozoficzny ścisły, precyzjny i całkowicie domknięty. Okazuje się, że nie powstaje tak naprawdę system filozoficzny... ale o tym dowiesz się niedługo."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Skoro tak twierdzisz, Profesorze... wróćmy więc do innych zagadnień."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"47",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Trochę tak, a trochę nie. Moja samowiedza odnośnie moich własnych stanów zmysłowych - tak. Ale już na przykład moja wiedza o tym, że mam na imię Karl... już nie do końca."
+			}
+		],
+		"options":[
+			{"target": 48, "text": "To by była [']wiedza przez opis[']?"}
+			
+		]	   
+	},
+	
+	{
+		"comment":"48",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Jak najbardziej. Jak więc widzisz, sprawa jest dość złożona. Nikt tak naprawdę do końca nie wie, jakie są wszystkie rodzaje wiedzy i jakie one mają swoje granice i kryteria. A intuicja mi mówi, że z każdą kolejną dekadą dwudziestego wieku będzie się to tylko coraz bardziej komplikowało..."
+			}
+		],
+		"options":[
+			{"target": 49, "text": "Poznanie rzeczywistości to chyba trudne zadanie..."},
+			{"target": 33, "text": "Wróćmy może do naszej rozmowy."}
+			
+		]	   
+	},
+	
+	{
+		"comment":"49",
+		"events":[
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Bardzo trudne. Ale jakie satysfakcjonujące!"
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Mam nadzieję... ale wróćmy może do naszej rozmowy"}
+			
+		]	   
+	},
+	
+	
+		{
+		"COMMENT":"50",
+		"events":[
+			{"type":"give","time":4600,"item":"popper"}, 
+			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Bardzo się cieszę! Miło było rozmawiać. A teraz przyjmij ode mnie ten oto Argument. Niech Ci służy, Wędrowcze."
+			}
+		],
+		"options":[
+			{"target": 51, "text": "Mi również było miło, Profesorze! Bywaj!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"51",
+		"events":[
+			{"type":"dialog","name":"Karl Popper","time":1000,"timepadding":0,
+			"text":"Bywaj!"
+			}
+		],
+		"options":[
+		]	   
+	}
+	
+	]
+}

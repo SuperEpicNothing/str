@@ -1,0 +1,53 @@
+{
+	"meta":
+		{
+		"bg":"cambridge",
+		"current":0,
+		"actor":"james"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Dzień dobry!"},
+			{"target": 1, "text": "Witaj, Profesorze!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Mam pewien problem ze zrozumieniem Pańskich słów, Profesorze!"},
+			{"target": 4, "text": "Co Pan robi na Nowej Zelandii?"},
+			{"target": 2, "text": "Dawaj miecz, starcze!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"2",
+		"events":[
+			{"type":"give","time":4600,"item":"james"},
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Cóż mam zrobić... dam Ci ten miecz, młody dzikusie."
+			}
+		],
+		"options":[
+
+			{"target": 1, "text": "Podziękować. Idę walczyć z Konfuzjuszem."}
+		]	   
+	}
+	
+	]
+}

@@ -1,31 +1,153 @@
 {
 
 	"img" : [
-		{"name" : "button",
-		"src":"images/gui/buttons.png"},
+		
 		{"name" : "scroll",
-		"src":"images/gui/paper.png"}
+		"src":"images/gui/paper.png"},
+		{"name" : "textbar",
+		"src":"images/gui/textbar.png"},
+		{"name" : "magicbolt",
+		"src":"images/magicbolt.png"},
+		{"name" : "book",
+		"src":"images/I_Book.png"},
+		{"name" : "sword",
+		"src":"images/BASword.png"},
+		
+		{"name" : "GUIbutton",
+		"src":"images/gui/buttons.png"},
+		{"name" : "GUIbuttonmenu",
+		"src":"images/gui/menu.png"},
+		{"name" : "GUIbuttonskip",
+		"src":"images/gui/skipbutton.png"},
+		{"name" : "GUIback",
+		"src":"images/gui/back.png"},
+		{"name" : "GUIhpBar",
+		"src":"images/gui/HPBar/foreground.png"},
+		{"name" : "GUIopenchest",
+		"src":"images/gui/I_Chest02.png"},
+		{"name" : "GUIclosedchest",
+		"src":"images/gui/I_Chest01.png"},
+		{"name" : "GUIxpbar",
+		"src":"images/gui/xpbar.png"},
+		{"name" : "GUIachievments",
+		"src":"images/gui/Achievments.png"},
+		{"name" : "GUIachievmentNotify",
+		"src":"images/gui/AchievmentBar.png"},
+		{"name" : "GUIplayer",
+		"src":"images/gui/playerGUI.png"},
+		
+		{"name" : "players",
+		"src":"images/avatars.png"},
+		{"name" : "confu",
+		"src":"images/mage-1-85x94_0.png"},
+		
+		{"name" : "forest",
+		"src":"images/layers/parallax-forest.png"},
+		{"name" : "canaletto",
+		"src":"images/layers/parallax-canaletto.png"},
+		{"name" : "cambridge",
+		"src":"images/layers/cambridge.png"},
+		{"name" : "canberra",
+		"src":"images/layers/canberra.png"},
+		{"name" : "kronor",
+		"src":"images/layers/kronor.png"},
+		{"name" : "prison",
+		"src":"images/layers/prison.png"},
+		{"name" : "krakow",
+		"src":"images/layers/krakow.png"},
+		{"name" : "monastyr",
+		"src":"images/layers/monastyr.png"},
+		{"name" : "norwegia",
+		"src":"images/layers/norwegia.png"},
+		{"name" : "sandiego",
+		"src":"images/layers/sandiego.png"},
+		{"name" : "santorini",
+		"src":"images/layers/santorini.png"},
+		{"name" : "uni",
+		"src":"images/layers/uni2.png"},
+		{"name" : "blackboard",
+		"src":"images/layers/parallax-blackboard.png"},
+		
+		{"name" : "arystoteles",
+		"src":"images/layers/arystoteles2.png"},
+		{"name" : "churchland",
+		"src":"images/layers/churchland.png"},
+		{"name" : "hawking",
+		"src":"images/layers/hawking.png"},
+		{"name" : "kartezjusz",
+		"src":"images/layers/kartezjusz.png"},
+		{"name" : "russell",
+		"src":"images/layers/russell3.png"},
+		{"name" : "jackson",
+		"src":"images/layers/jackson.png"},
+		{"name" : "james",
+		"src":"images/layers/james.png"},
+		{"name" : "popper",
+		"src":"images/layers/popper.png"},
+		{"name" : "witt",
+		"src":"images/layers/witt.png"},
+		{"name" : "lamza",
+		"src":"images/layers/lamza.png"},
+		{"name" : "tomasz",
+		"src":"images/layers/tomasz.png"},
+	
+
+		{"name" : "planets-parallax",
+		"src":"images/layers/parallax-space-far-planets.png"},
+		{"name" : "stars-parallax",
+		"src":"images/layers/parallax-space-stars.png"},
+		{"name" : "background-parallax",
+		"src":"images/layers/parallax-space-backgound.png"},
+		
+		{"name" : "planet0",
+		"src":"images/layers/parallax-space-big-planet0.png"},
+		{"name" : "planet1",
+		"src":"images/layers/parallax-space-big-planet1.png"},
+		{"name" : "planet2",
+		"src":"images/layers/parallax-space-big-planet2.png"},
+		{"name" : "planet3",
+		"src":"images/layers/parallax-space-big-planet3.png"},
+		
+		{"name" : "ItemSword",
+		"src":"images/gui/icons/items/W_Sword01.png"},
+		{"name" : "ItemRock",
+		"src":"images/gui/icons/items/I_Rock01.png"},
+		{"name" : "ItemAxe",
+		"src":"images/gui/icons/items/W_Axe013.png"},
+		
+		{"name" : "orbbot",
+		"src":"images/orb.png"}
 	],
 	
 	"scrolls": [
 		{
 			"type": "Scroll",
-			"name": "001",
-			"fullname": "Lorem ipsum et dolor sit amet",
-			"autor": "Lorem",
+			"name": "intro",
+			"fullname": "Wprowadzenie do podręcznika",
+			"autor": "Łukasz Lamża",
 			"img": "images/gui/untitled.png",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"desc": "Ten dokument zwięźle opisuje strukturę tego podręcznika i sposób korzystania z niego.",
 			"url": null	
 		},
 		{
 			"type": "Scroll",
-			"name": "002",
-			"fullname": "dolor sit amet",
-			"autor": "Lorem",
+			"name": "kolektor1",
+			"fullname": "Big Dish - materiały zaawansowane",
+			"autor": "Frank Jackson",
 			"img": "images/gui/untitled.png",
-			"desc": "Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
-			"url": null	
+			"desc": "Ten link prowadzi do strony poświęconej badaniom nad kolektorem Big Dish.",
+			"url": "http://stg.anu.edu.au/research/cst/receiver-usasec.php"
 		},
+		{
+			"type": "Scroll",
+			"name": "kolektor0",
+			"fullname": "Big Dish - materiały podstawowe",
+			"autor": "Frank Jackson",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten link prowadzi do strony na Wikipedii wyjaśniającej, czym są kolektory słoneczne.",
+			"url": "https://pl.wikipedia.org/wiki/Kolektor_s%C5%82oneczny"
+		},
+		
 		{
 			"type": "Book",
 			"name": "003",
@@ -34,26 +156,129 @@
 			"img": "images/gui/untitled.png",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
 			"url": "docs/historia pieniądza.pdf"	
+		},
+		{
+			"type": "Book",
+			"name": "popper",
+			"fullname": "O 'Społeczeństwie otwartym' Poppera",
+			"autor": "Karl Popper",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten krótki tekst wyjaśnia, czym jest 'społeczeństwo otwarte' według Karla Poppera.",
+			"url": "docs/historia pieniądza.pdf"	
+		},
+		{
+			"type": "Book",
+			"name": "kartez",
+			"fullname": "O duszy, ciele i szyszynce",
+			"autor": "Kartezjusz",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten krótki tekst wyjaśnia, jak Kartezjusz widział powiązanie duszy z ciałem i jaką rolę odgrywa tu tajemniczy kulisty organ zwany szyszynką...",
+			"url": "docs/historia pieniądza.pdf"	
+		},		
+		{
+			"type": "Book",
+			"name": "hawking",
+			"fullname": "O czasie i przestrzeni",
+			"autor": "Stephen Hawking",
+			"img": "images/gui/untitled.png",
+			"desc": "Zwój ten zawiera krótki opis problematyki czasu i przestrzeni w fizyce współczesnej.",
+			"url": "docs/historia pieniądza.pdf"	
 		}		
+		
 	],
 	"items": [
 		{
-			"type": "Generic Item",
-			"name": "001",
-			"fullname": "Loreminator",
-			"autor": "Lorem",
+			"type": "Argument",
+			"name": "demon",
+			"fullname": "Demon Kartezjusza",
+			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"icon":"ItemSword",
+			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'O złośliwym demonie' w rozdziale 'Skąd wiesz?').",
 			"url": null	
 		},
+
+		{
+			"type": "Argument",
+			"name": "russell",
+			"fullname": "Fundament Russella",
+			"autor": "Bertrand Russell",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemSword",
+			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'O wiedzy bezpośredniej' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+
+		{
+			"type": "Argument",
+			"name": "popper",
+			"fullname": "Falsyfikator Poppera",
+			"autor": "Karl Popper",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemSword",
+			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'O solidnej nauce' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "james",
+			"fullname": "Doświadczenie Jamesa",
+			"autor": "William James",
+			"img": "images/gui/untitled.png",
+			"icon":"ItemAxe",
+			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'O doświadczeniu religijnym' w rozdziale 'Skąd wiesz?'.",
+			"url": null	
+		},
+
 		{
 			"type": "Generic Item",
 			"name": "LearnLink",
 			"fullname": "Learn Link",
 			"autor": "Lorem",
 			"img": "images/gui/untitled.png",
+			"icon":"ItemRock",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"url": null	
 		}			
+	],
+	"achievments": [
+		{
+			"comment":"0",
+			"level": 1,
+			"fullname": "TEST0",
+			"icon":"book",
+			"desc": "testowa0"
+		},
+		{
+			"comment":"1",
+			"level": 1,
+			"fullname": "TEST1",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "testowa1"
+		},
+		{
+			"comment":"2",
+			"level": 2,
+			"fullname": "TEST2",
+			"hidden":true,
+			"icon":"ItemSword",
+			"desc": "testowa2"
+		},
+		{
+			"comment":"3",
+			"level": 0,
+			"fullname": "Hennie!",
+			"icon":"book",
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+		},
+		{
+			"comment":"4",
+			"level": 1,
+			"fullname": "Loreminator",
+			"icon":"ItemSword",
+			"desc": "444Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+		}
 	]
 }

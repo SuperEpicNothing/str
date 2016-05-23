@@ -1,0 +1,741 @@
+{
+	"meta":
+		{
+		"bg":"kronor",
+		"current":0,
+		"actor":"kartezjusz"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Dzień dobry, Kartezjuszu!"}
+		]	   
+	},
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Co Cię tu sprowadza?"
+			}
+		],
+		"options":[
+			{"target": 23, "text": "[playerGender {Chciałbym|Chciałabym}] przedyskutować z Tobą pewną sprawę..."},
+			{"target": 2, "text": "Co nowego, Kartezjuszu?"},
+			{"target": 2, "text": "Co robisz w Sztokholmie?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Cóż, zostałem zaproszony do Sztokholmu przez królową szwedzką, Krystynę. Teraz mamy koniec grudnia 1649 roku, więc siedzę tu już... dobrych parę miesięcy."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "I jak? Podoba Ci się w Szwecji?"},
+			{"target": 9, "text": "Nad czym pracujesz?"},
+			{"target": 23, "text": "Hm, wróćmy może do tej kwestii, którą chciałbym z Tobą przedyskutować...", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz kicha głośno] Hm... powiem Ci szczerze, tajemniczy Wędrowcze, że nie podoba mi się tutaj. Szwecja jest zbyt zimna i nieprzyjazna - a królowa Katarzyna każe mi wstawać o piątej rano..."
+			}
+		],
+		"options":[
+			{"target": 4, "text": "To przecież piękna pora!"},
+			{"target": 7, "text": "Piąta rano?! Toż to wariactwo!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Hm, masz więc inną konstytucję niż ja, młody człowieku. Rano najlepiej mi się śpi, zaś pięciogodzinne lekcje filozofii w zimnym, wietrznym zamku Tre Kronor prawdziwie mnie wykańczają..."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Hm, porozmawiaj z Katarzyną, może zgodzi się przesunąć lekcje... albo chociaż lepiej ogrzewać swoje komnaty?", "height":2},
+			{"target": 8, "text": "Nie bądź mięczakiem, Kartezjuszu! Nie pozwól, żeby ciało stanęło na przeszkodzie rozwojowi duszy!", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Myślałem nad tym, Wędrowcze... ale jakim sposobem przekonać Katarzynę, że to nie są tylko moje fanaberie?"
+			}
+		],
+		"options":[
+			{"target": 6, "text": "[TEST] Powiedz jej, że ciało jest sprzęgnięte z duszą - i że rozwój duszy może nastąpić tylko wtedy, gdy ciało jest dobrze ogrzane - podobnie jak roślina nie wzejdzie na mrozie.", "height":2},
+			{"target": 8, "text": "Przykro mi, ale nie mam pojęcia, Kartezjuszu. Musisz chyba poradzić sobie sam.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Hmhm... Słusznie prawisz. Tak chyba zrobię... to zimno doprowadza mnie do pasji. Dziękuję, Wędrowcze! W czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Nie ma sprawy. Powiedz mi jeszcze, nad czym ostatnio pracujesz?"},
+			{"target": 23, "text": "No więc chciałbym przedyskutować z Tobą pewną kwestię..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Jesteśmy więc tego samego zdania... te poranne pobudki i te zimne komnaty mnie wykańczają."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Musisz koniecznie porozmawiać z Katarzyną! Przecież to jest niebezpiecznie dla zdrowia!"},
+			{"target": 9, "text": "Współczuję. A nad czym ostatnio pracujesz?"},
+			{"target": 23, "text": "Hm, wróćmy może do kwestii, którą chciałym z Tobą przedyskutować..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Może masz rację... [Kartezjusz obciera nos chusteczką.] Chyba najlepiej wezmę się w garść. A w czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Jestem jeszcze ciekaw, nad czym ostatnio pracujesz?"},
+			{"target": 23, "text": "No więc chciałbym przedyskutować z Tobą pewną kwestię..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Na prośbę Katarzyny piszę krótką rozprawę pt. [']Namiętności duszy['] - pierwsza wersja już powstała, ale nie jestem jeszcze do końca z niej zadowolony..."
+			}
+		],
+		"options":[
+			{"target": 10, "text": "[']Namiętności duszy[']? Hehe... czy to romans?"},
+			{"target": 13, "text": "Czego dotyczy to dzieło?"},
+			{"target": 23, "text": "Hm, tak... Wróćmy może do kwestii, którą chciałbym z Tobą przedyskutować."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz spogląda w oburzeniu]Oczywiście, że nie! Doprawdy, wiele się jeszcze musisz nauczyć, zanim przyjdzie Ci rozmawiać o filozofii!"
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Ojtam... trochę poczucia humoru, Kartezjuszu!"},
+			{"target": 12, "text": "Przepraszam, Kartezjuszu. Głupi dowcip."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz patrzy na Ciebie z niesmakiem]Humory to chyba przepełniają Ci głowę, Wędrowcze!... Proponuję, abyśmy zapomnieli o tym nietakcie i rozpoczęli rozmowę na nowo."
+			}
+		],
+		"options":[
+			{"target": 0, "text": "...kliknij tutaj..."}
+		]	   
+	},
+
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz jest udobruchany]No już, już. Nie winię Cię, to nieludzkie zimno potrafi zamieszać w głowie bardziej niż najpodlejsza niemiecka gorzałka... W czym więc mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "Wróćmy może do Twego nowego dzieła. O czym ono traktuje?"},
+			{"target": 23, "text": "No więc chciałbym przedyskutować z Tobą pewną kwestię."}
+		]	   
+	},
+
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Cóż, dotyczy ono tego, co fascynuje mnie od zawsze - związków między duszą i ciałem. No bo zobacz - jak to jest, że niematerialna dusza może wpływać na materialne ciało? Jak to jest, że namiętność mojej duszy - choćby moja miłość do grzanego miodu - jest w stanie skierować moją rękę ku dzbanowi miodu?..."
+			}
+		],
+		"options":[
+			{"target": 14, "text": "Nie widzę problemu, Kartezjuszu!"},
+			{"target": 14, "text": "Mów dalej..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Spójrz: przecież ruch ciała materialnego może nastąpić tylko poprzez nacisk ze strony innego ciała materialnego. Ciało porusza się, ponieważ napiera na nie powierzchnia pewnego ciała. Jakżeż coś, co nie ma rozciągłości, może napierać na inne ciało?"
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Rozciągłości?"},
+			{"target": 16, "text": "Skoro to niemożliwe, to może po prostu nie ma duszy?"},
+			{"target": 20, "text": "Dusza na pewno jest scalona w jakiś sposób z ciałem w mózgu!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Tak, rozciągłości. Uważam, że wszystkie rzeczy dzielą się na rozciągłe i nierozciągłe. Rzeczy rozciągłe to te, które [']rozciągają['] się w przestrzeni. Zajmują pewien obszar przestrzeni. Mają objętość. Są częścią świata przyrody. Ogółem określam je jako [']res extensa[']. Nierozciągła jest na przykład dusza, ponieważ nie jest jednym z ciał materialnych."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "Hm, a nie prościej przyjąć, że duszy nie ma?"},
+			{"target": 20, "text": "Dusza na pewno jest po prostu sklejona jakoś z ciałem, na przykład w mózgu!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz uśmiecha się szeroko] [']Nie ma duszy[']! Świetny dowcip, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 17, "text": "Ale ja mówię poważnie!"},
+			{"target": 23, "text": "[Spoglądam podejrzliwie] Hm, to może zmieńmy temat... mam sprawę do obgadania."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz spogląda podejrzliwie] Jakżeż miałoby nie być duszy? Jakim więc sposobem Bóg miałby się z nami komunikować? Jakim sposobem mógłbym z wolnością decydować o sobie?"
+			}
+		],
+		"options":[
+			{"target": 18, "text": "Hm, [playerGender {sam|sama}] właściwie nie wiem..."},
+			{"target": 19, "text": "Wszystko to materia, Kartezjuszu!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Niechybnie! Jak bowiem wiedzieć coś, co jest niedorzeczne... Nic to, w czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Mam pewną sprawę do przedyskutowania z Tobą..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz otwiera szeroko oczy] I dusza również miałaby być materialna?! I myśl, którą w tej chwili powziąłem? I to, że czuję w tej chwili ciepło (chwała Bogu za ten rozpalony kominek...)? Myślę, Wędrowcze, że za stary już jestem na takie wariactwa... pojedź do Paryża, młody człowieku, tam znajdziesz rozmówców skłonnych takim ideom."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Jak tam sobie uważasz, Kartezjuszu. Wróćmy może do kwestii, którą chciałem przedyskutować", "height":2}
+			]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Otóż to! Tak właśnie rozumuję, Wędrowcze! We Francji i we Włoszech krajaliśmy mózgi, aby odkryć tajemnice duszy, i jest tam pewien organ, który wydaje się być stworzony do tego celu. Zwiemy go organem szyszkowym - z racji swego podobieństwa do szyszki - albo [']szyszynką][']."
+			}
+		],
+		"options":[
+			{"target": 22, "text": "O, powiedz mi coś więcej na ten temat!"},
+			{"target": 21, "text": "[TEST]Szyszynka, Kartezjuszu, jest gruczołem. Wytwarza między innymi melatoninę."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz patrzy na Ciebie z zadziwieniem][']Gruczołem['], powiadasz. [']Melatoninę['], powiadasz... Wiele skrywasz w sobie tajemnic, Wędrowcze!... Czuję jednak, że nie w pełni pojąłbym rzeczy, które jesteś gotów mi opowiadać. Pozwól staremu człowiekowi na to, by pozostał w świecie, w którym przyszedł na świat."
+			}
+		],
+		"options":[
+			{"target": 22, "text": "Skoro tak chcesz, Kartezjuszu. A co Ty sądzisz o szyszynce?"}
+		]	   
+	},
+
+	{
+		"COMMENT":"22",
+		"events":[
+			{"type":"give","time":4600,"book":"kartez"},
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz spogląda stojący w rogu zegar mechaniczny] Wiesz, Wędrowcze, nasz czas niedługo dobiegnie końca. Przyjmij ode mnie ten oto zwój, znajdziesz tam odpowiedzi na nurtujące Cię pytania..."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Dzięki wielkie! Rzeczywiście, późno już. Wróćmy może do sprawy, z którą tu przyszedłem", "height":2}
+		]	   
+	},
+
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A jaką to właściwie kwestię chcesz omówić? Który mój tekst tak Cię pobudził, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 24, "text": "[']Medytacje o filozofii pierwszej[']!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Cóż, wielu pyta mnie o tę książeczkę... Na czym polega problem?"
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Mam pytanie do pewnego określonego fragmentu..."},
+			{"target": 48, "text": "Sam tekst rozumiem, ale mam pytanie natury ogólnej."}
+		]	   
+	},
+
+	{
+		"COMMENT":"25",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"O którym fragmencie porozmawiać?"
+			}
+		],
+		"options":[
+			{"target": 26, "text": "O tym, że niepewne są dane zmysłowe i cielesne."},
+			{"target": 38, "text": "O tym, by nie ufać nawet matematyce, i o Złym Demonie."},
+			{"target": 42, "text": "O tym, że muszę z konieczności istnieć ja sam."},
+			{"target": 48, "text": "Chyba już wszystko rozumiem, możemy iść dalej."}
+		]	   
+	},
+
+	{
+		"COMMENT":"26",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[']Wszystko, co dotychczas uważałem za najbardziej prawdziwe i uzasadnione, przyjąłem od zmysłów lub poprzez zmysły...['] Jakie Cię trapią wątpliwości?"
+			}
+		],
+		"options":[
+			{"target": 27, "text": "Ja osobiście uważam, że najpewniejsze rzeczy pochodzą z rozumu, a nie ze zmysłów.", "height":2},
+			{"target": 28, "text": "Myślę, że temu, co mówią zmysły, nie da się jednak zaprzeczyć..."},
+			{"target": 37, "text": "Co to są te [']czarne wapory żółci[']?!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"27",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Och, to nie problem. Ja też w gruncie rzeczy uważam, że rozum jest pewniejszy od zmysłów! W [']Medytacjach['] szedłem jednak po kolei - aby nic nie uronić i o niczym nie zapomnieć. Nie ma zresztą znaczenia, co uznamy za pierwsze, a co za drugie - istotne, że poznanie rozumowe także jest wątpliwe!"
+			}
+		],
+		"options":[
+			{"target": 28, "text": "I to właśnie wydaje mi się być podejrzane..."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"28",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Nie przekonuje Cię mój argument, że mogę w tej chwili śnić albo mieć omamy?"
+			}
+		],
+		"options":[
+			{"target": 29, "text": "Nie, nie przekonuje mnie. Przecież wiem, kiedyś śnię, a kiedy nie śnię!", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oj, nie wydaje mi się, abyś to [playerGender {wiedział|wiedziała}]. Zresztą, sen to zresztą najmniejszy problem. Zauważ, że osoby mające zaćmiony umysł, doznające halucynacji nie zdają sobie sprawy z tego, że to, co widzą, nie istnieje. Czy możesz mieć absolutną pewność, że jesteś zdrów na umyśle?"
+			}
+		],
+		"options":[
+			{"target": 31, "text": "Hm, chyba nie mogę być pewien do końca..."},
+			{"target": 33, "text": "Wydaje mi się, że tak..."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"30",
+		"events":[
+			{"type":"give","time":4600,"item":"demon"},
+			{"type":"dialog","name":"Kartezjusz","time":5000,"timepadding":0,
+			"text":"Skoro wszystko już jasne, weź, proszę, ode mnie ten Argument i niech Ci on dzielnie służy. Bywaj!"
+			}
+
+		],
+		"options":[
+			{}
+
+		]	   
+	},
+	
+	{
+		"COMMENT":"31",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Otóż to. Ba, to właśnie osoby, które są najsilniej pomieszane, z największą pewnością twierdzą zawsze, że są zdrowe na umyśle! Sam chyba rozumiesz, dlaczego nie wolno ufać rozumowi, jeżeli szukamy źródła rzeczy NAPRAWDĘ niepodważalnych."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "No tak... wróćmy może do innych fragmentów."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"32",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Jakie więc masz wąptliwości? NIEUŻYWANY!!!"
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Żadnych. Chyba rozumiem już wszystko."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"33",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Widzisz, ale to właśnie osoby, które są najsilniej pomieszane, z największą pewnością twierdzą zawsze, że są zdrowe na umyśle!"
+			}
+		],
+		"options":[
+			{"target": 34, "text": "Twierdzisz więc, że jestem szaleńcem?!"},
+			{"target": 25, "text": "Chyba już rozumiem, możemy wrócić do innych fragmentów."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"34",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oj, nie. Tego przecież nie wiem. Twierdzę tylko, że [playerGender {mógłbyś|mogłabyś}] być szaleńcem, a to wielka różnica. Tej możliwości nie sposób zaprzeczyć!..."
+			}
+		],
+		"options":[
+			{"target": 35, "text": "[TEST UPARTOŚĆ?] A nie ma na to jakichś testów psychologicznych?"},
+			{"target": 25, "text": "Chyba mnie przekonałeś, Kartezjuszu. Wróćmy do Twojego tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"35",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Uparty jesteś, Wędrowcze, ale to dobrze. Pamiętaj, że mówimy o możliwości czysto logicznej. Nie zastanawiamy się, jak bardzo jest to prawdopodobne. Jeśli istnieje jakikolwiek scenariusz, choćby najbardziej nieprawdopodobny, który nie jest wewnętrznie sprzeczny, to znaczy, że coś jest możliwe."
+			}
+		],
+		"options":[
+			{"target": 36, "text": "..."}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"36",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Mówisz, że są testy psychologiczne. Niech i tak będzie. Jeśli natomiast istnieje choćby cień szansy, że Twoje szaleństwo nie zostanie wykryte przez ten test, że ktoś wkradnie się do gabinetu i sfałszuje wyniki, że psycholog pomyli się... choćby minimalna szansa - to musimy uznać, że możliwym jest, abyś był szaleńcem. Jasne?"
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Cóż, skoro chwytamy się naprawdę WSZYSTKICH możliwości... Ech, wróćmy może do Twojego tekstu.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"37",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Jak dobrze wiesz, Wędrowcze, w organizmie człowieka krążą rozmaite humory: krew, żółć, flegma... wapory żółci to po prostu opary tegoż humoru, uderzające do głowy, powodujące szaleństwo."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Hm, w moich czasach nieco inaczej tłumaczy się szaleństwo, ale wróćmy może do Twojego tekstu, Kartezjuszu...", "height":2}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"38",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"To, że nie możemy ostatecznie ufać nawet matematyce, jest związane z możliwością istnienia Złośliwego Demona. Skoro mógłby istnieć taki Demon, to mogłoby być również tak, że zawsze, kiedy wydaje mi się, że coś obliczam, ów Demon podpowiada mi złe rozwiązanie i sprawia, że wydaje mi się, że mam rację..."
+			}
+		],
+		"options":[
+			{"target": 39, "text": "Nie wydaje mi się, aby mógł istnieć taki Demon."},
+			{"target": 41, "text": "Ale czym jest ów Demon?"},
+			{"target": 25, "text": "Chyba rozumiem, możemy wrócić do Twojego tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"39",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Musisz znowuż, Wędrowcze, pamiętać, że mówimy tutaj o czystej możliwości, nieistotne, jak mało prawdopodobnej. Jeśli uznasz, że przynajmniej minimalnie >>możliwe<< jest, aby istniał Bóg, to musisz też zgodzić się, że mogłaby istnieć istota podobna do Boga pod względem mocy, ale złośliwie podpowiadająca nam nieprawdy."
+			}
+		],
+		"options":[
+			{"target": 40, "text": "Ale czy wszechmoc nie idzie w parze z wszechdobrocią?"},
+			{"target": 41, "text": "No ale czym właściwie miałby być ów Demon?"}
+		]	   
+	},
+
+	
+	{
+		"COMMENT":"40",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Dobrze rozumujesz, Wędrowcze, jednak dla naszych potrzeb w zupełności wystarczy, aby >>mogła<< nie iść w parze. Mnie też wydaje się, że istota o boskiej mocy powinna również posiadać boską mądrość i dobroć... ale dla potrzeb mojego doświadczenia myślowego wystarczy uznać, że >>mogłoby<< tak nie być."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Skoro już czepiam się każdej możliwości... OK, wróćmy może do Twojego tekstu...", "height":2},
+			{"target": 41, "text": "A czym konkretnie miałby być ten Demon?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"41",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"To nie ma znaczenia, czym konkretnie byłby ów Demon. Jeśli chcesz, nadaj mu imię. Dla mnie jest on tylko czystą logiczną ewentualnością, którą przywołuję dla celów argumentu filozoficznego. Nic więcej."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "OK, wróćmy może do Twojego tekstu."}
+		]	   
+	},
+	
+	
+	{
+		"COMMENT":"42",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oczywiście, że muszę istnieć ja sam!"
+			}
+		],
+		"options":[
+			{"target": 43, "text": "Ale ja czy Ty, Kartezjuszu? Kto tak naprawdę istnieje?"},
+			{"target": 46, "text": "A czy Złośliwy Demon nie mógłby również tego fałszywie podpowiadać?", "height":2}
+		]	
+	},
+	
+	{
+		"COMMENT":"43",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"To nie ma znaczenia. Ważne, że istnieje jakieś [']Ja[']. Każda osoba rozważająca mój argument musi uznać, że istnieje ona sama."
+			}
+		],
+		"options":[
+			{"target": 44, "text": "Czyli nikt inny nie istnieje?!"},
+			{"target": 25, "text": "Aha, rozumiem, wróćmy może do Twojego tekstu"}
+		]	
+	},
+
+	{
+		"COMMENT":"44",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oj, teraz wychodzisz za daleko, Wędrowcze. Nic nie pisałem o kimś innym - że istnieje lub że nie istnieje. Napisałem tylko, że z całą pewnością istnieję tylko ja sam."
+			}
+		],
+		"options":[
+			{"target": 45, "text": "Czyli istnienie innych ludzi niż ja sam jest wątpliwe?"},
+			{"target": 25, "text": "OK, chyba pojąłem. Wróćmy może do Twojego tekstu"}
+		]	
+	},
+	
+	{
+		"COMMENT":"45",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oczywiście. Dokładnie tak samo niepewne, jak istnienie tego stołu lub tego krzesła."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Hm, być może wrócimy do tego jeszcze, ale na razie wróćmy do Twojego tekstu...", "height":2}
+		]	
+	},
+	
+	{
+		"COMMENT":"46",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A >>komu<< by to podpowiadał?"
+			}
+		],
+		"options":[
+			{"target": 47, "text": "Komukolwiek!"},
+			{"target": 25, "text": "No tak. Racja! Wróćmy więc do Twojego tekstu."}
+		]	
+	},
+	
+	{
+		"COMMENT":"47",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A więc ten ktoś z konieczności istnieje, skoro Demon Zwodniczy coś mu podpowiada. I tyle!"
+			}
+		],
+		"options":[
+			{"target": 25, "text": "No cóż, racja. Wróćmy może do Twojego tekstu..."}
+		]	
+	},
+
+	{
+		"COMMENT":"48",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Czy masz jeszcze jakieś inne wątpliwości?"
+			}
+		],
+		"options":[
+			{"target": 49, "text": "Czy Ty naprawdę uważasz, że istniejesz tylko Ty?"},
+			{"target": 25, "text": "Hm, chyba [playerGender {chciałbym|chciałabym}] jeszcze raz porozmawiać o tekście..."},
+			{"target": 30, "text": "Nie, wszystko wydaje mi się jasne."}
+		]	
+	},
+
+	{
+		"COMMENT":"49",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Oj, nie! Ja tylko twierdzę, że nie ma nic pewniejszego niż to, że istnieję Ja. To wcale nie oznacza, że z konieczności nie istnieją inni, albo stoły, albo krzesła!"
+			}
+		],
+		"options":[
+			{"target": 50, "text": "Ale ich istnienie jest wątpliwe?..."},
+			{"target": 48, "text": "No tak, rozumiem."}
+		]	
+	},
+	
+	{
+		"COMMENT":"50",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Tak, jest po prostu wątpliwe. A ja szukam rzeczy pewnych, aby na nich budować."
+			}
+		],
+		"options":[
+			{"target": 51, "text": "Ale jak można żyć, wątpiąc we wszystko z wyjątkiem siebie!"},
+			{"target": 48, "text": "No tak, rozumiem."}
+		]	
+	},
+	
+	{
+		"COMMENT":"51",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Mnie osobiście żyje się wspaniale, ponieważ wiem, że mój światopogląd oparty jest na niepowątpiewalnej prawdzie! Ale tak na co dzień nie przejmuję się tym przecież nadmiernie - czy zmieni cokolwiek w smaku mojego obiadu to, że będę powątpiewał w istnienie tego obiadu? W praktyce wszyscy >>zakładamy<<, że świat istnieje - po prostu dla prostoty."
+			}
+		],
+		"options":[
+			{"target": 48, "text": "To mnie trochę uspokoiło..."}
+		]	
+	}
+	
+	]
+}

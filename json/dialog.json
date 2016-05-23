@@ -1,51 +1,60 @@
 {
 	"meta":
 		{
-		"bg": "todo",
-		"current":0
+		"bg": "blackboard",
+		"current":0,
+		"actor":"tom",
+		"music":["breves_dies_hominis.ogg"]
 		},
 	"scenes": [
 	{
-		"_comment": "numersceny-0",
+		"COMMENT":"0",
 		"events":[
-			{"type":"hideoptions"},
-			{"type":"dialog","name":"Arystoteles","align":true,"scrollspeed":20,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			
+			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000,
+			"text":"A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż "
 			},
-			{"type":"pause","time":500},
-			{"type":"dialog","name":"Player","align":false,"scrollspeed":20,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000, "req":{"type":"skill","skill":0,"amt":3,"mode":">"}, 
+			"text":">0:3"
 			},
-			{"type":"showoptions"},
+			{"type":"dialog","name":"Tomke","time":3000,"timepadding":1000, "req":{"type":"skill","skill":3,"amt":3,"mode":"<"},
+			"text":"<3:3"
+			},
+			{"type":"give","time":4600,"item":"001"},
+			{"type":"give","time":4600,"book":"intro"},
+			{"type":"unlockAch","time":"4200","ach":0},
+			{"type":"unlockAch","time":"4200","ach":5},
+			{"type":"dialog","name":"[playerName]","time":5000,"timepadding":3000,
+			"text":"Lorem ipsum dolor sit amet, Czy kiedykolwiek się [playerGender {zastanawiałeś|zastanawiałaś}]. . Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
+			},
 			{"type":"pause","time":10},
-			{"type":"dialog","name":"","align":false,"scrollspeed":0,"acknowledged":true,
-			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus. Maecenas vestibulum dignissim nulla et porta. Maecenas eu risus rhoncus, euismod justo non, dignissim lacus. Vivamus suscipit, magna a placerat dictum, eros mi auctor ex, et volutpat metus urna a lorem. Sed nec. "
+			{"type":"question","name":"XYZXYZXYZXYZXYZXYZ","time":100,
+			"text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius venenatis mollis. Praesent dignissim lectus vel turpis placerat, et efficitur mi cursus."
 			}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"},
-			{"target": 1, "text": "blah blah"},
-			{"target": 2, "text": "blah blah blah blah... blah"}
+			{"target": 1, "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis diam tellus, a tristique neque pharetra sed. Etiam vel quam placerat, ullamcorper odio eget. Proin id molestie sem. Donec ac tellus quis.", "height":2},
+			{"target": 2, "text": "blah blah blah blah... blah", "height":3}
 		]	   
 	},
 	{
-		"_comment": "numersceny-1",
 		"events":[
-			{"type":"dialog","name":"Arystoteles","align":true,"text":"1"},
-			{"type":"pause","time":1000},
-			{"type":"showoptions"}
+			{"type":"dialog","name":"THE X","time":3000,"timepadding":2000,"color":"red",
+			"text":"1"
+			},
+			{"type":"change","time":0,"target":0,"req":{"type":"skill","skill":4,"amt":3}},
+			{"type":"change","time":0,"target":2}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"}
 		]	   
 	},
    {
-	   	"_comment": "numersceny-2",
 		"events":[
-			{"type":"dialog","name":"Arystoteles","align":true,"text":"2"
-			},
-			{"type":"pause","time":1000},
-			{"type":"showoptions"}
+		{"type":"question","name":"Arystoteles","time":1000,"timepadding":1000,
+			"text":"2"
+			}
 		],
 		"options":[
 			{"target": 0, "text": "blah blah blag again?"}

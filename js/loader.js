@@ -9,37 +9,11 @@ window.Object.defineProperty( Element.prototype, 'documentOffsetLeft', {
         return this.offsetLeft + ( this.offsetParent ? this.offsetParent.documentOffsetLeft : 0 );
     }
 } );
-CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
-    var lines = text.split("\n");
 
-    for (var i = 0; i < lines.length; i++) {
 
-        var words = lines[i].split(' ');
-        var line = '';
-
-        for (var n = 0; n < words.length; n++) {
-            var testLine = line + words[n] + ' ';
-            var metrics = this.measureText(testLine);
-            var testWidth = metrics.width;
-            if (testWidth > maxWidth && n > 0) {
-                this.fillText(line, x, y);
-                line = words[n] + ' ';
-                y += lineHeight;
-            }
-            else {
-                line = testLine;
-            }
-        }
-
-        this.fillText(line, x, y);
-        y += lineHeight;
-    }
-}
-
-function makeID(length)
-{
+function makeID(length){
     var text = "";
-    var possible = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var possible = "?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for( var i=0; i < length; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -47,90 +21,302 @@ function makeID(length)
     return text;
 }
 
-
+//Cookie Helper
+{
 function setCookie(name, value) {
-	console.log(name)
-  var cookie = [name, '=', JSON.stringify(value), '; domain=', window.location.host.toString(), '; path=/'].join('');
-  document.cookie = cookie;
-  console.log(cookie)
+	var d = new Date();
+	d.setTime(d.getTime() + (31*24*60*60*1000));
+	var cookie = [name, '=', JSON.stringify(value),';expires='+d.toUTCString(), '; domain=', window.location.host.toString(), '; path=/'].join('');
+	document.cookie = cookie;
 }
 function getCookie(name) {
+    function escape(s) { return s.replace(/([.*+?\^${}()|\[\]\/\\])/g, '\\$1'); };
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+    return match ? JSON.parse(match[1]) : null;
+}
+/*function getCookie(name) {
  var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
  result && (result = JSON.parse(result[1]));
  return result;
-}
+}*/
 function deleteCookie(name) {
   document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
 }
-
-var scrollValue = {top:0,left:0};
+}
+//var scrollValue = {top:0,left:0};
 
 var mouse ={}
-var Assets ={img:[],books:[],items:[]};
+if(Assets == undefined)
+var Assets ={loaded:false,img:[],books:[],items:[],achievments:[]};
+var option={volume:80,speed:0,wait:1,teach:false}
 var player;
-function loader(first){
-	console.log(first)
+var skills = {
+	fullNames:["Wiedza","Inteligencja","Empatia","Dowcip","Zręczność","Asertywność"],
+	colors:["#8bca17","#9dffff","#7373ff","#a3d900","#6c00d9","#ffd24c"],
+	names:"WIEDZA"
+	}
+	
+var menu = [false,false];
+function openGUI(id)
+{
+	console.log(id)
+	console.log(menu)
+	
+	//$('#guiPlayer').collapse()
+	//$('#guiItems').collapse();
 
-	if(first==1 ){
+
+	
+	$('#guiPlayer').collapse("hide");
+	$('#guiItems').collapse("hide");
+	
+	menu = [false,false]
+
+	menu[id]=true;
+	switch(id){
+		case 0:	$('#guiPlayer').collapse("show"); break;
+		case 1:	$('#guiItems').collapse("show"); break;
+	}
+	
+}
+function loader(){
+	
+
+	
+	if(Assets.loaded){
 	loadPlayer();
+	if(player==undefined){
+		Assets.loaded=false;
+		return;
+	}
 	loadItemMenu();
-	loadCanvas();
+	updateChapters();
+	updateHTMLText();
+	var pl = btoa(encodeURIComponent(JSON.stringify(player)).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+	return String.fromCharCode('0x' + p1);}))
+	console.log(player)
+	console.log(pl)
+	console.log(atob(pl))
+
+    var favicon = document.getElementById("favicon" )
+        favicon.width = 32;
+        favicon.height = 32;
+    
+    var fctx = favicon.getContext('2d');
+	    
+    // draw the image on the canvas (the user can't see it).
+    fctx.drawImage(Assets.img["players"],	
+	24*(player.appearance+(player.gender?0:3)), 0,
+	24,32,
+	4,0,24,32);
+    fctx.restore();
+      
+    // set the link's attribute to replace the icon
+    document.querySelector('#icon').setAttribute('href', favicon.toDataURL());
+	
+	window.requestAnimationFrame(animateNotifcations);
 	return
 	}
-	window.addEventListener("scroll", function(event) {
-    scrollValue.top = this.scrollY;
-    scrollValue.left =this.scrollX;
-	}, false);
+	 
+	
 	console.log(document.cookie);
 	loadAssets();
 }
-function loadPlayer()
-{
-	//create DEFAULT
-	player = {
+function loadPlayer(){
+
+	//LOAD 
+	if(document.cookie.indexOf("player") >= 0){
+		console.log("playerLoad")
+		player=getCookie("player");
+		savePlayer();
+
+	}else{
+			//create DEFAULT
+	/*player = {
 		name: "IAmError",
-		gender:true,
+		gender:false,
 		age:666,
-		appearance:[],
-		classType:"Vampire",
-		//Temp: S P E C I A L 1-10
-		stats:[2,6,3,7,9,8,3],
+		appearance:1,
+		stats:[2,2,2,2,2,2],
+		noftifications:[],
 		progress:{
 			lvl:0,
+			xp:0.5,
+			skillp:3,
 			chapters: [0,1]
 			},
 		books:[],
 		items:[],
-		achievements:["newbie"]
+		seen:[],
+		notificationsBooks:0,
+		notificationsItems:0,
+		achievements:[]
 		};
 		
-	//library trip
-	for(var book in Assets.books)
-	{
-		player.books.push(book);
+		//library trip
+		for(var book in Assets.books)
+		{
+			player.books.push(book);
+			player.notificationsBooks++
+		}
+		//raid nearby village
+		for(var item in Assets.items)
+		{
+			player.items.push(item);
+			player.notificationsItems++
+		}
+		*/
+		console.log(document.cookie.indexOf("player"));
+			var url = (document.location+"");
+	if(!url.contains("noplayer=0")){
+		var begin=url.split("?")[0];
+		if(document.cookie.indexOf("player") < 0)
+			begin+="?noplayer=0";
+		document.location=begin;
 	}
-	//raid nearby village
-	for(var item in Assets.items)
-	{
-		player.items.push(item);
 	}
-	//LOAD 
-	/*
-	if(document.cookie.indexOf("player") >= 0){
-		player=getCookie("player");
+}
+function createPlayer()
+{
+	var data = document.getElementById("playercreation").elements;
+	console.log(data.namedItem("name").value);
+	console.log(data.namedItem("gender").checked);
+	console.log(data.namedItem("apperance").value);
+	console.log(data.namedItem("teachmode").checked);
+	
+	player = {
+		name: data.namedItem("name").value,
+		gender:  data.namedItem("gender").checked,
+		age:666,
+		appearance: parseInt(data.namedItem("apperance").value),
+		stats:[2,2,2,2,2,2],
+		noftifications:[],
+		progress:{
+			lvl:0,
+			xp:0.5,
+			skillp:3,
+			chapters: [0,1]
+			},
+		books:[],
+		items:[],
+		seen:[],
+		notificationsBooks:1,
+		notificationsItems:0,
+		achievements:[]
+		};
+	option.teach=data.namedItem("teachmode").checked;
+	setCookie("options",option);
+	setCookie("player",player);
+	
+	var url = (document.location+"");
+	var begin=url.split("?")[0];
+	document.location=begin+"?p=0&pp=0";
+	
+}
+function animateNotifcations(time){
+	document.getElementById("guiSkillPNew" ).style.backgroundColor='rgba(147,180,38,'+(0.6+0.4*Math.sin(time/(250)))+')';
+	document.getElementById("guiSkillPNew" ).style.color='rgba(255,255,255,'+(0.6+0.4*Math.sin(time/250))+')';
+	document.getElementById("guiSkillPNew" ).innerHTML=player.progress.skillp;
+	document.getElementById("guiSkillPNew" ).style.visibility = player.progress.skillp<=0?"hidden":"visible";
+
+	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
+	
+	var img = document.getElementById("guiPlayerVisage" )
+	img.style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
+	img.style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
+
+ 
+
+	var newItems=document.getElementById('guiItemsNew');
+	newItems.style.backgroundColor='rgba(197,180,38,'+(0.6+0.4*Math.sin(time/250))+')';
+	newItems.style.color='rgba(255,255,255,'+(0.6+0.4*Math.sin(time/250))+')';
+	newItems.innerHTML=(player.notificationsBooks+player.notificationsItems)
+	newItems.style.visibility = (player.notificationsBooks+player.notificationsItems)<=0?"hidden":"visible";
+	window.requestAnimationFrame(animateNotifcations);
+}
+function skillpoints(n){
+	player.progress.skillp+=n;
+	savePlayer()
+}
+function playerxp(n){
+	player.progress.xp+=xp;
+	if(player.progress.xp>=1){
+		player.lvl++;
+		player.progress.xp--;
+		player.progress.skillp++;
+		playerxp(0);
+		return;
 	}
-	else{*/
-		setCookie("player",player);
-	//}
 	savePlayer();
 }
-function savePlayer()
-{
-	player.books.sort(function(a, b){console.log(player.books);return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
-	player.items.sort(function(a, b){console.log(player.items);if(Assets.items[a].type.localeCompare(Assets.items[b].type)==0){ return Assets.items[a].fullname.localeCompare(Assets.items[b].fullname)} else {return Assets.items[a].type.localeCompare(Assets.items[b].type)}});
 
+function removeNotification(type,name){
+
+		player.seen.push(type+name);
+		
+		if(type.toLowerCase()=="book")
+		player.notificationsBooks--
+		else
+		player.notificationsItems--
+	
+		savePlayer();
+}
+function addBook(name){
+
+	if(player.books.indexOf(name)<0){
+		player.books.push(name);
+		player.notificationsBooks++
+		notif.addNotif("book",name);
+		savePlayer();
+	}
+}
+function addItem(name){
+	if(player.items.indexOf(name)<0){
+		player.items.push(name);
+		player.notificationsItems++;
+		notif.addNotif("item",name);
+		savePlayer();
+	}
+}
+function unlockChapter(id){
+	console.log(id)
+	if(player.progress.chapters.indexOf(id)<0){
+			console.log(id)
+		player.progress.chapters.push(id);
+		notif.addNotif("chapter",id);
+		updateChapters()
+		savePlayer();
+	}
+}
+function savePlayer(){
+	console.log(savePlayer.caller)
+	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
+	player.items.sort(function(a, b)
+	{
+		if(Assets.items[a].type.localeCompare(Assets.items[b].type)==0)
+			{ return Assets.items[a].fullname.localeCompare(Assets.items[b].fullname)}
+		else 
+			{return Assets.items[a].type.localeCompare(Assets.items[b].type)}
+	});
 	setCookie("player",player);
 	repolulateItemMenu()
+}
+function updateChapters(){
+	for(var i =0;i<4;i++){
+		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
+		document.getElementById("pageButton"+i).className = ""+document.getElementById("disabledhyperlink").className;
+		}
+		else{
+		document.getElementById("pageButton"+i).className = ""+document.getElementById("enabledhyperlink").className;
+		}
+	}
+}
+function updateHTMLText(){
+	var textNodes = document.getElementsByClassName("texthandler")
+	for(var i=0;i<textNodes.length;i++)
+	{
+		textNodes[i].innerHTML=handleText(textNodes[i].innerHTML);
+	}
 }
 function loadAssets(){
 	var xmlhttp0 = new XMLHttpRequest();
@@ -148,46 +334,169 @@ function loadAssets(){
 		
 		var books = arr.scrolls;
 		for(var i=0;i<books.length;i++){
-		Assets.books[books[i].name]=books[i];
+			Assets.books[books[i].name]=books[i];
 		}
 		
 		var items = arr.items;
 		for(var i=0;i<items.length;i++){
-		Assets.items[items[i].name]=items[i];
+			Assets.items[items[i].name]=items[i];
 		}
-		for(var i=0;i<18;i++){
-		var item ={type: "Generic Item",
-			name: "001",
-			fullname: "Loreminator",
-			autor: "Lorem",
-			img: null,
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			"url": null};	
-		item.type=makeID(1);
-		item.name="000"+i;
-		item.fullname=makeID(item.fullname.length);
-		item.autor=makeID(item.autor.length);
-		item.desc=makeID(item.desc.length);
-		Assets.items[item.name]=item;
+		var achievments = arr.achievments;
+		for(var i=0;i<achievments.length;i++){
+			Assets.achievments[i]=achievments[i];
 		}
-		loader(1)
+
+		Assets.loaded=true
+		loader()
     }
 	};
-	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), false);
+	xmlhttp0.open("GET", "json/assets.json?t="+ (new Date().getTime()), true);
 	xmlhttp0.send();
 }
-
+function unlockAchievment(ach)
+{
+	if(player.achievements.indexOf(ach)<0){
+		player.achievements.push(ach);
+		notif.addNotif("achievment",ach);	
+		savePlayer();
+	}
+}
+// logic helper
+{
+function addMouseListener(elem,f){
+	elem.addEventListener("mousemove",  function(e) {
+		mouseChange(e,"mousemove")
+		if(f)
+		f();
+	},false);
+	elem.addEventListener("mousedown",  function(e) {
+		mouseChange(e,"mousedown")
+		if(f)
+	f();
+	},false);
+	
+	elem.addEventListener("mouseup",  function(e) {
+		mouseChange(e,"mouseup")
+		if(f)
+		f();
+	},false);
+	
+	elem.addEventListener("mouseout",  function(e) {
+		mouseChange(e,"mouseout")
+		if(f)
+		f();
+	},false);
+	
+	elem.addEventListener("mouseover",  function(e) {
+		mouseChange(e,"mouseover")
+		if(f)
+		f();
+	},false);
+	
+}
 function mouseChange(event,evtname){
 	mouse.target=(event.target);
-	mouse.x=(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
-	mouse.y=(event.pageY - event.target.documentOffsetTop - scrollValue.top);
+	var comstyle = window.getComputedStyle(event.target, null);
+	if(evtname=="mouseup" || evtname=="mousedown")
+	{
+	mouse.targetup=mouse.target;
+	mouse.up= evtname=="mouseup"
+	}
+	if(mouse.targetup!=mouse.target)
+		mouse.up=false;
+	mouse.isOver= evtname=="mouseover"? true: evtname=="mouseout"? false :mouse.isOver;
+	mouse.x=event.target.width*event.offsetX/parseFloat(comstyle.width);//(event.pageX - event.target.documentOffsetLeft - scrollValue.left);
+	mouse.y=event.target.height*event.offsetY/parseFloat(comstyle.height);//(event.pageY - event.target.documentOffsetTop - scrollValue.top);
 	mouse.buttons=(event.buttons);
-	mouse.detail=(event.detail);
+	//mouse.detail=(event.detail);
 	mouse.event=evtname;
-	//window.requestAnimationFrame(renderItemMenu);
+
 }
+function checkReq(req){
+	var result = {prefix:"",enabled:true};
+	
+	if(req != undefined)
+		switch(req.type)
+		{
+			case "skill":		
+						switch(req.mode)
+						{
+							default:
+							case ">":
+							result.enabled = player.stats[req.skill]>=req.amt;
+							result.prefix = "[ Test "+(skills.fullNames[req.skill])+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
+							break;
+							
+							case "<":
+							result.enabled = player.stats[req.skill]<=req.amt;
+							break;
+						}
+			break;
+			
+			case "hp":
+					result.enabled = boss.heroHp>=req.amt;
+					result.prefix = "[ HP : "+ boss.heroHp+"/"+req.amt+" ] ";
+			break;
+				
+			case "item":
+					result.enabled = player.items.indexOf(req.item)>-1;
+					result.prefix = "[ "+Assets.items[req.item].fullname+" ] ";
+			break;
+		}
+	return result;
+}
+function handleText(text,index){
+	
+	var end = text.indexOf(']',index)
+	var start = text.lastIndexOf('[',end)
+	
+	if(start<0 || end<0)
+		return text;
+	var value ="";
+	var stuff = text.substring(start+1,end).split(" ")
+	switch(stuff[0])
+	{
+		case "playerName":
+		{
+			value=player.name;
+		}break;
+		case "playerGender":
+		{
+			if(stuff.length <=1)
+			value=player.gender?"♂":"♀";
+			else
+			{
+				var ts =  text.indexOf('{',start+1+"playerGender ".length);
+				var te =  text.indexOf('}',ts);
+				var t = text.substring(ts+1,te);
+				value = t.split("|")[player.gender?0:1];
+			}
+		}break;
+		case "playerAge":
+		{
+			value=player.age;
+		}break;
+		case "playerLvl":
+		{
+			value=player.progress.lvl;
+		}break;
+		case "playerSkill":
+		{
+			value=player.stats[parseInt(stuff[1])];
+			if(!value){value="playerSkill"}
+		}break;
+		case "'":
+		{
+			value='"';
+		}break;
 
-
+		default:
+		value="["+text.substring(start+1,end)+"]";
+		break;
+	}
+	
+	return  handleText(text.substring(0,start)+value+text.substring(end+1,text.length),start+value.length);
+}
 
 function inBounds(x,y,w,h){
 	if(mouse.x>x&& mouse.x<x+w && mouse.y>y && mouse.y<y+h)
@@ -196,72 +505,4 @@ function inBounds(x,y,w,h){
 	else 
 	return false;
 }
-
-// graphic helper
-function drawButtonBG(ctx, x, y, width,height){
-
-	var type =0
-	if(inBounds(x,y,width,height))
-	{
-		type=104;
-		if(mouse.buttons==1)
-			type=52;
-	}
-	
-	ctx.drawImage(Assets.img["button"],0,type,10,52,x,y,10,height);
-	
-	for(var i =0;i<(width-20)/80-1;i++)
-	ctx.drawImage(Assets.img["button"],10,type,80,52,x+10+i*80,y,80,height);
-	
-	ctx.drawImage(Assets.img["button"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
-
-	ctx.drawImage(Assets.img["button"],90,type,10,52,x+width-10,y,10,height);
-}
-
-function drawScroll(ctx, x, y, width,height,scroll){
-	var rng = new Math.seedrandom(scroll.text);
-	
-	drawButtonBG(ctx, x, y, width,height)
-	ctx.fillStyle = "6f6f6a";
-	ctx.font = Math.round(height-10)+"px Arial";
-	ctx.textBaseline = "top";
-	ctx.wrapText(scroll.text.toLowerCase()+" : "+Math.floor(rng()*10),x+55,y+5,width-60,Math.round(height-10));
-	ctx.fill();
-	
-}
-
-
-function renderItemMenu(){
-	var ctx = item_context;
-	ctx.fillStyle="#222222"
-	ctx.fillRect(0,0,ctx.canvas.width ,ctx.canvas.height );
-	ctx.fill();
-	renderScrolls(ctx)
-}
-
-function renderScrolls(ctx){
-	//title card
-	ctx.fillStyle="#666666"
-	ctx.fillRect(0,0,ctx.canvas.width ,60 );
-	ctx.fill();
-	
-	ctx.font = 50+"px Aclonica";
-	ctx.fillStyle = "#fff";
-	ctx.textBaseline = "top";
-	ctx.wrapText("Scrolls:", 15,10, ctx.canvas.width,40);
-	
-	
-	for(var i=0;i<player.books.length;i++)
-	{
-		drawScroll(ctx,0,60+i*55,ctx.canvas.width-50,55,player.books[i]);
-	}
-	
-	//scroll
-	ctx.fillStyle="#333333"
-	ctx.fillRect(ctx.canvas.width-50,60,50,ctx.canvas.height/2-60 );
-	ctx.fill();
-	
-	ctx.fillStyle="#444444"
-	ctx.fillRect(ctx.canvas.width-50,60,50,60 );
-	ctx.fill();
 }

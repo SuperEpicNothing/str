@@ -1,0 +1,24 @@
+{
+	"meta":
+		{
+		"bg":"sandiego",
+		"current":0,
+		"actor":"churchland"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":"Witaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Witaj!"},
+			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
+		]	   
+	}
+	
+	]
+}

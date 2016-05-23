@@ -1,0 +1,137 @@
+{
+	"meta":
+		{
+		"bg": "krakow",
+		"current":0,
+		"actor":"lamza"
+		},
+	"scenes": [
+	{
+		"COMMENT":"0",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Pytaj, a spróbuję odpowiedzieć."
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Skąd wziął się ten komputer?", "height":4}
+		]	   
+	},
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Ze sklepu!"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Ale skąd wziął się w sklepie?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Z fabryki."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "A skąd wzięły się elementy, z których go złożono?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Z innych fabryk, na przykład obudowę wyprodukowano w fabryce plastiku, procesor w fabryce procesorów."
+			}
+		],
+		"options":[
+			{"target": 4, "text": "Skąd wziął się materiał na procesor?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Metal pochodzi z kopalni, gdzie wydobywa się rudy metali, a krzem prawdopodobnie z piasku."
+			}
+		],
+		"options":[
+			{"target": 5, "text": "A skąd wziął się ten piasek i te rudy metali?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Wszystko to są naturalnie ziemskie materiały, z których składa się nasza planeta."
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Skąd wzięła się nasza planeta?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Z pyłu galaktycznego. 4,5 miliarda lat temu pył ten pozlepiał się ze sobą, tworząc wszystkie planety skaliste, księżyce, asteroidy, komety i tym podobne ciała Układu Słonecznego."
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Hm. A skąd wziął się ten pył?","height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Z pierwiastków ciężkich produkowanych w sercach gwiazd z wodoru i helu. Gwiazdy całe życie zamieniają wodór na coraz to cięższe pierwiastki, a pod koniec życia wyrzucają go do przestrzeni galaktycznej, tworząc między innymi drobne ziarenka pyłu galaktycznego."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "To skąd wziął się ten wodór?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Dr Lamża","time":1000,"timepadding":0,
+			"text":"Powstał w pierwszych ułamkach sekund Wielkiego Wybuchu, z wcześniejszych cząstek elementarnych zwanych kwarkami."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Skąd wzięły się te kwarki?", "height":4}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"dialog","name":"Dr Lamża","time":5000,"timepadding":0,
+			"text":"Nikt tego nie wie."
+			}
+		],
+		"options":[]	   
+	}
+	]
+}

@@ -1,0 +1,18 @@
+﻿#guiPlayer{
+	max-height: 100vh;
+	font-family: Aclonica;
+	border-color: #8c8c8c;
+	color:#ffffbf;
+	width: 70%;
+	position: absolute;
+	z-index:999;
+	border-radius: 4px;
+	top:50px;
+	left: 50%;
+	margin: 0px 0px 0px -35%; 
+	background-color:#1a1a1a;
+}
+#guiPlayerMain
+{
+	width:100%;
+}
