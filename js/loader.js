@@ -195,7 +195,7 @@ function createPlayer()
 			lvl:0,
 			xp:0.5,
 			skillp:3,
-			chapters: [0,1]
+			chapters: [[0,1],[],[]]
 			},
 		books:[],
 		items:[],
@@ -278,12 +278,13 @@ function addItem(name){
 		savePlayer();
 	}
 }
-function unlockChapter(id){
-	console.log(id)
-	if(player.progress.chapters.indexOf(id)<0){
-			console.log(id)
-		player.progress.chapters.push(id);
-		notif.addNotif("chapter",id);
+function unlockChapter(i,id){
+	console.log("unlocking"+i+":"+id)
+	if(player.progress.chapters[i] == undefined)
+		player.progress.chapters[i] = [];
+	if(player.progress.chapters[i].indexOf(id)<0){
+		player.progress.chapters[i].push(id);
+		notif.addNotif("chapter",{id:id,i:i});
 		updateChapters()
 		savePlayer();
 	}
@@ -302,13 +303,21 @@ function savePlayer(){
 	repolulateItemMenu()
 }
 function updateChapters(){
-	for(var i =0;i<3;i++){
-		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
-		document.getElementById("pageButton"+i).className = ""+document.getElementById("disabledhyperlink").className;
+	var enabled = ""+document.getElementById("enabledhyperlink").className;
+	var disabled = ""+document.getElementById("disabledhyperlink").className;
+	for(var i =0;i<player.progress.chapters.length;i++){
+		
+		document.getElementById("pageButton"+i).className = (player.progress.chapters[i].length>0 || option.teach) ? enabled : disabled;
+		
+		for(var j =0;j<7;j++)
+		{
+			var l = document.getElementById("lesson"+i+"-"+j)
+			if(l == undefined)
+				continue;
+			l.className= player.progress.chapters[i].indexOf(j)>=0 || option.teach? enabled:disabled;
 		}
-		else{
-		document.getElementById("pageButton"+i).className = ""+document.getElementById("enabledhyperlink").className;
-		}
+
+		document.getElementById("test"+i).className= player.progress.chapters[i].indexOf('test')>=0 || option.teach? enabled:disabled;
 	}
 }
 function updateHTMLText(){
@@ -427,23 +436,23 @@ function checkReq(req){
 						{
 							default:
 							case ">":
-							result.enabled = player.stats[req.skill]>=req.amt;
+							result.enabled = player.stats[req.skill]>=req.amt || option.teach;
 							result.prefix = "[ Test "+(skills.fullNames[req.skill])+": "+player.stats[req.skill]+"/"+req.amt+" ] ";
 							break;
 							
 							case "<":
-							result.enabled = player.stats[req.skill]<=req.amt;
+							result.enabled = player.stats[req.skill]<=req.amt || option.teach;
 							break;
 						}
 			break;
 			
 			case "hp":
-					result.enabled = boss.heroHp>=req.amt;
+					result.enabled = boss.heroHp>=req.amt || option.teach;
 					result.prefix = "[ HP : "+ boss.heroHp+"/"+req.amt+" ] ";
 			break;
 				
 			case "item":
-					result.enabled = player.items.indexOf(req.item)>-1;
+					result.enabled = player.items.indexOf(req.item)>-1 || option.teach;
 					result.prefix = "[ "+Assets.items[req.item].fullname+" ] ";
 			break;
 		}

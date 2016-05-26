@@ -64,10 +64,10 @@
 					for($j=0 ;$j<count($submenu[$i]); $j++) {
 						/*separator po wstępie	
 						*href='?p=".$i."&pp=".$j."*/
-						echo "\n\t\t<li><a class='hvr-curl-bottom-right enabledLink' href='?p=".$i."&pp=".$j."' >".trim($submenu[$i][$j])."</a></li>";
+						echo "\n\t\t<li><a id='lesson".$i."-".$j."'class='hvr-curl-bottom-right enabledLink' href='?p=".$i."&pp=".$j."' >".trim($submenu[$i][$j])."</a></li>";
 					/*echo " <li><a  id='submenuLink".$page."-".$i."' class=".($i==$subpage && $subpage!="test" ?"'active'":"'enabledSubmenuLink'")." href='?p=".$page."&pp=".$i."'>".$submenu[$i]."</a></li>";
 					*/}
-					echo "<li><a href='?p=".$i."&pp=test' class='hvr-curl-bottom-right enabledLink".($subpage=="test" ?"'active'":"''")."' >Starcie z Konfuzjuszem</a></li>";
+					echo "<li><a id='test".$i."' href='?p=".$i."&pp=test' class='hvr-curl-bottom-right enabledLink".($subpage=="test" ?"'active'":"''")."' >Starcie z Konfuzjuszem</a></li>";
 					echo "\n\t</ul></li>";
 				}
 

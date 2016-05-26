@@ -11,7 +11,7 @@ function optionOpen(){
 function optionUpdate()
 {
 	document.getElementById("volumeL").innerHTML="Głośność: "+document.getElementById("volume").value+"%";
-	document.getElementById("speedL").innerHTML="Prędkość pisania: x"+(document.getElementById("speed").value);
+	document.getElementById("speedL").innerHTML="Czas wyświetlania tekstu: x"+(document.getElementById("speed").value);
 	document.getElementById("waitL").innerHTML="Czas na przeczytanie: x"+(document.getElementById("wait").value);
 	document.getElementById("wait").style.visibility=document.getElementById("autoskip").checked?"visible":"hidden";
 	document.getElementById("waitL").style.visibility=document.getElementById("wait").style.visibility;
@@ -39,5 +39,8 @@ function optionDelete(){
 	deleteCookie("options");
 	option={volume:80,speed:1,teach:false,autoskip:true,mute:false};
 	$("#itemModal").modal("hide");
-	location.reload(); 
+	
+	var url = (document.location+"");
+	var begin=url.split("?")[0];
+	document.location=begin+"?noplayer=0";
 }

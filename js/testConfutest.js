@@ -435,6 +435,11 @@ function processEvent(progress){
 			else
 			unlockAchievment(evt.ach);
 		break;
+		
+		case "unlockChap":
+			renderData.type="unlockChap"			
+			unlockChapter(evt.chapter,evt.lesson);
+		break;
 	}
 }
 

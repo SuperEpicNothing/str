@@ -128,7 +128,7 @@ function drawStat(x,y,stat){
 	
 	cUtils.imageSmoothing(c1,false);
 	//stat count
-	for(var i=0;i<player.stats[stat];i++){		
+	for(var i=0;i< (option.teach ? maxskill : player.stats[stat]);i++){		
 		c1.drawImage(Assets.img["GUIplayer"],
 			896,h*stat,
 			w,h,			
@@ -136,7 +136,7 @@ function drawStat(x,y,stat){
 	}
 
 	
-	if(player.stats[stat]<maxskill && player.progress.skillp>0)
+	if(player.stats[stat]<maxskill && player.progress.skillp>0 && !option.teach)
 	{
 		//border+body
 		var i = player.stats[stat]
@@ -170,13 +170,13 @@ function drawStat(x,y,stat){
 		c1.textBaseline = "top";
 		c1.textAlign="left"; 	
 		c1.strokeStyle="rgba(60,60,60,0.7)";
-		var l = c1.measureText(skills.fullNames[stat]+" : "+player.stats[stat]).width+10;
+		var l = c1.measureText(skills.fullNames[stat]+" : "+(option.teach?maxskill:player.stats[stat])).width+10;
 		c1.strokeRect(Math.min(mouse.x,elem1.width-l),mouse.y-40,l,40);
 		c1.stroke();
 		c1.fillStyle="rgba(0,0,0,0.7)";
 		c1.fillRect(Math.min(mouse.x,elem1.width-l),mouse.y-40,l,40);
 		c1.fill();
 		c1.fillStyle="#ffffbf";
-		c1.fillText( skills.fullNames[stat]+" : "+player.stats[stat],Math.min(mouse.x+5,elem1.width-l+5),mouse.y-35);	
+		c1.fillText( skills.fullNames[stat]+" : "+(option.teach?maxskill:player.stats[stat]),Math.min(mouse.x+5,elem1.width-l+5),mouse.y-35);	
 	}
 }
