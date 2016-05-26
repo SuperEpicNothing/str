@@ -79,10 +79,14 @@ function drawButtonskip(x, y,mode,enabled){
 
 	else if(inBounds(0,40,elem.width, elem.height-40)){
 		type=40;
-		if(mouse.up && mouse.target==elem && enabled)
+		if(mouse.up && mouse.target==elem && enabled && mouse.prepare)
 		skip(mode)
-		if(mouse.buttons>0)
-		type=20;
+		if(mouse.buttons>0){
+			type=20;
+			mouse.prepare=true;
+		}
+		else 
+			mouse.prepare=false;
 	}
 	if(mode==2)
 		mode=1
@@ -95,7 +99,7 @@ function drawButtonskip(x, y,mode,enabled){
 }
 function skip(mode){
 		mouse.up=false;
-
+		mouse.prepare=false;
 	if(mode == -1)
 		renderData.skipmode=-1;
 	if(mode == 0){
@@ -107,10 +111,91 @@ function skip(mode){
 		console.log(renderData)
 	}
 }
+cUtils.drawButtonImg = function(context,elem,ix,iy, img,x, y, width,height,f,id){
+	var type =0;
+	if(inBounds(x,y,width,height)){
+		type=1;
 
-function drawButtonBG(x, y, width,height,enabled,f,id){
-
+		if(mouse.up && mouse.target==elem && mouse.prepare){
+			if(f != undefined)
+			f(id)
+		mouse.up=false;
+		mouse.prepare=false;
+		}
+		
+		if(mouse.buttons>0)
+		{
+		mouse.prepare=true;
+		type=2;
+		}
+		else
+		mouse.prepare=false;
+	}
+	
+	context.drawImage(img,
+	ix,iy + type*height,
+	width,height,
+	
+	x,y,width,height);
+}
+cUtils.drawButton = function(context,elem, text,x, y, width,height,enabled,f,id){
+	cUtils.drawButtonBG(context,elem,x, y, width,height,enabled,f,id);
+	context.fillStyle = "white";
+	context.font = (height-4)+"px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign= "center"; 
+	context.fillText(text,x+width/2, y+2);
+}
+cUtils.drawButtonBG = function(context,elem,x, y, width,height,enabled,f,id){
 	var type =0
+	if(!enabled)
+	{type=52;}
+	else if(inBounds(x,y,width,height)){
+		type=104;
+		if(mouse.up && mouse.target==elem&&enabled && mouse.prepare){
+			if(f != undefined)
+			f(id)
+		mouse.up=false;
+		mouse.prepare=false;
+		}
+		
+		if(mouse.buttons>0)
+		{
+		mouse.prepare=true;
+		type=52;
+		}
+		else
+		mouse.prepare=false;
+	}
+	
+	context.drawImage(Assets.img["GUIbutton"],0,type    ,10,5   ,x,y				 ,10,5);
+	context.drawImage(Assets.img["GUIbutton"],0,type+5  ,10,42  ,x,y+5  ,10,height-10);
+	context.drawImage(Assets.img["GUIbutton"],0,type+47 ,10,5   ,x,y+height-5 ,10,5);
+
+	
+	for(var i =0;i<(width-20)/80-1;i++){
+		
+	//context.drawImage(Assets.img["GUIbutton"],10,type,80,52,x+10+i*80,y,80,height);
+	
+	context.drawImage(Assets.img["GUIbutton"],10,type    ,80,5   ,x+10+i*80,y				 ,80,5);
+	context.drawImage(Assets.img["GUIbutton"],10,type+5  ,80,42  ,x+10+i*80,y+5  ,80,height-10);
+	context.drawImage(Assets.img["GUIbutton"],10,type+47 ,80,5   ,x+10+i*80,y+height-5 ,80,5);
+	
+	}
+	
+	context.drawImage(Assets.img["GUIbutton"],10,type    ,(width-20)%80,5   ,x+10+(Math.round(((width-20)/80)-1)*80),y					 ,(width-20)%80	,5);
+	context.drawImage(Assets.img["GUIbutton"],10,type+5  ,(width-20)%80,42  ,x+10+(Math.round(((width-20)/80)-1)*80),y+5  	,(width-20)%80	,height-10);
+	context.drawImage(Assets.img["GUIbutton"],10,type+47 ,(width-20)%80,5   ,x+10+(Math.round(((width-20)/80)-1)*80),y+height-5 	,(width-20)%80	,5);
+	
+	//context.drawImage(Assets.img["GUIbutton"],10,type,(width-20)%80,52,x+10+(Math.round(((width-20)/80)-1)*80),y,(width-20)%80,height);
+	
+	context.drawImage(Assets.img["GUIbutton"],90,type    ,10,5   ,x+width-10,y				 	,10,5);
+	context.drawImage(Assets.img["GUIbutton"],90,type+5  ,10,42  ,x+width-10,y+5  	,10,height-10);
+	context.drawImage(Assets.img["GUIbutton"],90,type+47 ,10,5   ,x+width-10,y+height-5 	,10,5);
+}
+function drawButtonBG(x, y, width,height,enabled,f,id){
+	cUtils.drawButtonBG(context,elem,x, y, width,height,enabled,f,id);
+	/*var type =0
 	if(!enabled)
 	{type=52;}
 	else if(inBounds(x,y,width,height)){
@@ -147,5 +232,5 @@ function drawButtonBG(x, y, width,height,enabled,f,id){
 	
 	context.drawImage(Assets.img["GUIbutton"],90,type    ,10,5   ,x+width-10,y				 	,10,5);
 	context.drawImage(Assets.img["GUIbutton"],90,type+5  ,10,42  ,x+width-10,y+5  	,10,height-10);
-	context.drawImage(Assets.img["GUIbutton"],90,type+47 ,10,5   ,x+width-10,y+height-5 	,10,5);
+	context.drawImage(Assets.img["GUIbutton"],90,type+47 ,10,5   ,x+width-10,y+height-5 	,10,5);*/
 }

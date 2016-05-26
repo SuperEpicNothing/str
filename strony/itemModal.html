@@ -10,10 +10,10 @@
 				<input type="range" id="volume" onchange="optionUpdate()" value="80" min="0" max="100"></input>
 			<label id="speedL" for="speed">Prędkość pisania:</label>
 				<input type="range" id="speed" onchange="optionUpdate()" value="1" step="0.1" min="0.1" max="2"></input>
-			<label id="autoskipL" for="autoskip">Autoskip:</label>
-				<input type="CHECKBOX" id="autoskip" onchange="optionUpdate()"></input>
-			<label id="waitL" for="wait">Czas na przeczytanie:</label>
-				<input type="range" id="wait" onchange="optionUpdate()" value="1" step="0.1" min="0.1" max="3"></input>
+			<label id="autoskipL" for="autoskip" hidden>Autoskip:</label>
+				<input type="CHECKBOX" id="autoskip" onchange="optionUpdate()" hidden></input>
+			<label id="waitL" for="wait" hidden>Czas na przeczytanie:</label>
+				<input type="range" id="wait" onchange="optionUpdate()" value="1" step="0.1" min="0.1" max="3" hidden></input>
 			<label id="teachL" for="teach">Tryb nauczyciela:</label>
 				<input type="CHECKBOX" id="teach" onchange="optionUpdate()"></input>
 

@@ -106,7 +106,7 @@ function loader(){
 	    
     // draw the image on the canvas (the user can't see it).
     fctx.drawImage(Assets.img["players"],	
-	24*(player.appearance+(player.gender?0:3)), 0,
+	24*(option.teach?6:(player.appearance+(player.gender?0:3))), 0,
 	24,32,
 	4,0,24,32);
     fctx.restore();
@@ -222,8 +222,8 @@ function animateNotifcations(time){
 	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
 	
 	var img = document.getElementById("guiPlayerVisage" )
-	img.style.clip="rect(0px, "+24*(player.appearance+(player.gender?0:3)+1)+"px, 32px, "+24*(player.appearance+(player.gender?0:3))+"px)";
-	img.style.left=(-24*(player.appearance+(player.gender?0:3))+15)+"px";
+	img.style.clip="rect(0px, "+24*((option.teach?6:(player.appearance+(player.gender?0:3)))+1)+"px, 32px, "+24*((option.teach?6:(player.appearance+(player.gender?0:3))))+"px)";
+	img.style.left=(-24*(option.teach?6:(player.appearance+(player.gender?0:3)))+12)+"px";
 
  
 
@@ -302,7 +302,7 @@ function savePlayer(){
 	repolulateItemMenu()
 }
 function updateChapters(){
-	for(var i =0;i<4;i++){
+	for(var i =0;i<3;i++){
 		if(player.progress.chapters.indexOf(i)<0 && !option.teach){
 		document.getElementById("pageButton"+i).className = ""+document.getElementById("disabledhyperlink").className;
 		}
@@ -319,6 +319,7 @@ function updateHTMLText(){
 	}
 }
 function loadAssets(){
+			console.log("loading assets.")
 	var xmlhttp0 = new XMLHttpRequest();
 	xmlhttp0.onreadystatechange = function() {
     if (xmlhttp0.readyState == 4 && xmlhttp0.status == 200) {
@@ -347,6 +348,9 @@ function loadAssets(){
 		}
 
 		Assets.loaded=true
+		Assets.loadedImages=true
+
+		console.log("loaded assets.")
 		loader()
     }
 	};
@@ -400,7 +404,7 @@ function mouseChange(event,evtname){
 	if(evtname=="mouseup" || evtname=="mousedown")
 	{
 	mouse.targetup=mouse.target;
-	mouse.up= evtname=="mouseup"
+	mouse.up= (evtname=="mouseup")
 	}
 	if(mouse.targetup!=mouse.target)
 		mouse.up=false;

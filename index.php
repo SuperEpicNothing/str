@@ -61,13 +61,13 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	<script src="js/bootstrap.min.js"></script>
 	
 	<script src="js/loader.js"></script>
+	<script src="js/graphics/canvasUtils.js"></script>
 	<?php
 	if($_GET['noplayer']==null && $_GET['main']==null)
 			echo
 		'
 		<script src="js/graphics/notifications.js"></script>
 		<script src="js/graphics/buttons.js"></script>
-		<script src="js/graphics/canvasUtils.js"></script>
 		<script src="js/playerGUI.js"></script>
 		<script src="js/graphics/audio.js"></script>
 		<script src="js/itemMenu.js">

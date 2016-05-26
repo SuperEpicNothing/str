@@ -28,9 +28,9 @@ function gpmsc(){
 	
 	cUtils.imageSmoothing(c1,false);
 	c1.drawImage(Assets.img["players"],
-	24*(player.appearance+(player.gender?0:3)), 0,
+	24*(option.teach?6:(player.appearance+(player.gender?0:3))), 0,
 	24,32,
-	80+10,75+77,219,291);
+	80+19,75+77,219,291);
 	c1.drawImage(Assets.img["GUIplayer"],922,0,203*player.progress.xp,16,390,122,203*player.progress.xp,16);
 	cUtils.imageSmoothing(c1,true);
 	c1.font = "20px Aclonica"
