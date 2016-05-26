@@ -55,7 +55,7 @@ Event|corobi
 ---|---
 `{"type":"give","time":4600,"item":IDI,"book"":IDB,"xp":xpamt},` | daj graczowi Item `IDI`, książkę `IDB`, `xpamt` Doświadczenia
 `{"type":"unlockAch","time":"4200","ach":ID},` | odblokuj osiągnięcie `ID`
-`{"type":"unlockChap","time":"0","chapter":IDC,"lesson":IDL},` | odblokuj lekcję `IDL` w rozdziale `IDC`
+`{"type":"unlockChap","time":"0","chapter":IDC,"lesson":IDL},` | odblokuj lekcję `IDL`["test" dla konfucjusza] w rozdziale `IDC`
 `{"type":"change","time":"0","target":ID},`| przeskocz do sceny `ID`
 `{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie},`| zadaje pytanie z animacją (patrz tabela poniżej)
 

@@ -307,17 +307,17 @@ function updateChapters(){
 	var disabled = ""+document.getElementById("disabledhyperlink").className;
 	for(var i =0;i<player.progress.chapters.length;i++){
 		
-		document.getElementById("pageButton"+i).className = (player.progress.chapters[i].length>0 || option.teach) ? enabled : disabled;
+		document.getElementById("pageButton"+i).className = (player.progress.chapters[i].length>0 || option.teach) ? enabled+" hvr-underline-from-center" : disabled;
 		
 		for(var j =0;j<7;j++)
 		{
 			var l = document.getElementById("lesson"+i+"-"+j)
 			if(l == undefined)
 				continue;
-			l.className= player.progress.chapters[i].indexOf(j)>=0 || option.teach? enabled:disabled;
+			l.className= player.progress.chapters[i].indexOf(j)>=0 || option.teach? enabled+" hvr-curl-bottom-right":disabled;
 		}
 
-		document.getElementById("test"+i).className= player.progress.chapters[i].indexOf('test')>=0 || option.teach? enabled:disabled;
+		document.getElementById("test"+i).className= player.progress.chapters[i].indexOf('test')>=0 || option.teach? enabled +" hvr-curl-bottom-right":disabled;
 	}
 }
 function updateHTMLText(){

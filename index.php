@@ -93,8 +93,8 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	<canvas id="favicon" width=32 height=32 hidden></canvas>
 
 	<div class="loadAclonica"> </div>
-	<div id="enabledhyperlink" class="hvr-underline-from-center enabledLink" style="visibility:hidden"> </div>
-	<div id="disabledhyperlink" class="hvr-buzz disabledLink" style="visibility:hidden"> </div>
+	<div id="enabledhyperlink" class="enabledLink" style="visibility:hidden"> </div>
+	<div id="disabledhyperlink" class="disabledLink" style="visibility:hidden"> </div>
 
     <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
