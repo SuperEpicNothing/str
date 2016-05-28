@@ -33,6 +33,14 @@ cUtils.imageSmoothing = function(ctx,bool){
 	ctx.imageSmoothingEnabled = bool;
 }
 
+cUtils.colorGradient = function(colorA,colorB,stage){
+	var colorC = colorA;
+	for(var i=0;i<colorA.length;i++){
+	colorC[i]+= (colorB[i]-colorA[i])*stage;
+	colorC[i]=Math.round(colorC[i])}
+	return colorC;
+}
+
 function drawDialog(speaker,text,time,progress,mode){
 	context.fillStyle= renderData.color == undefined ?"white":renderData.color;
 	context.font = "16px Aclonica"

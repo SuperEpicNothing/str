@@ -58,13 +58,20 @@ Event|corobi
 `{"type":"unlockChap","time":"0","chapter":IDC,"lesson":IDL},` | odblokuj lekcję `IDL`["test" dla konfucjusza] w rozdziale `IDC`
 `{"type":"change","time":"0","target":ID},`| przeskocz do sceny `ID`
 `{"type":"question","time":czasPisaniaWiad,"arm":animacja,"text":pytanie},`| zadaje pytanie z animacją (patrz tabela poniżej)
+`{"type":"resolve","time":trzebadobraćdokonkretprzyp,"arm":animacja,"player":"Argument Mocy i Zniszczenia","success":true},` | na początku bloku kolejnego pytania
 
-arm|czas (w ms)
+arm|czas (w ms)(to be reevaluated)
 ---|---
 `"sword"`|`6200`
 `"robot"`|`6000`
 `"laser"`|`2500`
 `"book"`|`2000`
+
+player|czas (w ms)(to be made)
+---|---
+`"none"`|`0`
+`"cokolwiek"`|`~~5000`
+
 
 REQ|corobi
 ---|---

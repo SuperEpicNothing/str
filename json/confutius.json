@@ -11,7 +11,7 @@
 	"scenes": [
 	{
 		"events":[
-			{"type":"unlockAch","time":10,"ach":4},
+					{"type":"change","time":0,"target":3},
 			{"type":"showBoss","time":2300},
 			{"type":"dialog","time":3000,"timepadding":1000,
 			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},
@@ -53,7 +53,7 @@
 	},
 		{
 		"events":[
-			{"type":"pause","time":500},
+			{"type":"resolve","time":3000,"arm":"sword","player":"none","success":false},
 			{"type":"question","time":2000,"arm":"sword","text":"What's in the book [playerName]?"}
 		],
 		"options":[
@@ -67,7 +67,7 @@
 	},
 	{
 		"events":[
-			{"type":"pause","time":500},
+			{"type":"resolve","time":3000,"arm":"robot","player":"none","success":false},
 			{"type":"question","time":2000,"arm":"robot","text":"What's in the book [playerName]?"}
 		],
 		"options":[
@@ -81,7 +81,7 @@
 	},
 	{
 		"events":[
-			{"type":"pause","time":500},
+			{"type":"resolve","time":3000,"arm":"laser","player":"none","success":true},
 			{"type":"question","time":2000,"arm":"laser","text":"What's in the book [playerName]?"}
 		],
 		"options":[
@@ -95,7 +95,7 @@
 	},
 		{
 		"events":[
-			{"type":"pause","time":500},
+			{"type":"resolve","time":3000,"arm":"book","player":"Argument Mocy i Zniszczenia","success":true},
 			{"type":"question","time":2000,"arm":"book","text":"What's in the book [playerName]?"}
 		],
 		"options":[

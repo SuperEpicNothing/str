@@ -1,4 +1,4 @@
-var menu;
+﻿var menu;
 var elem,context;
 var boss = {health:1,healthMax:9,state:"idle",heroHp:1,heroHpMax:4}
 var battlescript
@@ -70,20 +70,34 @@ function clear(){
 
 var start = null;
 var change,changeEvt;
-
+var timeflow =true;
+var timeflowtimestamp;
 function renderConfu(timestamp){
+	var i = new Image();
+	i.src = "images/gui/locked.png";
+	context.drawImage(i,elem.width/2,elem.height/2);
+
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp;}
 	if(!start || !Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
 	var progress = Math.round(timestamp - start);
 	clear();
 	
+	if(!timeflow && timeflowtimestamp==undefined)
+		timeflowtimestamp=timestamp;
+
+	if(timeflow &&timeflowtimestamp!=undefined)
+	{
+		start+=(timestamp-timeflowtimestamp);
+		timeflowtimestamp=undefined;
+	}
+
 	audio.play(mouse.target==elem && mouse.isOver)
 
 	processEvent(progress);
-	drawBackground(progress);
+	drawBackground(timeflow?progress:(timeflowtimestamp-start));
 	
-	drawConfutest(progress);
-	
+	drawConfutest(timeflow?progress:(timeflowtimestamp-start));
+
 	for(var i =0;i<renderData.particles.length;i++)
 		{
 					var particle = renderData.particles[i];
@@ -101,6 +115,72 @@ function renderConfu(timestamp){
 					var lifestage= particle.life/particle.end;
 					
 					switch(particle.type){
+						
+						case "explosion":
+							
+							
+							for(var p =0;p<150;p++)
+							{
+								var smk = {
+											
+											type:particle.smoketype,
+											x:particle.x+particle.size*(1-2*Math.random()),						
+											y:particle.y+particle.size*(1-2*Math.random()),
+											start:particle.start,
+											end:200+200*Math.random(),
+											life:0,
+											size:2+5*Math.random(),
+											movX:(1-2*Math.random()),
+											movY:(1-2*Math.random())};
+									
+								renderData.particles.push(smk);
+							}
+							particle.end=-1;
+						break;
+						
+						case "explosionsmoke":
+						var color =[0,0,0]; 
+						var alpha =0;
+						
+						if(lifestage<= 0.11)						
+						{
+							color = cUtils.colorGradient([249,247,212],[248,239,19], (lifestage/0.11))
+							alpha =1;
+						}
+						else if(lifestage<= 0.2)
+						{
+							color = cUtils.colorGradient([248,239,19],[255,139,50], ((lifestage-0.11)/0.09))
+							alpha =1;
+						}
+						else if(lifestage<= 0.41)
+						{
+							color = cUtils.colorGradient([255,139,50],[186,0,0], ((lifestage-0.2)/0.21))
+							alpha =1;
+						}
+						else
+						{
+							color = cUtils.colorGradient([186,0,0],[0,0,0], ((lifestage-0.41)/0.59))
+							alpha =1- ((lifestage-0.41)/0.59);
+						}
+						
+						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+alpha+")";
+							
+						//context.beginPath();
+						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
+						//context.closePath();;
+
+						context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+						//context.fill();
+						//context.beginPath();
+						if(!timeflow)
+							continue;
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						particle.movX=particle.movX+0.05*(1-2*Math.random());
+						particle.movY=particle.movY+0.05*(1-2*Math.random());
+						
+						break;
+						
 						case "magicsmoke":
 						
 						
@@ -113,7 +193,8 @@ function renderConfu(timestamp){
 						context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
 						//context.fill();
 						//context.beginPath();
-
+						if(!timeflow)
+							continue;
 						particle.x+=particle.movX;
 						particle.y+=particle.movY;
 						particle.movX=particle.movX+0.05*(1-2*Math.random());
@@ -121,73 +202,200 @@ function renderConfu(timestamp){
 						
 						break;
 						case "healthsmoke":
-						context.fillStyle="rgba("+Math.round(100+105*(particle.lifepercent)+(Math.sin(progress/(2000*particle.lifepercent)*2*Math.PI)*40))+",0,"+Math.round(70*particle.lifepercent)+","+
+						context.fillStyle="rgba("+Math.round(100+105*(particle.lifepercent)+(Math.sin((timeflow?progress:(timeflowtimestamp-start))/(2000*particle.lifepercent)*2*Math.PI)*40))+",0,"+Math.round(70*particle.lifepercent)+","+
 						0.7*(1-lifestage)+")";
 						context.fillRect(particle.x-(particle.size*lifestage/2)-5,particle.y-(particle.size*lifestage/2)-5,10+(particle.size)*lifestage,10+(particle.size)*lifestage);
-
+						if(!timeflow)
+							continue;
 						particle.x+=particle.movX;
 						particle.y+=particle.movY;
 						particle.movX=particle.movX+0.1*(1-2*Math.random());
 						particle.movY=particle.movY+0.1*(1-2*Math.random());
 						break;
-						case "orbbotbolt":
-				
-						particle.x=particle.ox+particle.movX*lifestage;
-						particle.y=particle.oy+particle.movY*lifestage;	
-						{
-							for(var p =0;p<3;p++){
-							var smk = {
-								type:"magicsmoke",
-								x:particle.x,						
-								y:particle.y,
-								start:renderData.progress,
-								end:300*Math.random(),
-								life:0,
-								size:10*Math.random(),
-								movX:(1-2*Math.random()),
-								movY:(1-2*Math.random())};
-								
-							renderData.particles.push(smk);
-							}
-							}
-						break
+						
 						case "orbbot":
-						var frame = Math.round(lifestage*8*particle.end/700)%8
-						context.drawImage(Assets.img["orbbot"],
-							0, frame*17,
-							17,17,		
-							particle.x-8,particle.y-8,		
-							17*4/3,17*4/3);
-						var arc= 2*Math.PI*lifestage*particle.end/1000*particle.speed/(particle.radious/50);
-						particle.x=Math.sin(arc)*particle.radious*2+particle.cx;
-						particle.y=Math.cos(arc)*particle.radious/3+particle.cy;
-
-
-						particle.x+=particle.movX;
-						particle.y+=particle.movY;
-						
-						if(frame==7-particle.id && Math.random()<=0.2)
-						{
-							var smk = {
-								type:"orbbotbolt",
-								x:particle.x,						
-								y:particle.y,
-								ox:particle.x,						
-								oy:particle.y,
-								start:renderData.progress,
-								end:400,
-								life:0,
-								size:4*Math.random(),
-								movX:-(particle.x-elem.width/2),
-								movY:-(particle.y-elem.height+180)};
-								
-							renderData.particles.push(smk);
+							var pos = [350,140];
+							var positions = [[253,100],[446,100],[350,233],[446,100],[350,233],[350,140]];
+							var dist = 60+10*Math.cos(Math.PI*2*(timeflow?progress:(timeflowtimestamp-start))/4000);
+							var arc = (timeflow?progress:(timeflowtimestamp-start))/4000*Math.PI*2
+							positions[positions.length-1]=pos;
+							for(var p = 0 ; p<positions.length-1;p++){
+								positions[p][0]=pos[0] + dist*Math.cos(arc+(p)*(Math.PI*2/(positions.length-1)));
+								positions[p][1]=pos[1] + dist*Math.sin(arc+(p)*(Math.PI*2/(positions.length-1)));
+							}
 							
-						}
+							var frame = Math.round(lifestage*8*particle.end/700)%8
+							
+							var distsq = Math.pow(particle.x-positions[particle.id][0],2)+Math.pow(particle.y-positions[particle.id][1],2)
 						
-						if(lifestage>0.9||lifestage<0.05)
-						{
-							for(var p =0;p<5;p++){
+									
+							//particle.x=positions[particle.id][0];
+							//particle.y=positions[particle.id][1];	
+
+							if(!renderData.botsinPos)
+								renderData.botsinPos=[]							
+							
+							if(!renderData.botsFinished)
+								renderData.botsFinished=[]
+							
+							if(particle.x>positions[particle.id][0]-6 && particle.x<positions[particle.id][0]+6 
+							&& particle.y>positions[particle.id][1]-6 && particle.y<positions[particle.id][1]+6)
+								renderData.botsinPos[particle.id]=true;
+							else
+								renderData.botsinPos[particle.id]=false;
+							
+							if(renderData.stoptime){
+							var ready = false;
+							for(var p=0;p<positions.length;p++)
+							{
+								if(!renderData.botsinPos[p])
+								{
+									ready = false;
+									break;
+								}
+								else
+								ready=true;
+							}
+							timeflow=!ready;
+							}
+							
+							if(!renderData.botsFinished[particle.id])
+							particle.end+=100;
+
+							if(renderData.botsinPos[particle.id] && renderData.botsinPos[(particle.id+1)%(positions.length-1)] && (particle.id+1)!=positions.length)
+							{
+								context.strokeStyle="red";
+								context.lineWidth=3+2*Math.cos(frame/8*2*Math.PI);
+								context.beginPath();
+								context.moveTo(positions[particle.id][0],positions[particle.id][1]);
+								context.lineTo(positions[(particle.id+1)%(positions.length-1)][0],positions[(particle.id+1)%(positions.length-1)][1]);
+								context.closePath();
+								context.stroke();
+								if(renderData.botsinPos[positions.length-1]){
+									context.beginPath();
+									context.moveTo(positions[particle.id][0],positions[particle.id][1]);
+									context.lineTo(positions[positions.length-1][0],positions[positions.length-1][1]);
+									context.closePath();
+									context.stroke();
+								}
+								context.beginPath();
+							}
+							
+							if(renderData.beginFinish){
+								
+								if(renderData.success && Math.random()<0.05)
+								{
+									var smk = {
+											
+											type:"explosion",
+											smoketype:"explosionsmoke",
+											x:particle.x,						
+											y:particle.y,
+											start:renderData.progress,
+											end:200+200*Math.random(),
+											life:0,
+											size:2
+											};
+									
+									renderData.particles.push(smk);
+									
+									renderData.botsinPos[particle.id]=false;
+									renderData.botsFinished[particle.id]=true;
+									particle.end=-1;
+								}
+								else
+								{
+									if(particle.id == (positions.length-1) )
+									{
+										if(!renderData.timestampFinish)
+											renderData.timestampFinish = renderData.progress;
+										
+										var pro = renderData.progress-renderData.timestampFinish;
+										
+										if(pro > 200 && pro < 950){
+											var color = cUtils.colorGradient([255,0,0],[244,0,0],Math.sin(pro/750*2*Math.PI))
+											context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+1+")";
+											context.beginPath();
+											context.moveTo(pos[0],pos[1]);
+											context.lineTo(pos[0]+100*Math.cos(pro/750*2*Math.PI)-100,elem.height-180);
+											context.lineTo(pos[0]-100*Math.cos(pro/750*2*Math.PI)+100,elem.height-180);
+											context.closePath();
+											context.fill();
+											context.beginPath();
+										}else if(pro>950)
+										{
+											renderData.botsfinished=true;
+										}
+										
+											
+									}
+									
+									if(renderData.botsfinished && Math.random()<0.05){
+											var smk = {
+											
+												type:"explosion",
+												smoketype:"magicsmoke",
+												x:particle.x,						
+												y:particle.y,
+												start:renderData.progress,
+												end:200+200*Math.random(),
+												life:0,
+												size:2
+											};
+									
+											renderData.particles.push(smk);
+									
+											renderData.botsinPos[particle.id]=false;
+											renderData.botsFinished[particle.id]=true;
+											particle.end=-1;
+									}
+								}
+							}
+							
+							context.drawImage(Assets.img["orbbot"],
+								0, frame*17,
+								17,17,		
+								particle.x-(8.5*4/3),particle.y-(8.5*4/3),		
+								17*4/3,17*4/3);
+							if(!timeflow)
+								continue;
+							
+														
+							var str = Math.min(2,distsq/10 * 1);
+							if(distsq<225)
+							{
+								particle.movX=0.2*particle.movX;
+								particle.movY=0.2*particle.movY;
+							}
+							else if(distsq>1024)
+							{
+								particle.movX=0.9*particle.movX;
+								particle.movY=0.9*particle.movY;
+							}
+							if(Math.abs(particle.movX)>20)
+								particle.movX=particle.movX*0.9
+							if(Math.abs(particle.movY)>20)
+								particle.movY=particle.movY*0.9
+
+							particle.movX+= particle.x>positions[particle.id][0]? -str: particle.x<positions[particle.id][0]? str: 0;
+							particle.movY+= particle.y>positions[particle.id][1]? -str: particle.y<positions[particle.id][1]? str: 0;
+								
+							
+							particle.x+=particle.movX;
+							particle.y+=particle.movY;						
+						
+						break;
+						
+						case "magicbolt":
+							particle.x+=particle.movX;
+							particle.y+=particle.movY;
+							
+							var str = 2;
+							
+							particle.movX+= particle.x>elem.width/2? -str: particle.x<elem.width/2? str: 0;
+							particle.movY+= particle.y>elem.height-180? -str: particle.x<elem.height-180? str: 0;
+
+							for(var p =0;p<20;p++){
 							var smk = {
 								type:"magicsmoke",
 								x:particle.x,						
@@ -201,18 +409,59 @@ function renderConfu(timestamp){
 								
 							renderData.particles.push(smk);
 							}
-						}
-						particle.movX=particle.movX+0.1*(1-2*Math.random());
-						particle.movY=particle.movY+0.1*(1-2*Math.random());
-						//particle.end+=61;
+							
+							if( particle.x>elem.width/2-(2*28+boss.heroHpMax*67-4)/2 &&  particle.x<elem.width/2+(2*28+boss.heroHpMax*67-4)/2 &&
+								particle.y>elem.height-190){
+								for(var p =0;p<60;p++){
+							var smk = {
+								type:"magicsmoke",
+								x:particle.x+5*(1-2*Math.random()),						
+								y:particle.y+5*(1-2*Math.random()),
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:4*Math.random(),
+								movX:5*(1-2*Math.random()),
+								movY:5*(1-2*Math.random())};
+								
+							renderData.particles.push(smk);
+							}
+							particle.end=-1;
+							}
+							else
+								particle.end+=100;
+							
 						break;
 					}
-				
+					if(!timeflow)
+						continue;
 					particle.life=renderData.progress-particle.start;
 					renderData.particles[i]=particle;
 		}
 	
+
+	if(!timeflow){
+		var l =Math.round(360*(timestamp-timeflowtimestamp)/5000);
+		l=Math.min(l,360)
+		for(var i=0;i<l;i++){
+		context.fillStyle = "rgba(0,0,0,"+(0.3*Math.sin( ((timestamp-timeflowtimestamp)/2000*2*Math.PI) +(i%2==0?Math.PI/2:0))+0.4)+")";
 	
+		var arc = (timestamp-timeflowtimestamp)/2000 * 2 * Math.PI/l;
+		//arc = Math.min(2 *i* Math.PI/l,arc);
+		context.beginPath();
+		context.moveTo(elem.width/2,elem.height/2-100);
+		context.arc(elem.width/2, elem.height/2-100, (timestamp-timeflowtimestamp)/500*300, arc+(2*i*Math.PI)/l,arc+(2*(i+1)*Math.PI)/l, false);
+		context.closePath();
+		context.fill();
+		}
+
+		context.beginPath();
+
+
+	}
+	if(renderData.type=="question" && renderData.arm=="robot")
+		drawAttackInfo(progress,"Konfuzjusz","Mroczne Automatony","Promień Dezinformujący");
+
 	if(renderData.type=="dialog"||renderData.type=="question")
 		drawDialog("Konfuzjusz",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
 
@@ -350,7 +599,7 @@ function processEvent(progress){
 		boss.healthMax=battlescript.meta.bossmaxhp
 		boss.heroHp=battlescript.meta.heromaxhp
 		boss.heroHpMax=battlescript.meta.heromaxhp
-
+		timeflow=true;
 		audio.setTrack(battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
 
 	}
@@ -361,6 +610,7 @@ function processEvent(progress){
 		currentscene= change>=0? change :currentscene;
 		if(change>=0){change=-1}
 		
+		infots = undefined
 		EntTime=null
 		currentEvt= changeEvt>=0? changeEvt: 0;
 		if(changeEvt>=0){changeEvt=-1}
@@ -373,6 +623,9 @@ function processEvent(progress){
 			}
 		return;
 	}
+	if(evt.timeflow != undefined)
+	timeflow=evt.timeflow;
+
 	
 	switch(evt.type)
 	{
@@ -423,6 +676,16 @@ function processEvent(progress){
 			renderData.override=true
 			if(renderData.progress>=renderData.time)
 				renderData.skipmode=1;
+		break;
+		
+		case "resolve":
+			renderData.type="resolve"
+			renderData.progress=progress-EntTime;
+			renderData.time=evt.time*option.speed;
+			renderData.arm=evt.arm;
+			renderData.player=evt.player;
+			renderData.success=evt.success;
+
 		break;
 		
 		case "unlockAch":
@@ -499,29 +762,525 @@ function drawBackground(progress){
 		drawplanet(progress,Assets.img["background-parallax"].height/Assets.img["background-parallax"].width*elem.width)
 }
 
+var infots = undefined;
+function drawAttackInfo(progress,casterName,attackCategory,attackName){
+	var length = 4000;
+	if(infots == undefined)
+		infots=progress;
+	if((progress-infots)/length>1)
+		return;
+	context.lineWidth=1;
+	context.fillStyle="rgba(255,255,255,"+Math.sin((progress-infots)/length*Math.PI)+")";
+	context.strokeStyle="rgba(200,200,200,"+0.8*Math.sin((progress-infots)/length*Math.PI)+")";
+
+	context.textBaseline = "top";
+	context.textAlign="center"; 
+	context.font = "12px Aclonica"
+	var scale = Math.sin((progress-infots)/length*Math.PI);
+	scale = scale<Math.sin((progress-infots-100)/length*Math.PI)?1:scale;
+	
+	context.fillText(casterName,elem.width/2,elem.height/2-133);	
+	context.strokeText(casterName,elem.width/2,elem.height/2-133);	
+
+
+	context.fillRect(elem.width/2-scale*elem.width/8, elem.height/2-121,scale*elem.width/4,1.5);
+	
+	context.font = "14px Aclonica"
+	context.fillText(attackCategory,elem.width/2,elem.height/2-117);
+	context.strokeText(attackCategory,elem.width/2,elem.height/2-117);
+
+	context.fillText(attackName,elem.width/2,elem.height/2-95);	
+	context.strokeText(attackName,elem.width/2,elem.height/2-95);	
+	
+	context.fillRect(elem.width/2-scale*elem.width/3, elem.height/2-100,scale*elem.width/1.5,1.5);
+}
 function drawConfutest(progress){
 	var frame = Math.floor(progress/90);
 	var i = Math.abs(Math.round(Math.sin(frame/16)*9))
 
+	var confY=50+Math.sin(progress/500)*15;
+	var confX=(elem.width-(Assets.img["confu"].width/4))/2+Math.cos(progress/290)*4;
+	context.lineWidth=1;
+
     context.drawImage(Assets.img["confu"],
 		(frame%4)*Assets.img["confu"].width/4, (Math.floor(frame/4)%2)*Assets.img["confu"].height/2,
 		Assets.img["confu"].width/4,Assets.img["confu"].height/2,		
-		(elem.width-(Assets.img["confu"].width/3))/2+Math.cos(progress/290)*4,50+Math.sin(progress/500)*15,		
-		Assets.img["confu"].width/3,Assets.img["confu"].height/3*2);
+		confX,confY,		
+		Assets.img["confu"].width/4,Assets.img["confu"].height/2);
 	
 	cUtils.imageSmoothing(context,false);
-
-		context.drawImage(Assets.img["book"],
-		(elem.width-(Assets.img["confu"].width/2))+70+Math.cos(progress/270)*9,150-Math.sin(progress/300)*8,
-		68,68);
-
 	
+	context.drawImage(Assets.img["book"],
+		confX+150+Math.cos(progress/270)*9,confY+60-Math.sin(progress/300)*8,
+		51,51);
+	if(renderData.type=="question")
+		switch(renderData.arm){
+			default:
+			if(renderData.arm != undefined)				
+			drawAttackInfo(progress,"Konfuzjusz","AttackCategory",renderData.arm.toUpperCase());
+			break;
+			
+			case "sword":
+				
+				if(renderData.progress<=2000){
+					context.setTransform(1, 0, 0, 1, confX+50,confY+100);
+					context.rotate(Math.PI*135/180);
+					var h =42*renderData.progress/2000;
+					context.drawImage(Assets.img["sword"],
+					0,42-h,
+					86,2+2*h,
+					
+					-43,-1-h,86,2+2*h);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<20;i++)
+						{
+							var parX= confX+50+(Math.random()>0.5?-h-15:h+15)+(1-2*Math.random())
+							var parY = confY+100 +10*(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(-4*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+					
+				}else if(renderData.progress<=3000){
+					
+					context.setTransform(1, 0, 0, 1, confX+50+40*(renderData.progress-2000)/1000,confY+100 -100*(renderData.progress-2000)/1000);
+					context.rotate(Math.PI*135/180 + Math.PI/2*(renderData.progress-2000)/1000);
+					context.drawImage(Assets.img["sword"],-43,-43,86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+				}
+				else if(renderData.progress<=4000){
+					
+					for(var i=-2;i<=2;i++){
+					
+					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+					context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
+					context.translate(0 , (confY-(elem.height-180))+15*Math.sin(renderData.progress/250));
+					context.rotate((Math.PI*225/180));
+					
+					context.drawImage(Assets.img["sword"],
+						-43,-43,
+					86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					}
+				} 
+				else{
+					for(var i=-2;i<=2;i++){
+					
+					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+					context.rotate(Math.PI*20*i/180);
+					context.translate(0 , (confY-(elem.height-180)));
+					context.rotate((Math.PI*225/180));
+					
+					context.drawImage(Assets.img["sword"],
+						-43,-43,
+					86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					}
+					timeflow=false;
+				}
+				
+				drawAttackInfo(progress,"Konfuzjusz","Kwantowe Ostrze","Pchnięcie Schrödingera");
+			break;
+			
+			case "book":
+				if(renderData.progress<=2000){
+					for(var i=0;i<10+(30*(renderData.progress/2000));i++)
+						{
+							var parX =  confX+150+51/2+Math.cos(progress/270)*9+(5+10*(renderData.progress/2000))*(1-2*Math.random());
+							var parY = confY+60+51/2-Math.sin(progress/300)*8 + (5+10*(renderData.progress/2000))*(1-2*Math.random()) -50*(renderData.progress/2000);
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(-4*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+				}
+				else{
+					if(timeflow)
+						timeflow=false;
+
+					for(var i=0;i<40;i++)
+						{
+							var parX =  confX+150+51/2+Math.cos(progress/270)*9+(15)*(1-2*Math.random());
+							var parY = confY+60+51/2-Math.sin(progress/300)*8 + (15)*(1-2*Math.random())-50;
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(-4*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+				}
+
+				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Zwodzący Płonień");
+			break;
+			
+			case "robot":
+				if(!renderData.released)
+				{
+					console.log("release the bots");
+					//orbbot 1
+					var parX = confX+56;
+					var parY = confY+62;
+					
+					var particle = {
+						type:"orbbot",
+						id:0,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:-5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 2
+					var parX = confX+100;
+					var parY = confY+62;
+					
+					var particle = {
+						type:"orbbot",
+						id:1,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 3
+					var parX = confX+90;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:2,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 4
+					var parX = confX+66;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:3,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:-5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 5
+					var parX = confX+90;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:4,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 6
+					var parX = confX+66;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:5,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:-5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					renderData.released=true;
+				}
+				if(renderData.progress>5000)
+					renderData.stoptime=true;
+			break;
+			case "laser":
+				if(renderData.progress<=3000){}
+				else if(renderData.progress<=4000){
+						var fill = (renderData.progress-3000)/1000;
+						context.fillStyle="rgba(255,0,0,"+fill+")";
+						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
+				
+				}
+				else
+				{
+					var fill = 1;
+						context.fillStyle="rgba(255,0,0,"+fill+")";
+						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
+					timeflow=false;
+				}
+
+				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Dezintegrujące  Spojrzenie");
+			break;
+		}
+	
+	if(renderData.type=="resolve")
+	{	
+		switch(renderData.arm){
+
+			case "sword":
+
+				if(renderData.success){
+					if(renderData.progress<=200){
+						timeflow=true;
+						timeflowtimestamp=undefined;
+
+					for(var i=-2;i<=2;i++){
+							context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+							context.rotate(Math.PI*20*i/180);
+							context.translate(0 , (confY-(elem.height-180))*(1-(renderData.progress/700)));
+							context.rotate((Math.PI*225/180));
+						
+							context.drawImage(Assets.img["sword"],
+								-43,-43,
+							86,86);
+							context.setTransform(1, 0, 0, 1, 0, 0);
+					}
+					}
+					if(renderData.progress<=300){
+					
+					for(var i=0;i<50;i++)
+					{
+							var sword = Math.round(-2+5*Math.random());
+							
+							var dist = (confY-(elem.height-180))*(1-(200/700));
+							var arc = Math.PI/2+(Math.PI*20*sword/180)
+							var parX = confX + 90 +Math.cos(arc)*dist + 30*(1-2*Math.random());
+							var parY = elem.height-180+Math.sin(arc)*dist  +30*(1-2*Math.random());
+
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX: 3*(confX + 90 +Math.cos(arc)*dist -parX)/30,
+								movY: 3*(elem.height-180+Math.sin(arc)*dist -parY)/30};
+								
+							renderData.particles.push(particle);
+					}
+					
+					}
+				}
+				
+				else{
+				
+					if(renderData.progress<=700){
+						timeflow=true;
+						timeflowtimestamp=undefined;
+
+						for(var i=-2;i<=2;i++){
+							context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+							context.rotate(Math.PI*20*i/180);
+							context.translate(0 , (confY-(elem.height-180))*(1-(renderData.progress/700)));
+							context.rotate((Math.PI*225/180));
+						
+							context.drawImage(Assets.img["sword"],
+								-43,-43,
+							86,86);
+							context.setTransform(1, 0, 0, 1, 0, 0);
+						}
+					}else if(renderData.progress<=1000)
+					{
+						for(var i=0;i<50;i++)
+						{
+							var parX = confX + 90 + 30*(1-2*Math.random());
+							var parY = elem.height-180 +30*(1-2*Math.random());
+
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX: 3*((confX + 90)- parX)/30,
+								movY: 3*((elem.height-180)- parY)/30};
+								
+							renderData.particles.push(particle);
+						}
+					}
+				}
+			break;
+			
+			case "book":
+			if(renderData.success){
+				if(renderData.progress<=200){
+						timeflow=true;
+						timeflowtimestamp=undefined;
+				}
+			}
+			else{
+				if(renderData.progress<=200){
+						timeflow=true;
+						timeflowtimestamp=undefined;
+						if(!renderData.released)
+						{
+							for(var i=0;i<5+3*Math.random();i++)
+							{
+							
+							var parX =  confX+150+51/2+Math.cos(progress/270)*9;
+							var parY = confY+60+51/2-Math.sin(progress/300)*8;
+						
+							var particle = {
+								type:"magicbolt",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:1000,
+								life:0,
+								movX:10*(1-3*Math.random()),
+								movY:(-20*Math.random())};
+								
+							renderData.particles.push(particle);
+							}
+							renderData.released=true;
+						}
+
+				}
+			}
+			break;
+			case "robot":
+				if(renderData.progress<=500){
+					timeflow=true;
+					//timeflowtimestamp=undefined;
+				}else if(!renderData.beginFinish)
+					renderData.beginFinish=true;
+			break;
+			case "laser":								
+				if(!renderData.success){
+					timeflow=true;
+					timeflowtimestamp=undefined;
+					
+					context.fillStyle="rgba(255,0,0,1)";
+					if(renderData.progress<=1500)
+					{		
+						var fill = (renderData.progress)/1500;			
+						context.fillRect(confX+82,confY+40,6,2);
+						
+						context.setTransform(1, 0, 0, 1, confX+82+4,confY+40+1);
+						context.rotate((Math.PI*fill));
+						context.fillRect(0,-4/3,600,2);
+						context.setTransform(1, 0, 0, 1, 0, 0);
+						
+							var parY = elem.height-180+3*(1-2*Math.random())
+							var dist = parY-(confY+40*4/3);
+				
+							var xoffset = Math.sin(Math.PI/2-Math.PI*fill)*dist;
+							var parX=confX+82*4/3+xoffset+(1-2*Math.random())
+						for(var p=0;p<3;p++)	
+						if(parX>=((elem.width-(2*28+boss.heroHpMax*67-4))/2) && parX<=((elem.width+(2*28+boss.heroHpMax*67-4))/2)){	
+						var particle = {
+							type:"magicsmoke",
+							x:parX,
+							
+							y:parY,
+							start:renderData.progress,
+							end:1200*Math.random(),
+							life:0,
+							size:20,
+							movX:(1-2*Math.random()),
+							movY:(1-2*Math.random())}
+						renderData.particles.push(particle);}
+
+					}
+				}
+				else if(!renderData.exploded)
+				{
+					timeflow=true;
+					timeflowtimestamp=undefined;
+					renderData.exploded=true
+					var smk = {
+						
+						type:"explosion",
+						smoketype:"magicsmoke",
+						x:confX+82+3,						
+						y:confY+40+1,
+						start:renderData.progress,
+						end:200+200*Math.random(),
+						life:0,
+						size:2
+					};
+
+					renderData.particles.push(smk);
+				}
+
+		}
+		switch(renderData.player){
+			default:
+			if(renderData.progress>300 && renderData.success)
+				drawAttackInfo(progress,handleText("[playerName]"),"Argument",renderData.player.toUpperCase());
+			break;
+			case "none":
+			break;
+		}
+	}
+	/*
 	if(renderData.type=="question")
 	{
 		
 		
-		var confX=(elem.width-(Assets.img["confu"].width/3))/2+Math.cos(progress/290)*4;
-		var confY=50+Math.sin(progress/500)*15;
 				
 		switch(renderData.arm){
 			case "sword":
@@ -993,7 +1752,7 @@ function drawConfutest(progress){
 			break;
 		}
 
-	}
+	}*/
 }
 function select(id){
 		if(battlescript.scenes[currentscene].options[id].consequence != undefined)
