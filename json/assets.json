@@ -63,6 +63,8 @@
 		"src":"images/layers/sandiego.png"},
 		{"name" : "santorini",
 		"src":"images/layers/santorini.png"},
+		{"name" : "transatl",
+		"src":"images/layers/transatl.png"},
 		{"name" : "uni",
 		"src":"images/layers/uni2.png"},
 		{"name" : "blackboard",
@@ -194,7 +196,7 @@
 			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
 			"icon":"ItemSword",
-			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'O złośliwym demonie' w rozdziale 'Skąd wiesz?').",
+			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Złośliwy demon' w rozdziale 'Wiedza').",
 			"url": null	
 		},
 
@@ -205,7 +207,7 @@
 			"autor": "Bertrand Russell",
 			"img": "images/gui/untitled.png",
 			"icon":"ItemSword",
-			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'O wiedzy bezpośredniej' w rozdziale 'Skąd wiesz?'.",
+			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'Wiedza bezpośrednia' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
 
@@ -216,7 +218,7 @@
 			"autor": "Karl Popper",
 			"img": "images/gui/untitled.png",
 			"icon":"ItemSword",
-			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'O solidnej nauce' w rozdziale 'Skąd wiesz?'.",
+			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
 		
@@ -227,7 +229,7 @@
 			"autor": "William James",
 			"img": "images/gui/untitled.png",
 			"icon":"ItemAxe",
-			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'O doświadczeniu religijnym' w rozdziale 'Skąd wiesz?'.",
+			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'Doświadczenie religijne' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
 
