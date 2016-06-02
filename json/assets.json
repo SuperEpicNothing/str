@@ -238,18 +238,7 @@
 			"icon":"Item3",
 			"desc": "'Droga Tomasza' to argument, zgodnie z którym Pierwszy Poruszyciel Arystotelesa jest czymś więcej niż po prostu obiektem w strukturze logiczne. To Bóg. Więcej informacji można uzyskać w trakcie rozmowy z Tomaszem z Akwinu (zob. lekcja 'Pięć dróg' w rozdziale 'Kosmos'.",
 			"url": null	
-		},
-
-		{
-			"type": "Generic Item",
-			"name": "LearnLink",
-			"fullname": "Learn Link",
-			"autor": "Lorem",
-			"img": "images/gui/untitled.png",
-			"icon":"ItemRock",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			"url": null	
-		}			
+		}	
 	],
 	"achievments": [
 		{
@@ -258,6 +247,39 @@
 			"fullname": "Hennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+		},
+		
+				{
+			"comment":"1",
+			"level": 0,
+			"fullname": "Hennie!",
+			"icon":"book",
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+		},
+		
+				{
+			"comment":"2",
+			"level": 0,
+			"fullname": "Hennie!",
+			"icon":"book",
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+		},
+		
+				{
+			"comment":"3",
+			"level": 0,
+			"fullname": "Hennie!",
+			"icon":"book",
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+		},
+		
+				{
+			"comment":"4",
+			"level": 1,
+			"fullname": "Hennie!",
+			"icon":"book",
+			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		}
+		
 	]
 }

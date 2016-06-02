@@ -27,6 +27,7 @@
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":"Co Cię tu sprowadza?"
 			}
+			
 		],
 		"options":[
 			{"target": 23, "text": "[playerGender {Chciałbym|Chciałabym}] przedyskutować z Tobą pewną sprawę..."},
@@ -433,6 +434,7 @@
 		"COMMENT":"30",
 		"events":[
 			{"type":"give","time":4600,"item":"demon"},
+			{"type":"unlockChap","time":"0","chapter":0,"lesson":2},
 			{"type":"dialog","name":"Kartezjusz","time":5000,"timepadding":0,
 			"text":"Skoro wszystko już jasne, weź, proszę, ode mnie ten Argument i niech Ci on dzielnie służy. Bywaj!"
 			}
