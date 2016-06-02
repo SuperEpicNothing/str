@@ -71,7 +71,7 @@
 		"src":"images/layers/parallax-blackboard.png"},
 		
 		{"name" : "arystoteles",
-		"src":"images/layers/arystoteles2.png"},
+		"src":"images/layers/arystoteles4.png"},
 		{"name" : "churchland",
 		"src":"images/layers/churchland.png"},
 		{"name" : "hawking",
@@ -110,12 +110,17 @@
 		{"name" : "planet3",
 		"src":"images/layers/parallax-space-big-planet3.png"},
 		
-		{"name" : "ItemSword",
-		"src":"images/gui/icons/items/W_Sword01.png"},
-		{"name" : "ItemRock",
-		"src":"images/gui/icons/items/I_Rock01.png"},
-		{"name" : "ItemAxe",
-		"src":"images/gui/icons/items/W_Axe013.png"},
+		{"name" : "ItemRock", "src":"images/gui/icons/items/I_Rock01.png"},
+		
+		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},
+		{"name" : "Item2", "src":"images/gui/icons/items/W_Axe013.png"},
+		{"name" : "Item3", "src":"images/gui/icons/items/W_Mace007.png"},
+		{"name" : "Item4", "src":"images/gui/icons/items/W_Sword05.png"},
+		{"name" : "Item5", "src":"images/gui/icons/items/W_Sword09.png"},
+		{"name" : "Item6", "src":"images/gui/icons/items/W_Sword016.png"},
+		{"name" : "Item7", "src":"images/gui/icons/items/W_Mace008.png"},
+		{"name" : "Item8", "src":"images/gui/icons/items/W_Mace011.png"},
+		{"name" : "Item9", "src":"images/gui/icons/items/W_Sword019.png"},
 		
 		{"name" : "orbbot",
 		"src":"images/orb.png"}
@@ -152,15 +157,6 @@
 		
 		{
 			"type": "Book",
-			"name": "003",
-			"fullname": "Lorem ipsum",
-			"autor": "Lorem",
-			"img": "images/gui/untitled.png",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa libero, finibus in hendrerit viverra, cursus vitae augue. In sollicitudin tempor risus, eu tristique nibh facilisis non. Pellentesque rutrum felis dui, vitae laoreet sem gravida et. Nulla facilisi. Duis ac enim imperdiet, tempor velit at, iaculis ipsum. Aenean vitae tortor eu tortor tincidunt volutpat. Cras iaculis mattis ipsum, eget molestie elit feugiat in. ",
-			"url": "docs/historia pieniądza.pdf"	
-		},
-		{
-			"type": "Book",
 			"name": "popper",
 			"fullname": "O 'Społeczeństwie otwartym' Poppera",
 			"autor": "Karl Popper",
@@ -195,7 +191,7 @@
 			"fullname": "Demon Kartezjusza",
 			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemSword",
+			"icon":"Item1",
 			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Złośliwy demon' w rozdziale 'Wiedza').",
 			"url": null	
 		},
@@ -206,7 +202,7 @@
 			"fullname": "Fundament Russella",
 			"autor": "Bertrand Russell",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemSword",
+			"icon":"Item6",
 			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'Wiedza bezpośrednia' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
@@ -217,7 +213,7 @@
 			"fullname": "Falsyfikator Poppera",
 			"autor": "Karl Popper",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemSword",
+			"icon":"Item5",
 			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
@@ -228,8 +224,19 @@
 			"fullname": "Doświadczenie Jamesa",
 			"autor": "William James",
 			"img": "images/gui/untitled.png",
-			"icon":"ItemAxe",
+			"icon":"Item4",
 			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'Doświadczenie religijne' w rozdziale 'Wiedza'.",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "akwinata",
+			"fullname": "Droga Tomasza",
+			"autor": "Tomasz z Akwinu",
+			"img": "images/gui/untitled.png",
+			"icon":"Item3",
+			"desc": "'Droga Tomasza' to argument, zgodnie z którym Pierwszy Poruszyciel Arystotelesa jest czymś więcej niż po prostu obiektem w strukturze logiczne. To Bóg. Więcej informacji można uzyskać w trakcie rozmowy z Tomaszem z Akwinu (zob. lekcja 'Pięć dróg' w rozdziale 'Kosmos'.",
 			"url": null	
 		},
 
@@ -247,40 +254,10 @@
 	"achievments": [
 		{
 			"comment":"0",
-			"level": 1,
-			"fullname": "TEST0",
-			"icon":"book",
-			"desc": "testowa0"
-		},
-		{
-			"comment":"1",
-			"level": 1,
-			"fullname": "TEST1",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "testowa1"
-		},
-		{
-			"comment":"2",
-			"level": 2,
-			"fullname": "TEST2",
-			"hidden":true,
-			"icon":"ItemSword",
-			"desc": "testowa2"
-		},
-		{
-			"comment":"3",
 			"level": 0,
 			"fullname": "Hennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
-		},
-		{
-			"comment":"4",
-			"level": 1,
-			"fullname": "Loreminator",
-			"icon":"ItemSword",
-			"desc": "444Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 		}
 	]
 }

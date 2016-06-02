@@ -40,8 +40,8 @@
   - [ ] list of all Arguments, Achievements, Items
   - [ ] ile PD na lvl na skillpointa???????????
   - [ ] apply some animations for Konfutest
-  - [ ] apply class="texthandler" wherever needed
-  - [ ] add more item types into assets.json
+  - [x] apply class="texthandler" wherever needed
+  - [x] add more item types into assets.json
   - [ ] help.html
   
 
@@ -76,7 +76,6 @@ REQ|corobi
 `"req":{"type":"skill","skill":x,"amt":a,"mode":m}`| sprwadza czy zdolność `x` `m` od `a` optional-mode{"<",">"}
 `"req":{"type":"item","item":ID}`| sprawdza czy gracz ma przedmiot `ID`
 `"req":{"type":"hp","amt":a}`| hp gracza > a tylko Confutest
-
 
 
 

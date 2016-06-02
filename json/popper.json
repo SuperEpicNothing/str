@@ -90,7 +90,7 @@
 	{
 		"comment":"6",
 		"events":[
-			{"type":"unlockAch","time":"4200","ach":3},
+			{"type":"unlockAch","time":"4200","ach":0},
 			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
 			"text":"Hmhm... Stare kopalnie złota są na północy Wyspy Południowej, zaledwie kilkadziesiąt kilometrów stąd. Być może mieszkają tam jeszcze potomkowie tych Niemców. Przejadę się tam i popytam. Wielkie dzięki, Wędrowcze!"
 			}
