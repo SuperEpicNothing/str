@@ -9,7 +9,8 @@
 - ==S: @Shinigami072
   - [x] ODBLOKOWYWANIE POJEDYŃCZYCH LEKCJI;
   - [x] UNLOCK EVENT;
-  
+  - [ ] confuWin
+  - [ ] Rework XP as instructed
   - [x] TEACHER MODE
 
   - [ ] animacje konfuzjusza
