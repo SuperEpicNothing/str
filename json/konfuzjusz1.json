@@ -1,7 +1,7 @@
 {
 	"meta":{
-	"bossmaxhp":9,
-	"heromaxhp":5,
+	"bossmaxhp":7,
+	"heromaxhp":7,
 	"music":[
 	"heroism.ogg",
 	"Battle in the winter.mp3",
@@ -133,8 +133,8 @@
 			{"target": 10, "text": "Wiedza zapośredniczona?","consequence":{"herohp":-1}},
 			{"target": 10, "text": "Wiedza przez opis?","consequence":{"herohp":-1}},
 			{"target": 11, "text": "Wiedza bezpośrednia?","consequence":{"bosshp":-1}},
-			{"target": 10, "text": "Znajomość prawd?","consequence":{"herohp":-1}},
-		]	  		
+			{"target": 10, "text": "Znajomość prawd?","consequence":{"herohp":-1}}
+		]
 	},
 	
 	{

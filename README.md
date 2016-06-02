@@ -12,8 +12,6 @@
   
   - [x] TEACHER MODE
 
-  - [ ] ile PD na lvl na skillpointa??????????? 
-
   - [ ] animacje konfuzjusza
   - [ ] we hurt confu(abimations)
   - [ ] więcej animacj zadweania pytań przez konfuzjusza]
@@ -39,7 +37,14 @@
   - [x] make skills make sense - clean player code
   - [x] fix broken inventory 
 - ==L: @lukaszlamza
-  - coś zrobiłem...
+  - [ ] list of all Arguments, Achievements, Items
+  - [ ] ile PD na lvl na skillpointa???????????
+  - [ ] apply some animations for Konfutest
+  - [ ] apply class="texthandler" wherever needed
+  - [ ] add more item types into assets.json
+  - [ ] help.html
+  
+
 
 Tag|corobi
 ---|---
