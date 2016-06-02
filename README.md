@@ -9,10 +9,9 @@
 - ==S: @Shinigami072
   - [x] ODBLOKOWYWANIE POJEDYŃCZYCH LEKCJI;
   - [x] UNLOCK EVENT;
-  
+  - [ ] confuWin
+  - [ ] Rework XP as instructed
   - [x] TEACHER MODE
-
-  - [ ] ile PD na lvl na skillpointa??????????? 
 
   - [ ] animacje konfuzjusza
   - [ ] we hurt confu(abimations)
@@ -39,7 +38,14 @@
   - [x] make skills make sense - clean player code
   - [x] fix broken inventory 
 - ==L: @lukaszlamza
-  - coś zrobiłem...
+  - [ ] list of all Arguments, Achievements, Items
+  - [ ] ile PD na lvl na skillpointa???????????
+  - [ ] apply some animations for Konfutest
+  - [x] apply class="texthandler" wherever needed
+  - [x] add more item types into assets.json
+  - [ ] help.html
+  
+
 
 Tag|corobi
 ---|---
@@ -78,7 +84,6 @@ REQ|corobi
 `"req":{"type":"skill","skill":x,"amt":a,"mode":m}`| sprwadza czy zdolność `x` `m` od `a` optional-mode{"<",">"}
 `"req":{"type":"item","item":ID}`| sprawdza czy gracz ma przedmiot `ID`
 `"req":{"type":"hp","amt":a}`| hp gracza > a tylko Confutest
-
 
 
 

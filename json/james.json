@@ -1,7 +1,7 @@
 {
 	"meta":
 		{
-		"bg":"cambridge",
+		"bg":"transatl",
 		"current":0,
 		"actor":"james"
 		},
@@ -16,7 +16,7 @@
 		],
 		"options":[
 			{"target": 1, "text": "Dzień dobry!"},
-			{"target": 1, "text": "Witaj, Profesorze!"}
+			{"target": 1, "text": "Witaj!"}
 		]	   
 	},
 
@@ -25,27 +25,549 @@
 		"events":[
 			
 			{"type":"question","name":"William James","time":1000,"timepadding":0,
-			"text":"W czym mogę pomóc?"
+			"text":"Co Cię tu sprowadza?"
 			}
 		],
 		"options":[
-			{"target": 3, "text": "Mam pewien problem ze zrozumieniem Pańskich słów, Profesorze!"},
-			{"target": 4, "text": "Co Pan robi na Nowej Zelandii?"},
-			{"target": 2, "text": "Dawaj miecz, starcze!"}
+			{"target": 8, "text": "Czytam teraz Pański tekst... i nie wszystko jest jasne."},
+			{"target": 2, "text": "Co Pan właściwie robi na tym transatlantyku?"},
+			{"target": 5, "text": "Nad czym Pan ostatnio pracuje, Profesorze?"}
 		]	   
 	},
 
 	{
 		"COMMENT":"2",
 		"events":[
-			{"type":"give","time":4600,"item":"james"},
 			{"type":"question","name":"William James","time":1000,"timepadding":0,
-			"text":"Cóż mam zrobić... dam Ci ten miecz, młody dzikusie."
+			"text":"Płynę do Europy na leczenie."
 			}
 		],
 		"options":[
 
-			{"target": 1, "text": "Podziękować. Idę walczyć z Konfuzjuszem."}
+			{"target": 8, "text": "No tak... to może porozmawiajmy o Pańskiej książce."},
+			{"target": 3, "text": "A na co Pan choruje?", "req":{"type":"skill","skill":5,"amt":3,"mode":">"}}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Od pewnego czasu pobolewa mnie serce. Jadę na eksperymentalną terapię, bo amerykańscy lekarze nie potrafią mi pomóc."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "To może rozmowa o Pańskiej książce podniesie Pana na duchu?"},
+			{"target": 4, "text": "A gdzie Pan mieszka w Ameryce?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Przez długie lata współpracowałem z Uniwersytetem Harwarda i mieszkam niedaleko."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Aha, dziękuję. Wróćmy może do naszego tekstu..."},
+			{"target": 5, "text": "I nad czym Pan aktualnie pracuje na tym Harwardzie?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Pisałem właśnie książeczkę pt. [']Niektóre problemy filozofii['], ale musiałem przerwać ze względu na pogorszenie zdrowia... mam nadzieję niedługo wróćić do pracy."
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Ciekawe, że Bertrand Russell napisał książkę o niemal takim samym tytule!...", "req":{"type":"skill","skill":0,"amt":2,"mode":">"}, "height":2},
+			{"target": 8, "text": "Dużo zdrowia więc! Wróćmy może do tekstu, który czytam..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Naprawdę? A kiedy właściwie ją napisał?"
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Hm, nie za bardzo wiem. To może wróćmy do "},
+			{"target": 7, "text": "Ym. No tak. W 1912 roku...", "req":{"type":"item","item":"russell"}}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"[Uśmiecha się] No więc, tajemniczy Wędrowcze, teraz mamy rok 1910... ale nie wątpię, że będzie to ciekawa książeczka."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Ehm. Chyba już czas wziąć się do roboty..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"A więc jaka moja książka tak Cię zafascynowała, Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "[']Odmiany doświadczenia religijnego[']."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 10, "text": "Dlaczego skupia się Pan tylko na doświadczeniu religijnym?"},
+			{"target": 11, "text": "No więc co to właściwie jest to doświadczenie religijne?"},
+			{"target": 28, "text": "A skąd ta pewność, że doświadcza się faktycznie Boga?"},
+			{"target": 38, "text": "Chyba już nie mam pytań do Pańskiego tekstu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Dlatego że jest to najbardziej bezpośredni kontakt z rzeczywistością boską. Wszelkie teksty, opowieści, wszelkie doktryny kościelne - są pośrednie, one oddziałują na intelekt. A doświadczenie to doświadczenie."
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Czyli właściwie co?"},
+			{"target": 27, "text": "A nie interesuje Pana, co ma do powiedzenia Kościół i Papież?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Cóż, część problemu polega na tym, że nie da się tego precyzyjnie zdefiniować. Nie wiem, czy [playerGender {dotarłeś|dotarłaś}] do rozdziału mojej książeczki poświęconego mistycyzmowi?"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Nie całkiem."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"No więc opisuję tam cztery zasadnicze cechy doznania mistycznego..."
+			}
+		],
+		"options":[
+			{"target": 13, "text": "Momencik, ale co to jest doznanie mistyczne?", "req":{"type":"skill","skill":5,"amt":3,"mode":">"}},
+			{"target": 14, "text": "Tak...?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Doświadczenie mistyczne to w zasadzie niemal to samo, co doświadczenie religijne. Chodzi tak naprawdę o szczególnie intensywne przeżycie rzeczywistości boskiej."
+			}
+		],
+		"options":[
+			{"target": 14, "text": "OK, wróćmy do tych cech..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"No więc te cechy to: niewysławialność, poczucie uzyskania wiedzy, [']przelotny['] charakter i brak kontroli."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "A [playerGender {mógłbym|mogłabym}] usłyszeć o nich nieco więcej?"},
+			{"target": 9, "text": "Hm. Wróćmy może do rozmowy o tekście..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Oczywiście. Niewysławialność polega na tym, że treści takiego doświadczenia nie da się wyrazić, opowiedzieć. Trzeba je przeżyć, ale nie da się go przekazać."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "A nie jest tak ze wszystkimi doświadczeniami?"},
+			{"target": 17, "text": "Ale czy to nie jest tylko zasłona dymna?"},
+			{"target": 21, "text": "OK, idźmy dalej..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Trochę tak jest. Ale niektóre doświadczenia można względnie łatwo przekazać, inne trudniej. Doświadczenie mistyczne albo religijne ma to do siebie, że jest skrajnie trudno przekazać jego sens, treść i [']poczucie[']."
+			}
+		],
+		"options":[
+			{"target": 17, "text": "A czy to nie jest tylko zasłona dymna?"},
+			{"target": 21, "text": "OK, idźmy dalej..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"To znaczy co?"
+			}
+		],
+		"options":[
+			{"target": 18, "text": "W sensie, że ludzie twierdzący, że doświadczają Boga, chowają się za niewysławialnością, żeby nie musieli niczego udowadniać.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Czyli Twoim zdaniem po prostu kłamią?"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Tak."},
+			{"target": 20, "text": "Niekoniecznie. Mogą też sami siebie oszukiwać."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Cóż, przeprowadziłem w życiu dziesiątki rozmów z ludźmi zgłaszającymi doświadczenia religijne i nie wygląda na to, aby mieli jakikolwiek powód, aby w tej sprawie kłamać. Nie mają z tego żadnej korzyści. Ba! Czasem jest wręcz na odwrót."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "To może oni sami siebie oszukują?"},
+			{"target": 21, "text": "Hm. Idźmy może dalej..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Jako psycholog mogę Ci powiedzieć, że to nie jest taka prosta sprawa - wytworzenie w sobie wydajnego mechanizmu samooszukiwania. W mojej książce piszę o ludziach zdrowych psychicznie. Ba, uważam posiadanie pewnego typu impulsu religijnego za objaw [']zdrowego umysłu[']... Osoby chore psychicznie można lepiej lub gorzej rozpoznać - to coś trochę innego."
+			}
+		],
+		"options":[
+			{"target": 21, "text": "No rozumiem. Idźmy może dalej."},
+			{"target": 21, "text": "Hm, na razie będę jeszcze [playerGender {myślał|myślała}] po swojemu, ale idźmy dalej.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Poczucie uzyskania wiedzy, czyli - jak to nazywam w mojej książce - charakter [']noetyczny['] - polega na tym, że doświadczenie mistyczne nie jest po prostu zobaczeniem czy odczuciem czegoś niesamowitego. Osoba, która go dozna, ma poczucie, że uzyskała głęboką wiedzę na tematy zwykle niedostępne poznaniu."
+			}
+		],
+		"options":[
+			{"target": 22, "text": "I czy takie osoby faktycznie uzyskują nową wiedzę?"},
+			{"target": 22, "text": "Jakie to tematy?"},
+			{"target": 24, "text": "OK. Idźmy dalej."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"22",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Cóż, nie jest to wiedza typu matematycznego, którą można potem sprawdzić. Są to przekonania na temat Boga, rzeczywistości ostatecznej, naszego własnego życia... coś takiego ma raczej służyć jednostce, a nie społeczeństwu."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Czyli nie jest to wiedza, którą można by wykorzystać na klasówce?", "req":{"type":"skill","skill":3,"amt":5,"mode":">"}, "height":2},
+			{"target": 24, "text": "OK. Idźmy dalej."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"[Uśmiecha się] No niestety... Nie słyszałem o kimś, kto by przygotował się do egzaminu metodą doświadczenia misetycznego..."
+			}
+		],
+		"options":[
+			{"target": 24, "text": "Ech, szkoda. Idźmy może dalej."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Dwie ostatnie cechy to przejściowy charakter i [']pasywność['], czyli właściwie dwa sposoby na powiedzenie tego samego: osoba przeżywająca doświadczenie mistyczne nie ma nad nim kontroli. Nie trwa ono długo i nie jest świadomie [']wywoływane[']. Po prostu się przydarza."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "Nie da się spowodować doświadczenia mistycznego?"},
+			{"target": 9, "text": "OK, rozumiem. Wróćmy może do czytania tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"25",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Niektórzy ludzie przygotowują się do takiego stanu i aktywnie go poszukują - medytując, modląc się. Ale nigdy nie jest tak, że można je u siebie własną wolą wywołać. To nie jest tak, jak z bólem albo ze śmiechem - że każdy może wywołać u siebie ból, a przy odrobinie wprawy można się również rozśmieszyć. Doświadczenie mistyczne nie jest wytwarzane świadomie."
+			}
+		],
+		"options":[
+			{"target": 26, "text": "To może jest ono wytwarzane podświadomie?"},
+			{"target": 9, "text": "OK, rozumiem. Wróćmy może do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"26",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Nie powiem [']nie[']. [James uśmiecha się] Jedyny problem polega na tym, że nie do końca wiadomo, czym jest owa podświadomość i do jakiego stopnia jest ona tak naprawdę [']moja['] czy [']Twoja[']. Ale idea podświadomości jako taka bardzo mi się podoba..."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "OK. To wróćmy może do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"27",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Jestem sceptyczny wobec kościołów. Nie mam zaufania do tego, co jest przekazywane z ust do ust na przestrzeni tysięcy lat. Jedynym bezpośrednim źródłem dla wiary pozostaje bezpośrednie doświadczenie religijne."
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Czyli co właściwie?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"28",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Tego tak naprawdę nie wiemy z absolutną pewnością. Wiemy tylko, że doświadczamy czegoś >>jako<< Boga."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Aha, wróćmy może do rozmowy o Pańskiej książce."},
+			{"target": 29, "text": "Nie rozumiem różnicy."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Spójrz na to w ten sposób. Przypuśćmy, że patrzysz w tej chwili na czerwone jabłuszko. Czy jesteś pewien, że patrzysz tak naprawdę na realnie istniejące jabłko?"
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Oczywiście! Jakżeby inaczej!"},
+			{"target": 31, "text": "Przecież [playerGender {czytałem|czytałam}] Kartezjusza, Profesorze...", "height":2, "req":{"type":"item","item":"demon"}}
+		]	   
+	},
+	
+	{
+		"COMMENT":"30",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"[James marszczy brwi] Gdybyś bardziej [playerGender {uważał|uważała}], [playerGender {wiedziałbyć|wiedziałabyć}], że na gruncie epistemologicznym można podważyć istnienie każdego przedmiotu fizycznego!... Wróć do Kartezjusza, to był mądry facet!"
+			}
+		],
+		"options":[
+			{"target": 31, "text": "..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"31",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Można natomiast powiedzieć z całą pewnością, że doświadczasz czegoś >>jako<< czerwonej plamy w swoim polu widzenia, prawda? Nie sposób pomylić doświadczania czegoś >>jako<< widoku czegoś czerwonego z doświadczaniem czegoś >>jako<< wspomnienia albo >>jako<< bólu - bez względu na to, czy to halucynacja czy nie..."
+			}
+		],
+		"options":[
+			{"target": 32, "text": "Czyli nie możemy mieć pewności, że Bóg istnieje?"},
+			{"target": 9, "text": "OK, rozumiem, wróćmy może do tekstu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"32",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"W innym miejscu mojej książki napisałem, że wszystkie [']dowody['] na istnienie Boga nadają się tylko do zbierania kurzu w bibliotekach. Nie można liczyć na racjonalność >>wszystkiego<<!..."
+			}
+		],
+		"options":[
+			{"target": 33, "text": "Ale mnie interesuje tylko racjonalna pewność!", "req":{"type":"skill","skill":5,"amt":3,"mode":">"}},
+			{"target": 9, "text": "Hm, to może wróćmy do czytania tekstu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"33",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Więc pewne aspekty rzeczywistości mogą na zawsze pozostać poza Twoim zasięgiem, Wędrowcze."
+			}
+		],
+		"options":[
+			{"target": 34, "text": "Wolę to niż opieranie się na pogłoskach!...", "req":{"type":"skill","skill":5,"amt":5,"mode":">"}, "height":2},
+			{"target": 9, "text": "Ja uważam inaczej, ale niech tak zostanie... wróćmy do lektury", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"34",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Ale nikt Cię nie nakłania do wierzenia pogłoskom!... Jedyne, co ma sens, to własne, pierwszoosobowe poczucie pewności."
+			}
+		],
+		"options":[
+			{"target": 35, "text": "A skąd mam wiedzieć, że nie halucynuję?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"35",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Mogę odpowiedzieć na dwa sposoby. Po pierwsze, rozmawiałem z wieloma osobami na te temat i zbierałem wiele wywiadów psychologicznych. Ludzie, którzy miewają halucynacje, ale też zaznali doświadczenia religijnego, mówią, że to dwie odrębne, dające się odróżnić rzeczy..."
+			}
+		],
+		"options":[
+			{"target": 36, "text": "Ale mogą się mylić, prawda?"},
+			{"target": 36, "text": "Słucham dalej..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"36",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"No więc druga moja odpowiedź jest taka, że znowu żądasz racjonalnej pewności tam, gdzie nie jest jej miejsce."
+			}
+		],
+		"options":[
+			{"target": 37, "text": "Czyli zataczamy koło?"},
+			{"target": 9, "text": "Hm, wróćmy może do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"37",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Trochę tak. Są pewne sprawy, w których nie da się uzyskać logicznego, w pełni racjonalnego domknięcia."
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Cóż. Niech i tak będzie. Wróćmy więc do czytania Pańskiego tekstu, może coś z tego wyniknie...", "height":2}
+		]
+	},
+	
+	{
+		"COMMENT":"38",
+		"events":[
+			
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Mam nadzieję, że choć trochę pomogłem... zachęcam do przejrzenia reszty mojej książki, jest tam opisanych wiele niezwykle ciekawych raportów od ludzi, którzy doznali doświadczenia religijnego. Wielu ludzi uważa, że tych spraw nie da się badać - ja jestem optymistą. Psycholog zawsze może badać zjawiska psychiczne!..."
+			}
+		],
+		"options":[
+			{"target": 39, "text": "Dziękuję za rozmowę, Profesorze!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"39",
+		"events":[
+			{"type":"give","time":4600,"item":"james"},
+			{"type":"question","name":"William James","time":1000,"timepadding":0,
+			"text":"Weź ode mnie ten oto Argument i korzystaj z niego bez lęku, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 40, "text": "Bywaj!"}
+		]	   
+	},
+	
+		{
+		"COMMENT":"40",
+		"events":[
+			
+			{"type":"dialog","name":"William James","time":1000,"timepadding":0,
+			"text":"Bywaj!"
+			}
+		],
+		"options":[
 		]	   
 	}
 	

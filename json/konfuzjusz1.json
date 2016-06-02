@@ -1,7 +1,7 @@
 {
 	"meta":{
-	"bossmaxhp":9,
-	"heromaxhp":5,
+	"bossmaxhp":7,
+	"heromaxhp":7,
 	"music":[
 	"heroism.ogg",
 	"Battle in the winter.mp3",
@@ -14,7 +14,7 @@
 		"events":[
 			{"type":"showBoss","time":2300},
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"MuaHuahua! huahuahua! huahuahuahuahua! [diaboliczny śmiech]"}
+			"text":"Mua-Hua-hua! Mua-ha-ha! Huahuahuahuahua!... [diaboliczny śmiech]"}
 		],
 		"options":[
 			{"target": 1, "text": "Nie przeszkadzam?"}
@@ -43,8 +43,8 @@
 			}
 		],
 		"options":[
-			{"target": 3, "text": "???","consequence":{"herohp":-1}},
-			{"target": 4, "text": "[Test Wiedza] Czy to z Bułhakowa?", "color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":2},"consequence":{"bosshp":-1}}
+			{"target": 3, "text": "A co to ma znaczyć?","consequence":{"herohp":-1}},
+			{"target": 4, "text": "Czy to z [']Mistrza i Małgorzaty[']?","req":{"type":"skill","skill":0,"amt":4,"mode":">"},"consequence":{"bosshp":-1}}
 		]	  		
 	},
 	
@@ -52,7 +52,7 @@
 		"comment":"3",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Zrozumiesz to kiedyś w przyszłości, być może. Czy jesteś gotów zmierzyć się z moimi podstępami?"
+			"text":"Zrozumiesz to kiedyś w przyszłości, być może. [Mua-Ha-Ha...] Czy jesteś gotów zmierzyć się z moimi podstępami?"
 			}
 		],
 		"options":[
@@ -64,7 +64,7 @@
 		"comment":"4",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"[Konfuzjusz zerka z niedowierzaniem] Widzę, że trafiłem na niebagatelnego przeciwnika. Ciekawe, czy będziesz tak [playerGender {mężny|mężna}], gdy zastawię na Ciebie sidła mego podstępu..."
+			"text":"[Konfuzjusz zerka z niedowierzaniem] Widzę, że trafiłem na godnego przeciwnika. Ciekawe, czy będziesz tak [playerGender {mężny|mężna}], gdy zastawię na Ciebie sidła mego podstępu..."
 			}
 		],
 		"options":[
@@ -76,12 +76,11 @@
 		"comment":"5",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Ha! [playerGender {Filozof|Filozofka}]! Paradne! Na nic Twe przechwałki, zaraz Cię pogonię moim sprytem i podstępem!"
+			"text":"Ha! [playerGender {Filozof|Filozofka}]! Paradne! Na nic Twe przechwałki, zaraz Cię usidlę moim sprytem i podstępem!"
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Kim jesteś?"},
-			{"target": 3, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}!", "height":2}
+			{"target": 6, "text": "Ha! Kpiny! Mam przy sobie Argumenty, przed którymi umkniesz jak niepyszny!...", "height":2}
 		]	  		
 	},
 	
@@ -89,13 +88,13 @@
 		"comment":"6",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Słuchaj więc uważnie, Wędrowcze. Zacznijmy od czegoś prostego. Czego jesteś pewien - ale tak NAPRAWDĘ, NAPRAWDĘ pewien?"
+			"text":"Niech będzie i tak. Słuchaj mnie uważnie, Wędrowcze. Zacznijmy od czegoś prostego. Stoisz w sklepie i patrzysz na małe czerwone jabłuszko. Powiedz mi - czego jesteś pewien, ale tak [']NAPRAWDĘ NAPRAWDĘ pewien[']?"
 			}
 		],
 		"options":[
-			{"target": 7, "text": "Że istnieję, oczywiście!", "color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}},
-			{"target": 7, "text": "Na przykład tego, że doświadczam w tej chwili dotyku klawiatury komputera.", "color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}},
-			{"target": 8, "text": "Hm, jest duży rzeczy oczywistych. Na przykład to, że Słońce jest duże i bardzo jasne.","consequence":{"herohp":-1}}
+			{"target": 7, "text": "Że istnieję, oczywiście!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}},
+			{"target": 7, "text": "Że przeżywam właśnie doświadczenie widzenia czerwonego jabłuszka...","height":2, "req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}},
+			{"target": 8, "text": "Że leży przede mną małe czerwone jabłuszko!","consequence":{"herohp":-1}}
 		]	  		
 	},
 	
@@ -103,12 +102,11 @@
 		"comment":"7",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Nieźle, Wędrowcze! Widać, że [playerGender {uważałeś|uważałaś}]."
+			"text":"Nieźle, Wędrowcze! Widać, że [playerGender {uważałeś|uważałaś}] pilnie."
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Kim jesteś?"},
-			{"target": 3, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}!", "height":2}
+			{"target": 9, "text": "Rzecz oczywista!"}
 		]	  		
 	},
 	
@@ -116,12 +114,216 @@
 		"comment":"8",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Ha! [playerGender {Filozof|Filozofka}]! Paradne! Na nic Twe przechwałki, zaraz Cię pogonię moim sprytem i podstępem!"
+			"text":"Ha-ha-HA! I Ty się nazywasz [playerGender {Filozofem|Filozofką}]?! A gdyby to była woskowa makieta? Albo hologram? Albo ha-lu-cy-nacja? Albo Złośliwy Demon?! Słabo, słabo, Wędrowcze"
 			}
 		],
 		"options":[
-			{"target": 2, "text": "Kim jesteś? Bla bla!!!"},
-			{"target": 3, "text": "Ha! Zgiń, przepadnij pomroczna kreaturo. Nie boję się Ciebie! Jestem [playerGender {filozofem|filozofką}!", "height":2}
+			{"target": 9, "text": "To tylko chwila nieuwagi... pytaj dalej, Konfuzjuszu!"}
+		]	  		
+	},
+	
+	{
+		"comment":"9",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Idźmy więc dalej. Patrzysz więc na to jabłuszko i patrzysz. Nie myślisz o nim jako o jabłuszku - po prostu podziwiasz jego barwę i kształt... podchodzisz do jabłuszka, dotykasz go i wąchasz. Jak nazwiesz ten rodzaj wiedzy, hm?"
+			}
+		],
+		"options":[
+			{"target": 10, "text": "Wiedza zapośredniczona?","consequence":{"herohp":-1}},
+			{"target": 10, "text": "Wiedza przez opis?","consequence":{"herohp":-1}},
+			{"target": 11, "text": "Wiedza bezpośrednia?","consequence":{"bosshp":-1}},
+			{"target": 10, "text": "Znajomość prawd?","consequence":{"herohp":-1}}
+		]
+	},
+	
+	{
+		"comment":"10",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Mua-Ha-Ha!... [Konfuzjusz prycha diabolicznie] Głupstwa, Wędrowcze! Mówiłem oczywiście o wiedzy bezpośredniej!..."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "..."}
+		]	  		
+	},
+	
+	{
+		"comment":"11",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy podejrzliwie] Hm, to był szczęśliwy traf!..."
+			}
+		],
+		"options":[
+			{"target": 12, "text": "Ani trochę, bezwstydny demonie!"}
+		]	  		
+	},
+	
+	{
+		"comment":"12",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ha! Powiedz mi więc jeszcze, kto właściwie pisał o wiedzy bezpośredniej, wiedzy przez opis... Hm? [Konfuzjusz uśmiecha się złośliwie]"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "Kartezjusz!","consequence":{"herohp":-1}},
+			{"target": 13, "text": "Popper!","consequence":{"herohp":-1}},
+			{"target": 14, "text": "Russell!","consequence":{"bosshp":-1}},
+			{"target": 13, "text": "James!","consequence":{"herohp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"13",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Diaboliczny śmiech] Mua-ha-HA! Bertrand Russell, [playerGender {nieszczęsny filozofie|nieszczęsna filozofko}]! Doprawdy, zbyt łatwo przychodzi mi zwycięstwo z Tobą!..."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Poczekaj, poczekaj..."}
+		]	  		
+	},
+	
+	{
+		"comment":"14",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ech, do kroćset! I to [playerGender {wiedziałeś|wiedziałaś}]!..."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Nędzna kreaturo, niedługo padniesz pod naporem mej Wiedzy!", "height":2}
+		]	  		
+	},
+	
+	{
+		"comment":"15",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Hm. Idźmy więc dalej. Zacznijmy od prostych spraw: czego nie da się spostrzec zmysłowo, o tym nie można sensownie mówić. Prawda?"
+			}
+		],
+		"options":[
+			{"target": 16, "text": "Prawda!","consequence":{"herohp":-1}},
+			{"target": 18, "text": "Nieprawda! Jest choćby matematyka!...",
+			"req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"16",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"HA. Ledwie zacząłem, a już się wikłasz. [Konfuzjusz chichocze] Powiedz mi więc, kiedyś ostatnio [playerGender {widział|widziała}] liczbę siedem, hm? [Uśmiecha się złośliwie]"
+			}
+		],
+		"options":[
+			{"target": 17, "text": "Napisaną na tablicy!","consequence":{"herohp":-1}},
+			{"target": 18, "text": "No dobrze, dobrze..."}
+		]	  		
+	},
+	
+	{
+		"comment":"17",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"HA! A czyś [playerGender {widział|widziała}] samą matematyczną liczbę siedem czy tylko znak wykonany kredą? Pewnie, żeś [playerGender {widział|widziała}] znak!"
+			}
+		],
+		"options":[
+			{"target": 18, "text": "No dobrze, zostawmy to..."}
+		]	  		
+	},
+	
+	{
+		"comment":"18",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Dobrze więc. To matematyka. Ale przecież Boga nie można doświadczyć matematycznie ani zmysłowo, więc z pewnością nie istnieje!"
+			}
+		],
+		"options":[
+			{"target": 19, "text": "Jest wiele różnych typów doświadczeń!", "req":{"type":"item","item":"james"},"consequence":{"bosshp":-1}},
+			{"target": 20, "text": "Chyba masz rację...","consequence":{"herohp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"19",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy podejrzliwie] [playerGender {Uważałeś|Uważałaś}] pilnie, Wędrowcze!... Rzeczywiście, przecież samo doświadczenie Boga świadczy o jego istnieniu, nieprawdaż?"
+			}
+		],
+		"options":[
+			{"target": 21, "text": "Właśnie!","consequence":{"herohp":-1}},
+			{"target": 22, "text": "Ależ nie! Na pewno z nie z pewnością niepodważalną...","height":2,"consequence":{"bosshp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"20",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ha! Rację?! Nie [playerGender {nauczyłeś|nauczyłaś}] się jeszcze, Wędrowcze, aby nie ufać Konfuzjuszowi? [Uśmiecha się złośliwie] Jest wiele rodzajów doświadczeń, Wędrowcze. Czyż doświadczenie religijne nie świadczy o istnieniu Boga?"
+			}
+		],
+		"options":[
+			{"target": 21, "text": "No rzeczywiście...","consequence":{"herohp":-1}},
+			{"target": 22, "text": "A nigdy w życiu!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}}
+			
+		]	  		
+	},
+	
+	{
+		"comment":"21",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Hah! [playerGender {Wpadłeś|Wpadłaś}] w moje sidła! Samo doświadczenie czegoś nie świadczy jeszcze na sposób pewny i niepodważalny o istnieniu przedmiotu doświadczanego! Nie [playerGender {uważałeś|uważałaś}] chyba w trakcie rozmowy z Kartezjuszem i Russellem, hmmm?"
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Ech..."}
+		]	  		
+	},
+	
+	{
+		"comment":"22",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz dyszy ciężko] Ech, ech... na nic me sztuczki i zwody... Chyba trafiłem na godnego przeciwnika..."
+			}
+		],
+		"options":[
+			{"target": 23, "text": "Ha!"}
+		]	  		
+	},
+	
+	{
+		"comment":"23",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy na Ciebie uważnie] Chyba wystarczy nam tych przepychanek..."
+			}
+		],
+		"options":[
+			{"target": 24, "text": "Eej!... Dopiero się [playerGender {rozgrzewałem|rozgrzewałam}]!..."}
+		]	  		
+	},
+	
+	{
+		"comment":"24",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"TUTAJ ZOSTAJE SPRAWDZONE, KTO WYGRAŁ!"
+			}
+		],
+		"options":[
+			{"target": 999, "text": ""}
 		]	  		
 	}
 	
