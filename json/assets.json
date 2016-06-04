@@ -145,6 +145,27 @@
 			"desc": "Ten link prowadzi do strony poświęconej badaniom nad kolektorem Big Dish.",
 			"url": "http://stg.anu.edu.au/research/cst/receiver-usasec.php"
 		},
+
+		{
+			"type": "Scroll",
+			"name": "ai",
+			"fullname": "Sztuczna inteligencja",
+			"autor": "Stephen Hawking",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten link prowadzi do strony wprowadzającej w zagadnienie sztucznej inteligencji.",
+			"url": "https://www.fizyka.umk.pl/~duch/ref/PL/00/00ai-mozg/00ai.html"
+		},
+		
+		{
+			"type": "Scroll",
+			"name": "czarna",
+			"fullname": "Czarne dziury",
+			"autor": "Stephen Hawking",
+			"img": "images/gui/untitled.png",
+			"desc": "Ten link prowadzi do strony na Wikipedii wyjaśniającej, czym są czarne dziury.",
+			"url": "https://pl.wikipedia.org/wiki/Czarna_dziura"
+		},
+
 		{
 			"type": "Scroll",
 			"name": "kolektor0",
@@ -158,11 +179,11 @@
 		{
 			"type": "Book",
 			"name": "popper",
-			"fullname": "O 'Społeczeństwie otwartym' Poppera",
+			"fullname": "Społeczeństwo otwarte",
 			"autor": "Karl Popper",
 			"img": "images/gui/untitled.png",
-			"desc": "Ten krótki tekst wyjaśnia, czym jest 'społeczeństwo otwarte' według Karla Poppera.",
-			"url": "docs/historia pieniądza.pdf"	
+			"desc": "Link prowadzi do artykułu filozofa, prof. Czesława Porębskiego na temat 'społeczeństwa otwartego'.",
+			"url": "http://www.diametros.iphils.uj.edu.pl/index.php/diametros/article/download/141/116"	
 		},
 		{
 			"type": "Book",
@@ -170,18 +191,9 @@
 			"fullname": "O duszy, ciele i szyszynce",
 			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
-			"desc": "Ten krótki tekst wyjaśnia, jak Kartezjusz widział powiązanie duszy z ciałem i jaką rolę odgrywa tu tajemniczy kulisty organ zwany szyszynką...",
-			"url": "docs/historia pieniądza.pdf"	
-		},		
-		{
-			"type": "Book",
-			"name": "hawking",
-			"fullname": "O czasie i przestrzeni",
-			"autor": "Stephen Hawking",
-			"img": "images/gui/untitled.png",
-			"desc": "Zwój ten zawiera krótki opis problematyki czasu i przestrzeni w fizyce współczesnej.",
-			"url": "docs/historia pieniądza.pdf"	
-		}		
+			"desc": "Ten dłuższy fragment książki Kartezjusza [']Człowiek['] zawiera więcej informacji na temat szyszynki, którą Kartezjusz określał jako [']gruczoł H[']...",
+			"url": "http://www.iphils.uj.edu.pl/~m.kuninski/Kartezjusz%20Czlowiek%20Tchnienia%20zyciowe%20Szyszynka.pdf"	
+		}	
 		
 	],
 	"items": [
@@ -190,9 +202,18 @@
 			"name": "demon",
 			"fullname": "Demon Kartezjusza",
 			"autor": "Kartezjusz",
-			"img": "images/gui/untitled.png",
 			"icon":"Item1",
 			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Złośliwy demon' w rozdziale 'Wiedza').",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "hawking",
+			"fullname": "Tornado Czasoprzestrzeni",
+			"autor": "Stephen Hawking",
+			"icon":"Item8",
+			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Komos').",
 			"url": null	
 		},
 
@@ -201,7 +222,6 @@
 			"name": "russell",
 			"fullname": "Fundament Russella",
 			"autor": "Bertrand Russell",
-			"img": "images/gui/untitled.png",
 			"icon":"Item6",
 			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'Wiedza bezpośrednia' w rozdziale 'Wiedza'.",
 			"url": null	
@@ -212,7 +232,6 @@
 			"name": "popper",
 			"fullname": "Falsyfikator Poppera",
 			"autor": "Karl Popper",
-			"img": "images/gui/untitled.png",
 			"icon":"Item5",
 			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
@@ -223,9 +242,18 @@
 			"name": "james",
 			"fullname": "Doświadczenie Jamesa",
 			"autor": "William James",
-			"img": "images/gui/untitled.png",
 			"icon":"Item4",
 			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'Doświadczenie religijne' w rozdziale 'Wiedza'.",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "arysto",
+			"fullname": "Młot Pierwszej Przyczyny",
+			"autor": "Arystoteles",
+			"icon":"Item7",
+			"desc": "'Młot Pierwszej Przyczyny' to argument dotyczący wyjaśnienia pochodzenia Wszechświata. Jeśli chcemy wyjaśnić racjonalnie początek świata, możemy w nieskończoność pytać o przyczynę czegoś, a potem o przyczynę tej przyczyny... Jedynym sposobem zakończenia tego nieskończonego łańcucha jest Pierwsza Przyczyna. Więcej informacji można uzyskać w trakcie rozmowy z Arystotelesem (zob. lekcja 'Pierwszy Poruszyciel' w rozdziale 'Kosmos'.",
 			"url": null	
 		},
 		
@@ -252,7 +280,7 @@
 				{
 			"comment":"1",
 			"level": 0,
-			"fullname": "Hennie!",
+			"fullname": "Bennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		},
@@ -260,7 +288,7 @@
 				{
 			"comment":"2",
 			"level": 0,
-			"fullname": "Hennie!",
+			"fullname": "Lennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		},
@@ -268,7 +296,7 @@
 				{
 			"comment":"3",
 			"level": 0,
-			"fullname": "Hennie!",
+			"fullname": "Jennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		},
@@ -276,7 +304,7 @@
 				{
 			"comment":"4",
 			"level": 1,
-			"fullname": "Hennie!",
+			"fullname": "Tennie!",
 			"icon":"book",
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		}

@@ -680,6 +680,7 @@
 		{
 		"COMMENT":"50",
 		"events":[
+			{"type":"unlockChap","time":"0","chapter":0,"lesson":4},
 			{"type":"give","time":4600,"item":"popper"}, 
 			{"type":"question","name":"Karl Popper","time":1000,"timepadding":0,
 			"text":"Bardzo się cieszę! Miło było rozmawiać. A teraz przyjmij ode mnie ten oto Argument. Niech Ci służy, Wędrowcze."
