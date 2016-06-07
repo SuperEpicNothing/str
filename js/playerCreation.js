@@ -3,8 +3,8 @@ var input;
 var context;
 var data = document.getElementById("playercreation").elements;
 var srcImg;
-var nameM = ["male_name01","male_name02","male_name03","male_name04","Dio","Santana","Wamuu","Cesar","Pontaref","Kars","Speedwagon","Joseph","Stroheim","Alucard","Andrew"];
-var nameF = ["female_name1","female_name02","female_name03","female_name04","female_name05","female_name06","female_name07","female_name08","female_name09","female_name10","female_name11","female_name12","female_name13","Saber","Brigid"];
+var nameM = ["Ekebolios","Maksymos","Akslepiodotos","Trazymach","Hermarchos","Echekrates","Panajtios","Filodemos","Alkidamas","Naumachios","Polemon","Demetriusz","Domninos","Alucard","Krates"];
+var nameF = ["﻿Aspazja","Hipparchia","Deotyma","Hypatia","Hildegarda","Sozypatra","Arystoklea","Melissa","Temistoklea","Abrotelia","Lasteneja","Asklepigenia"];
 
 function startPlayerCreation(){
 	
@@ -89,18 +89,18 @@ function renderPC(){
 	
 	cUtils.drawButtonImg(context,pcC,262,0, srcImg,190, 310, 39,43,randomPC);
 	
-	cUtils.drawButtonImg(context,pcC,301,62, srcImg,26, 82, 21,25,pcstepUp,1);
-	cUtils.drawButtonImg(context,pcC,322,62, srcImg,213, 82, 21,25,pcstepDown,1);
+	cUtils.drawButtonImg(context,pcC,301,63, srcImg,26, 82, 21,25,pcstepUp,1);
+	cUtils.drawButtonImg(context,pcC,322,63, srcImg,213,82, 21,25,pcstepDown,1);
 	
-	cUtils.drawButtonImg(context,pcC,301,0, srcImg, 95, 57, 37,21,pcGender,true);
-	cUtils.drawButtonImg(context,pcC,338,0, srcImg,132, 57, 37,21,pcGender,false);
+	cUtils.drawButtonImg(context,pcC,301,0, srcImg, 95, 57, 37,21,pcGender,true,data.namedItem("gender").checked);
+	cUtils.drawButtonImg(context,pcC,338,0, srcImg,132, 57, 37,21,pcGender,false,!data.namedItem("gender").checked);
 	
 
 	input.render();
 	cUtils.drawButton(context,pcC,"Stwórz",57, 360, 142,17,true,createPlayer)
 	
-	context.drawImage(srcImg,262,197+(data.namedItem("teachmode").checked?-34:0),34,34,26,321,34,34);
-	if(inBounds(26,321,34,34)){
+	context.drawImage(srcImg,262,129+(data.namedItem("teachmode").checked?0:39),39,39,26,312,39,39);
+	if(inBounds(26,312,39,39)){
 		if(mouse.up && mouse.target==pcC && mouse.prepare){
 			data.namedItem("teachmode").checked=!data.namedItem("teachmode").checked;
 			data.namedItem("gender").checked=false;

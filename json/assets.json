@@ -112,6 +112,18 @@
 		
 		{"name" : "ItemRock", "src":"images/gui/icons/items/I_Rock01.png"},
 		
+		{"name" : "demon", "src":"images/gui/icons/items/demon.png"},
+		{"name" : "russelBE", "src":"images/gui/icons/items/bottle0.png"},
+		{"name" : "russelbot0", "src":"images/gui/icons/items/bottle1.png"},
+		{"name" : "russelbot1", "src":"images/gui/icons/items/bottle2.png"},
+		{"name" : "russelbot2", "src":"images/gui/icons/items/bottle3.png"},
+		{"name" : "russelbot3", "src":"images/gui/icons/items/bottle4.png"},
+		{"name" : "russelbot4", "src":"images/gui/icons/items/bottle5.png"},
+		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Sword05.png"},
+		{"name" : "jamesAngel0", "src":"images/gui/icons/items/angl0.png"},
+		{"name" : "jamesAngel1", "src":"images/gui/icons/items/angl1.png"},
+
+
 		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},
 		{"name" : "Item2", "src":"images/gui/icons/items/W_Axe013.png"},
 		{"name" : "Item3", "src":"images/gui/icons/items/W_Mace007.png"},
@@ -190,8 +202,7 @@
 			"name": "demon",
 			"fullname": "Demon Kartezjusza",
 			"autor": "Kartezjusz",
-			"img": "images/gui/untitled.png",
-			"icon":"Item1",
+			"icon":"demon",
 			"desc": "'Demon Kartezjusza' to argument, za pomocą którego można podważyć istnienie wszystkiego oprócz 'terytorium Ja'. Został on opisany w 'Medytacjach o filozofii pierwszej'. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Złośliwy demon' w rozdziale 'Wiedza').",
 			"url": null	
 		},
@@ -201,8 +212,7 @@
 			"name": "russell",
 			"fullname": "Fundament Russella",
 			"autor": "Bertrand Russell",
-			"img": "images/gui/untitled.png",
-			"icon":"Item6",
+			"icon":"russelBE",
 			"desc": "'Fundament Russella' to argument dotyczący podstaw wiedzy. Russell wykazywał (w 'Problemach filozofii'), że niepodważalnym fundamentem wszelkiego typu wiedzy jest bezpośrednie doświadczenie. Więcej informacji można uzyskać w trakcie rozmowy z Russellem (zob. lekcja 'Wiedza bezpośrednia' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
@@ -212,7 +222,6 @@
 			"name": "popper",
 			"fullname": "Falsyfikator Poppera",
 			"autor": "Karl Popper",
-			"img": "images/gui/untitled.png",
 			"icon":"Item5",
 			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
@@ -223,8 +232,7 @@
 			"name": "james",
 			"fullname": "Doświadczenie Jamesa",
 			"autor": "William James",
-			"img": "images/gui/untitled.png",
-			"icon":"Item4",
+			"icon":"jamesSword",
 			"desc": "'Doświadczenie Jamesa' to argument dotyczący źródeł wiary w Boga; rdzeniem wiary zdaniem Jamesa jest doświadczenie religijne (które opisywał w 'Odmianach doświadczenia religijnego'). Więcej informacji można uzyskać w trakcie rozmowy z Jamesem (zob. lekcja 'Doświadczenie religijne' w rozdziale 'Wiedza'.",
 			"url": null	
 		},

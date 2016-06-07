@@ -1,4 +1,4 @@
-
+﻿
 var itemManuTab=0
 var item_menu;
 var GUIimg
@@ -195,9 +195,9 @@ function repolulateItemMenu()
 	var itemdata=document.getElementById('GUIItemsItems');
 	
 	var scrollbutton=document.getElementById('GUIItemsScrollsButton');
-	scrollbutton.innerHTML="<span>Zwoje"+((player.notificationsBooks>0)?" <span class='badge'> ? </span>":"")+"</span>"
+	scrollbutton.innerHTML="<span>Księgi"+((player.notificationsBooks>0)?" <span class='badge'> ? </span>":"")+"</span>"
 	var itembutton=document.getElementById('GUIItemsItemsButton');
-	  itembutton.innerHTML="<span>Przedmioty"+((player.notificationsItems>0)?" <span class='badge'> ? </span>":"")+"</span>"
+	  itembutton.innerHTML="<span>Argumenty"+((player.notificationsItems>0)?" <span class='badge'> ? </span>":"")+"</span>"
 	
 
 	
@@ -208,10 +208,12 @@ function repolulateItemMenu()
 	itemdata.removeChild(itemdata.firstChild);
 	
 	//create Library
-	for(var i =0 ;i<player.books.length;i++)
+	for(var i =0 ;i<Assets.booknames.length;i++)
 	{
+	var book = Assets.books[Assets.booknames[i]];
+	if(player.books.indexOf(book.name)<0 && !option.teach)
+		continue;
 	var li = document.createElement("LI");
-	var book = Assets.books[player.books[i]];
 	var rng = new Math.seedrandom(book.name+book.fullname);
 	li.innerHTML = "<span><img src='images/gui/icons/books/W_Book0"+Math.floor(1+rng()*7)+".png' alt=' [book] '></img>"+book.fullname.capitalizeFirstLetter()+(player.seen.indexOf("book"+book.name)>=0?"":" <span class='badge'> ? </span>")+"</span>";
 	li.className="item"
@@ -224,12 +226,13 @@ function repolulateItemMenu()
 	}
 	
 	//create item pile
-	for(var i =0 ;i<player.items.length;i++)
+	for(var i =0 ;i<Assets.itemnames.length;i++)
 	{
+	var item = Assets.items[Assets.itemnames[i]];
+	if(player.items.indexOf(item.name)<0 && !option.teach)
+		continue;
 	var li = document.createElement("LI");
-	var item = Assets.items[player.items[i]];
-	
-	li.innerHTML = "<span><img src='"+ Assets.img[item.icon].src+"' alt=' [item] '></img>- "+item.type.capitalizeFirstLetter()+" - "+item.fullname.capitalizeFirstLetter()+(player.seen.indexOf("item"+item.name)>=0?"":" <span class='badge'> ? </span>")+"</span>";
+	li.innerHTML = "<span><img src='"+ Assets.img[item.icon].src+"' alt=' [item] '></img>- "+item.fullname.capitalizeFirstLetter()+(player.seen.indexOf("item"+item.name)>=0?"":" <span class='badge'> ? </span>")+"</span>";
 	li.className="item"
 	//item.style="font-size:"+(20*30)/(book.fullname.length+4+5)+"px;";
 	itemdata.appendChild(li)

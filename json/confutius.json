@@ -53,8 +53,8 @@
 	},
 		{
 		"events":[
-			{"type":"resolve","time":3000,"arm":"sword","player":"none","success":false},
-			{"type":"question","time":2000,"arm":"sword","text":"What's in the book [playerName]?"}
+			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":true},
+			{"type":"question","time":2000,"arm":"bombardment","text":"3"}
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
@@ -67,8 +67,8 @@
 	},
 	{
 		"events":[
-			{"type":"resolve","time":3000,"arm":"robot","player":"none","success":false},
-			{"type":"question","time":2000,"arm":"robot","text":"What's in the book [playerName]?"}
+			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":false},
+			{"type":"question","time":2000,"arm":"swordspear","text":"4?"}
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
@@ -81,8 +81,8 @@
 	},
 	{
 		"events":[
-			{"type":"resolve","time":3000,"arm":"laser","player":"none","success":true},
-			{"type":"question","time":2000,"arm":"laser","text":"What's in the book [playerName]?"}
+			{"type":"resolve","time":3000,"arm":"robot","player":"none","success":true},
+			{"type":"question","time":2000,"arm":"robot","text":"5?"}
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
@@ -95,8 +95,8 @@
 	},
 		{
 		"events":[
-			{"type":"resolve","time":3000,"arm":"book","player":"Argument Mocy i Zniszczenia","success":true},
-			{"type":"question","time":2000,"arm":"book","text":"What's in the book [playerName]?"}
+			{"type":"resolve","time":3000,"arm":"book","player":"Argument Mocy i Zniszczenia","success":false},
+			{"type":"question","time":2000,"arm":"book","text":"6?"}
 		],
 		"options":[
 			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},

@@ -168,10 +168,10 @@ function loadPlayer(){
 		*/
 		console.log(document.cookie.indexOf("player"));
 			var url = (document.location+"");
-	if(!url.contains("noplayer=0")){
+	if(!url.contains("noplayer=0") && !url.contains("main=0") && !url.contains("help=0")){
 		var begin=url.split("?")[0];
 		if(document.cookie.indexOf("player") < 0)
-			begin+="?noplayer=0";
+			begin+="?main=0";
 		document.location=begin;
 	}
 	}
@@ -343,13 +343,17 @@ function loadAssets(){
 		}
 		
 		var books = arr.scrolls;
+		Assets.booknames = [];
 		for(var i=0;i<books.length;i++){
 			Assets.books[books[i].name]=books[i];
-		}
+			Assets.booknames.push(books[i].name);
+6		}
 		
 		var items = arr.items;
+		Assets.itemnames = [];
 		for(var i=0;i<items.length;i++){
 			Assets.items[items[i].name]=items[i];
+			Assets.itemnames.push(items[i].name);
 		}
 		var achievments = arr.achievments;
 		for(var i=0;i<achievments.length;i++){

@@ -62,7 +62,7 @@ function drawAchievments(){
 	for(var ach=0;ach<l;ach++)
 	{
 		var r = Assets.achievments[ach].level;
-		var unlocked = player.achievements.indexOf(ach)>=0
+		var unlocked = player.achievements.indexOf(ach)>=0 || option.teach
 		var hidden = Assets.achievments[ach].hidden!=null
 		if(hidden && !unlocked)
 			continue;
@@ -97,7 +97,7 @@ function drawAchievments(){
 	}
 	for(var ach=l-1;ach>=0;ach--)
 	{	
-		var unlocked = player.achievements.indexOf(ach)>=0
+		var unlocked = player.achievements.indexOf(ach)>=0 || option.teach
 		var hidden = Assets.achievments[ach].hidden!=null
 		if(hidden && !unlocked)
 			continue;

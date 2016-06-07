@@ -32,11 +32,24 @@ cUtils.imageSmoothing = function(ctx,bool){
 	ctx.msImageSmoothingEnabled = bool;
 	ctx.imageSmoothingEnabled = bool;
 }
-
+cUtils.colorGradients = function(colors,lengths,stage){
+	
+	var i =0;
+	
+	while(lengths[i]<=stage && i<lengths.length-1)
+		i++;
+	
+	return cUtils.colorGradient(colors[i],colors[i+1],
+	1-(lengths[i]-stage)/(lengths[i]-(i-1<0?0:lengths[i-1]))
+	);
+	
+	
+}
 cUtils.colorGradient = function(colorA,colorB,stage){
 	var colorC = colorA;
 	for(var i=0;i<colorA.length;i++){
 	colorC[i]+= (colorB[i]-colorA[i])*stage;
+	if(i<3)
 	colorC[i]=Math.round(colorC[i])}
 	return colorC;
 }
@@ -119,18 +132,20 @@ function skip(mode){
 		console.log(renderData)
 	}
 }
-cUtils.drawButtonImg = function(context,elem,ix,iy, img,x, y, width,height,f,id){
+cUtils.drawButtonImg = function(context,elem,ix,iy, img,x, y, width,height,f,id,disabled){
 	var type =0;
 	if(inBounds(x,y,width,height)){
 		type=1;
 
 		if(mouse.up && mouse.target==elem && mouse.prepare){
-			if(f != undefined)
+			if(f != undefined && !disabled)
 			f(id)
 		mouse.up=false;
 		mouse.prepare=false;
 		}
 		
+		
+
 		if(mouse.buttons>0)
 		{
 		mouse.prepare=true;
@@ -139,7 +154,9 @@ cUtils.drawButtonImg = function(context,elem,ix,iy, img,x, y, width,height,f,id)
 		else
 		mouse.prepare=false;
 	}
-	
+	if(disabled)
+		type=2;
+		
 	context.drawImage(img,
 	ix,iy + type*height,
 	width,height,

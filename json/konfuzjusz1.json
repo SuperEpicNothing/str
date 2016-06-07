@@ -1,5 +1,7 @@
 {
 	"meta":{
+	"win":25,
+	"lose":26,
 	"bossmaxhp":7,
 	"heromaxhp":7,
 	"music":[
@@ -12,7 +14,6 @@
 	{
 		"comment":"0",
 		"events":[
-			{"type":"showBoss","time":2300},
 			{"type":"question","time":1000,"timepadding":0,
 			"text":"Mua-Hua-hua! Mua-ha-ha! Huahuahuahuahua!... [diaboliczny śmiech]"}
 		],
@@ -87,14 +88,14 @@
 	{
 		"comment":"6",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"book",
 			"text":"Niech będzie i tak. Słuchaj mnie uważnie, Wędrowcze. Zacznijmy od czegoś prostego. Stoisz w sklepie i patrzysz na małe czerwone jabłuszko. Powiedz mi - czego jesteś pewien, ale tak [']NAPRAWDĘ NAPRAWDĘ pewien[']?"
 			}
 		],
 		"options":[
-			{"target": 7, "text": "Że istnieję, oczywiście!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}},
-			{"target": 7, "text": "Że przeżywam właśnie doświadczenie widzenia czerwonego jabłuszka...","height":2, "req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}},
-			{"target": 8, "text": "Że leży przede mną małe czerwone jabłuszko!","consequence":{"herohp":-1}}
+			{"target": 27, "text": "Że istnieję, oczywiście!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}},
+			{"target": 28, "text": "Że przeżywam właśnie doświadczenie widzenia czerwonego jabłuszka...","height":2, "req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}},
+			{"target": 29, "text": "Że leży przede mną małe czerwone jabłuszko!","consequence":{"herohp":-1}}
 		]	  		
 	},
 	
@@ -203,13 +204,13 @@
 	{
 		"comment":"15",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"sword",
 			"text":"Hm. Idźmy więc dalej. Zacznijmy od prostych spraw: czego nie da się spostrzec zmysłowo, o tym nie można sensownie mówić. Prawda?"
 			}
 		],
 		"options":[
-			{"target": 16, "text": "Prawda!","consequence":{"herohp":-1}},
-			{"target": 18, "text": "Nieprawda! Jest choćby matematyka!...",
+			{"target": 30, "text": "Prawda!","consequence":{"herohp":-1}},
+			{"target": 31, "text": "Nieprawda! Jest choćby matematyka!...",
 			"req":{"type":"item","item":"russell"},"consequence":{"bosshp":-1}}
 		]	  		
 	},
@@ -242,13 +243,13 @@
 	{
 		"comment":"18",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"robot",
 			"text":"Dobrze więc. To matematyka. Ale przecież Boga nie można doświadczyć matematycznie ani zmysłowo, więc z pewnością nie istnieje!"
 			}
 		],
 		"options":[
-			{"target": 19, "text": "Jest wiele różnych typów doświadczeń!", "req":{"type":"item","item":"james"},"consequence":{"bosshp":-1}},
-			{"target": 20, "text": "Chyba masz rację...","consequence":{"herohp":-1}}
+			{"target": 33, "text": "Jest wiele różnych typów doświadczeń!", "req":{"type":"item","item":"james"},"consequence":{"bosshp":-1}},
+			{"target": 32, "text": "Chyba masz rację...","consequence":{"herohp":-1}}
 		]	  		
 	},
 	
@@ -268,13 +269,13 @@
 	{
 		"comment":"20",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"laser",
 			"text":"Ha! Rację?! Nie [playerGender {nauczyłeś|nauczyłaś}] się jeszcze, Wędrowcze, aby nie ufać Konfuzjuszowi? [Uśmiecha się złośliwie] Jest wiele rodzajów doświadczeń, Wędrowcze. Czyż doświadczenie religijne nie świadczy o istnieniu Boga?"
 			}
 		],
 		"options":[
-			{"target": 21, "text": "No rzeczywiście...","consequence":{"herohp":-1}},
-			{"target": 22, "text": "A nigdy w życiu!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}}
+			{"target": 34, "text": "No rzeczywiście...","consequence":{"herohp":-1}},
+			{"target": 35, "text": "A nigdy w życiu!","req":{"type":"item","item":"demon"},"consequence":{"bosshp":-1}}
 			
 		]	  		
 	},
@@ -318,13 +319,146 @@
 	{
 		"comment":"24",
 		"events":[
+			{"type":"isWin","time":0},
 			{"type":"question","time":1000,"timepadding":0,
 			"text":"TUTAJ ZOSTAJE SPRAWDZONE, KTO WYGRAŁ!"
 			}
 		],
 		"options":[
+		]	  		
+	},
+	
+	{
+		"comment":"25",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"WYGRAŁĘŚ!"
+			}
+		],
+		"options":[
 			{"target": 999, "text": ""}
 		]	  		
+	},
+	
+	{
+		"comment":"26",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Przegrałeś!"
+			}
+		],
+		"options":[
+			{"target": 999, "text": ""}
+		]	  		
+	},
+	
+	{
+		"comment":"27-6-demon",
+		"events":[
+			{"type":"resolve","time":6000,
+			"arm":"book",
+			"player":"demon",
+			"success":true
+			},
+			{"type":"change","time":0,"target":7}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"28-6-russel",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"book",
+			"player":"russel",
+			"success":true
+			},
+			{"type":"change","time":0,"target":7}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"29-6-lose",
+		"events":[
+			{"type":"resolve","time":2000,
+			"arm":"book",
+			"player":"",
+			"success":false
+			},
+			{"type":"change","time":0,"target":8}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"30-15-lose",
+		"events":[
+			{"type":"resolve","time":2000,
+			"arm":"sword",
+			"player":"",
+			"success":false
+			},
+			{"type":"change","time":0,"target":16}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"31-15-russel",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"sword",
+			"player":"russel",
+			"success":true
+			},
+			{"type":"change","time":0,"target":18}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"32-18-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"russel",
+			"success":true
+			},
+			{"type":"change","time":0,"target":20}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"33-18-james",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"james",
+			"success":true
+			},
+			{"type":"change","time":0,"target":19}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"34-20-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"russel",
+			"success":true
+			},
+			{"type":"change","time":0,"target":21}
+		],
+		"options":[]	  		
+	},
+	{
+		"comment":"35-20-demon",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"demon",
+			"success":true
+			},
+			{"type":"change","time":0,"target":22}
+		],
+		"options":[]	  		
 	}
 	
 	]

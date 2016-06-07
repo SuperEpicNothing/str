@@ -73,9 +73,6 @@ var change,changeEvt;
 var timeflow =true;
 var timeflowtimestamp;
 function renderConfu(timestamp){
-	var i = new Image();
-	i.src = "images/gui/locked.png";
-	context.drawImage(i,elem.width/2,elem.height/2);
 
 	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp;}
 	if(!start || !Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
@@ -113,9 +110,8 @@ function renderConfu(timestamp){
 						continue;
 					}
 					var lifestage= particle.life/particle.end;
-					
 					switch(particle.type){
-						
+						default:console.log(particle.type);break;
 						case "explosion":
 							
 							
@@ -129,6 +125,7 @@ function renderConfu(timestamp){
 											start:particle.start,
 											end:200+200*Math.random(),
 											life:0,
+											color:particle.color,
 											size:2+5*Math.random(),
 											movX:(1-2*Math.random()),
 											movY:(1-2*Math.random())};
@@ -137,33 +134,74 @@ function renderConfu(timestamp){
 							}
 							particle.end=-1;
 						break;
+						case "potionsmoke":
+							var potionColor = [0,0,0,0]
+							switch(particle.color)
+							{
+								case 0:
+								potionColor =[52,113,255,0.9];								
+								break;
+								
+								case 1:
+								potionColor =[103,181,83,0.9];								
+								break;
+								
+								case 2:
+								potionColor =[193,73,239,0.9];								
+								break;
+								
+								case 3:
+									potionColor =[255,52,63,0.9];							
+								break;
+								
+								case 4:
+								default:
+								potionColor =[255,210,52,0.9];
+								break;
+							}
+							var color  = [0,0,0,1]
+							color = cUtils.colorGradients([potionColor,[potionColor[0]*0.5,potionColor[1]*0.5,potionColor[2]*0.3,0.2],[0,0,0,0.01]], [0.7,1],lifestage)		
+							context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
+							
+
+
+						context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+
+						if(!timeflow)
+							continue;
 						
+							particle.x+=particle.movX;
+							particle.y+=particle.movY;
+							particle.movX=particle.movX+0.05*(1-2*Math.random());
+							particle.movY=particle.movY+0.05*(1-2*Math.random());
+						break
 						case "explosionsmoke":
 						var color =[0,0,0]; 
-						var alpha =0;
+						color = cUtils.colorGradients([[249,247,212,1],[248,239,19,1],[255,139,50,1],[186,0,0,0.5],[0,0,0,0.3]], [0.11,0.2,0.41,1],lifestage)		
+						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
+							
+						//context.beginPath();
+						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
+						//context.closePath();;
+
+						context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+						//context.fill();
+						//context.beginPath();
+						if(!timeflow)
+							continue;
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						particle.movX=particle.movX+0.05*(1-2*Math.random());
+						particle.movY=particle.movY+0.05*(1-2*Math.random());
 						
-						if(lifestage<= 0.11)						
-						{
-							color = cUtils.colorGradient([249,247,212],[248,239,19], (lifestage/0.11))
-							alpha =1;
-						}
-						else if(lifestage<= 0.2)
-						{
-							color = cUtils.colorGradient([248,239,19],[255,139,50], ((lifestage-0.11)/0.09))
-							alpha =1;
-						}
-						else if(lifestage<= 0.41)
-						{
-							color = cUtils.colorGradient([255,139,50],[186,0,0], ((lifestage-0.2)/0.21))
-							alpha =1;
-						}
-						else
-						{
-							color = cUtils.colorGradient([186,0,0],[0,0,0], ((lifestage-0.41)/0.59))
-							alpha =1- ((lifestage-0.41)/0.59);
-						}
+						break;
 						
-						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+alpha+")";
+						case "shieldsmoke":
+						var color =[0,0,0]; 
+						color = cUtils.colorGradients(
+						[[50,159,251,0.7],[118,210,225,0.6],[50,159,251,0.7]], 
+						[0,0.5,1],Math.sin(lifestage/1000*2*Math.PI))		
+						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
 							
 						//context.beginPath();
 						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
@@ -183,8 +221,9 @@ function renderConfu(timestamp){
 						
 						case "magicsmoke":
 						
-						
-						context.fillStyle="rgba("+Math.round(63+143*(1-lifestage))+","+Math.round(206*(1-lifestage))+",206,"+0.5*(1-lifestage)+")";
+						var color = cUtils.colorGradients([[63,0,206,0],[206,206,206,0.5]], [1],1-lifestage);		
+						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
+						//context.fillStyle="rgba("+Math.round(63+143*(1-lifestage))+","+Math.round(206*(1-lifestage))+",206,"+0.5*(1-lifestage)+")";
 						
 						//context.beginPath();
 						//context.arc(particle.x, particle.y, (particle.size+5)*lifestage, 2 * Math.PI, false);
@@ -201,6 +240,7 @@ function renderConfu(timestamp){
 						particle.movY=particle.movY-0.3*Math.random();
 						
 						break;
+						
 						case "healthsmoke":
 						context.fillStyle="rgba("+Math.round(100+105*(particle.lifepercent)+(Math.sin((timeflow?progress:(timeflowtimestamp-start))/(2000*particle.lifepercent)*2*Math.PI)*40))+",0,"+Math.round(70*particle.lifepercent)+","+
 						0.7*(1-lifestage)+")";
@@ -215,7 +255,7 @@ function renderConfu(timestamp){
 						
 						case "orbbot":
 							var pos = [350,140];
-							var positions = [[253,100],[446,100],[350,233],[446,100],[350,233],[350,140]];
+							var positions = [[253,100],[446,100],[350,233],[446,100],[350,233],[350,233],[350,233],[350,140]];
 							var dist = 60+10*Math.cos(Math.PI*2*(timeflow?progress:(timeflowtimestamp-start))/4000);
 							var arc = (timeflow?progress:(timeflowtimestamp-start))/4000*Math.PI*2
 							positions[positions.length-1]=pos;
@@ -262,15 +302,20 @@ function renderConfu(timestamp){
 							if(!renderData.botsFinished[particle.id])
 							particle.end+=100;
 
-							if(renderData.botsinPos[particle.id] && renderData.botsinPos[(particle.id+1)%(positions.length-1)] && (particle.id+1)!=positions.length)
+							if(renderData.botsinPos[particle.id] && (particle.id+1)!=positions.length)
 							{
 								context.strokeStyle="red";
-								context.lineWidth=3+2*Math.cos(frame/8*2*Math.PI);
+								context.lineWidth=1+0.5*Math.cos(frame/8*2*Math.PI);
+								
+								for(var p = particle.id+1; p<positions.length-1; p++)
+								if(renderData.botsinPos[p]){								
 								context.beginPath();
 								context.moveTo(positions[particle.id][0],positions[particle.id][1]);
-								context.lineTo(positions[(particle.id+1)%(positions.length-1)][0],positions[(particle.id+1)%(positions.length-1)][1]);
+								context.lineTo(positions[p][0],positions[p][1]);
 								context.closePath();
 								context.stroke();
+								}
+								
 								if(renderData.botsinPos[positions.length-1]){
 									context.beginPath();
 									context.moveTo(positions[particle.id][0],positions[particle.id][1]);
@@ -303,7 +348,7 @@ function renderConfu(timestamp){
 									renderData.botsFinished[particle.id]=true;
 									particle.end=-1;
 								}
-								else
+								else if(!renderData.success)
 								{
 									if(particle.id == (positions.length-1) )
 									{
@@ -322,9 +367,29 @@ function renderConfu(timestamp){
 											context.closePath();
 											context.fill();
 											context.beginPath();
+											
+											for(var p=0;p<40;p++){
+											var smk = {
+											
+											type:"explosionsmoke",
+											x:pos[0]-100*(1-Math.cos(pro/750*2*Math.PI)) + Math.random()*200*(1-Math.cos(pro/750*2*Math.PI)),						
+											y:elem.height-180,
+											start:renderData.progress,
+											end:200+200*Math.random(),
+											life:0,
+											size:2,
+											movX:(1-2*Math.random()),
+											movY:(1-2*Math.random())
+											};
+									
+											renderData.particles.push(smk);
+											}
 										}else if(pro>950)
 										{
 											renderData.botsfinished=true;
+											renderData.botsinPos[particle.id]=false;
+											renderData.botsFinished[particle.id]=true;
+											particle.end=-1;
 										}
 										
 											
@@ -355,7 +420,8 @@ function renderConfu(timestamp){
 							context.drawImage(Assets.img["orbbot"],
 								0, frame*17,
 								17,17,		
-								particle.x-(8.5*4/3),particle.y-(8.5*4/3),		
+								(renderData.botsinPos[particle.id]?positions[particle.id][0]:particle.x)-(17*2/3),
+								(renderData.botsinPos[particle.id]?positions[particle.id][1]:particle.y)-(17*2/3),		
 								17*4/3,17*4/3);
 							if(!timeflow)
 								continue;
@@ -395,7 +461,7 @@ function renderConfu(timestamp){
 							particle.movX+= particle.x>elem.width/2? -str: particle.x<elem.width/2? str: 0;
 							particle.movY+= particle.y>elem.height-180? -str: particle.x<elem.height-180? str: 0;
 
-							for(var p =0;p<20;p++){
+							for(var p =0;p<15;p++){
 							var smk = {
 								type:"magicsmoke",
 								x:particle.x,						
@@ -412,25 +478,129 @@ function renderConfu(timestamp){
 							
 							if( particle.x>elem.width/2-(2*28+boss.heroHpMax*67-4)/2 &&  particle.x<elem.width/2+(2*28+boss.heroHpMax*67-4)/2 &&
 								particle.y>elem.height-190){
-								for(var p =0;p<60;p++){
 							var smk = {
-								type:"magicsmoke",
-								x:particle.x+5*(1-2*Math.random()),						
-								y:particle.y+5*(1-2*Math.random()),
+								type:"explosion",
+								smoketype:"magicsmoke",
+								x:particle.x,						
+								y:particle.y,
 								start:renderData.progress,
-								end:600*Math.random(),
+								end:200+200*Math.random(),
 								life:0,
-								size:4*Math.random(),
-								movX:5*(1-2*Math.random()),
-								movY:5*(1-2*Math.random())};
+								size:5*Math.random()};
 								
 							renderData.particles.push(smk);
-							}
+							
 							particle.end=-1;
 							}
 							else
 								particle.end+=100;
 							
+						break;
+						
+						case "missile":
+							particle.x+=particle.movX;
+							particle.y+=particle.movY;
+							var frame = Math.round(lifestage*8*particle.end/700)%8
+
+							context.drawImage(Assets.img["orbbot"],
+								0, frame*17,
+								17,17,		
+								particle.x-(8.5*4/3),particle.y-(8.5*4/3),		
+								17*4/3,17*4/3);
+								
+							var dist =  Math.sqrt(Math.pow(particle.x- particle.tx,2)+Math.pow(particle.y- particle.ty,2));
+							var V = Math.sqrt(Math.pow(particle.movX,2)+Math.pow(particle.movY,2));
+							
+							var str = Math.min(dist/40*5,5);
+
+							if(V > 5 && particle.movY>0)
+							{
+								particle.movX*=0.3;
+								particle.movY*=0.3;
+							}
+							particle.movX-= (particle.x- particle.tx)/dist*str;
+							particle.movY-= (particle.y- particle.ty)/dist*str;
+							particle.movX+= 2*(1-Math.random()*2);
+							particle.movY+= 2*(1-Math.random()*2);
+
+				
+
+							for(var p =0;p<5;p++){
+							var smk = {
+								type:"explosionsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:4*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(smk);
+							}
+							
+							if( particle.x>particle.tx-8.5*4/3 &&  particle.x<particle.tx+8.5*4/3 &&
+								particle.y>particle.ty-8.5*4/3 &&  particle.y<particle.ty+8.5*4/3 
+								|| (renderData.success && dist <170 && Math.random()<0.5) 
+								|| (renderData.success && dist < 100 && Math.random()<0.9)
+								|| (renderData.success && dist < 90 )){
+							var smk = {
+								type:"explosion",
+								smoketype:"explosionsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:200+200*Math.random(),
+								life:0,
+								size:5};
+							console.log("explode")	
+							renderData.particles.push(smk);
+							
+							particle.end=-1;
+							}
+							else
+								particle.end+=100;
+							
+						break;
+						
+						case "bottle":
+							if(particle.timestamp == undefined)
+								particle.timestamp = renderData.progress;
+							var dist =  Math.sqrt(Math.pow(particle.x - particle.tx,2)+Math.pow(particle.y- particle.ty,2));
+							if(particle.movY>0 && (dist<40 || particle.y>particle.ty+100)){
+								var smk = {
+								type:"explosion",
+								smoketype:"potionsmoke",
+								color:particle.color,
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:1200+200*Math.random(),
+								life:0,
+								size:5};
+								particle.end=-1
+							console.log("explode")	
+							renderData.particles.push(smk);
+							}
+							
+							context.setTransform(1, 0, 0, 1, particle.x,particle.y);
+							context.rotate((Math.PI*2) * (renderData.progress)/1000 * particle.rotSpeed );
+							context.drawImage(Assets.img["russelbot"+particle.color],
+								0, 0,
+								34,34,		
+								-(34*2/3),
+								-(34*2/3),		
+								34*4/3,34*4/3);
+							context.setTransform(1, 0, 0, 1, 0, 0);
+	
+								
+							particle.x+=particle.movX*(renderData.progress-particle.timestamp)/1000;
+							particle.y+=particle.movY*(renderData.progress-particle.timestamp)/1000;
+							particle.start+=100;
+							//particle.movX+= ((particle.x>particle.tx)?-Math.random()*0.3:Math.random()*0.3);
+							particle.movY+= 2000*(renderData.progress-particle.timestamp)/1000//2*(1-Math.random()*2);
+							particle.timestamp = renderData.progress;
 						break;
 					}
 					if(!timeflow)
@@ -441,8 +611,8 @@ function renderConfu(timestamp){
 	
 
 	if(!timeflow){
-		var l =Math.round(360*(timestamp-timeflowtimestamp)/5000);
-		l=Math.min(l,360)
+		var l =Math.round(20*(timestamp-timeflowtimestamp)/5000);
+		l=Math.min(l,20)
 		for(var i=0;i<l;i++){
 		context.fillStyle = "rgba(0,0,0,"+(0.3*Math.sin( ((timestamp-timeflowtimestamp)/2000*2*Math.PI) +(i%2==0?Math.PI/2:0))+0.4)+")";
 	
@@ -646,6 +816,17 @@ function processEvent(progress){
 			change=evt.target;
 			changeEvt=0;
 		break;
+		
+		case "isWin":
+			if(boss.heroHp<boss.health)
+			change=battlescript.meta.lose;
+			else if(boss.heroHp>boss.health)
+			change=battlescript.meta.win;
+			else 
+			break;
+			changeEvt=0;
+		break;
+		
 		case "pause":
 		break;
 		
@@ -703,6 +884,7 @@ function processEvent(progress){
 			renderData.type="unlockChap"			
 			unlockChapter(evt.chapter,evt.lesson);
 		break;
+		
 	}
 }
 
@@ -820,6 +1002,95 @@ function drawConfutest(progress){
 			drawAttackInfo(progress,"Konfuzjusz","AttackCategory",renderData.arm.toUpperCase());
 			break;
 			
+			case "swordspear":
+			
+				if(renderData.progress<=2000){
+					context.setTransform(1, 0, 0, 1, confX+50,confY+100);
+					context.rotate(Math.PI*135/180);
+					var h =42*renderData.progress/2000;
+					context.drawImage(Assets.img["sword"],
+					0,42-h,
+					86,2+2*h,
+					
+					-43,-1-h,86,2+2*h);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<20;i++)
+						{
+							var parX= confX+50+(Math.random()>0.5?-h-15:h+15)+(1-2*Math.random())
+							var parY = confY+100 +10*(1-2*Math.random())
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(-4*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+					
+				}else if(renderData.progress<=3000){
+					
+					context.setTransform(1, 0, 0, 1, confX+50+40*(renderData.progress-2000)/1000,confY+100 -100*(renderData.progress-2000)/1000);
+					context.rotate(Math.PI*135/180 + Math.PI/2*(renderData.progress-2000)/1000);
+					context.drawImage(Assets.img["sword"],-43,-43,86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+				}else if(renderData.progress<=3000){
+					
+					
+					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+					//context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
+					context.translate(0 , (confY-(elem.height-180))+15*Math.sin(renderData.progress/250));
+					context.rotate((Math.PI*225/180));
+					
+					context.drawImage(Assets.img["sword"],
+						-43,-43,
+					86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+				}else if(renderData.progress<=5000){
+					
+					var h =42-42*(renderData.progress-3000)/2000;
+		
+					
+					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+					//context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
+					context.translate(0 , (confY-(elem.height-180))+15*Math.sin(renderData.progress/250));
+					context.rotate((Math.PI*225/180));
+					
+					context.drawImage(Assets.img["sword"],
+					0,86-2*h-2,
+					86,2+2*h,
+					
+					-43,-h,86,2*h);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<40;i++){
+							var parX= confX+90+(15+5*Math.sin(renderData.progress/250))*(1-2*Math.random());
+							var parY = confY-20+2*h +(1-2*Math.random())+15*Math.sin(renderData.progress/250);
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+					
+				} 
+			break;
+
 			case "sword":
 				
 				if(renderData.progress<=2000){
@@ -895,7 +1166,7 @@ function drawConfutest(progress){
 			
 			case "book":
 				if(renderData.progress<=2000){
-					for(var i=0;i<10+(30*(renderData.progress/2000));i++)
+					for(var i=0;i<10+(20*(renderData.progress/2000));i++)
 						{
 							var parX =  confX+150+51/2+Math.cos(progress/270)*9+(5+10*(renderData.progress/2000))*(1-2*Math.random());
 							var parY = confY+60+51/2-Math.sin(progress/300)*8 + (5+10*(renderData.progress/2000))*(1-2*Math.random()) -50*(renderData.progress/2000);
@@ -916,26 +1187,7 @@ function drawConfutest(progress){
 				}
 				else{
 					if(timeflow)
-						timeflow=false;
-
-					for(var i=0;i<40;i++)
-						{
-							var parX =  confX+150+51/2+Math.cos(progress/270)*9+(15)*(1-2*Math.random());
-							var parY = confY+60+51/2-Math.sin(progress/300)*8 + (15)*(1-2*Math.random())-50;
-						
-							var particle = {
-								type:"magicsmoke",
-								x:parX,						
-								y:parY,
-								start:renderData.progress,
-								end:400*Math.random(),
-								life:0,
-								size:15*Math.random(),
-								movX:(1-2*Math.random()),
-								movY:(-4*Math.random())};
-								
-							renderData.particles.push(particle);
-					}
+						timeflow=false;					
 				}
 
 				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Zwodzący Płonień");
@@ -1047,6 +1299,40 @@ function drawConfutest(progress){
 						
 					renderData.particles.push(particle);
 					
+					//orbbot 7
+					var parX = confX+90;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:6,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
+					//orbbot 8
+					var parX = confX+66;
+					var parY = confY+42;
+					
+					var particle = {
+						type:"orbbot",
+						id:7,
+						x:parX,						
+						y:parY,
+						start:renderData.progress,
+						end:1000,
+						life:0,
+						movX:-5*Math.random(),
+						movY:-20*Math.random()};
+						
+					renderData.particles.push(particle);
+					
 					renderData.released=true;
 				}
 				if(renderData.progress>5000)
@@ -1069,6 +1355,13 @@ function drawConfutest(progress){
 				}
 
 				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Dezintegrujące  Spojrzenie");
+			break;
+			
+			case "bombardment":
+				drawAttackInfo(progress,"Konfuzjusz","Mroczne Automatony","Bombardowanie Orbitalne");
+				if(renderData.progress>5000)
+					timeflow=false;
+
 			break;
 		}
 	
@@ -1204,7 +1497,7 @@ function drawConfutest(progress){
 			case "robot":
 				if(renderData.progress<=500){
 					timeflow=true;
-					//timeflowtimestamp=undefined;
+					timeflowtimestamp=undefined;
 				}else if(!renderData.beginFinish)
 					renderData.beginFinish=true;
 			break;
@@ -1265,14 +1558,200 @@ function drawConfutest(progress){
 
 					renderData.particles.push(smk);
 				}
+			break;
+			case "bombardment":
+				if(renderData.progress<=500){
+					timeflow=true;
+					timeflowtimestamp=undefined;
+				}
+				var l = 8;
+				if(renderData.bomb == undefined)
+					renderData.bomb = -1;
+				for(var i=0;i<l;i++)
+				{					
+					if(renderData.progress>(4000/l)*i && renderData.bomb == (i-1))
+					{
+						renderData.bomb++;
+						console.log("Bombs"+i);
 
+						var particle = {
+						x:confX+100,
+						y:confY+62,
+						type:"missile",
+						tx :elem.width/2 -   ((2*28+boss.heroHpMax*67-4)/2)/l*(l-(i+1)),						
+						ty: elem.height-165,
+						start:renderData.progress,
+						end:200,
+						life:0,
+						movX:6*Math.random(),
+						movY:-20-20*Math.random()};
+						
+						renderData.particles.push(particle);
+						
+						var particle = {
+						x:confX+56,
+						y:confY+62,
+						type:"missile",
+						tx:(elem.width/2) + ((2*28+boss.heroHpMax*67-4)/2)/l*(l-(i+1)),						
+						ty:elem.height-165,
+						start:renderData.progress,
+						end:200,
+						life:0,
+						movX:-6*Math.random(),
+						movY:-20-20*Math.random()};
+						
+						renderData.particles.push(particle);
+					}
+				}
+			break;
 		}
+		if(renderData.success)
 		switch(renderData.player){
 			default:
-			if(renderData.progress>300 && renderData.success)
-				drawAttackInfo(progress,handleText("[playerName]"),"Argument",renderData.player.toUpperCase());
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Argument",renderData.player.toUpperCase());
 			break;
 			case "none":
+			break;
+			case "demon":
+				if(renderData.progress>1000){
+					drawAttackInfo(progress,handleText("[playerName]"),"Złośliwy demon","Demon Kartezjusza");
+
+					//animate shielding effects
+					for(var p=0;p<30;p++)
+					{
+						var distX  =  ((2*28+boss.heroHpMax*67-4)/2+10)*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
+						var distY =  (0.5+Math.random()/2)*60*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
+						var arc = Math.PI*2* Math.random();
+						
+						var particle = {
+							x:elem.width/2 + Math.cos(arc)*distX,
+							y:elem.height-180 + -Math.abs(Math.sin(arc)*distY),
+							type:"shieldsmoke",
+							start:renderData.progress,
+							size: 2*Math.random(),
+							end:500,
+							life:0,
+							movX:(1-2*Math.random()),
+							movY:1.5+Math.random()};
+							
+						renderData.particles.push(particle);
+					}
+					
+					//animate destruction wave
+					if(renderData.progress>4000 && renderData.progress<6000)
+					for(var p=0;p<40;p++)
+					{
+						var pov =2;
+						var distX  = elem.width/2*(renderData.progress-3800)/2000;
+						var distY = (elem.height-100)*(renderData.progress-3800)/2000;
+						var arc = Math.PI*2* Math.random();
+						var particle = {
+							x:elem.width/2 + Math.cos(arc)*distX + (1-2*Math.random())*(pov/2),
+							y:elem.height-180 + -Math.abs(Math.sin(arc)*distY) + (1-2*Math.random())*(pov/2),
+							type:"explosionsmoke",
+							start:renderData.progress,
+							size: 5+15*Math.random(),
+							end:1500*Math.random(),
+							life:0,
+							movX:-Math.cos(arc)*pov,
+							movY:Math.abs(Math.sin(arc)*pov)};
+							
+						renderData.particles.push(particle);
+					}
+				}
+			break;
+			case "russel":
+				if(renderData.progress>1000 )
+					drawAttackInfo(progress,handleText("[playerName]"),"Wiedza Bezpośrednia","Fundament Russella");
+				if(renderData.progress>4000 && renderData.progress<5000 && Math.random()<0.15 ){
+					
+				//var pov = Math.abs(particle.ty-(elem.height-200))/2;
+				var x = elem.width/2 + 100*(1-2* Math.random())
+				/*var arc = Math.PI/2 + Math.atan(			
+				(confY-(elem.height-200))/
+				-(confX-x)
+				);*/
+				
+				var particle = {
+					type:"bottle",
+					x:x,
+					y:elem.height-200,
+					tx:confX+100+10*(1-2* Math.random()),
+					ty:confY+50+10*(1-2* Math.random()),
+					start:renderData.progress,
+					color:Math.round(4*Math.random()),
+					size: 5+15*Math.random(),
+					end:1500*Math.random(),
+					life:0,
+					rotSpeed:1.5*(1-2* Math.random()),
+					movX:((confX+44.5*4/3)-x)/2,
+					movY: -Math.abs(confY+50-(elem.height-200))*5};
+					
+				renderData.particles.push(particle);
+				
+				}
+			break;
+			case "james":
+				if(renderData.progress>1000 )
+					drawAttackInfo(progress,handleText("[playerName]"),"Doświadczenie religijne","Doświadczenie Jamesa");
+				//Angel missileo
+				if(renderData.progress>4000 && renderData.progress<5000){
+					context.setTransform(1, 0, 0, 1, confX+82+4,elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000));
+					context.rotate((Math.PI*225/180));
+					context.rotate(-Math.PI);					
+					context.drawImage(Assets.img["jamesSword"],
+					-17*4/3,-17*4/3,
+					34*4/3,34*4/3);
+					
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					context.setTransform(1, 0, 0, 1, confX+82+4,elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000));
+					
+					context.drawImage(Assets.img["jamesAngel0"],
+					-17 + 40*Math.sin(Math.PI*2*((renderData.progress-4000)/1000)),-17,
+					34,34);
+					
+					context.drawImage(Assets.img["jamesAngel1"],
+					-17 - 40*Math.sin(Math.PI*2*((renderData.progress-4000)/1000)),-17,
+					34,34);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					var boost = 5*Math.random()
+					if(elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000)<confY+150)
+					{
+						boost+= 20+10*Math.random();
+						var particle = {
+							x:confX+82+4+40*(1-2*Math.random()),
+							y:elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000)+40*(1-2*Math.random()),
+							type:"explosion",
+							smoketype:"explosionsmoke",
+							start:renderData.progress,
+							size: 5*Math.random(),
+							end:500,
+							life:0,
+							movX:(1-2*Math.random()),
+							movY:(1-2*Math.random())};
+							
+						renderData.particles.push(particle);						
+					
+					}
+					for(var p=0;p<10+boost;p++){			
+						var side = (Math.random()>0.5)?-1:1;
+						var particle = {
+							x:confX+82+4
+							+ side*40*Math.sin(Math.PI*2*((renderData.progress-4000)/1000)),
+							y:elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000),
+							type:"magicsmoke",
+							start:renderData.progress,
+							size: 2*Math.random(),
+							end:500,
+							life:0,
+							movX:(1-2*Math.random()),
+							movY:1.5+Math.random()};
+							
+						renderData.particles.push(particle);						
+					}
+
+				}
 			break;
 		}
 	}

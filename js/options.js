@@ -42,5 +42,5 @@ function optionDelete(){
 	
 	var url = (document.location+"");
 	var begin=url.split("?")[0];
-	document.location=begin+"?noplayer=0";
+	document.location=begin+"?main=0";
 }
