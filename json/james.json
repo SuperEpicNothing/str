@@ -549,6 +549,7 @@
 	{
 		"COMMENT":"39",
 		"events":[
+			{"type":"unlockChap","time":"0","chapter":0,"lesson":"test"},
 			{"type":"give","time":4600,"item":"james"},
 			{"type":"question","name":"William James","time":1000,"timepadding":0,
 			"text":"Weź ode mnie ten oto Argument i korzystaj z niego bez lęku, Wędrowcze!"

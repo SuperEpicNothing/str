@@ -66,9 +66,9 @@
 	{
 		"COMMENT":"4",
 		"events":[
-			
+			{"type":"give","time":4600,"book":"ai"},
 			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
-			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci krótki zwój do poczytania na temat problemu uzyskania świadomości przez komputery, ale na razie bierzemy się do roboty, OK?"
+			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci krótki zwój do poczytania na temat problemu sztucznej inteligencji i uzyskania świadomości przez komputery, ale na razie bierzmy się do roboty, OK?"
 			}
 		],
 			"options":[
@@ -80,9 +80,9 @@
 	{
 		"COMMENT":"5",
 		"events":[
-			
+			{"type":"give","time":4600,"book":"czarna"},
 			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
-			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci teraz do poczytania zwój na temat nowych badań nad czarnymi dziurami, ale na razie bierzemy się do roboty, OK?"
+			"text":"Hm, słuchaj, dr Lamża macha mi tam za plecami, żebyśmy się skupili na pracy. Zrobimy tak - dam Ci teraz do poczytania zwój na temat czarnych dziur, ale na razie bierzemy się do roboty, OK?"
 			}
 		],
 			"options":[
@@ -100,7 +100,8 @@
 		],
 			"options":[
 			{"target": 7, "text": "Nie rozumiem, jak czas może zniknąć!"},
-			{"target": 35, "text": "Chodzi o owe [']efekty kwantowe['], które miałyby prowadzić do zniknięcia czasu.", "height":2}
+			{"target": 35, "text": "Chodzi o owe [']efekty kwantowe['], które miałyby prowadzić do zniknięcia czasu.", "height":2},
+			{"target": 43, "text": "To chyba już wszystko, o co [playerGender {chciałem|chciałam}] zapytać."}
 		]	
 	},
 	
@@ -277,7 +278,6 @@
 			}
 		],
 			"options":[
-			{"target": 19, "text": "A [playerGender {mógłbym|mogłabym}] prosić o wyjaśnienie tego?"},
 			{"target": 20, "text": "Hm, może wróćmy na razie do znikania czasu w fizyce."},
 			{"target": 6, "text": "Chyba wystarczy mi na razie rozmów o czasie..."}
 			
@@ -288,16 +288,13 @@
 		"COMMENT":"19",
 		"events":[
 			
-			{"type":"give","time":4600,"book":"hawking"},
-			
 			{	
 			"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
-			"text":"Wiesz, co... prawdę mówiąc, nawet z użyciem rysunków to zajmuje sporo czasu. Zróbmy może tak, że przekażę Ci zwój, w którym znajduje się trochę wskazówek na ten temat, a na razie wrócimy do głównego tematu, OK?"
+			"text":"UNU"
 			}
 		],
 			"options":[
-			{"target": 20, "text": "No dobrze, to może wróćmy do znikania czasu w fizyce."},
-			{"target": 6, "text": "OK, porozmawiajmy może o czymś innym..."}
+			{"target": 666, "text": ""}
 			
 		]	
 	},
@@ -581,14 +578,189 @@
 
 			
 			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
-			"text":"Cóż, efekty kwantowe... Zacznijmy może od tego, że KWAAAAAAAAAAAAAAAAAAAAAAAANTY SOM SUPER."
+			"text":"Cóż, efekty kwantowe... Nie będę może wchodził zbyt szczegółowo w te sprawy, natomiast jest to przede wszystkim kwestia skali. Fizyka kwantowa opisuje zjawiska w bardzo małej skali, a fizyka relatywistyczna - w bardzo dużej skali."
 			}
 		],
 			"options":[
 
-			{"target": 36, "text": "Pitolisz, ziom."},
-			{"target": 36, "text": "NO SOM."}
+			{"target": 37, "text": "Fizyka relatywistyczna?!"},
+			{"target": 38, "text": "I co z tego wynika?"}
 			
+		]	
+	},
+	
+	{
+		"COMMENT":"37",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"No tak, przepraszam. [Hawking uśmiecha się] Zapomniałem, że nie jesteśmy na seminarium naukowym. Relatywistyczna, czyli opisująca czasoprzestrzeń zgodnie z tym, co wymyślił Albert Einstein i wielu innych jego kontynuatorów. Gdy mówimy o Kosmosie w największej skali, używamy właśnie fizyki relatywistycznej."
+			}
+		],
+			"options":[
+
+			{"target": 38, "text": "OK, idźmy dalej..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"38",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Otóż upływ czasu definiuje się właśnie w tej największej skali. Żeby [']porządnie['] mówić o upływie czasu, potrzebna jest odpowiednio duża, [']gładka['] przestrzeń. Więc kiedy Wszechświat staje się coraz mniejszy i mniejszy, pojawia się problem z mówieniem o czasie."
+			}
+		],
+			"options":[
+
+			{"target": 39, "text": "A dlaczego Wszechświat miałby być mniejszy?!"},
+			{"target": 40, "text": "Czyli to jest po prostu problem z naszymi teoriami?"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"39",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"To wynika z teorii Wielkiego Wybuchu. Im bardziej cofamy się w czasie, tym mniejsza robi się skala przestrzenna Wszechświata."
+			}
+		],
+			"options":[
+
+			{"target": 40, "text": "Aha. Czyli jest po prostu problem z naszymi teoriami przy opisie Wielkiego Wybuchu?", "height":2}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"40",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Można tak powiedzieć. W najmniejszej skali czasowej to, co znamy jako proste, [']gładkie['] kierunki - przestrzenne i czasowy - trochę się zaburza. Świetny fizyk amerykański John Wheeler określił to jako [']pianę kwantową[']."
+			}
+		],
+			"options":[
+
+			{"target": 41, "text": "I co z tego wynika?"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"41",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Może być tak, że ładne, wyraźne, różniące się od siebie wymiary czasoprzestrzeni wyłaniają się dopiero wtedy, kiedy Wszechświat osiąga odpowiednio duży rozmiar. W pierwszych chwilach Wielkiego Wybuchu mogłoby nie być wyraźnej różnicy między czasem i przestrzenią!"
+			}
+		],
+			"options":[
+
+			{"target": 42, "text": "Czas zamieniłby się w przestrzeń?!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"42",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Wiem, że to brzmi wariacko. Ale w fizyce teoretycznej trzeba się przyzwyczaić do tego, że nawet najbardziej wariackie teorie mogą się okazać prawdziwe... Wszechświat jest bardzo dziwnym miejscem!"
+			}
+		],
+			"options":[
+
+			{"target": 6, "text": "Znowu chyba boli mnie głowa... Wróćmy może do innych kwestii.", "height":2}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"43",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Cieszę się, że mogłem pomóc. Najważniejsze, aby z całego tego wariactwa fizyki współczesnej wyciągnąć ogólną lekcję..."
+			}
+		],
+			"options":[
+
+			{"target": 44, "text": "Jaką lekcję?"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"44",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Że świat może być znacznie dziwniejszy niż nam się na pozór wydaje. Nawet tak, wydawałoby się, proste i oczywiste pojęcia, jak [']czas['] i [']przestrzeń['], [']wcześniej['] i [']później['] - mogą się załamywać w bardzo szczególnych warunkach..."
+			}
+		],
+			"options":[
+
+			{"target": 45, "text": "Jakich warunkach?"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"45",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Ja sam interesuję się zwłaszcza czarnymi dziurami i początkiem Wszechświata - bo to te [']miejsca['], gdzie fizyka robi się szczególnie dziwna. Kiedy rozważa się problem początku Wszechświata, trzeba pamiętać, że słowa typu [']przed['] i [']po['] mogą nas zawieść..."
+			}
+		],
+			"options":[
+
+			{"target": 46, "text": "Spróbuję to zapamiętać, chociaż nie jest z tym łatwo..."}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"46",
+		"events":[
+
+			
+			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Nawet mnie sprawia to poważny problem... Nic to, dziękuję za rozmowę!"
+			}
+		],
+			"options":[
+
+			{"target": 47, "text": "Dziękuję, Profesorze!"}
+			
+		]	
+	},
+	
+	{
+		"COMMENT":"47",
+		"events":[
+
+			{"type":"give","time":4600,"item":"hawking"},
+			{"type":"unlockChap","time":"0","chapter":1,"lesson":4},
+			{"type":"dialog","name":"Stephen Hawking","time":1000,"timepadding":0,
+			"text":"Na drogę przyjmij ode mnie ten oto Argument. Bywaj, Wędrowcze!"
+			}
+		],
+			"options":[
 		]	
 	}
 	

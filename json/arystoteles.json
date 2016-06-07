@@ -1488,14 +1488,28 @@
 	{
 		"COMMENT":"102",
 		"events":[
-			
+			{"type":"give","time":4600,"item":"arysto"},
+			{"type":"unlockChap","time":"0","chapter":1,"lesson":2},
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Cieszę się, Wędrowcze, że mogłem pomóc. Jeżeli będziesz jeszcze potrzebował pomocy, wiesz, gdzie mnie szukać. Powodzenia w dalszych zmaganiach, a na krętych ścieżkach Wielkich Dyskusji niech posłuży Ci ten oto Argument. Bywaj."
+			"text":"Cieszę się, Wędrowcze, że mogłem pomóc. Jeżeli będziesz jeszcze potrzebował pomocy, wiesz, gdzie mnie szukać. Powodzenia w dalszych zmaganiach, a na krętych ścieżkach Wielkich Dyskusji niech posłuży Ci ten oto Argument."
 			}
 		],
 		"options":[
-			{"target": 102, "text": "Dziękuję, Arystotelesie! Bywaj."}		
+			{"target": 103, "text": "Dziękuję, Arystotelesie! Bywaj."}		
 		]	   
+	},
+	
+	{
+		"COMMENT":"103",
+		"events":[
+
+
+			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"Bywaj, Wędrowcze!"
+			}
+		],
+			"options":[
+		]	
 	}
 	
 	]

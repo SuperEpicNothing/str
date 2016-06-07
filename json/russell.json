@@ -143,7 +143,7 @@
 		],
 		"options":[
 			{"target": 11, "text": "Hm, [playerGender {miałem|miałam}] zaproponować pomoc w ucieczce, ale w takim razie chyba się wstrzymam...", "height":2},
-			{"target": 12, "text": "Cóż, wróćmy może więc do pracy? [playerGender {Chciałbym|chciałabym}] porozmawiać o jednym z Pańskich tekstów.", "height":2}
+			{"target": 12, "text": "Cóż, wróćmy może więc do pracy? [playerGender {Chciałbym|Chciałabym}] porozmawiać o jednym z Pańskich tekstów.", "height":2}
 		]	   
 	},
 	
@@ -642,6 +642,7 @@
 	{
 		"COMMENT":"44",
 		"events":[
+			{"type":"unlockChap","time":"0","chapter":0,"lesson":3},
 			{"type":"give","time":4600,"item":"russell"},
 			{"type":"question","name":"Bertrand Russell","time":1000,"timepadding":0,
 			"text":"Bardzo się cieszę! Dziękuję za rozmowę - możesz teraz śmiało przyjąć ode mnie ten oto Argument. Niech Ci służy, Wędrowcze."
