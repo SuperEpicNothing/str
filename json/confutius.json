@@ -11,56 +11,22 @@
 	"scenes": [
 	{
 		"events":[
-					{"type":"change","time":0,"target":3},
-			{"type":"showBoss","time":2300},
-			{"type":"dialog","time":3000,"timepadding":1000,
-			"text":"MuaHuahua! huahuahua! huahuahuahuahua!"},
-			{"type":"pause","time":500},
-			{"type":"dialog","time":2000,"timepadding":1000,"color":"red",
-			"text":"..."
-			},
-			{"type":"change","time":0,"target":3}
-		],
-		"options":[
-			{"target": 0, "text": "..."}
+			{"type":"resolve","time":6000,"arm":"none","player":"demon","success":true,"timeflow":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"hawking","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"russell","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"popper","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"james","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"arysto","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"akwinata","success":true},
+			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":false},
 
-		]	   
-	},
-	{
-		"events":[
-			{"type":"dialog","time":3000,"timepadding":1000,
-			"text":"You win [playerName], i guess [playerAge] Years was enough time to learn this."
-			},
-			{"type":"hideBoss","time":2300}
-		],
-		"options":[
-			{"target": 0, "text": "?"}
-
-		]	  		
-	},
-		{
-		"events":[
-			{"type":"dialog","time":3000,"timepadding":1000,
-			"text":"I Confutius win. You shall never escape this prison with mere [playerSkill 0] Strength"
-			},
-			{"type":"pause","time":500},
-			{"type":"hideBoss","time":2300}
-		],
-		"options":[
-			{"target": 0, "text": "?"}
-
-		]			   
-	},
-		{
-		"events":[
-			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":true},
 			{"type":"question","time":2000,"arm":"bombardment","text":"3"}
 		],
 		"options":[
-			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
-			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 6, "text": "..."}
+			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
 	
 
 		]	   
@@ -71,10 +37,10 @@
 			{"type":"question","time":2000,"arm":"swordspear","text":"4?"}
 		],
 		"options":[
-			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
-			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 6, "text": "..."}
+			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
 	
 
 		]	   
@@ -85,10 +51,10 @@
 			{"type":"question","time":2000,"arm":"robot","text":"5?"}
 		],
 		"options":[
-			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
-			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 6, "text": "..."}
+			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
 	
 
 		]	   
@@ -99,10 +65,10 @@
 			{"type":"question","time":2000,"arm":"book","text":"6?"}
 		],
 		"options":[
-			{"target": 3, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 4, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"LearnLink"},"consequence":{"herohp":1}},
-			{"target": 5, "text": "???","consequence":{"herohp":-1}},
-			{"target": 6, "text": "..."}
+			{"target": 0, "text": "paper","color":{"active":"#39c680","inactive":"#33b273"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
 		]	   
 	}
 	

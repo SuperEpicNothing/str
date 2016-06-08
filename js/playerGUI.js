@@ -44,16 +44,20 @@ function gpmsc(){
 	if(player.progress.skillp>0)
 	{
 		c1.fillText("+"+player.progress.skillp+" Punktów do rozdania",370+(240)*0.5,140);
-	}	
-	
-	c1.font = "20px Aclonica";
-	
-	c1.fillText( "Osiągnięcia",370+324+(240)*0.5,85);
-	drawAchievments();
-	
+	}		
 	for(var i=0;i<player.stats.length;i++)
 	{
 		drawStat(375,145,i);
+	}
+			
+	c1.font = "20px Aclonica";
+	c1.textBaseline = "top";
+	c1.textAlign="center"; 	
+	c1.fillText( "Osiągnięcia",370+324+(240)*0.5,85);
+	drawAchievments();
+	for(var i=0;i<player.stats.length;i++)
+	{
+		drawStatText(375,145,i);
 	}
 }
 function drawAchievments(){
@@ -161,9 +165,13 @@ function drawStat(x,y,stat){
 		}
 	}
 	cUtils.imageSmoothing(c1,true);
-
+}
+function drawStatText(x,y,stat){
 	//showText
-
+	var maxskill = 10;
+	var h = 29;
+	var w = 26;
+	y+=stat*(h+17);
 	if(inBounds(x,y+9,w*maxskill,h))
 	{
 		c1.font = (30)+"px Aclonica";

@@ -122,6 +122,10 @@
 		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Sword05.png"},
 		{"name" : "jamesAngel0", "src":"images/gui/icons/items/angl0.png"},
 		{"name" : "jamesAngel1", "src":"images/gui/icons/items/angl1.png"},
+		{"name" : "hawking", "src":"images/gui/icons/items/W_Mace011.png"},
+		{"name" : "popper", "src":"images/gui/icons/items/W_Sword09.png"},
+		{"name" : "popperpaper", "src":"images/gui/icons/items/popperpaper.png"},
+		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
 
 
 		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},
@@ -224,7 +228,7 @@
 			"name": "hawking",
 			"fullname": "Tornado Czasoprzestrzeni",
 			"autor": "Stephen Hawking",
-			"icon":"Item8",
+			"icon":"hawking",
 			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Komos').",
 			"url": null	
 		},
@@ -244,7 +248,7 @@
 			"name": "popper",
 			"fullname": "Falsyfikator Poppera",
 			"autor": "Karl Popper",
-			"icon":"Item5",
+			"icon":"popper",
 			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
 		},

@@ -74,7 +74,7 @@ function openGUI(id)
 
 	menu[id]=true;
 	switch(id){
-		case 0:	$('#guiPlayer').collapse("show"); break;
+		case 0:	gpmsc(); $('#guiPlayer').collapse("show"); break;
 		case 1:	$('#guiItems').collapse("show"); break;
 	}
 	
