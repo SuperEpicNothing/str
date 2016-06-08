@@ -87,10 +87,10 @@ REQ|corobi
 
 ItemColors|color
 ---|---
-`"color":{"active":"#3a96c6","inactive":"#0a5074"},`|<a onmouseover='this.style.color="#0a5074"' onmouseleave='this.style.color="#3a96c6"'>blue DEFAULT<\a>
-`"color":{"active":"#39c680","inactive":"#33b273"},`|<a onmouseover='this.style.color="#33b273"' onmouseleave='this.style.color="#39c680"'>green<\a>
-`"color":{"active":"#c7c738","inactive":"#b3b333"},`|<a onmouseover='this.style.color="#b3b333"' onmouseleave='this.style.color="#c7c738"'>yellow<\a>
-`"color":{"active":"#c73838","inactive":"#b33333"},`|<a onmouseover='this.style.color="#b33333"' onmouseleave='this.style.color="#c73838"'>orange<\a>
+`"color":{"active":"#3a96c6","inactive":"#0a5074"},`|<a onmouseover='this.style.color="#0a5074"' onmouseleave='this.style.color="#3a96c6"'>blue DEFAULT</a>
+`"color":{"active":"#39c680","inactive":"#33b273"},`|<a onmouseover='this.style.color="#33b273"' onmouseleave='this.style.color="#39c680"'>green</a>
+`"color":{"active":"#c7c738","inactive":"#b3b333"},`|<a onmouseover='this.style.color="#b3b333"' onmouseleave='this.style.color="#c7c738"'>yellow</a>
+`"color":{"active":"#c73838","inactive":"#b33333"},`|<a onmouseover='this.style.color="#b33333"' onmouseleave='this.style.color="#c73838"'>orange</a>
 
 
 
