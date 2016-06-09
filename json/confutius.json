@@ -19,7 +19,7 @@
 			{"type":"resolve","time":6000,"arm":"none","player":"arysto","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"akwinata","success":true},
 			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":false},
-
+			{"type":"clearParticles","time":5000},
 			{"type":"question","time":2000,"arm":"bombardment","text":"3"}
 		],
 		"options":[

@@ -126,6 +126,7 @@
 		{"name" : "popper", "src":"images/gui/icons/items/W_Sword09.png"},
 		{"name" : "popperpaper", "src":"images/gui/icons/items/popperpaper.png"},
 		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
+		{"name" : "arysto", "src":"images/gui/icons/items/W_Mace008.png"},
 
 
 		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},

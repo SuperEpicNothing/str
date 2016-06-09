@@ -471,6 +471,51 @@ function renderConfu(timestamp){
 						
 						break;
 						
+						case "magicboltt":
+							particle.x+=particle.movX;
+							particle.y+=particle.movY;
+							
+							var str = 2;
+							
+							particle.movX+= particle.x>particle.tx? -str: particle.x<particle.tx? str: 0;
+							particle.movY+= particle.y>particle.ty? -str: particle.x<particle.ty? str: 0;
+
+							for(var p =0;p<15;p++){
+							var smk = {
+								type:"magicsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:600*Math.random(),
+								life:0,
+								size:4*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(smk);
+							}
+							
+							if( particle.x>particle.tx - 10 && particle.x<particle.tx + 10 &&
+								particle.y>particle.ty - 10 && particle.y<particle.ty + 10){
+							var smk = {
+								type:"explosion",
+								smoketype:"magicsmoke",
+								x:particle.x,						
+								y:particle.y,
+								start:renderData.progress,
+								end:200+200*Math.random(),
+								life:0,
+								size:5*Math.random()};
+								
+							renderData.particles.push(smk);
+							
+							particle.end=-1;
+							}
+							else
+								particle.end+=100;
+							
+						break;
+						
 						case "magicbolt":
 							particle.x+=particle.movX;
 							particle.y+=particle.movY;
@@ -822,6 +867,10 @@ function processEvent(progress){
 			renderData.type="showBoss"
 			renderData.progress=progress-EntTime;
 			renderData.time=evt.time
+		break;
+		
+		case "clearParticles":
+			renderData.particles=[];
 		break;
 		
 		case "hideBoss":
@@ -1799,8 +1848,8 @@ function drawConfutest(progress){
 							size: 15+5*Math.random(),
 							end:250+250*Math.random(),
 							life:40+250*Math.random(),
-							movX:(1-2*Math.random()),
-							movY:(1-2*Math.random())};
+							movX:2*(1-2*Math.random()),
+							movY:4*(1-2*Math.random())};
 							
 						renderData.particles.push(particle);						
 					}
@@ -1844,10 +1893,10 @@ function drawConfutest(progress){
 						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
 						context.beginPath();
 						context.moveTo(elem.width/2+Math.sin(progress/500)*6,elem.height-200+Math.cos(progress/290)*6-17*4/3);
-						context.lineTo(elem.width/2-Math.sin(progress/500)*50,confY+Assets.img["confu"].height/8);
-						context.lineTo(elem.width/2-Math.sin(progress/500)*30,confY+Assets.img["confu"].height/8-10);
-						context.lineTo(elem.width/2+Math.sin(progress/500)*30,confY+Assets.img["confu"].height/8-10);
-						context.lineTo(elem.width/2+Math.sin(progress/500)*50,confY+Assets.img["confu"].height/8);
+						context.lineTo(elem.width/2-Math.sin(progress/500)*30,confY+Assets.img["confu"].height/8);
+						context.lineTo(elem.width/2-Math.sin(progress/500)*20,confY+Assets.img["confu"].height/8-10);
+						context.lineTo(elem.width/2+Math.sin(progress/500)*20,confY+Assets.img["confu"].height/8-10);
+						context.lineTo(elem.width/2+Math.sin(progress/500)*30,confY+Assets.img["confu"].height/8);
 						context.closePath();
 						context.fill();
 						context.beginPath();
@@ -1929,6 +1978,115 @@ function drawConfutest(progress){
 						renderData.particles.push(particle);						
 					}
 				}*/
+			break;
+			
+			case "arysto":
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Pierwszy Poruszyciel","Młot Pierwszej Przyczyny");
+				
+				if(renderData.missliecount == undefined)
+					renderData.missliecount=0;
+				if(renderData.progress>3000){
+					context.setTransform(1, 0, 0, 1,
+						elem.width/2+Math.sin(progress/500)*6,
+						elem.height-200+Math.cos(progress/290)*6
+					);
+					
+					context.rotate((Math.PI*225/180));
+					context.rotate(-Math.PI);					
+					context.drawImage(Assets.img["arysto"],
+					-17*4/3,-17*4/3,
+					34*4/3,34*4/3);		
+					context.setTransform(1, 0, 0, 1, 0, 0);
+				}
+				if(renderData.progress>3400+renderData.missliecount*300 
+				&& renderData.progress<3500+renderData.missliecount*300)
+				{
+					renderData.missliecount++;
+					var particle = {
+						x:elem.width/2,
+						y:elem.height-220,
+						type:"magicboltt",
+						tx:confX+66,						
+						ty:confY+62,
+						start:renderData.progress,
+						end:200,
+						life:0,
+						movX:6*(1-2*Math.random()),
+						movY:6*(1-2*Math.random())};
+						
+					renderData.particles.push(particle);
+					
+				}
+			
+			break;
+			case "akwinata":
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Pięć dróg","Droga Tomasza");
+				
+				if(renderData.progress>2000)
+				for(var i=0;i<5;i++){
+					var pow =25+2*Math.cos((renderData.progress-3000)/200);
+					var arc = 2*Math.PI/5*i + 2*Math.PI*(renderData.progress-3000)/4000;
+					if(renderData.progress>(2000+100*i)){
+					var particle = {
+						x:elem.width/2 + (1-2*Math.random()) + pow*Math.cos(arc),
+						y:elem.height-220 + (1-2*Math.random()) + pow*Math.sin(arc),
+						type:"potionsmoke",
+						color:i,
+						start:renderData.progress,
+						end:200,
+						size:40+5*Math.random(),
+						life:0,
+						movX:(1-2*Math.random()),
+						movY:(1-2*Math.random())};
+						
+					renderData.particles.push(particle);
+					}
+				}
+				
+				if(renderData.progress>2500){
+					var pow =25+2*Math.cos((renderData.progress-2500)/200);					
+					var particle = {
+						x:elem.width/2 + (1-2*Math.random()) + pow*Math.cos(6*Math.PI/5),
+						y:elem.height-220 + (1-2*Math.random()) + pow*Math.sin(6*Math.PI/5) - 50*(renderData.progress-2500)/1000,
+						type:"potionsmoke",
+						color:3,
+						start:renderData.progress,
+						end:200,
+						size:40+5*Math.random(),
+						life:0,
+						movX:(1-2*Math.random()),
+						movY:(1-2*Math.random())};
+					particle.y= particle.y<elem.height/2?elem.height/2:particle.y;
+					var px = particle.x + 1000*Math.cos(-Math.PI/2+Math.PI/4*Math.sin(2*Math.PI*(renderData.progress-2500)/2000));
+					var py = particle.y + 1000*Math.sin(-Math.PI/2+Math.PI/4*Math.sin(2*Math.PI*(renderData.progress-2500)/2000));
+					px = (px<0)?0:((px>elem.width)?elem.width :px);
+					py = (py<0)?0:((py>elem.height)?elem.height:py);
+					context.beginPath();
+					context.lineWidth=3;
+					context.strokeStyle="red";
+					context.moveTo(particle.x,particle.y);
+					context.lineTo(px,py);
+					context.closePath();
+					context.stroke();
+					context.beginPath();
+					
+					renderData.particles.push(particle);
+					for(var i=0;i<15;i++){
+					var particle = {
+							x:px,
+							y:py,
+							type:"magicsmoke",
+							start:renderData.progress,
+							size: 2*Math.random(),
+							end:500,
+							life:0,
+							movX:(1-2*Math.random()),
+							movY:1.5+Math.random()};							
+					renderData.particles.push(particle);
+					}			
+				}
 			break;
 		}
 	}
