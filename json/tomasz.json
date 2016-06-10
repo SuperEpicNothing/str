@@ -39,12 +39,12 @@
 		"COMMENT":"2",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":"Dzień dobry. [playerGender {Drogi przyjacielu|Droga przyjaciółko}] w wiedzy, zwracaj się do mnie [']Księże Doktorze['], jeśli można prosić..."
+			"text":"Dzień dobry. [playerGender {Drogi przyjacielu|Droga przyjaciółko}] w wiedzy, zwracaj się do mnie [']Uczony Doktorze['], jeśli można prosić..."
 			}
 		],
 		"options":[
 
-			{"target": 1, "text": "Oczywiście, Księże Doktorze."},
+			{"target": 1, "text": "Oczywiście, Uczony Doktorze."},
 			{"target": 3, "text": "A czy mogę [']Doktorku[']?", "req":{"type":"skill","skill":3,"amt":6,"mode":">"}}
 		]	   
 	},
@@ -53,7 +53,7 @@
 		"COMMENT":"3",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":"[Tomasz uśmiecha się] Cieszę się, że masz dobry humor, Przyjacielu, ale wolałbym jednak formę [']Księże Doktorze[']."
+			"text":"[Tomasz uśmiecha się] Cieszę się, że masz dobry humor, Przyjacielu, ale wolałbym jednak formę [']Uczony Doktorze[']."
 			}
 		],
 		"options":[
@@ -66,13 +66,13 @@
 		"COMMENT":"4",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":"TEKST"
+			"text":"A gdzie Ci się spieszy, Wędrowcze? Mówimy o sprawach Aniołów, Ducha Świętego, relacji człowieka do świata. Mówimy o Bogu! Nawet i sto lat to za mało, żeby dogłębnie przemyśleć te kwestie."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 5, "text": "Rozumiem. Przejdźmy może do moich pytań odnośnie tekstu..."},
+			{"target": 8, "text": "Jest tam mowa o aniołach..?"}
 		]	   
 	},
 	
@@ -85,8 +85,8 @@
 		],
 		"options":[
 
-			{"target": 666, "text": "Czy [']dowód z ruchu['] to w zasadzie słowa Arystotelesa?"},
-			{"target": 777, "text": "Czy istnienie Boga można właściwie solidnie dowieść?"},
+			{"target": 9, "text": "Czy [']dowód z ruchu['] to w zasadzie argument Arystotelesa?"},
+			{"target": 23, "text": "Czy istnienia Boga można właściwie solidnie dowieść?"},
 			{"target": 6, "text": "Chyba już wszystko rozumiem..."}
 		]	   
 	},
@@ -100,7 +100,7 @@
 			}
 		],
 		"options":[
-			{"target": 7, "text": "Mi również było miło, Księże Doktorze! Bywaj!"}
+			{"target": 7, "text": "Mi również było miło, Uczony Doktorze! Bywaj!"}
 		]	   
 	},
 	
@@ -118,266 +118,265 @@
 	{
 		"COMMENT":"8",
 		"events":[
+			{"type":"give","time":3600,"book":"summa"},
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Oczywiście. Niestety, ciekawski Wędrowcze, nie możemy teraz dłużej o tym porozmawiać, jednak weź ode mnie ten Zwój. Może on zaspokoi Twą ciekawość."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 5, "text": "Dziękuję! Wróćmy może faktycznie do Twego tekstu, Uczony Doktorze."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"9",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"W zasadzie tak. Arystoteles jest moim wielkim Mistrzem. Mało dziś w Europie filozofów i myślicieli, którzy by nie mieli długu u Filozofa."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 10, "text": "Ale Arystoteles nie pisał, że [']pierwszy poruszyciel['] to Bóg...", "height":2},
+			{"target": 13, "text": "[']Filozofa[']?"},
+			{"target": 5, "text": "OK, wróćmy może do innych pytań..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"10",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Nie. Arystoteles żył, zanim Jezus Chrystus objawił się na Ziemi. Natomiast doszedł drogą rozumową do wniosku, że taki Byt musi z konieczności istnieć."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 11, "text": "Niekoniecznie. A co z nieskończonym regresem?","req":{"type":"item","item":"arysto"}, "height":2},
+			{"target": 20, "text": "Ale Ty, Doktorze, uznałeś, że jest to Bóg?"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"11",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Rzeczywiście, jest i taka możliwość. Czyż jednak nieskończoność nie stanowi idei odpychającej dla intelektu? Czyż da się pomyśleć nieskończoność? Czyż cokolwiek poza Bogiem może być nieskończone?"
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 12, "text": "Hm... tak? Czyż Kosmos nie może być nieskończony?"},
+			{"target": 19, "text": "No chyba rzeczywiście..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"12",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Wtedy musiałby być chyba Bogiem, Wędrowcze! Spójrz na to w ten sposób: Coś, co istnieje, musiało zostać stworzone. Jeśli zaś jakiś byt został stworzony, to moment jego stworzenia ogranicza go. Nie jest więc nieskończony."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 14, "text": "Ale przecież Kosmos mógłby nie być stworzony..."},
+			{"target": 19, "text": "No rzeczywiście..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"13",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Arystoteles był tym filozofem, którego darzymy największym szacunkiem. Nazywamy go po prostu Filozofem..."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 10, "text": "Ale jednak nie pisał, że pierwszą przyczyną jest Bóg?"},
+			{"target": 5, "text": "Rozumiem. Wróćmy jednak może innych pytań."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"14",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Dlaczegoby więc istniał, skoro nie został stworzony?"
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 15, "text": "Po prostu by istniał. Bo taki jest świat!"},
+			{"target": 18, "text": "Stworzony przez coś wcześniejszego!"},
+			{"target": 19, "text": "No rzeczywiście..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"15",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Nie uważam, aby w logicznym, racjonalnym, pięknym Kosmosie coś mogło być [']bo tak['], bez żadnej racji."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 16, "text": "To może Kosmos nie jest logiczny?","req":{"type":"skill","skill":5,"amt":5,"mode":">"}},
+			{"target": 19, "text": "OK, rozumiem..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"16",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"[Tomasz patrzy na Ciebie z rozbawieniem] Mam nadzieję, że to tylko żart, Wędrowcze! Jakżeby świat miał nie być sensowny i racjonalny!..."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 17, "text": "Mówię całkowicie poważnie!...","req":{"type":"skill","skill":5,"amt":8,"mode":">"}},
+			{"target": 19, "text": "No chyba rzeczywiście..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"17",
 		"events":[
+			{"type":"unlockAch","time":"4200","ach":1},
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"[Tomasz jest teraz przerażony] Mów więc nieco ciszej, Wędrowcze, bowiem takie herezje nie zawsze uchodzą na sucho... Ja jestem gotów pomyśleć, że masz po prostu pomylone zmysły, ale inni mogą to uznać za niebezpieczne..."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 5, "text": "Chyba [playerGender {wylądowałem|wylądowałam}] w niewłaściwych czasach... wróćmy może do rozmowy o [']Summie[']...", "height":2}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"18",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"A więc nie jest nieskończony!"
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 19, "text": "Chyba wpadłem w Twoje sidła, Uczony Doktorze..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"19",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"[Tomasz uśmiecha się] Nie ma innej drogi, Wędrowcze. Sam czysty Rozum prowadzi nas do prawdy, że przed wszystkimi bytami musiał istnieć Byt Pierwszy, inny niż wszystkie."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 20, "text": "[']I tego nazywamy Bogiem?[']"},
+			{"target": 21, "text": "Ale czy to musi być Bóg?"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"20",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Oczywiście."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 5, "text": "OK, chyba rozumiem."},
+			{"target": 21, "text": "Ale czy to musi być Bóg?"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"21",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"A jak inaczej można nazwać Byt, który nie jest stworzony, ale stwarza?"
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 22, "text": "Ale czy to musi być chrześcijański Bóg?"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"22",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Wierzymy, że to nasz Pan Bóg."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 23, "text": "Czyli ostatecznie wszystko opiera się na wierze?"},
+			{"target": 5, "text": "Chyba rozumiem. Wróćmy do [']Summy[']..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"23",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Nie da się samym czystym rozumem dojść do największej Prawdy. Ostatni krok należy do wiary."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 24, "text": "I tym ostatnim krokiem jest uznanie Pierwszego Poruszyciela za Boga?"},
+			{"target": 25, "text": "A ja bym [playerGender {chciał|chciała}] wszystko zrozumieć!"}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"24",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Między innymi. Jest wiele dróg prowadzących do Boga, ale nie są to dowody w ścisłym sensie."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 25, "text": "A czemu cały świat nie jest zrozumiały dla intelektu?"},
+			{"target": 5, "text": "Hm. Chyba rozumiem. Wróćmy może do [']Summy[']..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"25",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"Umysł ludzki jest ograniczony, Wędrowcze. Sprawy Kosmosu, Boga i Stworzenia ocierają się o nieskończoność. Żądasz zbyt wiele od nas, skromnych, skończonych, śmiertelnych ludzi."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 26, "text": "Czyli jesteśmy skazani na wiarę?"},
+			{"target": 5, "text": "Hm. Chyba rozumiem. Wróćmy może do [']Summy[']..."}
 		]	   
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"26",
 		"events":[
 			{"type":"question","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
-			"text":""
+			"text":"[Tomasz patrzy karcąco] Tak, tylko nie użyłbym słowa [']skazani[']..."
 			}
 		],
 		"options":[
 
-			{"target": 999, "text": ""},
-			{"target": 999, "text": ""}
+			{"target": 5, "text": "Wybacz, Uczony Doktorze. Wróćmy może do [']Summy[']..."}
 		]	   
 	},
 	

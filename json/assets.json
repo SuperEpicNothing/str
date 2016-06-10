@@ -122,8 +122,8 @@
 		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Sword05.png"},
 		{"name" : "jamesAngel0", "src":"images/gui/icons/items/angl0.png"},
 		{"name" : "jamesAngel1", "src":"images/gui/icons/items/angl1.png"},
-		{"name" : "hawking", "src":"images/gui/icons/items/W_Mace011.png"},
-		{"name" : "popper", "src":"images/gui/icons/items/W_Sword09.png"},
+		{"name" : "hawking5", "src":"images/gui/icons/items/W_Mace011.png"},
+		{"name" : "popper5", "src":"images/gui/icons/items/W_Sword09.png"},
 		{"name" : "popperpaper", "src":"images/gui/icons/items/popperpaper.png"},
 		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
 		{"name" : "arysto", "src":"images/gui/icons/items/W_Mace008.png"},
@@ -202,6 +202,17 @@
 			"desc": "Link prowadzi do artykułu filozofa, prof. Czesława Porębskiego na temat 'społeczeństwa otwartego'.",
 			"url": "http://www.diametros.iphils.uj.edu.pl/index.php/diametros/article/download/141/116"	
 		},
+		
+		{
+			"type": "Book",
+			"name": "summa",
+			"fullname": "Summa teologiczna",
+			"autor": "Tomasz z Akwinu",
+			"img": "images/gui/untitled.png",
+			"desc": "Link prowadzi do pełnego tekstu 'Summy teologicznej' w tłumaczeniu polskim.",
+			"url": "http://katedra.uksw.edu.pl/suma/suma_indeks.htm"	
+		},
+		
 		{
 			"type": "Book",
 			"name": "kartez",
@@ -229,7 +240,7 @@
 			"name": "hawking",
 			"fullname": "Tornado Czasoprzestrzeni",
 			"autor": "Stephen Hawking",
-			"icon":"hawking",
+			"icon":"hawking5",
 			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Komos').",
 			"url": null	
 		},
@@ -249,7 +260,7 @@
 			"name": "popper",
 			"fullname": "Falsyfikator Poppera",
 			"autor": "Karl Popper",
-			"icon":"popper",
+			"icon":"popper5",
 			"desc": "'Falsyfikator Poppera' to argument, za pomocą którego można sprawdzić, czy czyjaś teza jest naprawdę naukowa. Opisał go Karl Popper w 'Logice odkrycia naukowego'. Więcej informacji można uzyskać w trakcie rozmowy z Popperem (zob. lekcja 'Solidna nauka' w rozdziale 'Wiedza'.",
 			"url": null	
 		},
@@ -294,12 +305,12 @@
 			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
 		},
 		
-				{
+		{
 			"comment":"1",
 			"level": 0,
-			"fullname": "Bennie!",
+			"fullname": "Blady Doktor!",
 			"icon":"book",
-			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+			"desc": "za sprawienie, że Uczony Doktor Tomasz z Akwinu zbladł z przerażenia"
 		},
 		
 				{
