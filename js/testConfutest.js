@@ -68,14 +68,14 @@ function clear(){
 	context.fill();
 }
 
-var start = null;
+var start = undefined;
 var begin = false;
 var change,changeEvt;
 var timeflow =false;
 var timeflowtimestamp;
 function renderConfu(timestamp){
 
-	if (!start && mouse.isOver && mouse.target==elem && !begin){ start = timestamp; begin =true; timeflow=true; timeflowtimestamp=undefined;}
+	if (!begin && mouse.isOver && mouse.target==elem){start = timestamp; begin =true; timeflow=true; timeflowtimestamp=undefined;}
 	if(!Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
 	if (begin)
 		var progress = Math.round(timestamp - start);
@@ -222,8 +222,8 @@ function renderConfu(timestamp){
 						case "shieldsmoke":
 						var color =[0,0,0]; 
 						color = cUtils.colorGradients(
-						[[50,159,251,0.7],[118,210,225,0.6],[50,159,251,0.7]], 
-						[0,0.5,1],Math.sin(lifestage/1000*2*Math.PI))		
+						[[50,159,251,0.7],[118,210,225,0.6],[100,110,125,0.3]], 
+						[0.5,1],Math.sin(2*Math.PI*lifestage/4))		
 						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
 							
 						//context.beginPath();
@@ -832,6 +832,7 @@ function processEvent(progress){
 	//backskip
 	if(renderData.skipmode==-1)
 	{
+		begin=false;
 		change=0;
 		boss.health=battlescript.meta.bossmaxhp
 		boss.healthMax=battlescript.meta.bossmaxhp
@@ -1690,22 +1691,22 @@ function drawConfutest(progress){
 					drawAttackInfo(progress,handleText("[playerName]"),"Złośliwy demon","Demon Kartezjusza");
 
 					//animate shielding effects
-					for(var p=0;p<30;p++)
+					for(var p=0;p<10;p++)
 					{
-						var distX  =  ((2*28+boss.heroHpMax*67-4)/2+10)*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
-						var distY =  (0.5+Math.random()/2)*60*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
+						var distX  =  5*Math.sin(2*Math.PI*(renderData.progress-3800)/1000)+10+ ((2*28+boss.heroHpMax*67-4)/2+10)*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
+						var distY =  5*Math.sin(2*Math.PI*(renderData.progress-3800)/1000)+10+ (0.5+0.5*Math.random())*60*((renderData.progress<2000)?(renderData.progress-1000)/1000:1);
 						var arc = Math.PI*2* Math.random();
 						
 						var particle = {
 							x:elem.width/2 + Math.cos(arc)*distX,
-							y:elem.height-180 + -Math.abs(Math.sin(arc)*distY),
+							y:elem.height-165 + Math.sin(arc)*distY,
 							type:"shieldsmoke",
 							start:renderData.progress,
-							size: 2*Math.random(),
-							end:500,
+							size: Math.random(),
+							end:900*((renderData.progress<2000)?(renderData.progress-1000)/1000:1),
 							life:0,
-							movX:(1-2*Math.random()),
-							movY:1.5+Math.random()};
+							movX:-Math.cos(arc),
+							movY:-Math.sin(arc)};
 							
 						renderData.particles.push(particle);
 					}
@@ -1715,8 +1716,8 @@ function drawConfutest(progress){
 					for(var p=0;p<40;p++)
 					{
 						var pov =2;
-						var distX  = elem.width/2*(renderData.progress-3800)/2000;
-						var distY = (elem.height-100)*(renderData.progress-3800)/2000;
+						var distX  =elem.width/2*(renderData.progress-3800)/2000;
+						var distY =(elem.height-100)*(renderData.progress-3800)/2000;
 						var arc = Math.PI*2* Math.random();
 						var particle = {
 							x:elem.width/2 + Math.cos(arc)*distX + (1-2*Math.random())*(pov/2),
@@ -1832,7 +1833,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-130-50*((renderData.progress-2000)/1500));
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["hawking5"],
+					context.drawImage(Assets.img["hawking"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);
@@ -1841,19 +1842,19 @@ function drawConfutest(progress){
 					
 					
 
-					for(var p=0;p<30+100*((renderData.progress-4000)/1000);p++){	
-						var parY = Math.random()*(elem.height-200-confY)*((renderData.progress-4000)/1000)
+					for(var p=0;p<30+60*((renderData.progress-4000)/1000);p++){
+						var parY = Math.random()*(elem.height-200-confY)*((renderData.progress-4000)/1000)						
+						var parX = (1-2*Math.random())*100*(parY/(elem.height-200-confY))
 						var particle = {
-							x:confX+82+4
-							+ (1-2*Math.random())*100*(parY/(elem.height-200-confY)),
+							x:confX+82+4 + parX,
 							y:elem.height-180 - parY,
 							type:"spacetimefabric",
 							start:renderData.progress,
 							size: 15+5*Math.random(),
 							end:250+250*Math.random(),
 							life:40+250*Math.random(),
-							movX:2*(1-2*Math.random()),
-							movY:4*(1-2*Math.random())};
+							movX:2*(parX/100),
+							movY:2*(parY/(elem.height-200-confY))};
 							
 						renderData.particles.push(particle);						
 					}
@@ -1885,7 +1886,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2+Math.sin(progress/500)*6,elem.height-200+Math.cos(progress/290)*6);
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["popper5"],
+					context.drawImage(Assets.img["popper"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);
@@ -2064,7 +2065,7 @@ function drawConfutest(progress){
 						movY:(1-2*Math.random())};
 					particle.y= particle.y<elem.height/2?elem.height/2:particle.y;
 					var px = particle.x + 1000*Math.cos(-Math.PI/2+Math.PI/4*Math.sin(2*Math.PI*(renderData.progress-2500)/2000));
-					var py = particle.y + 1000*Math.sin(-Math.PI/2+Math.PI/4*Math.sin(2*Math.PI*(renderData.progress-2500)/2000));
+					var py = particle.y + 300*Math.sin(-Math.PI/2+Math.PI/4*Math.sin(2*Math.PI*(renderData.progress-2500)/2000));
 					px = (px<0)?0:((px>elem.width)?elem.width :px);
 					py = (py<0)?0:((py>elem.height)?elem.height:py);
 					context.beginPath();
