@@ -69,14 +69,18 @@ function clear(){
 }
 
 var start = null;
+var begin = false;
 var change,changeEvt;
-var timeflow =true;
+var timeflow =false;
 var timeflowtimestamp;
 function renderConfu(timestamp){
 
-	if (!start && mouse.isOver && mouse.target==elem){ start = timestamp;}
-	if(!start || !Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
-	var progress = Math.round(timestamp - start);
+	if (!start && mouse.isOver && mouse.target==elem && !begin){ start = timestamp; begin =true; timeflow=true; timeflowtimestamp=undefined;}
+	if(!Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
+	if (begin)
+		var progress = Math.round(timestamp - start);
+	else
+		var progress =0;
 	clear();
 	
 	if(!timeflow && timeflowtimestamp==undefined)
@@ -1828,7 +1832,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-130-50*((renderData.progress-2000)/1500));
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["hawking"],
+					context.drawImage(Assets.img["hawking5"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);
@@ -1881,7 +1885,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2+Math.sin(progress/500)*6,elem.height-200+Math.cos(progress/290)*6);
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["popper"],
+					context.drawImage(Assets.img["popper5"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);
@@ -2024,7 +2028,7 @@ function drawConfutest(progress){
 				if(renderData.progress>1000)
 					drawAttackInfo(progress,handleText("[playerName]"),"Pięć dróg","Droga Tomasza");
 				
-				if(renderData.progress>2000)
+				if(renderData.progress>2000)	
 				for(var i=0;i<5;i++){
 					var pow =25+2*Math.cos((renderData.progress-3000)/200);
 					var arc = 2*Math.PI/5*i + 2*Math.PI*(renderData.progress-3000)/4000;
