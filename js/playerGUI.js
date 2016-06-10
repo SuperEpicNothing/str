@@ -37,7 +37,7 @@ function gpmsc(){
 	c1.textBaseline = "top";
 	c1.textAlign="center"; 	
 	c1.fillStyle="#ffffbf";
-	c1.fillText( handleText("Zdolności?"),370+(240)*0.5,85);
+	c1.fillText( handleText("Umiejętności"),370+(240)*0.5,85);
 	
 	c1.font = "12px Aclonica";
 	c1.fillText( handleText("Doświadczenie"),370+(240)*0.5,110);

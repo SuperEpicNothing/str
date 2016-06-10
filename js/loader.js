@@ -193,8 +193,8 @@ function createPlayer()
 		noftifications:[],
 		progress:{
 			lvl:0,
-			xp:0.5,
-			skillp:3,
+			xp:0,
+			skillp:20,
 			chapters: [[0,1],[],[]]
 			},
 		books:[],
