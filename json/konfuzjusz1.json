@@ -308,7 +308,7 @@
 		"comment":"23",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"[Konfuzjusz patrzy na Ciebie uważnie] Chyba wystarczy nam tych przepychanek..."
+			"text":"[Konfuzjusz patrzy na Ciebie uważnie] Hm. Chyba wystarczy nam tych przepychanek..."
 			}
 		],
 		"options":[
@@ -321,7 +321,7 @@
 		"events":[
 			{"type":"isWin","time":0},
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"TUTAJ ZOSTAJE SPRAWDZONE, KTO WYGRAŁ!"
+			"text":" "
 			}
 		],
 		"options":[
@@ -332,7 +332,7 @@
 		"comment":"25",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"WYGRAŁĘŚ!"
+			"text":"Gratuluję, Wędrowcze! Nie wpadłeś w sidła moich podstępów, możesz kontynuować przygodę... [Konfuzjusz uśmiecha się złowieszczo] Do zobaczenia!"
 			}
 		],
 		"options":[
@@ -344,7 +344,7 @@
 		"comment":"26",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"Przegrałeś!"
+			"text":"Niestety, Wędrowcze! Nie mogę przepuścić Cię dalej. Wróć, kiedy nabierzesz większej filozoficznej ogłady..."
 			}
 		],
 		"options":[

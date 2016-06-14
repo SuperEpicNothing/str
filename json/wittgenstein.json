@@ -16,7 +16,7 @@
 		],
 		"options":[
 			{"target": 1, "text": "Witaj!"},
-			{"target": 2, "text": "Dzień dobry, Panie Profesorze!"}
+			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
 		]	   
 	},
 	
@@ -29,13 +29,646 @@
 			}
 		],
 		"options":[
-			{"target": 6, "text": "Mam pewien problem z Pańską teorią..."},
-			{"target": 2, "text": "Nad czym Pan ostatnio pracuje?"},
-			{"target": 3, "text": "Co Pan robi w Norwegii?"}
+			{"target": 8, "text": "Mam pewien problem z Pańskim tekstem..."},
+			{"target": 2, "text": "Co Pan robi w Norwegii?", "req":{"type":"skill","skill":2,"amt":4,"mode":">"}}
 			
 		]	   
-	}
+	},
+
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Odpoczywam. Myślę. Oddycham świeżym powietrzem. Przygotowuję się do napisania książki."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "A jakiej książki?"},
+			{"target": 4, "text": "O czym Pan myśli?"},
+			{"target": 8, "text": "Hm, no tak. No więc mam pewien problem z Pana tekstem..."}
+			
+		]	   
+	},
 	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Zupełnie nowej, chyba nadam jej tytuł [']Dociekania filozoficzne[']."
+			}
+		],
+		"options":[
+			{"target": 4, "text": "I o czym ta książka?"},
+			{"target": 5, "text": "Mogę zajrzeć?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Zastanawiam się cały czas nad tym, o czym pisałem wcześniej, w [']Traktacie[']. Te sprawy trzeba przemyśleć zupełnie na nowo!..."
+			}
+		],
+		"options":[
+			{"target": 6, "text": "Hm. A ja właśnie czytam [']Traktat[']... Czyżbym [playerGender {tracił|traciła}] czas?", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Hm, na razie mam tylko wyrywkowe notatki, nie wiem, czy będzie z nich duży pożytek..."
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Profesorze... proszę się nie dać prosić!", "req":{"type":"skill","skill":5,"amt":5,"mode":">"}},
+			{"target": 8, "text": "Hm, to może rzeczywiście wróćmy na razie do tekstu, który teraz [playerGender {czytałem|czytałam}]...", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"6",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Oj, nie! Przejście przez drogę, którą opisałem w [']Traktacie['], na pewno nie zaszkodzi! Czy masz może jakieś pytania do mojej książeczki?"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "Tak, nie wszystko jest jasne..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			{"type":"give","time":4600,"book":"dociekania"},
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"No dobrze, weź więc ten zwój. Są to moje uwagi na temat tego, czym w zasadzie jest filozofia..."
+			}
+		],
+		"options":[
+			{"target": 8, "text": "Dziękuję! To może przejdźmy już do tekstu, o którym [playerGender {chciałem|chciałam}] porozmawiać...", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"A o jakim tekście mowa?"
+			}
+		],
+		"options":[
+			{"target": 9, "text": "[']Traktat logiczno-filozoficzny[']."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc?"
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Mam problem z tymi wszystkimi faktami, stanami rzeczy..."},
+			{"target": 23, "text": "W sprawie fragmentu o krytyce filozofii..."},
+			{"target": 28, "text": "Mam już pytanie natury ogólnej."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"TOKEN"
+			}
+		],
+		"options":[
+
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Cóż, na pierwszy rzut oka może się to wydawać zawikłane. Najlepiej iść po kolei. Zacznijmy od świata. Ja proponuję, że świat składa się po prostu z faktów."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "No OK, idźmy dalej..."},
+			{"target": 12, "text": "Moment, jak to z [']faktów['], a nie z jakichś... rzeczy?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Najprościej będzie pomyśleć o tym, co piszę, jako o pewnego typu propozycji. Na zasadzie: [']co by było, gdyby...['] - wtedy nie będziesz [playerGender {musiał|musiała}] co chwilę zastanawiać się nad tym, czy to, co piszę, odpowiada Twojej intuicji."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "Hm, no skoro tak..."},
+			{"target": 13, "text": "Tylko po co w ogóle bawić się w takie... [']systemy[']?!"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"W [']Traktacie['] chciałem pokazać jedną prostą rzecz - jak skończy się filozofowanie, jeżeli spróbujemy utworzyć system prosty, logiczny, [']łatwy i przyjemny[']."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "OK, idźmy dalej..."},
+			{"target": 14, "text": "No więc jak się skończy?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Źle! [Wittgenstein się uśmiecha] Ale nie uprzedzajmy wypadków. Idźmy na razie po kolei."
+			}
+		],
+		"options":[
+			{"target": 15, "text": "No dobrze..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"No więc teraz do naszego prostego obrazu świata składającego się z faktów włączamy jakiś umysł. Kogoś, kto wchodzi w kontakt z tym światem."
+			}
+		],
+		"options":[
+			{"target": 16, "text": "OK..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"No więc taki [']ktoś['] obrazuje sobie świat. Innymi słowy, każdemu faktowi odpowiada jakaś jego myśl. No i taka myśl jest obrazem danego faktu."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "OK, to też rozumiem."},
+			{"target": 17, "text": "Ale co to właściwie znaczy, że jest [']obrazem[']?", "req":{"type":"skill","skill":1,"amt":5,"mode":">"}}
+			
+		]	   
+	},
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"W [']Traktacie['] napisałem tak: [']Obraz jest modelem rzeczywistości.['] i [']Obraz polega na tym, że jego elementy mają się do siebie w określony sposób.[']"
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Hm, idźmy może dalej..."},
+			{"target": 18, "text": "Czyli przedmiot i świat mają wspólną swoją... strukturę?", "req":{"type":"skill","skill":1,"amt":6,"mode":">"}, "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Tak, można tak powiedzieć. W innym miejscu napisałem, że elementy obrazu dotykają elementów rzeczywistości jak czułki."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "OK, przejdźmy może dalej."},
+			{"target": 19, "text": "[']Czułki[']?!"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein uśmiecha się] Nie traktuj filozofii zbyt poważnie, [playerGender {młody Filozofie|młoda Filozofko}]..."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "Zapamiętam to. Na razie idźmy może dalej..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"20",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Mamy więc świat, potem mamy myśl. Na koniec zostaje nam język - ale to już prościzna. Po prostu w ten sam sposób, w jaki myśl [']przylega['] do świata, język [']przylega['] do myśli."
+			}
+		],
+		"options":[
+			{"target": 21, "text": "A więc język przylega też idealnie do świata?"},
+			{"target": 666, "text": "I wszystko da się tak ślicznie uporządkować?!"},
+			{"target": 9, "text": "OK, to mi pomogło. Wróćmy może do rozmowy o tekście."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"21",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Tak powinno być. Skoro A odpowiada B, a B odpowiada C, to A odpowiada C."
+			}
+		],
+		"options":[
+			{"target": 22, "text": "Relacja przechodnia!", "req":{"type":"skill","skill":0,"amt":7,"mode":">"}},
+			{"target": 999, "text": "I cały świat da się tak ładnie uporządkować?"},
+			{"target": 9, "text": "OK, to mi pomogło. Wróćmy może do rozmowy o tekście."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"22",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":3},
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein patrzy z podziwem] Brawo, Wędrowcze. Bez logiki ani rusz."
+			}
+		],
+		"options":[
+			{"target": 20, "text": "[Skromnie pochylam głowę] To może wróćmy do rozmowy..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"23",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Tak?"
+			}
+		],
+		"options":[
+
+			{"target": 24, "text": "A to nie jest tak, że sam Pan uprawia filozofię?", "req":{"type":"skill","skill":5,"amt":4,"mode":">"}},
+			{"target": 24, "text": "Co właściwie jest nie tak z filozofią?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"24",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Nie mówię o każdej filozofii! Istnieje miejsce dla filozofii rozumianej jako wyjaśnianie, w jaki sposób używa się języka. Czyli pomoc ludziom przy korzystaniu z narzędzi poznania."
+			}
+		],
+		"options":[
+			{"target": 25, "text": "A czym by była [']zła['] filozofia?"},
+			{"target": 27, "text": "I tylko tyle?!"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"25",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Na przykład wypowiadaniem się na temat absolutnych wartości, na temat [']ostatecznej natury rzeczywistości[']..."
+			}
+		],
+		"options":[
+			{"target": 26, "text": "Co jest nie w porządku z taką filozofią?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"26",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Nie opisuje ona faktów! [']Ostateczna natura rzeczywistośc['] nie jest jednym z faktów składających się na świat! Sensowne zdania dotyczą tylko faktów, ewentualnie dotyczą języka jako takiego, to znaczy nie odpowiadają myślom o faktach. Filozofowie powinni zająć się rozwiązywaniem problemów, a nie tworzeniem nowych!"
+			}
+		],
+		"options":[
+			{"target": 27, "text": "I to tyle? To cała filozofia?"},
+			{"target": 777, "text": "Ale przecież sam Pan pisze pod koniec [']Traktatu['], że to jest metoda niesatysfakcjonująca!..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"27",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein uśmiecha się] Tak, jeżeli chcemy mieć system prosty, logiczny, [']łatwy i przyjemny[']."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "... ale to nie działa?"},
+			{"target": 9, "text": "Hm, chyba [playerGender {chciałbym|chciałabym}} wrócić do tekstu..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"28",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Słucham."
+			}
+		],
+		"options":[
+			{"target": 29, "text": "Czy taka logiczna i klarowna metoda naprawdę >>działa<<?!"},
+			{"target": 33, "text": "Czym właściwie jest [']to, co mistyczne[']?"},
+			{"target": 39, "text": "A jak to się wszystko ma do powstania świata?"},
+			{"target": 43, "text": "Chyba już nie mam więcej pytań..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"29",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein uśmiecha się] Cóż, jeśli [playerGender {doczytałeś|doczytałaś}] do końca, to wiesz, że dopiero po opisaniu takiego systemu zaczynają się schody... to dlatego zresztą przygotowuję się teraz do pisania nowej książki, w której mierzę się z tym problemem."
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Jakie schody?"},
+			{"target": 35, "text": "Czy to chodzi o ten fragment z drabiną?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"30",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Poczytaj punkty [']Traktatu['] od 6.52."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "OK, rozumiem. Mam jeszcze inne pytanie natury ogólnej...", "height":2},
+			{"target": 31, "text": "Momencik, czyli co właściwie powinniśmy robić, skoro metoda [']poprawna['] nie działa?!", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"31",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Dobre pytanie. A może tak po prostu jest i porządnym, opartym na logice językiem nie tkniemy naszych problemów?"
+			}
+		],
+		"options":[
+			{"target": 32, "text": "To trochę smutny wniosek...", "req":{"type":"skill","skill":2,"amt":6,"mode":">"}},
+			{"target": 28, "text": "Hm, muszę to przemyśleć. Wróćmy na razie do tego, o czym rozmawialiśmy", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"32",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Może troszkę. Z drugiej strony zawsze warto znać granice metod, którymi się posługujemy."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "Może i racja. Wróćmy może do rozmowy."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"33",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein milczy]"
+			}
+		],
+		"options":[
+			{"target": 34, "text": "[czekam]"},
+			{"target": 34, "text": "Ej, zasnął Pan?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"34",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[Wittgenstein wciąż milczy]"
+			}
+		],
+		"options":[
+			{"target": 34, "text": "[wciąż czekam]"},
+			{"target": 34, "text": "Ha-looooo?"},
+			{"target": 36, "text": "Hm. Chyba [playerGender {pojąłem|pojęłam}]..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"35",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Oczywiście. Chodzi mi o fragment z drabiną."
+			}
+		],
+		"options":[
+			{"target": 37, "text": "Czyli nie mam się spodziewać odpowiedzi na problemy filozoficzne?", "height":2}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"36",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":2},
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"To mnie bardzo cieszy. [Wittgenstein uśmiecha się]"
+			}
+		],
+		"options":[
+			{"target": 28, "text": "..."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"37",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Oczywiście, że nie! To nie są przecież [']dobrze wyrażone problemy[']!..."
+			}
+		],
+		"options":[
+			{"target": 38, "text": "A gdybym je dobrze [playerGender {wyraził|wyraziła}]?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"38",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Wtedy przestałyby być problemami filozoficznymi."
+			}
+		],
+		"options":[
+			{"target": 28, "text": "Hm, chyba rozumiem. Wróćmy może do moich pytań."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"39",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"[']Granice języka są granicami świata[']. Chcesz wyjść poza granice języka?"
+			}
+		],
+		"options":[
+			{"target": 40, "text": "Hm. Może raczej opisać granicę?"},
+			{"target": 41, "text": "Tak, chcę."},
+			{"target": 28, "text": "OK, [playerGender {pojąłem|pojęłam}]. Wróćmy do pytań."}
+			
+		]	   
+	},
+	{
+		"COMMENT":"40",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Żeby ją opisać, trzeba by wyjść poza nią. Spojrzeć na nią z drugiej strony, a to by znowu wymagało od nas wyjścia poza język."
+			}
+		],
+		"options":[
+			{"target": 41, "text": "A może ja chcę wyjść poza język?"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"41",
+		"events":[
+			
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Zastanów się. Czy naprawdę chcesz wyjść poza granice świata i granice języka?"
+			}
+		],
+		"options":[
+			{"target": 42, "text": "Jasne!"},
+			{"target": 28, "text": "Nie, to chyba zły pomysł... wróćmy do pytań."}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"42",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":5},
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Proszę bardzo."
+			}
+		],
+		"options":[
+			{"target": 999, "text": ""},
+			{"target": 999, "text": ""},
+			{"target": 999, "text": ""},
+			{"target": 999, "text": ""}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"43",
+		"events":[
+			{"type":"unlockChap","time":"0","chapter":1,"lesson":"test"},
+			{"type":"give","time":4600,"item":"wittgenstein"},
+			{"type":"question","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Cieszę się, że mogłem pomóc. Przyjmij ode mnie ten oto Argument i niech Ci służy! Bywaj, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 44, "text": "Dziękuję, Profesorze! Bywaj!"}
+			
+		]	   
+	},
+	
+	{
+		"COMMENT":"45",
+		"events":[
+			
+			{"type":"dialog","name":"Ludwig Wittgenstein","time":1000,"timepadding":0,
+			"text":"Bywaj."
+			}
+		],
+		"options":[
+		]	   
+	}
 ]
 }
 	

@@ -1,0 +1,439 @@
+{
+	"meta":{
+	"win":25,
+	"lose":26,
+	"bossmaxhp":8,
+	"heromaxhp":8,
+	"music":[
+	"heroism.ogg",
+	"Battle in the winter.mp3",
+	"Thrust Sequence.mp3",
+	"Blackmoor Colossus Loop.wav"]
+	},
+	"scenes": [
+	{
+		"comment":"0",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Mua-Hua-hua! Mua-ha-ha! Huahuahuahuahua!... [diaboliczny śmiech]"}
+		],
+		"options":[
+			{"target": 1, "text": "Widzę, że nie straciłeś pewności siebie po ostatniej potyczce..."},
+			{"target": 2, "text": "Witaj, Konfuzjuszu! Jak zdrówko?", "req":{"type":"skill","skill":2,"amt":5,"mode":">"}}
+
+		]	   
+	},
+
+	{
+		"comment":"1",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ha!... [Konfuzjusz parska złowieszczo] Widziałem zbyt wielu takich butnych śmiałków, jak Ty, którzy gubili się i plątali pod naporem mych sztuczek... Czy jesteś gotów zmierzyć się ze mną?"}
+		],
+		"options":[
+			{"target": 6, "text": "Pytaj, Konfuzjuszu! Nie lękam się!"},
+			{"target": 6, "text": "Oczywiście!"}
+
+		]	   
+	},
+	
+
+	{
+		"comment":"2",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz poważnieje na chwilę i nachyla się ku Tobie] Wiesz, Wędrowcze, prawdę mówiąc, straszne są przeciągi tu w Zaświatach Chaosu... ostatnio okrutnie mnie plecy pobolewają..."}
+		],
+		"options":[
+			{"target": 3, "text": "Bardzo żałuję, ale nie mogę Ci pomóc.", "req":{"type":"skill","skill":2,"amt":8,"mode":">"}},
+			{"target": 4, "text": "Hmmm, a gdyby tak zebrać Twoją szatę na plecach...?", "req":{"type":"skill","skill":2,"amt":8,"mode":">"}, "height":2},
+			{"target": 6, "text": "Skróćmy więc tę potyczkę i bierzmy się do roboty!"}
+
+		]	   
+	},
+	
+	{
+		"comment":"3",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":6},
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy na Ciebie spokojnie] Hm, umiesz się wznieść ponad dzielące nas różnice. To wielka cnota."}
+		],
+		"options":[
+			{"target": 5, "text": "Dzięki, Konfuzjuszu, ale ani mi w głowie wpadać w twe sidła!...", "height":2}
+
+		]	   
+	},
+	
+	{
+		"comment":"4",
+		"events":[
+			{"type":"unlockAch","time":"4200","ach":6},
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Sięgasz po szatę Konfuzjusza i zręcznie zaplatasz ją za plecami. Konfuzjusz patrzy nieufnie, a po chwili z podziwem] Brawo, Wędrowcze!... Pamiętałeś, żeby wznieść się ponad ponad dzielące nas różnice!"}
+		],
+		"options":[
+			{"target": 5, "text": "Dzięki, Konfuzjuszu, ale ani mi w głowie wpadać w twe sidła!..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"5",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz uśmiecha się złośliwie] Masz ducha walki, Wędrowcze. Słuchaj więc mnie uważnie!..."}
+		],
+		"options":[
+			{"target": 6, "text": "Zaczynajmy."}
+
+		]	   
+	},
+	
+	{
+		"comment":"6",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Zacznijmy więc od czegoś prostego. Co byś mi [playerGender {powiedział|powiedziała}], gdybym rzekł, że rozwiązałem zagadkę powstania świata?"}
+		],
+		"options":[
+			{"target": 8, "text": "Jak to co...? [playerGender {Zapytałbym|Zapytałabym}] o konkrety."},
+			{"target": 7, "text": "[playerGender {Powiedziałbym|Powiedziałabym}], że to wątpliwe..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"7",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"I bardzo słusznie. Wątpić jest rzeczą Filozofa. Pozwól jednak, że powiem Ci nieco więcej, niecierpliwy Wędrowcze!..."}
+		],
+		"options":[
+			{"target": 8, "text": "Czekam więc na konkrety..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"8",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Otóż ostatecznym wyjaśnieniem świata jest to, że wywodzi się on z 9-wymiarowej białej dziury zanurzonej w 11-wymiarowej przestrzeni Nad-Kosmosu."}
+		],
+		"options":[
+			{"target": 10, "text": "Zapytałbym oczywiście, jaka jest przyczyna istnienia tej dziury i tego Nad-Kosmosu...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}, "height":2},
+			{"target": 9, "text": "Cóż, chyba nie [playerGender {miałbym|miałabym}] z tym problemu, o ile tak by twierdzili naukowcy.", "consequence":{"herohp":-1}, "height":2}
+
+		]	   
+	},
+	
+	{
+		"comment":"9",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz uśmiecha się złośliwie] Naprawdę? Czyli ostatecznym wyjaśnieniem może być coś, czego przyczyna nie została wyjaśniona?"}
+		],
+		"options":[
+			{"target": 11, "text": "Hola hola, Konfuzjuszu! Aby mówić o przyczynie, trzeba mieć do dyspozycji czas!", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 17, "text": "Ejże, nie wszystko musi mieć swoją przyczynę!", "req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 23, "text": "Hm, nie [playerGender {pomyślałem|pomyślałam}] o tym..."}
+
+		]	   
+	},
+	
+
+	{
+		"comment":"10",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Och, przyczyną się nie przejmuj... nie wszystko musi mieć swoją przyczynę, prawda?"}
+		],
+		"options":[
+			{"target": 12, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 17, "text": "Powiedzmy, że prawie wszystko.","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 23, "text": "Ciężko powiedzieć..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"11",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy na Ciebie podejrzliwie] Masz tu trochę racji, Wędrowcze! Czyli nie wszystko musi mieć swoją przyczynę?"}
+		],
+		"options":[
+			{"target": 12, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 17, "text": "Powiedzmy, że prawie wszystko...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 23, "text": "Ciężko powiedzieć..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"12",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ohoho. [Konfuzjusz zerka podejrzliwie] Czytało się kosmologów?... To może wyjaśnij mi, o jakim to [']zaburzeniu['] czasoprzestrzeni mowa?"}
+		],
+		"options":[
+			{"target": 13, "text": "Na przykład o falach grawitacyjnych.", "consequence":{"herohp":-1}},
+			{"target": 13, "text": "O wyginaniu się przestrzeni pod wpływem masy.", "consequence":{"herohp":-1}},
+			{"target": 14, "text": "O sytuacjach, kiedy efekty kwantowe utrudniają odróżnienie czasu i przestrzeni", "height":2, "consequence":{"bosshp":-1}}
+
+		]	   
+	},
+	
+	{
+		"comment":"13",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz chichocze] Ech, Wędrowcze. Coś [playerGender {liznąłeś|liznęłaś}], ale to nie to. Ani fale grawitacyjne, ani normalne wyginanie się czasoprzestrzeni pod wpływem masy nie wystarcza, żeby zaburzyć strukturę przyczynową... potrzeba tu czegoś bardziej fundamentalnego..."}
+		],
+		"options":[
+			{"target": 15, "text": "Aach, teraz pamiętam. Chodzi o hipotetyczne zjawiska kwantowe, prawda?", "req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}, "height":2},
+			{"target": 16, "text": "Jeszcze się douczę, poczekaj tylko!..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"14",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz patrzy na Ciebie rozeźlony i mamrocze pod nosem] [playerGender {Taki sprytny, ten młody Filozof|Taka sprytna, ta młoda Filozofka}]..."}
+		],
+		"options":[
+			{"target": 16, "text": "Phi!"}
+
+		]	   
+	},
+	
+	{
+		"comment":"15",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Nie inaczej, Wędrowcze. Dobrze, że sobie [playerGender {przypomniałeś|przypomniałaś}] - lepiej późno niż wcale!..."}
+		],
+		"options":[
+			{"target": 16, "text": "Wiadomo!"}
+
+		]	   
+	},
+	
+	{
+		"comment":"16",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Zostawmy jednak na boku te wszystkie kwanty i kwarki, Wędrowcze. Spójrzmy na sprawę ogólnie - czy wszystko musi mieć swoją przyczynę, hm?"}
+		],
+		"options":[
+			{"target": 17, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 18, "text": "No chyba wszystko..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"17",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"A co masz na myśli?"}
+		],
+		"options":[
+			{"target": 19, "text": "Pierwszą Przyczynę, oczywiście!"}
+
+		]	   
+	},
+	{
+		"comment":"18",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz uśmiecha się szyderczo] Ha! Czyli bez względu na wszystko czeka nas Nieskończony Regres, powiadasz...? Doczytaj o Pierwszej Przyczynie, Wędrowcze!..."}
+		],
+		"options":[
+			{"target": 19, "text": "No tak... jest jeszcze Pierwsza Przyczyna..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"19",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Widzisz, młody człowieku!... Nareszcie mówisz z sensem. A czym właściwie byłaby ta Pierwsza Przyczyna?"}
+		],
+		"options":[
+			{"target": 21, "text": "Tomasz twierdzi, że [']wszyscy nazywają ją Bóg[']...","req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
+			{"target": 32, "text": "Nasz język nie pozwala nam o tym jasno mówić.", "req":{"type":"item","item":"wittgenstein"}, "consequence":{"bosshp":-1}},
+			{"target": 20, "text": "Jakimś zjawiskiem fizycznym po prostu...", "consequence":{"bosshp":-1}}
+
+		]	   
+	},
+	
+	{
+		"comment":"20",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ech, ech... niewiele się [playerGender {nauczyłeś|nauczyłaś}], Wędrowcze!... Pierwsza Przyczyna musi być czymś radykalnie innym od wszelkich innych przyczyn! Nie może być [']zjawiskiem fizycznym['] po prostu!..."}
+		],
+		"options":[
+			{"target": 22, "text": "Poczekaj jeszcze, Konfuzjuszu, wrócimy do tematu..."}
+
+		]	   
+	},
+	
+	{
+		"comment":"21",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Bardzo ostrożna odpowiedź, Wędrowcze, ale to właśnie nieostrożni wędrowcy wpadają w moje pułapki..."}
+		],
+		"options":[
+			{"target": 27, "text": "Tak... Zaczynam się powoli orientować."}
+
+		]	   
+	},
+	
+	{
+		"comment":"22",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"No dobrze, Wędrowcze... chyba usłyszałem już dosyć Twych odpowiedzi."}
+		],
+		"options":[
+			{"target": 24, "text": "I co sądzisz, Konfuzjuszu?"}
+
+		]	   
+	},
+	
+	{
+		"comment":"23",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Hm, zacznijmy może inaczej, Wędrowcze. Zadaj sobie ogólne pytanie: czy wszystko musi mieć swoją przyczynę? Pomyśl o tym, czego uczył Arystoteles..."}
+		],
+		"options":[
+			{"target": 17, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 18, "text": "No chyba wszystko..."}
+
+		]	   
+	},
+
+	{
+		"comment":"24",
+		"events":[
+			{"type":"isWin","time":0},
+			{"type":"question","time":1000,"timepadding":0,
+			"text":" "
+			}
+		],
+		"options":[
+		]	  		
+	},
+	
+	{
+		"comment":"25",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Gratuluję ponownie, Wędrowcze! Nie dałeś się złapać na me sztuczki i możesz kontynuować przygodę... [Konfuzjusz patrzy złowieszczo] na razie..."
+			}
+		],
+		"options":[
+			{"target": 999, "text": ""}
+		]	  		
+	},
+	
+	{
+		"comment":"26",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Niestety, Wędrowcze! Nie mogę przepuścić Cię dalej. Wróć, kiedy nabierzesz większej filozoficznej ogłady..."
+			}
+		],
+		"options":[
+			{"target": 999, "text": ""}
+		]	  		
+	},
+	
+	{
+		"comment":"27",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Dobrze... a jaką drogą właściwie Tomasz doszedł do wniosku, że świat został stworzony przez Boga?"
+			}
+		],
+		"options":[
+			{"target": 28, "text": "Przeczytał to w Biblii.","consequence":{"herohp":-1}},
+			{"target": 28, "text": "Papież mu tak kazał powiedzieć.","consequence":{"herohp":-1}},
+			{"target": 29, "text": "Podążał za rozumowaniem Arystotelesa.","consequence":{"bosshp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"28",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz wybucha śmiechem] Paradne, Wędrowcze! Doceniam Twe poczucie humoru, ale tak raczej nie było..."
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Oj tam, oj tam..."}
+		]	  		
+	},
+	
+	{
+		"comment":"29",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Nie da się ukryć... wróćmy więc na chwilę do pytania o to, [']czym['] jest Pierwsza Przyczyna. Niektórzy powiedzieliby pewnie, że nie da się jasno mówić na ten temat. Kto mógłby to być? [Konfuzjusz spogląda na Ciebie złośliwie]"
+			}
+		],
+		"options":[
+			{"target": 30, "text": "Wittgenstein.","consequence":{"bosshp":-1}},
+			{"target": 31, "text": "Kartezjusz.","consequence":{"herohp":-1}},
+			{"target": 31, "text": "William James.","consequence":{"herohp":-1}},
+			{"target": 31, "text": "Tomasz z Akwinu.","consequence":{"herohp":-1}}
+		]	  		
+	},
+	
+	{
+		"comment":"30",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz słabnie w oczach] Nic nie pomaga... cóż mogę teraz począć?"
+			}
+		],
+		"options":[
+			{"target": 22, "text": "[triumfalnie] Poddać się?"}
+		]	  		
+	},
+	
+	{
+		"comment":"31",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"[Konfuzjusz uśmiecha się triumfalnie] Ech, wszystko Ci się poplątało, co mnie - Mistrza Chaosu - niezmiernie oczywiście cieszy. Był to Wittgenstein, Wędrowcze."
+			}
+		],
+		"options":[
+			{"target": 22, "text": "Cóż począć..."}
+		]	  		
+	},
+	
+	{
+		"comment":"32",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Dobrze kombinujesz, Wędrowcze. Pozwól jednak, że zostawimy na razie ten wątek na boku. Przypuśćmy, że chciałbym jednak ustalić, kim albo czym jest ta Pierwsza Przyczyna. Jakieś pomysły?"
+			}
+		],
+		"options":[
+			{"target": 27, "text": "Cóż, Tomasz z Akwinu napisał, że [']wszyscy nazywają ją Bóg[']...","height":2,"req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
+			{"target": 29, "text": "Chyba nie mam żadnego pomysłu..."}
+		]	  		
+	}
+	
+	]
+}

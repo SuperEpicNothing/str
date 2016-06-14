@@ -119,7 +119,7 @@
 		{"name" : "russelbot2", "src":"images/gui/icons/items/bottle3.png"},
 		{"name" : "russelbot3", "src":"images/gui/icons/items/bottle4.png"},
 		{"name" : "russelbot4", "src":"images/gui/icons/items/bottle5.png"},
-		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Sword05.png"},
+		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Throw004.png"},
 		{"name" : "jamesAngel0", "src":"images/gui/icons/items/angl0.png"},
 		{"name" : "jamesAngel1", "src":"images/gui/icons/items/angl1.png"},
 		{"name" : "hawking5", "src":"images/gui/icons/items/W_Mace011.png"},
@@ -127,6 +127,7 @@
 		{"name" : "popperpaper", "src":"images/gui/icons/items/popperpaper.png"},
 		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
 		{"name" : "arysto", "src":"images/gui/icons/items/W_Mace008.png"},
+		{"name" : "wittg", "src":"images/gui/icons/items/S_Earth02.png"},
 
 
 		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},
@@ -199,7 +200,7 @@
 			"fullname": "Społeczeństwo otwarte",
 			"autor": "Karl Popper",
 			"img": "images/gui/untitled.png",
-			"desc": "Link prowadzi do artykułu filozofa, prof. Czesława Porębskiego na temat 'społeczeństwa otwartego'.",
+			"desc": "Link prowadzi do artykułu filozofa, prof. Czesława Porębskiego, na temat 'społeczeństwa otwartego'.",
 			"url": "http://www.diametros.iphils.uj.edu.pl/index.php/diametros/article/download/141/116"	
 		},
 		
@@ -215,11 +216,21 @@
 		
 		{
 			"type": "Book",
+			"name": "dociekania",
+			"fullname": "Dociekania filozoficzne",
+			"autor": "Ludwig Wittgenstein",
+			"img": "images/gui/untitled.png",
+			"desc": "Link prowadzi do fragmentu 'Dociekań filozoficznych'.",
+			"url": "http://sady.up.krakow.pl/wittgenstein.df109-133.htm"	
+		},
+
+		{
+			"type": "Book",
 			"name": "kartez",
 			"fullname": "O duszy, ciele i szyszynce",
 			"autor": "Kartezjusz",
 			"img": "images/gui/untitled.png",
-			"desc": "Ten dłuższy fragment książki Kartezjusza [']Człowiek['] zawiera więcej informacji na temat szyszynki, którą Kartezjusz określał jako [']gruczoł H[']...",
+			"desc": "Ten dłuższy fragment książki Kartezjusza 'Człowiek' zawiera więcej informacji na temat szyszynki, którą Kartezjusz określał jako 'gruczoł H'...",
 			"url": "http://www.iphils.uj.edu.pl/~m.kuninski/Kartezjusz%20Czlowiek%20Tchnienia%20zyciowe%20Szyszynka.pdf"	
 		}	
 		
@@ -241,7 +252,7 @@
 			"fullname": "Tornado Czasoprzestrzeni",
 			"autor": "Stephen Hawking",
 			"icon":"hawking5",
-			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Komos').",
+			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Kosmos').",
 			"url": null	
 		},
 
@@ -287,6 +298,16 @@
 		
 		{
 			"type": "Argument",
+			"name": "wittgenstein",
+			"fullname": "Słup Graniczny",
+			"autor": "Ludwig Wittgenstein",
+			"icon":"wittg",
+			"desc": "'Słup Graniczny' to argument dotyczący granic języka i granic świata. Jeżeli chcemy opisać granicę świata, musimy wyjść poza granice języka! Więcej informacji można uzyskać w trakcie rozmowy z Wittgensteinem (zob. lekcja 'Sztuka milczenia' w rozdziale 'Kosmos').",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
 			"name": "akwinata",
 			"fullname": "Droga Tomasza",
 			"autor": "Tomasz z Akwinu",
@@ -308,7 +329,7 @@
 		{
 			"comment":"1",
 			"level": 0,
-			"fullname": "Blady Doktor!",
+			"fullname": "Blady Doktor",
 			"icon":"book",
 			"desc": "za sprawienie, że Uczony Doktor Tomasz z Akwinu zbladł z przerażenia"
 		},
@@ -316,25 +337,41 @@
 				{
 			"comment":"2",
 			"level": 0,
-			"fullname": "Lennie!",
+			"fullname": "Ciepło na sercu",
 			"icon":"book",
-			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+			"desc": "za uratowanie Kartezjusza przed zmarznięciem"
 		},
 		
 				{
 			"comment":"3",
-			"level": 0,
-			"fullname": "Jennie!",
+			"level": 1,
+			"fullname": "Oko logika",
 			"icon":"book",
-			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+			"desc": "za zaskoczenie Ludwiga Wittgensteina i podniesienie jego lewej brwi"
 		},
 		
 				{
 			"comment":"4",
 			"level": 1,
-			"fullname": "Tennie!",
+			"fullname": "Małe Satori",
 			"icon":"book",
-			"desc": "za pomoc żonie Karla Poppera w przetrwaniu wyjazdu na Nową Zelandię"
+			"desc": "za zrozumienie, dlaczego Ludwig Wittgenstein milczał"
+		},
+		
+		{
+			"comment":"5",
+			"level": 2,
+			"fullname": "Strategia wyjścia",
+			"icon":"book",
+			"desc": "za opuszczenie granic świata"
+		},
+		
+		{
+			"comment":"6",
+			"level": 2,
+			"fullname": "Kochaj swego wroga",
+			"icon":"book",
+			"desc": "za odruch serca wobec Tego, Który Wystawia Na Próby"
 		}
 		
 	]

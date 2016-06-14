@@ -88,7 +88,7 @@
 			}
 		],
 		"options":[
-			{"target": 6, "text": "[TEST] Powiedz jej, że ciało jest sprzęgnięte z duszą - i że rozwój duszy może nastąpić tylko wtedy, gdy ciało jest dobrze ogrzane - podobnie jak roślina nie wzejdzie na mrozie.", "height":2},
+			{"target": 6, "text": "Powiedz jej, że ciało jest sprzęgnięte z duszą - i że rozwój duszy może nastąpić tylko wtedy, gdy ciało jest dobrze ogrzane - podobnie jak roślina nie wzejdzie na mrozie.", "req":{"type":"skill","skill":0,"amt":4,"mode":">"}, "height":2},
 			{"target": 8, "text": "Przykro mi, ale nie mam pojęcia, Kartezjuszu. Musisz chyba poradzić sobie sam.", "height":2}
 		]	   
 	},
@@ -96,9 +96,9 @@
 	{
 		"COMMENT":"6",
 		"events":[
-			
+			{"type":"unlockAch","time":"4200","ach":2},
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"[Hmhm... Słusznie prawisz. Tak chyba zrobię... to zimno doprowadza mnie do pasji. Dziękuję, Wędrowcze! W czym mogę Ci pomóc?"
+			"text":"Hmhm... Słusznie prawisz. Tak chyba zrobię... to zimno doprowadza mnie do pasji. Dziękuję, Wędrowcze! W czym mogę Ci pomóc?"
 			}
 		],
 		"options":[
@@ -116,7 +116,7 @@
 			}
 		],
 		"options":[
-			{"target": 5, "text": "Musisz koniecznie porozmawiać z Katarzyną! Przecież to jest niebezpiecznie dla zdrowia!"},
+			{"target": 5, "text": "Musisz koniecznie porozmawiać z Katarzyną! Przecież to jest niebezpiecznie dla zdrowia!", "height":2},
 			{"target": 9, "text": "Współczuję. A nad czym ostatnio pracujesz?"},
 			{"target": 23, "text": "Hm, wróćmy może do kwestii, którą chciałym z Tobą przedyskutować..."}
 		]	   
@@ -160,8 +160,8 @@
 			}
 		],
 		"options":[
-			{"target": 11, "text": "Ojtam... trochę poczucia humoru, Kartezjuszu!"},
-			{"target": 12, "text": "Przepraszam, Kartezjuszu. Głupi dowcip."}
+			{"target": 11, "text": "Oj tam... trochę poczucia humoru, Kartezjuszu!"},
+			{"target": 12, "text": "Przepraszam, Kartezjuszu. Głupi dowcip.", "req":{"type":"skill","skill":3,"amt":3,"mode":">"}}
 		]	   
 	},
 	
@@ -435,13 +435,13 @@
 		"events":[
 			{"type":"give","time":4600,"item":"demon"},
 			{"type":"unlockChap","time":"0","chapter":0,"lesson":2},
-			{"type":"dialog","name":"Kartezjusz","time":5000,"timepadding":0,
+			{"type":"question","name":"Kartezjusz","time":5000,"timepadding":0,
 			"text":"Skoro wszystko już jasne, weź, proszę, ode mnie ten Argument i niech Ci on dzielnie służy. Bywaj!"
 			}
 
 		],
 		"options":[
-			{}
+			{"target": 52, "text": "Bywaj..."}
 
 		]	   
 	},
@@ -736,6 +736,19 @@
 		],
 		"options":[
 			{"target": 48, "text": "To mnie trochę uspokoiło..."}
+		]	
+	},
+	
+	{
+		"COMMENT":"52",
+		"events":[
+
+
+			{"type":"dialog","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Bywaj, Wędrowcze!"
+			}
+		],
+			"options":[
 		]	
 	}
 	

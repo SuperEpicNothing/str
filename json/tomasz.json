@@ -107,7 +107,7 @@
 	{
 		"COMMENT":"7",
 		"events":[
-			{"type":"dialog","name":"Karl Popper","time":1000,"timepadding":0,
+			{"type":"dialog","name":"Tomasz z Akwinu","time":1000,"timepadding":0,
 			"text":"Bywaj!"
 			}
 		],

@@ -39,7 +39,7 @@
   - [x] fix broken inventory 
 - ==L: @lukaszlamza
   - [ ] list of all Arguments, Achievements, Items
-  - [ ] ile PD na lvl na skillpointa???????????
+  - [x] ile PD na lvl na skillpointa???????????
   - [ ] apply some animations for Konfutest
   - [x] apply class="texthandler" wherever needed
   - [x] add more item types into assets.json
