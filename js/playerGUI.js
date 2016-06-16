@@ -31,7 +31,11 @@ function gpmsc(){
 	24*(option.teach?6:(player.appearance+(player.gender?0:3))), 0,
 	24,32,
 	80+19,75+77,219,291);
-	c1.drawImage(Assets.img["GUIplayer"],922,0,203*player.progress.xp,16,390,122,203*player.progress.xp,16);
+	if(player.progress.xp/5-player.lvl>0)
+	c1.drawImage(Assets.img["GUIplayer"],922,0,	
+	203*(player.progress.xp/5-player.lvl),16,
+	390,122,
+	203*(player.progress.xp/5-player.lvl),16);
 	cUtils.imageSmoothing(c1,true);
 	c1.font = "20px Aclonica"
 	c1.textBaseline = "top";
@@ -41,9 +45,9 @@ function gpmsc(){
 	
 	c1.font = "12px Aclonica";
 	c1.fillText( handleText("Doświadczenie"),370+(240)*0.5,110);
-	if(player.progress.skillp>0)
+	if((player.progress.skillp-player.progress.skillps)>0)
 	{
-		c1.fillText("+"+player.progress.skillp+" Punktów do rozdania",370+(240)*0.5,140);
+		c1.fillText("+"+(player.progress.skillp-player.progress.skillps)+" Punktów do rozdania",370+(240)*0.5,140);
 	}		
 	for(var i=0;i<player.stats.length;i++)
 	{
@@ -140,7 +144,7 @@ function drawStat(x,y,stat){
 	}
 
 	
-	if(player.stats[stat]<maxskill && player.progress.skillp>0 && !option.teach)
+	if(player.stats[stat]<maxskill && (player.progress.skillp-player.progress.skillps)>0 && !option.teach)
 	{
 		//border+body
 		var i = player.stats[stat]
@@ -161,7 +165,8 @@ function drawStat(x,y,stat){
 			player.stats[stat]++
 			mouse.buttons = 0;
 			mouse.event="";
-			skillpoints(-1);
+			savePlayer();
+			gpmsc();
 		}
 	}
 	cUtils.imageSmoothing(c1,true);

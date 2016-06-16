@@ -2,6 +2,7 @@
 	"meta":{
 	"win":25,
 	"lose":26,
+	"ID":"Wiedza",
 	"bossmaxhp":7,
 	"heromaxhp":7,
 	"music":[

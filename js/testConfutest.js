@@ -895,6 +895,7 @@ function processEvent(progress){
 			change=battlescript.meta.lose;
 			else if(boss.heroHp>boss.health)
 			change=battlescript.meta.win;
+			addConfuWin(battlescript.meta.ID);
 			else 
 			break;
 			changeEvt=0;

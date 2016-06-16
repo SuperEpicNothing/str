@@ -140,7 +140,6 @@ function processEvent(progress){
 			renderData.type="give"
 			renderData.item=evt.item
 			renderData.book=evt.book
-			renderData.xp=evt.xp
 
 			renderData.progress=progress-EntTime;
 			renderData.time=evt.time
@@ -150,10 +149,6 @@ function processEvent(progress){
 			}
 			if(renderData.book){
 			addBook(renderData.book);
-			}
-			if(renderData.xp){
-			notif.addNotif("xp",renderData.xp);
-			playerxp(renderData.xp);
 			}
 		break;
 		case "question":

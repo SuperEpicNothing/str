@@ -10,12 +10,11 @@
   - [x] ODBLOKOWYWANIE POJEDYŃCZYCH LEKCJI;
   - [x] UNLOCK EVENT;
   - [x] confuWin
-  - [ ] Rework XP as instructed
+  - [x] Rework XP as instructed
   - [x] TEACHER MODE
 
-  - [ ] animacje konfuzjusza
   - [ ] we hurt confu(abimations)
-  - [ ] więcej animacj zadweania pytań przez konfuzjusza]
+  - [ ] więcej animacj zadweania pytań przez konfuzjusza
   
   - [x] nazwy statów - WIEDZA SYstem
   - [x] handleText in HTML

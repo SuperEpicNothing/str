@@ -80,9 +80,6 @@ function openGUI(id)
 	
 }
 function loader(){
-	
-
-	
 	if(Assets.loaded){
 	loadPlayer();
 	if(player==undefined){
@@ -131,41 +128,6 @@ function loadPlayer(){
 		savePlayer();
 
 	}else{
-			//create DEFAULT
-	/*player = {
-		name: "IAmError",
-		gender:false,
-		age:666,
-		appearance:1,
-		stats:[2,2,2,2,2,2],
-		noftifications:[],
-		progress:{
-			lvl:0,
-			xp:0.5,
-			skillp:3,
-			chapters: [0,1]
-			},
-		books:[],
-		items:[],
-		seen:[],
-		notificationsBooks:0,
-		notificationsItems:0,
-		achievements:[]
-		};
-		
-		//library trip
-		for(var book in Assets.books)
-		{
-			player.books.push(book);
-			player.notificationsBooks++
-		}
-		//raid nearby village
-		for(var item in Assets.items)
-		{
-			player.items.push(item);
-			player.notificationsItems++
-		}
-		*/
 		console.log(document.cookie.indexOf("player"));
 			var url = (document.location+"");
 	if(!url.contains("noplayer=0") && !url.contains("main=0") && !url.contains("help=0")){
@@ -194,8 +156,10 @@ function createPlayer()
 		progress:{
 			lvl:0,
 			xp:0,
-			skillp:20,
-			chapters: [[0,1],[],[]]
+			skillp:3,
+			skillps:0,
+			chapters: [[0,1],[],[]],
+			confuWin: [],
 			},
 		books:[],
 		items:[],
@@ -216,8 +180,8 @@ function createPlayer()
 function animateNotifcations(time){
 	document.getElementById("guiSkillPNew" ).style.backgroundColor='rgba(147,180,38,'+(0.6+0.4*Math.sin(time/(250)))+')';
 	document.getElementById("guiSkillPNew" ).style.color='rgba(255,255,255,'+(0.6+0.4*Math.sin(time/250))+')';
-	document.getElementById("guiSkillPNew" ).innerHTML=player.progress.skillp;
-	document.getElementById("guiSkillPNew" ).style.visibility = player.progress.skillp<=0?"hidden":"visible";
+	document.getElementById("guiSkillPNew" ).innerHTML=(player.progress.skillp-player.progress.skillps);
+	document.getElementById("guiSkillPNew" ).style.visibility = (player.progress.skillp-player.progress.skillps)<=0?"hidden":"visible";
 
 	document.getElementById("guiPlayerLevel" ).innerHTML=player.progress.lvl;
 	
@@ -234,23 +198,9 @@ function animateNotifcations(time){
 	newItems.style.visibility = (player.notificationsBooks+player.notificationsItems)<=0?"hidden":"visible";
 	window.requestAnimationFrame(animateNotifcations);
 }
-function skillpoints(n){
-	player.progress.skillp+=n;
-	savePlayer()
-}
-function playerxp(n){
-	player.progress.xp+=xp;
-	if(player.progress.xp>=1){
-		player.lvl++;
-		player.progress.xp--;
-		player.progress.skillp++;
-		playerxp(0);
-		return;
-	}
-	savePlayer();
-}
 
 function removeNotification(type,name){
+
 
 		player.seen.push(type+name);
 		
@@ -289,8 +239,54 @@ function unlockChapter(i,id){
 		savePlayer();
 	}
 }
+function addConfuWin(name){
+
+	if(player.progress.confuWin.indexOf(name)<0){
+		player.progress.confuWin.push(name);
+		savePlayer();
+	}
+}
 function savePlayer(){
-	console.log(savePlayer.caller)
+	console.log(savePlayer.caller);
+	
+	player.progress.xp=0;
+	//unlocked Achievments
+	var l = Assets.achievments.length
+	var i = 0;
+	for(var ach=0;ach<l;ach++)
+		if(player.achievements.indexOf(ach)>=0)
+			i++;
+	player.progress.xp+= i*1;
+	
+	//unlocked books
+	i=0;
+	for(var b=0 ;b<Assets.booknames.length;b++)
+	{
+		var book = Assets.books[Assets.booknames[b]];
+		if(player.books.indexOf(book.name)>=0)
+			i++;
+	}
+	player.progress.xp+= i*1;
+	
+	//unlocked chapters
+	i=0;
+	for(var c=0 ;c<player.progress.chapters.length;c++)
+	{
+		var chapter = player.progress.chapters[c];	
+		if(c==0)
+		i-=2;
+		i+=chapter.length;
+	}
+	console.log("chaperx"+i);
+	player.progress.xp+= i*1;
+	player.progress.xp+= 3*player.progress.confuWin.length;
+	player.lvl=Math.floor(player.progress.xp/5);
+	player.progress.skillp=3+player.lvl*5;
+	
+	player.progress.skillps=0;
+	for(var s=0;s<player.stats.length;s++)
+		player.progress.skillps+=player.stats[s]-2;
+		
 	player.books.sort(function(a, b){return Assets.books[a].fullname.localeCompare(Assets.books[b].fullname)});
 	player.items.sort(function(a, b)
 	{
