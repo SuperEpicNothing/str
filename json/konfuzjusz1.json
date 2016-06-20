@@ -6,10 +6,7 @@
 	"bossmaxhp":7,
 	"heromaxhp":7,
 	"music":[
-	"heroism.ogg",
-	"Battle in the winter.mp3",
-	"Thrust Sequence.mp3",
-	"Blackmoor Colossus Loop.wav"]
+	"heroism.mp3"]
 	},
 	"scenes": [
 	{
