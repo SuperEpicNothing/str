@@ -2,6 +2,7 @@
 	"meta":{
 	"win":25,
 	"lose":26,
+	"ID":"Kosmos",
 	"bossmaxhp":8,
 	"heromaxhp":8,
 	"music":[

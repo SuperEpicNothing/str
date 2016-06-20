@@ -329,12 +329,12 @@
 	{
 		"comment":"25",
 		"events":[
+			{"type":"unlockChap","time":"0","chapter":1,"lesson":0}
 			{"type":"question","time":1000,"timepadding":0,
 			"text":"Gratuluję, Wędrowcze! Nie wpadłeś w sidła moich podstępów, możesz kontynuować przygodę... [Konfuzjusz uśmiecha się złowieszczo] Do zobaczenia!"
 			}
 		],
 		"options":[
-			{"target": 999, "text": ""}
 		]	  		
 	},
 	
@@ -346,7 +346,6 @@
 			}
 		],
 		"options":[
-			{"target": 999, "text": ""}
 		]	  		
 	},
 	
