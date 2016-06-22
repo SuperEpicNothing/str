@@ -3,52 +3,54 @@
 	"bossmaxhp":9,
 	"heromaxhp":5,
 	"music":[
-	"heroism.ogg",
 	"Battle in the winter.mp3",
 	"Thrust Sequence.mp3",
-	"Blackmoor Colossus Loop.wav"]
+	"Blackmoor Colossus Loop.mp3"]
 	},
 	"scenes": [
 	{
 		"events":[
-			{"type":"resolve","time":6000,"arm":"none","player":"demon","success":true,"timeflow":true},
+			
+			{"type":"question","time":2000,"text":"3"}
+		],
+		"options":[
+			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
+	
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"resolve","time":6000,"arm":"lifesteal","player":"none","success":false},
+			{"type":"resolve","time":6000,"arm":"lifesteal","player":"none","success":true},
+			{"type":"question","time":3000,"arm":"lifesteal","text":"4?"}
+		],
+		"options":[
+			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
+			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
+			{"target": 2, "text": "???","consequence":{"herohp":-1}},
+			{"target": 3, "text": "..."}
+	
+
+		]	   
+	},
+	{
+		"events":[
+			{"type":"resolve","time":6000,"arm":"none","player":"demon","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"hawking","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"russell","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"popper","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"james","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"arysto","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"wittgenstein","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"akwinata","success":true},
 			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":false},
 			{"type":"clearParticles","time":5000},
-			{"type":"question","time":2000,"arm":"bombardment","text":"3"}
-		],
-		"options":[
-			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
-			{"target": 2, "text": "???","consequence":{"herohp":-1}},
-			{"target": 3, "text": "..."}
-	
-
-		]	   
-	},
-	{
-		"events":[
 			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":false},
-			{"type":"question","time":2000,"arm":"swordspear","text":"4?"}
-		],
-		"options":[
-			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
-			{"target": 1, "text": "blood","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"item","item":"demon"},"consequence":{"herohp":1}},
-			{"target": 2, "text": "???","consequence":{"herohp":-1}},
-			{"target": 3, "text": "..."}
-	
-
-		]	   
-	},
-	{
-		"events":[
-			{"type":"resolve","time":3000,"arm":"robot","player":"none","success":true},
-			{"type":"question","time":2000,"arm":"robot","text":"5?"}
+			{"type":"question","time":2000,"arm":"swordspear","text":"5?"}
 		],
 		"options":[
 			{"target": 0, "text": "paper","color":{"active":"#3a96c6","inactive":"#0a5074"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
@@ -61,8 +63,9 @@
 	},
 		{
 		"events":[
-			{"type":"resolve","time":3000,"arm":"book","player":"Argument Mocy i Zniszczenia","success":false},
-			{"type":"question","time":2000,"arm":"book","text":"6?"}
+			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":false},
+			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":true},
+			{"type":"question","time":2000,"arm":"swordspear","text":"5?"}
 		],
 		"options":[
 			{"target": 0, "text": "paper","color":{"active":"#39c680","inactive":"#33b273"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},
