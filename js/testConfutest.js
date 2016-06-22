@@ -2107,7 +2107,7 @@ function drawConfutest(progress){
 				if(renderData.progress>4000 && renderData.progress<5000){
 					context.setTransform(1, 0, 0, 1, confX+82+4,elem.height-200 - (elem.height-200-confY)*((renderData.progress-4000)/1000));
 					context.rotate((Math.PI*225/180));
-					context.rotate(-Math.PI);					
+					context.rotate(2*Math.PI*renderData.progress/200);					
 					context.drawImage(Assets.img["jamesSword"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);
