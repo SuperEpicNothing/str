@@ -4,6 +4,7 @@ var boss = {health:1,healthMax:9,state:"idle",heroHp:1,heroHpMax:4}
 var battlescript
 var currentscene=0;
 function loadConfu(file,id){
+	console.log("konfu"+id+":"+file);
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "json/"+file+"?t="+ (new Date().getTime()), true);
 	xhttp.send();
@@ -156,6 +157,39 @@ function renderConfu(timestamp){
 								particle.y+=particle.movY;
 								particle.movX=particle.movX+0.05*(1-2*Math.random());
 								particle.movY=particle.movY+0.05*(1-2*Math.random());						
+						break;
+						case "hpcontainer":
+							context.setTransform(1, 0, 0, 1, particle.x,particle.y);
+							context.rotate(-Math.PI/2+particle.currentRot);													
+							context.drawImage(Assets.img["hpcontiner"],
+							60.5-particle.ydispl - particle.size/2,
+							16 +particle.xdispl- particle.size/2,
+							particle.size,particle.size,
+							- particle.size/2,- particle.size/2,
+							particle.size,particle.size);
+							context.setTransform(1, 0, 0, 1, 0,0);
+							if(!timeflow)
+								continue;
+							if(particle.currentRot==undefined)
+								particle.currentRot=0;
+							particle.currentRot+=0.01*Math.PI*(1-2*Math.random());
+								particle.x+=2*particle.movX;
+								particle.y+=2*particle.movY;
+								particle.movX=particle.movX+0.05*(1-2*Math.random());
+								particle.movY=particle.movY+0.05*(1-2*Math.random());			
+							/*var p = {
+									type:"hpcontainer",
+									x:parX+xdispl,						
+									y:parY+ydispl,
+									xdispl:xdispl,
+									ydispl:ydispl,
+									start:renderData.progress,
+									end:1000,
+									life:0,
+									size:2*Math.random(),
+									movX:0.1*(1-2*Math.random())+xdispl/16,
+									movY:0.1*(1-2*Math.random())+ydispl/60.5};	*/
+									
 						break;
 						case "potionsmoke":
 							var potionColor = [0,0,0,0]
@@ -891,13 +925,12 @@ function processEvent(progress){
 		break;
 		
 		case "isWin":
-			if(boss.heroHp<boss.health)
+			if(boss.heroHp<=boss.health)
 			change=battlescript.meta.lose;
-			else if(boss.heroHp>boss.health)
+			else{
 			change=battlescript.meta.win;
 			addConfuWin(battlescript.meta.ID);
-			else 
-			break;
+			}
 			changeEvt=0;
 		break;
 		
@@ -961,6 +994,7 @@ function processEvent(progress){
 		
 	}
 }
+
 
 function drawHPBar(x,y,current,max,progress){
 	context.fillStyle="rgb("+Math.round(100+105*(current/max)+(Math.sin(progress/(2000*(current/max))*2*Math.PI)*40))+",0,"+Math.round(70*(current/max))+")"
@@ -1163,6 +1197,7 @@ function drawConfutest(progress){
 					}
 					
 				} 
+				drawAttackInfo(progress,"Konfuzjusz","Kwantowe Ostrze","Cięcie Plancka");
 			break;
 
 			case "sword":
@@ -1265,6 +1300,100 @@ function drawConfutest(progress){
 				}
 
 				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Zwodzący Płonień");
+			break;
+			
+			case "laser":
+				if(renderData.progress<=3000){}
+				else if(renderData.progress<=4000){
+						var fill = (renderData.progress-3000)/1000;
+						context.fillStyle="rgba(255,0,0,"+fill+")";
+						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
+				
+				}
+				else
+				{
+					var fill = 1;
+						context.fillStyle="rgba(255,0,0,"+fill+")";
+						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
+					timeflow=false;
+				}
+
+				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Dezintegrujące  Spojrzenie");
+			break;
+			
+			case "lifesteal":
+				
+				if(renderData.progress<=2000){
+					var scale =renderData.progress/2000;
+					for(var i=0;i<10+(60*scale);i++)
+						{
+							var parX = confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3+scale*16*(1-2*Math.random());
+							var parY = confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4+scale*60.5*(1-2*Math.random());							 					
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(-4*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+					
+					for(var i=0;i<10+(60*scale);i++)
+					{
+						if(Math.random()<0.1){
+							var ydispl = scale*16*(1-2*Math.random());
+							var xdispl = scale*60.5*(1-2*Math.random());
+							var parX = confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3;
+							var parY = confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4;							 					
+								
+							var particle = {
+									type:"hpcontainer",
+									x:parX+(xdispl)*3,						
+									y:parY+(ydispl)*3,
+									xdispl:xdispl,
+									ydispl:ydispl,
+									start:renderData.progress,
+									end:200,
+									life:0,
+									size:Math.round(3+12*Math.random()),
+									movX:0.1*(1-2*Math.random())-xdispl/16,
+									movY:0.1*(1-2*Math.random())-ydispl/60.5};								
+							renderData.particles.push(particle);}
+					}
+				}
+				
+				if(renderData.progress>1500){
+				if(!renderData.seedTS)
+					renderData.seedTS=renderData.progress;
+				if(!renderData.seed || (renderData.progress-renderData.seedTS)>250){
+					renderData.seed=Math.random();
+					renderData.seedTS=renderData.progress;
+				}
+				Math.seedrandom(renderData.seed);
+
+				context.setTransform(1, 0, 0, 1, confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3,confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4);
+				context.rotate(Math.PI/2+Math.PI/24*Math.sin(2*Math.PI/4000*renderData.progress));
+				context.drawImage(Assets.img["hpcontiner"],
+				-60.5,-16,
+				121,32);
+				var lb = 2+3*Math.random()
+				for(var l=0;l<lb && renderData.progress-1500<6000;l++){
+				cUtils.drawLBolt(context,[280,120*(1-2*Math.random())],[60.5,0],15,
+				[[230,230,255,1],[130,130,255,1],[80,80,100,0.1],[0,0,0,0]], [0.1,0.95,1],-(renderData.progress-renderData.seedTS)/250,4);
+				}
+				context.fillStyle="rgb("+
+				Math.round(100+105*(boss.health/boss.healthMax)+(Math.sin(progress/(2000*(boss.health/boss.healthMax))*2*Math.PI)*40))
+				+",0,"+Math.round(70*(boss.health/boss.healthMax))+")";
+				
+				context.fillRect(29+3-63*(renderData.progress-1500<6000?((renderData.progress-1500)/6000):1),-16+8,63*((renderData.progress-1500)<6000?((renderData.progress-1500)/6000):1),16);
+				context.setTransform(1, 0, 0, 1, 0, 0);
+				}
+				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Wampiryczny Piorun");
 			break;
 			
 			case "robot":
@@ -1411,24 +1540,6 @@ function drawConfutest(progress){
 				}
 				if(renderData.progress>5000)
 					renderData.stoptime=true;
-			break;
-			case "laser":
-				if(renderData.progress<=3000){}
-				else if(renderData.progress<=4000){
-						var fill = (renderData.progress-3000)/1000;
-						context.fillStyle="rgba(255,0,0,"+fill+")";
-						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
-				
-				}
-				else
-				{
-					var fill = 1;
-						context.fillStyle="rgba(255,0,0,"+fill+")";
-						context.fillRect(confX+82+(4-(4*fill)),confY+40+(1-fill),6*fill,2*fill);
-					timeflow=false;
-				}
-
-				drawAttackInfo(progress,"Konfuzjusz","Ukryte Arkana","Dezintegrujące  Spojrzenie");
 			break;
 			
 			case "bombardment":
@@ -1633,6 +1744,96 @@ function drawConfutest(progress){
 					renderData.particles.push(smk);
 				}
 			break;
+			case "lifesteal":	
+				if(renderData.progress<=500){
+					timeflow=true;
+					timeflowtimestamp=undefined;
+				}	
+				if(renderData.success){
+					if(renderData.progress<=1700)
+					{
+					context.setTransform(1, 0, 0, 1, confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3,confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4);
+					context.rotate(Math.PI/2+Math.PI/24*Math.sin(2*Math.PI/4000*renderData.progress));
+					context.drawImage(Assets.img["hpcontiner"],
+					-60.5,-16,
+					121,32);				
+					context.fillStyle="rgb("+
+					Math.round(100+105*(boss.health/boss.healthMax)+(Math.sin(progress/(2000*(boss.health/boss.healthMax))*2*Math.PI)*40))
+					+",0,"+Math.round(70*(boss.health/boss.healthMax))+")";
+					
+					context.fillRect(29+3-63,-16+8,63,16);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					}
+					
+					if(renderData.progress>=1500 && renderData.progress<=2000){
+						var scale =(renderData.progress-1500)/500;
+						for(var i=0;i<10+(60*scale);i++)
+							{
+								var xdispl = scale*16*(1-2*Math.random());
+								var ydispl = scale*60.5*(1-2*Math.random());
+								var parX = confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3;
+								var parY = confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4;							 					
+								var particle = {
+									type:"healthsmoke",
+									x:parX+xdispl,						
+									y:parY+ydispl,
+									start:renderData.progress,
+									end:1000,
+									life:0,
+									lifepercent:(boss.health/boss.healthMax)+0.1*(1-2*Math.random()),
+									size:2*Math.random(),
+									movX:0.1*(1-2*Math.random())+xdispl/16,
+									movY:0.1*(1-2*Math.random())+ydispl/60.5};								
+							renderData.particles.push(particle);
+							if(Math.random()<0.1){
+							var particle = {
+									type:"hpcontainer",
+									x:parX+xdispl,						
+									y:parY+ydispl,
+									xdispl:xdispl,
+									ydispl:ydispl,
+									start:renderData.progress,
+									end:2000,
+									life:0,
+									size:Math.round(3+12*Math.random()),
+									movX:0.1*(1-2*Math.random())+xdispl/16,
+									movY:0.1*(1-2*Math.random())+ydispl/60.5};								
+							renderData.particles.push(particle);}
+						}
+					}
+				}
+				else{
+					context.setTransform(1, 0, 0, 1, confX+180+Math.cos(progress/270)*9+Math.cos((progress+50)/450)*3,confY-50+60-Math.sin(progress/300)*8+Math.sin((progress+20)/400)*4);
+					context.rotate(Math.PI/2+Math.PI/24*Math.sin(2*Math.PI/4000*renderData.progress));
+					context.drawImage(Assets.img["hpcontiner"],
+					-60.5,-16,
+					121,32);				
+					context.fillStyle="rgb("+
+					Math.round(100+105*(boss.health/boss.healthMax)+(Math.sin(progress/(2000*(boss.health/boss.healthMax))*2*Math.PI)*40))
+					+",0,"+Math.round(70*(boss.health/boss.healthMax))+")";
+					if(renderData.progress<2000){
+					var l = Math.max(0,63-renderData.progress/2000*63);
+					context.fillRect(29+3-l,-16+8,l,16);
+					if(!renderData.seedTS)
+					renderData.seedTS=renderData.progress;
+					if(!renderData.seed || (renderData.progress-renderData.seedTS)>250){
+						renderData.seed=Math.random();
+						renderData.seedTS=renderData.progress;
+					}
+					Math.seedrandom(renderData.seed);
+
+			
+					var lb = 2+3*Math.random()
+					for(var l=0;l<lb && renderData.progress-1500<6000;l++){
+					cUtils.drawLBolt(context,[60.5,0],[-40,100+120*(1-2*Math.random())],15,
+					[[230,230,255,1],[130,130,255,1],[80,80,100,0.1],[0,0,0,0]], [0.1,0.95,1],-(renderData.progress-renderData.seedTS)/250,4);
+					}
+					}	
+					
+					context.setTransform(1, 0, 0, 1, 0, 0);
+				}
+			
+			break;
 			case "bombardment":
 				if(renderData.progress<=500){
 					timeflow=true;
@@ -1676,6 +1877,108 @@ function drawConfutest(progress){
 						
 						renderData.particles.push(particle);
 					}
+				}
+			break;
+			case "swordspear":
+				
+				if(renderData.progress<=500){
+					timeflow=true;
+					timeflowtimestamp=undefined;
+				}
+				if(renderData.swordNumber== undefined)
+					renderData.swordNumber=Math.floor(2+4*Math.random());
+				if(renderData.swordRot == undefined)
+				{
+					renderData.swordRot=[];
+					renderData.swordRot[0]=Math.PI/4*(1-2*Math.random());
+					for(var i=1;i<renderData.swordNumber;i++){
+						renderData.swordRot[i]=renderData.swordRot[i-1]+Math.PI/6*(1-0.8*Math.random())*(Math.random()>0.5?-1:1);
+						
+						if(renderData.swordRot[i]<-Math.PI/3)
+							renderData.swordRot[i]=renderData.swordRot[i-1]+Math.PI/6*(1-0.8*Math.random());
+					
+						if(renderData.swordRot[i]>Math.PI/3)
+							renderData.swordRot[i]=renderData.swordRot[i-1]-Math.PI/6*(1-0.8*Math.random());
+	
+					}
+					renderData.swordRot.sort();
+					for(var i=1;i<renderData.swordNumber;i++){
+						if(renderData.swordRot[i]==renderData.swordRot[i-1])
+							renderData.swordRot[i]+=Math.PI/12*(1-2*Math.random())
+					}
+					var n = 4+5*Math.random();
+					for(var i=0;i<n;i++)
+					{
+						var a1 = Math.round((renderData.swordRot.length-1)*Math.random());
+						var a2 = Math.round((renderData.swordRot.length-1)*Math.random());
+						var t = renderData.swordRot[a1];
+						renderData.swordRot[a1] = renderData.swordRot[a2];
+						renderData.swordRot[a2] = t;
+					}
+				}
+				
+				for(var i=0;i<renderData.swordNumber;i++){
+	
+					
+					if(!renderData.success){
+						var Yshift=200;
+						if(renderData.progress<=500+i*400)
+							Yshift=200/500*(renderData.progress-i*400);
+						context.setTransform(1, 0, 0, 1,
+							elem.width/2   + (200-Yshift)*Math.cos(Math.PI/2+renderData.swordRot[i]),
+							elem.height-180+ (200-Yshift)*Math.sin(Math.PI/2+renderData.swordRot[i]));
+						context.rotate(Math.PI*135/180 - Math.PI/2 + renderData.swordRot[i]);
+						context.drawImage(Assets.img["sword"],-43,-43,86,86);
+						context.setTransform(1, 0, 0, 1, 0, 0);
+						
+					}else{
+						var Yshift=200;
+						if(renderData.progress<=500+i*400)
+							Yshift=200/500*(renderData.progress-i*400);
+						context.setTransform(1, 0, 0, 1,
+							elem.width/2 - (200-Yshift)*Math.cos(Math.PI/2+renderData.swordRot[i]),
+							50 - (200-Yshift)*Math.sin(Math.PI/2+renderData.swordRot[i]));
+						context.rotate(Math.PI*135/180 + Math.PI/2+ renderData.swordRot[i]);
+						context.drawImage(Assets.img["sword"],-43,-43,86,86);
+						context.setTransform(1, 0, 0, 1, 0, 0);			
+					}
+					
+					if(500 + (renderData.progress - renderData.time)>0)
+					{
+						for(var p=0;p<20;p++){
+							var l = Math.random()*(!renderData.success?1:-1);
+							var str =(1-2*Math.random());
+						var particle = {
+									type:"magicsmoke",
+									x:elem.width/2 - l*Yshift/200*70*Math.cos(Math.PI/2+renderData.swordRot[i]),						
+									y:(renderData.success?50:elem.height-170) -  l*Yshift/200*70*Math.sin(Math.PI/2+renderData.swordRot[i]),
+									start:renderData.progress,
+									end:1000,
+									life:0,
+									size:2*Math.random(),
+									movX:Math.cos(renderData.swordRot[i])*0.25*str,
+									movY:Math.sin(renderData.swordRot[i])*0.25*str};
+		
+						renderData.particles.push(particle);}
+					}
+					
+					if(renderData.progress>=450+i*400 && renderData.progress<=600+i*400)
+						for(var p=0;p<10;p++){
+							var l = Math.random()*(!renderData.success?1:-1);
+							var str =(1-2*Math.random());
+						var particle = {
+									type:"healthsmoke",
+									x:elem.width/2 - l*Yshift/200*70*Math.cos(Math.PI/2+renderData.swordRot[i]),						
+									y:(renderData.success?50:elem.height-170) -  l*Yshift/200*70*Math.sin(Math.PI/2+renderData.swordRot[i]),
+									start:renderData.progress,
+									end:1000,
+									life:0,
+									lifepercent:(boss.health/boss.healthMax)+0.1*(1-2*Math.random()),
+									size:2*Math.random(),
+									movX:Math.cos(renderData.swordRot[i])*1.25*str,
+									movY:Math.sin(renderData.swordRot[i])*1.25*str + 1.3*(renderData.success?1:-1)};
+									
+					renderData.particles.push(particle);}
 				}
 			break;
 		}
@@ -1834,7 +2137,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-130-50*((renderData.progress-2000)/1500));
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["hawking"],
+					context.drawImage(Assets.img["hawking5"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);
@@ -1887,7 +2190,7 @@ function drawConfutest(progress){
 					context.setTransform(1, 0, 0, 1, elem.width/2+Math.sin(progress/500)*6,elem.height-200+Math.cos(progress/290)*6);
 					context.rotate((Math.PI*225/180));
 					context.rotate(-Math.PI);					
-					context.drawImage(Assets.img["popper"],
+					context.drawImage(Assets.img["popper5"],
 					-17*4/3,-17*4/3,
 					34*4/3,34*4/3);		
 					context.setTransform(1, 0, 0, 1, 0, 0);

@@ -40,6 +40,8 @@
 		"src":"images/avatars.png"},
 		{"name" : "confu",
 		"src":"images/mage-1-85x94_0.png"},
+		{"name" : "hpcontiner",
+		"src":"images/gui/hpcontainer.png"},
 		
 		{"name" : "forest",
 		"src":"images/layers/parallax-forest.png"},

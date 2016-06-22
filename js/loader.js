@@ -279,6 +279,7 @@ function savePlayer(){
 	}
 	console.log("chaperx"+i);
 	player.progress.xp+= i*1;
+	if(player.progress.confuWin != undefined)
 	player.progress.xp+= 3*player.progress.confuWin.length;
 	player.lvl=Math.floor(player.progress.xp/5);
 	player.progress.skillp=3+player.lvl*5;

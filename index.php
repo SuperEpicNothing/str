@@ -63,7 +63,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	<script src="js/loader.js"></script>
 	<script src="js/graphics/canvasUtils.js"></script>
 	<?php
-	if($_GET['noplayer']==null && $_GET['main']==null && $_GET['help']==null)
+	if($_GET['noplayer']==null && $_GET['main']==null && $_GET['help']==null && $page!=null && $subpage!=null)
 			echo
 		'
 		<script src="js/graphics/notifications.js"></script>
@@ -115,7 +115,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	
 				<ul class="nav navbar-nav navbreaker pull-right">
 				<?php
-				if($_GET['noplayer']==null && $_GET['main']==null && $_GET['help']==null) 
+				if($_GET['noplayer']==null && $_GET['main']==null && $_GET['help']==null && $page!=null && $subpage!=null) 
 			/*	echo '
 						<li><a href="#" data-toggle="collapse" data-target="#guiPlayer" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter=\'grayscale(100%)\'" onmouseover="this.firstChild.style.filter=\'grayscale(0%)\'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
 						<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src=\'images/gui/I_Chest01.png\'" onmouseover="this.firstChild.src=\'images/gui/I_Chest02.png\'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
@@ -134,7 +134,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	<?php readfile("strony/itemModal.html");?>			
 	<div class="container">
 		<?php
-			if($_GET['main']!=null)
+			if($_GET['main']!=null ||$page==null || $subpage==null)
 				readfile("strony/main.php");
 			else if($_GET['noplayer']!=null)
 				readfile("strony/playerCreation.html");
