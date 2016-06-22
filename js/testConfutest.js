@@ -874,7 +874,7 @@ function processEvent(progress){
 		boss.heroHpMax=battlescript.meta.heromaxhp
 		timeflow=true;
 		audio.setTrack(battlescript.meta.music[ Math.round((battlescript.meta.music.length-1)*Math.random())] );
-
+		renderData = {type:"none",progress:0,time:0,skipmode:0,particles:[],override:false}
 	}
 	
 	//general change
