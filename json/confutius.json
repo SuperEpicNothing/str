@@ -39,11 +39,13 @@
 	},
 	{
 		"events":[
+			{"type":"resolve","time":6000,"arm":"none","player":"demon","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"hawking","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"russell","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"popper","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"james","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"arysto","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"wittgenstein","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"akwinata","success":true},
 			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":false},
 			{"type":"clearParticles","time":5000},

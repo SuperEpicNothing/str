@@ -191,6 +191,37 @@ function renderConfu(timestamp){
 									movY:0.1*(1-2*Math.random())+ydispl/60.5};	*/
 									
 						break;
+						
+						case "word":
+							context.setTransform(1, 0, 0, 1, particle.x+lifestage*(particle.tX-particle.x)
+							,particle.y+lifestage*(particle.tY-particle.y));
+							context.rotate(particle.currentRot);													
+							context.font = (12)+"px Aclonica"
+							context.textBaseline = "top";
+							context.textAlign="center"; 	
+							context.fillStyle="white";
+							context.fillText(particle.word,0,-6);
+							context.setTransform(1, 0, 0, 1, 0,0);
+							
+							if(!timeflow)
+								continue;
+							if(particle.currentRot==undefined)
+								particle.currentRot=0;
+							particle.currentRot+=0.01*Math.PI*(1-2*Math.random());		
+							/*var p = {
+									type:"hpcontainer",
+									x:parX+xdispl,						
+									y:parY+ydispl,
+									xdispl:xdispl,
+									ydispl:ydispl,
+									start:renderData.progress,
+									end:1000,
+									life:0,
+									size:2*Math.random(),
+									movX:0.1*(1-2*Math.random())+xdispl/16,
+									movY:0.1*(1-2*Math.random())+ydispl/60.5};	*/
+									
+						break;
 						case "potionsmoke":
 							var potionColor = [0,0,0,0]
 							switch(particle.color)
@@ -2328,6 +2359,53 @@ function drawConfutest(progress){
 					
 				}
 			
+			break;
+			case "wittgenstein":
+				var words = Assets.items["wittgenstein"].desc.split(" ");
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Sztuka milczenia","Przestrzeń Wittgenstein'a");
+				
+				var scale = renderData.progress/2000;
+				scale = scale>1? 1:scale;
+				context.clearRect(0,0,100*scale,elem.height);
+				context.clearRect(0,0,elem.width,50*scale);
+				context.clearRect(elem.width-100*scale,0,100*scale,elem.height);
+				
+				if(renderData.progress>2000)
+				{
+					for(var i=0;i<400*Math.random();i++){
+						
+					var color = cUtils.colorGradients([[0,0,0,1],[255,255,255,0]], [1],Math.random());
+					context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
+					var y = 40*(1-2*Math.random());
+					var size = 10+Math.max(0,30*Math.random()*Math.sin(y/40*Math.PI));
+					context.fillRect(50+5*(1-2*Math.random())*Math.sin(y/40*Math.PI)-size/2,
+					200+y-size/2
+					,size,size);
+
+					}
+					if(renderData.word == undefined)
+						renderData.word=Math.round((words.length-10)*Math.random());
+					
+					for(var i=renderData.word;i<words.length;i++)
+					if(renderData.progress>(2000+100*i)&& i>renderData.word){
+						renderData.word=i;
+					var particle = {
+						x:50+5*(1-2*Math.random()),
+						y:200+y-size/2,
+						type:"word",
+						word:words[i],
+						start:renderData.progress,
+						end:Math.round(4000/(words.length/10)),
+						life:0,
+						tX:confX+100,
+						tY:confY+100+90*(1-2*Math.random())};
+						
+					renderData.particles.push(particle);
+					
+				}
+				}
+					
 			break;
 			case "akwinata":
 				if(renderData.progress>1000)
