@@ -1176,42 +1176,46 @@ function drawConfutest(progress){
 				}else if(renderData.progress<=3000){
 					
 					context.setTransform(1, 0, 0, 1, confX+50+40*(renderData.progress-2000)/1000,confY+100 -100*(renderData.progress-2000)/1000);
-					context.rotate(Math.PI*135/180 + Math.PI/2*(renderData.progress-2000)/1000);
+					context.rotate(Math.PI*135/180 -Math.PI/2*(renderData.progress-2000)/1000);
 					context.drawImage(Assets.img["sword"],-43,-43,86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
-				}else if(renderData.progress<=3000){
-					
-					
-					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
+				}else if(renderData.progress<=3500){												
+					context.setTransform(1, 0, 0, 1, confX+90,confY);
 					//context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
-					context.translate(0 , (confY-(elem.height-180))+15*Math.sin(renderData.progress/250));
-					context.rotate((Math.PI*225/180));
-					
-					context.drawImage(Assets.img["sword"],
-						-43,-43,
-					86,86);
-					context.setTransform(1, 0, 0, 1, 0, 0);
-					
-				}else if(renderData.progress<=5000){
-					
-					var h =42-42*(renderData.progress-3000)/2000;
-		
-					
-					context.setTransform(1, 0, 0, 1, confX+90,elem.height-180);
-					//context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
-					context.translate(0 , (confY-(elem.height-180))+15*Math.sin(renderData.progress/250));
-					context.rotate((Math.PI*225/180));
-					
-					context.drawImage(Assets.img["sword"],
-					0,86-2*h-2,
-					86,2+2*h,
-					
-					-43,-h,86,2*h);
+					context.translate(0 , 15*Math.sin(renderData.progress/250));
+					context.rotate((Math.PI*45/180));
+					context.drawImage(Assets.img["sword"],-43,-43,86,86);
 					context.setTransform(1, 0, 0, 1, 0, 0);
 					
 					for(var i=0;i<40;i++){
 							var parX= confX+90+(15+5*Math.sin(renderData.progress/250))*(1-2*Math.random());
-							var parY = confY-20+2*h +(1-2*Math.random())+15*Math.sin(renderData.progress/250);
+							var parY = 1+0.5*(1-2*Math.random());//confY-20+2*h +(1-2*Math.random())+15*Math.sin(renderData.progress/250);
+						
+							var particle = {
+								type:"magicsmoke",
+								x:parX,						
+								y:parY,
+								start:renderData.progress,
+								end:400*Math.random(),
+								life:0,
+								size:15*Math.random(),
+								movX:(1-2*Math.random()),
+								movY:(1-2*Math.random())};
+								
+							renderData.particles.push(particle);
+					}
+				}else if(renderData.progress<=5000){												
+					context.setTransform(1, 0, 0, 1, confX+90,confY);
+					//context.rotate((Math.PI*20*i/180)*(renderData.progress-3000)/1000);
+					context.translate(0 , 15*Math.sin(renderData.progress/250));
+					context.translate(0 , -500*(renderData.progress-3500)/2000);
+					context.rotate((Math.PI*45/180));
+					context.drawImage(Assets.img["sword"],-43,-43,86,86);
+					context.setTransform(1, 0, 0, 1, 0, 0);
+					
+					for(var i=0;i<40;i++){
+							var parX= confX+90+(15+5*Math.sin(renderData.progress/250))*(1-2*Math.random());
+							var parY = 1+0.5*(1-2*Math.random());//confY-20+2*h +(1-2*Math.random())+15*Math.sin(renderData.progress/250);
 						
 							var particle = {
 								type:"magicsmoke",
