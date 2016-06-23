@@ -281,7 +281,8 @@ function savePlayer(){
 	player.progress.xp+= i*1;
 	if(player.progress.confuWin != undefined)
 	player.progress.xp+= 3*player.progress.confuWin.length;
-	player.lvl=Math.floor(player.progress.xp/5);
+	player.progress.lvl=Math.floor(player.progress.xp/5);
+	player.lvl=player.progress.lvl
 	player.progress.skillp=3+player.lvl*5;
 	
 	player.progress.skillps=0;

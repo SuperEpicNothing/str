@@ -134,7 +134,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 	<?php readfile("strony/itemModal.html");?>			
 	<div class="container">
 		<?php
-			if($_GET['main']!=null ||$page==null || $subpage==null)
+			if($_GET['main']!=null || $page==null && $subpage==null && $_GET['main']==null && $_GET['noplayer']==null && $_GET['help']==null)
 				readfile("strony/main.php");
 			else if($_GET['noplayer']!=null)
 				readfile("strony/playerCreation.html");

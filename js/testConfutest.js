@@ -2361,7 +2361,7 @@ function drawConfutest(progress){
 			
 			break;
 			case "wittgenstein":
-				var words = Assets.items["wittgenstein"].desc.split(" ");
+				var words = Assets.items["wittgenstein"].quotes.split(" ");
 				if(renderData.progress>1000)
 					drawAttackInfo(progress,handleText("[playerName]"),"Sztuka milczenia","Przestrzeń Wittgenstein'a");
 				
@@ -2382,13 +2382,17 @@ function drawConfutest(progress){
 					context.fillRect(50+5*(1-2*Math.random())*Math.sin(y/40*Math.PI)-size/2,
 					200+y-size/2
 					,size,size);
-
 					}
-					if(renderData.word == undefined)
-						renderData.word=Math.round((words.length-10)*Math.random());
 					
-					for(var i=renderData.word;i<words.length;i++)
-					if(renderData.progress>(2000+100*i)&& i>renderData.word){
+					if(renderData.word == undefined){
+						renderData.word=Math.round(1+(words.length-41)*Math.random());
+						renderData.wordend=renderData.word+40;
+						console.log("wut?"+renderData.word);
+					}
+					var end = renderData.wordend;
+					
+					for(var i=renderData.word;i<end;i++)
+					if(renderData.progress>(2000+100*(40-(end-renderData.word)))&& i>renderData.word){
 						renderData.word=i;
 					var particle = {
 						x:50+5*(1-2*Math.random()),
@@ -2396,11 +2400,11 @@ function drawConfutest(progress){
 						type:"word",
 						word:words[i],
 						start:renderData.progress,
-						end:Math.round(4000/(words.length/10)),
+						end:500,
 						life:0,
 						tX:confX+100,
 						tY:confY+100+90*(1-2*Math.random())};
-						
+					console.log(" "+particle.word);
 					renderData.particles.push(particle);
 					
 				}
