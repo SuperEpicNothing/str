@@ -352,9 +352,23 @@
 			}
 		],
 		"options":[
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "}
+			{"target": 24, "text": "Co jest właściwie specjalnego z Fredem?"},
+			{"target": 24, "text": "Co to znaczy [']epifenomenalne[']?"},
+			{"target": 25, "text": "Chyba już wszystko rozumiem, dziękuję."}
+		]	   
+	},
+
+	{
+		"COMMENT":"25",
+		"events":[
+			{"type":"give","time":3000,"item":"jacksona"},
+			{"type":"unlockChap","time":"0","chapter":2,"lesson":4},
+			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Mam nadzieję, że trochę pomogłem Ci, Wędrowcze, w zrozumieniu problemu qualiów. To, moim, zdaniem najciekawsze zagadnienie filozoficzne! Weź ten Argument i niech Ci służy w filozoficznych potyczkach!"
+			}
+		],
+		"options":[
+			{"target": 26, "text": "Dziękuję za rozmowę i za Argument, Profesorze! Bywaj!..."}
 		]	   
 	},
 
@@ -362,29 +376,11 @@
 		"COMMENT":"",
 		"events":[
 			
-			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
-			"text":" "
+			{"type":"dialog","name":"Frank Jackson","time":1000,"timepadding":0,
+			"text":"Bywaj!"
 			}
 		],
 		"options":[
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "}
-		]	   
-	},
-
-	{
-		"COMMENT":"",
-		"events":[
-			
-			{"type":"question","name":"Frank Jackson","time":1000,"timepadding":0,
-			"text":" "
-			}
-		],
-		"options":[
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "},
-			{"target": 666, "text": " "}
 		]	   
 	},
 

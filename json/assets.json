@@ -51,6 +51,8 @@
 		"src":"images/layers/cambridge.png"},
 		{"name" : "canberra",
 		"src":"images/layers/canberra.png"},
+		{"name" : "harvard",
+		"src":"images/layers/harvard.png"},
 		{"name" : "kronor",
 		"src":"images/layers/kronor.png"},
 		{"name" : "prison",
@@ -90,6 +92,8 @@
 		"src":"images/layers/popper.png"},
 		{"name" : "witt",
 		"src":"images/layers/witt.png"},
+		{"name" : "whitehead",
+		"src":"images/layers/whitehead2.png"},
 		{"name" : "lamza",
 		"src":"images/layers/lamza.png"},
 		{"name" : "tomasz",
@@ -115,8 +119,10 @@
 		{"name" : "ItemRock", "src":"images/gui/icons/items/I_Rock01.png"},
 		
 		{"name" : "demon", "src":"images/gui/icons/items/S_Shadow07.png"},
+		{"name" : "jacksona", "src":"images/gui/icons/items/jacksona.png"},
 		{"name" : "rzecz", "src":"images/gui/icons/items/S_Buff10.png"},
 		{"name" : "eliminator", "src":"images/gui/icons/items/S_Sword06.png"},
+		{"name" : "whiteheadator", "src":"images/gui/icons/items/whiteheadator.png"},
 		{"name" : "russelBE", "src":"images/gui/icons/items/bottle0.png"},
 		{"name" : "russelbot0", "src":"images/gui/icons/items/bottle1.png"},
 		{"name" : "russelbot1", "src":"images/gui/icons/items/bottle2.png"},
@@ -257,6 +263,26 @@
 			"autor": "Kartezjusz",
 			"icon":"rzecz",
 			"desc": "'Rzecz myśląca' to argument odwołujący się do naszego potężnego przekonania, że my sami jesteśmy czymś zupełnie innym niż stoły, młotki i chmury - istotami myślącymi. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Dusza i ciało' w rozdziale 'Człowiek').",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "whiteheada",
+			"fullname": "Organizm elementarny",
+			"autor": "Alfred North Whitehead",
+			"icon":"whiteheadator",
+			"desc": "'Organizm elementarny' to argument w dyskusji nad problemem umysł-ciało. Whitehead twierdził, że najprostszy, elementarny składnik świata mógłby być organizmem, mającym zarówno cechy psychiczne, jak i fizyczne. Więcej informacji można uzyskać w trakcie rozmowy z Whiteheadem (zob. lekcja 'Wszystko myśli' w rozdziale 'Człowiek').",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "jacksona",
+			"fullname": "Czerwona mgiełka",
+			"autor": "Frank Jackson",
+			"icon":"jacksona",
+			"desc": "'Czerwona mgiełka' to argument dotyczący problemu umysł-ciało, związany z qualiami. Frank Jackson opisywał eksperyment myślowy, w którym mężczyzna o imieniu Fred wyjątkowo dobrze rozpoznaje odcienie czerwieni... Więcej informacji można uzyskać w trakcie rozmowy z Jacksonem (zob. lekcja 'Druga czerwień' w rozdziale 'Człowiek').",
 			"url": null	
 		},
 		
