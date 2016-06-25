@@ -2483,6 +2483,65 @@ function drawConfutest(progress){
 					}			
 				}
 			break;
+			case "rzecz":
+			if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Dusza i ciało","Rzecz myśląca");
+			
+			if(renderData.progress<1500){
+				var potionColor =[0,144,255,0.01];
+				var color = cUtils.colorGradients([potionColor,
+				[potionColor[0]*0.3,potionColor[1]*0.3,potionColor[2]*0.3,0.005]]
+				, [1],1*Math.pow(Math.cos(2*Math.PI*(renderData.progress-1000)/6000),2))		
+				context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+(Math.round(color[3]*100)/100)+")";
+				
+				for(var i =1000;i>0;i-=10){
+
+				
+				context.beginPath();
+				context.arc(elem.width/2,100,80*(i/1000)*(1-Math.pow(Math.cos(2*Math.PI*(renderData.progress-1000)/6000),2)),0,2*Math.PI);
+				context.fill();
+				context.closePath();
+				}
+				context.beginPath();
+			}
+			if(renderData.progress>1000 && renderData.progress<6000){
+				var color =[0,144,255,1];
+				context.strokeStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+(Math.round(color[3]*100)/100)+")";
+				context.beginPath();
+				var l=8;
+				for(var i=0;i<l;i++){
+				context.moveTo(elem.width/(2*l)+i*elem.width/l,0);
+				context.lineTo(confX+95-(l/2)*80/l+i*80/l,confY+70-13*Math.sin(i/l*Math.PI));
+				}
+				context.stroke();
+				context.closePath();
+				context.beginPath();
+			}
+			if(renderData.progress>3000)
+			{
+				context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-250);
+				context.translate(0,-(renderData.progress-3000)/2000*700)
+				context.drawImage(Assets.img["jamesAngel0"],
+				-17,-17,
+				34,34);
+				context.setTransform(1, 0, 0, 1, 0, 0);
+				if(renderData.progress>3400 && renderData.progress<3500){
+					var particle = {
+							x:confX+80,
+							y:confY+40,
+							type:"explosion",
+							smoketype:"magicsmoke",
+							start:renderData.progress,
+							size: 5*Math.random(),
+							end:500,
+							life:0,
+							movX:(1-2*Math.random()),
+							movY:(1-2*Math.random())};
+							
+					renderData.particles.push(particle);
+				}
+			}
+			break;
 		}
 	}
 }

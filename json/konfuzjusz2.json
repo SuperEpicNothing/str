@@ -116,12 +116,12 @@
 	{
 		"comment":"8",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"swordspear",
 			"text":"Otóż ostatecznym wyjaśnieniem świata jest to, że wywodzi się on z 9-wymiarowej białej dziury zanurzonej w 11-wymiarowej przestrzeni Nad-Kosmosu."}
 		],
 		"options":[
-			{"target": 10, "text": "Zapytałbym oczywiście, jaka jest przyczyna istnienia tej dziury i tego Nad-Kosmosu...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}, "height":2},
-			{"target": 9, "text": "Cóż, chyba nie [playerGender {miałbym|miałabym}] z tym problemu, o ile tak by twierdzili naukowcy.", "consequence":{"herohp":-1}, "height":2}
+			{"target": 33, "text": "Zapytałbym oczywiście, jaka jest przyczyna istnienia tej dziury i tego Nad-Kosmosu...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}, "height":2},
+			{"target": 34, "text": "Cóż, chyba nie [playerGender {miałbym|miałabym}] z tym problemu, o ile tak by twierdzili naukowcy.", "consequence":{"herohp":-1}, "height":2}
 
 		]	   
 	},
@@ -129,13 +129,13 @@
 	{
 		"comment":"9",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"sword",
 			"text":"[Konfuzjusz uśmiecha się złośliwie] Naprawdę? Czyli ostatecznym wyjaśnieniem może być coś, czego przyczyna nie została wyjaśniona?"}
 		],
 		"options":[
-			{"target": 11, "text": "Hola hola, Konfuzjuszu! Aby mówić o przyczynie, trzeba mieć do dyspozycji czas!", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
-			{"target": 17, "text": "Ejże, nie wszystko musi mieć swoją przyczynę!", "req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
-			{"target": 23, "text": "Hm, nie [playerGender {pomyślałem|pomyślałam}] o tym..."}
+			{"target": 35, "text": "Hola hola, Konfuzjuszu! Aby mówić o przyczynie, trzeba mieć do dyspozycji czas!", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 36, "text": "Ejże, nie wszystko musi mieć swoją przyczynę!", "req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 37, "text": "Hm, nie [playerGender {pomyślałem|pomyślałam}] o tym..."}
 
 		]	   
 	},
@@ -144,13 +144,13 @@
 	{
 		"comment":"10",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"lifesteal",
 			"text":"Och, przyczyną się nie przejmuj... nie wszystko musi mieć swoją przyczynę, prawda?"}
 		],
 		"options":[
-			{"target": 12, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
-			{"target": 17, "text": "Powiedzmy, że prawie wszystko.","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
-			{"target": 23, "text": "Ciężko powiedzieć..."}
+			{"target": 38, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 39, "text": "Powiedzmy, że prawie wszystko.","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 40, "text": "Ciężko powiedzieć..."}
 
 		]	   
 	},
@@ -158,13 +158,13 @@
 	{
 		"comment":"11",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"robot",
 			"text":"[Konfuzjusz patrzy na Ciebie podejrzliwie] Masz tu trochę racji, Wędrowcze! Czyli nie wszystko musi mieć swoją przyczynę?"}
 		],
 		"options":[
-			{"target": 12, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
-			{"target": 17, "text": "Powiedzmy, że prawie wszystko...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
-			{"target": 23, "text": "Ciężko powiedzieć..."}
+			{"target": 41, "text": "Cóż, zacznijmy od tego, że mogą być problemy z relacjami przyczynowymi, jeśli zaburzona jest struktura czasu i przestrzeni...", "height":2,"req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}},
+			{"target": 42, "text": "Powiedzmy, że prawie wszystko...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 43, "text": "Ciężko powiedzieć..."}
 
 		]	   
 	},
@@ -186,12 +186,12 @@
 	{
 		"comment":"13",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"bombardment",
 			"text":"[Konfuzjusz chichocze] Ech, Wędrowcze. Coś [playerGender {liznąłeś|liznęłaś}], ale to nie to. Ani fale grawitacyjne, ani normalne wyginanie się czasoprzestrzeni pod wpływem masy nie wystarcza, żeby zaburzyć strukturę przyczynową... potrzeba tu czegoś bardziej fundamentalnego..."}
 		],
 		"options":[
-			{"target": 15, "text": "Aach, teraz pamiętam. Chodzi o hipotetyczne zjawiska kwantowe, prawda?", "req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}, "height":2},
-			{"target": 16, "text": "Jeszcze się douczę, poczekaj tylko!..."}
+			{"target": 44, "text": "Aach, teraz pamiętam. Chodzi o hipotetyczne zjawiska kwantowe, prawda?", "req":{"type":"item","item":"hawking"}, "consequence":{"bosshp":-1}, "height":2},
+			{"target": 45, "text": "Jeszcze się douczę, poczekaj tylko!..."}
 
 		]	   
 	},
@@ -223,12 +223,12 @@
 	{
 		"comment":"16",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"book",
 			"text":"Zostawmy jednak na boku te wszystkie kwanty i kwarki, Wędrowcze. Spójrzmy na sprawę ogólnie - czy wszystko musi mieć swoją przyczynę, hm?"}
 		],
 		"options":[
-			{"target": 17, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
-			{"target": 18, "text": "No chyba wszystko..."}
+			{"target": 46, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 47, "text": "No chyba wszystko..."}
 
 		]	   
 	},
@@ -259,13 +259,13 @@
 	{
 		"comment":"19",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"laser",
 			"text":"Widzisz, młody człowieku!... Nareszcie mówisz z sensem. A czym właściwie byłaby ta Pierwsza Przyczyna?"}
 		],
 		"options":[
-			{"target": 21, "text": "Tomasz twierdzi, że [']wszyscy nazywają ją Bóg[']...","req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
-			{"target": 32, "text": "Nasz język nie pozwala nam o tym jasno mówić.", "req":{"type":"item","item":"wittgenstein"}, "consequence":{"bosshp":-1}},
-			{"target": 20, "text": "Jakimś zjawiskiem fizycznym po prostu...", "consequence":{"bosshp":-1}}
+			{"target": 48, "text": "Tomasz twierdzi, że [']wszyscy nazywają ją Bóg[']...","req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
+			{"target": 49, "text": "Nasz język nie pozwala nam o tym jasno mówić.", "req":{"type":"item","item":"wittgenstein"}, "consequence":{"bosshp":-1}},
+			{"target": 50, "text": "Jakimś zjawiskiem fizycznym po prostu...", "consequence":{"bosshp":-1}}
 
 		]	   
 	},
@@ -309,12 +309,12 @@
 	{
 		"comment":"23",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"bombardment",
 			"text":"Hm, zacznijmy może inaczej, Wędrowcze. Zadaj sobie ogólne pytanie: czy wszystko musi mieć swoją przyczynę? Pomyśl o tym, czego uczył Arystoteles..."}
 		],
 		"options":[
-			{"target": 17, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
-			{"target": 18, "text": "No chyba wszystko..."}
+			{"target": 51, "text": "Powiedzmy, że [']prawie wszystko[']...","req":{"type":"item","item":"arysto"}, "consequence":{"bosshp":-1}},
+			{"target": 52, "text": "No chyba wszystko..."}
 
 		]	   
 	},
@@ -339,7 +339,6 @@
 			}
 		],
 		"options":[
-			{"target": 999, "text": ""}
 		]	  		
 	},
 	
@@ -351,7 +350,6 @@
 			}
 		],
 		"options":[
-			{"target": 999, "text": ""}
 		]	  		
 	},
 	
@@ -423,15 +421,287 @@
 	{
 		"comment":"32",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"swordspear",
 			"text":"Dobrze kombinujesz, Wędrowcze. Pozwól jednak, że zostawimy na razie ten wątek na boku. Przypuśćmy, że chciałbym jednak ustalić, kim albo czym jest ta Pierwsza Przyczyna. Jakieś pomysły?"
 			}
 		],
 		"options":[
-			{"target": 27, "text": "Cóż, Tomasz z Akwinu napisał, że [']wszyscy nazywają ją Bóg[']...","height":2,"req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
-			{"target": 29, "text": "Chyba nie mam żadnego pomysłu..."}
+			{"target": 53, "text": "Cóż, Tomasz z Akwinu napisał, że [']wszyscy nazywają ją Bóg[']...","height":2,"req":{"type":"item","item":"akwinata"}, "consequence":{"bosshp":-1}},
+			{"target": 54, "text": "Chyba nie mam żadnego pomysłu..."}
 		]	  		
-	}
+	},
 	
+	{
+		"comment":"8-33-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"swordspear",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":10}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"8-34-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"swordspear",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":9}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"9-35-hawking",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"sword",
+			"player":"hawking",
+			"success":true
+			},
+			{"type":"change","time":0,"target":11}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"9-36-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"sword",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":17}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"9-37-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"sword",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":23}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"10-38-hawking",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"lifesteal",
+			"player":"hawking",
+			"success":true
+			},
+			{"type":"change","time":0,"target":12}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"10-39-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"lifesteal",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":17}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"10-40-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"lifesteal",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":23}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"11-41-hawking",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"hawking",
+			"success":true
+			},
+			{"type":"change","time":0,"target":12}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"11-42-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":17}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"11-43-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":23}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"13-44-hawking",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"bombardment",
+			"player":"hawking",
+			"success":true
+			},
+			{"type":"change","time":0,"target":15}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"13-45-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"bombardment",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":16}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"16-46-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"book",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":17}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"16-47-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"book",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":18}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"19-48-akwinata",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"akwinata",
+			"success":true
+			},
+			{"type":"change","time":0,"target":21}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"19-49-wittgenstein",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"wittgenstein",
+			"success":true
+			},
+			{"type":"change","time":0,"target":32}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"19-50-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":20}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"23-51-arysto",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"bombardment",
+			"player":"arysto",
+			"success":true
+			},
+			{"type":"change","time":0,"target":17}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"23-52-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"bombardment",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":18}
+		],
+		"options":[]	   
+	},
+	
+	{
+		"comment":"32-53-akwinata",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"swordspear",
+			"player":"akwinata",
+			"success":true
+			},
+			{"type":"change","time":0,"target":27}
+		],
+		"options":[]		   
+	},
+	{
+		"comment":"32-54-lose",
+		"events":[
+			{"type":"resolve","time":7000,
+			"arm":"swordspear",
+			"player":"arysto",
+			"success":false
+			},
+			{"type":"change","time":0,"target":29}
+		],
+		"options":[]	   
+	}
 	]
 }
