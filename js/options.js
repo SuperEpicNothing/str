@@ -30,6 +30,7 @@ function optionSave(){
 	setCookie("options",option);
 	$("#itemModal").modal("hide");
 	updateChapters();
+	repolulateItemMenu();
 	audio.update();
 }
 function optionDelete(){
