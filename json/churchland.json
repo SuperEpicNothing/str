@@ -11,12 +11,233 @@
 		"events":[
 			
 			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
-			"text":"Witaj, Wędrowcze!"
+			"text":"[WERSJA TESTOWA ROZMOWY] Witaj, Wędrowcze!"
 			}
 		],
 		"options":[
 			{"target": 1, "text": "Witaj!"},
 			{"target": 1, "text": "Dzień dobry, Panie Profesorze!"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":"W czym mogę Ci pomóc?"
+			}
+		],
+		"options":[
+			{"target": 1, "text": "Co nowego w San Diego?"},
+			{"target": 2, "text": "[playerGender {Chciałbym|Chciałabym}] porozmawiać o kwestii duszy-ciało..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":"Oczywiście. W czym problem?"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Jak Pan chce wytłumaczyć wolną wolę?"},
+			{"target": 3, "text": "Chyba już nie mam więcej pytań..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			{"type":"give","time":3000,"item":"eliminator"},
+			{"type":"unlockChap","time":"0","chapter":2,"lesson":3},
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":"Cieszę się, jeśli mogłem pomóc. Przyjmij ode mnie ten oto Argument i niech Ci służy w starciu z Konfuzjuszem!"
+			}
+		],
+		"options":[
+			{"target": 4, "text": "Wielkie dzięki, Profesorze! Powodzenia!..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+
+			{"type":"dialog","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":"Powodzenia!"
+			}
+		],
+		"options":[
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Paul Churchland","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
 		]	   
 	}
 	

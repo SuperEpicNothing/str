@@ -114,7 +114,9 @@
 		
 		{"name" : "ItemRock", "src":"images/gui/icons/items/I_Rock01.png"},
 		
-		{"name" : "demon", "src":"images/gui/icons/items/demon.png"},
+		{"name" : "demon", "src":"images/gui/icons/items/S_Shadow07.png"},
+		{"name" : "rzecz", "src":"images/gui/icons/items/S_Buff10.png"},
+		{"name" : "eliminator", "src":"images/gui/icons/items/S_Sword06.png"},
 		{"name" : "russelBE", "src":"images/gui/icons/items/bottle0.png"},
 		{"name" : "russelbot0", "src":"images/gui/icons/items/bottle1.png"},
 		{"name" : "russelbot1", "src":"images/gui/icons/items/bottle2.png"},
@@ -248,6 +250,25 @@
 			"url": null	
 		},
 		
+		{
+			"type": "Argument",
+			"name": "rzecz",
+			"fullname": "Rzecz myśląca",
+			"autor": "Kartezjusz",
+			"icon":"rzecz",
+			"desc": "'Rzecz myśląca' to argument odwołujący się do naszego potężnego przekonania, że my sami jesteśmy czymś zupełnie innym niż stoły, młotki i chmury - istotami myślącymi. Więcej informacji można uzyskać w trakcie rozmowy z Kartezjuszem (zob. lekcja 'Dusza i ciało' w rozdziale 'Człowiek').",
+			"url": null	
+		},
+		
+		{
+			"type": "Argument",
+			"name": "eliminator",
+			"fullname": "Eliminator Churchlanda",
+			"autor": "Paul Churchland",
+			"icon":"eliminator",
+			"desc": "'Eliminator Churchlanda' to argument pozwalający na wyeliminowanie z dyskusji wszelkich odniesień do pozafizycznych określeń umysłu, duszy, 'psychiczności' i tym podobnych. Więcej informacji można uzyskać w trakcie rozmowy z Paulem Churchlandem(zob. lekcja 'Myślące neurony' w rozdziale 'Człowiek').",
+			"url": null	
+		},
 		{
 			"type": "Argument",
 			"name": "hawking",

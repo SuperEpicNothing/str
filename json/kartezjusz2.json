@@ -11,14 +11,264 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"Witaj ponownie, Wędrowcze!"
+			"text":"[WERSJA TESTOWA ROZMOWY] Witaj ponownie, Wędrowcze!"
 			}
 		],
 		"options":[
 			{"target": 1, "text": "Witaj!"},
 			{"target": 1, "text": "Dzień dobry, Kartezjuszu!"}
 		]	   
-	}	
+	},	
+
+	{
+		"COMMENT":"1",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"W czym mogę pomóc? Jak Ci przebiega Twa podróż filozoficzna, niestrudzony Wędrowcze?"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Dziękuję, nieźle. Ale znów mam problem, o którym [playerGender {chciałbym|chciałbym}] porozmawiać...", "height":2},
+			{"target": 1, "text": "Doskonale. A co u Ciebie, Kartezjuszu?"},
+			{"target": 1, "text": "Nie najlepiej, prawdę mówiąc..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"2",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"W czym problem?"
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Chodzi o kwestie duszy ludzkiej i ciała."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"3",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Słucham więc."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Dlaczego właściwie ciało ludzkie nie mogłyby być po prostu maszyną?", "height":2},
+			{"target": 4, "text": "Chyba już wszystko rozumiem, Kartezjuszu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"4",
+		"events":[
+			{"type":"give","time":3000,"item":"rzecz"},
+			{"type":"unlockChap","time":"0","chapter":2,"lesson":2},
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Cieszę się więc, że mogłem pomóc. Przyjmij więc ode mnie ten oto Argument. Używaj go mądrze, Wędrowcze!"
+			}
+		],
+		"options":[
+			{"target": 5, "text": "Dziękuję, Kartezjuszu! Bywaj."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"5",
+		"events":[
+			
+			{"type":"dialog","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Bywaj!..."
+			}
+		],
+		"options":[
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":""
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	}
 	
 	]
 }
