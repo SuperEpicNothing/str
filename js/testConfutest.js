@@ -74,33 +74,7 @@ var begin = false;
 var change,changeEvt;
 var timeflow =false;
 var timeflowtimestamp;
-function renderConfu(timestamp){
-
-	if (!begin && mouse.isOver && mouse.target==elem){start = timestamp; begin =true; timeflow=true; timeflowtimestamp=undefined;}
-	if(!Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
-	if (begin)
-		var progress = Math.round(timestamp - start);
-	else
-		var progress =0;
-	clear();
-	
-	if(!timeflow && timeflowtimestamp==undefined)
-		timeflowtimestamp=timestamp;
-
-	if(timeflow &&timeflowtimestamp!=undefined)
-	{
-		start+=(timestamp-timeflowtimestamp);
-		timeflowtimestamp=undefined;
-		timeflow=true;
-	}
-
-	audio.play(mouse.target==elem && mouse.isOver)
-
-	processEvent(progress);
-	drawBackground(timeflow?progress:(timeflowtimestamp-start));
-	
-	drawConfutest(timeflow?progress:(timeflowtimestamp-start));
-
+function drawParticles(progress){
 	for(var i =0;i<renderData.particles.length;i++)
 		{
 					var particle = renderData.particles[i];
@@ -339,6 +313,40 @@ function renderConfu(timestamp){
 						particle.y+=particle.movY;
 						particle.movX=particle.movX+0.1*(1-2*Math.random());
 						particle.movY=particle.movY+0.1*(1-2*Math.random());
+						break;
+						
+						case "redmist":
+						
+						if(particle.arc==undefined)
+							particle.arc=Math.random()*2*Math.PI;
+						if(particle.size==undefined)
+							particle.size=(5+15*Math.random())/20*250;
+						if(particle.startingColor==undefined)
+							particle.startingColor = cUtils.colorGradients([
+						cUtils.hexToRGB("#cd121b"),
+						cUtils.hexToRGB("#8a191e"),
+						cUtils.hexToRGB("#cf2129"),
+						cUtils.hexToRGB("#d9111a"),
+						],[0.50,0.75,1.00],Math.random());
+						if(particle.movX==undefined)
+							particle.movX=0;
+						if(particle.movY==undefined)
+							particle.movY=0;
+						
+						var color = cUtils.colorGradients([
+						[particle.startingColor[0],particle.startingColor[1],particle.startingColor[2],0.05],
+						[particle.startingColor[0]/2,particle.startingColor[1]/2,particle.startingColor[2]/2,0.01],[0,0,0,0]], [0.9,1],1-lifestage);		
+						context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
+						context.fillRect(particle.x-(particle.size*lifestage/2)-5,particle.y-(particle.size*lifestage/2)-5,10+(particle.size)*lifestage,10+(particle.size)*lifestage);
+						
+						if(!timeflow)
+							continue;
+						particle.x+=particle.movX;
+						particle.y+=particle.movY;
+						var str = 0.1*(1-2*Math.random()); 
+						var arc = Math.PI/6*(1-2*Math.random())
+						particle.movX=particle.movX+str*Math.cos(particle.arc+arc)+0.1*(1-2*Math.random());
+						particle.movY=particle.movY+str*Math.sin(particle.arc+arc)+0.1*(1-2*Math.random());
 						break;
 						
 						case "orbbot":
@@ -741,6 +749,35 @@ function renderConfu(timestamp){
 					particle.life=renderData.progress-particle.start;
 					renderData.particles[i]=particle;
 		}
+}
+function renderConfu(timestamp){
+
+	if (!begin && mouse.isOver && mouse.target==elem){start = timestamp; begin =true; timeflow=true; timeflowtimestamp=undefined;}
+	if(!Assets.loaded ||!battlescript) {window.requestAnimationFrame(renderConfu); return}
+	if (begin)
+		var progress = Math.round(timestamp - start);
+	else
+		var progress =0;
+	clear();
+	
+	if(!timeflow && timeflowtimestamp==undefined)
+		timeflowtimestamp=timestamp;
+
+	if(timeflow &&timeflowtimestamp!=undefined)
+	{
+		start+=(timestamp-timeflowtimestamp);
+		timeflowtimestamp=undefined;
+		timeflow=true;
+	}
+
+	audio.play(mouse.target==elem && mouse.isOver)
+
+	processEvent(progress);
+	drawBackground(timeflow?progress:(timeflowtimestamp-start));
+	
+	drawConfutest(timeflow?progress:(timeflowtimestamp-start));
+	drawParticles(timeflow?progress:(timeflowtimestamp-start));
+	
 	
 
 	if(!timeflow){
@@ -765,6 +802,58 @@ function renderConfu(timestamp){
 	if(renderData.type=="question" && renderData.arm=="robot")
 		drawAttackInfo(progress,"Konfuzjusz","Mroczne Automatony","Promień Dezinformujący");
 
+	if(renderData.type=="resolve" && renderData.player=="jacksona")
+	{
+		if(renderData.progress>3000 && renderData.cut== undefined){
+			renderData.cuts=Math.round(3+3*Math.random());
+			renderData.cut=0;
+			renderData.cutlength=50+50*Math.random();
+			renderData.cutarc=2*Math.PI*Math.random();
+
+		}
+		if(renderData.cuts!=undefined && renderData.cut<renderData.cuts){
+			if(renderData.progress>4000+400*renderData.cut)
+			{
+				var scale = (renderData.progress-(4000+400*renderData.cut))/400;
+				context.setTransform(1, 0, 0, 1, elem.width/2,140);
+				context.rotate(renderData.cutarc);
+				context.beginPath()
+				context.moveTo(-renderData.cutlength/2,0);
+				context.quadraticCurveTo((scale-1)*renderData.cutlength/4,renderData.cutlength/10,scale*renderData.cutlength/2,0);
+				context.quadraticCurveTo((scale-1)*renderData.cutlength/4,-renderData.cutlength/10,-renderData.cutlength/2,0);
+				context.fillStyle="rgba(20,150,64,"+0.5*scale+")";
+				context.fill();
+				context.beginPath()
+				context.setTransform(1, 0, 0, 1, 0, 0);
+				if(scale>0.7)
+				for(var i=0;i<10;i++)
+				{
+					var scl = Math.random();
+					var blld = {											
+								type:"healthsmoke",
+								smoketype:"explosionsmoke",
+								x:elem.width/2+30*scl*Math.cos(renderData.cutarc)+0.5*(1-2*Math.random()),					
+								y:140+30*scl*Math.sin(renderData.cutarc)+0.5*(1-2*Math.random()),
+								lifepercent:boss.health/boss.healthMax,
+								movX:3*Math.cos(renderData.cutarc),
+								movY:3*Math.sin(renderData.cutarc),
+								start:renderData.progress,
+								end:200+200*Math.random(),
+								life:0,
+								size:2+2*(1-scl)
+								};									
+					renderData.particles.push(blld);
+				}
+			}
+			if(renderData.progress>4000+400*renderData.cut+399){
+				
+				renderData.cut++;
+				renderData.cutlength=50+50*Math.random();
+				renderData.cutarc=2*Math.PI*Math.random();
+			}
+		}
+	}
+	
 	if(renderData.type=="dialog"||renderData.type=="question")
 		drawDialog("Konfuzjusz",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
 
@@ -2498,7 +2587,7 @@ function drawConfutest(progress){
 
 				
 				context.beginPath();
-				context.arc(elem.width/2,100,80*(i/1000)*(1-Math.pow(Math.cos(2*Math.PI*(renderData.progress-1000)/6000),2)),0,2*Math.PI);
+				context.arc(confX+85,confY+35,80*(i/1000)*(1-Math.pow(Math.cos(2*Math.PI*(renderData.progress-1000)/6000),2)),0,2*Math.PI);
 				context.fill();
 				context.closePath();
 				}
@@ -2517,18 +2606,18 @@ function drawConfutest(progress){
 				context.closePath();
 				context.beginPath();
 			}
-			if(renderData.progress>3000)
+			if(renderData.progress>5000)
 			{
 				context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-250);
-				context.translate(0,-(renderData.progress-3000)/2000*700)
+				context.translate(0,-(renderData.progress-5000)/2000*700)
 				context.drawImage(Assets.img["jamesAngel0"],
 				-17,-17,
 				34,34);
 				context.setTransform(1, 0, 0, 1, 0, 0);
-				if(renderData.progress>3400 && renderData.progress<3500){
+				if(renderData.progress>5400 && renderData.progress<5500){
 					var particle = {
-							x:confX+80,
-							y:confY+40,
+							x:confX+85,
+							y:confY+35,
 							type:"explosion",
 							smoketype:"magicsmoke",
 							start:renderData.progress,
@@ -2542,6 +2631,67 @@ function drawConfutest(progress){
 				}
 			}
 			break;
+			
+			case "eliminator":
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Myślące neurony","Eliminator Churchlanda");
+				
+				context.setTransform(1, 0, 0, 1, elem.width/2,elem.height-250);
+				if(renderData.progress<1500)
+					context.translate(0,(1-renderData.progress/1500)*100);				
+				context.translate(0,Math.sin((renderData.progress)/2000*2*Math.PI)*5)
+				context.fillStyle="rgba(255,255,255,0.05)";
+				if(renderData.progress-4000>=0 && renderData.progress<5000)
+				for(var i=100*(renderData.progress-4000)/1000;i>0;i--){
+				context.beginPath();
+				context.moveTo(0,0);
+				var color = cUtils.colorGradients(
+				[
+				cUtils.hexToRGB("#ffdf93"),
+				cUtils.hexToRGB("#ffffff"),
+				cUtils.hexToRGB("#ffdf93"),
+				cUtils.hexToRGB("#ffab13"),
+				cUtils.hexToRGB("#e7660c")
+				],[3/11,7/11,9/11,11/11],(i/100));
+				context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+0.05+")";
+				var arc = (Math.PI/4-0.6)+i/100*0.6;
+				var l = elem.width;
+				context.lineTo(Math.cos(arc-Math.PI/2)*l,Math.sin(arc-Math.PI/2)*l);
+				context.lineTo(Math.cos(-arc-Math.PI/2)*l,Math.sin(-arc-Math.PI/2)*l);
+				context.fill();
+				}
+				context.beginPath();
+				context.rotate(-Math.PI/4);
+				context.drawImage(Assets.img["eliminator"],
+				-34,-34,
+				68,68);
+				context.setTransform(1, 0, 0, 1, 0, 0);
+			break;
+			
+			case "jacksona":
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Druga czerwień","Czerwona mgiełka");
+				for(var i=0;i<5;i++){
+				var particle = {											
+					type:"redmist",
+					x:elem.width/2,						
+					y:elem.height-180,
+					start:renderData.progress,
+					end:(0.5+Math.random())*4500,
+					//movX:(1-2*Math.random()),
+					//movY:(1-2*Math.random()),
+					life:0
+					};
+				renderData.particles.push(particle);
+				}
+			break;
+			
+			case "whiteheada":
+				if(renderData.progress>1000)
+					drawAttackInfo(progress,handleText("[playerName]"),"Wszystko myśli","Organizm elementarny");
+			
+			break;
+			
 		}
 	}
 }

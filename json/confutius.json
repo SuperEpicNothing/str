@@ -49,7 +49,8 @@
 			{"type":"resolve","time":6000,"arm":"none","player":"akwinata","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"rzecz","success":true},
 			{"type":"resolve","time":6000,"arm":"none","player":"eliminator","success":true},
-
+			{"type":"resolve","time":6000,"arm":"none","player":"jacksona","success":true},
+			{"type":"resolve","time":6000,"arm":"none","player":"whiteheada","success":true},
 			{"type":"resolve","time":5000,"arm":"bombardment","player":"none","success":false},
 			{"type":"clearParticles","time":5000},
 			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":false},
@@ -66,10 +67,8 @@
 	},
 		{
 		"events":[
-					{"type":"resolve","time":6000,"arm":"none","player":"rzecz","success":true},
-			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":false},
-			{"type":"resolve","time":3000,"arm":"swordspear","player":"none","success":true},
-			{"type":"question","time":2000,"arm":"swordspear","text":"5?"}
+					{"type":"resolve","time":6000,"arm":"none","player":"jacksona","success":true},
+		{"type":"question","time":2000,"text":"5?"}
 		],
 		"options":[
 			{"target": 0, "text": "paper","color":{"active":"#39c680","inactive":"#33b273"},"req":{"type":"skill","skill":4,"amt":3},"consequence":{"bosshp":-1}},

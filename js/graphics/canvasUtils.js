@@ -89,7 +89,13 @@ cUtils.drawLBolt = function(ctx,origin,end,length,colors,clengths,cdispl,splits)
 			
 	ctx.beginPath();	
 }
-
+cUtils.hexToRGB = function(hex){
+	var r =parseInt( hex.substring(1, 3), 16);
+	var g =parseInt( hex.substring(3, 5), 16); 
+	var b =parseInt( hex.substring(5, 7), 16); 
+	var color=[r,g,b];
+	return color;	
+}
 cUtils.imageSmoothing = function(ctx,bool){
 	ctx.mozImageSmoothingEnabled = bool;
 	ctx.webkitImageSmoothingEnabled = bool;
