@@ -84,9 +84,9 @@ function drawParticles(progress){
 					}
 					if(particle.life>particle.end){
 						particle.end=-1
-						renderData.particles[i]=particle;
-							
-						renderData.particles.splice( i, 1)
+						renderData.particles[i]=particle;	
+						renderData.particles.splice( i, 1);
+						--i;
 						continue;
 					}
 					var lifestage= particle.life/particle.end;
@@ -349,6 +349,84 @@ function drawParticles(progress){
 						particle.movY=particle.movY+str*Math.sin(particle.arc+arc)+0.1*(1-2*Math.random());
 						break;
 						
+						case "greengoop":	
+						if(particle.arc==undefined)
+							particle.arc=Math.random()*2*Math.PI;
+						if(particle.movX==undefined)
+							particle.movX=0;
+						if(particle.movY==undefined)
+							particle.movY=0;
+						context.setTransform(1, 0, 0, 1, particle.x,particle.y);
+						if(lifestage>0.95)
+							context.rotate(particle.arc);
+						else
+							context.rotate(0.05*(Math.PI-particle.arc/2));
+							
+						context.drawImage(Assets.img[(lifestage>0.95?"whiteheadpop":"whiteheadator")],		
+								-17,-17,		
+								34,34);
+						context.setTransform(1, 0, 0, 1, 0,0);
+						if(!timeflow)
+							continue;
+						particle.x+=particle.movX;
+						particle.y+=1.1;//particle.movY;	
+						particle.movX+=0.1*(1-2*Math.random());
+						//particle.movY+=0.1*(1-2*Math.random());
+						break;
+						case "plantspike":
+							if(particle.timestamp == undefined)
+								particle.timestamp = renderData.progress;
+							if(particle.size==undefined)
+								particle.size=1;
+							if(particle.amt==undefined)
+								particle.amt=2;
+							var dist =  Math.sqrt(Math.pow(particle.x - particle.tx,2)+Math.pow(particle.y- particle.ty,2));
+							
+							var arc = Math.atan2((particle.ty-particle.y),(particle.tx-particle.x));
+
+							context.setTransform(1, 0, 0, 1, particle.x,particle.y);
+							context.rotate(-Math.PI/4);
+							context.rotate(arc);
+							context.drawImage(Assets.img["whiteheadspike"],		
+								-17*particle.size,-17*particle.size,		
+								34*particle.size,34*particle.size);
+								
+							context.setTransform(1, 0, 0, 1, 0, 0);
+	
+							if(dist<10 || particle.x<0 || particle.y<0 || particle.x>elem.width || particle.y > elem.height-130){
+								particle.end=-1;
+								if(particle.amt>=2)
+									renderData.broken=true;
+							}
+							if(dist<10)
+								for(var p =0;p<particle.amt*2;p++)
+								{	
+									var narc = (particle.amt>=2?Math.PI/3:Math.PI)*(1-2*Math.random()); 
+									
+									var spk = {										
+										type: "plantspike",
+										x:particle.x,						
+										y:particle.y,
+										tx:particle.x+Math.cos(narc+arc+(particle.amt>=2?Math.PI:0))*75,						
+										ty:particle.y+Math.sin(narc+arc+(particle.amt>=2?Math.PI:0))*75,
+										start:renderData.progress,
+										end:300*Math.random()+particle.amt*200,
+										life:0,
+										size:particle.size/2,
+										amt:particle.amt-1,
+										movX:0,
+										movY:0};
+									renderData.particles.push(spk);
+								}
+							
+							particle.movX= (dist+40)*Math.cos(arc);
+							particle.movY= (dist+40)*Math.sin(arc);
+
+							particle.x+=particle.movX*(renderData.progress-particle.timestamp)/400;
+							particle.y+=particle.movY*(renderData.progress-particle.timestamp)/400;
+							
+							particle.timestamp = renderData.progress;
+						break;
 						case "orbbot":
 							var pos = [350,140];
 							var positions = [[253,100],[446,100],[350,233],[446,100],[350,233],[350,233],[350,233],[350,140]];
@@ -2689,7 +2767,46 @@ function drawConfutest(progress){
 			case "whiteheada":
 				if(renderData.progress>1000)
 					drawAttackInfo(progress,handleText("[playerName]"),"Wszystko myśli","Organizm elementarny");
-			
+				
+				if(Math.random()<0.5)
+				for(var i=0;i<3*Math.random();i++){
+					var l =renderData.progress>2000?80:80*renderData.progress/2000
+					var x = Math.random()*l
+					var h = renderData.progress>2000?30:30*renderData.progress/2000;
+					var particle = {											
+						type:"greengoop",
+						x:elem.width/2-l/2+x,						
+						y:elem.height-180-h*Math.sin(Math.PI/l*x),
+						start:renderData.progress,
+						end:200,
+						movX:(1-2*Math.random())*0.4,
+						movY:1.5*Math.random(),
+						life:0
+						};
+					renderData.particles.push(particle);
+					}
+					
+				if(renderData.broken== undefined)
+					renderData.broken=true;
+				if(renderData.progress>3000)
+				if(Math.random()<0.05 && renderData.broken)
+				{	
+					renderData.broken=false;
+							var particle = {											
+									type:"plantspike",
+									x:elem.width/2+(1-2*Math.random())*60,						
+									y:elem.height-180,
+									tx:elem.width/2,
+									ty:confY+50,
+									start:renderData.progress,
+									end:2000,
+									movX:(1-2*Math.random())*4,
+									movY:(1-2*Math.random())*0.4,
+									life:0
+									};
+								renderData.particles.push(particle);
+				}
+				
 			break;
 			
 		}

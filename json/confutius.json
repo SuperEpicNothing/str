@@ -67,7 +67,7 @@
 	},
 		{
 		"events":[
-					{"type":"resolve","time":6000,"arm":"none","player":"jacksona","success":true},
+					{"type":"resolve","time":6000,"arm":"none","player":"whiteheada","success":true},
 		{"type":"question","time":2000,"text":"5?"}
 		],
 		"options":[

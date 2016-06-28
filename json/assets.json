@@ -138,7 +138,8 @@
 		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
 		{"name" : "arysto", "src":"images/gui/icons/items/W_Mace008.png"},
 		{"name" : "wittg", "src":"images/gui/icons/items/S_Ice07.png"},
-
+		{"name" : "whiteheadpop", "src":"images/gui/icons/items/pop.png"},
+		{"name" : "whiteheadspike", "src":"images/gui/icons/items/spike.png"},
 
 		{"name" : "Item1", "src":"images/gui/icons/items/W_Sword01.png"},
 		{"name" : "Item2", "src":"images/gui/icons/items/W_Axe013.png"},
