@@ -1,0 +1,19 @@
+Used Code
+bootstrap.js - Twitter, Inc. - MIT license
+CanvasInput.js - James Simpson of GoldFire Studios - MIT License
+seedrandom.js - David Bau - MIT License
+
+Used Music
+heroisn.mp3 - http://opengameart.org/content/heroism - Edward J. Blakeley - GPL 2.0, GPL 3.0
+harp.mp3  - http://opengameart.org/content/soft-mysterious-harp-loop -VWolfdog - CC-BY 3.0
+battle in the winter.mp3- http://opengameart.org/content/battle-in-the-winter -jobromedia- CC-BY 3.0, GPL 3.0, OGA-BY 3.0
+
+Used graphics
+enemy health bars -http://opengameart.org/content/enemy-health-bars - Paul Worltmann- CC0
+Game icon pack - www.kenney.nl - Kenney Vleugels - cc0
+parallax space background - http://opengameart.org/content/space-background-3 - ansimuz/Luis Zuno - cc0
+mage - http://opengameart.org/content/3-form-rpg-boss-harlequin-epicycle - Redshirke - CC-BY 3.0, GPL 3.0, GPL 2.0, OGA-BT 3.0
+Icons 34x34/more RPG Icons -http://7soul1.deviantart.com/art/420-Pixel-Art-Icons-for-RPG-129892453 http://7soul1.deviantart.com/art/Extra-98-Free-RPG-Icons-389778011?q=gallery%3A7Soul1%2F8790876&qo=9 - 7Soul1 - Public Domain
+avatars - https://github.com/watabou/pixel-dungeon/blob/master/LICENSE.txt - watabou - GLP 3.0
+
+Wszysko co ja zrobi³em -  https://github.com/SuperEpicNothing/str - Krzysztof Stasiowski - GPL 3.0? (not yet chosen)
