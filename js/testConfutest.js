@@ -92,9 +92,7 @@ function drawParticles(progress){
 					var lifestage= particle.life/particle.end;
 					switch(particle.type){
 						default:console.log(particle.type);break;
-						case "explosion":
-							
-							
+						case "explosion":				
 							for(var p =0;p<150;p++)
 							{
 								var smk = {
@@ -119,10 +117,7 @@ function drawParticles(progress){
 								var color  = [0,0,0,1]
 								color = cUtils.colorGradients([potionColor,[potionColor[0]*0.5,potionColor[1]*0.5,potionColor[2]*0.3,0.2],[0,0,0,0.01]], [0.7,1],lifestage)		
 								context.fillStyle="rgba("+color[0]+","+color[1]+","+color[2]+","+color[3]+")";
-								
-
-
-							context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
+								context.fillRect(particle.x-(particle.size/2+5)*lifestage,particle.y-(particle.size/2+5)*lifestage,(particle.size+10)*lifestage,(particle.size+10)*lifestage);
 
 							if(!timeflow)
 								continue;
@@ -369,9 +364,9 @@ function drawParticles(progress){
 						if(!timeflow)
 							continue;
 						particle.x+=particle.movX;
-						particle.y+=1.1;//particle.movY;	
+						particle.y+=particle.movY;	
 						particle.movX+=0.1*(1-2*Math.random());
-						//particle.movY+=0.1*(1-2*Math.random());
+						particle.movY+=0.1*(1-2*Math.random());
 						break;
 						case "plantspike":
 							if(particle.timestamp == undefined)
@@ -398,7 +393,27 @@ function drawParticles(progress){
 								if(particle.amt>=2)
 									renderData.broken=true;
 							}
-							if(dist<10)
+							if(dist<10){
+								if(particle.amt>=2)
+								for(var i=0;i<10;i++)
+								{
+									var scl = Math.random();
+									var l = 10*Math.random();
+									var blld = {											
+												type:"healthsmoke",
+												x:particle.x+l*Math.cos(arc),
+												y:particle.y+l*Math.sin(arc),
+												lifepercent:boss.health/boss.healthMax,
+												movX:3*Math.cos(arc),
+												movY:3*Math.sin(arc),
+												start:renderData.progress,
+												end:200+200*Math.random(),
+												life:0,
+												size:2+2*(1-scl)
+												};									
+									renderData.particles.push(blld);
+								}
+				
 								for(var p =0;p<particle.amt*2;p++)
 								{	
 									var narc = (particle.amt>=2?Math.PI/3:Math.PI)*(1-2*Math.random()); 
@@ -418,7 +433,7 @@ function drawParticles(progress){
 										movY:0};
 									renderData.particles.push(spk);
 								}
-							
+							}
 							particle.movX= (dist+40)*Math.cos(arc);
 							particle.movY= (dist+40)*Math.sin(arc);
 
@@ -2768,19 +2783,34 @@ function drawConfutest(progress){
 				if(renderData.progress>1000)
 					drawAttackInfo(progress,handleText("[playerName]"),"Wszystko myśli","Organizm elementarny");
 				
-				if(Math.random()<0.5)
+				context.setTransform(1, 0, 0, 1, elem.width/2, elem.height-180);
+				if(renderData.progress<1000)
+					context.translate(0,100-100*renderData.progress/1000)
+				if(renderData.nextBeat==undefined)
+					renderData.nextBeat=renderData.progress+700;
+				renderData.beatscale=1;
+				if(renderData.progress>renderData.nextBeat-300){
+					renderData.beatscale=1+0.15*Math.pow(Math.sin(renderData.progress/300*2*Math.PI),2);
+					if(renderData.progress>renderData.nextBeat)
+					renderData.nextBeat=renderData.progress+700;					
+				}
+				context.drawImage(Assets.img["whiteheadcore"+Math.floor(9*Math.pow((renderData.beatscale-1)/0.15,2))],
+				-34*renderData.beatscale,-34*renderData.beatscale,
+				68*renderData.beatscale,68*renderData.beatscale);
+				context.setTransform(1, 0, 0, 1, 0, 0);
+				
+				if(renderData.progress>1500)
+				if(Math.random()<0.15)
 				for(var i=0;i<3*Math.random();i++){
-					var l =renderData.progress>2000?80:80*renderData.progress/2000
-					var x = Math.random()*l
-					var h = renderData.progress>2000?30:30*renderData.progress/2000;
+					var arc = Math.PI*2*Math.random();
 					var particle = {											
 						type:"greengoop",
-						x:elem.width/2-l/2+x,						
-						y:elem.height-180-h*Math.sin(Math.PI/l*x),
+						x:elem.width/2+Math.cos(arc)*34,						
+						y:elem.height-180+Math.sin(arc)*34,
 						start:renderData.progress,
 						end:200,
-						movX:(1-2*Math.random())*0.4,
-						movY:1.5*Math.random(),
+						movX:(1-2*Math.random())*0.4+Math.cos(arc)*0.4,
+						movY:(1-2*Math.random())*0.4+Math.sin(arc)*0.4,
 						life:0
 						};
 					renderData.particles.push(particle);
@@ -2789,22 +2819,25 @@ function drawConfutest(progress){
 				if(renderData.broken== undefined)
 					renderData.broken=true;
 				if(renderData.progress>3000)
-				if(Math.random()<0.05 && renderData.broken)
+				if(Math.random()<0.5 && renderData.broken && renderData.progress<4000)
 				{	
+					for(var i=0;i<3;i++){
 					renderData.broken=false;
+							var arc = Math.PI*2*Math.random();
+							var dist = 34*Math.random();
 							var particle = {											
-									type:"plantspike",
-									x:elem.width/2+(1-2*Math.random())*60,						
-									y:elem.height-180,
-									tx:elem.width/2,
-									ty:confY+50,
-									start:renderData.progress,
-									end:2000,
-									movX:(1-2*Math.random())*4,
-									movY:(1-2*Math.random())*0.4,
-									life:0
-									};
-								renderData.particles.push(particle);
+								type:"plantspike",
+								x:elem.width/2+Math.cos(arc)*dist,						
+								y:elem.height-180+Math.cos(arc)*dist,
+								tx:elem.width/2+(1-2*Math.random())*10,
+								ty:confY+50+(1-2*Math.random())*10,
+								start:renderData.progress,
+								end:2000,
+								movX:(1-2*Math.random())*4,
+								movY:(1-2*Math.random())*0.4,
+								life:0
+								};
+					renderData.particles.push(particle);}
 				}
 				
 			break;
