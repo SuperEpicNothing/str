@@ -25,7 +25,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
     <meta name="description" content="">
     <meta name="author" content="Krzysztof Stasiowski">
 	<link id="icon" rel="icon" type="image/x-icon" />
-    <title>Nauka i Wiara</title>
+    <title>Filozuj I</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -106,8 +106,8 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="?main=0">
-					<div class="hidden-sm">Nauka i Wiara</div>
-					<div class="visible-sm-inline-block">NiW</div>
+					<div class="hidden-sm">Filozuj I</div>
+					<div class="visible-sm-inline-block">F1</div>
 				</a>
 			</div>
 
