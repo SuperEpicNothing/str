@@ -38,7 +38,7 @@
 	{
 		"comment":"2",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"laser",
 			"text":"Zacznijmy może niewinnie. Przypuśćmy, że powiem Ci, że jestem monistą fizykalistycznym. Jakie [playerGender {mógłbyś|mogłabyś}] mi zadać pytanie, hm?"}
 		],
 		"options":[
@@ -52,7 +52,12 @@
 	{
 		"comment":"3",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"resolve","time":7000,
+			"arm":"laser",
+			"player":"rzecz",
+			"success":true
+			},
+			{"type":"question","time":1000,"timepadding":0,"arm":"robot",
 			"text":"Dobre pytanie, Wędrowcze!... godne [playerGender {prawdziwego filozofa|prawdziwej filozofki}]. Przypuśćmy jednak, że naprawdę uważam, że niematerialnie istniejące [']myśli['] to tylko złudzenie; że to zła, myląca nazwa na coś najzupełniej materialnego. Jak byś [playerGender {określił|określiła}] moje stanowisko?"}
 		],
 		"options":[
@@ -65,8 +70,13 @@
 	
 	{
 		"comment":"4",
-		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+		"events":[				
+			{"type":"resolve","time":7000,
+			"arm":"robot",
+			"player":"eliminator",
+			"success":true
+			},
+			{"type":"question","time":1000,"timepadding":0,"arm":"sword",
 			"text":"Bardzo słusznie, bardzo słusznie!... unikasz mych zasadzek ze zręcznością najlepszego szermierza. A jakim argumentem [playerGender {mógłbyś|mogłabyś]} mnie spróbować wyprowadzić z eliminacjonizmu?"}
 		],
 		"options":[
@@ -82,7 +92,12 @@
 	{
 		"comment":"5",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"resolve","time":7000,
+				"arm":"sword",
+				"player":"jacksona",
+				"success":true
+			},
+			{"type":"question","time":1000,"timepadding":0,"arm":"lifesteal",
 			"text":"I byłby to niezły ruch... ja co prawda, dzielny Wędrowcze, nie za bardzo przejmuję się tymi wszystkimi qualiami; ale muszę przyznać, że argument byłby na temat. [Konfuzjusz uśmiecha się złośliwie] Ale może podaj najpierw jakiś przykład na qualia..."}
 		],
 		"options":[
@@ -97,8 +112,13 @@
 	{
 		"comment":"6",
 		"events":[
+			{"type":"resolve","time":7000,
+				"arm":"lifesteal",
+				"player":"none",
+				"success":true
+			},
 			{"type":"question","time":1000,"timepadding":0,
-			"text":"[Konfuzjusz wzdycha ciężko] Eeeeechhhch... [Mamrocze do siebie] Nie jest to dobry dzień dla miłośników chaosu. [Patrzy na Ciebie nerwowo] Bardzo [playerGender {urosłeś|urosłaś}], młody Padawanie..."}
+			"text":"[Konfuzjusz wzdycha ciężko] Eeeeechhhch... [Mamrocze do siebie] Nie jest to dobry dzień dla miłośników chaosu. [Patrzy na Ciebie nerwowo] Bardzo [playerGender {urosłeś, młody Padawanie...|urosłaś, młoda Padawanko...}]"}
 		],
 		"options":[
 			{"target": 7, "text": "Wystarczająco, aby nie dać się zwieść Ciemnej Stronie Mocy..."}
@@ -109,7 +129,7 @@
 	{
 		"comment":"7",
 		"events":[
-			{"type":"question","time":1000,"timepadding":0,
+			{"type":"question","time":1000,"timepadding":0,"arm":"swordspear",
 			"text":"To powiedz mi jeszcze na koniec, co głosi ów tajemniczy panpsychizm?"}
 		],
 		"options":[
@@ -124,6 +144,11 @@
 	{
 		"comment":"8",
 		"events":[
+			{"type":"resolve","time":7000,
+				"arm":"whiteheada",
+				"player":"none",
+				"success":true
+			},
 			{"type":"question","time":1000,"timepadding":0,
 			"text":"Ech... na nic dzisiaj moje podstępy i zasadzki. Czas już chyba zakończyć tę potyczkę!..."}
 		],

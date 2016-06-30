@@ -947,13 +947,18 @@ function renderConfu(timestamp){
 		}
 	}
 	
+	drawHPBar((elem.width-(2*28+boss.healthMax*67-4))/2,20,boss.health,boss.healthMax,progress,"Konfuzjusz lv.999");
+	drawHPBar((elem.width-(2*28+boss.heroHpMax*67-4))/2,elem.height-180,boss.heroHp,boss.heroHpMax,progress,handleText("[playerName] lv.[playerLvl]"));
+	
+	
 	if(renderData.type=="dialog"||renderData.type=="question")
 		drawDialog("Konfuzjusz",renderData.text,renderData.time,renderData.progress,renderData.skipmode)
+
+
 
 	//drawGUIBAck
 	context.drawImage(Assets.img["GUIback"],0,elem.height-150);
 	
-
 		
 	
 	//drawButtons
@@ -999,24 +1004,7 @@ function renderConfu(timestamp){
 	context.fill();
 
 	
-	
-	//todo: wrap name into this function
-	drawHPBar((elem.width-(2*28+boss.healthMax*67-4))/2,20,boss.health,boss.healthMax,progress);
-	
-	context.fillStyle="white"
-	context.font = "16px Aclonica"
-	context.textBaseline = "top";
-	context.textAlign="center"; 
-	context.fillText("Konfuzjusz lv.999",elem.width/2,30)
-	
-	drawHPBar((elem.width-(2*28+boss.heroHpMax*67-4))/2,elem.height-180,boss.heroHp,boss.heroHpMax,progress);
-	context.fillStyle="white"
-	context.font = "16px Aclonica"
-	context.textBaseline = "top";
-	context.textAlign="center"; 
-	context.fillText(handleText("[playerName] lv.[playerLvl]"),elem.width/2,elem.height-170)
-	context.fill();
-	
+		
 	if(renderData.type=="showBoss")
 	{
 		context.fillStyle="rgba(255,255,255,"+(1-(renderData.progress/renderData.time))+")"
@@ -1209,7 +1197,7 @@ function processEvent(progress){
 }
 
 
-function drawHPBar(x,y,current,max,progress){
+function drawHPBar(x,y,current,max,progress,name){
 	context.fillStyle="rgb("+Math.round(100+105*(current/max)+(Math.sin(progress/(2000*(current/max))*2*Math.PI)*40))+",0,"+Math.round(70*(current/max))+")"
 	context.fillRect(x+29,y+8,current*67,16)	
 	context.fill()
@@ -1231,6 +1219,13 @@ function drawHPBar(x,y,current,max,progress){
 		89,Assets.img["GUIhpBar"].height,		
 		x+30+(max-1)*68,y,		
 		89,Assets.img["GUIhpBar"].height);
+		
+	context.fillStyle="white"
+	context.font = "16px Aclonica"
+	context.textBaseline = "top";
+	context.textAlign="center"; 
+	context.fillText(name,elem.width/2,y+10)
+	
 }
 function drawBackground(progress){
 	

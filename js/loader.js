@@ -158,7 +158,7 @@ function createPlayer()
 			xp:0,
 			skillp:3,
 			skillps:0,
-			chapters: [[0,1],[],[]],
+			chapters: [[0,1],[],[],[]],
 			confuWin: [],
 			},
 		books:[],
@@ -235,7 +235,7 @@ function unlockChapter(i,id){
 	if(player.progress.chapters[i].indexOf(id)<0){
 		player.progress.chapters[i].push(id);
 		notif.addNotif("chapter",{id:id,i:i});
-		updateChapters()
+		updateChapters();
 		savePlayer();
 	}
 }
@@ -305,8 +305,12 @@ function updateChapters(){
 	var disabled = ""+document.getElementById("disabledhyperlink").className;
 	for(var i =0;i<player.progress.chapters.length;i++){
 		
-		document.getElementById("pageButton"+i).className = (player.progress.chapters[i].length>0 || option.teach) ? enabled+" hvr-underline-from-center" : disabled;
-		
+		document.getElementById("pageButton"+i).className = (player.progress.chapters[i].length>0 || option.teach )? enabled+" hvr-underline-from-center" : disabled;
+		if(i == player.progress.chapters.length-1)
+			if(player.progress.chapters[i].length<=0){
+				document.getElementById("pageButton"+i).style.display="none";
+				document.getElementById("pageButton"+i).innerHTML+="1";
+			}
 		for(var j =0;j<7;j++)
 		{
 			var l = document.getElementById("lesson"+i+"-"+j)
@@ -316,6 +320,7 @@ function updateChapters(){
 		}
 
 		document.getElementById("test"+i).className= player.progress.chapters[i].indexOf('test')>=0 || option.teach? enabled +" hvr-curl-bottom-right":disabled;
+
 	}
 }
 function updateHTMLText(){
