@@ -260,7 +260,7 @@
 		],
 		"options":[
 			{"target": 21, "text": "Właśnie!","consequence":{"herohp":-1}},
-			{"target": 22, "text": "Ależ nie! Na pewno z nie z pewnością niepodważalną...","height":2,"consequence":{"bosshp":-1}}
+			{"target": 22, "text": "Ależ nie! Na pewno nie świadczy o tym z pewnością niepodważalną...","height":2,"consequence":{"bosshp":-1}}
 		]	  		
 	},
 	

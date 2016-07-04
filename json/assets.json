@@ -359,10 +359,10 @@
 		{
 			"type": "Argument",
 			"name": "wittgenstein",
-			"fullname": "Przestrzen Wittgestein'a",
+			"fullname": "Przestrzeń Wittgesteina",
 			"autor": "Ludwig Wittgenstein",
 			"icon":"wittg",
-			"desc": "'Przestrzen Wittgesteina' to argument dotyczący granic języka i granic świata. Jeżeli chcemy opisać granicę świata, musimy wyjść poza granice języka! Więcej informacji można uzyskać w trakcie rozmowy z Wittgensteinem (zob. lekcja 'Sztuka milczenia' w rozdziale 'Kosmos').",
+			"desc": "'Przestrzeń Wittgesteina' to argument dotyczący granic języka i granic świata. Jeżeli chcemy opisać granicę świata, musimy wyjść poza granice języka! Więcej informacji można uzyskać w trakcie rozmowy z Wittgensteinem (zob. lekcja 'Sztuka milczenia' w rozdziale 'Kosmos').",
 			"quotes":"1.1 Świat jest ogółem faktów. 1.11 Świat jest wyznaczony przez fakty oraz przez to, że są to wszystkie fakty. 1.21 [Fakt] jest istnieniem stanów rzeczy. 2.04 Ogół istniejących stanów rzeczy jest światem.2.1 Tworzymy sobie obrazy faktów. 3 Logicznym obrazem faktów jest myśl. 3.5 Myślą jest zastosowany, pomyślany znak zdaniony. 4 Myśl jest to zdanie sensowne. 4.01 Zdanie jest obrazem rzeczywistości.  4.21 Najprostsze zdanie — zdanie elementarne — stwierdza istnienie pewnego stanu rzeczy. 4.25 Jeżeli zdanie elementarne jest prawdziwe, to dany stan rzeczy istnieje; jeżeli fałszywe, to nie istnieje.  4.11 Ogół zdań prawdziwych stanowi całość przyrodoznawstwa (albo ogół nauk przyrodniczych). 4.26 Podanie wszystkich prawdziwych zdań elementarnych opisuje świat całkowicie. Świat jest całkowicie opisany przez podanie wszystkich zdań elementarnych wraz ze wskazaniem, które z nich są prawdziwe, a które fałszywe. 4.111 Filozofia nie jest żadną z nauk. 4.003 Tezy i pytania, jakie formułowano w kwestiach filozoficznych, są w większości nie fałszywe, lecz niedorzeczne [bezsensowne]. Stąd na pytania tego rodzaju nie można w ogóle odpowiedzieć; można jedynie stwierdzić ich niedorzeczność. Pytania i tezy filozofów biorą się przeważnie z niezrozumienia logiki naszego języka. (Są jak pytanie, czy dobro jest bardziej, czy mniej identyczne niż piękno.) Nic dziwnego, że najgłębsze problemy nie są właściwie żadnymi problemami. 4.112 Celem filozofii jest logiczne rozjaśnianie myśli. Filozofia nie jest teorią, lecz działalnością. Dzieło filozoficzne składa się zasadniczo z objaśnień. Wynikiem filozofii nie są żadne 'tezy filozoficzne', lecz jasność tez. 4.113 Filozofia ogranicza dziedzinę sporów przyrodoznawstwa. 4.114 Filozofia ma wytyczać granice tego, co da się pomyśleć, a tym samym i tego, co się pomyśleć nie da. Ma ograniczać od wewnątrz to, czego nie da się pomyśleć — przez to, co się pomyśleć daje. 4.115 Przedstawiając jasno to, co wyrażalne, wskaże na to, co niewyrażalne. 4.116 Cokolwiek da się w ogóle pomyśleć, da się jasno pomyśleć. Co się da powiedzieć, da się jasno powiedzieć. 5.61 Logika wypełnia świat; granice świata są też jej granicami. W logice nie można zatem powiedzieć: to a to w świecie jest, a tamtego nie ma. Znaczyłoby to bowiem na pozór, że wykluczamy pewne możliwości; a tak nie może być, gdyż inaczej logika musiałaby wyjść poza granice świata; musiałaby móc spojrzeć na nie także z drugiej strony. Czego nie możemy pomyśleć, tego pomyśleć nie możemy; a więc nie możemy też powiedzieć, czego nie możemy pomyśleć. 6.52 Czujemy, że gdyby nawet rozwiązano wszelkie możliwe zagadnienia naukowe, to nasze problemy życiowe nie zostałyby jeszcze nawet tknięte. Co prawda, nie byłoby już wtedy żadnych pytań; i to jest właśnie odpowiedź. 6.522 Jest zaiste coś niewyrażalnego. To się uwidacznia, jest tym, co mistyczne. 6.53 Poprawna metoda filozofii byłaby właściwie taka: Nie mówić nic poza tym, co się da powiedzieć, czyli poza zdaniami nauk przyrodniczych — a więc nic poza tym, co z filozofią nie ma nic wspólnego; a gdyby potem ktoś chciał powiedzieć coś metafizycznego, wykazać mu, że pewnym znakom nie nadał w swoich zdaniach żadnego znaczenia. Byłaby to dla niego metoda niezadowalająca — nie miałby poczucia, że uczymy go filozofii — ale jedyna ściśle poprawna. 6.54 Tezy moje wnoszą jasność przez to, że kto mnie rozumie, rozpozna je w końcu jako niedorzeczne; gdy przez nie — po nich — wyjdzie ponad nie. (Musi niejako odrzucić drabinę, uprzednio po niej się wspiąwszy.) Musi te tezy przezwyciężyć, wtedy świat przedstawi mu się właściwie. 7 O czym nie można mówić, o tym trzeba milczeć.",
 			"url": null	
 		},
@@ -399,7 +399,7 @@
 			"comment":"2",
 			"level": 0,
 			"fullname": "Ciepło na sercu",
-			"icon":"book",
+			"icon":"sword",
 			"desc": "za uratowanie Kartezjusza przed zmarznięciem"
 		},
 		
@@ -407,7 +407,7 @@
 			"comment":"3",
 			"level": 1,
 			"fullname": "Oko logika",
-			"icon":"book",
+			"icon":"magicbolt",
 			"desc": "za zaskoczenie Ludwiga Wittgensteina i podniesienie jego lewej brwi"
 		},
 		
@@ -415,7 +415,7 @@
 			"comment":"4",
 			"level": 1,
 			"fullname": "Małe Satori",
-			"icon":"book",
+			"icon":"magicbolt",
 			"desc": "za zrozumienie, dlaczego Ludwig Wittgenstein milczał"
 		},
 		
@@ -423,7 +423,7 @@
 			"comment":"5",
 			"level": 2,
 			"fullname": "Strategia wyjścia",
-			"icon":"book",
+			"icon":"scroll",
 			"desc": "za opuszczenie granic świata"
 		},
 		
@@ -433,7 +433,24 @@
 			"fullname": "Kochaj swego wroga",
 			"icon":"book",
 			"desc": "za odruch serca wobec Tego, Który Wystawia Na Próby"
+		},
+		
+		{
+			"comment":"7",
+			"level": 3,
+			"fullname": "Udawaj Greka",
+			"icon":"book",
+			"desc": "za pokonanie Arystotelesa w prawdziwie filozoficznym zmaganiu"
+		},
+		
+		{
+			"comment":"8",
+			"level": 1,
+			"fullname": "Pingwin Kangur",
+			"icon":"magicbolt",
+			"desc": "za podskoczenie na Biegunie Północnym"
 		}
+		
 		
 	]
 }

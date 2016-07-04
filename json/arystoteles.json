@@ -45,8 +45,7 @@
 		],
 		"options":[
 			{"target": 3, "text": "Przecież ja chodzę do liceum!"},
-			{"target": 4, "text": "Jakie „Liceum”? Ogólnokształcące?"},
-			{"target": 19, "text": "Czym się ostatnio zajmujesz?"}
+			{"target": 4, "text": "Jakie „Liceum”? Ogólnokształcące?"}
 		]	   
 	},
 	
@@ -84,7 +83,7 @@
 		"events":[
 			
 			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"Więc nic nie rozumiesz!... Im więcej wiesz, tym więcej możesz! Gdybyś nie [wiedział/wiedziała], że istnieje zawód lekarza, programisty albo astronoma, nie [mógłbyś/mogłabyś] nawet CHCIEĆ podążać w tym kierunku. Gdybyś nie [wiedział/wiedziała] ZUPEŁNIE NIC, nie [mógłbyś/mogłabyś] podejmować żadnych w ogóle wyborów."
+			"text":"Więc nic nie rozumiesz!... Im więcej wiesz, tym więcej możesz! Gdybyś nie [playerGender {wiedział|wiedziała}], że istnieje zawód lekarza, programisty albo astronoma, nie [playerGender {mógłbyś|mogłabyś}] nawet CHCIEĆ podążać w tym kierunku. Gdybyś nie [playerGender {wiedział|wiedziała}] ZUPEŁNIE NIC, nie [playerGender {mógłbyś|mogłabyś}] podejmować żadnych w ogóle wyborów."
 			}
 		],
 		"options":[
@@ -115,8 +114,8 @@
 			}
 		],
 		"options":[
-			{"target": 9, "text": "[SIŁA: 4] Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie?"},
-			{"target": 10, "text": "Takiś mądry! To może zamiast rozmawiać z Tobą i uczyć się filozofii, przejdę się na spacer?"}
+			{"target": 9, "text": "Ohoho, blado! Może chcesz się siłować na rękę, Arystotelesie?","req":{"type":"skill","skill":4,"amt":3,"mode":">"},"height":2},
+			{"target": 10, "text": "Takiś mądry! To może zamiast rozmawiać z Tobą i uczyć się filozofii, przejdę się na spacer?","height":2}
 		]	   
 	},
 
@@ -138,12 +137,13 @@
 		"COMMENT":"9",
 		"events":[
 			
-			{"type":"dialog","name":"Arystoteles","time":1000,"timepadding":0,
-			"text":"SIŁOWANIE NA RĘKĘ"
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Siłujecie się na rękę. Arystoteles bardzo mocno napiera...]"
 			}
 		],
 		"options":[
-			{"target": 9, "text": "Wygrałem, wygrałem!"}
+			{"target": 9, "text": "[Puszczam.] Ech... chyba jesteś dla mnie zbyt mocnym przeciwnikiem... wróćmy na razie do filozofii.", "height":2},
+			{"target": 104, "text": "[Nie poddaję się]","req":{"type":"skill","skill":4,"amt":5,"mode":">"}}
 		]	   
 	},
 	
@@ -474,7 +474,7 @@
 		],
 		"options":[
 			{"target": 34, "text": "Czym są te przesłanki >>pierwsze<<, >>pierwotne<< i >>pochodne<<?"},
-			{"target": 38, "text": "No dobrze, tylko dlaczego >>nie można<<, przecież taki ciąg przesłanek, nawet nieskończony, jest całkowicie logiczny!"},
+			{"target": 38, "text": "No dobrze, tylko dlaczego >>nie można<<, przecież taki ciąg przesłanek, nawet nieskończony, jest całkowicie logiczny!","height":2},
 			{"target": 47, "text": "OK, możemy iść dalej."}
 			
 		]	   
@@ -1509,6 +1509,49 @@
 			}
 		],
 			"options":[
+		]	
+	},
+	
+	{
+		"COMMENT":"104",
+		"events":[
+
+
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Po chwili obydwaj sapiecie ciężko; walka trwa...]"
+			}
+		],
+			"options":[
+			{"target": 105, "text": "[Puszczam] Ech... chyba wygrałeś, Arystotelesie..."},
+			{"target": 106, "text": "[Napieram z całych sił] Nie... poddam... się...","req":{"type":"skill","skill":4,"amt":7,"mode":">"}}		
+		]	
+	},
+
+	{
+		"COMMENT":"105",
+		"events":[
+
+
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Arystoteles dyszy ciężko] Ale była to uczciwa, solidna walka. Moje gratulacje, Wędrowcze..."
+			}
+		],
+			"options":[
+			{"target": 19, "text": "Dziękuję, Arystotelesie... z Ciebie też był ciężki przeciwnik. To może pofilozofujmy trochę teraz?", "height":2}		
+		]	
+	},
+
+	{
+		"COMMENT":"106",
+		"events":[
+
+			{"type":"unlockAch","time":"3000","ach":7},
+			{"type":"question","name":"Arystoteles","time":1000,"timepadding":0,
+			"text":"[Arystoteles słabnie i ostatecznie pokonujesz go] Uff... to było prawdziwie olimpijskie starcie! Moje gratulacje, Wędrowcze... Gdybym tylko miał Twą siłę i zręczność, pokazałbym Platonowi, gdzie raki zimują..."
+			}
+		],
+			"options":[
+			{"target": 19, "text": "Dziękuję, Arystotelesie... z Ciebie też był ciężki przeciwnik. To co, może pofilozofujmy trochę teraz?", "height":2}		
 		]	
 	}
 	

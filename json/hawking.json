@@ -470,7 +470,7 @@
 		"COMMENT":"30",
 		"events":[
 
-			
+			{"type":"unlockAch","time":"2000","ach":8},
 			{"type":"question","name":"Stephen Hawking","time":1000,"timepadding":0,
 			"text":"Podskakując, opuszczasz naszą powierzchnię. A na początku przyjęliśmy, że 2-wymiarowa powierzchnia Ziemi modeluje nam 4-wymiarowy Wszechświat..."
 			}
