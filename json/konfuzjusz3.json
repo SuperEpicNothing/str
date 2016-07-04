@@ -43,8 +43,8 @@
 		],
 		"options":[
 			{"target": 3, "text": "Na przykład, czy naprawdę uważasz, że myśli są zbudowane z materii?","req":{"type":"item","item":"rzecz"},"consequence":{"bosshp":-1}, "height":2},
-			{"target": 1, "text": "Na przykład, dlaczego wierzysz w istnienie monad?","consequence":{"herohp":-1}},
-			{"target": 1, "text": "Na przykład, co to do kroćset jest [']monizm fizykalistyczny[']?!","consequence":{"herohp":-1}}
+			{"target": 12, "text": "Na przykład, dlaczego wierzysz w istnienie monad?","consequence":{"herohp":-1}},
+			{"target": 12, "text": "Na przykład, co to do kroćset jest [']monizm fizykalistyczny[']?!","consequence":{"herohp":-1}}
 
 		]	   
 	},
@@ -61,9 +61,9 @@
 			"text":"Dobre pytanie, Wędrowcze!... godne [playerGender {prawdziwego filozofa|prawdziwej filozofki}]. Przypuśćmy jednak, że naprawdę uważam, że niematerialnie istniejące [']myśli['] to tylko złudzenie; że to zła, myląca nazwa na coś najzupełniej materialnego. Jak byś [playerGender {określił|określiła}] moje stanowisko?"}
 		],
 		"options":[
-			{"target": 888, "text": "Idealizm!", "req":{"type":"item","item":"rzecz"},"consequence":{"herohp":-1}},
+			{"target": 14, "text": "Idealizm!", "req":{"type":"item","item":"rzecz"},"consequence":{"herohp":-1}},
 			{"target": 4, "text": "Eliminacjonizm!","req":{"type":"item","item":"eliminator"},"consequence":{"bosshp":-1}},
-			{"target": 777, "text": "Panpsychizm!", "req":{"type":"item","item":"whiteheada"},"consequence":{"herohp":-1}}
+			{"target": 14, "text": "Panpsychizm!", "req":{"type":"item","item":"whiteheada"},"consequence":{"herohp":-1}}
 
 		]	   
 	},
@@ -77,12 +77,12 @@
 			"success":true
 			},
 			{"type":"question","time":1000,"timepadding":0,"arm":"sword",
-			"text":"Bardzo słusznie, bardzo słusznie!... unikasz mych zasadzek ze zręcznością najlepszego szermierza. A jakim argumentem [playerGender {mógłbyś|mogłabyś]} mnie spróbować wyprowadzić z eliminacjonizmu?"}
+			"text":"Bardzo słusznie, bardzo słusznie!... I to jest właśnie dobry -izm. A jakim argumentem [playerGender {mógłbyś|mogłabyś]} mnie spróbować wyprowadzić z eliminacjonizmu?"}
 		],
 		"options":[
-			{"target": 777, "text": "Takim, że eliminacja świata mentalnego jest nienaukowa!","consequence":{"herohp":-1}},
-			{"target": 888, "text": "Argumentem Whiteheada na temat qualiów?", "req":{"type":"item","item":"jacksona"},"consequence":{"herohp":-1}},
-			{"target": 888, "text": "Argumentem Kartezjusza na temat qualiów?", "req":{"type":"item","item":"jacksona"},"consequence":{"herohp":-1}},
+			{"target": 4, "text": "Takim, że eliminacja świata mentalnego jest nienaukowa!","consequence":{"herohp":-1}},
+			{"target": 4, "text": "Argumentem Whiteheada na temat qualiów?", "req":{"type":"item","item":"jacksona"},"consequence":{"herohp":-1}},
+			{"target": 4, "text": "Argumentem Kartezjusza na temat qualiów?", "req":{"type":"item","item":"jacksona"},"consequence":{"herohp":-1}},
 			{"target": 5, "text": "Argumentem Jacksona na temat qualiów?...", "req":{"type":"item","item":"jacksona"},"consequence":{"herohp":-1}}
 			
 
@@ -101,9 +101,9 @@
 			"text":"I byłby to niezły ruch... ja co prawda, dzielny Wędrowcze, nie za bardzo przejmuję się tymi wszystkimi qualiami; ale muszę przyznać, że argument byłby na temat. [Konfuzjusz uśmiecha się złośliwie] Ale może podaj najpierw jakiś przykład na qualia..."}
 		],
 		"options":[
-			{"target": 888, "text": "Kubek z kawą","consequence":{"herohp":-1}},
-			{"target": 999, "text": "Liczba siedem","consequence":{"herohp":-1}},
-			{"target": 777, "text": "Dusza niematerialna","consequence":{"herohp":-1}},
+			{"target": 5, "text": "Kubek z kawą","consequence":{"herohp":-1}},
+			{"target": 5, "text": "Liczba siedem","consequence":{"herohp":-1}},
+			{"target": 5, "text": "Dusza niematerialna","consequence":{"herohp":-1}},
 			{"target": 6, "text": "Barwa czerwona","consequence":{"bosshp":-1}}
 
 		]	   
@@ -133,9 +133,9 @@
 			"text":"To powiedz mi jeszcze na koniec, co głosi ów tajemniczy panpsychizm?"}
 		],
 		"options":[
-			{"target": 888, "text": "Że tylko mężczyźni mają psychikę","consequence":{"herohp":-1}},
-			{"target": 999, "text": "Że Pan Bóg jest źródłem zjawisk psychicznych","req":{"type":"item","item":"rzecz"},"consequence":{"herohp":-1}},
-			{"target": 777, "text": "Że wszystkie zwierzęta są świadome","req":{"type":"item","item":"whiteheada"},"consequence":{"herohp":-1}},
+			{"target": 7, "text": "Że tylko mężczyźni mają psychikę","consequence":{"herohp":-1}},
+			{"target": 7, "text": "Że Pan Bóg jest źródłem zjawisk psychicznych","req":{"type":"item","item":"rzecz"},"consequence":{"herohp":-1}},
+			{"target": 7, "text": "Że wszystkie zwierzęta są świadome","req":{"type":"item","item":"whiteheada"},"consequence":{"herohp":-1}},
 			{"target": 8, "text": "Że wszystko ma aspekt psychiczny","req":{"type":"item","item":"whiteheada"},"consequence":{"bosshp":-1}}
 
 		]	   
@@ -193,71 +193,63 @@
 	},
 	
 	{
-		"comment":"",
+		"comment":"12",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":""}
+			"text":"Hehe. [Mruczy do siebie] Coś tam [playerGender {mu|jej}] świta, ale ledwo... ledwo... [Do Ciebie] Jest to stanowisko, drogi Wędrowcze, zgodnie z którym istnieje tylko świat fizyczny. Tylko - i - wyłącznie. Więc czym może mieć problem taki oto fizykalista, hm?"}
 		],
 		"options":[
-			{"target": 888, "text": ""},
-			{"target": 999, "text": ""},
-			{"target": 777, "text": ""}
+			{"target": 3, "text": "Może zapytać, co wobec tego z umysłem?"},
+			{"target": 13, "text": "Z Bogiem na przykład."},
+			{"target": 13, "text": "Hm... z matematyką?"}
 
 		]	   
 	},
 	
 	{
-		"comment":"",
+		"comment":"13",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":""}
+			"text":"Rzeczywiście, to dobre pytanie i poważny problem. Ponieważ jednak w tym Rozdziale zajmujemy się Umysłem, pewnie wiesz, do czego zmierzam..."}
 		],
 		"options":[
-			{"target": 888, "text": ""},
-			{"target": 999, "text": ""},
-			{"target": 777, "text": ""}
+			{"target": 3, "text": "... do pytania, czy materialne są również myśli?"}
+		]	   
+	},
+	
+	{
+		"comment":"14",
+		"events":[
+			{"type":"question","time":1000,"timepadding":0,
+			"text":"Ho - ho - ho!... [Konfuzjusz prycha głośno] Ja wiem, że tych -izmów jest sporo, ale przecież - do kroćset - jak może nazywać się stanowisko, zgodnie z którym należy WYELIMINOWAĆ z opisu wszelkie wzmianki o niematerialnej psychice albo duszy? [Zerka złośliwie]"}
+		],
+		"options":[
+			{"target": 4, "text": "No już dobrze, dobrze... Eliminacjonizm..."},
+			{"target": 15, "text": "Kurczę, a po co właściwe te wszystkie IZMY?!"}
 
 		]	   
 	},
 	
 	{
-		"comment":"",
+		"comment":"15",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":""}
+			"text":"[Konfuzjusz robi wielkie oczy] Dla komunikacji, niecierpliwy Wędrowcze!... Gdy jesteś chirurgiem i operujesz na otwartym sercu, to czasem potrzebujesz skalpela numer sześć. Asystent poda Ci skalpel numer sześć, jeśli użyjesz odpowiedniej nazwy. Gdy jesteś filozofem i chcesz omówić kwestię duszy i ciała, czasem potrzebujesz eliminacjonizmu. Twój Rozmówca zrozumie Cię, jeśli użyjesz odpowiedniej nazwy..."}
 		],
 		"options":[
-			{"target": 888, "text": ""},
-			{"target": 999, "text": ""},
-			{"target": 777, "text": ""}
+			{"target": 16, "text": "..."}
 
 		]	   
 	},
 	
 	{
-		"comment":"",
+		"comment":"16",
 		"events":[
 			{"type":"question","time":1000,"timepadding":0,
-			"text":""}
+			"text":"Doprawdy, teraz to Ty jesteś Konfuzjuszem, a ja mam na imię [playerName]... [Konfuzjusz uśmiecha się szeroko] Ech, ech... chyba się wygadałem. Więc interesujący nas teraz -izm to..."}
 		],
 		"options":[
-			{"target": 888, "text": ""},
-			{"target": 999, "text": ""},
-			{"target": 777, "text": ""}
-
-		]	   
-	},
-	
-	{
-		"comment":"",
-		"events":[
-			{"type":"question","time":1000,"timepadding":0,
-			"text":""}
-		],
-		"options":[
-			{"target": 888, "text": ""},
-			{"target": 999, "text": ""},
-			{"target": 777, "text": ""}
+			{"target": 4, "text": "Już dobrze, dobrze... Eliminacjonizm."}
 
 		]	   
 	},
