@@ -236,8 +236,8 @@ function unlockChapter(i,id){
 		player.progress.chapters[i].push(id);
 		notif.addNotif("chapter",{id:id,i:i});
 		updateChapters();
-		savePlayer();
 	}
+	savePlayer();
 }
 function addConfuWin(name){
 
@@ -318,7 +318,7 @@ function updateChapters(){
 				continue;
 			l.className= player.progress.chapters[i].indexOf(j)>=0 || option.teach? enabled+" hvr-curl-bottom-right":disabled;
 		}
-
+		if(document.getElementById("test"+i)!= undefined)
 		document.getElementById("test"+i).className= player.progress.chapters[i].indexOf('test')>=0 || option.teach? enabled +" hvr-curl-bottom-right":disabled;
 
 	}
