@@ -334,6 +334,7 @@
 	{
 		"comment":"25",
 		"events":[
+			{"type":"unlockChap","time":"0","chapter":2,"lesson":0},
 			{"type":"question","time":1000,"timepadding":0,
 			"text":"Gratuluję ponownie, Wędrowcze! Nie dałeś się złapać na me sztuczki i możesz kontynuować przygodę... [Konfuzjusz patrzy złowieszczo] na razie..."
 			}
