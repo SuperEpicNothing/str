@@ -11,7 +11,7 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"[WERSJA TESTOWA ROZMOWY] Witaj ponownie, Wędrowcze!"
+			"text":"Witaj ponownie, Wędrowcze!"
 			}
 		],
 		"options":[
@@ -30,8 +30,8 @@
 		],
 		"options":[
 			{"target": 2, "text": "Dziękuję, nieźle. Ale znów mam problem, o którym [playerGender {chciałbym|chciałbym}] porozmawiać...", "height":2},
-			{"target": 1, "text": "Doskonale. A co u Ciebie, Kartezjuszu?"},
-			{"target": 1, "text": "Nie najlepiej, prawdę mówiąc..."}
+			{"target": 6, "text": "Doskonale. A co u Ciebie, Kartezjuszu?"},
+			{"target": 8, "text": "Nie najlepiej, prawdę mówiąc..."}
 		]	   
 	},
 	
@@ -40,7 +40,7 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"W czym problem?"
+			"text":"W czym problem? Jaki tekst czytasz?"
 			}
 		],
 		"options":[
@@ -53,12 +53,13 @@
 		"events":[
 			
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
-			"text":"Słucham więc."
+			"text":"Słucham."
 			}
 		],
 		"options":[
-			{"target": 3, "text": "Dlaczego właściwie ciało ludzkie nie mogłyby być po prostu maszyną?", "height":2},
-			{"target": 4, "text": "Chyba już wszystko rozumiem, Kartezjuszu..."}
+			{"target": 10, "text": "Dlaczego właściwie ciało ludzkie nie mogłyby być po prostu maszyną?"},
+			{"target": 19, "text": "Co jest tak specjalnego w szyszynce?"},
+			{"target": 777, "text": "Chyba już wszystko rozumiem, Kartezjuszu..."}
 		]	   
 	},
 	
@@ -89,9 +90,200 @@
 	},
 	
 	{
-		"COMMENT":"",
+		"COMMENT":"6",
 		"events":[
 			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A dziękuję, dobrze. Choć pogoda tu w Sztokholmie nie zmieniła się na jotę..."
+			}
+		],
+		"options":[
+			{"target": 7, "text": "Wciąż za zimno...?"},
+			{"target": 2, "text": "Współczuję. Ale wróćmy może do problemu, z którym przychodzę..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"7",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Tak samo. Ale szczęśliwie udało mi się namówić Katarzynę, abyśmy rozpoczynali zajęcia później. Może jakoś dociągnę do końca tej przeciągającej się wizyty... [Kartezjusz ciężko wzdycha]"
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Będę [playerGender {trzymał|trzymała}] kciuki. Wróćmy może do tekstu, z którym przychodzę...", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"8",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A cóż Cię trapi, wędrowcze..."
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Nic nie rozumiem z tego tekstu..."},
+			{"target": 9, "text": "Cała ta filozofia przyprawia mnie o ból głowy..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"9",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Nie trudź się, mnie też! Cóż by to były za zagadki, gdyby nie przyprawiały nas, Filozofów, o ból głowy!..."
+			}
+		],
+		"options":[
+			{"target": 2, "text": "Skoro tak twierdzisz... to spróbujmy może zmierzyć się kolejną.", "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"10",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"To bardzo proste. Wystarczy zapytać siebie, jakie cechy mają przedmioty materialne. Wiemy na przykład, że zawsze są [']gdzieś['], że zajmują pewną ilość miejsca - czyli są [']rozciągłe['] - że ważą, że stawiają opór..."
+			}
+		],
+		"options":[
+			{"target": 11, "text": "Czy to dlatego określasz ją jako >>res extensa<<?", "req":{"type":"skill","skill":0,"amt":5,"mode":">"}},
+			{"target": 12, "text": "I co z tego wynika?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"11",
+		"events":[
+			{"type":"unlockAch","time":"2000","ach":9},
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz patrzy na Ciebie ze zdumieniem] Tak, Wędrowcze, brawo!"
+			}
+		],
+		"options":[
+			{"target": 12, "text": "[Skromnie spuszczam wzrok] A dziękuję, czytało się to i owo..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"12",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"No więc zadaj sobie teraz pytanie: czy myśl ludzka ma cechy materialne? Czy myśl ludzka zajmuje miejsce w przestrzeni, czy waży?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "No rzeczywiście, nie za bardzo..."},
+			{"target": 15, "text": "A czemu nie?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"13",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Tak właśnie twierdzę. Stąd właśnie myśl ludzka jest czymś zupełnie innym niż ciało ludzkie. Gdyby człowiek był tylko materialną maszyną, nie mógłby myśleć."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "No tak, rozumiem... Wróćmy może do tekstu."},
+			{"target": 14, "text": "Czyli jest maszyną >>oraz<< istotą myślącą?"}
+		]	   
+	},
+	
+	{
+		"COMMENT":"14",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Otóż to. Ciało ludzkie to przecież piękna maszyna..."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Chyba rozumiem... Wróćmy do tekstu."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"15",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"A ile waży myśl? Pomyśl dla mnie w tej chwili, Wędrowcze, o mieście Sztokholm. Jak zważyć tę Twoją myśl? Skąd wzięła się ta [']materia Twojej myśli['], hm?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "No chyba rzeczywiście... nie może być to materia..."},
+			{"target": 16, "text": "Ale mózg waży, zajmuje miejsce, stawia opór...", "req":{"type":"skill","skill":5,"amt":3,"mode":">"}}
+		]	   
+	},
+	
+	{
+		"COMMENT":"16",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Mózg jednak to nie myśl. Czy potrafisz odnaleźć w tym różowym, galaretowatym ciele coś, co by przypominało Sztokholm, albo liczbę siedem, albo różnego typy wyobrażenia kolorów, zimna czy zapachów?"
+			}
+		],
+		"options":[
+			{"target": 13, "text": "Chyba rozumiem, co masz na myśli, Kartezjuszu... myśl ma w sobie coś zgoła niepodobnego do tkanki mózgowej...", "height":2},
+			{"target": 17, "text": "Może nie wiadomo tego dzisiaj, ale kiedyś będzie wiadomo!", "req":{"type":"skill","skill":5,"amt":4,"mode":">"}, "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"17",
+		"events":[
+			
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"Podziwiam Twój upór, Wędrowcze, aby do końca stosowań ukochane przez Ciebie prawidła Rozumu. Ja jednak nie umiem sobie tego wyobrazić, aby przyszły rozwój nauki mógł pokazać, w jaki sposób w kawałeczku różowej tkanki mieści się matematyka."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Czas pokaże... wróćmy może do lektury tekstu."},
+			{"target": 18, "text": "Wyobraźnia to słaba miara prawdziwości, Kartezjuszu. Są na świecie rzeczy, których wyobrazić sobie nie sposób...", "req":{"type":"skill","skill":5,"amt":6,"mode":">"}, "height":2}
+		]	   
+	},
+	
+	{
+		"COMMENT":"18",
+		"events":[
+			{"type":"unlockAch","time":"2000","ach":10},
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"[Kartezjusz uśmiecha się] [playerGender {Zajadły|Zajadła}] z Ciebie osóbka, Wędrowcze. Obyś zawsze [playerGender {dążył|dążyła}] do prawdy z równym zaparciem..."
+			}
+		],
+		"options":[
+			{"target": 3, "text": "Tak właśnie będzie! Ale wróćmy może na razie do Twojego tekstu..."}
+		]	   
+	},
+	
+	{
+		"COMMENT":"19",
+		"events":[
+
+			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
+			"text":"szyszynka"
+			}
+		],
+		"options":[
+			{"target": 777, "text": ""},
+			{"target": 788, "text": ""}
+		]	   
+	},
+	
+	{
+		"COMMENT":"",
+		"events":[
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -105,7 +297,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -119,7 +311,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -133,7 +325,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -147,7 +339,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -161,7 +353,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -175,7 +367,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -189,7 +381,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -203,7 +395,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -217,7 +409,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -231,7 +423,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -245,7 +437,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}
@@ -259,7 +451,7 @@
 	{
 		"COMMENT":"",
 		"events":[
-			
+
 			{"type":"question","name":"Kartezjusz","time":1000,"timepadding":0,
 			"text":""
 			}

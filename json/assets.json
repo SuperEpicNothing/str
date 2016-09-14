@@ -70,7 +70,7 @@
 		{"name" : "transatl",
 		"src":"images/layers/transatl.png"},
 		{"name" : "uni",
-		"src":"images/layers/uni2.png"},
+		"src":"images/layers/uni.png"},
 		{"name" : "blackboard",
 		"src":"images/layers/parallax-blackboard.png"},
 		
@@ -78,8 +78,8 @@
 		"src":"images/layers/arystoteles4.png"},
 		{"name" : "churchland",
 		"src":"images/layers/churchland.png"},
-		{"name" : "hawking",
-		"src":"images/layers/hawking.png"},
+		{"name" : "wheeler",
+		"src":"images/layers/wheeler.png"},
 		{"name" : "kartezjusz",
 		"src":"images/layers/kartezjusz.png"},
 		{"name" : "russell",
@@ -132,7 +132,7 @@
 		{"name" : "jamesSword", "src":"images/gui/icons/items/W_Throw004.png"},
 		{"name" : "jamesAngel0", "src":"images/gui/icons/items/angl0.png"},
 		{"name" : "jamesAngel1", "src":"images/gui/icons/items/angl1.png"},
-		{"name" : "hawking5", "src":"images/gui/icons/items/W_Mace011.png"},
+		{"name" : "wheeler5", "src":"images/gui/icons/items/W_Mace011.png"},
 		{"name" : "popper5", "src":"images/gui/icons/items/W_Sword09.png"},
 		{"name" : "popperpaper", "src":"images/gui/icons/items/popperpaper.png"},
 		{"name" : "popperwriter", "src":"images/gui/icons/items/popperwriter.png"},
@@ -187,21 +187,11 @@
 
 		{
 			"type": "Scroll",
-			"name": "ai",
-			"fullname": "Sztuczna inteligencja",
-			"autor": "Stephen Hawking",
-			"img": "images/gui/untitled.png",
-			"desc": "Ten link prowadzi do strony wprowadzającej w zagadnienie sztucznej inteligencji.",
-			"url": "https://www.fizyka.umk.pl/~duch/ref/PL/00/00ai-mozg/00ai.html"
-		},
-		
-		{
-			"type": "Scroll",
 			"name": "czarna",
 			"fullname": "Czarne dziury",
-			"autor": "Stephen Hawking",
+			"autor": "John Wheeler",
 			"img": "images/gui/untitled.png",
-			"desc": "Ten link prowadzi do strony na Wikipedii wyjaśniającej, czym są czarne dziury.",
+			"desc": "Ten link prowadzi do strony na Wikipedii wyjaśniającej, czym są czarne dziury. To przyzwoity pierwszy krok na drodze do zrozumienia, o co w tym wszystkim tak naprawdę chodzi... Może potem odważysz się sięgnąć po książkę Wheelera?",
 			"url": "https://pl.wikipedia.org/wiki/Czarna_dziura"
 		},
 
@@ -308,11 +298,11 @@
 		},
 		{
 			"type": "Argument",
-			"name": "hawking",
+			"name": "wheeler-tornado",
 			"fullname": "Tornado Czasoprzestrzeni",
-			"autor": "Stephen Hawking",
-			"icon":"hawking5",
-			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy ze Stephenem Hawkingiem (zob. lekcja 'Koniec czasu' w rozdziale 'Kosmos').",
+			"autor": "John Wheeler",
+			"icon":"wheeler5",
+			"desc": "'Tornado Czasoprzestrzeni' to argument, za pomocą którego można podważyć wszelkie argumenty odwołujące się do konieczności następstwa czasowego. Zależności typu 'przedtem' i 'potem' mogą zanikać w skrajnych sytuacjach kosmologicznych! Więcej informacji można uzyskać w trakcie rozmowy z Johnem Wheelerem (zob. lekcja 'Koniec czasu' w rozdziale 'Kosmos').",
 			"url": null	
 		},
 
@@ -449,6 +439,22 @@
 			"fullname": "Pingwin Kangur",
 			"icon":"magicbolt",
 			"desc": "za podskoczenie na Biegunie Północnym"
+		},
+		
+		{
+			"comment":"9",
+			"level": 1,
+			"fullname": "Rozciągłe spojrzenie",
+			"icon":"magicbolt",
+			"desc": "za zaskoczenie Kartezjusza i rozciągnięcie jego brwi"
+		},
+		
+		{
+			"comment":"10",
+			"level": 2,
+			"fullname": "Bulterier Prawdy",
+			"icon":"magicbolt",
+			"desc": "za bezlitosne napieranie w dyskusji"
 		}
 		
 		

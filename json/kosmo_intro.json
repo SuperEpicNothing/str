@@ -126,7 +126,7 @@
 	{
 		"COMMENT":"9",
 		"events":[
-			
+			{"type":"unlockChap","time":"0","chapter":1,"lesson":1},
 			{"type":"dialog","name":"Dr Lamża","time":5000,"timepadding":0,
 			"text":"Nikt tego nie wie."
 			}
