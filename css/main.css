@@ -31,6 +31,14 @@
 	font-weight: bold;
 	font-style: italic;
 }
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
 body {
   padding-top: 50px;
   background-color: #fff;

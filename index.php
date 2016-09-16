@@ -104,15 +104,20 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="?main=0">
-					<div class="hidden-sm">Filozuj I</div>
-					<div class="visible-sm-inline-block">F1</div>
-				</a>
+				</button>	
+				<a class="navbar-brand" href="#">Nie Filozuj I</a>	
 			</div>
 
 			<div id="navbar" class="collapse navbar-collapse">
 	
+				<ul class="nav navbar-nav navbreaker pull-left">
+					<li data-toggle="tooltip" title="Menu Główne">		
+					<a href="?main=0" style="padding: 0px 0px;height:50px;width:50px"><img src="images/gui/home.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a>
+					</li>
+					
+					<li data-toggle="tooltip" title="Ustawienia"><a href="#" data-toggle="modal"  data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
+				</ul>
+			
 				<ul class="nav navbar-nav navbreaker pull-right">
 				<?php
 				if($_GET['noplayer']==null && $_GET['main']==null && $_GET['help']==null && $page!=null && $subpage!=null) 
@@ -121,11 +126,10 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 						<li><a href="#" data-toggle="collapse" data-target="#guiItems" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src=\'images/gui/I_Chest01.png\'" onmouseover="this.firstChild.src=\'images/gui/I_Chest02.png\'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
 				'*/
 				echo '
-						<li><a href="#" onclick=" openGUI(0)" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter=\'grayscale(100%)\'" onmouseover="this.firstChild.style.filter=\'grayscale(0%)\'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
-						<li><a href="#" onclick=" openGUI(1)" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src=\'images/gui/I_Chest01.png\'" onmouseover="this.firstChild.src=\'images/gui/I_Chest02.png\'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
+						<li><a data-toggle="tooltip" title="Karta Postaci" href="#" onclick=" openGUI(0)" style="padding: 10px 10px;height:50px;width:50px" onmouseout="this.firstChild.style.filter=\'grayscale(100%)\'" onmouseover="this.firstChild.style.filter=\'grayscale(0%)\'"><img id="guiPlayerVisage"  src="images/avatars.png" height=32 style="margin: 0px 0px;padding: 0px 0px;clip: rect(0px, 25px, 32px, 0px);position: absolute;filter:grayscale(100%);"> <span data-toggle="tooltip" title="Poziom" id="guiPlayerLevel" style="background-color:lightblue;position: relative;left: 25px;top: -10px;" class="badge">0</span><span data-toggle="tooltip" title="Punty Umiejętnoiści" id="guiSkillPNew" style="position: relative;left: 25px;top: -10px;" class="badge">0</span></img> </a></li>
+						<li><a data-toggle="tooltip" title="Inwentarz" href="#" onclick=" openGUI(1)" id="items" style="padding: 10px 10px;height:50px;width:50px"  onmouseout="this.firstChild.src=\'images/gui/I_Chest01.png\'" onmouseover="this.firstChild.src=\'images/gui/I_Chest02.png\'"><img src="images/gui/I_Chest01.png" height=34 style="margin: 0px 0px;padding: 0px 0px;filter:grayscale(100%);"> <span data-toggle="tooltip" title="Nowe Przedmioty" id="guiItemsNew" style="position: relative;left: 25px;top: -40px;" class="badge">0</span></img></a></li>
 				'			
 				?>
-					<li><a href="#" data-toggle="modal"  data-target="#itemModal" style="padding: 0px 0px;height:50px;width:50px" onclick="optionOpen()"><img src="images/gui/gear2.png" style="margin: 0px 0px;padding: 0px 0px;height:50px"></span></a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
