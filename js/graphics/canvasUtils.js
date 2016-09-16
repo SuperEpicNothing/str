@@ -288,6 +288,25 @@ cUtils.drawButtonBG = function(context,elem,x, y, width,height,enabled,f,id){
 	context.drawImage(Assets.img["GUIbutton"],90,type+5  ,10,42  ,x+width-10,y+5  	,10,height-10);
 	context.drawImage(Assets.img["GUIbutton"],90,type+47 ,10,5   ,x+width-10,y+height-5 	,10,5);
 }
+cUtils.drawText = function(context,x,y,w,h,text){
+	//showText
+	if(inBounds(x,y,w,h))
+	{
+
+		context.font = (12)+"px Aclonica";
+		context.textBaseline = "top";
+		context.textAlign="left"; 	
+		context.strokeStyle="rgba(60,60,60,0.7)";
+		var l = context.measureText(text).width+10;
+		context.strokeRect(Math.max(0,Math.min(mouse.x,(x+w)-l)),Math.max(0,mouse.y-22),l,22);
+		context.stroke();
+		context.fillStyle="rgba(0,0,0,0.7)";
+		context.fillRect(Math.max(0,Math.min(mouse.x,(x+w)-l)),Math.max(0,mouse.y-22),l,22);
+		context.fill();
+		context.fillStyle="#ffffbf";
+		context.fillText(text,Math.max(0,Math.min(mouse.x+5,(x+w)-l+5)),Math.max(5,mouse.y-17));	
+	}
+}
 function drawButtonBG(x, y, width,height,enabled,f,id){
 	cUtils.drawButtonBG(context,elem,x, y, width,height,enabled,f,id);
 }

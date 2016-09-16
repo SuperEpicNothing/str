@@ -78,7 +78,7 @@ function renderPC(){
 			window.requestAnimationFrame(renderPC);
 			return;
 	}
-
+	context.clearRect(0,0,260,387)
 	context.drawImage(srcImg,0,0,260,367,0,20,260,367);
 	cUtils.imageSmoothing(context,false)
 	context.drawImage(Assets.img["players"],
@@ -88,17 +88,22 @@ function renderPC(){
 	cUtils.imageSmoothing(context,true);
 	
 	cUtils.drawButtonImg(context,pcC,262,0, srcImg,190, 310, 39,43,randomPC);
-	
+
 	cUtils.drawButtonImg(context,pcC,301,63, srcImg,26, 82, 21,25,pcstepUp,1);
-	cUtils.drawButtonImg(context,pcC,322,63, srcImg,213,82, 21,25,pcstepDown,1);
 	
+	cUtils.drawButtonImg(context,pcC,322,63, srcImg,213,82, 21,25,pcstepDown,1);
+
 	cUtils.drawButtonImg(context,pcC,301,0, srcImg, 95, 57, 37,21,pcGender,true,data.namedItem("gender").checked);
+
 	cUtils.drawButtonImg(context,pcC,338,0, srcImg,132, 57, 37,21,pcGender,false,!data.namedItem("gender").checked);
 	
+	
+
+
 
 	input.render();
 	cUtils.drawButton(context,pcC,"Stwórz",57, 360, 142,17,true,createPlayer)
-	
+
 	context.drawImage(srcImg,262,129+(data.namedItem("teachmode").checked?0:39),39,39,26,312,39,39);
 	if(inBounds(26,312,39,39)){
 		if(mouse.up && mouse.target==pcC && mouse.prepare){
@@ -116,5 +121,15 @@ function renderPC(){
 			mouse.prepare=false;
 	}
 	
+
+	//cUtils.drawText(context,95, 57, 37,21,"Mężczyzna");
+	//cUtils.drawText(context,132, 57, 37,21,"Kobieta");
+	cUtils.drawText(context,190, 310, 39,43,"Wylosuj Wygląd");
+	cUtils.drawText(context,26,82,21,25, "Poprzedni  Wyglad");
+	cUtils.drawText(context,213,82,21,25,"Następny  Wyglad");
+	cUtils.drawText(context,26,312,39,39,"Tryb Nauczyciela: "+ (data.namedItem("teachmode").checked?"Aktywny":"Nieatkywny"));
+	cUtils.drawText(context,57, 360, 142,17,"Stwórz Postać");
+	
 	window.requestAnimationFrame(renderPC);
 }
+
