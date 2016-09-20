@@ -105,7 +105,7 @@ $submenu[$i]= file("strony/".$i."/menu.txt");
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>	
-				<a class="navbar-brand" href="#">Nie Filozuj I</a>	
+				<a class="navbar-brand" href="#">Filozuj I: Klątwa Konfuzjusza</a>	
 			</div>
 
 			<div id="navbar" class="collapse navbar-collapse">

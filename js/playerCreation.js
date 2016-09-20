@@ -124,11 +124,11 @@ function renderPC(){
 
 	//cUtils.drawText(context,95, 57, 37,21,"Mężczyzna");
 	//cUtils.drawText(context,132, 57, 37,21,"Kobieta");
-	cUtils.drawText(context,190, 310, 39,43,"Wylosuj Wygląd");
-	cUtils.drawText(context,26,82,21,25, "Poprzedni  Wyglad");
-	cUtils.drawText(context,213,82,21,25,"Następny  Wyglad");
-	cUtils.drawText(context,26,312,39,39,"Tryb Nauczyciela: "+ (data.namedItem("teachmode").checked?"Aktywny":"Nieatkywny"));
-	cUtils.drawText(context,57, 360, 142,17,"Stwórz Postać");
+	cUtils.drawText(context,190, 310, 39,43,"Wylosuj postać");
+	cUtils.drawText(context,26,82,21,25, "Poprzedni wygląd");
+	cUtils.drawText(context,213,82,21,25,"Następny wygląd");
+	cUtils.drawText(context,26,312,39,39,"Tryb nauczyciela: "+ (data.namedItem("teachmode").checked?"aktywny":"nieaktywny"));
+	cUtils.drawText(context,57, 360, 142,17,"Stwórz postać");
 	
 	window.requestAnimationFrame(renderPC);
 }

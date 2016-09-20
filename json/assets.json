@@ -169,10 +169,10 @@
 		{
 			"type": "Scroll",
 			"name": "intro",
-			"fullname": "Wprowadzenie do podręcznika",
-			"autor": "Łukasz Lamża",
+			"fullname": "",
+			"autor": "",
 			"img": "images/gui/untitled.png",
-			"desc": "Ten dokument zwięźle opisuje strukturę tego podręcznika i sposób korzystania z niego.",
+			"desc": "",
 			"url": null	
 		},
 		{
